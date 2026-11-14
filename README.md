@@ -1,4 +1,6 @@
-# Analog Atlas
+# TwinGround
+
+**Finding Earth’s twins of the Moon and Mars.**
 
 NASA Space Apps Challenge 2026 — *Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars*.
 
@@ -6,7 +8,7 @@ Pick a window on the Moon or Mars, read its conditions from NASA orbital data, a
 (about 484,000 across 20/40/80 km scales) as analog candidates. Each candidate shows which conditions hold
 and which do not, side-by-side 3D terrain, and an astronaut explorer for walking the site.
 
-This repository is a rebuild of our team's pre-event prototype: the runtime code was carried over, restructured
+This repository is a rebuild of our team's pre-event prototype (then called Analog Atlas): the runtime code was carried over, restructured
 and optimized (see *Changes from the prototype*). The datasets and trained weights are reused as-is.
 
 ## Layout
@@ -25,7 +27,7 @@ and optimized (see *Changes from the prototype*). The datasets and trained weigh
 The data directory (~71 GB) is not in the repository. Link it as `./data`:
 
 ```bash
-ln -s /path/to/analog-atlas-data data
+ln -s /path/to/twinground-data data
 ```
 
 ```bash
@@ -73,8 +75,8 @@ and a Cloudflare quick tunnel. The quick-tunnel address changes whenever the tun
 ```bash
 cp deploy/systemd/*.service ~/.config/systemd/user/
 systemctl --user daemon-reload
-systemctl --user enable --now analog-atlas-web-v2 analog-atlas-tunnel-v2
-journalctl --user -u analog-atlas-tunnel-v2 | grep -o 'https://[a-z0-9-]*\.trycloudflare\.com' | tail -1
+systemctl --user enable --now twinground-web twinground-tunnel
+journalctl --user -u twinground-tunnel | grep -o 'https://[a-z0-9-]*\.trycloudflare\.com' | tail -1
 ```
 
 Chat search also needs `transformers` and the LoRA-merged model weights in `~/llm/serve` (not in this repository).

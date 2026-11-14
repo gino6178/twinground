@@ -297,7 +297,7 @@ function downloadCard(){
   const queryCoord=response.reference_window_center_lat_lon||response.center_lat_lon
   const earthCoord=row.center_lat_lon
   const lines=[
-    __m`# Analog Atlas 候選場址卡 — ${row.site_label}`,'',
+    __m`# TwinGround 候選場址卡 — ${row.site_label}`,'',
     __m`產生時間：${new Date().toISOString()}`,
     __m`查詢：${bodyName(response.body)} ${response.site_label}；${response.size_m} m 方框；中心 ${queryCoord?.join(', ')||__t('未提供')}（緯度、經度）`,
     __m`地球候選：${row.site_label}；中心 ${earthCoord?.join(', ')||__t('未提供')}（緯度、經度）`,'',
@@ -331,7 +331,7 @@ function downloadCard(){
   ]
   const blob=new Blob([lines.join('\n')+'\n'],{type:'text/markdown;charset=utf-8'})
   const url=URL.createObjectURL(blob),link=document.createElement('a')
-  link.href=url;link.download=`analog-atlas-${response.site_id.toLowerCase()}-${row.site_id.toLowerCase()}-${response.size_m}m.md`
+  link.href=url;link.download=`twinground-${response.site_id.toLowerCase()}-${row.site_id.toLowerCase()}-${response.size_m}m.md`
   document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)
 }
 async function search() {

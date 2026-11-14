@@ -1,4 +1,4 @@
-Analog Atlas — third-party notices
+TwinGround — third-party notices
 
 lunar-walk (https://github.com/hh-hang/lunar-walk), commit 23abfd1
 The gravel geometry and the stone surface shading in the astronaut explorer are adapted from

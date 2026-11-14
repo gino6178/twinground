@@ -22,7 +22,7 @@ function patchCanvas() {
   ctx.fillStyle = '#f5f5f5'; ctx.beginPath(); ctx.arc(64, 58, 20, 0, Math.PI * 2); ctx.fill()
   ctx.fillStyle = '#e65a54'; ctx.beginPath(); ctx.arc(80, 50, 7, 0, Math.PI * 2); ctx.fill()
   ctx.fillStyle = '#f2efe4'; ctx.font = '700 15px Manrope, sans-serif'; ctx.textAlign = 'center'
-  ctx.fillText('ANALOG ATLAS', 64, 104)
+  ctx.fillText('TWINGROUND', 64, 104)
   return c
 }
 

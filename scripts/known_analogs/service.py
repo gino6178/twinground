@@ -1,4 +1,4 @@
-"""Known terrestrial analog catalogue for the Analog Atlas search API.
+"""Known terrestrial analog catalogue for the TwinGround search API.
 
 Each /api/search match gets `known_analog`: the nearest catalogued Earth site that the literature already uses as an
 analog for the query body (Moon or Mars), if one lies within RADIUS_KM of the candidate window centre; otherwise None.

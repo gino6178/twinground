@@ -1,5 +1,5 @@
 [Unit]
-Description=Analog Atlas rebuilt web server (port 8766)
+Description=TwinGround web server (port 8766)
 After=network-online.target
 [Service]
 Type=simple

@@ -1,6 +1,6 @@
 {
  " · 真實高差 {0} m": " · true relief {0} m",
- "# Analog Atlas 候選場址卡 — {0}": "# Analog Atlas candidate site card — {0}",
+ "# TwinGround 候選場址卡 — {0}": "# TwinGround candidate site card — {0}",
  "## 原始來源": "## Original sources",
  "## 地表、環境與任務證據": "## Surface, environmental and mission evidence",
  "## 地貌幾何": "## Landform geometry",
@@ -35,7 +35,7 @@
  "3 公里高程圖，點擊選擇窗格": "3 km elevation map; click to select a window",
  "3D 情境": "3D scenario",
  "<canvas id=\"candidate-thumb-{0}\" width=\"64\" height=\"64\" aria-hidden=\"true\"></canvas><strong>{1}. {2}</strong><small>形狀差 {3}{4}</small>": "<canvas id=\"candidate-thumb-{0}\" width=\"64\" height=\"64\" aria-hidden=\"true\"></canvas><strong>{1}. {2}</strong><small>Shape gap {3}{4}</small>",
- "ANALOG ATLAS · 月球／火星微地形疊合檢索": "ANALOG ATLAS · Moon/Mars Microterrain Overlay Search",
+ "TWINGROUND · 月球／火星微地形疊合檢索": "TWINGROUND · Moon/Mars Microterrain Overlay Search",
  "Amboy 地表圖顯示主要為「{0}」；下伏火山岩不表示地表是裸露玄武岩。此候選目前只依地形幾何入選，材質類比尚未驗證。": "The Amboy surface map shows mainly \"{0}\"; underlying volcanic rock does not mean the surface is exposed basalt. This candidate is currently selected on terrain geometry only; the material analogy has not yet been verified.",
  "Annual NLCD {0}：此 {1} m 窗格約 {2} 個 30 m 分類像元；裸地（岩／砂／黏土）{3}%、灌叢 {4}%。這不是裸岩、玄武岩或礦物判定，也不改變幾何分數；可用於選用的雙重衝突篩選。": "Annual NLCD {0}: this {1} m window has about {2} 30 m classified pixels; Barren (rock/sand/clay) {3}%, Shrub/Scrub {4}%. This is not a determination of bare rock, basalt or minerals, and it does not change the geometry score; it can be used for the optional dual-conflict screen.",
  "Annual NLCD 分類資料 ↗": "Annual NLCD classification data ↗",

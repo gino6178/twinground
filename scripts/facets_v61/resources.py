@@ -30,7 +30,7 @@ RCM = 'https://datacube-prod-data-public.s3.amazonaws.com/store/imagery/sar/rcm-
 R1 = 'https://maps-cartes.services.geo.ca/server_serveur/rest/services/CSA/radarsat1_heatmap_processed_archived_images_en/MapServer'
 CMR = 'https://cmr.earthdata.nasa.gov/search'
 GIBS = 'https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi'
-UA = {'User-Agent': 'analog-atlas-research'}
+UA = {'User-Agent': 'twinground-research'}
 EARTHDATA = [  # (short_name, version, zh, en)
     ('MOD11A2', '061', 'MODIS 地表溫度（8 日）', 'MODIS land surface temperature (8-day)'),
     ('SPL3SMP_E', '006', 'SMAP 土壤水分', 'SMAP soil moisture'),

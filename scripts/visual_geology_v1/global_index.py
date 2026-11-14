@@ -153,7 +153,7 @@ def _tile(z,x,y):
  if not p.exists():
   wait_download_slot()
   url=f'https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless_3857/default/GoogleMapsCompatible/{z}/{y}/{x}.jpg'
-  r=http_session().get(url,timeout=20,headers={'User-Agent':'AnalogAtlas-research-image-index/1.0'})
+  r=http_session().get(url,timeout=20,headers={'User-Agent':'TwinGround-research-image-index/1.0'})
   if r.status_code in (429,503):source_backoff(r)
   r.raise_for_status()
   if len(r.content)>2000000 or not r.headers.get('Content-Type','').startswith('image/'):raise ValueError('Invalid tile')

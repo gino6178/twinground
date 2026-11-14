@@ -23,7 +23,7 @@ export function buildRunExport(data, activeId, time = new Date().toISOString()) 
   const target = data.context_ranking?.target || {surface:'any',rock:'any'}
   const params = new URLSearchParams({lat:data.window.lat,lon:data.window.lon,size_km:data.window.patch_km,surface:target.surface,rock:target.rock,purpose:data.purpose || 'morphology',limit:data.candidate_groups?.limit || 5})
   return {
-    schema_version: 'analog-atlas-run-v1', exported_utc: time,
+    schema_version: 'twinground-run-v1', exported_utc: time,
     interpretation: 'Research screening; scores are not analog probabilities. Unknown is not a match.',
     active_candidate_id: activeId,
     replay_path: (data.window.body === 'mars' ? '/api/mars-search?' : '/api/search?') + new URLSearchParams({...Object.fromEntries(params),...(data.loaded_pages?.[0] || {offset:data.candidate_groups?.offset || 0})}),
@@ -40,7 +40,7 @@ export function buildRunExport(data, activeId, time = new Date().toISOString()) 
 
 export function candidateGeoJSON(data) {
   return {type:'FeatureCollection',
-    name:'Analog Atlas candidate centers',
+    name:'TwinGround candidate centers',
     description:'Earth sampling footprints where source geometry is verified; otherwise center points. OGC:CRS84. Not surveyed site boundaries or validated analog sites.',
     features:data.matches.map(row => ({type:'Feature',id:row.id,geometry:row.sampling_footprint?.geometry || {type:'Point',coordinates:[row.center.longitude_east,row.center.latitude]},properties:{
       name:row.name,geometry_interpretation:row.sampling_footprint?.interpretation || 'Candidate center only; sampling boundary unavailable',index_sha256:data.index_provenance?.sha256 || null,source_product:row.sampling_footprint?.source_product || null,window_km:data.window.patch_km,geometry_cosine:row.cosine,
@@ -76,7 +76,7 @@ export function RunDownloads({data, activeId, onReport}) {
     if(format==='report') return onReport()
     const ext=format==='geojson'?'geojson':format
     const content=format==='csv'?candidateCSV(data):JSON.stringify(format==='json'?buildRunExport(data,activeId):candidateGeoJSON(data),null,2)
-    downloadText('analog-atlas-'+data.window.body+'-'+data.window.patch_km+'km.'+ext,content,format==='csv'?'text/csv;charset=utf-8':'application/json;charset=utf-8')
+    downloadText('twinground-'+data.window.body+'-'+data.window.patch_km+'km.'+ext,content,format==='csv'?'text/csv;charset=utf-8':'application/json;charset=utf-8')
   }
   return <div className="run-downloads"><label className="sr-only" htmlFor="run-format">匯出格式</label><select id="run-format" value={format} onChange={e=>setFormat(e.target.value)}><option value="report">目前場址報告</option><option value="json">完整查詢 JSON</option><option value="geojson">候選範圍 GeoJSON</option><option value="csv">地球候選 CSV</option></select><button type="button" className="outline-button" onClick={save}>匯出</button></div>
 }

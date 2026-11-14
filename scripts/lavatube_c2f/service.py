@@ -1,4 +1,4 @@
-"""PitChain-C2F v2 serving for the Analog Atlas web server (CPU only; the GPU stays free).
+"""PitChain-C2F v2 serving for the TwinGround web server (CPU only; the GPU stays free).
 
 Coarse (E3v2 'gated_cenc_v2'): Earth windows within GATE_KM of a basaltic Holocene volcano (Smithsonian GVP) come first,
 ordered by C-Enc v2 terrain cosine; the rest follow by cosine.

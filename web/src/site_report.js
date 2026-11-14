@@ -92,7 +92,7 @@ export function candidateDossier({ data, active, rank, status, refinedCandidate,
   if(data.global_visual) queryUrl += `&visual=${data.global_visual.mode || "complete"}`
   const refinedSource = refinedCandidate?.source
   return [
-    message`# Analog Atlas 候選地點證據摘要：${active.name}`,
+    message`# TwinGround 候選地點證據摘要：${active.name}`,
     '',
     message`- 匯出時間（UTC）：${exportedAt}`,
     message`- 候選 ID：${active.id}；本次排名：${rank}/${data.matches.length}`,

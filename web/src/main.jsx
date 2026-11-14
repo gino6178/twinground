@@ -401,7 +401,7 @@ function Header({ stage, body, onHome, onBody, onResults, onChat }) {
   const current = key => (key === 'results' ? stage === 2 : stage === 1 && body === key) ? 'page' : undefined
   return <header className="topbar">
     <button className="brand" onClick={onHome} aria-label="返回入口頁">
-      <span className="brand-word">Analog Atlas</span>
+      <span className="brand-word">TwinGround</span>
     </button>
     <nav className="topnav" aria-label="網站導覽">
       <button type="button" className="topnav-link" aria-current={current('moon')} onClick={() => onBody('moon')}>月球</button>
@@ -1411,7 +1411,8 @@ function App() {
       {stage !== 0 && (
         <footer className="site-footer">
           <div>
-            <b>Analog Atlas</b>
+            <b>TwinGround</b>
+            <p className="brand-tagline">{getLanguage() === 'en' ? 'Finding Earth’s twins of the Moon and Mars' : '在地球上找出月球與火星的雙胞胎'}</p>
             <p>{getLanguage() === 'en' ? 'Candidates are proposals of the same kind of setting; measured properties such as chemistry may not match, and they are not validated analog sites. This site is not endorsed by NASA.' : '候選地點是同類場域的提案，實測物理性質（例如化學成分）不一定相符，也不代表已驗證的類比場址。本網站未經 NASA 背書。'}</p>
           </div>
           <nav aria-label="NASA">

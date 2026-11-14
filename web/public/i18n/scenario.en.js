@@ -5,7 +5,7 @@ window.ATLAS_I18N.add({
  "3D 比對視圖": "3D comparison view",
  "3× 觀察模式": "3× viewing mode",
  "5× 觀察模式": "5× viewing mode",
- "Analog Atlas · 3D 任務情境": "Analog Atlas · 3D mission scenario",
+ "TwinGround · 3D 任務情境": "TwinGround · 3D mission scenario",
  "Apollo 月球模組 · 約 9.4 m 著陸腳跨度": "Apollo Lunar Module · about 9.4 m landing-leg span",
  "CTX 正射影像無法載入：{0}。目前仍顯示 DEM 純色預覽。": "CTX orthoimage could not be loaded: {0}. The solid-color DEM preview is still shown.",
  "HDU 依 NASA 設計概念約 5 m 尺度；此單一 GLB 為 part 1": "HDU at about 5 m scale per the NASA design concept; this single GLB is part 1",

@@ -1,5 +1,5 @@
 [Unit]
-Description=Analog Atlas spec writer (fine-tuned Llama 3.2 1B, weights in ~/llm/serve)
+Description=TwinGround spec writer (fine-tuned Llama 3.2 1B, weights in ~/llm/serve)
 [Service]
 Type=simple
 WorkingDirectory=/home/gino/nasa_2026/comp1/scripts/chat_search

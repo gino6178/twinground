@@ -74,7 +74,7 @@ export function Landing({ Globe, onStart, onStartMars, onChat, onPickMoon, onPic
     <motion.main key="hero" ref={root} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="landing" aria-label={tr('選擇月球或火星', 'Choose the Moon or Mars')}>
       <EntryCosmos onPick={body => (body === 'mars' ? onStartMars() : onStart())} />
       <nav className="landing-nav" aria-label={tr('網站導覽', 'Site navigation')}>
-        <span className="landing-brand">Analog Atlas</span>
+        <span className="landing-brand">TwinGround</span>
         <div className="landing-links">
           <a href="#landing-worlds">{tr('月球與火星', 'Moon and Mars')}</a>
           <a href={method}>{tr('方法與原理', 'Methods')}</a>
@@ -88,7 +88,7 @@ export function Landing({ Globe, onStart, onStartMars, onChat, onPickMoon, onPic
           <h1>{en ? <><span>Find the Moon</span> <span>and Mars on Earth</span></> : <><span>在地球上找出</span><span>像月球與火星的地方</span></>}</h1>
           <p className="landing-lead">{tr(
             '在月球或火星上選一塊地，先找出地球上屬於同類環境與地質場域的地方，再依地形排序，並排比較兩邊的 3D 地形，最後以太空人的視角走進去。',
-            'Pick a patch of the Moon or Mars. Analog Atlas first finds places on Earth in the same kind of environmental and geological setting, ranks them by terrain, sets the two side by side in 3D, and lets you walk in as an astronaut.')}</p>
+            'Pick a patch of the Moon or Mars. TwinGround first finds places on Earth in the same kind of environmental and geological setting, ranks them by terrain, sets the two side by side in 3D, and lets you walk in as an astronaut.')}</p>
           <div className="landing-cta">
             <button type="button" className="landing-primary" onClick={onStart}>{tr('從月球開始', 'Start on the Moon')} <ArrowRight size={18} aria-hidden="true" /></button>
             <button type="button" className="landing-secondary" onClick={onStartMars}>{tr('從火星開始', 'Start on Mars')}</button>
@@ -120,7 +120,8 @@ export function Landing({ Globe, onStart, onStartMars, onChat, onPickMoon, onPic
 
       <footer className="landing-footer">
         <div className="landing-footer-brand" data-reveal>
-          <b>Analog Atlas</b>
+          <b>TwinGround</b>
+          <p className="brand-tagline">{tr('在地球上找出月球與火星的雙胞胎', 'Finding Earth’s twins of the Moon and Mars')}</p>
           <p>{tr('候選地點是同類場域的提案，實測物理性質（例如化學成分）不一定相符，也不代表已驗證的類比場址。本網站未經 NASA 背書。', 'Candidates are proposals of the same kind of setting; measured properties such as chemistry may not match, and they are not validated analog sites. This site is not endorsed by NASA.')}</p>
         </div>
         <div className="landing-footer-links" data-reveal style={delay(80)}>

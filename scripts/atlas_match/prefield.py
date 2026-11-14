@@ -15,7 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 CACHE = ROOT / 'data/research/atlas_match/prefield_cache.json'
-UA = {'User-Agent': 'analog-atlas-prefield/1.0 (python urllib)'}
+UA = {'User-Agent': 'twinground-prefield/1.0 (python urllib)'}
 _LOCK = threading.Lock()
 _MEM = None
 

@@ -2,7 +2,7 @@ import {UI_MESSAGES} from './ui_messages.js'
 import {REPORT_MESSAGES,REPORT_TEXT} from './report_catalog.js'
 import {EN} from './catalog.js'
 import {SERVER_TEXT,SERVER_PATTERNS} from './server_catalog.js'
-export const LANGUAGE_KEY='analog-atlas:language:v1'
+export const LANGUAGE_KEY='twinground:language:v1'
 export function initialLanguage(search='',storage=null){
  const requested=new URLSearchParams(search).get('lang')
  if(requested==='en'||requested==='zh-Hant')return requested

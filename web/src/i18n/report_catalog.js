@@ -10,7 +10,7 @@ export const REPORT_MESSAGES = {
   "{0}；共同有效格點 {1}%；四個獨立中位數不必合計 100%": "{0}; samples valid in all four layers {1}%; four separate medians need not sum to 100%",
   "- 自建 {0} 參數月球區域材質模型：{1}。模型以已發表 Kaguya 估值作弱標籤，不是現地真值或窗格內精細材質圖。": "- Research lunar regional material model ({0} parameters): {1}. Published Kaguya estimates are weak labels, not field truth or a fine material map within the window.",
   "{0}；{1}° 格網，格心距選點 {2} km": "{0}; {1}° grid, cell center {2} km from the selected point",
-  "# Analog Atlas 候選地點證據摘要：{0}": "# Analog Atlas candidate evidence report: {0}",
+  "# TwinGround 候選地點證據摘要：{0}": "# TwinGround candidate evidence report: {0}",
   "- 聯合評分設定（rock_label 以英文顯示）：{0}": "- Joint-ranking configuration (source fields; rock_label shown in English, API value unchanged): {0}",
   "- 匯出時間（UTC）：{0}": "- Exported at (UTC): {0}",
   "- 候選 ID：{0}；本次排名：{1}/{2}": "- Candidate ID: {0}; rank in loaded results: {1}/{2}",

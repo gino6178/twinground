@@ -1,7 +1,7 @@
 [Unit]
-Description=Cloudflare quick tunnel for the rebuilt Analog Atlas (port 8766)
-After=analog-atlas-web-v2.service
-Wants=analog-atlas-web-v2.service
+Description=Cloudflare quick tunnel for TwinGround (port 8766)
+After=twinground-web.service
+Wants=twinground-web.service
 [Service]
 Type=simple
 ExecStart=/home/gino/bin/cloudflared tunnel --no-autoupdate --url http://127.0.0.1:8766

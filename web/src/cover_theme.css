@@ -162,3 +162,4 @@
 /* astronaut explorer: cover colours and type over the 3D scene */
 .eva{--eva-accent:#f0f0f0;--eva-panel:#040404d1;--eva-line:#ffffff1f;background:var(--cv-bg)}
 
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .site-footer .brand-tagline{margin-top:2px;color:var(--cv-ink);font-weight:600}

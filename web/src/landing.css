@@ -136,3 +136,4 @@ html[lang=en] .landing h1{font-size:clamp(34px,3.7vw,56px)}
   .landing [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}
   .landing-shot img,.landing-primary svg,.landing-text-button svg,.landing-numbers-note a svg{transition:none}
 }
+.landing-footer-brand .brand-tagline{margin-top:4px;color:var(--ink);font-weight:600}

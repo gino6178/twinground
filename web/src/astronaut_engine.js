@@ -1864,7 +1864,7 @@ export function createAstronautEngine({ container, minimap, worlds, initial = 't
     const url = renderer.domElement.toDataURL('image/png')
     const link = document.createElement('a')
     link.href = url
-    link.download = `analog-atlas-eva-${state[active].body}-${Date.now()}.png`
+    link.download = `twinground-eva-${state[active].body}-${Date.now()}.png`
     document.body.appendChild(link); link.click(); link.remove()
     return true
   }

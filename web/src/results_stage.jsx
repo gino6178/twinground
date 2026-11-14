@@ -359,7 +359,7 @@ export default function ResultsStage({ onVisual, onTerrain, data, activeId, onAc
     const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url
-    link.download = `analog-atlas-${data.window.body}-${data.window.patch_km}km-${active.id.replace(/[^a-z0-9_-]/gi, '_')}.md`
+    link.download = `twinground-${data.window.body}-${data.window.patch_km}km-${active.id.replace(/[^a-z0-9_-]/gi, '_')}.md`
     document.body.appendChild(link)
     link.click()
     link.remove()

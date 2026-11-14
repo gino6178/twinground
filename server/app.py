@@ -88,5 +88,5 @@ def main():
     warm(sys.modules[__name__])
     server = ThreadingHTTPServer((config.HOST, config.PORT), Handler)
     server.daemon_threads = True
-    print(f"Analog Atlas: http://localhost:{config.PORT}/", flush=True)
+    print(f"TwinGround: http://localhost:{config.PORT}/", flush=True)
     server.serve_forever()

@@ -1,6 +1,6 @@
-/* Analog Atlas static-page i18n (v2).
+/* TwinGround static-page i18n (v2).
  * Same language rule as the explorer (web/src/i18n/core.js): ?lang=en|zh-Hant wins, otherwise the
- * saved choice in localStorage 'analog-atlas:language:v1', otherwise Traditional Chinese.
+ * saved choice in localStorage 'twinground:language:v1', otherwise Traditional Chinese.
  * Chinese mode is an identity: __t returns its input and __m rebuilds the original template.
  * English mode looks strings up in dictionaries registered with ATLAS_I18N.add(); unknown text is
  * left unchanged (never guessed). Only display text and display attributes are translated;
@@ -8,7 +8,7 @@
  * English strings are machine-proposed translations, not expert reviewed (see i18n_v2 evidence).
  */
 (function () {
-  var KEY = 'analog-atlas:language:v1'
+  var KEY = 'twinground:language:v1'
   var forced = document.documentElement.getAttribute('data-atlas-lang')
   function initial() {
     if (forced === 'en' || forced === 'zh-Hant') return forced

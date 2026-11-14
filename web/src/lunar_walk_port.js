@@ -13,7 +13,7 @@
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 //
-// Changes for Analog Atlas: the noise function is passed in, the shader hooks chain onto materials that already
+// Changes for TwinGround: the noise function is passed in, the shader hooks chain onto materials that already
 // have hooks (sun visibility, shadow cascade), and the level-of-detail dithering of the original is left out.
 import * as THREE from 'three'
 import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js'

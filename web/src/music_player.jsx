@@ -11,7 +11,7 @@ const TRACKS = {
   results: { src: '/music/music7.mp3', zh: 'Waves of Alpha', en: 'Waves of Alpha' },
   chat: { src: '/music/planet_ice.mp3', zh: '星海低語', en: 'Whispers of the Star Sea' },
 }
-const VOLUME = 0.35, KEY = 'analog-atlas-music'
+const VOLUME = 0.35, KEY = 'twinground-music'
 // one shared player for the whole page, so the music survives header/landing remounts
 const P = { el: null, src: null, fade: null }
 const read = () => { try { return localStorage.getItem(KEY) === 'on' } catch { return false } }

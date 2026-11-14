@@ -2,7 +2,7 @@
    Machine-proposed English, reviewed in the i18n_v2 pass; not reviewed by a native-speaking domain expert. */
 window.ATLAS_I18N.add({
  "12 筆已完成並匯出。請將 JSON 交給研究團隊。": "All 12 items completed and exported. Please give the JSON to the research team.",
- "Analog Atlas · Cima 地表證據盲審": "Analog Atlas · Cima Surface Evidence Blind Review",
+ "TwinGround · Cima 地表證據盲審": "TwinGround · Cima Surface Evidence Blind Review",
  "RGB 外觀無法確認礦物或月／火材質等效性。樣本方框可能重疊；落在 NASA HyTES 航線足跡內也不代表已有有效光譜像元。": " RGB appearance cannot confirm mineralogy or Moon/Mars material equivalence. Sample boxes may overlap; falling within a NASA HyTES flight-line footprint does not mean valid spectral pixels are available.",
  "USGS NAIP 2022 · 500 m 方框 · 點擊開啟原尺寸": "USGS NAIP 2022 · 500 m box · Click to open full size",
  "{0} / {1} 完成 · {2}": "{0} / {1} complete · {2}",

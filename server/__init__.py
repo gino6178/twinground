@@ -1,1 +1,1 @@
-"""Analog Atlas web server."""
+"""TwinGround web server."""
