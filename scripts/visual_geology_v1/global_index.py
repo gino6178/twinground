@@ -132,8 +132,8 @@ def compare(rows,indices,shortlist,context_scores,body,lat,lon,scale,mode='compl
  return shortlist,meta,matches
 
 def seed():
- initialize();import web_server
- _,_,rows,scale_data,_=web_server.resources()
+ initialize();from server.resources import resources
+ _,_,rows,scale_data,_=resources()
  with connect() as c:
   for scale,(indices,_) in scale_data.items():
    points=[];windows=[]

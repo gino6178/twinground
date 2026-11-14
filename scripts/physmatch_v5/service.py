@@ -128,12 +128,31 @@ class _Binned:
         r = np.loadtxt(path, comments='#', delimiter=',')
         self.la0, self.la1, self.lo0, self.lo1, self.v = r[:, 0], r[:, 1], r[:, 2], r[:, 3], r[:, 4] * scale
 
+        # Grid lookup: index each bin by its (lat0, lon0) cell; first row wins, as in a linear scan.
+        self._lat_edges, li = np.unique(self.la0, return_inverse=True)
+        self._lon_edges, lj = np.unique(self.lo0, return_inverse=True)
+        keys = li.astype(np.int64) * len(self._lon_edges) + lj
+        self._keys, self._first = np.unique(keys, return_index=True)
+
+    def _scan(self, a, o):
+        m = np.flatnonzero((self.la0 <= a) & (a < self.la1) & (self.lo0 <= o) & (o < self.lo1))
+        return m[0] if len(m) else -1
+
     def at(self, lat, lon):
+        lat = np.asarray(lat, float); lon = np.asarray(lon, float)
         out = np.full(len(lat), np.nan)
-        for i, (a, o) in enumerate(zip(lat, lon)):
-            m = np.flatnonzero((self.la0 <= a) & (a < self.la1) & (self.lo0 <= o) & (o < self.lo1))
-            if len(m):
-                out[i] = self.v[m[0]]
+        i = np.searchsorted(self._lat_edges, lat, side='right') - 1
+        j = np.searchsorted(self._lon_edges, lon, side='right') - 1
+        key = i.astype(np.int64) * len(self._lon_edges) + j
+        pos = np.clip(np.searchsorted(self._keys, key), 0, len(self._keys) - 1)
+        row = np.where((i >= 0) & (j >= 0) & (self._keys[pos] == key), self._first[pos], -1)
+        r = np.maximum(row, 0)
+        hit = (row >= 0) & (self.la0[r] <= lat) & (lat < self.la1[r]) & (self.lo0[r] <= lon) & (lon < self.lo1[r])
+        out[hit] = self.v[r[hit]]
+        for k in np.flatnonzero(~hit):  # outside the regular grid: fall back to the exact scan
+            m = self._scan(lat[k], lon[k])
+            if m >= 0:
+                out[k] = self.v[m]
         return out
 
 
