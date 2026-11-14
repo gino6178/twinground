@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TwinGround – Project Details</title>
+<style>
+  @page { size: A4; margin: 15mm 15mm 15mm 15mm; }
+  :root { --ink:#1d2430; --muted:#5b6574; --blue:#1a4fd8; --red:#d4321c; --line:#d8dee6; --soft:#f3f6fa; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); font-size: 10.2pt;
+         line-height: 1.5; margin: 0; background: #fff; }
+  .title { font-size: 26pt; font-weight: 800; color: var(--blue); letter-spacing: .01em; margin: 0; }
+  .kicker { font-size: 8.5pt; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+  .tagline { font-size: 12pt; color: var(--muted); margin: 2px 0 10px; }
+  h2 { font-size: 14.5pt; color: var(--blue); text-transform: uppercase; font-weight: 800; letter-spacing: .02em;
+       margin: 20px 0 6px; break-after: avoid; }
+  h3 { font-size: 10.6pt; color: var(--red); text-transform: uppercase; font-weight: 600; letter-spacing: .03em;
+       margin: 14px 0 4px; break-after: avoid; }
+  h4 { font-size: 10.2pt; margin: 10px 0 3px; break-after: avoid; }
+  p { margin: 0 0 7px; text-align: left; }
+  ul, ol { margin: 0 0 8px; padding-left: 20px; }
+  li { margin-bottom: 3px; }
+  figure { margin: 10px 0 12px; break-inside: avoid; }
+  figure img { display: block; margin: 0 auto; max-width: 100%; max-height: 118mm; object-fit: contain; }
+  figure img.shot { border: 1px solid var(--line); border-radius: 4px; }
+  figcaption { font-size: 8.6pt; color: var(--muted); margin-top: 5px; }
+  figcaption b { color: var(--ink); }
+  .row { display: flex; gap: 10px; align-items: flex-start; }
+  .row figure { flex: 1; margin-top: 4px; }
+  table { width: 100%; border-collapse: collapse; font-size: 8.8pt; margin: 6px 0 4px; }
+  thead { display: table-header-group; }
+  tr { break-inside: avoid; }
+  th, td { border-bottom: 1px solid var(--line); padding: 4px 6px; text-align: left; vertical-align: top; }
+  th { background: var(--soft); font-weight: 600; }
+  .tcap { font-size: 8.6pt; color: var(--muted); margin: 8px 0 2px; break-after: avoid; }
+  .tcap b { color: var(--ink); }
+  .tnote { font-size: 8.2pt; color: var(--muted); margin: 0 0 10px; }
+  .eq { display: flex; align-items: center; justify-content: center; gap: 18px; margin: 8px 0 10px; font-size: 12pt; break-inside: avoid; }
+  .eq .n { color: var(--muted); font-size: 10pt; }
+  .box { background: var(--soft); border-left: 3px solid var(--blue); padding: 8px 12px; margin: 8px 0 12px; break-inside: avoid; }
+  .outline { columns: 2; column-gap: 24px; font-size: 9.8pt; }
+  .outline li { break-inside: avoid; }
+  .refs li { font-size: 8.5pt; margin-bottom: 2px; }
+  .small { font-size: 8.6pt; color: var(--muted); }
+  .pb { break-before: page; }
+  .kpi { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 8px 0 12px; break-inside: avoid; }
+  .kpi div { background: var(--soft); border-radius: 6px; padding: 7px 9px; }
+  .kpi b { display: block; font-size: 14pt; color: var(--blue); }
+  .kpi span { font-size: 8.4pt; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<div class="kicker">NASA Space Apps Challenge 2026 · Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars</div>
+<h1 class="title">TWINGROUND</h1>
+<div class="tagline">Finding Earth’s twins of the Moon and Mars, and stating what Earth cannot match</div>
+
+<h3>Outline</h3>
+<ol class="outline">
+  <li>Summary</li>
+  <li>The Problem</li>
+  <li>Data Sources and Integration</li>
+  <li>Theoretical Foundation</li>
+  <li>Results</li>
+  <li>Machine-Learning Models</li>
+  <li>System Architecture and Search Pipeline</li>
+  <li>User Interface</li>
+  <li>Tools, Languages, Hardware and Software</li>
+  <li>Benefits and Intended Impact</li>
+  <li>Technical Innovations</li>
+  <li>Factors Considered and Limitations</li>
+  <li>Conclusion</li>
+  <li>Use of Artificial Intelligence (AI)</li>
+  <li>Selected References</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>1. Summary</h2>
+<p>TwinGround is a web system that finds Earth analogs for any location on the Moon or Mars. The user picks a window
+of 20, 40 or 80 km on a 3D globe, describes a site in plain language, or uploads an image. TwinGround reads the
+window’s properties from NASA orbital data and ranks about <b>484,000 Earth windows</b> as analog candidates for a chosen
+use: <b>ISRU resources, mobility, thermal work or base siting</b>. Each candidate comes with an explanation (which properties
+match, which do not, and which Earth cannot supply at all), side-by-side 3D terrain, a site dossier (dryness, geology,
+what can be tested there, field season, nearest road, town and airport), and an astronaut explorer for walking both sites.</p>
+<p>Behind the system is a research study, <i>The Earth Ceiling: Quantifying the Limits and Systematic Biases of Terrestrial
+Analogs for the Moon and Mars</i>. It places 117 lunar and Martian query windows and 75,860 terrestrial windows in one property
+space harmonized in <b>units, spatial support and sensing depth</b>, and defines the <b>Earth ceiling</b> as the best use score any
+measured terrestrial window can reach. Every confirmatory test was frozen with a SHA-256 hash before its Earth data were read.</p>
+
+<div class="kpi">
+  <div><b>484,015</b><span>Earth land windows (20 / 40 / 80 km)</span></div>
+  <div><b>117</b><span>lunar and Martian query windows evaluated</span></div>
+  <div><b>0.52–0.77</b><span>retrieval efficiency of property ranking (lunar FeO, K, Th)</span></div>
+  <div><b>−0.19–0.02</b><span>retrieval efficiency of setting-based screening</span></div>
+</div>
+
+<div class="box"><b>Key findings.</b>
+<ul style="margin:4px 0 0">
+  <li>Kilometre-scale roughness can always be matched on Earth: the mobility ceiling is 1 for all 117 queries.</li>
+  <li>No Earth regolith window matches lunar FeO, TiO₂, K and Th together (mean lunar resource ceiling 0.75). Martian FeO lies above every measured Earth topsoil footprint (52 of 52 queries), and for 8 of 18 named Martian sites no Earth surface comes within 20 K of the modelled night temperature.</li>
+  <li>Choosing analogs by setting (“dry, bare, basaltic”) finds the kind of place experts name (catalogued analogs are about 12 times denser) but moves candidates toward potassium- and thorium-rich continental crust, away from lunar and Martian chemistry, in all 20 distinct candidate pools tested.</li>
+  <li>The answer is a <b>boundary-condition inventory</b>: terrain to field sites, feedstock chemistry to laboratory simulants, and thermal regimes to thermal-vacuum chambers.</li>
+</ul></div>
+
+<!-- ============================================================ -->
+<h2>2. The Problem</h2>
+<p>NASA plans a sustained human presence near the lunar south pole under Artemis, and later on Mars. Before that, rovers,
+excavators, ISRU plants, habitats and crews must be tested on Earth. Terrestrial analogs have served this role for decades,
+and the inference they license is <b>functional</b>: a site is an analog for the properties a given test depends on. A basaltic
+lava field may serve a mobility test and still differ from the feedstock chemistry of an ISRU trial, and neither may reproduce
+the thermal environment a habitat must survive.</p>
+<p>In practice, analog sites are chosen mainly from expert experience and curated lists such as NASA’s Planetary Analog Explorer,
+and they are described by setting: arid, unvegetated, basaltic, volcanic, cold. The Atacama Desert, Hawaiian volcanoes and
+the McMurdo Dry Valleys for Mars, and young basaltic fields such as Craters of the Moon for lunar lava terrain, are
+canonical examples. Selection by setting has real strengths (access, prior work, several useful features at once), but it has never
+given a quantitative answer to two questions:</p>
+<ol>
+  <li><b>How closely does a given site reproduce the measured properties of a specific lunar or Martian target?</b></li>
+  <li><b>How closely could any place on Earth reproduce them at all?</b></li>
+</ol>
+<p>Answering them is harder than it looks. Lunar and Martian chemistry comes from orbital gamma-ray spectrometers whose footprints span
+tens to hundreds of kilometres, whereas Earth chemistry comes from airborne surveys, soil samples and rock analyses whose supports range
+from hand specimens to kilometres. Topography, albedo and temperature differ in resolution, illumination and local time. TwinGround solves this
+<b>harmonization gap</b> first, then ranks and explains.</p>
+<p>We addressed three research questions:</p>
+<ul>
+  <li><b>RQ1 — Feasibility and its bound.</b> Does Earth contain windows that reproduce lunar and Martian composition and physical environment under multi-property, same-unit constraints, and what limits the best attainable match?</li>
+  <li><b>RQ2 — Validity of heuristic analogs.</b> Do candidates selected by qualitative setting criteria approach that bound, or are they systematically displaced?</li>
+  <li><b>RQ3 — Generalizability.</b> How far can Earth properties be predicted where they are unmeasured, and how do they change with spatial support?</li>
+</ul>
+
+<figure>
+  <img src="../web/public/technology/figures/fig_concept_en.png" style="max-height:78mm">
+  <figcaption><b>Figure 1. The property space and the Earth ceiling with real data.</b> (a) Potassium and FeO of Earth regolith windows (grey density), Earth bedrock windows
+  (green contours, GEOROC whole rock), windows passing heuristic screening (orange), lunar queries (blue) and Martian queries (red, 220 km footprint means), with Apollo high-Ti and KREEP basalt,
+  mid-ocean-ridge basalt and the upper continental crust as end-members. (b) The resource-use ceiling of the Mare Tranquillitatis pit, a high-titanium target relevant to oxygen extraction
+  from ilmenite: 0.40 on the regolith track (135 windows match K and Th only) against 1.0 on the bedrock track (one of 6,172 whole-rock windows matches all four properties).</figcaption>
+</figure>
+
+<!-- ============================================================ -->
+<h2>3. Data Sources and Integration</h2>
+
+<h3>Objective</h3>
+<p>To build a <b>cross-body property space</b> in which a lunar or Martian window and an Earth window are described by the same quantities,
+in the same units, averaged over the same area and sensing the same depth. Each window carries a property vector
+<b>x = (FeO, TiO₂, K, Th, albedo, roughness, T<sub>day</sub>, T<sub>night</sub>)</b>.</p>
+
+<h3>3.1 Harmonized target properties</h3>
+<div class="tcap"><b>Table 1.</b> Planetary and terrestrial measurements for each property, with the support and harmonization applied.</div>
+<table>
+  <thead><tr><th style="width:15%">Property</th><th style="width:20%">Moon</th><th style="width:20%">Mars</th><th style="width:25%">Earth reference</th><th>Support and harmonization</th></tr></thead>
+  <tr><td>FeO, TiO₂ (wt%)</td><td>Lunar Prospector GRS</td><td>Mars Odyssey GRS (Fe; no Ti)</td><td>Topsoil: USGS DS801, NGSA (Australia), FOREGS (Europe). Whole rock: GEOROC</td><td>Fe and Ti as oxides (TiO₂ = 1.668 Ti); 40 km window (Moon), 220 km disk (Mars)</td></tr>
+  <tr><td>K (wt%), Th (ppm)</td><td>Lunar Prospector GRS</td><td>Mars Odyssey GRS</td><td>Airborne gamma-ray surveys of Australia (Radiometric Map v4 2019) and North America (NAMrad)</td><td>Orbital footprint kernel applied to Earth grids (Eq. 1); coverage ≥ 80% of kernel weight</td></tr>
+  <tr><td>Albedo</td><td>LROC WAC I/F; LOLA normal albedo (secondary proxies)</td><td>MGS TES Lambert albedo</td><td>GLASS snow-free albedo</td><td>40 km window mean</td></tr>
+  <tr><td>Roughness (°)</td><td>LOLA DEM</td><td>MGS MOLA MEGDR</td><td>NOAA ETOPO 2022</td><td>Median slope after area-averaging to 1.88 km (MOLA spacing) on all three bodies</td></tr>
+  <tr><td>Surface temperature (K)</td><td>LRO Diviner (outside Earth range; not scored)</td><td>Mars Climate Database (model)</td><td>MODIS MOD11A2</td><td>Local times of the MODIS Terra overpass (≈10:30 and 22:30)</td></tr>
+  <tr><td>Setting criteria</td><td>USGS Unified Geologic Map of the Moon</td><td>USGS SIM 3292; SWIM ice; OMEGA, CRISM</td><td>GLiM, ESA WorldCover, Köppen–Geiger, Aridity Index, SoilGrids, Smithsonian GVP volcanoes</td><td>Categorical verdicts (match / partial / mismatch)</td></tr>
+  <tr><td>Polar illumination</td><td>LOLA average illumination and permanent shadow</td><td>–</td><td>–</td><td>240 m maps aggregated to windows</td></tr>
+</table>
+<p class="tnote">GRS = gamma-ray spectrometer. Lunar values are 40 km window means; Martian chemistry is compared at the 220 km Mars Odyssey footprint.</p>
+
+<h3>3.2 Spatial harmonization and multiscale discretization</h3>
+<p>Targets and candidates are square tangent-plane windows of side <i>L</i> ∈ {20, 40, 80} km, compared only at equal <i>L</i>.
+The Earth index holds every ETOPO 2022 land window with at most 5% sea: <b>484,015 windows</b> (326,374 at 20 km, 75,860 at 40 km and 81,781 at 80 km),
+reaching about 84° N–S. The 117 query windows comprise 37 named sites (19 lunar, including 6 south-polar windows chosen from LOLA illumination maps, and 18 Martian)
+and 80 windows drawn uniformly at random before any of their values were examined (40 on the Moon within 60° of the equator, 40 on Mars within 55°).</p>
+<p>Orbital gamma-ray spectrometers and airborne gamma-ray surveys both sense the upper few tens of centimetres in the same units, but their spatial supports
+differ by orders of magnitude. Earth grids are therefore <b>blurred with the footprint kernel of the orbital instrument</b> before they are compared:</p>
+<div class="eq"><math><msub><mover><mi>x</mi><mo>¯</mo></mover><mi>k</mi></msub><mo>(</mo><mi>w</mi><mo>)</mo><mo>=</mo><mfrac><mrow><munder><mo>∑</mo><mi>i</mi></munder><mi>K</mi><mo>(</mo><msub><mi>d</mi><mi>i</mi></msub><mo>)</mo><mspace width="0.1em"/><msub><mi>x</mi><mi>k</mi></msub><mo>(</mo><msub><mi>s</mi><mi>i</mi></msub><mo>)</mo></mrow><mrow><munder><mo>∑</mo><mi>i</mi></munder><mi>K</mi><mo>(</mo><msub><mi>d</mi><mi>i</mi></msub><mo>)</mo></mrow></mfrac><mo>,</mo><mspace width="1em"/><msub><mi>K</mi><mtext>Moon</mtext></msub><mo>(</mo><mi>d</mi><mo>)</mo><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>d</mi><mn>2</mn></msup><mo>/</mo><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow></msup><mo>,</mo><mspace width="0.6em"/><msub><mi>K</mi><mtext>Mars</mtext></msub><mo>(</mo><mi>d</mi><mo>)</mo><mo>=</mo><mn>𝟙</mn><mo>[</mo><mi>d</mi><mo>≤</mo><mn>220</mn><mspace width="0.2em"/><mtext>km</mtext><mo>]</mo></math><span class="n">(1)</span></div>
+<p>where <i>x<sub>k</sub>(s<sub>i</sub>)</i> are grid values at distance <i>d<sub>i</sub></i> from the window centre <i>w</i>. The lunar kernel is a Gaussian of 45 km full width at half maximum
+(the footprint of one Lunar Prospector measurement at 30 km altitude), truncated at 3σ; the Martian kernel is a 220 km disk, about the radius within which Mars Odyssey receives
+half of its signal. A window counts as covered when at least 80% of the kernel weight has data (9,904 windows at the lunar kernel and 8,079 at the Martian kernel).</p>
+<p>To see what this averaging hides, the comparison was repeated on a <b>ladder of supports</b>: native airborne grids sampled on a 1 km lattice and averaged over blocks of
+1, 2, 4, 8, 20 and 40 km, with individual whole-rock analyses standing for hand specimens.</p>
+
+<figure>
+  <img src="../web/public/technology/figures/fig_ladder_en.png" style="max-height:95mm">
+  <figcaption><b>Figure 2. The ladder of spatial supports.</b> (a) Airborne K around Craters of the Moon on a 1 km lattice with the 220 km Mars Odyssey footprint, the 45 km Lunar Prospector kernel,
+  the 40 km window and an 8 km landing-ellipse block. (b) Share of Earth windows holding at least one sample or block within tolerance of some lunar (blue) or Martian (red) query in both K and Th,
+  from individual rock analyses through 1–40 km airborne blocks to the orbital footprints. (c) Median standard deviation of K inside a 40 km window against block size.</figcaption>
+</figure>
+
+<h3>3.3 Two tracks: regolith and bedrock</h3>
+<p>Earth chemistry enters along two tracks that differ in what they sample:</p>
+<ul>
+  <li><b>Regolith track.</b> Airborne gamma-ray K and Th (Australia, North America), which sense the same upper few tens of centimetres as the orbital instruments,
+  and topsoil FeO and TiO₂ (USGS, NGSA, FOREGS) sampled in the upper 5–25 cm. It describes the weathered surface that a footprint averages and that a rover or excavator meets.</li>
+  <li><b>Bedrock track.</b> The median of at least three GEOROC whole-rock analyses of subaerial volcanic or plutonic rock inside each window, drawn from 339,587 analyses.
+  It describes rock as it occurs in outcrop and hand specimen.</li>
+</ul>
+<p>Of the 75,860 Earth windows at 40 km, <b>4,610</b> have measured topsoil FeO, <b>4,165</b> unattenuated airborne K and Th and <b>6,172</b> whole-rock FeO, TiO₂, K and Th; 616 windows have FeO on both tracks
+and 88 have all four properties on both, which lets the two tracks be compared in the same places. Albedo, roughness and surface temperature are shared by both tracks.
+For petrological reference, 923 whole-rock analyses of Apollo 11, 12, 14, 15 and 17 basalts were taken from the Astromat lunar sample synthesis.</p>
+
+<h3>3.4 Data screening and exclusion</h3>
+<p>Every source was checked for whether it can enter a same-unit comparison. Sources or uses that could not were excluded from scoring or limited to display:</p>
+<div class="tcap"><b>Table 2.</b> Data screening decisions and their technical reasons.</div>
+<table>
+  <thead><tr><th style="width:26%">Data / use</th><th style="width:18%">Decision</th><th>Technical reason</th></tr></thead>
+  <tr><td>LROC WAC 643 nm mosaic as lunar albedo</td><td>Secondary proxy only</td><td>The product is I/F normalized to 60° incidence and phase, not an albedo; treating it as albedo would bias the comparison with GLASS.</td></tr>
+  <tr><td>Lunar day and night temperatures (Diviner)</td><td>Shown, not scored</td><td>They lie outside the terrestrial range; permanently shadowed cold traps reach about 25 K. They are reported as a limit, not a score.</td></tr>
+  <tr><td>Martian surface temperature</td><td>Scored, labelled as model</td><td>No orbital product gives temperatures at the MODIS overpass times, so the Mars Climate Database (a model) is used and labelled as such.</td></tr>
+  <tr><td>Airborne K and Th under water or vegetation</td><td>Masked</td><td>Water (≥ 10%, ESA WorldCover) and tree, crop and wetland cover (≥ 30%) attenuate gamma rays and would read as falsely low K and Th.</td></tr>
+  <tr><td>Earth chemistry estimates far from measurements</td><td>Not scored</td><td>Cross-continent transfer failed in every test (R² below 0.30); estimates beyond 300 km are reported as “no reliable estimate”.</td></tr>
+  <tr><td>Mini-RF (S band) vs Sentinel-1 (C band) radar</td><td>Class comparison only</td><td>Different wavelength and polarization (circular vs linear dual); values are not physically comparable.</td></tr>
+  <tr><td>Esri World Imagery</td><td>Display only</td><td>Not open data and not redistributable; it drapes the 3D terrain with visible attribution and never enters ranking.</td></tr>
+  <tr><td>Known-analog catalogue</td><td>Not an input</td><td>Used only to label candidates and to test screening; using it in ranking would make the evaluation circular.</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>4. Theoretical Foundation</h2>
+
+<h3>4.1 Problem definition</h3>
+<p>Given a planetary query window <i>q</i> with property vector <i>x<sub>q</sub></i>, a set of Earth windows <i>E</i>, and a use <i>u</i> (resources, mobility, thermal, base siting),
+we want (i) a ranking of <i>E</i> by how well each window supplies the properties <i>u</i> requires, and (ii) the best score any measured Earth window can reach.
+A match is defined by a tolerance <i>τ<sub>k</sub></i> in physical units, fixed before any Earth value was read:
+<b>FeO ±3 wt%, TiO₂ ±1.5 wt%, K ±0.2 wt%, Th ±2 ppm, albedo ±0.05, roughness ±1°, temperature ±20 K.</b></p>
+
+<h3>4.2 Match probability</h3>
+<p>For a query <i>q</i>, an Earth window <i>e</i> and a property <i>k</i>:</p>
+<div class="eq"><math><msub><mi>p</mi><mi>k</mi></msub><mo>(</mo><mi>q</mi><mo>,</mo><mi>e</mi><mo>)</mo><mo>=</mo><mrow><mo stretchy="true" symmetric="true">{</mo><mtable columnalign="left" rowspacing="0.6em" columnspacing="1.5em"><mtr><mtd><mn>𝟙</mn><mo>[</mo><mo>|</mo><msub><mi>q</mi><mi>k</mi></msub><mo>−</mo><msub><mi>e</mi><mi>k</mi></msub><mo>|</mo><mo>≤</mo><msub><mi>τ</mi><mi>k</mi></msub><mo>]</mo></mtd><mtd><mtext>measured</mtext></mtd></mtr><mtr><mtd><mstyle displaystyle="true"><mi>Φ</mi><mo>(</mo><mfrac><mrow><msub><mi>q</mi><mi>k</mi></msub><mo>+</mo><msub><mi>τ</mi><mi>k</mi></msub><mo>−</mo><msub><mi>μ</mi><mi>k</mi></msub></mrow><msub><mi>σ</mi><mi>k</mi></msub></mfrac><mo>)</mo><mo>−</mo><mi>Φ</mi><mo>(</mo><mfrac><mrow><msub><mi>q</mi><mi>k</mi></msub><mo>−</mo><msub><mi>τ</mi><mi>k</mi></msub><mo>−</mo><msub><mi>μ</mi><mi>k</mi></msub></mrow><msub><mi>σ</mi><mi>k</mi></msub></mfrac><mo>)</mo></mstyle></mtd><mtd><mtext>estimated</mtext></mtd></mtr></mtable></mrow></math><span class="n">(2)</span></div>
+<p>A measured value enters through the indicator; an estimated value enters through a normal predictive distribution with mean <i>μ<sub>k</sub></i> and scale
+<i>σ<sub>k</sub> = (u<sub>k</sub> − l<sub>k</sub>) / (2 z<sub>0.95</sub>)</i> taken from its 90% conformal interval [<i>l<sub>k</sub></i>, <i>u<sub>k</sub></i>]. Uncertain estimates therefore earn partial credit instead of a hard yes or no.</p>
+
+<h3>4.3 Use score and the Earth ceiling</h3>
+<div class="eq"><math><msub><mi>S</mi><mi>u</mi></msub><mo>(</mo><mi>q</mi><mo>,</mo><mi>e</mi><mo>)</mo><mo>=</mo><mfrac><mrow><munder><mo>∑</mo><mrow><mi>k</mi><mo>∈</mo><msub><mi>K</mi><mi>u</mi></msub><mo>(</mo><mi>q</mi><mo>)</mo></mrow></munder><msub><mi>w</mi><mrow><mi>u</mi><mo>,</mo><mi>k</mi></mrow></msub><msub><mi>p</mi><mi>k</mi></msub><mo>(</mo><mi>q</mi><mo>,</mo><mi>e</mi><mo>)</mo></mrow><mrow><munder><mo>∑</mo><mrow><mi>k</mi><mo>∈</mo><msub><mi>K</mi><mi>u</mi></msub><mo>(</mo><mi>q</mi><mo>)</mo></mrow></munder><msub><mi>w</mi><mrow><mi>u</mi><mo>,</mo><mi>k</mi></mrow></msub></mrow></mfrac><mo>,</mo><mspace width="1.2em"/><msub><mi>C</mi><mi>u</mi></msub><mo>(</mo><mi>q</mi><mo>)</mo><mo>=</mo><munder><mo movablelimits="false">max</mo><mrow><mi>e</mi><mo>∈</mo><msub><mi>E</mi><mtext>meas</mtext></msub></mrow></munder><msub><mi>S</mi><mi>u</mi></msub><mo>(</mo><mi>q</mi><mo>,</mo><mi>e</mi><mo>)</mo></math><span class="n">(3)</span></div>
+<p><i>K<sub>u</sub>(q)</i> is the set of the use’s properties available for the query and <i>E<sub>meas</sub></i> the Earth windows with measured values. A ceiling of 1 means at least one measured window
+lies within tolerance on every required property. A ceiling below 1 has one of three causes: a <b>composition</b> no window reaches, a <b>thermal or radiative regime</b> none reaches, or properties
+that are each reachable alone but <b>never in the same window</b>.</p>
+<div class="tcap"><b>Table 3.</b> Use definitions and property weights.</div>
+<table>
+  <thead><tr><th style="width:24%">Use</th><th>Properties and weights <i>w<sub>u,k</sub></i></th></tr></thead>
+  <tr><td>Resources (ISRU feedstock)</td><td>FeO 0.3, TiO₂ 0.3, K 0.2, Th 0.2</td></tr>
+  <tr><td>Mobility</td><td>Roughness 1.0</td></tr>
+  <tr><td>Thermal environment</td><td>T<sub>day</sub> 0.35, T<sub>night</sub> 0.35, albedo 0.3</td></tr>
+  <tr><td>Base siting</td><td>Roughness 0.5, T<sub>night</sub> 0.25, albedo 0.25</td></tr>
+</table>
+<p class="tnote">Because weights and tolerances are conventions, every ceiling was recomputed under 1,000 random weightings per query and use (Dirichlet, unit concentration) and with all tolerances scaled by 0.5, 1.5 and 2.</p>
+
+<h3>4.4 Retrieval efficiency</h3>
+<p>To judge a ranking method against held-out measurements we use:</p>
+<div class="eq"><math><mi>RE</mi><mo>=</mo><mfrac><mrow><mover><mi>G</mi><mo>¯</mo></mover><mo>−</mo><mover><mi>R</mi><mo>¯</mo></mover></mrow><mrow><mover><mi>U</mi><mo>¯</mo></mover><mo>−</mo><mover><mi>R</mi><mo>¯</mo></mover></mrow></mfrac></math><span class="n">(4)</span></div>
+<p><i>Ḡ</i> is the mean share of a method’s first 30 spatially distinct candidates (centres at least 1.5 <i>L</i> apart) that lie within tolerance on held-out measured values,
+<i>R̄</i> the same share for random order and <i>Ū</i> for an oracle ranking by the measured values. RE is 0 for random order and 1 for ranking by the measurements themselves.</p>
+
+<h3>4.5 Heuristic setting-based screening (the baseline)</h3>
+<p>To represent current practice, what a query asks of a place on Earth was encoded as qualitative criteria derived from the query’s own maps, the way an expert would describe a site.
+On the Moon the setting comes from the USGS Unified Geologic Map and Lunar Prospector FeO class; on Mars from the USGS global geologic map, SWIM ground-ice indicators and OMEGA/CRISM descriptors.
+The criteria (dryness, bare ground, cold, frozen ground, basaltic or sedimentary lithology, nearness to basaltic volcanoes, aeolian or hydrated settings, low sun) are evaluated on Earth from
+GLiM, WorldCover, Köppen–Geiger, the Aridity Index, SoilGrids and the Smithsonian volcano catalogue. Each criterion returns match, partial or mismatch; the fit <i>F(e)</i> is their mean, and windows with
+<i>F</i> ≥ 0.75 form the candidate pool. The screening uses <b>no chemistry, albedo or roughness</b>, so those properties test it independently.</p>
+
+<h3>4.6 Estimating unmeasured Earth chemistry</h3>
+<p>Measured chemistry covers a small part of the land surface, so K, Th, FeO and TiO₂ were also estimated for unmeasured windows from covariates that contain no chemistry
+(lithology, land cover, climate, soil texture and cation exchange capacity, relief, surface temperature, albedo, terrain shape and reflectance), with <b>gradient-boosted trees and 90% conformal intervals</b>.
+Two designs were evaluated: <b>interpolation</b> (labels within 100 km of each test window hidden) and <b>transfer</b> (a whole continent withheld). On identical folds the trees were compared with nearest neighbours
+in covariate space, inverse-distance weighting and a Gaussian process on location.</p>
+
+<h3>4.7 Pre-registration</h3>
+<p>For every confirmatory test, the query values, candidate sets, statistics and decision criteria were written to a protocol file whose <b>SHA-256 hash was recorded before any Earth data used in that test were read</b>,
+so neither candidate pools nor hypotheses could be tuned to the validation data. Screening was tested with match-rate differences between pool members and random windows, one-sided permutation tests,
+two-stage bootstrap intervals and exact sign-flip tests over distinct pools, plus an Earth-to-Earth positive control. All models were trained with a single random seed. Analyses added after results were seen
+(including the Earth-ceiling framing itself) are labelled post hoc.</p>
+
+<figure>
+  <img src="../web/public/technology/figures/fig_framework_en.svg" style="max-height:105mm">
+  <figcaption><b>Figure 3. The cross-body property-space framework.</b> Observed data (grey) are harmonized in support, depth and units (blue); unmeasured Earth chemistry is estimated with intervals (orange).
+  Windows are scored on the regolith and bedrock tracks (Eqs. 2–3) and evaluated by the Earth ceiling, by retrieval efficiency on held-out windows (Eq. 4), by tests of heuristic screening and by scale and transfer analyses.</figcaption>
+</figure>
+
+<!-- ============================================================ -->
+<h2>5. Results</h2>
+
+<h3>5.1 The Earth ceiling at regolith and bedrock scale</h3>
+<p>Single-property physical uses are satisfiable everywhere: every query has Earth windows within tolerance on kilometre-scale roughness, so the <b>mobility ceiling is 1 for all 117 queries</b>.
+Composition is not. <b>No lunar query reaches a resource ceiling of 1</b>; the mean is 0.75. The Martian mean is 0.61, no Martian query reaches 1 for the thermal environment (mean 0.56) or base siting (0.75).
+Among 71 use ceilings below 1 for the named queries, 18 are limited by a composition no Earth window reaches, 16 by a thermal or radiative regime none reaches, and 37 by properties never found together.</p>
+<p>On the bedrock track the mean resource ceiling rises to 0.98 (Moon) and 0.995 (Mars), but the matching windows are rare: a median of 41 of 6,172 whole-rock windows (0.66%) for lunar queries and 6 (0.10%) for Martian ones.
+The compositions exist in Earth’s rock record, but as isolated occurrences rather than as the regolith that footprints average and field operations traverse.</p>
+
+<figure>
+  <img src="../web/public/technology/figures/fig_ceiling_en.png" style="max-height:112mm">
+  <figcaption><b>Figure 4. The Earth ceiling and its causes.</b> (a) For the 37 named queries, the share of measured Earth windows within tolerance of each property and the ceiling of each use, with a stripe coding the cause of every ceiling below 1
+  (orange: composition no window reaches; blue: thermal or radiative regime; grey: properties never together). (b) Earth ceilings of all 117 queries by use.</figcaption>
+</figure>
+
+<div class="tcap"><b>Table 4.</b> Resource-use Earth ceiling at representative sites (regolith and bedrock tracks).</div>
+<table>
+  <thead><tr><th>Site</th><th>FeO</th><th>TiO₂</th><th>K</th><th>Th</th><th>Regolith ceiling (windows)</th><th>Bedrock ceiling (windows)</th><th>Not reachable</th><th>Where</th></tr></thead>
+  <tr><td>Mare Tranquillitatis pit (Moon)</td><td>18.1</td><td>7.6</td><td>0.11</td><td>2.7</td><td>0.40 (135)</td><td>1.0 (1)</td><td>TiO₂</td><td>W. and S. Australia</td></tr>
+  <tr><td>Marius Hills pit (Moon)</td><td>21.2</td><td>7.8</td><td>0.10</td><td>4.4</td><td>0.40 (243)</td><td>0.80 (1)</td><td>FeO, TiO₂</td><td>W. and S. Australia</td></tr>
+  <tr><td>Apollo 16, Descartes (Moon)</td><td>7.6</td><td>0.86</td><td>0.09</td><td>2.9</td><td>0.80 (16)</td><td>1.0 (40)</td><td>–</td><td>Oregon, California</td></tr>
+  <tr><td>South pole, lit 1 (Moon)</td><td>6.7</td><td>0.09</td><td>0.04</td><td>1.9</td><td>0.80 (6)</td><td>1.0 (105)</td><td>–</td><td>Oregon, California</td></tr>
+  <tr><td>Jezero crater (Mars)</td><td>21.4</td><td>–</td><td>0.32</td><td>0.6</td><td>0.57 (15)</td><td>1.0 (3)</td><td>FeO</td><td>Alaska, Saskatchewan</td></tr>
+  <tr><td>Gale crater (Mars)</td><td>18.0</td><td>–</td><td>0.34</td><td>0.6</td><td>0.57 (28)</td><td>1.0 (7)</td><td>FeO</td><td>Alaska, Saskatchewan</td></tr>
+  <tr><td>Olympia Undae (Mars)</td><td>–</td><td>–</td><td>0.16</td><td>0.2</td><td>0.50 (377)</td><td>1.0 (445)</td><td>Day and night T</td><td>W. Australia, N. Territory</td></tr>
+</table>
+<p class="tnote">FeO, TiO₂, K in wt%; Th in ppm. Lunar values are window means, Martian values footprint means.</p>
+
+<h3>5.2 Surface or rock: two sources of the chemical shortfall</h3>
+<p>Where both tracks are measured in the same windows, topsoil holds a median of 3.6 wt% FeO against 8.1 wt% in the rock, is lower in 79% of windows (99.6% where the rock is mafic), and is uncorrelated with it (Spearman ρ = −0.02).
+Airborne thorium exceeds whole-rock thorium (9.4 vs 5.1 ppm), as expected where weathering removes mobile elements and retains thorium in resistant minerals. In the 88 windows with all four properties on both tracks,
+whole rock matches every resource property of 25 of 59 lunar queries and topsoil of none. The shortfall therefore has two sources: <b>weathering</b> (highland, low-Ti and polar lunar targets) and <b>petrogenesis</b>
+(high-Ti mare basalt and Martian crustal iron, rare even in rock). Earth has no lunar-type ilmenite cumulates and no iron-rich mantle like Mars: 99.9% of 91,461 terrestrial basaltic analyses have at most 5.6 wt% TiO₂,
+while Apollo 11 and 17 basalts have mission medians of 11.2 and 12.1 wt%.</p>
+
+<figure>
+  <img src="../web/public/technology/figures/fig_petro_en.png" style="max-height:105mm">
+  <figcaption><b>Figure 5. Petrological and surface origins of the voids.</b> (a) FeO and TiO₂ of Earth topsoil, screened windows, terrestrial basaltic whole rock and 923 Apollo basalt analyses, with the lunar queries.
+  (b) Martian FeO at the 220 km footprint against Earth. (c) Topsoil against whole-rock FeO in 616 paired windows. (d) Lunar resource ceilings on the regolith and bedrock tracks in the 88 fully paired windows.</figcaption>
+</figure>
+
+<h3>5.3 Robustness to weights and tolerances</h3>
+<p>No positive weighting can create a window that matches every property where none exists, so queries with ceilings below 1 keep them under all 1,000 random weightings. The value moves (lunar mean resource ceiling 0.63–0.97 between
+the 5th and 95th percentile of weightings), but even at <b>twice the tolerances</b> two high-titanium lunar queries keep no Earth window within the TiO₂ tolerance and 47 of 52 Martian queries none within the FeO tolerance.</p>
+
+<h3>5.4 Heuristic analogs versus property-level matches</h3>
+<p>Judged against a catalogue of 80 known analog sites, heuristic screening did what it was designed to do: a random top 30 from the pool contained catalogued analogs of the expected type <b>12.2 times</b> more often than a random top 30 from all
+windows (95% CI 7.0–19.1). But measured with data the screening did not use, screened candidates were <b>not closer</b> to their query than random windows (+1.3 percentage points; 95% CI −3.2 to 5.2). At the gamma-ray footprint the
+result reverses: for lunar and Martian queries screened candidates matched footprint-scale K and Th <b>7.6 points less often</b> than random windows (all 13 pools negative), confirmed on the 80 random queries (−7.5 points; all 20 distinct pools negative).
+An Earth-to-Earth positive control showed the test has resolution (+5.6 points when the query was itself an Earth window).</p>
+
+<figure>
+  <img src="../web/public/technology/figures/fig_disp_en.png" style="max-height:95mm">
+  <figcaption><b>Figure 6. Displacement of heuristic screening toward continental crust.</b> One arrow per distinct screening pool, from the queries sharing the pool to the pool’s median window, in footprint-scale K–Th space.
+  Every pool points to higher potassium; the dashed line points from the median lunar query to the upper continental crust. Catalogued analog sites (open circles) sit in the same place.</figcaption>
+</figure>
+
+<div class="tcap"><b>Table 5.</b> Heuristic screening and property-level retrieval on the same diagnostic tests.</div>
+<table>
+  <thead><tr><th style="width:36%">Diagnostic test</th><th>Heuristic screening</th><th>Property-level retrieval</th><th style="width:13%">Null</th></tr></thead>
+  <tr><td>Catalogued analogs of expected type in a random top 30</td><td>12.2-fold denser (7.0–19.1)</td><td>Catalogued sites rank at the 43rd–55th percentile</td><td>1-fold</td></tr>
+  <tr><td>Match rate within tolerance, same-unit properties</td><td>+1.3 points (−3.2 to 5.2)</td><td>–</td><td>0</td></tr>
+  <tr><td>Footprint K and Th, lunar and Martian queries</td><td>−7.6 points (−9.5 to −5.6); 13 of 13 pools negative</td><td>–</td><td>0</td></tr>
+  <tr><td>Retrieval efficiency, lunar-type FeO / K / Th</td><td>0.02 / −0.19 / 0.00</td><td>0.52 / 0.58 / 0.77</td><td>0 (random); 1 (measured)</td></tr>
+  <tr><td>Retrieval efficiency, K at the Martian footprint</td><td>−0.21</td><td>0.27 (90% CI 0.24–0.30)</td><td>0; 1</td></tr>
+</table>
+
+<h3>5.5 Spatial predictability and the extrapolation frontier</h3>
+<p><b>Near measurements, Earth chemistry can be estimated.</b> Within 300 km of measurements, R² was 0.64 (K), 0.41 (Th), 0.40 (FeO) and 0.32 (TiO₂), with 90% intervals covering 90–93% of test windows. The trees beat covariate nearest neighbours,
+inverse-distance weighting and a Gaussian process on location for all four targets. <b>Across continents, it cannot.</b> Models trained on Australia or North America and tested on the other failed for every target (R² from −4.68 to −0.13).
+The reason is geological: deep, long-lived weathering on the stable Australian continent leaches potassium and leaves thorium (median Th/K 12.4 vs 4.9 in North America), and no global covariate describes the depth and age of the weathering profile.
+TwinGround therefore uses estimates only near measured ground and says “no reliable estimate” elsewhere.</p>
+
+<figure>
+  <img src="../web/public/technology/figures/fig_retrieval_en.png" style="max-height:105mm">
+  <figcaption><b>Figure 7. Spatial predictability and its limits.</b> (a) Retrieval efficiency on held-out Earth windows for estimated properties, covariate nearest neighbours and heuristic screening. (b) The same with tolerances scaled by 0.5, 1 and 2.
+  (c) R² within 300 km for four estimators on identical folds. (d) The continental shift in airborne K and Th between Australia and North America.</figcaption>
+</figure>
+
+<p><b>Scale matters.</b> 65% of covered Earth windows contain at least one 1 km cell whose airborne K and Th lie within tolerance of some lunar query, but the share falls to 41% at 8 km and 21% at 40 km: lunar-like patches are common on Earth
+and are averaged away by the footprint. They do not occur at the canonical lunar sites: within the Craters of the Moon and Meteor Crater windows no 1 km cell matches any lunar query in K and Th together. Kilometre-scale terrain shape alone
+recovered at most two catalogued analogs over 31 queries, which marks the resolution limit of present global planetary DEMs.</p>
+
+<figure>
+  <img src="../web/public/technology/figures/fig_scale_en.png" style="max-height:80mm">
+  <figcaption><b>Figure 8. Scale dependence at catalogued analog sites.</b> (a) Lowest block K inside catalogued analog windows against block size, with the K reachable within tolerance of the most potassium-rich lunar and Martian queries.
+  (b) Expected-type analogs recovered by terrain shape on native grids and after degrading all windows to the 1.85 km MOLA spacing.</figcaption>
+</figure>
+
+<h3>5.6 Mission scenarios: Artemis south pole and Jezero crater</h3>
+<p><b>Artemis south pole.</b> Terrain and mobility rehearsals can use any site whose kilometre-scale roughness matches. Highland-like FeO, TiO₂ and Th exist at regolith scale in central Oregon and northern California (ceiling 0.80;
+only lunar potassium, 0.03–0.04 wt%, is missing) and at bedrock scale in 173 windows worldwide. The illumination and thermal regime has no Earth counterpart: the Sun never rises more than about 7.5° above these windows and cold traps fall to about 25 K.
+Catalogued lunar sites reach at most 0.60 for this use (Nördlinger Ries, Lava Beds), and Craters of the Moon reaches 0.</p>
+<p><b>Jezero crater.</b> Regolith-scale resource ceilings stop at 0.57 (K and Th matched in southwestern Alaska and Saskatchewan, FeO not). At bedrock scale three windows match FeO, K and Th together, in northeastern Brazil, northwestern Ontario
+and southwestern Finland, which shows where iron-rich, low-thorium reference rock might be sought. Daytime temperature and albedo are matched together in 3,864 windows, 97% of them north of 50° N.</p>
+
+<figure>
+  <img src="../web/public/technology/figures/fig_missions_en.png" style="max-height:110mm">
+  <figcaption><b>Figure 9. Mission scenarios on Earth.</b> Use scores of every measured Earth window, the windows at the Earth ceiling (black rings), bedrock windows matching every property (green triangles) and catalogued analog sites (white circles),
+  for (a) the resource use of the Artemis south-polar windows, (b) the resource use of Jezero crater and (c) the thermal environment of Jezero crater.</figcaption>
+</figure>
+
+<div class="tcap"><b>Table 6.</b> Boundary-condition inventory: what each use can obtain in the field and what must come from elsewhere.</div>
+<table>
+  <thead><tr><th style="width:26%">Use</th><th style="width:12%">Earth ceiling</th><th>Field sites supply</th><th>Must come from elsewhere</th><th style="width:20%">Recommended setting</th></tr></thead>
+  <tr><td>Mobility and trafficability</td><td>1 (all queries)</td><td>Matched roughness at many sites</td><td>–</td><td>Field sites chosen by measured roughness</td></tr>
+  <tr><td>Lunar highland and polar feedstock</td><td>0.80</td><td>FeO, TiO₂, Th (Oregon, California)</td><td>Lunar-level K</td><td>Earth material with K adjusted in simulants</td></tr>
+  <tr><td>Lunar mare feedstock (oxygen from ilmenite)</td><td>0.40</td><td>K and Th only</td><td>Ti and Fe at mare levels</td><td>Laboratory simulants</td></tr>
+  <tr><td>Martian basaltic feedstock</td><td>0.57</td><td>K and Th (Alaska, Saskatchewan)</td><td>Fe-rich chemistry</td><td>Reference materials and simulants</td></tr>
+  <tr><td>Martian surface thermal environment</td><td>0.30–0.65</td><td>Daytime T and albedo (boreal windows)</td><td>Nights below ≈185 K</td><td>Thermal chambers; Antarctic plateau for night T</td></tr>
+  <tr><td>Lunar polar illumination and cold traps</td><td>none</td><td>Prolonged low sun (partial)</td><td>All-day low sun; ≈25 K</td><td>Thermal-vacuum facilities</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>6. Machine-Learning Models</h2>
+<p>All models were trained by the team on open data, are small enough to run on CPU at serving time (the GPU is reserved for the language model), and are reported with their pre-registered evaluations.
+Model outputs that failed their frozen tests are not shown to users.</p>
+<div class="tcap"><b>Table 7.</b> Models in TwinGround.</div>
+<table>
+  <thead><tr><th style="width:20%">Model</th><th style="width:15%">Size</th><th>Input → output</th><th style="width:30%">Evaluation</th></tr></thead>
+  <tr><td>Tiny terrain encoder</td><td>6,424 parameters (3-layer CNN + MLP)</td><td>DEM window (elevation, slope) + relief → 24-d unit embedding; cosine similarity scores every Earth window of the same size</td><td>Terrain shape alone has limited analog power at km scale (Section 5.5); used as one ranking signal, never alone</td></tr>
+  <tr><td>Lunar crater-centre heads</td><td>Small radial residual CNNs (20 and 40 km)</td><td>DEM window → crater-centre score</td><td>Balanced-sample classification score, labelled as not a calibrated probability; references the Robbins lunar crater database</td></tr>
+  <tr><td>SysOne-Nano</td><td>171,522 parameters</td><td>64 terrain patch tokens + 4 material percentile axes (albedo, ferric, mafic, hydrated; missing axes get a learned embedding) → typed answers (basaltic terrain, volcanic setting, …)</td><td>Frozen cross-body test against the lunar geologic map: AUC 0.90 (basaltic terrain), 0.86 (basaltic volcanic setting). Evidence only, not ranking</td></tr>
+  <tr><td>PitChain-C2F coarse stage</td><td>Gate + terrain encoder</td><td>Earth windows within 60 km of a basaltic Holocene volcano (Smithsonian GVP) first, ordered by terrain cosine</td><td>18 known lava-tube fields: recall@200 31% vs 2% for the encoder alone and 1% random</td></tr>
+  <tr><td>Analytic pit teacher</td><td>No learning</td><td>1–5 m DEM → closed depressions; collapse pits separated from craters by geometry and linked into chains (angle-constrained MST)</td><td>Supervises F-Net only; never used as evaluation truth</td></tr>
+  <tr><td>F-Net v2 skylight detector</td><td>U-Net, 1 input channel</td><td>LROC NAC / HiRISE image → pit / skylight map; trained on synthetic shaded renders of lidar and DTMs</td><td>Blind pixel AP: Moon 0.0055 (LoG baseline 0.0026); Mars zero-shot 0.0083 (0.0019)</td></tr>
+  <tr><td>Earth material inference</td><td>Spatial model</td><td>Lithology, dryness, climate, soil and nearby observed windows → albedo, ferric, mafic, hydrated percentiles (works under vegetation, cloud or snow)</td><td>Spatial-block CV on 3,488 windows: Spearman ρ albedo 0.70, ferric 0.80, mafic 0.48, hydrated 0.42 (nearest-neighbour 0.65 / 0.75 / 0.47 / 0.35)</td></tr>
+  <tr><td>Chemistry estimators</td><td>Gradient-boosted trees + conformal intervals</td><td>Chemistry-free covariates → K, Th, FeO, TiO₂ with 90% intervals</td><td>R² 0.32–0.64 within 300 km; intervals cover 90–93%; fail across continents</td></tr>
+  <tr><td>Chat-search spec writer</td><td>Llama 3.2 1B, LoRA fine-tuned</td><td>User message → JSON search spec (target, body, conditions must / prefer / avoid, region, exclusions)</td><td>Output outside the closed vocabularies is rejected; ranking is rule-based, so the model never invents a site</td></tr>
+</table>
+
+<h3>Example: terrain + material reading</h3>
+<p>SysOne-Nano encodes the window once and answers several typed questions in one parallel pass. Values are reported as within-body percentiles (a lunar query against 60,000 Moon windows, a Mars query against 40,000 Mars windows,
+an Earth candidate against all Earth windows), because the frozen test validated ranking, not a cross-body probability.</p>
+<p>For Mars, windows that are bright <i>and</i> ferric (OMEGA albedo percentile ≥ 0.75 and ferric percentile ≥ 0.6, a rule fixed before any evaluation) are treated as dust-mantled. Their bedrock mafic level is then inferred from dark, dust-poor windows within 600 km
+(inverse-distance mean), the same occlusion idea used on Earth for vegetated ground.</p>
+
+<!-- ============================================================ -->
+<h2>7. System Architecture and Search Pipeline</h2>
+<p>Every search (<code>/api/search</code> for the Moon, <code>/api/mars-search</code> for Mars) runs the same five-step pipeline:</p>
+<ol>
+  <li><b>Read the query window:</b> DEM grid (LOLA / SLDEM2015 for the Moon, MOLA and the HRSC-MOLA blend for Mars), display mesh and sampling evidence.</li>
+  <li><b>Score every Earth window</b> of the same scale with the terrain-encoder cosine.</li>
+  <li><b>Let the selected purpose re-score</b> those windows: the ten-facet rules, conditions, physical property match, lava-tube search or terrain + material.</li>
+  <li><b>Fuse context</b> with fixed, transparent weights (no trained labels), apply an optional visual re-rank, build a shortlist and group nearby windows into spatial groups.</li>
+  <li><b>Build one evidence record per group:</b> property values with sources, condition verdicts, known-analog label, access, climate and resource links.</li>
+</ol>
+<p><b>Ten facets.</b> Every consideration on the challenge page is a scored facet: A terrain, B surface material, C thermal, D sunlight, E water and ice, F dust and wind, G surface processes, H habitability, I subsurface, J operations.
+Each facet is the mean of its tokens; a token is 1 (match), 0.5 (partial), 0 (breaks down) or unknown (no Earth data, never counted as 0). A use is a fixed set of facet weights. Things Earth cannot reproduce anywhere
+(gravity, vacuum, radiation, day length) are listed as limits and never scored.</p>
+
+<figure>
+  <img src="../web/public/technology/figures/fig_arch_en.svg" style="max-height:82mm">
+  <figcaption><b>Figure 10. System architecture.</b> Path P compares same-unit properties and gives every candidate a use score and every query its Earth ceiling; paths A–D are the condition gate, terrain shape, composition and the lava-tube search.</figcaption>
+</figure>
+
+<!-- ============================================================ -->
+<h2>8. User Interface</h2>
+
+<h3>8.1 Three ways to start a search</h3>
+<ul>
+  <li><b>3D globe.</b> Click anywhere on the Moon or Mars (NASA SVS color and LOLA elevation; MOLA for Mars) and choose a 20, 40 or 80 km window and a purpose.</li>
+  <li><b>Chat search.</b> Type a request such as “a basaltic plain near a volcano, not in a known analog site, close to an airport”. The fine-tuned Llama 3.2 1B writes a search spec; condition chips show and let you edit what it understood.</li>
+  <li><b>Image search.</b> Upload a terrain image; bounded image-only inference retrieves visually similar Earth windows with an audit trail.</li>
+</ul>
+
+<h3>8.2 Results and side-by-side 3D comparison</h3>
+<p>Results show the top Earth candidates as spatial groups with a 0–100 score, the known-analog label (or “new candidate”) and the evidence behind it. The comparison view drapes measured elevation with source imagery: the Moon with NASA SVS
+color and the LROC WAC 643 nm mosaic, Earth with Esri World Imagery under visible attribution.</p>
+<figure>
+  <img class="shot" src="../web/public/technology/figures/comparison_en.webp" style="max-height:90mm">
+  <figcaption><b>Figure 11.</b> Side-by-side 3D terrain of a lunar query (NASA SVS / LROC WAC on LOLA) and its Earth candidate, with elevation relief in metres.</figcaption>
+</figure>
+
+<h3>8.3 Conditions and site dossier</h3>
+<p>The dossier compares all candidates at a glance (dryness, bare ground, rock type, volcanic setting), explains each verdict with the query requirement and the candidate value, adds the SysOne-Nano terrain + material reading, lists
+what can be tested at the site (vehicle mobility, drilling, ISRU feedstock, lava-tube operations, long-duration remote operations), and shows how to get there (road, town, airport) and the field season from NASA POWER monthly climate.</p>
+<h4>Resource card</h4>
+    <p>For each Earth candidate the system applies the challenge’s recommended resources to the exact window:</p>
+    <ul>
+      <li><b>Radar:</b> Sentinel-1 RTC median VV and VH backscatter and cross-polarized ratio; the RADARSAT Constellation Mission land mosaic of Canada where covered; the number of RADARSAT-1 archive images; for lunar queries, the Mini-RF circular polarization ratio with a class comparison.</li>
+      <li><b>NASA Earthdata:</b> granule counts over the window for MODIS land surface temperature, SMAP soil moisture, Harmonized Landsat, ASTER GDEM and GEDI, plus a link that opens the same search.</li>
+      <li><b>NASA Worldview / GIBS:</b> true colour, land surface temperature and snow layers for the window, and a Worldview link at the same extent.</li>
+    </ul>
+    <p>The card is display only and never enters ranking; results are cached on disk.</p>
+    <h4>Bilingual and accessible</h4>
+    <p>The whole interface and the research pages are available in English and Traditional Chinese. React and Motion load as separate vendor chunks, and first-load JavaScript is 184 KB gzipped.</p>
+<figure>
+    <img class="shot" src="../web/public/technology/figures/conditions_en.webp" style="max-height:135mm">
+    <figcaption><b>Figure 12.</b> Conditions and site dossier for a mare-basalt query and its #2 candidate (Hejaz Mountains, Saudi Arabia).</figcaption>
+  </figure>
+
+<h3>8.4 Astronaut explorer</h3>
+<p>Every query and candidate can be walked on foot. The explorer loads the measured DEM, applies the body’s gravity (1.62 m/s² on the Moon), and shows elevation, slope, speed, distance walked, jump height, local time and a simulated life-support gauge.
+Users can call a rover, board it, scan, place a flag, switch to third person, change time and weather, take a photo, and jump directly to the Earth candidate to feel the difference. Small craters, rocks, footprints and dust are illustrative and labelled as not measured.</p>
+<figure>
+  <img class="shot" src="../web/public/technology/figures/explorer_en.webp" style="max-height:95mm">
+  <figcaption><b>Figure 13.</b> Astronaut explorer on the Moon (8.3° N, 33.2° E, 40 × 40 km window) with live terrain readouts and the mini-map.</figcaption>
+</figure>
+
+<h3>8.5 Lava-tube and skylight search</h3>
+<p>Lava tubes are candidate shelters for a permanent base. The two-stage PitChain-C2F search keeps Earth windows near basaltic Holocene volcanoes and ranks them by terrain, then runs F-Net v2 on the query’s LROC NAC or HiRISE image to mark pit and
+skylight candidates. Where an Earth candidate overlaps a USGS 3DEP 1 m lidar site, collapse pits are listed there as well.</p>
+<figure>
+  <img class="shot" src="../web/public/technology/figures/lavatube_en.webp" style="max-height:105mm">
+  <figcaption><b>Figure 14.</b> Skylight detection at the Marius Hills pit (LROC NAC, 4 m): the red circle is the most confident detection. The Earth side shows the nearest basaltic Holocene volcano and the terrain similarity.</figcaption>
+</figure>
+
+<h3>8.6 Terrain + material comparison</h3>
+<p>This purpose weighs terrain similarity and material similarity equally. On Mars, surface material comes from OMEGA and CRISM; on the Moon from LROC WAC and Lunar Prospector FeO. Earth material is inferred from geology, climate, soil and nearby observations,
+so hidden ground can still be estimated, and candidates with visible ground are checked against measured Sentinel-2 spectra.</p>
+<figure>
+  <img class="shot" src="../web/public/technology/figures/material_en.webp" style="max-height:100mm">
+  <figcaption><b>Figure 15.</b> Surface material of a Mars window (OMEGA + CRISM) against an Earth candidate, both inferred and Sentinel-2-measured, with match and partial verdicts per axis.</figcaption>
+</figure>
+
+<!-- ============================================================ -->
+<h2>9. Tools, Languages, Hardware and Software</h2>
+<table>
+  <thead><tr><th style="width:22%">Area</th><th>What we used</th></tr></thead>
+  <tr><td>Languages</td><td>Python (server, data processing, models), JavaScript / JSX (front end), HTML / CSS</td></tr>
+  <tr><td>Back end</td><td>Modular Python HTTP server (config, query validation, resource loading, routes, search pipeline); NumPy, SciPy, scikit-learn, Rasterio, Shapely, Affine, OpenCV, Pillow, tifffile, Matplotlib</td></tr>
+  <tr><td>Machine learning</td><td>PyTorch (terrain encoder, crater heads, SysOne-Nano, F-Net v2); gradient-boosted trees with conformal intervals; Hugging Face Transformers and LoRA for Llama 3.2 1B</td></tr>
+  <tr><td>Front end</td><td>React 19, Three.js, 3D Tiles Renderer, three-mesh-bvh, Motion, anime.js, Lucide icons; built with Vite</td></tr>
+  <tr><td>Data access</td><td>NASA PDS Geosciences, USGS Astrogeology, NASA SVS, NASA POWER API, NASA Earthdata CMR, NASA Worldview / GIBS, Copernicus DEM and Sentinel via AWS Open Data and Microsoft Planetary Computer</td></tr>
+  <tr><td>Hardware and deployment</td><td>Google Cloud g2-standard-8 VM with one NVIDIA L4 GPU; the web server, the language model and a Cloudflare tunnel run as systemd services; about 71 GB of prepared data</td></tr>
+  <tr><td>Quality checks</td><td>A parity tool sends 32 requests (every search purpose on the Moon and Mars, observation endpoints, chat search and error cases) to two servers and compares the JSON responses</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>10. Benefits and Intended Impact</h2>
+<h3>Benefits</h3>
+<ul>
+  <li><b>From “looks similar” to “measured similar”.</b> Candidates are ranked by same-unit, same-scale properties. On held-out measurements, property ranking reached retrieval efficiency 0.52–0.77 against −0.19 to 0.02 for setting-based screening.</li>
+  <li><b>Honest about limits.</b> The Earth ceiling tells planners which properties no field site can provide, so they can plan simulants and test chambers early.</li>
+  <li><b>Explainable.</b> Every candidate shows which properties match, which do not and which Earth cannot supply, with the data source of each value.</li>
+  <li><b>Global and fast.</b> Any window on the Moon or Mars can be queried, not just a list of famous sites; Lunar Prospector lookups use a grid index (8 s → 2 ms for 3,000 points).</li>
+  <li><b>Practical.</b> Site dossiers include access, field season, what can be tested and links to NASA Earthdata and Worldview for campaign planning.</li>
+  <li><b>Open and reproducible.</b> Built only on open data, with frozen protocols and documented licences for every source.</li>
+</ul>
+<h3>Intended impact</h3>
+<ul>
+  <li>Help mission planners and analog-research teams <b>shortlist field sites for a specific test</b>, with evidence instead of reputation.</li>
+  <li>Give every lunar or Martian target a <b>boundary-condition inventory</b> that allocates terrain, chemistry and thermal regimes to field sites, simulants and facilities.</li>
+  <li>Reveal a <b>systematic bias</b> in setting-based analog selection toward potassium- and thorium-rich continental crust, which matters for ISRU and instrument tests.</li>
+  <li>Let <b>students and the public</b> explore real NASA data interactively in two languages and walk the Moon and Mars as an astronaut.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2>11. Technical Innovations</h2>
+<ol>
+  <li><b>The Earth ceiling.</b> Instead of only ranking candidates, we measure the best match Earth can offer at all and code why it stops there (composition, thermal regime or co-occurrence).</li>
+  <li><b>Matching at the instrument’s scale.</b> Earth data are blurred with the same footprint kernel as the orbital spectrometer (45 km Gaussian for Lunar Prospector, 220 km disk for Mars Odyssey), and the comparison is followed down a ladder of supports to individual rock analyses.</li>
+  <li><b>Two tracks.</b> Scoring regolith and bedrock separately separates the part of the shortfall caused by Earth’s weathering from the part caused by planetary differentiation.</li>
+  <li><b>Uncertainty-aware matching.</b> Estimated values enter the match probability through their conformal intervals, so uncertain estimates earn partial credit, and estimates are used only where they were shown to work.</li>
+  <li><b>Use-specific ranking.</b> The same lunar window gives different Earth twins for resources, mobility, thermal work or base siting.</li>
+  <li><b>Pre-registered evaluation with negative results.</b> Every confirmatory test was hash-frozen before its data were read; failures (cross-continent transfer, terrain shape alone) are reported and change what the system shows.</li>
+  <li><b>Tiny models, real evaluation.</b> A 6,424-parameter terrain encoder, a 171,522-parameter multimodal reader and a skylight detector trained from an analytic teacher, all on CPU, each shown only where it passed its frozen test.</li>
+  <li><b>Language model that cannot hallucinate sites.</b> The fine-tuned 1B model only writes a closed-vocabulary spec; ranking stays rule-based and auditable.</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>12. Factors Considered and Limitations</h2>
+<ul>
+  <li><b>Scale and sensing depth.</b> Orbital gamma rays see the top tens of centimetres over tens to hundreds of kilometres. Scale is stated with every result.</li>
+  <li><b>Missing data.</b> Earth chemistry exists only where it was measured (Australia, North America, Europe) or within 300 km of measurements; elsewhere the system says there is no reliable estimate.</li>
+  <li><b>Weathering and vegetation.</b> Regolith and bedrock are scored separately; water and vegetation that attenuate gamma rays are masked.</li>
+  <li><b>Absolute tolerances.</b> They are lenient for low lunar and Martian values (±0.2 wt% K spans about ±200% of a lunar value of 0.1 wt%); Martian thorium counts as matched only at the lower edge of the Earth distribution.</li>
+  <li><b>Martian temperature is modelled</b> (Mars Climate Database), and the interactive system shows base-siting scores from roughness and albedo when no Martian temperature is available.</li>
+  <li><b>Data rights.</b> Each source was checked for licence and attribution; display-only imagery is kept apart from open data, and third-party code and 3D models are credited.</li>
+  <li><b>Honest scope.</b> Candidates are screening results, not verified analogs, safety assessments or traverse plans; no expert rating was possible during the challenge. The Earth-ceiling framing was chosen after results were seen; every protocol is unchanged and listed.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2>13. Conclusion</h2>
+<p>TwinGround turns the question “where on Earth is like this place on the Moon or Mars?” into a measurable one. By harmonizing NASA orbital measurements and Earth surveys in units, scale and depth, it ranks Earth windows for a specific use,
+explains every candidate, and states the Earth ceiling: the best match Earth can offer at all. The results show that Earth readily supplies kilometre-scale terrain, but not lunar mare chemistry, Martian crustal iron, the coldest Martian nights
+or the polar illumination of the Moon, and that choosing analogs by setting drifts toward Earth’s continental crust. The practical outcome is a modular plan for analog work, with terrain going to field sites, chemistry to simulants and
+thermal regimes to test chambers, delivered through an interactive, bilingual tool that anyone can use to explore real NASA data.</p>
+
+<!-- ============================================================ -->
+<h2>14. Use of Artificial Intelligence (AI)</h2>
+<ul>
+  <li><b>In the product:</b> a Llama 3.2 1B model fine-tuned with LoRA turns a chat message into a closed-vocabulary search spec for <code>/api/chat-search</code>. It runs on the project’s own GPU VM and never ranks sites or generates site facts.</li>
+  <li><b>Models trained by the team:</b> the terrain encoder, crater heads, SysOne-Nano, F-Net v2 and the chemistry estimators described in Section 6.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2>15. Selected References</h2>
+<ul class="refs">
+  <li>Beck, H. E., et al. (2023). High-resolution (1 km) Köppen-Geiger maps for 1901–2099. <i>Scientific Data</i>, 10, 724.</li>
+  <li>Bibring, J.-P., et al. (2005). Mars surface diversity as revealed by the OMEGA/Mars Express observations. <i>Science</i>, 307, 1576–1581.</li>
+  <li>Boynton, W. V., et al. (2007). Concentration of H, Si, Cl, K, Fe, and Th in the low- and mid-latitude regions of Mars. <i>JGR</i>, 112, E12S99.</li>
+  <li>Christensen, P. R., et al. (2001). Mars Global Surveyor Thermal Emission Spectrometer experiment. <i>JGR</i>, 106(E10), 23823–23871.</li>
+  <li>de Caritat, P., & Cooper, M. (2011). National Geochemical Survey of Australia: The Geochemical Atlas of Australia. Geoscience Australia Record 2011/20.</li>
+  <li>Duval, J. S., et al. (2005). Terrestrial radioactivity and gamma-ray exposure in the United States and Canada. USGS Open-File Report 2005-1413.</li>
+  <li>Forget, F., et al. (1999). Improved general circulation models of the Martian atmosphere from the surface to above 80 km. <i>JGR</i>, 104(E10), 24155–24175.</li>
+  <li>Fortezzo, C. M., Spudis, P. D., & Harrel, S. L. (2020). Release of the digital Unified Global Geologic Map of the Moon at 1:5,000,000-scale. LPSC 51, abstract 2760.</li>
+  <li>Hartmann, J., & Moosdorf, N. (2012). The new global lithological map database GLiM. <i>G-cubed</i>, 13, Q12004.</li>
+  <li>Lawrence, D. J., et al. (2002). Iron abundances on the lunar surface as measured by the Lunar Prospector gamma-ray and neutron spectrometers. <i>JGR</i>, 107(E12), 5130.</li>
+  <li>Lehnert, K., et al. (2000). A global geochemical database structure for rocks (GEOROC). <i>G-cubed</i>, 1, 1012.</li>
+  <li>Liang, S., et al. (2021). The Global Land Surface Satellite (GLASS) product suite. <i>BAMS</i>, 102(2), E323–E337.</li>
+  <li>Mazarico, E., et al. (2011). Illumination conditions of the lunar polar regions using LOLA topography. <i>Icarus</i>, 211, 1066–1081.</li>
+  <li>Minty, B., et al. (2009). The Radiometric Map of Australia. <i>Exploration Geophysics</i>, 40, 325–333.</li>
+  <li>Morgan, G. A., et al. (2021). Availability of subsurface water-ice resources in the northern mid-latitudes of Mars. <i>Nature Astronomy</i>, 5, 230–236.</li>
+  <li>Murchie, S., et al. (2007). Compact Reconnaissance Imaging Spectrometer for Mars (CRISM) on MRO. <i>JGR</i>, 112, E05S03.</li>
+  <li>NOAA NCEI (2022). ETOPO 2022 15 Arc-Second Global Relief Model. doi:10.25921/fd45-gt74.</li>
+  <li>Nosek, B. A., et al. (2018). The preregistration revolution. <i>PNAS</i>, 115(11), 2600–2606.</li>
+  <li>Paige, D. A., et al. (2010). Diviner Lunar Radiometer observations of cold traps in the Moon’s south polar region. <i>Science</i>, 330, 479–482.</li>
+  <li>Poggio, L., et al. (2021). SoilGrids 2.0. <i>SOIL</i>, 7, 217–240.</li>
+  <li>Prettyman, T. H., et al. (2006). Elemental composition of the lunar surface: Analysis of gamma ray spectroscopy data from Lunar Prospector. <i>JGR</i>, 111, E12007.</li>
+  <li>Roberts, D. R., et al. (2017). Cross-validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure. <i>Ecography</i>, 40, 913–929.</li>
+  <li>Robinson, M. S., et al. (2010). Lunar Reconnaissance Orbiter Camera (LROC) instrument overview. <i>Space Science Reviews</i>, 150, 81–124.</li>
+  <li>Salminen, R. (Chief-ed.) (2005). <i>Geochemical Atlas of Europe</i>. Geological Survey of Finland.</li>
+  <li>Smith, D. B., et al. (2013). Geochemical and mineralogical data for soils of the conterminous United States. USGS Data Series 801.</li>
+  <li>Smith, D. E., et al. (2001). Mars Orbiter Laser Altimeter: Experiment summary after the first year of global mapping of Mars. <i>JGR</i>, 106(E10), 23689–23722.</li>
+  <li>Smith, D. E., et al. (2010). Initial observations from the Lunar Orbiter Laser Altimeter (LOLA). <i>GRL</i>, 37, L18204.</li>
+  <li>Tanaka, K. L., et al. (2014). Geologic map of Mars. USGS Scientific Investigations Map 3292.</li>
+  <li>Wan, Z. (2014). New refinements and validation of the collection-6 MODIS land-surface temperature/emissivity product. <i>Remote Sensing of Environment</i>, 140, 36–45.</li>
+  <li>Zanaga, D., et al. (2022). ESA WorldCover 10 m 2021 v200. Zenodo.</li>
+  <li>Zomer, R. J., Xu, J., & Trabucco, A. (2022). Version 3 of the Global Aridity Index and Potential Evapotranspiration Database. <i>Scientific Data</i>, 9, 409.</li>
+</ul>
+
+<p class="small" style="margin-top:14px">TwinGround was made for the NASA Space Apps Challenge 2026. It is not an official NASA product and is not endorsed by NASA. Imagery credits: NASA/GSFC/Arizona State University (LRO),
+NASA/JPL-Caltech/University of Arizona (HiRISE), NASA Scientific Visualization Studio; Earth imagery Esri, Vantor, Earthstar Geographics.</p>
+
+</body>
+</html>
