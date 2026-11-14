@@ -119,9 +119,13 @@ export function makeZ2Astronaut(gltfScene, { lite = false } = {}) {
   headlamp.position.set(0, 0.28, 0.12); headlamp.target.position.set(0, -0.6, 4)
   bones[3].add(headlamp, headlamp.target)
   const joint = (a, b, c) => ({ joint: bones[a], mid: bones[b], ankle: c === undefined ? null : bones[c] })
+  // Lowering the forward-reaching arms leaves the palms facing backward. Roll each hand about its own
+  // axis (thumb forward) so the palms face the thighs, as in a relaxed stance.
+  const palmIn = side => new THREE.Quaternion().setFromAxisAngle(
+    new THREE.Vector3((Z2.fingertip[0] - Z2.wrist[0]) * side, Z2.fingertip[1] - Z2.wrist[1], Z2.fingertip[2] - Z2.wrist[2]).normalize(), -1.3 * side)
   return {
     model: 'z2', hipHeight: Z2.pelvis[1], root, body, pelvis: bones[1], torso: bones[2], head: bones[3],
-    legL: joint(8, 10, 14), legR: joint(9, 11, 15), armL: { ...joint(4, 6), wrist: bones[12] }, armR: { ...joint(5, 7), wrist: bones[13] }, headlamp,
+    legL: joint(8, 10, 14), legR: joint(9, 11, 15), armL: { ...joint(4, 6), wrist: bones[12], palm: palmIn(1) }, armR: { ...joint(5, 7), wrist: bones[13], palm: palmIn(-1) }, headlamp,
     // The model reaches forward; lower the arms toward a relaxed suited stance.
     // The model holds straight arms 60 degrees forward: lower them to hang with a slight elbow bend.
     pose: { armX: 0.9, armZ: 0.06, elbow: -0.25, elbowRun: -0.3 },
