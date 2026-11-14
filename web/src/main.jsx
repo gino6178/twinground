@@ -27,7 +27,7 @@ import { renderGate } from './render_gate.js'
 import {nextCandidateOffset,mergeCandidatePage} from './candidate_paging.js'
 import { PURPOSES } from './purposes.js'
 import { SkylightPresets } from './skylight_presets.jsx'
-import { TerrainReadCard } from './conditions_panel.jsx'
+import { TerrainReadCard } from './terrain_read_card.jsx'
 import { clamp, formatCoord, lonLatPoint } from './planet_geo.js'
 import { TerrainView } from './terrain_view.jsx'
 

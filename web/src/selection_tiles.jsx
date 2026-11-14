@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import { getLanguage } from './i18n/core.js'
 import { PURPOSES } from './purposes.js'
 import { BARE, DUNES, HYDRATED, RAIN, SNOW, VOLCANO } from './conditions_scenes.js'
-import { rockMesh } from './conditions_art.jsx'
+import { rockMesh } from './rock_mesh.js'
 import './selection_tiles.css'
 
 // Selection page choices drawn as animated tiles instead of drop-down lists: four search purposes, the Earth

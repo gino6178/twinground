@@ -50,10 +50,10 @@ def local_sources() -> tuple[dict, ...]:
         if footprint is None:
             continue
         path = (ROOT / row["local_path"]).resolve()
-        try:
-            path.relative_to(ROOT.resolve())
-        except ValueError as exc:
-            raise ValueError("LROC source path escapes the project") from exc
+        # data/ may be a symlink to a shared store; accept paths under either root.
+        allowed = (ROOT.resolve(), (ROOT / "data").resolve())
+        if not any(path.is_relative_to(base) for base in allowed):
+            raise ValueError("LROC source path escapes the project")
         if path.is_file():
             sources.append({"id": row["id"], "path": path,
                             "resolution_m": row["native_spacing_m"],

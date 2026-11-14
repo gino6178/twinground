@@ -32,6 +32,8 @@ REQUESTS = [
     "/api/earth-environment?lat=36.1&lon=-112.1",
     "/api/explore-dem?body=moon&lat=8.7&lon=27.4&km=40",
     "/api/microterrain/sites",
+    "/api/moon-local-dtm?lat=8.7&lon=27.4",
+    "/api/moon-local-dtm?lat=13.7&lon=-56.05",
     "/api/tokens/query?body=moon&lat=8.7&lon=27.4&size_km=40",
     "/api/maxmatch/check?body=moon&qlat=8.7&qlon=27.4&lat=35.0&lon=-111.0",
     "/api/biology?lat=35.0&lon=-111.0&body=mars",
