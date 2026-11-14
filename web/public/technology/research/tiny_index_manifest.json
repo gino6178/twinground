@@ -1,0 +1,56 @@
+{
+  "purpose": "Exact dot-product candidate vectors for experimental tiny morphology ranker",
+  "model_sha256": "f52b3e201dd8111e50f791c527089b767770de1675b8361f141c1e553e008c76",
+  "model_training_report": "data/research/microterrain_native/tiny_morph_training.json",
+  "shared_candidate_rows_with_2014_baseline": true,
+  "search_type": "exact cosine via unit embeddings; ANN unnecessary for at most 6,728 current rows",
+  "outputs": {
+    "earth_moon_200m_tiny32.npz": {
+      "sha256": "b22950430f9ea4c910e38d7085f5367b56f81f0490f83a0e93a47192ebc8b648",
+      "source_gallery": "earth_moon_200m.npz",
+      "source_gallery_sha256": "855795895d4d002dbadd87cf33bdfa16c540cbbcaed1886496ce140de186dcb1",
+      "vectors": 6728,
+      "dimensions": 32
+    },
+    "earth_moon_500m_tiny32.npz": {
+      "sha256": "0ed49e4379042ff100117db82df1dd81cd687ba47f6f8d797644f5cc47ca5195",
+      "source_gallery": "earth_moon_500m.npz",
+      "source_gallery_sha256": "0ecf71c46940b4ff8fc43d2751266e0405eda11da04286039975181687719bf0",
+      "vectors": 968,
+      "dimensions": 32
+    },
+    "earth_moon_1000m_tiny32.npz": {
+      "sha256": "8cc1df88571c1af2e1a0695fabffd3f4ca7efd17e18b744e23cb6020e0c0ea69",
+      "source_gallery": "earth_moon_1000m.npz",
+      "source_gallery_sha256": "00e67b1e5e38d81d9aebb54bd4156a7fb42dd987533c97e155a6b1535302eaf8",
+      "vectors": 200,
+      "dimensions": 32
+    },
+    "earth_mars_200m_tiny32.npz": {
+      "sha256": "f38504c8511fb6d2318d581ac58c46115d9cd12cf2a6664f8ecdfa2afad05c8a",
+      "source_gallery": "earth_mars_200m.npz",
+      "source_gallery_sha256": "dded62b53bbe73b5044ddaeceb820f24dfc4d384ecc2bb282feeca002358f824",
+      "vectors": 6728,
+      "dimensions": 32
+    },
+    "earth_mars_500m_tiny32.npz": {
+      "sha256": "f7bc0b4b1e2ab5e26a9d69b5b175465cfe81092e4e4492d5d57a27d7c647494a",
+      "source_gallery": "earth_mars_500m.npz",
+      "source_gallery_sha256": "294236c1f3d7789edd077d8aea548281da0eefac8772bfad4a94d9da6ea4fff7",
+      "vectors": 968,
+      "dimensions": 32
+    },
+    "earth_mars_1000m_tiny32.npz": {
+      "sha256": "792db4df87b836e60507d0c77395ce47d26b2ff44c0b45fe865cc2fa154f1f98",
+      "source_gallery": "earth_mars_1000m.npz",
+      "source_gallery_sha256": "838fe42b00e6189e7b40336ef9f05a51833b5e062f36f8c9534db974b79f8fbe",
+      "vectors": 200,
+      "dimensions": 32
+    }
+  },
+  "limitations": [
+    "The model was trained on view consistency and one Earth cross-resolution site, not expert cross-body analog pairs.",
+    "Tiny and geomorphon scores can be ranked on the same candidate rows but neither score is an analog probability.",
+    "No independent expert relevance set exists yet to compare retrieval accuracy or claim an improvement."
+  ]
+}

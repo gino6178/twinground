@@ -1,0 +1,123 @@
+{
+  "created_utc": "2026-10-11T07:39:23.355248+00:00",
+  "purpose": "Four-band aerial photosynthetic vegetation signal for Idaho Earth candidate windows",
+  "service_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+  "scene_query_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/query?f=json&geometry=295918.8849963638%2C4808792.593315509%2C299318.8849963638%2C4812192.593315509&geometryType=esriGeometryEnvelope&inSR=26912&spatialRel=esriSpatialRelIntersects&where=Category+%3D+1+AND+Year+%3D+2021&outFields=OBJECTID%2CName%2CYear%2Cacquisition_date%2Cresolution_value%2Cband_count%2Cdownload_url&returnGeometry=false&resultRecordCount=100",
+  "source_scenes": [
+    {
+      "OBJECTID": 48953,
+      "Name": "m_4311336_ne_12_060_20210619",
+      "Year": 2021,
+      "acquisition_date": 1624060800000,
+      "resolution_value": 0.6,
+      "band_count": 4,
+      "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3126177"
+    },
+    {
+      "OBJECTID": 48955,
+      "Name": "m_4311336_se_12_060_20210619",
+      "Year": 2021,
+      "acquisition_date": 1624060800000,
+      "resolution_value": 0.6,
+      "band_count": 4,
+      "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3126179"
+    },
+    {
+      "OBJECTID": 48958,
+      "Name": "m_4311337_nw_12_060_20210616",
+      "Year": 2021,
+      "acquisition_date": 1623801600000,
+      "resolution_value": 0.6,
+      "band_count": 4,
+      "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3126182"
+    },
+    {
+      "OBJECTID": 48960,
+      "Name": "m_4311337_sw_12_060_20210616",
+      "Year": 2021,
+      "acquisition_date": 1623801600000,
+      "resolution_value": 0.6,
+      "band_count": 4,
+      "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3126184"
+    }
+  ],
+  "source_export_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?f=image&bbox=295918.8849963638%2C4808792.593315509%2C299318.8849963638%2C4812192.593315509&bboxSR=26912&imageSR=26912&size=1700%2C1700&format=tiff&pixelType=U8&bandIds=0%2C1%2C2%2C3&interpolation=RSP_Bilinear&mosaicRule=%7B%22mosaicMethod%22%3A%22esriMosaicAttribute%22%2C%22sortField%22%3A%22Year%22%2C%22sortValue%22%3A2021%2C%22where%22%3A%22Year+%3D+2021%22%7D",
+  "source_tiff": "data/research/naip_idaho/idaho_naip2021_utm12_3400m_2m_4band.tif",
+  "source_tiff_sha256": "66884e594aec92921352d0c17718eb07eeb05f21b8c96e3d39e3b6c32132c5f2",
+  "ndvi_grid": "data/research/naip_idaho/idaho_naip2021_ndvi_3km_2m.npz",
+  "ndvi_grid_sha256": "c584f551071d2bb5d3b003a424fd0500b9babf03d6f45cda79785548f525f594",
+  "year": 2021,
+  "band_order": [
+    "red",
+    "green",
+    "blue",
+    "near_infrared"
+  ],
+  "source_scene_resolution_m": 0.6,
+  "export_and_analysis_spacing_m": 2,
+  "local_grid_valid_fraction": 1.0,
+  "site_id": "CRATERS_MOON_IDAHO",
+  "center_lat_lon": [
+    43.42,
+    -113.5
+  ],
+  "metric_columns": [
+    "valid_fraction",
+    "median_ndvi",
+    "ndvi_p10",
+    "ndvi_p90",
+    "fraction_ndvi_ge_0_1",
+    "fraction_ndvi_ge_0_2",
+    "fraction_ndvi_ge_0_3"
+  ],
+  "thresholds": [
+    0.1,
+    0.2,
+    0.3
+  ],
+  "outputs": {
+    "earth_moon_200m_naip_ndvi.npz": {
+      "sha256": "727be30d633c4beac49354c3ce225c2281ed2b33fe9e537a6372f3680f26a4e1",
+      "gallery_sha256": "855795895d4d002dbadd87cf33bdfa16c540cbbcaed1886496ce140de186dcb1",
+      "idaho_windows": 841,
+      "valid_idaho_windows": 841
+    },
+    "earth_moon_500m_naip_ndvi.npz": {
+      "sha256": "026f078cfa0bfa7291e175fdb61284ef58f7cec95efba0e61a003a5233f3128d",
+      "gallery_sha256": "0ecf71c46940b4ff8fc43d2751266e0405eda11da04286039975181687719bf0",
+      "idaho_windows": 121,
+      "valid_idaho_windows": 121
+    },
+    "earth_moon_1000m_naip_ndvi.npz": {
+      "sha256": "af1d8c2dc05201a04e40e9eb86cacd31d42874e61ecbd37df4763909ee3a1ce9",
+      "gallery_sha256": "00e67b1e5e38d81d9aebb54bd4156a7fb42dd987533c97e155a6b1535302eaf8",
+      "idaho_windows": 25,
+      "valid_idaho_windows": 25
+    },
+    "earth_mars_200m_naip_ndvi.npz": {
+      "sha256": "f835c4bbb46ef83e5e0f09a1491aa45db657183b66c97e36a5c91315df0f50b5",
+      "gallery_sha256": "dded62b53bbe73b5044ddaeceb820f24dfc4d384ecc2bb282feeca002358f824",
+      "idaho_windows": 841,
+      "valid_idaho_windows": 841
+    },
+    "earth_mars_500m_naip_ndvi.npz": {
+      "sha256": "69bafcb0b17f03feb215a93f02ca50f790829f346e6459eef5343cd0c824787a",
+      "gallery_sha256": "294236c1f3d7789edd077d8aea548281da0eefac8772bfad4a94d9da6ea4fff7",
+      "idaho_windows": 121,
+      "valid_idaho_windows": 121
+    },
+    "earth_mars_1000m_naip_ndvi.npz": {
+      "sha256": "a754cab75674d59ef870dd4ec08dadcde8c943f45806b28cdf4a998b052cb7a2",
+      "gallery_sha256": "838fe42b00e6189e7b40336ef9f05a51833b5e062f36f8c9534db974b79f8fbe",
+      "idaho_windows": 25,
+      "valid_idaho_windows": 25
+    }
+  },
+  "used_in_ranking": false,
+  "limitations": [
+    "NDVI detects vegetation response, not rock, minerals, regolith, or geological process.",
+    "Leaf-on NAIP from June 2021 and NLCD 2024 refer to different dates and thematic definitions.",
+    "Shadows, dark lava, sparse vegetation, image stitching, and band calibration can affect NDVI; no in-situ vegetation mask has validated these thresholds.",
+    "2 m resampling does not create 2 m material truth from 0.6 m photographs."
+  ]
+}

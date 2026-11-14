@@ -1,0 +1,95 @@
+{
+  "created_utc": "2026-10-11T09:33:15+00:00",
+  "purpose": "Independent human inspection of Cima surface appearance before any material model claim",
+  "review_instructions": [
+    "Inspect each 500 m RGB chip without opening the historical-map answer key.",
+    "Record visible bare rock, loose sediment, vegetation, shadow, and uncertainty separately.",
+    "Do not infer mineral identity or Moon/Mars equivalence from RGB alone.",
+    "Use two independent reviewers before reconciling disagreements."
+  ],
+  "selection": "Three windows each from high historical-map alluvium, lava flow, and tephra fractions, plus three mixed windows; all inside coarse NASA HyTES CMR footprint",
+  "dependence_note": "500 m windows have centers at least 250 m apart within each stratum but may overlap; items are not statistically independent",
+  "strata_are_hidden_from_reviewers": true,
+  "count": 12,
+  "items": [
+    {
+      "review_id": "f896a67378",
+      "image": "images/f896a67378.webp",
+      "image_sha256": "6a1af52b4e158debeb16fd5ad630b90c990a7a182b1214d19ff65c22276ba63a",
+      "window_size_m": 500
+    },
+    {
+      "review_id": "d541ac7878",
+      "image": "images/d541ac7878.webp",
+      "image_sha256": "32824a533fbc842ab24440ff88666fb0a9e9b800543759e98f503d55d6341de3",
+      "window_size_m": 500
+    },
+    {
+      "review_id": "b6744ccdb5",
+      "image": "images/b6744ccdb5.webp",
+      "image_sha256": "cc5220eff127a538a41c8eeedaaf806cf1884912f31c9629df0124739072e84a",
+      "window_size_m": 500
+    },
+    {
+      "review_id": "09538214de",
+      "image": "images/09538214de.webp",
+      "image_sha256": "ff2180a0d5519dad8789394147cf107b1aef1d9537dbe87609b32fa62f9c83a4",
+      "window_size_m": 500
+    },
+    {
+      "review_id": "b68fe2d38a",
+      "image": "images/b68fe2d38a.webp",
+      "image_sha256": "42c9dc9d9adc675736bf70e16ffba62747848dd54eb293ecd008f4e3ed48b0cc",
+      "window_size_m": 500
+    },
+    {
+      "review_id": "d23fb1cc52",
+      "image": "images/d23fb1cc52.webp",
+      "image_sha256": "debc38dcbf84834a59041a1cfcca4d2baaa31e9429c9113b148cd332a37b3924",
+      "window_size_m": 500
+    },
+    {
+      "review_id": "f0bf0ae42d",
+      "image": "images/f0bf0ae42d.webp",
+      "image_sha256": "55f9e628851a936a30f8351047aed1366dd0736aa1664f3cc41952d155bc4760",
+      "window_size_m": 500
+    },
+    {
+      "review_id": "062e0020e6",
+      "image": "images/062e0020e6.webp",
+      "image_sha256": "4172796826169b7795ddf7e1e2a8f07e1bcdfd778cd0638831f568aa7bd9f683",
+      "window_size_m": 500
+    },
+    {
+      "review_id": "e7f220a6f2",
+      "image": "images/e7f220a6f2.webp",
+      "image_sha256": "621df669b1bda832d8c7ae8f110fdcd2f95925396f755d7e4016d266a0a33f39",
+      "window_size_m": 500
+    },
+    {
+      "review_id": "cd217cdd78",
+      "image": "images/cd217cdd78.webp",
+      "image_sha256": "6ec8d0c047f956201fb5b7b074c84096f5e0b6f8ccd24383401fca5a86619f13",
+      "window_size_m": 500
+    },
+    {
+      "review_id": "c9d3845320",
+      "image": "images/c9d3845320.webp",
+      "image_sha256": "672fe67d9a72866b1dde17b7ce9eb467647478ce26dad90d312d79e30b490eed",
+      "window_size_m": 500
+    },
+    {
+      "review_id": "3e777b1a49",
+      "image": "images/3e777b1a49.webp",
+      "image_sha256": "b0cdbc796cb9b3ece273269ab5e08919cb50044cb9b8063c523f9000410c4551",
+      "window_size_m": 500
+    }
+  ],
+  "contact_sheet": "blinded_contact_sheet.webp",
+  "contact_sheet_sha256": "1518c208323e152120cde28194049c554f53d023007795c717d98a60e0f893eb",
+  "source_naip_year": 2022,
+  "source_naip_sha256": "725eaec7fb3a4466b5f3ae7c917f4af0246d7b6b1b3ef3c71dcf34a31a9ff78d",
+  "source_geology_manifest_sha256": "61d6c49ea7279a62ee25d4a9ff6e1f4a45767c29c529011a226b2419170dc281",
+  "source_hytes_manifest_sha256": "5666cfbfa574e5ab3e0195132d69edaee6e59c68e61efddc6e434444f486449b",
+  "limits": "Historical map-stratified research sample; no validated surface material labels, no effective HyTES pixels, and no cross-body accuracy"
+}

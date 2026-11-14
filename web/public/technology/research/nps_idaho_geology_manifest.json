@@ -1,0 +1,194 @@
+{
+  "created_utc": "2026-10-11T07:31:11.488950+00:00",
+  "purpose": "NPS 1:24,000 cartographic unit overlap for Idaho Earth candidates; independent from DEM ranking",
+  "source_page": "https://catalog.data.gov/dataset/digital-geologic-gis-map-of-the-craters-of-the-moon-national-monument-area-idaho-nps--1989",
+  "source_download_url": "https://irma.nps.gov/DataStore/DownloadFile/730827?Reference=2313650",
+  "source_zip_sha256": "69162c9129016160bb298f485ab8bd4a1cd2df6ec925a7f2415631994b90f4e0",
+  "source_gpkg_sha256": "96aa5f18d1d6d5090ecbb4f0cd018bba6915627ce2f7ad8f6be82c9dac84e33f",
+  "source_layer": "COTM_Geologic_Units",
+  "source_unit_table": "COTM_Geologic_Unit_Information_Table",
+  "original_crs": "EPSG:26912",
+  "map_scale_denominator": 24000,
+  "published_horizontal_accuracy_m": 12.2,
+  "center_lat_lon": [
+    43.42,
+    -113.5
+  ],
+  "site_id": "CRATERS_MOON_IDAHO",
+  "cartographic_sampling_m": 10,
+  "grid": "data/research/nps_cotm_geology/idaho_nps_24k_units_10m.npz",
+  "grid_sha256": "83ac940d9cad47bcab0ff270fd50cd04e3420c7893dfc0c3481a249dd0ea3fb7",
+  "mapped_pixel_fraction": 1.0,
+  "polygon_features_intersecting_crop": 68,
+  "units": {
+    "1": {
+      "Unit_Symbol": "Qc1",
+      "Unit_Name": "Cinder cones of indeterminate age",
+      "Major_Lithology": "extrusive igneous (volcanic)",
+      "Age_Text": "Holocene and latest Pleistocene",
+      "Period_Age": "Quaternary",
+      "source_maps": [
+        "USGS GQ-1632"
+      ]
+    },
+    "2": {
+      "Unit_Symbol": "Qca3",
+      "Unit_Name": "Trench Mortar Flat flow, The Watchman cinder cone, cinder mounds and spatter-rampart deposits",
+      "Major_Lithology": "extrusive igneous (volcanic)",
+      "Age_Text": "Holocene",
+      "Period_Age": "Quaternary",
+      "source_maps": [
+        "USGS GQ-1632"
+      ]
+    },
+    "3": {
+      "Unit_Symbol": "Qcc3",
+      "Unit_Name": "Sawtooth flow, Big Cinder Butte cinder cone",
+      "Major_Lithology": "extrusive igneous (volcanic)",
+      "Age_Text": "Holocene",
+      "Period_Age": "Quaternary",
+      "source_maps": [
+        "USGS GQ-1632"
+      ]
+    },
+    "4": {
+      "Unit_Symbol": "Qch1",
+      "Unit_Name": "Crescent Butte flow, Crescent Butte cinder cone",
+      "Major_Lithology": "extrusive igneous (volcanic)",
+      "Age_Text": "latest Pleistocene",
+      "Period_Age": "Quaternary",
+      "source_maps": [
+        "USGS GQ-1632",
+        "USGS GQ-1633"
+      ]
+    },
+    "5": {
+      "Unit_Symbol": "Qfa1p",
+      "Unit_Name": "Broken Top flow, pahoehoe basalt flow",
+      "Major_Lithology": "extrusive igneous (volcanic)",
+      "Age_Text": "Holocene",
+      "Period_Age": "Quaternary",
+      "source_maps": [
+        "USGS GQ-1632",
+        "USGS GQ-1633"
+      ]
+    },
+    "6": {
+      "Unit_Symbol": "Qfa2p",
+      "Unit_Name": "Blue Dragon flow, pahoehoe basalt-hawaiite flow",
+      "Major_Lithology": "extrusive igneous (volcanic)",
+      "Age_Text": "Holocene",
+      "Period_Age": "Quaternary",
+      "source_maps": [
+        "USGS GQ-1632",
+        "USGS GQ-1633"
+      ]
+    },
+    "7": {
+      "Unit_Symbol": "Qfa2s",
+      "Unit_Name": "Blue Dragon flow, slab-lava flows",
+      "Major_Lithology": "extrusive igneous (volcanic)",
+      "Age_Text": "Holocene",
+      "Period_Age": "Quaternary",
+      "source_maps": [
+        "USGS GQ-1632",
+        "USGS GQ-1633"
+      ]
+    },
+    "8": {
+      "Unit_Symbol": "Qfa3p",
+      "Unit_Name": "Trench Mortar Flat flow, pahoehoe basalt-hawaiite flows",
+      "Major_Lithology": "extrusive igneous (volcanic)",
+      "Age_Text": "Holocene",
+      "Period_Age": "Quaternary",
+      "source_maps": [
+        "USGS GQ-1632",
+        "USGS GQ-1633"
+      ]
+    },
+    "9": {
+      "Unit_Symbol": "Qfc3a",
+      "Unit_Name": "Sawtooth flow, a'a trachyandesite flow",
+      "Major_Lithology": "extrusive igneous (volcanic)",
+      "Age_Text": "Holocene",
+      "Period_Age": "Quaternary",
+      "source_maps": [
+        "USGS GQ-1632"
+      ]
+    },
+    "10": {
+      "Unit_Symbol": "Qfc3s",
+      "Unit_Name": "Sawtooth flow, slab-lava flows",
+      "Major_Lithology": "extrusive igneous (volcanic)",
+      "Age_Text": "Holocene",
+      "Period_Age": "Quaternary",
+      "source_maps": [
+        "USGS GQ-1632"
+      ]
+    },
+    "11": {
+      "Unit_Symbol": "Qfh1p",
+      "Unit_Name": "Crescent Butte flow, pahoehoe basalt flow",
+      "Major_Lithology": "extrusive igneous (volcanic)",
+      "Age_Text": "latest Pleistocene",
+      "Period_Age": "Quaternary",
+      "source_maps": [
+        "USGS GQ-1632"
+      ]
+    },
+    "12": {
+      "Unit_Symbol": "Qfh2p",
+      "Unit_Name": "Little Prairie flow, pahoehoe basalt flow",
+      "Major_Lithology": "extrusive igneous (volcanic)",
+      "Age_Text": "latest Pleistocene",
+      "Period_Age": "Quaternary",
+      "source_maps": [
+        "USGS GQ-1633"
+      ]
+    }
+  },
+  "outputs": {
+    "earth_moon_200m_nps24k.npz": {
+      "sha256": "d2d6738eccb4aed97b90e37ebf071acc2c10845afc2be5a7531e3cc07a1f1412",
+      "gallery_sha256": "855795895d4d002dbadd87cf33bdfa16c540cbbcaed1886496ce140de186dcb1",
+      "windows": 6728,
+      "idaho_windows": 841
+    },
+    "earth_moon_500m_nps24k.npz": {
+      "sha256": "2bf9bcf990c2e81d1c8691becb097d245c1ce778d1a1c022e29190e345b0bfc8",
+      "gallery_sha256": "0ecf71c46940b4ff8fc43d2751266e0405eda11da04286039975181687719bf0",
+      "windows": 968,
+      "idaho_windows": 121
+    },
+    "earth_moon_1000m_nps24k.npz": {
+      "sha256": "1b2323b2720526a341c410b80337aa1952e2a5adf9414df7bb17d6fd1eec2df2",
+      "gallery_sha256": "00e67b1e5e38d81d9aebb54bd4156a7fb42dd987533c97e155a6b1535302eaf8",
+      "windows": 200,
+      "idaho_windows": 25
+    },
+    "earth_mars_200m_nps24k.npz": {
+      "sha256": "f1e08ba9a0cdc4b9f375125d860a31b9b789cf08b5cafed3fec24e92ebd402ee",
+      "gallery_sha256": "dded62b53bbe73b5044ddaeceb820f24dfc4d384ecc2bb282feeca002358f824",
+      "windows": 6728,
+      "idaho_windows": 841
+    },
+    "earth_mars_500m_nps24k.npz": {
+      "sha256": "2ac921d49f96d58aa8c5983bc736368206d0e4107671181ce7f1f88e9b6d6eac",
+      "gallery_sha256": "294236c1f3d7789edd077d8aea548281da0eefac8772bfad4a94d9da6ea4fff7",
+      "windows": 968,
+      "idaho_windows": 121
+    },
+    "earth_mars_1000m_nps24k.npz": {
+      "sha256": "5acd99012f99765fd048da7c527aebb702e8f144019435fdbadd056114b79234",
+      "gallery_sha256": "838fe42b00e6189e7b40336ef9f05a51833b5e062f36f8c9534db974b79f8fbe",
+      "windows": 200,
+      "idaho_windows": 25
+    }
+  },
+  "used_in_ranking": false,
+  "limitations": [
+    "Mapped geologic units describe field-interpreted polygons, not observed surface exposure or minerals in every 10 m cell.",
+    "10 m rasterization measures approximate map-unit overlap and does not improve the source map's 1:24,000 scale or 12.2 m horizontal accuracy.",
+    "Unmapped cells remain unknown; NPS map overlap and NLCD land cover must be interpreted separately."
+  ]
+}

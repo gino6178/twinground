@@ -1,0 +1,71 @@
+{
+  "created_utc": "2026-10-11T08:46:09+00:00",
+  "source_manifest_sha256": "a8fb74ca287462b39d099cf5e6d436d6a027bbaf7c3b92f8493e81b48ec25090",
+  "comparison": "NAIP 2021–2023 2 m NDVI versus Annual NLCD 2024 30 m shrub class in overlapping 500 m windows",
+  "sites": {
+    "METEOR_CRATER": {
+      "overlapping_window_count": 121,
+      "median_ndvi": 0.0083,
+      "median_fraction_ndvi_ge_0_1": 0.0008,
+      "median_nlcd_shrub_fraction": 1.0,
+      "within_site_spearman_ndvi_fraction_vs_nlcd_shrub": 0.1022
+    },
+    "KILBOURNE_HOLE": {
+      "overlapping_window_count": 121,
+      "median_ndvi": -0.034,
+      "median_fraction_ndvi_ge_0_1": 0.0036,
+      "median_nlcd_shrub_fraction": 1.0,
+      "within_site_spearman_ndvi_fraction_vs_nlcd_shrub": 0.024
+    },
+    "CARRIZOZO_FLOW": {
+      "overlapping_window_count": 121,
+      "median_ndvi": -0.1172,
+      "median_fraction_ndvi_ge_0_1": 0.0077,
+      "median_nlcd_shrub_fraction": 1.0,
+      "within_site_spearman_ndvi_fraction_vs_nlcd_shrub": 0.2311
+    },
+    "AMBOY_CRATER": {
+      "overlapping_window_count": 121,
+      "median_ndvi": -0.0336,
+      "median_fraction_ndvi_ge_0_1": 0.0,
+      "median_nlcd_shrub_fraction": 0.9424,
+      "within_site_spearman_ndvi_fraction_vs_nlcd_shrub": -0.0748
+    },
+    "BIG_PINE_FLOW": {
+      "overlapping_window_count": 121,
+      "median_ndvi": -0.024,
+      "median_fraction_ndvi_ge_0_1": 0.0,
+      "median_nlcd_shrub_fraction": 1.0,
+      "within_site_spearman_ndvi_fraction_vs_nlcd_shrub": -0.1348
+    },
+    "CIMA_FIELD": {
+      "overlapping_window_count": 121,
+      "median_ndvi": -0.0599,
+      "median_fraction_ndvi_ge_0_1": 0.0,
+      "median_nlcd_shrub_fraction": 1.0,
+      "within_site_spearman_ndvi_fraction_vs_nlcd_shrub": null
+    },
+    "DEATH_VALLEY_MARS_HILL": {
+      "overlapping_window_count": 121,
+      "median_ndvi": -0.1138,
+      "median_fraction_ndvi_ge_0_1": 0.0,
+      "median_nlcd_shrub_fraction": 0.0144,
+      "within_site_spearman_ndvi_fraction_vs_nlcd_shrub": 0.593
+    },
+    "CRATERS_MOON_IDAHO": {
+      "overlapping_window_count": 121,
+      "median_ndvi": -0.4407,
+      "median_fraction_ndvi_ge_0_1": 0.0007,
+      "median_nlcd_shrub_fraction": 0.6209,
+      "within_site_spearman_ndvi_fraction_vs_nlcd_shrub": 0.7532
+    }
+  },
+  "legacy_idaho_max_absolute_metric_difference": 0.0,
+  "decision": "research_only_not_deployed_or_ranked",
+  "reason": [
+    "NDVI has not been validated against co-located field or pixel-level vegetation masks.",
+    "Several sites have near-zero NDVI >= 0.1 despite high NLCD shrub fractions; the products measure different quantities and dates.",
+    "Within-site correlations on heavily overlapping windows are descriptive and do not provide independent significance or material accuracy.",
+    "Low NDVI cannot distinguish bare rock, sand, soil, shadow, or dark lava."
+  ]
+}

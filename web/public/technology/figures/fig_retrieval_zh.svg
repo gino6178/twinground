@@ -1,0 +1,1412 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="510.23622pt" height="362.834646pt" viewBox="0 0 510.23622 362.834646" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ 
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 362.834646 
+L 510.23622 362.834646 
+L 510.23622 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 38.267717 145.133858 
+L 242.362205 145.133858 
+L 242.362205 43.540157 
+L 38.267717 43.540157 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m06c84aed55" d="M 0 0 
+L 0 2 
+" style="stroke: #000000; stroke-width: 0.6"/>
+      </defs>
+      <g>
+       <use xlink:href="#m06c84aed55" x="55.275591" y="145.133858" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif" transform="translate(48.875591 155.727858)">月球</text>
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif" transform="translate(49.361591 163.816058)">FeO</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m06c84aed55" x="89.291339" y="145.133858" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif" transform="translate(82.891339 155.727858)">月球</text>
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif" transform="translate(87.224339 163.816058)">K</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m06c84aed55" x="123.307087" y="145.133858" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif" transform="translate(116.907087 155.727858)">月球</text>
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif" transform="translate(119.447587 163.816058)">Th</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m06c84aed55" x="157.322835" y="145.133858" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif" transform="translate(150.922835 155.727858)">火星</text>
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif" transform="translate(155.255835 163.816058)">K</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m06c84aed55" x="191.338583" y="145.133858" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif" transform="translate(184.938583 155.727858)">火星</text>
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif" transform="translate(185.424583 163.816058)">FeO</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m06c84aed55" x="225.354331" y="145.133858" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif" transform="translate(218.954331 155.727858)">火星</text>
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif" transform="translate(221.494831 163.816058)">Th</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7">
+      <defs>
+       <path id="m22e82b1bac" d="M 0 0 
+L -2 0 
+" style="stroke: #000000; stroke-width: 0.6"/>
+      </defs>
+      <g>
+       <use xlink:href="#m22e82b1bac" x="38.267717" y="131.40498" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end" x="32.767717" y="133.95198" transform="rotate(-0 32.767717 133.95198)">−0.5</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m22e82b1bac" x="38.267717" y="103.947223" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end" x="32.767717" y="106.494223" transform="rotate(-0 32.767717 106.494223)">0.0</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m22e82b1bac" x="38.267717" y="76.489466" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end" x="32.767717" y="79.036466" transform="rotate(-0 32.767717 79.036466)">0.5</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m22e82b1bac" x="38.267717" y="49.031709" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end" x="32.767717" y="51.578709" transform="rotate(-0 32.767717 51.578709)">1.0</text>
+     </g>
+    </g>
+    <g id="text_11">
+     <text style="font-size: 6.6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle" x="17.820904" y="94.337008" transform="rotate(-90 17.820904 94.337008)">檢索效率</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 42.859843 103.947223 
+L 50.683465 103.947223 
+L 50.683465 75.149527 
+L 42.859843 75.149527 
+z
+" clip-path="url(#p882adb2ba3)" style="fill: #0f766e"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 51.36378 103.947223 
+L 59.187402 103.947223 
+L 59.187402 70.701371 
+L 51.36378 70.701371 
+z
+" clip-path="url(#p882adb2ba3)" style="fill: #64748b"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 59.867717 103.947223 
+L 67.691339 103.947223 
+L 67.691339 102.59081 
+L 59.867717 102.59081 
+z
+" clip-path="url(#p882adb2ba3)" style="fill: #d97706"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 76.875591 103.947223 
+L 84.699213 103.947223 
+L 84.699213 72.129174 
+L 76.875591 72.129174 
+z
+" clip-path="url(#p882adb2ba3)" style="fill: #0f766e"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 85.379528 103.947223 
+L 93.20315 103.947223 
+L 93.20315 71.634934 
+L 85.379528 71.634934 
+z
+" clip-path="url(#p882adb2ba3)" style="fill: #64748b"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 93.883465 103.947223 
+L 101.707087 103.947223 
+L 101.707087 114.156017 
+L 93.883465 114.156017 
+z
+" clip-path="url(#p882adb2ba3)" style="fill: #d97706"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 110.891339 103.947223 
+L 118.714961 103.947223 
+L 118.714961 61.936855 
+L 110.891339 61.936855 
+z
+" clip-path="url(#p882adb2ba3)" style="fill: #0f766e"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 119.395276 103.947223 
+L 127.218898 103.947223 
+L 127.218898 61.755633 
+L 119.395276 61.755633 
+z
+" clip-path="url(#p882adb2ba3)" style="fill: #64748b"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 127.899213 103.947223 
+L 135.722835 103.947223 
+L 135.722835 103.958206 
+L 127.899213 103.958206 
+z
+" clip-path="url(#p882adb2ba3)" style="fill: #d97706"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 144.907087 103.947223 
+L 152.730709 103.947223 
+L 152.730709 89.147492 
+L 144.907087 89.147492 
+z
+" clip-path="url(#p882adb2ba3)" style="fill: #0f766e"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 153.411024 103.947223 
+L 161.234646 103.947223 
+L 161.234646 91.333129 
+L 153.411024 91.333129 
+z
+" clip-path="url(#p882adb2ba3)" style="fill: #64748b"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 161.914961 103.947223 
+L 169.738583 103.947223 
+L 169.738583 115.649719 
+L 161.914961 115.649719 
+z
+" clip-path="url(#p882adb2ba3)" style="fill: #d97706"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 38.267717 103.947223 
+L 242.362205 103.947223 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_12">
+    <path d="M 38.267717 49.031709 
+L 242.362205 49.031709 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke-dasharray: 1.5,1; stroke-dashoffset: 0; stroke: #1e293b; stroke-width: 0.5"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 38.267717 145.133858 
+L 38.267717 43.540157 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 38.267717 145.133858 
+L 242.362205 145.133858 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end; fill: #1e293b" x="32.144882" y="38.557346" transform="rotate(-0 32.144882 38.557346)">a</text>
+   </g>
+   <g id="LineCollection_1">
+    <path d="M 46.771654 78.686086 
+L 46.771654 71.558053 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6"/>
+   </g>
+   <g id="line2d_13">
+    <defs>
+     <path id="m27b030ab38" d="M 1.2 0 
+L -1.2 -0 
+" style="stroke: #1e293b"/>
+    </defs>
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="46.771654" y="78.686086" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="line2d_14">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="46.771654" y="71.558053" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="LineCollection_2">
+    <path d="M 55.275591 74.479558 
+L 55.275591 66.824335 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6"/>
+   </g>
+   <g id="line2d_15">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="55.275591" y="74.479558" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="line2d_16">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="55.275591" y="66.824335" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="LineCollection_3">
+    <path d="M 63.779528 103.606747 
+L 63.779528 101.426601 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6"/>
+   </g>
+   <g id="line2d_17">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="63.779528" y="103.606747" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="line2d_18">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="63.779528" y="101.426601" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="LineCollection_4">
+    <path d="M 80.787402 73.271417 
+L 80.787402 70.888083 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6"/>
+   </g>
+   <g id="line2d_19">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="80.787402" y="73.271417" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="line2d_20">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="80.787402" y="70.888083" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="LineCollection_5">
+    <path d="M 89.291339 73.562469 
+L 89.291339 69.987469 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6"/>
+   </g>
+   <g id="line2d_21">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="89.291339" y="73.562469" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="line2d_22">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="89.291339" y="69.987469" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="LineCollection_6">
+    <path d="M 97.795276 115.397107 
+L 97.795276 113.063198 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6"/>
+   </g>
+   <g id="line2d_23">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="97.795276" y="115.397107" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="line2d_24">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="97.795276" y="113.063198" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="LineCollection_7">
+    <path d="M 114.80315 64.265272 
+L 114.80315 60.053253 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6"/>
+   </g>
+   <g id="line2d_25">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="114.80315" y="64.265272" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="line2d_26">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="114.80315" y="60.053253" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="LineCollection_8">
+    <path d="M 123.307087 64.369612 
+L 123.307087 59.591962 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6"/>
+   </g>
+   <g id="line2d_27">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="123.307087" y="64.369612" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="line2d_28">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="123.307087" y="59.591962" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="LineCollection_9">
+    <path d="M 131.811024 104.809396 
+L 131.811024 103.035625 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6"/>
+   </g>
+   <g id="line2d_29">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="131.811024" y="104.809396" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="line2d_30">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="131.811024" y="103.035625" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="LineCollection_10">
+    <path d="M 148.818898 90.624719 
+L 148.818898 87.516501 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6"/>
+   </g>
+   <g id="line2d_31">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="148.818898" y="90.624719" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="line2d_32">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="148.818898" y="87.516501" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="LineCollection_11">
+    <path d="M 157.322835 92.261201 
+L 157.322835 90.394074 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6"/>
+   </g>
+   <g id="line2d_33">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="157.322835" y="92.261201" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="line2d_34">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="157.322835" y="90.394074" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="LineCollection_12">
+    <path d="M 165.826772 116.533859 
+L 165.826772 114.666731 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6"/>
+   </g>
+   <g id="line2d_35">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="165.826772" y="116.533859" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="line2d_36">
+    <g clip-path="url(#p882adb2ba3)">
+     <use xlink:href="#m27b030ab38" x="165.826772" y="114.666731" style="fill: #1e293b; stroke: #1e293b"/>
+    </g>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 5.9px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; fill: #64748b" transform="translate(185.438583 89.488789)">無法</text>
+    <text style="font-size: 5.9px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; fill: #64748b" transform="translate(185.438583 96.005892)">評估</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 5.9px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; fill: #64748b" transform="translate(219.454331 89.488789)">無法</text>
+    <text style="font-size: 5.9px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; fill: #64748b" transform="translate(219.454331 96.005892)">評估</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="38.267717" y="40.540157" transform="rotate(-0 38.267717 40.540157)">保留的地球窗格</text>
+   </g>
+   <g id="line2d_37">
+    <path d="M 46.771654 75.149527 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_38">
+    <path d="M 55.275591 70.701371 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_39">
+    <path d="M 63.779528 102.59081 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_40">
+    <path d="M 80.787402 72.129174 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_41">
+    <path d="M 89.291339 71.634934 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_42">
+    <path d="M 97.795276 114.156017 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_43">
+    <path d="M 114.80315 61.936855 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_44">
+    <path d="M 123.307087 61.755633 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_45">
+    <path d="M 131.811024 103.958206 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_46">
+    <path d="M 148.818898 89.147492 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_47">
+    <path d="M 157.322835 91.333129 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_48">
+    <path d="M 165.826772 115.649719 
+" clip-path="url(#p882adb2ba3)" style="fill: none; stroke: #1e293b; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="legend_1">
+    <g id="patch_17">
+     <path d="M 43.487717 120.895296 
+L 49.867717 120.895296 
+L 49.867717 116.835296 
+L 43.487717 116.835296 
+z
+" style="fill: #0f766e; stroke: #0f766e; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_16">
+     <text style="font-size: 5.8px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="54.507717" y="120.895296" transform="rotate(-0 54.507717 120.895296)">估計性質</text>
+    </g>
+    <g id="patch_18">
+     <path d="M 43.487717 129.740296 
+L 49.867717 129.740296 
+L 49.867717 125.680296 
+L 43.487717 125.680296 
+z
+" style="fill: #64748b; stroke: #64748b; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_17">
+     <text style="font-size: 5.8px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="54.507717" y="129.740296" transform="rotate(-0 54.507717 129.740296)">最近鄰</text>
+    </g>
+    <g id="patch_19">
+     <path d="M 43.487717 138.585296 
+L 49.867717 138.585296 
+L 49.867717 134.525296 
+L 43.487717 134.525296 
+z
+" style="fill: #d97706; stroke: #d97706; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_18">
+     <text style="font-size: 5.8px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="54.507717" y="138.585296" transform="rotate(-0 54.507717 138.585296)">啟發式條件篩選</text>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_20">
+    <path d="M 298.488189 145.133858 
+L 502.582677 145.133858 
+L 502.582677 43.540157 
+L 298.488189 43.540157 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_7">
+     <g id="line2d_49">
+      <g>
+       <use xlink:href="#m06c84aed55" x="310.150731" y="145.133858" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_19">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle" x="310.150731" y="155.727858" transform="rotate(-0 310.150731 155.727858)">0.5</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_50">
+      <g>
+       <use xlink:href="#m06c84aed55" x="368.463442" y="145.133858" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_20">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle" x="368.463442" y="155.727858" transform="rotate(-0 368.463442 155.727858)">1.0</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_51">
+      <g>
+       <use xlink:href="#m06c84aed55" x="485.088864" y="145.133858" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_21">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle" x="485.088864" y="155.727858" transform="rotate(-0 485.088864 155.727858)">2.0</text>
+     </g>
+    </g>
+    <g id="text_22">
+     <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle" x="400.535433" y="163.287858" transform="rotate(-0 400.535433 163.287858)">容差倍率（× τ）</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_5">
+     <g id="line2d_52">
+      <g>
+       <use xlink:href="#m22e82b1bac" x="298.488189" y="121.689158" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_23">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end" x="292.988189" y="124.236158" transform="rotate(-0 292.988189 124.236158)">0.0</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_53">
+      <g>
+       <use xlink:href="#m22e82b1bac" x="298.488189" y="95.639491" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_24">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end" x="292.988189" y="98.186491" transform="rotate(-0 292.988189 98.186491)">0.5</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_54">
+      <g>
+       <use xlink:href="#m22e82b1bac" x="298.488189" y="69.589824" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_25">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end" x="292.988189" y="72.136824" transform="rotate(-0 292.988189 72.136824)">1.0</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_55">
+      <g>
+       <use xlink:href="#m22e82b1bac" x="298.488189" y="43.540157" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_26">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end" x="292.988189" y="46.087157" transform="rotate(-0 292.988189 46.087157)">1.5</text>
+     </g>
+    </g>
+    <g id="text_27">
+     <text style="font-size: 6.6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle" x="281.593376" y="94.337008" transform="rotate(-90 281.593376 94.337008)">檢索效率</text>
+    </g>
+   </g>
+   <g id="line2d_56">
+    <path d="M 310.150731 105.548784 
+L 368.463442 94.368267 
+L 485.088864 86.699246 
+" clip-path="url(#p06cbfeab4c)" style="fill: none; stroke: #0f766e; stroke-linecap: square"/>
+    <defs>
+     <path id="m8ad49955aa" d="M 0 1.6 
+C 0.424325 1.6 0.831328 1.431414 1.131371 1.131371 
+C 1.431414 0.831328 1.6 0.424325 1.6 0 
+C 1.6 -0.424325 1.431414 -0.831328 1.131371 -1.131371 
+C 0.831328 -1.431414 0.424325 -1.6 0 -1.6 
+C -0.424325 -1.6 -0.831328 -1.431414 -1.131371 -1.131371 
+C -1.431414 -0.831328 -1.6 -0.424325 -1.6 0 
+C -1.6 0.424325 -1.431414 0.831328 -1.131371 1.131371 
+C -0.831328 1.431414 -0.424325 1.6 0 1.6 
+z
+" style="stroke: #0f766e"/>
+    </defs>
+    <g clip-path="url(#p06cbfeab4c)">
+     <use xlink:href="#m8ad49955aa" x="310.150731" y="105.548784" style="fill: #0f766e; stroke: #0f766e"/>
+     <use xlink:href="#m8ad49955aa" x="368.463442" y="94.368267" style="fill: #0f766e; stroke: #0f766e"/>
+     <use xlink:href="#m8ad49955aa" x="485.088864" y="86.699246" style="fill: #0f766e; stroke: #0f766e"/>
+    </g>
+   </g>
+   <g id="line2d_57">
+    <path d="M 310.150731 120.032399 
+L 368.463442 120.402305 
+L 485.088864 117.224245 
+" clip-path="url(#p06cbfeab4c)" style="fill: none; stroke: #d97706; stroke-linecap: square"/>
+    <defs>
+     <path id="me53b9ca9de" d="M 0 1.6 
+C 0.424325 1.6 0.831328 1.431414 1.131371 1.131371 
+C 1.431414 0.831328 1.6 0.424325 1.6 0 
+C 1.6 -0.424325 1.431414 -0.831328 1.131371 -1.131371 
+C 0.831328 -1.431414 0.424325 -1.6 0 -1.6 
+C -0.424325 -1.6 -0.831328 -1.431414 -1.131371 -1.131371 
+C -1.431414 -0.831328 -1.6 -0.424325 -1.6 0 
+C -1.6 0.424325 -1.431414 0.831328 -1.131371 1.131371 
+C -0.831328 1.431414 -0.424325 1.6 0 1.6 
+z
+" style="stroke: #d97706"/>
+    </defs>
+    <g clip-path="url(#p06cbfeab4c)">
+     <use xlink:href="#me53b9ca9de" x="310.150731" y="120.032399" style="fill: #d97706; stroke: #d97706"/>
+     <use xlink:href="#me53b9ca9de" x="368.463442" y="120.402305" style="fill: #d97706; stroke: #d97706"/>
+     <use xlink:href="#me53b9ca9de" x="485.088864" y="117.224245" style="fill: #d97706; stroke: #d97706"/>
+    </g>
+   </g>
+   <g id="line2d_58">
+    <path d="M 310.150731 103.610689 
+L 368.463442 91.445495 
+L 485.088864 81.452843 
+" clip-path="url(#p06cbfeab4c)" style="fill: none; stroke: #0f766e; stroke-linecap: square"/>
+    <defs>
+     <path id="mdd17e0333e" d="M -1.6 1.6 
+L 1.6 1.6 
+L 1.6 -1.6 
+L -1.6 -1.6 
+z
+" style="stroke: #0f766e; stroke-linejoin: miter"/>
+    </defs>
+    <g clip-path="url(#p06cbfeab4c)">
+     <use xlink:href="#mdd17e0333e" x="310.150731" y="103.610689" style="fill: #0f766e; stroke: #0f766e; stroke-linejoin: miter"/>
+     <use xlink:href="#mdd17e0333e" x="368.463442" y="91.445495" style="fill: #0f766e; stroke: #0f766e; stroke-linejoin: miter"/>
+     <use xlink:href="#mdd17e0333e" x="485.088864" y="81.452843" style="fill: #0f766e; stroke: #0f766e; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="line2d_59">
+    <path d="M 310.150731 126.873042 
+L 368.463442 131.119137 
+L 485.088864 141.330607 
+" clip-path="url(#p06cbfeab4c)" style="fill: none; stroke: #d97706; stroke-linecap: square"/>
+    <defs>
+     <path id="m402fb6bd44" d="M -1.6 1.6 
+L 1.6 1.6 
+L 1.6 -1.6 
+L -1.6 -1.6 
+z
+" style="stroke: #d97706; stroke-linejoin: miter"/>
+    </defs>
+    <g clip-path="url(#p06cbfeab4c)">
+     <use xlink:href="#m402fb6bd44" x="310.150731" y="126.873042" style="fill: #d97706; stroke: #d97706; stroke-linejoin: miter"/>
+     <use xlink:href="#m402fb6bd44" x="368.463442" y="131.119137" style="fill: #d97706; stroke: #d97706; stroke-linejoin: miter"/>
+     <use xlink:href="#m402fb6bd44" x="485.088864" y="141.330607" style="fill: #d97706; stroke: #d97706; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="line2d_60">
+    <path d="M 310.150731 95.410254 
+L 368.463442 81.770649 
+L 485.088864 72.403188 
+" clip-path="url(#p06cbfeab4c)" style="fill: none; stroke: #0f766e; stroke-linecap: square"/>
+    <defs>
+     <path id="mf59507cc26" d="M 0 -1.6 
+L -1.6 1.6 
+L 1.6 1.6 
+z
+" style="stroke: #0f766e; stroke-linejoin: miter"/>
+    </defs>
+    <g clip-path="url(#p06cbfeab4c)">
+     <use xlink:href="#mf59507cc26" x="310.150731" y="95.410254" style="fill: #0f766e; stroke: #0f766e; stroke-linejoin: miter"/>
+     <use xlink:href="#mf59507cc26" x="368.463442" y="81.770649" style="fill: #0f766e; stroke: #0f766e; stroke-linejoin: miter"/>
+     <use xlink:href="#mf59507cc26" x="485.088864" y="72.403188" style="fill: #0f766e; stroke: #0f766e; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="line2d_61">
+    <path d="M 310.150731 121.54328 
+L 368.463442 121.980914 
+L 485.088864 124.65361 
+" clip-path="url(#p06cbfeab4c)" style="fill: none; stroke: #d97706; stroke-linecap: square"/>
+    <defs>
+     <path id="m58ff7ed11a" d="M 0 -1.6 
+L -1.6 1.6 
+L 1.6 1.6 
+z
+" style="stroke: #d97706; stroke-linejoin: miter"/>
+    </defs>
+    <g clip-path="url(#p06cbfeab4c)">
+     <use xlink:href="#m58ff7ed11a" x="310.150731" y="121.54328" style="fill: #d97706; stroke: #d97706; stroke-linejoin: miter"/>
+     <use xlink:href="#m58ff7ed11a" x="368.463442" y="121.980914" style="fill: #d97706; stroke: #d97706; stroke-linejoin: miter"/>
+     <use xlink:href="#m58ff7ed11a" x="485.088864" y="124.65361" style="fill: #d97706; stroke: #d97706; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="line2d_62">
+    <path d="M 298.488189 121.689158 
+L 502.582677 121.689158 
+" clip-path="url(#p06cbfeab4c)" style="fill: none; stroke: #1e293b; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 298.488189 145.133858 
+L 298.488189 43.540157 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 298.488189 145.133858 
+L 502.582677 145.133858 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_28">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end; fill: #1e293b" x="292.365354" y="38.557346" transform="rotate(-0 292.365354 38.557346)">b</text>
+   </g>
+   <g id="text_29">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="298.488189" y="40.540157" transform="rotate(-0 298.488189 40.540157)">容差階梯（事後分析）</text>
+   </g>
+   <g id="legend_2">
+    <g id="line2d_63">
+     <path d="M 303.528189 51.077407 
+L 307.448189 51.077407 
+L 311.368189 51.077407 
+" style="fill: none; stroke: #0f766e; stroke-linecap: square"/>
+    </g>
+    <g id="text_30">
+     <text style="font-size: 5.6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="315.848189" y="53.037407" transform="rotate(-0 315.848189 53.037407)">估計性質</text>
+    </g>
+    <g id="line2d_64">
+     <path d="M 303.528189 59.617407 
+L 307.448189 59.617407 
+L 311.368189 59.617407 
+" style="fill: none; stroke: #d97706; stroke-linecap: square"/>
+    </g>
+    <g id="text_31">
+     <text style="font-size: 5.6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="315.848189" y="61.577407" transform="rotate(-0 315.848189 61.577407)">啟發式條件篩選</text>
+    </g>
+    <g id="line2d_65">
+     <defs>
+      <path id="maf97a1802d" d="M 0 1.5 
+C 0.397805 1.5 0.77937 1.341951 1.06066 1.06066 
+C 1.341951 0.77937 1.5 0.397805 1.5 0 
+C 1.5 -0.397805 1.341951 -0.77937 1.06066 -1.06066 
+C 0.77937 -1.341951 0.397805 -1.5 0 -1.5 
+C -0.397805 -1.5 -0.77937 -1.341951 -1.06066 -1.06066 
+C -1.341951 -0.77937 -1.5 -0.397805 -1.5 0 
+C -1.5 0.397805 -1.341951 0.77937 -1.06066 1.06066 
+C -0.77937 1.341951 -0.397805 1.5 0 1.5 
+z
+" style="stroke: #1e293b"/>
+     </defs>
+     <g>
+      <use xlink:href="#maf97a1802d" x="307.448189" y="68.157407" style="fill: #1e293b; stroke: #1e293b"/>
+     </g>
+    </g>
+    <g id="text_32">
+     <text style="font-size: 5.6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="315.848189" y="70.117407" transform="rotate(-0 315.848189 70.117407)">月球 FeO</text>
+    </g>
+    <g id="line2d_66">
+     <defs>
+      <path id="md0a8bd7b22" d="M -1.5 1.5 
+L 1.5 1.5 
+L 1.5 -1.5 
+L -1.5 -1.5 
+z
+" style="stroke: #1e293b; stroke-linejoin: miter"/>
+     </defs>
+     <g>
+      <use xlink:href="#md0a8bd7b22" x="363.448189" y="51.077407" style="fill: #1e293b; stroke: #1e293b; stroke-linejoin: miter"/>
+     </g>
+    </g>
+    <g id="text_33">
+     <text style="font-size: 5.6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="371.848189" y="53.037407" transform="rotate(-0 371.848189 53.037407)">月球 K</text>
+    </g>
+    <g id="line2d_67">
+     <defs>
+      <path id="m1c5b394b81" d="M 0 -1.5 
+L -1.5 1.5 
+L 1.5 1.5 
+z
+" style="stroke: #1e293b; stroke-linejoin: miter"/>
+     </defs>
+     <g>
+      <use xlink:href="#m1c5b394b81" x="363.448189" y="59.617407" style="fill: #1e293b; stroke: #1e293b; stroke-linejoin: miter"/>
+     </g>
+    </g>
+    <g id="text_34">
+     <text style="font-size: 5.6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="371.848189" y="61.577407" transform="rotate(-0 371.848189 61.577407)">月球 Th</text>
+    </g>
+   </g>
+  </g>
+  <g id="axes_3">
+   <g id="patch_23">
+    <path d="M 38.267717 319.294488 
+L 242.362205 319.294488 
+L 242.362205 217.700787 
+L 38.267717 217.700787 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_5">
+    <g id="xtick_10">
+     <g id="line2d_68">
+      <g>
+       <use xlink:href="#m06c84aed55" x="66.882067" y="319.294488" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_35">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle" x="66.882067" y="329.888488" transform="rotate(-0 66.882067 329.888488)">K</text>
+     </g>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_69">
+      <g>
+       <use xlink:href="#m06c84aed55" x="115.83733" y="319.294488" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_36">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle" x="115.83733" y="329.888488" transform="rotate(-0 115.83733 329.888488)">Th</text>
+     </g>
+    </g>
+    <g id="xtick_12">
+     <g id="line2d_70">
+      <g>
+       <use xlink:href="#m06c84aed55" x="164.792592" y="319.294488" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_37">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle" x="164.792592" y="329.888488" transform="rotate(-0 164.792592 329.888488)">FeO</text>
+     </g>
+    </g>
+    <g id="xtick_13">
+     <g id="line2d_71">
+      <g>
+       <use xlink:href="#m06c84aed55" x="213.747854" y="319.294488" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_38">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle" x="213.747854" y="329.888488" transform="rotate(-0 213.747854 329.888488)">TiO₂</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_6">
+    <g id="ytick_9">
+     <g id="line2d_72">
+      <g>
+       <use xlink:href="#m22e82b1bac" x="38.267717" y="308.006299" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_39">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end" x="32.767717" y="310.553299" transform="rotate(-0 32.767717 310.553299)">0.0</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_73">
+      <g>
+       <use xlink:href="#m22e82b1bac" x="38.267717" y="285.429921" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_40">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end" x="32.767717" y="287.976921" transform="rotate(-0 32.767717 287.976921)">0.2</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_74">
+      <g>
+       <use xlink:href="#m22e82b1bac" x="38.267717" y="262.853543" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_41">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end" x="32.767717" y="265.400543" transform="rotate(-0 32.767717 265.400543)">0.4</text>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_75">
+      <g>
+       <use xlink:href="#m22e82b1bac" x="38.267717" y="240.277165" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_42">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end" x="32.767717" y="242.824165" transform="rotate(-0 32.767717 242.824165)">0.6</text>
+     </g>
+    </g>
+    <g id="ytick_13">
+     <g id="line2d_76">
+      <g>
+       <use xlink:href="#m22e82b1bac" x="38.267717" y="217.700787" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_43">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end" x="32.767717" y="220.247787" transform="rotate(-0 32.767717 220.247787)">0.8</text>
+     </g>
+    </g>
+    <g id="text_44">
+     <text style="font-size: 6.6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle" x="21.372904" y="268.497638" transform="rotate(-90 21.372904 268.497638)">R²</text>
+    </g>
+   </g>
+   <g id="patch_24">
+    <path d="M 47.544739 308.006299 
+L 56.846239 308.006299 
+L 56.846239 234.339578 
+L 47.544739 234.339578 
+z
+" clip-path="url(#p6dbed7c37e)" style="fill: #0f766e"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 57.335791 308.006299 
+L 66.637291 308.006299 
+L 66.637291 248.201474 
+L 57.335791 248.201474 
+z
+" clip-path="url(#p6dbed7c37e)" style="fill: #64748b"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 67.126844 308.006299 
+L 76.428343 308.006299 
+L 76.428343 256.498293 
+L 67.126844 256.498293 
+z
+" clip-path="url(#p6dbed7c37e)" style="fill: #7c3aed"/>
+   </g>
+   <g id="patch_27">
+    <path d="M 76.917896 308.006299 
+L 86.219396 308.006299 
+L 86.219396 294.133115 
+L 76.917896 294.133115 
+z
+" clip-path="url(#p6dbed7c37e)" style="fill: #94a3b8"/>
+   </g>
+   <g id="patch_28">
+    <path d="M 96.500001 308.006299 
+L 105.801501 308.006299 
+L 105.801501 258.496302 
+L 96.500001 258.496302 
+z
+" clip-path="url(#p6dbed7c37e)" style="fill: #0f766e"/>
+   </g>
+   <g id="patch_29">
+    <path d="M 106.291053 308.006299 
+L 115.592553 308.006299 
+L 115.592553 275.755943 
+L 106.291053 275.755943 
+z
+" clip-path="url(#p6dbed7c37e)" style="fill: #64748b"/>
+   </g>
+   <g id="patch_30">
+    <path d="M 116.082106 308.006299 
+L 125.383606 308.006299 
+L 125.383606 294.212132 
+L 116.082106 294.212132 
+z
+" clip-path="url(#p6dbed7c37e)" style="fill: #7c3aed"/>
+   </g>
+   <g id="patch_31">
+    <path d="M 125.873158 308.006299 
+L 135.174658 308.006299 
+L 135.174658 301.809083 
+L 125.873158 301.809083 
+z
+" clip-path="url(#p6dbed7c37e)" style="fill: #94a3b8"/>
+   </g>
+   <g id="patch_32">
+    <path d="M 145.455263 308.006299 
+L 154.756763 308.006299 
+L 154.756763 254.838929 
+L 145.455263 254.838929 
+z
+" clip-path="url(#p6dbed7c37e)" style="fill: #0f766e"/>
+   </g>
+   <g id="patch_33">
+    <path d="M 155.246316 308.006299 
+L 164.547815 308.006299 
+L 164.547815 264.851553 
+L 155.246316 264.851553 
+z
+" clip-path="url(#p6dbed7c37e)" style="fill: #64748b"/>
+   </g>
+   <g id="patch_34">
+    <path d="M 165.037368 308.006299 
+L 174.338868 308.006299 
+L 174.338868 276.196183 
+L 165.037368 276.196183 
+z
+" clip-path="url(#p6dbed7c37e)" style="fill: #7c3aed"/>
+   </g>
+   <g id="patch_35">
+    <path d="M 174.82842 308.006299 
+L 184.12992 308.006299 
+L 184.12992 303.321701 
+L 174.82842 303.321701 
+z
+" clip-path="url(#p6dbed7c37e)" style="fill: #94a3b8"/>
+   </g>
+   <g id="patch_36">
+    <path d="M 194.410525 308.006299 
+L 203.712025 308.006299 
+L 203.712025 273.520882 
+L 194.410525 273.520882 
+z
+" clip-path="url(#p6dbed7c37e)" style="fill: #0f766e"/>
+   </g>
+   <g id="patch_37">
+    <path d="M 204.201578 308.006299 
+L 213.503078 308.006299 
+L 213.503078 280.914646 
+L 204.201578 280.914646 
+z
+" clip-path="url(#p6dbed7c37e)" style="fill: #64748b"/>
+   </g>
+   <g id="patch_38">
+    <path d="M 213.99263 308.006299 
+L 223.29413 308.006299 
+L 223.29413 278.08131 
+L 213.99263 278.08131 
+z
+" clip-path="url(#p6dbed7c37e)" style="fill: #7c3aed"/>
+   </g>
+   <g id="patch_39">
+    <path d="M 223.783683 308.006299 
+L 233.085183 308.006299 
+L 233.085183 312.815068 
+L 223.783683 312.815068 
+z
+" clip-path="url(#p6dbed7c37e)" style="fill: #94a3b8"/>
+   </g>
+   <g id="line2d_77">
+    <path d="M 38.267717 308.006299 
+L 242.362205 308.006299 
+" clip-path="url(#p6dbed7c37e)" style="fill: none; stroke: #1e293b; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="patch_40">
+    <path d="M 38.267717 319.294488 
+L 38.267717 217.700787 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_41">
+    <path d="M 38.267717 319.294488 
+L 242.362205 319.294488 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_45">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end; fill: #1e293b" x="32.144882" y="212.717976" transform="rotate(-0 32.144882 212.717976)">c</text>
+   </g>
+   <g id="text_46">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="38.267717" y="214.700787" transform="rotate(-0 38.267717 214.700787)">300 km 內的補值（事後分析）</text>
+   </g>
+   <g id="legend_3">
+    <g id="patch_42">
+     <path d="M 155.562205 227.198037 
+L 161.722205 227.198037 
+L 161.722205 223.278037 
+L 155.562205 223.278037 
+z
+" style="fill: #0f766e; stroke: #0f766e; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_47">
+     <text style="font-size: 5.6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="166.202205" y="227.198037" transform="rotate(-0 166.202205 227.198037)">梯度提升樹</text>
+    </g>
+    <g id="patch_43">
+     <path d="M 155.562205 235.738037 
+L 161.722205 235.738037 
+L 161.722205 231.818037 
+L 155.562205 231.818037 
+z
+" style="fill: #64748b; stroke: #64748b; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_48">
+     <text style="font-size: 5.6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="166.202205" y="235.738037" transform="rotate(-0 166.202205 235.738037)">最近鄰</text>
+    </g>
+    <g id="patch_44">
+     <path d="M 198.682205 227.198037 
+L 204.842205 227.198037 
+L 204.842205 223.278037 
+L 198.682205 223.278037 
+z
+" style="fill: #7c3aed; stroke: #7c3aed; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_49">
+     <text style="font-size: 5.6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="209.322205" y="227.198037" transform="rotate(-0 209.322205 227.198037)">反距離加權</text>
+    </g>
+    <g id="patch_45">
+     <path d="M 198.682205 235.738037 
+L 204.842205 235.738037 
+L 204.842205 231.818037 
+L 198.682205 231.818037 
+z
+" style="fill: #94a3b8; stroke: #94a3b8; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_50">
+     <text style="font-size: 5.6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="209.322205" y="235.738037" transform="rotate(-0 209.322205 235.738037)">高斯過程</text>
+    </g>
+   </g>
+  </g>
+  <g id="axes_4">
+   <g id="patch_46">
+    <path d="M 298.488189 319.294488 
+L 502.582677 319.294488 
+L 502.582677 217.700787 
+L 298.488189 217.700787 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="line2d_78">
+    <path d="M 298.488189 343.75496 
+L 502.582677 270.993964 
+" clip-path="url(#p4f76841aa0)" style="fill: none; stroke-dasharray: 2.1,1.4; stroke-dashoffset: 0; stroke: #cbd5e1; stroke-width: 0.7"/>
+   </g>
+   <g id="line2d_79">
+    <path d="M 298.488189 329.82904 
+L 502.582677 257.068044 
+" clip-path="url(#p4f76841aa0)" style="fill: none; stroke-dasharray: 2.1,1.4; stroke-dashoffset: 0; stroke: #cbd5e1; stroke-width: 0.7"/>
+   </g>
+   <g id="line2d_80">
+    <path d="M 298.488189 316.523539 
+L 502.582677 243.762543 
+" clip-path="url(#p4f76841aa0)" style="fill: none; stroke-dasharray: 2.1,1.4; stroke-dashoffset: 0; stroke: #cbd5e1; stroke-width: 0.7"/>
+   </g>
+   <g id="matplotlib.axis_7">
+    <g id="xtick_14">
+     <g id="line2d_81">
+      <g>
+       <use xlink:href="#m06c84aed55" x="328.037591" y="319.294488" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_51">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle" x="328.037591" y="329.888488" transform="rotate(-0 328.037591 329.888488)">0.1</text>
+     </g>
+    </g>
+    <g id="xtick_15">
+     <g id="line2d_82">
+      <g>
+       <use xlink:href="#m06c84aed55" x="374.872286" y="319.294488" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_52">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle" x="374.872286" y="329.888488" transform="rotate(-0 374.872286 329.888488)">0.3</text>
+     </g>
+    </g>
+    <g id="xtick_16">
+     <g id="line2d_83">
+      <g>
+       <use xlink:href="#m06c84aed55" x="426.198581" y="319.294488" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_53">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle" x="426.198581" y="329.888488" transform="rotate(-0 426.198581 329.888488)">1</text>
+     </g>
+    </g>
+    <g id="xtick_17">
+     <g id="line2d_84">
+      <g>
+       <use xlink:href="#m06c84aed55" x="473.033275" y="319.294488" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_54">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle" x="473.033275" y="329.888488" transform="rotate(-0 473.033275 329.888488)">3</text>
+     </g>
+    </g>
+    <g id="text_55">
+     <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle" x="400.535433" y="337.448488" transform="rotate(-0 400.535433 337.448488)">航空 K（wt%）</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_8">
+    <g id="ytick_14">
+     <g id="line2d_85">
+      <g>
+       <use xlink:href="#m22e82b1bac" x="298.488189" y="308.759937" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_56">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end" x="292.988189" y="311.306937" transform="rotate(-0 292.988189 311.306937)">1</text>
+     </g>
+    </g>
+    <g id="ytick_15">
+     <g id="line2d_86">
+      <g>
+       <use xlink:href="#m22e82b1bac" x="298.488189" y="292.063067" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_57">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end" x="292.988189" y="294.610067" transform="rotate(-0 292.988189 294.610067)">3</text>
+     </g>
+    </g>
+    <g id="ytick_16">
+     <g id="line2d_87">
+      <g>
+       <use xlink:href="#m22e82b1bac" x="298.488189" y="273.764914" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_58">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end" x="292.988189" y="276.311914" transform="rotate(-0 292.988189 276.311914)">10</text>
+     </g>
+    </g>
+    <g id="ytick_17">
+     <g id="line2d_88">
+      <g>
+       <use xlink:href="#m22e82b1bac" x="298.488189" y="257.068044" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_59">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end" x="292.988189" y="259.615044" transform="rotate(-0 292.988189 259.615044)">30</text>
+     </g>
+    </g>
+    <g id="ytick_18">
+     <g id="line2d_89">
+      <g>
+       <use xlink:href="#m22e82b1bac" x="298.488189" y="238.769891" style="stroke: #000000; stroke-width: 0.6"/>
+      </g>
+     </g>
+     <g id="text_60">
+      <text style="font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end" x="292.988189" y="241.316891" transform="rotate(-0 292.988189 241.316891)">100</text>
+     </g>
+    </g>
+    <g id="text_61">
+     <text style="font-size: 6.6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle" x="279.820376" y="268.497638" transform="rotate(-90 279.820376 268.497638)">航空 Th（ppm）</text>
+    </g>
+   </g>
+   <image xlink:href="data:image/png;base64,
+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" id="image1eedd8d1fb" transform="scale(1 -1) translate(0 -61.92)" x="311.04" y="-252" width="177.12" height="61.92"/>
+   <g id="patch_47">
+    <path d="M 298.488189 319.294488 
+L 298.488189 217.700787 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_48">
+    <path d="M 298.488189 319.294488 
+L 502.582677 319.294488 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_62">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end; fill: #1e293b" x="292.365354" y="212.717976" transform="rotate(-0 292.365354 212.717976)">d</text>
+   </g>
+   <g id="text_63">
+    <text style="font-size: 5.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end; fill: #64748b" x="501.137428" y="268.549881" transform="rotate(-0 501.137428 268.549881)">2</text>
+   </g>
+   <g id="text_64">
+    <text style="font-size: 5.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end; fill: #64748b" x="501.137428" y="254.623962" transform="rotate(-0 501.137428 254.623962)">5</text>
+   </g>
+   <g id="text_65">
+    <text style="font-size: 5.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: end; fill: #64748b" x="501.137428" y="241.318461" transform="rotate(-0 501.137428 241.318461)">12</text>
+   </g>
+   <g id="text_66">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="298.488189" y="214.700787" transform="rotate(-0 298.488189 214.700787)">跨大陸偏移：K 與 Th 的風化特徵</text>
+   </g>
+   <g id="line2d_90">
+    <defs>
+     <path id="m43264a443a" d="M 0 3 
+C 0.795609 3 1.55874 2.683901 2.12132 2.12132 
+C 2.683901 1.55874 3 0.795609 3 0 
+C 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132 
+C 1.55874 -2.683901 0.795609 -3 0 -3 
+C -0.795609 -3 -1.55874 -2.683901 -2.12132 -2.12132 
+C -2.683901 -1.55874 -3 -0.795609 -3 0 
+C -3 0.795609 -2.683901 1.55874 -2.12132 2.12132 
+C -1.55874 2.683901 -0.795609 3 0 3 
+z
+" style="stroke: #ffffff; stroke-width: 0.9"/>
+    </defs>
+    <g clip-path="url(#p4f76841aa0)">
+     <use xlink:href="#m43264a443a" x="407.504774" y="276.5602" style="fill: #b45309; stroke: #ffffff; stroke-width: 0.9"/>
+    </g>
+   </g>
+   <g id="line2d_91">
+    <defs>
+     <path id="m470bd82f55" d="M 0 3 
+C 0.795609 3 1.55874 2.683901 2.12132 2.12132 
+C 2.683901 1.55874 3 0.795609 3 0 
+C 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132 
+C 1.55874 -2.683901 0.795609 -3 0 -3 
+C -0.795609 -3 -1.55874 -2.683901 -2.12132 -2.12132 
+C -2.683901 -1.55874 -3 -0.795609 -3 0 
+C -3 0.795609 -2.683901 1.55874 -2.12132 2.12132 
+C -1.55874 2.683901 -0.795609 3 0 3 
+z
+" style="stroke: #ffffff; stroke-width: 0.9"/>
+    </defs>
+    <g clip-path="url(#p4f76841aa0)">
+     <use xlink:href="#m470bd82f55" x="444.132584" y="278.464883" style="fill: #1d4ed8; stroke: #ffffff; stroke-width: 0.9"/>
+    </g>
+   </g>
+   <g id="legend_4">
+    <g id="line2d_92">
+     <defs>
+      <path id="m5bfbeaea1d" d="M 0 2.5 
+C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767 
+C 2.236584 1.29895 2.5 0.663008 2.5 0 
+C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767 
+C 1.29895 -2.236584 0.663008 -2.5 0 -2.5 
+C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767 
+C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0 
+C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767 
+C -1.29895 2.236584 -0.663008 2.5 0 2.5 
+z
+" style="stroke: #ffffff"/>
+     </defs>
+     <g>
+      <use xlink:href="#m5bfbeaea1d" x="307.838189" y="224.0361" style="fill: #b45309; stroke: #ffffff"/>
+     </g>
+    </g>
+    <g id="text_67">
+     <text style="font-size: 5.5px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="314.988189" y="225.9611" transform="rotate(-0 314.988189 225.9611)">澳洲, K 中位數 0.65 wt%，Th/K 12.3</text>
+    </g>
+    <g id="line2d_93">
+     <defs>
+      <path id="mabb3364613" d="M 0 2.5 
+C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767 
+C 2.236584 1.29895 2.5 0.663008 2.5 0 
+C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767 
+C 1.29895 -2.236584 0.663008 -2.5 0 -2.5 
+C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767 
+C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0 
+C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767 
+C -1.29895 2.236584 -0.663008 2.5 0 2.5 
+z
+" style="stroke: #ffffff"/>
+     </defs>
+     <g>
+      <use xlink:href="#mabb3364613" x="307.838189" y="232.462272" style="fill: #1d4ed8; stroke: #ffffff"/>
+     </g>
+    </g>
+    <g id="text_68">
+     <text style="font-size: 5.5px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="314.988189" y="234.387272" transform="rotate(-0 314.988189 234.387272)">北美, K 中位數 1.52 wt%，Th/K 4.9</text>
+    </g>
+    <g id="line2d_94">
+     <path d="M 302.338189 240.904772 
+L 307.838189 240.904772 
+L 313.338189 240.904772 
+" style="fill: none; stroke-dasharray: 2.4,1.6; stroke-dashoffset: 0; stroke: #cbd5e1; stroke-width: 0.8"/>
+    </g>
+    <g id="text_69">
+     <text style="font-size: 5.5px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #1e293b" x="314.988189" y="242.829772" transform="rotate(-0 314.988189 242.829772)">Th/K = 2、5、12（右側標示）</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p882adb2ba3">
+   <rect x="38.267717" y="43.540157" width="204.094488" height="101.593701"/>
+  </clipPath>
+  <clipPath id="p06cbfeab4c">
+   <rect x="298.488189" y="43.540157" width="204.094488" height="101.593701"/>
+  </clipPath>
+  <clipPath id="p6dbed7c37e">
+   <rect x="38.267717" y="217.700787" width="204.094488" height="101.593701"/>
+  </clipPath>
+  <clipPath id="p4f76841aa0">
+   <rect x="298.488189" y="217.700787" width="204.094488" height="101.593701"/>
+  </clipPath>
+ </defs>
+</svg>

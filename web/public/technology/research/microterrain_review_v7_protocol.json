@@ -1,0 +1,29 @@
+{
+  "version": "v7",
+  "frozen_date": "2026-10-11",
+  "status": "candidate_selection_frozen_before_ranking_and_human_ratings",
+  "seed": 20261013,
+  "source_sha256": {
+    "data/research/heldout_geography_v1/descriptor_manifest.json": "dc464a8903cf35e09a620c5b879da4223c9d305039331e59feabad287ff5fb21",
+    "data/research/microterrain_native/moon_anchors_5m.npz": "2c65b6f7162f9023224727be38c58c3e352614132ed0baf64bffa0e41f34421d",
+    "data/research/microterrain_native/mars_anchors_20m.npz": "0dc696331ddd92ceefc3d006094693c8acc3cb0017fc031cb2601286bd1dbb49",
+    "data/research/microterrain_native/tiny_morph_encoder.pt": "f52b3e201dd8111e50f791c527089b767770de1675b8361f141c1e553e008c76"
+  },
+  "earth_holdout_sites": ["LAVA_BEDS", "PILOT_VALLEY"],
+  "body_sites": {
+    "moon": ["MARIUS3", "FECUNDITATIS", "SCHRODNGR02", "ANDERSON01", "NASSAU02", "FRSHCRATER8"],
+    "mars": ["JEZERO_CTX", "OLYMPUS_CTX"]
+  },
+  "sizes_m": [200, 500, 1000],
+  "comparison": "For each query and method, rank all heldout Earth windows with the frozen 55-D wave-Hedges or 32-D D4-augmented cosine score. Shortlist global 40, each site 10, relief-nearest 30, and each site's relief-nearest 5. Rerank shortlisted windows by minimum D4-aligned physical-metre RMSE after subtracting each window median. The heldout gallery is never merged with the eight-site development gallery.",
+  "candidate_selection": "Take two distinct windows from each reranked method, advancing down that method's order to replace duplicates. Across selected pairs from the same Earth site, require centers at least one query-window width apart. Add one site-stratified random control from a site not yet represented if possible; apply the same separation rule. If method lists coincide, keep advancing until there are four distinct method windows. Shuffle the five displayed pairs by deterministic hash. Do not use geology, expert labels, or post hoc score thresholds for selection.",
+  "presentation": "24 reference queries, five Earth candidates each, 64x64 DEM hillshade with 8x visual vertical exaggeration and shared pair-relative elevation range. Query IDs, Earth site names, selection arms, ranks, scores, and exact offsets are private. Material and mission evidence is unavailable in this first holdout pack and should usually be rated U.",
+  "analysis": "At least two independent geoscience/remote-sensing reviewers rate morphology 0-3/U while blind to site/method, then material and mission 0-3/U if defensible. Report agreement and nDCG@2 on the five judged candidates per query. Bootstrap by reference site, keep Moon and Mars strata separate, and compare both methods on the same judged pool. Never call it global Recall@5 or independent Moon/Mars query validation.",
+  "limitations": [
+    "The Earth geography is new; all Moon/Mars query sites and model design were previously seen during development.",
+    "Only two Earth 3 km sites are present, with heavily overlapping windows. Site sampling is narrow and cannot support global generalization.",
+    "NASA regional analog context is not a positive label for any exact Earth window; random controls are not verified negative analogs.",
+    "Pilot Valley salts and underground Lava Beds caves cannot be inferred from a surface DEM; 20 m Mars grids cannot resolve 200 m fine structure at Moon quality.",
+    "No independent ratings existed when this protocol was frozen, and no material or mission equivalence score is available."
+  ]
+}

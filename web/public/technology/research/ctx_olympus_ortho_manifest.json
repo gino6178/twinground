@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-10-11T08:16:45.283793+00:00",
+  "stac_item_id": "P02_001920_1958_XN_15N132W__B21_017888_1944_XN_14N132W",
+  "stac_item_url": "https://g6goyz4w56.execute-api.us-west-2.amazonaws.com/prod/collections/mro_ctx_controlled_usgs_dtms/items/P02_001920_1958_XN_15N132W__B21_017888_1944_XN_14N132W",
+  "stac_local_path": "data/demo/mars_ctx_olympus_verified/stac_item.json",
+  "stac_sha256": "5517ce58a99bd77e1dd425895869a9e62a1a2f0bf830f6a3e39e552967891a13",
+  "download_url": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/mars/mro/ctx/controlled/usgs/P02_001920_1958_XN_15N132W__B21_017888_1944_XN_14N132W/P02_001920_1958_XN_15N132W__B21_017888_1944_XN_14N132W-DRG.tif",
+  "source_image": "data/demo/mars_ctx_olympus_verified/orthoimage.tif",
+  "source_image_sha256": "945d47438afb3ac6f534e113cc60a382d9f8c8ca604b74515ae84e5e0a4d0a3d",
+  "source_bytes": 46490220,
+  "paired_dtm": "data/demo/mars_ctx_olympus_verified/dtm.tif",
+  "paired_dtm_sha256": "e2997a659b32259d164e743a0a574010c6827ac37945d4791369ab40872eecc3",
+  "same_crs_transform_shape_as_dtm": true,
+  "image_spacing_m": [
+    20.0,
+    20.0
+  ],
+  "image_nodata": -32767.0,
+  "image_band_type": "float32",
+  "interpretation": "USGS CTX DTM-paired grayscale orthoimage; fixed display stretch is not natural color or composition",
+  "used_in_search_ranking": false
+}

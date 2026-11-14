@@ -1,0 +1,40 @@
+{
+  "version": "v8",
+  "frozen_date": "2026-10-11",
+  "status": "query_coordinates_and_sources_frozen_before_4m_holdout_ranking_and_human_ratings",
+  "seed": 20261018,
+  "purpose": "Blind comparison of 2014-style geomorphon and frozen TinyMorphEncoder on true 4 m HiRISE Jezero versus new Earth geography",
+  "source_sha256": {
+    "data/research/hirise_jezero_1m/search_index/mars_hirise_3km_4m.npz": "ec81398b4f6e74b51a33d205827aca1fcb47f1cd6354e685328d40bfab2df5dc",
+    "data/research/microterrain_native/tiny_morph_encoder.pt": "f52b3e201dd8111e50f791c527089b767770de1675b8361f141c1e553e008c76",
+    "data/research/heldout_geography_v1/lava_beds/dem_3km_2m.tif": "f4a9c9f1b54dcf35b621d92dc65e795d5f44e2cb6c90b3d3679521fede3860c1",
+    "data/research/heldout_geography_v1/pilot_valley/dem_3km_2m.tif": "9c81fe460e7ce05d0bb288274fa7e683f97c9d9f807614e47d6ea24051bfaa06",
+    "data/research/heldout_geography_v1/protocol.json": "29cfe41f789f8072c7cdc7cd0770fd231e42e98886138c4b172b6483fa2a426c"
+  },
+  "mars_source": "JEZERO_HIRISE_023524",
+  "mars_source_spacing_m": 1.0096633268711,
+  "comparison_spacing_m": 4,
+  "sizes_m": [200, 500, 1000],
+  "query_centers_east_north_m": [
+    [-700, -700], [0, -700], [700, -700],
+    [-700, 0], [700, 0],
+    [-700, 700], [0, 700], [700, 700]
+  ],
+  "query_selection": "Eight fixed lattice centers per scale, chosen from the saved HiRISE 3 km crop by DEM coverage only, without consulting Earth rankings or ground-truth labels. The 1 km windows overlap; treat their ratings as correlated.",
+  "earth_holdout_sites": {
+    "LAVA_BEDS": "lava_beds",
+    "PILOT_VALLEY": "pilot_valley"
+  },
+  "earth_candidate_construction": "Reproject each previously frozen USGS 3DEP 2 m holdout crop to the exact 4 m Mars comparison grid; use the existing candidates() stride and 55-D geomorphon signature, and frozen TinyMorphEncoder 32-D weights. Keep separate from the eight-site public development gallery and all model training.",
+  "retrieval": "For each query and method, rank all heldout Earth windows by frozen descriptor. Shortlist global top 40, each site top 10, nearest 30 in P90-P10 relief, and nearest 5 per site. D4-align shortlisted elevations and rerank by median-centered physical-metre RMSE. Do not tune this rule from v8 labels.",
+  "candidate_selection": "Choose two distinct windows from each reranked method, advancing over duplicates and requiring Earth centers at least one query width apart within a site. Add one site-stratified random control under the same separation. Shuffle five pairs by deterministic hash; keep method, rank, site, and offset only in a private answer key.",
+  "presentation": "24 Mars queries times five Earth pairs. Display 64x64 DEM hillshade at shared pair-relative height range and 8x visualization exaggeration. Hide geography and method until both independent ratings are sealed. Material and mission should be U unless reviewers have defensible independent evidence.",
+  "analysis": "Two independent geoscience/remote-sensing reviewers score morphology, material, and mission 0-3/U. Report agreement, unknown rate, and within-five-judged-candidate nDCG@2 by 200/500/1000 m. Do not bootstrap by Mars reference site: only one HiRISE site exists. No global Recall@5, cross-body accuracy, or novel analog discovery claim.",
+  "limitations": [
+    "Earth geography is held out but the Mars Jezero site and model design were previously used during development.",
+    "Only two Earth geographic holdout sites exist and adjacent candidate windows overlap strongly.",
+    "Lava Beds cave context and Pilot Valley salts are environmental facts not visible or labeled in surface DEM windows.",
+    "HiRISE post spacing does not prove 1 m rock resolution; Earth 3DEP sensing and Mars stereogrammetry have different errors.",
+    "No independent relevance ratings existed when this protocol was frozen."
+  ]
+}

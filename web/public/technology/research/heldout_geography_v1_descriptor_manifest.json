@@ -1,0 +1,82 @@
+{
+  "role": "external_geographic_holdout_descriptors_not_development_gallery",
+  "protocol_sha256": "29cfe41f789f8072c7cdc7cd0770fd231e42e98886138c4b172b6483fa2a426c",
+  "frozen_model_sha256": {
+    "data/research/microterrain_native/manifest.json": "1e57e0017620acad117b05db8bcb49a2fe2563c4ccac8fe0c838d5cfcc1e4ed4",
+    "data/research/microterrain_native/tiny_morph_encoder.pt": "f52b3e201dd8111e50f791c527089b767770de1675b8361f141c1e553e008c76",
+    "data/research/microterrain_native/tiny_index_manifest.json": "93b047213fa4041fe6d825e705d84f7e42b74eb19fbeaa8580d756efb119bdaf"
+  },
+  "sites": [
+    "lava_beds",
+    "pilot_valley"
+  ],
+  "outputs": {
+    "heldout_moon_200m.npz": {
+      "sha256": "7d02a27fba077ec4aa61abbf78b34b3a5660c631156c8a13a67188149f7344a4",
+      "candidate_count": 1680,
+      "site_counts": {
+        "lava_beds": 841,
+        "pilot_valley": 839
+      },
+      "signature_dimensions": 55,
+      "embedding_dimensions": 32
+    },
+    "heldout_moon_500m.npz": {
+      "sha256": "83b1b77d8498e7279ca1180b04c43721eda31046f3dcea2481cda64ca4ef8f91",
+      "candidate_count": 241,
+      "site_counts": {
+        "lava_beds": 121,
+        "pilot_valley": 120
+      },
+      "signature_dimensions": 55,
+      "embedding_dimensions": 32
+    },
+    "heldout_moon_1000m.npz": {
+      "sha256": "4f6b20c92019f921671292057ad5363bc70051725e54bd2e151aaea8b13c086c",
+      "candidate_count": 49,
+      "site_counts": {
+        "lava_beds": 25,
+        "pilot_valley": 24
+      },
+      "signature_dimensions": 55,
+      "embedding_dimensions": 32
+    },
+    "heldout_mars_200m.npz": {
+      "sha256": "500c0c6243da7974560561184c02b32e19e44c388590785af2cab1dc053c6847",
+      "candidate_count": 1680,
+      "site_counts": {
+        "lava_beds": 841,
+        "pilot_valley": 839
+      },
+      "signature_dimensions": 55,
+      "embedding_dimensions": 32
+    },
+    "heldout_mars_500m.npz": {
+      "sha256": "1a91a86ade30b46d3732ced3d4bdbeff94c6ed1630634949f8fc7bef3e11e48d",
+      "candidate_count": 242,
+      "site_counts": {
+        "lava_beds": 121,
+        "pilot_valley": 121
+      },
+      "signature_dimensions": 55,
+      "embedding_dimensions": 32
+    },
+    "heldout_mars_1000m.npz": {
+      "sha256": "e5ca343b347e718d0c4fb1b6097e0e70647f6ada2614750a344f8f3fb5d3a921",
+      "candidate_count": 49,
+      "site_counts": {
+        "lava_beds": 25,
+        "pilot_valley": 24
+      },
+      "signature_dimensions": 55,
+      "embedding_dimensions": 32
+    }
+  },
+  "limitations": [
+    "Descriptors have no expert relevance labels and establish no retrieval accuracy.",
+    "Earth holdout sites cannot be used for training, tuning, or public search-gallery expansion before the holdout analysis is frozen.",
+    "Overlapping windows within each 3 km site are correlated and must be grouped by geography in any uncertainty calculation.",
+    "Pilot Valley is an environmental Mars analog for salts; DEM shape need not match Mars and high shape similarity would not establish perchlorate chemistry.",
+    "Lava Beds is a regional lava-cave analog; a surface DEM cannot resolve underground void geometry."
+  ]
+}

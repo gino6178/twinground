@@ -1,0 +1,37 @@
+{
+  "created_utc": "2026-10-11T11:31:33+00:00",
+  "purpose": "Effect of removing nearest-20 m evidence association from the HiRISE 4 m Earth gallery",
+  "rows_by_size_m": {
+    "200": {
+      "candidate_count": 6728,
+      "nearest_old_center_distance_median_m": 11.31,
+      "nearest_old_center_distance_p95_m": 11.31,
+      "nlcd_barren_fraction_absolute_difference_median": 0.0,
+      "nlcd_barren_fraction_absolute_difference_p95": 0.0337,
+      "nlcd_barren_fraction_changed_by_over_5_points": 115,
+      "leading_geologic_map_unit_changed": 19,
+      "optional_conflict_screen_changed": 17
+    },
+    "500": {
+      "candidate_count": 968,
+      "nearest_old_center_distance_median_m": 64.5,
+      "nearest_old_center_distance_p95_m": 97.65,
+      "nlcd_barren_fraction_absolute_difference_median": 0.0,
+      "nlcd_barren_fraction_absolute_difference_p95": 0.0412,
+      "nlcd_barren_fraction_changed_by_over_5_points": 38,
+      "leading_geologic_map_unit_changed": 14,
+      "optional_conflict_screen_changed": 5
+    },
+    "1000": {
+      "candidate_count": 200,
+      "nearest_old_center_distance_median_m": 11.31,
+      "nearest_old_center_distance_p95_m": 11.31,
+      "nlcd_barren_fraction_absolute_difference_median": 0.0,
+      "nlcd_barren_fraction_absolute_difference_p95": 0.0049,
+      "nlcd_barren_fraction_changed_by_over_5_points": 0,
+      "leading_geologic_map_unit_changed": 0,
+      "optional_conflict_screen_changed": 1
+    }
+  },
+  "interpretation": "These are alignment differences in source evidence, not rock labels, retrieval gains, or cross-body accuracy"
+}

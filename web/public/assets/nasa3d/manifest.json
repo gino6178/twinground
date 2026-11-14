@@ -1,0 +1,86 @@
+{
+  "apollo_lunar_module": {
+    "local_path": "/assets/nasa3d/apollo_lunar_module.glb",
+    "source_url": "https://assets.science.nasa.gov/content/dam/science/cds/3d/resources/model/apollo-lunar-module/Apollo%20Lunar%20Module.glb",
+    "page_url": "https://science.nasa.gov/3d-resources/apollo-lunar-module/",
+    "bytes": 716840,
+    "sha256": "379101dfcee399267addf771709107c35e826b0b9e5233272f123e4c8a585c4e",
+    "visual_longest_horizontal_extent_m": 9.4,
+    "calibration_note": "NASA PDS Apollo 12 instrument host, landing gear footpad-to-footpad 9.4 m",
+    "calibration_source_url": "https://ntrs.nasa.gov/api/citations/19770025241/downloads/19770025241.pdf",
+    "usage_guidelines_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "engineering_validity": "conceptual visual placement only; no certified collision, footprint, hazard or load model"
+  },
+  "perseverance_rover": {
+    "local_path": "/assets/nasa3d/perseverance_rover.glb",
+    "source_url": "https://assets.science.nasa.gov/content/dam/science/cds/3d/resources/model/mars-2020-perseverance-rover/Mars%202020%20Perseverance%20Rover.glb",
+    "page_url": "https://science.nasa.gov/3d-resources/mars-2020-perseverance-rover/",
+    "bytes": 4987176,
+    "sha256": "10db7c03a5e63a5a3b3e7baa6243aa4918ba045fa8ff0a731d0217491adc727f",
+    "visual_longest_horizontal_extent_m": 3.0,
+    "calibration_note": "NASA/JPL 2020 launch press kit, rover length about 3 m",
+    "calibration_source_url": "https://www.jpl.nasa.gov/news/press_kits/mars_2020/launch/mission/spacecraft/perseverance_rover/",
+    "usage_guidelines_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "engineering_validity": "conceptual visual placement only; no certified collision, footprint, hazard or load model"
+  },
+  "habitat_demo_part1": {
+    "local_path": "/assets/nasa3d/habitat_demo_part1.glb",
+    "source_url": "https://assets.science.nasa.gov/content/dam/science/cds/3d/resources/model/habitat-demonstration-unit/Habitat%20Demonstration%20Unit%20%28part%201%29.glb",
+    "page_url": "https://science.nasa.gov/3d-resources/habitat-demonstration-unit/",
+    "bytes": 516748,
+    "sha256": "3106557bea24c9ba012556ddbecf3740c39276dc369cf359b77225de97458cfe",
+    "visual_longest_horizontal_extent_m": 5.0,
+    "calibration_note": "NASA Habitat Demonstration Unit fact sheet, approximate 5 m diameter",
+    "calibration_source_url": "https://www.nasa.gov/wp-content/uploads/2021/11/468441main_HDU_FactSheet_508.pdf",
+    "usage_guidelines_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "engineering_validity": "conceptual visual placement only; no certified collision, footprint, hazard or load model"
+  },
+  "z2_spacesuit": {
+    "local_path": "/assets/nasa3d/z2_spacesuit_webp.glb",
+    "source_url": "https://assets.science.nasa.gov/content/dam/science/cds/3d/resources/model/z2-spacesuit/Z2%20Spacesuit.glb",
+    "page_url": "https://science.nasa.gov/3d-resources/z2-spacesuit/",
+    "credit": "NASA/LaRC/Advanced Concepts Lab",
+    "original_bytes": 16933148,
+    "original_sha256": "4199762c27f8e730030a7bf9f1a453c203457e84c33b36247c0237a74f9a0c2a",
+    "bytes": 2065416,
+    "sha256": "962a8ed78437467a0e945b53554f0b20e30aa904a41919456237b66787da47d1",
+    "derivation": "JPEG fallback images removed; textures point to the original EXT_texture_webp images; Draco geometry and materials unchanged (retrieved 2026-10-17)",
+    "visual_height_m": 1.935,
+    "usage_guidelines_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "engineering_validity": "visual astronaut figure only; procedural skinning added at runtime is not a suit kinematics model"
+  },
+  "space_exploration_vehicle": {
+    "local_path": "/assets/nasa3d/sev_rover_webp.glb",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Models/Space%20Exploration%20Vehicle/Space%20Exploration%20Vehicle.glb",
+    "page_url": "https://science.nasa.gov/3d-resources/space-exploration-vehicle/",
+    "repository": "https://github.com/nasa/NASA-3D-Resources",
+    "original_bytes": 22431576,
+    "original_sha256": "09dcfbd45a475440de4ca2405fe3be4f784dee6f12e752bad5faa9f6db6c4a8d",
+    "bytes": 4529000,
+    "sha256": "2ae4e60d18233234ae446ac7e84ea9b12e853c323aea4814e1416da140935a3a",
+    "derivation": "PNG fallback images removed; textures point to the original EXT_texture_webp images; Draco geometry unchanged. Wheel sets are separated in the browser for rolling and steering (retrieved 2026-10-17)",
+    "visual_length_m": 5.91,
+    "usage_guidelines_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "engineering_validity": "visual drivable vehicle only; kinematic driving model, not SEV mobility, traction or stability data",
+    "levels_of_detail": {
+      "source": "sev_rover_webp.glb (605,140 vertices)",
+      "tool": "gltf-transform weld + simplify (meshoptimizer), textures unchanged, Draco re-encoded (2026-10-17)",
+      "desktop": {
+        "local_path": "/assets/nasa3d/sev_rover_desktop.glb",
+        "vertices": 135347,
+        "bytes": 1965324,
+        "sha256": "229aa66a6e1a81f42df1fc9f4c0cd8367c3f6de43b9078c055268f691846e71f",
+        "ratio": 0.3,
+        "error": 0.0015
+      },
+      "mobile": {
+        "local_path": "/assets/nasa3d/sev_rover_mobile.glb",
+        "vertices": 71212,
+        "bytes": 1714364,
+        "sha256": "9e2861c7ed87f15459d2c6de9880880906a36d9b605d063bd7833b9c59501824",
+        "ratio": 0.03,
+        "error": 0.005
+      }
+    }
+  }
+}

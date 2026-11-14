@@ -1,0 +1,1054 @@
+THIRD-PARTY NOTICE INVENTORY
+Scope: installed server environment; incomplete audit; original license obligations remain.
+
+JavaScript: @babel/code-frame 7.29.7
+Declared license: MIT
+Notice: texts/117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76.txt (SHA-256 117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76)
+
+JavaScript: @babel/compat-data 7.29.7
+Declared license: MIT
+Notice: texts/117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76.txt (SHA-256 117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76)
+
+JavaScript: @babel/core 7.29.7
+Declared license: MIT
+Notice: texts/117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76.txt (SHA-256 117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76)
+
+JavaScript: @babel/generator 7.29.8
+Declared license: MIT
+Notice: texts/117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76.txt (SHA-256 117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76)
+
+JavaScript: @babel/helper-compilation-targets 7.29.7
+Declared license: MIT
+Notice: texts/117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76.txt (SHA-256 117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76)
+
+JavaScript: @babel/helper-globals 7.29.7
+Declared license: MIT
+Notice: texts/117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76.txt (SHA-256 117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76)
+
+JavaScript: @babel/helper-module-imports 7.29.7
+Declared license: MIT
+Notice: texts/117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76.txt (SHA-256 117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76)
+
+JavaScript: @babel/helper-module-transforms 7.29.7
+Declared license: MIT
+Notice: texts/117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76.txt (SHA-256 117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76)
+
+JavaScript: @babel/helper-plugin-utils 7.29.7
+Declared license: MIT
+Notice: texts/117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76.txt (SHA-256 117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76)
+
+JavaScript: @babel/helper-string-parser 7.29.7
+Declared license: MIT
+Notice: texts/117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76.txt (SHA-256 117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76)
+
+JavaScript: @babel/helper-validator-identifier 7.29.7
+Declared license: MIT
+Notice: texts/117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76.txt (SHA-256 117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76)
+
+JavaScript: @babel/helper-validator-option 7.29.7
+Declared license: MIT
+Notice: texts/117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76.txt (SHA-256 117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76)
+
+JavaScript: @babel/helpers 7.29.10
+Declared license: MIT
+Notice: texts/4be9d87b56a306293223b490c0d0b245e9e94f39884147bf051a6c7b825aeb30.txt (SHA-256 4be9d87b56a306293223b490c0d0b245e9e94f39884147bf051a6c7b825aeb30)
+
+JavaScript: @babel/parser 7.29.9
+Declared license: MIT
+Notice: texts/2e97627cb278aa7556fb9e8817368302301a595b6c7582512b8d74c57b773652.txt (SHA-256 2e97627cb278aa7556fb9e8817368302301a595b6c7582512b8d74c57b773652)
+
+JavaScript: @babel/plugin-transform-react-jsx-self 7.29.7
+Declared license: MIT
+Notice: texts/117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76.txt (SHA-256 117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76)
+
+JavaScript: @babel/plugin-transform-react-jsx-source 7.29.7
+Declared license: MIT
+Notice: texts/117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76.txt (SHA-256 117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76)
+
+JavaScript: @babel/template 7.29.7
+Declared license: MIT
+Notice: texts/117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76.txt (SHA-256 117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76)
+
+JavaScript: @babel/traverse 7.29.10
+Declared license: MIT
+Notice: texts/117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76.txt (SHA-256 117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76)
+
+JavaScript: @babel/types 7.29.8
+Declared license: MIT
+Notice: texts/117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76.txt (SHA-256 117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76)
+
+JavaScript: @esbuild/linux-x64 0.25.12
+Declared license: MIT
+NOTICE NOT LOCATED — REVIEW REQUIRED
+
+JavaScript: @jridgewell/gen-mapping 0.3.13
+Declared license: MIT
+Notice: texts/769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c.txt (SHA-256 769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c)
+
+JavaScript: @jridgewell/remapping 2.3.5
+Declared license: MIT
+Notice: texts/769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c.txt (SHA-256 769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c)
+
+JavaScript: @jridgewell/resolve-uri 3.1.2
+Declared license: MIT
+Notice: texts/b8778b155bfde5a28b023a558753c0fa058a52bb9de35c343c250be1bbcdedab.txt (SHA-256 b8778b155bfde5a28b023a558753c0fa058a52bb9de35c343c250be1bbcdedab)
+
+JavaScript: @jridgewell/sourcemap-codec 1.6.0
+Declared license: MIT
+Notice: texts/769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c.txt (SHA-256 769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c)
+
+JavaScript: @jridgewell/trace-mapping 0.3.31
+Declared license: MIT
+Notice: texts/769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c.txt (SHA-256 769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c)
+
+JavaScript: @lucasmarkes/hairline 0.5.0
+Declared license: MIT
+Notice: texts/948d56f0bc8c383c04c453136dcfb78407f97de65ff8bb4fabff2b79ddd17f59.txt (SHA-256 948d56f0bc8c383c04c453136dcfb78407f97de65ff8bb4fabff2b79ddd17f59)
+
+JavaScript: @napi-rs/lzma-linux-x64-gnu 1.5.1
+Declared license: MIT
+NOTICE NOT LOCATED — REVIEW REQUIRED
+
+JavaScript: @rolldown/pluginutils 1.0.0-beta.27
+Declared license: MIT
+Notice: texts/23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734.txt (SHA-256 23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734)
+
+JavaScript: @rollup/rollup-linux-x64-gnu 4.64.3
+Declared license: MIT
+NOTICE NOT LOCATED — REVIEW REQUIRED
+
+JavaScript: @types/babel__core 7.20.5
+Declared license: MIT
+Notice: texts/c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383.txt (SHA-256 c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383)
+
+JavaScript: @types/babel__generator 7.27.0
+Declared license: MIT
+Notice: texts/c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383.txt (SHA-256 c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383)
+
+JavaScript: @types/babel__template 7.4.4
+Declared license: MIT
+Notice: texts/c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383.txt (SHA-256 c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383)
+
+JavaScript: @types/babel__traverse 7.28.0
+Declared license: MIT
+Notice: texts/c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383.txt (SHA-256 c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383)
+
+JavaScript: @types/estree 1.0.9
+Declared license: MIT
+Notice: texts/c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383.txt (SHA-256 c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383)
+
+JavaScript: @vitejs/plugin-react 4.7.0
+Declared license: MIT
+Notice: texts/29b68325fe026047d13e187b44c33b2acacf7dc647dec4583702e59f235e13b5.txt (SHA-256 29b68325fe026047d13e187b44c33b2acacf7dc647dec4583702e59f235e13b5)
+
+JavaScript: animejs 4.5.0
+Declared license: MIT
+Notice: texts/3f3e835a9952cfc2a6ca836fb95b3257c981f24fa3ef51249055acb09931897b.txt (SHA-256 3f3e835a9952cfc2a6ca836fb95b3257c981f24fa3ef51249055acb09931897b)
+
+JavaScript: baseline-browser-mapping 2.11.28
+Declared license: Apache-2.0
+Notice: texts/c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4.txt (SHA-256 c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4)
+
+JavaScript: browserslist 4.29.3
+Declared license: MIT
+Notice: texts/21c2679a63d7699c0e644409e2f17d0adbc7a965003feb06b3ff4b833d21f722.txt (SHA-256 21c2679a63d7699c0e644409e2f17d0adbc7a965003feb06b3ff4b833d21f722)
+
+JavaScript: caniuse-lite 1.0.30001815
+Declared license: CC-BY-4.0
+Notice: texts/fd3a263fe19ed8faa9068b43abaebafc02c77897b0c6fc09abc04bb592e5f16e.txt (SHA-256 fd3a263fe19ed8faa9068b43abaebafc02c77897b0c6fc09abc04bb592e5f16e)
+
+JavaScript: convert-source-map 2.0.0
+Declared license: MIT
+Notice: texts/1fa6ee8bb95a81ae3d73a5bd074a3ac380ffec13697051063ca1a601921b91db.txt (SHA-256 1fa6ee8bb95a81ae3d73a5bd074a3ac380ffec13697051063ca1a601921b91db)
+
+JavaScript: debug 4.4.3
+Declared license: MIT
+Notice: texts/3a61c6c96caf5c1d9b623fb9b04c822b783dfcb78aa7e49c76a3f643e6ed7f95.txt (SHA-256 3a61c6c96caf5c1d9b623fb9b04c822b783dfcb78aa7e49c76a3f643e6ed7f95)
+
+JavaScript: electron-to-chromium 1.5.452
+Declared license: ISC
+Notice: texts/25ba5c59dad3e0dd8f9540beaa0f0a86a10e3aec35af5fdc8e88c5f6a5c0d8c6.txt (SHA-256 25ba5c59dad3e0dd8f9540beaa0f0a86a10e3aec35af5fdc8e88c5f6a5c0d8c6)
+
+JavaScript: esbuild 0.25.12
+Declared license: MIT
+Notice: texts/b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681.txt (SHA-256 b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681)
+
+JavaScript: escalade 3.2.0
+Declared license: MIT
+Notice: texts/9a9edad7baae52622bddf3c15b2ef8a33d2c89f2d25408ad13e8a7481c6b0c97.txt (SHA-256 9a9edad7baae52622bddf3c15b2ef8a33d2c89f2d25408ad13e8a7481c6b0c97)
+
+JavaScript: fdir 6.5.0
+Declared license: MIT
+Notice: texts/9a39f2aadab11a3697edd668ff2d8ad885b649737b7ab4d3bf12b34e5ada0c86.txt (SHA-256 9a39f2aadab11a3697edd668ff2d8ad885b649737b7ab4d3bf12b34e5ada0c86)
+
+JavaScript: framer-motion 12.43.0
+Declared license: MIT
+Notice: texts/5ff46083b88563822b0560dd6221ab89d2f74bc97a52d4c97a75020fd62c6f32.txt (SHA-256 5ff46083b88563822b0560dd6221ab89d2f74bc97a52d4c97a75020fd62c6f32)
+
+JavaScript: gensync 1.0.0-beta.2
+Declared license: MIT
+Notice: texts/e3a956681ee067f971ac413994171b3d90ca801ec6324e76c9c55366cfe31cb0.txt (SHA-256 e3a956681ee067f971ac413994171b3d90ca801ec6324e76c9c55366cfe31cb0)
+
+JavaScript: js-tokens 4.0.0
+Declared license: MIT
+Notice: texts/2213d91c606205c71eb051a199478cdc2adde945893404d7f1421436dd6d5cc1.txt (SHA-256 2213d91c606205c71eb051a199478cdc2adde945893404d7f1421436dd6d5cc1)
+
+JavaScript: jsesc 3.1.0
+Declared license: MIT
+Notice: texts/483acb265f182907d1caf6cff9c16c96f31325ed23792832cc5d8b12d5f88c8a.txt (SHA-256 483acb265f182907d1caf6cff9c16c96f31325ed23792832cc5d8b12d5f88c8a)
+
+JavaScript: json5 2.2.3
+Declared license: MIT
+Notice: texts/53e59feb13058722d977c699eb0407c7bce2f93c949b681bbd2ff31698535927.txt (SHA-256 53e59feb13058722d977c699eb0407c7bce2f93c949b681bbd2ff31698535927)
+
+JavaScript: lru-cache 5.1.1
+Declared license: ISC
+Notice: texts/4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b.txt (SHA-256 4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b)
+
+JavaScript: lucide-react 0.468.0
+Declared license: ISC
+Notice: texts/1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc.txt (SHA-256 1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc)
+
+JavaScript: motion 12.43.0
+Declared license: MIT
+Notice: texts/1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1.txt (SHA-256 1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1)
+
+JavaScript: motion-dom 12.43.0
+Declared license: MIT
+Notice: texts/1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1.txt (SHA-256 1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1)
+
+JavaScript: motion-utils 12.39.0
+Declared license: MIT
+Notice: texts/1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1.txt (SHA-256 1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1)
+
+JavaScript: ms 2.1.3
+Declared license: MIT
+Notice: texts/1662fae9b5314d11cf51284e2dcd1f006a354f7343f08712a730fcff9a359801.txt (SHA-256 1662fae9b5314d11cf51284e2dcd1f006a354f7343f08712a730fcff9a359801)
+
+JavaScript: nanoid 3.3.20
+Declared license: MIT
+Notice: texts/da4db1480d9beea3483a2eda5c53b22238d0827d57da162b48f122e04d2d9987.txt (SHA-256 da4db1480d9beea3483a2eda5c53b22238d0827d57da162b48f122e04d2d9987)
+
+JavaScript: node-releases 2.0.58
+Declared license: MIT
+Notice: texts/3706296ed611888111ceccc1dff4712844dea4bde0b185c82d718c3b69895abe.txt (SHA-256 3706296ed611888111ceccc1dff4712844dea4bde0b185c82d718c3b69895abe)
+
+JavaScript: picocolors 1.1.1
+Declared license: ISC
+Notice: texts/6582629e2979466878f6014313dcc2f3756c9616148682227ce3063dde310750.txt (SHA-256 6582629e2979466878f6014313dcc2f3756c9616148682227ce3063dde310750)
+
+JavaScript: picomatch 4.0.7
+Declared license: MIT
+Notice: texts/d0cd141b0c322fded5dfad1d4645bb2fedfc05b7321fe1009469638190d59ef9.txt (SHA-256 d0cd141b0c322fded5dfad1d4645bb2fedfc05b7321fe1009469638190d59ef9)
+
+JavaScript: postcss 8.5.29
+Declared license: MIT
+Notice: texts/5be1f3465bba68a626777f984878814aaf35e7ef8e9fd314d469bcf887050fb8.txt (SHA-256 5be1f3465bba68a626777f984878814aaf35e7ef8e9fd314d469bcf887050fb8)
+
+JavaScript: react 19.3.0
+Declared license: MIT
+Notice: texts/da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93.txt (SHA-256 da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93)
+
+JavaScript: react-dom 19.3.0
+Declared license: MIT
+Notice: texts/da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93.txt (SHA-256 da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93)
+
+JavaScript: react-refresh 0.17.0
+Declared license: MIT
+Notice: texts/da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93.txt (SHA-256 da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93)
+
+JavaScript: rollup 4.64.3
+Declared license: MIT
+Notice: texts/fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8.txt (SHA-256 fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8)
+
+JavaScript: scheduler 0.28.0
+Declared license: MIT
+Notice: texts/da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93.txt (SHA-256 da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93)
+
+JavaScript: semver 6.3.1
+Declared license: ISC
+Notice: texts/4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b.txt (SHA-256 4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b)
+
+JavaScript: source-map-js 1.2.2
+Declared license: BSD-3-Clause
+Notice: texts/6cb0631f71c7749763fd3dd1d5bee52dd1070ec17f2edc1710079ad070bd2fbd.txt (SHA-256 6cb0631f71c7749763fd3dd1d5bee52dd1070ec17f2edc1710079ad070bd2fbd)
+
+JavaScript: three 0.180.0
+Declared license: MIT
+Notice: texts/bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601.txt (SHA-256 bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601)
+
+JavaScript: tinyglobby 0.2.17
+Declared license: MIT
+Notice: texts/22c68811e174cbbfb3813d4135918df4f540959c14d872e601d9abe83d3cde8f.txt (SHA-256 22c68811e174cbbfb3813d4135918df4f540959c14d872e601d9abe83d3cde8f)
+
+JavaScript: tslib 2.8.1
+Declared license: 0BSD
+Notice: texts/da16ddb65f8ca390998fb99223d0112498b56b45784d00afd77ff8ce1ac4de8b.txt (SHA-256 da16ddb65f8ca390998fb99223d0112498b56b45784d00afd77ff8ce1ac4de8b)
+Notice: texts/210b19e543130388c68654b7497e967119ce17145f66ab7d85688fbd70f08751.txt (SHA-256 210b19e543130388c68654b7497e967119ce17145f66ab7d85688fbd70f08751)
+
+JavaScript: update-browserslist-db 1.3.4
+Declared license: MIT
+Notice: texts/9877e90da14aa8c931a1f9d07cc2a20ce119106e5dab1ebb41af865266d0cd2a.txt (SHA-256 9877e90da14aa8c931a1f9d07cc2a20ce119106e5dab1ebb41af865266d0cd2a)
+
+JavaScript: vite 6.4.4
+Declared license: MIT
+Notice: texts/008938a3441801ca3960f8e3ccb4c0738e7996442a53063141d57d3769a7344d.txt (SHA-256 008938a3441801ca3960f8e3ccb4c0738e7996442a53063141d57d3769a7344d)
+
+JavaScript: yallist 3.1.1
+Declared license: ISC
+Notice: texts/4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b.txt (SHA-256 4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b)
+
+Python environment: absl-py 2.5.0
+Declared license: Apache-2.0
+Notice: texts/6282ee76cca569083b5b998b9f816ba1032e127b8dc7c46942b86477fc6fbfa5.txt (SHA-256 6282ee76cca569083b5b998b9f816ba1032e127b8dc7c46942b86477fc6fbfa5)
+Notice: texts/cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30.txt (SHA-256 cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30)
+
+Python environment: affine 3.0.1
+Declared license: BSD-3-Clause
+Notice: texts/4c53297800b3226b0ce3c75ae5a60930a488bcd33b95333a5a8bca44497a5c2a.txt (SHA-256 4c53297800b3226b0ce3c75ae5a60930a488bcd33b95333a5a8bca44497a5c2a)
+Notice: texts/fc3636b54ff4072cf4b013ed9893c171ed25f88dae2b32722050499c1878cd6e.txt (SHA-256 fc3636b54ff4072cf4b013ed9893c171ed25f88dae2b32722050499c1878cd6e)
+
+Python environment: annotated-doc 0.0.4
+Declared license: MIT
+Notice: texts/fff170779a6acbf65abdb405c087f1cee1786691e4a96a4034517e4a504a0cdf.txt (SHA-256 fff170779a6acbf65abdb405c087f1cee1786691e4a96a4034517e4a504a0cdf)
+
+Python environment: annotated-types 0.8.0
+Declared license: MIT
+Notice: texts/fe1049884b1a0d9342901e88e07f32925d24b3121d9972b6a6805fb9824b095d.txt (SHA-256 fe1049884b1a0d9342901e88e07f32925d24b3121d9972b6a6805fb9824b095d)
+
+Python environment: anyio 4.14.2
+Declared license: MIT
+Notice: texts/5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0.txt (SHA-256 5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0)
+
+Python environment: asmk 0.1
+Declared license: None
+Notice: texts/1a7f3b543c88262b65b56aa033c8c624226a4fa6faa70114be115921bbd24f0b.txt (SHA-256 1a7f3b543c88262b65b56aa033c8c624226a4fa6faa70114be115921bbd24f0b)
+
+Python environment: attrs 26.1.0
+Declared license: MIT
+Notice: texts/882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f.txt (SHA-256 882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f)
+
+Python environment: brotli 1.2.0
+Declared license: MIT
+Notice: texts/3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94.txt (SHA-256 3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94)
+
+Python environment: certifi 2022.12.7
+Declared license: MPL-2.0
+Notice: texts/a02f6c638f9fb84d06f7764c3ab085d8af7eda5b93c166da54312479077c6fb0.txt (SHA-256 a02f6c638f9fb84d06f7764c3ab085d8af7eda5b93c166da54312479077c6fb0)
+
+Python environment: charset-normalizer 2.1.1
+Declared license: MIT
+Notice: texts/eb31a0c5a4fb09b8a4e32055d25c1e5f9c358a2752fef3cd720213d1ccfee241.txt (SHA-256 eb31a0c5a4fb09b8a4e32055d25c1e5f9c358a2752fef3cd720213d1ccfee241)
+
+Python environment: click 8.4.2
+Declared license: BSD-3-Clause
+Notice: texts/9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d.txt (SHA-256 9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d)
+
+Python environment: click-plugins 1.1.1.2
+Declared license: New BSD
+Notice: texts/154843f706715f9fbe77d292ee1501fb09c78324baee97675af00393c96b2de1.txt (SHA-256 154843f706715f9fbe77d292ee1501fb09c78324baee97675af00393c96b2de1)
+Notice: texts/fa1986d06c7d3ba7763524604dbab39faf5b1a89c7812a8d5d932e7dd70036d2.txt (SHA-256 fa1986d06c7d3ba7763524604dbab39faf5b1a89c7812a8d5d932e7dd70036d2)
+
+Python environment: cligj 0.7.2
+Declared license: BSD
+Notice: texts/5902d716544ddf9a34849b345c391abaf7c21ca16ed22706d6ac2f5503712594.txt (SHA-256 5902d716544ddf9a34849b345c391abaf7c21ca16ed22706d6ac2f5503712594)
+
+Python environment: colorlog 6.12.0
+Declared license: MIT License
+Notice: texts/b1d9082bc483623fd59fc7279b457f0e40d942a76426cde257239e04dfe4125a.txt (SHA-256 b1d9082bc483623fd59fc7279b457f0e40d942a76426cde257239e04dfe4125a)
+
+Python environment: contourpy 1.3.2
+Declared license: Full notice in package metadata (preserved)
+Notice: texts/34170979fc64f4f5e6dfa66ef27dec314ffffc5852000c60f4836ec1dfbf156e.txt (SHA-256 34170979fc64f4f5e6dfa66ef27dec314ffffc5852000c60f4836ec1dfbf156e)
+Notice: texts/d3d2ca388bb40cfcabd217c061836db0275982a0efb18023a34e5cf845f4b193.txt (SHA-256 d3d2ca388bb40cfcabd217c061836db0275982a0efb18023a34e5cf845f4b193)
+
+Python environment: cuda-bindings 13.3.1
+Declared license: LicenseRef-NVIDIA-SOFTWARE-LICENSE
+Notice: texts/807b0df78905550dfe7c2ea11414cb74ea278eec67ad7aec271b4f0b7300cbd3.txt (SHA-256 807b0df78905550dfe7c2ea11414cb74ea278eec67ad7aec271b4f0b7300cbd3)
+
+Python environment: cuda-pathfinder 1.6.0
+Declared license: Apache-2.0
+Notice: texts/2b9515b4580570ece37c5397650b0f950de2f465873a169a67e40c08c121307d.txt (SHA-256 2b9515b4580570ece37c5397650b0f950de2f465873a169a67e40c08c121307d)
+
+Python environment: cuda-toolkit 13.0.3.0
+Declared license: None
+NOTICE NOT LOCATED — REVIEW REQUIRED
+
+Python environment: curope 0.0.0
+Declared license: None
+NOTICE NOT LOCATED — REVIEW REQUIRED
+
+Python environment: cycler 0.12.1
+Declared license: Full notice in package metadata (preserved)
+Notice: texts/f1218143d766da3fea66f13396b7f15df46a83303f29bf96ba6e98eb4d42f408.txt (SHA-256 f1218143d766da3fea66f13396b7f15df46a83303f29bf96ba6e98eb4d42f408)
+Notice: texts/f1218143d766da3fea66f13396b7f15df46a83303f29bf96ba6e98eb4d42f408.txt (SHA-256 f1218143d766da3fea66f13396b7f15df46a83303f29bf96ba6e98eb4d42f408)
+
+Python environment: Cython 0.29.37
+Declared license: Apache
+Notice: texts/e1eb1c49a8508e8173dac30157e4a6439a44ad8846194746c424fbc3fc2b95d7.txt (SHA-256 e1eb1c49a8508e8173dac30157e4a6439a44ad8846194746c424fbc3fc2b95d7)
+Notice: texts/a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9.txt (SHA-256 a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9)
+
+Python environment: diff_gaussian_rasterization 0.0.0
+Declared license: None
+Notice: texts/cd5c95b3cfff3acc1bd412420c770f88809331c3db6872df11a970147aa8e81f.txt (SHA-256 cd5c95b3cfff3acc1bd412420c770f88809331c3db6872df11a970147aa8e81f)
+
+Python environment: einops 0.8.2
+Declared license: MIT
+Notice: texts/30d984364296f51ffaecad4b01ee127e95250c5068918d4b66fc96206723e434.txt (SHA-256 30d984364296f51ffaecad4b01ee127e95250c5068918d4b66fc96206723e434)
+
+Python environment: embreex 4.4.0
+Declared license: Full notice in package metadata (preserved)
+Notice: texts/ff1b98027d39113f6c3fcd9c3b0ebcc60b145b9a2b82f5670f444be3028a900e.txt (SHA-256 ff1b98027d39113f6c3fcd9c3b0ebcc60b145b9a2b82f5670f444be3028a900e)
+Notice: texts/ff1b98027d39113f6c3fcd9c3b0ebcc60b145b9a2b82f5670f444be3028a900e.txt (SHA-256 ff1b98027d39113f6c3fcd9c3b0ebcc60b145b9a2b82f5670f444be3028a900e)
+
+Python environment: et_xmlfile 2.0.0
+Declared license: MIT
+Notice: texts/4ccdaaebc0f44b83720ec0399bb7ab329adce067dd62f73c5535a2dc05628ab2.txt (SHA-256 4ccdaaebc0f44b83720ec0399bb7ab329adce067dd62f73c5535a2dc05628ab2)
+Notice: texts/0c84bb42f5d367e5ebf9fc2dde35b16141df5ee0fdc189250858bc6c5560f69e.txt (SHA-256 0c84bb42f5d367e5ebf9fc2dde35b16141df5ee0fdc189250858bc6c5560f69e)
+
+Python environment: exceptiongroup 1.3.1
+Declared license: None
+Notice: texts/6e5070d765031e0ad403a1cbf90ae6d19a0228f802e320b7acff460aa72ed47c.txt (SHA-256 6e5070d765031e0ad403a1cbf90ae6d19a0228f802e320b7acff460aa72ed47c)
+
+Python environment: faiss-cpu 1.14.3
+Declared license: MIT
+Notice: texts/52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85.txt (SHA-256 52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85)
+Notice: texts/b07524ad6a822edd86bd1d4703abc8cfdfe934188670d9f5c2c96676f554e40b.txt (SHA-256 b07524ad6a822edd86bd1d4703abc8cfdfe934188670d9f5c2c96676f554e40b)
+
+Python environment: fastapi 0.140.1
+Declared license: MIT
+Notice: texts/4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e.txt (SHA-256 4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e)
+
+Python environment: filelock 3.29.0
+Declared license: MIT
+Notice: texts/608c89d5060ae9921adccf3236695bc654a9946e12323ef6c021dfa04e294d48.txt (SHA-256 608c89d5060ae9921adccf3236695bc654a9946e12323ef6c021dfa04e294d48)
+
+Python environment: fonttools 4.63.0
+Declared license: MIT
+Notice: texts/6787208f83f659ccbc2223b2fde952ffa6f7e8aca62f1a8a2bf5bc51bb1b2383.txt (SHA-256 6787208f83f659ccbc2223b2fde952ffa6f7e8aca62f1a8a2bf5bc51bb1b2383)
+Notice: texts/94a83aaee0729a0f302d34acc4acecbd9d58366f262429075fe557e4a54b2e69.txt (SHA-256 94a83aaee0729a0f302d34acc4acecbd9d58366f262429075fe557e4a54b2e69)
+
+Python environment: fsspec 2026.4.0
+Declared license: BSD-3-Clause
+Notice: texts/2dc35496ce53a7307915c008a844aad53e772b49b34cdd00445067691407ec94.txt (SHA-256 2dc35496ce53a7307915c008a844aad53e772b49b34cdd00445067691407ec94)
+
+Python environment: glcontext 3.0.0
+Declared license: MIT
+Notice: texts/5343a2b496db3237e032a11fcd5c6d183b4a8f2882fb3d96dab1fc1124f139c1.txt (SHA-256 5343a2b496db3237e032a11fcd5c6d183b4a8f2882fb3d96dab1fc1124f139c1)
+
+Python environment: glfw 2.10.2
+Declared license: MIT
+Notice: texts/83e675a7714eb01db1ed75cedcf349ab9dd9630782f81c08161cb58cc67ca1ca.txt (SHA-256 83e675a7714eb01db1ed75cedcf349ab9dd9630782f81c08161cb58cc67ca1ca)
+
+Python environment: gradio 6.20.0
+Declared license: Apache-2.0
+Notice: texts/c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4.txt (SHA-256 c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4)
+Notice: texts/cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14.txt (SHA-256 cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14)
+Notice: texts/104c58d1d450bd6474c09d8b64bc0182733a60ac3d8c253e334cde8294520ff1.txt (SHA-256 104c58d1d450bd6474c09d8b64bc0182733a60ac3d8c253e334cde8294520ff1)
+Notice: texts/291636f3175aa964a9c7a65d23f7fe28c54157b1df076b3bb906a3ba154bb27e.txt (SHA-256 291636f3175aa964a9c7a65d23f7fe28c54157b1df076b3bb906a3ba154bb27e)
+Notice: texts/3aecc12b1cb28832b5f65ab64291de96568c3f236a74d646281b4491f7bcadbf.txt (SHA-256 3aecc12b1cb28832b5f65ab64291de96568c3f236a74d646281b4491f7bcadbf)
+Notice: texts/bfa8a54bb952ccda79f0f1889721d108f5b605babbb2b8a3705ffb52f4132eb7.txt (SHA-256 bfa8a54bb952ccda79f0f1889721d108f5b605babbb2b8a3705ffb52f4132eb7)
+Notice: texts/589850dfc0a1d39a97c592d618d5772f84aec2b11c6898e020acb985299f3bab.txt (SHA-256 589850dfc0a1d39a97c592d618d5772f84aec2b11c6898e020acb985299f3bab)
+Notice: texts/3b2a6a268aa815dec121d614245e03b5c68db1f044d5b525e36db7d5dc7fb9c3.txt (SHA-256 3b2a6a268aa815dec121d614245e03b5c68db1f044d5b525e36db7d5dc7fb9c3)
+
+Python environment: gradio_client 2.5.0
+Declared license: Apache-2.0
+NOTICE NOT LOCATED — REVIEW REQUIRED
+
+Python environment: groovy 0.1.2
+Declared license: None
+Notice: texts/c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4.txt (SHA-256 c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4)
+
+Python environment: grpcio 1.83.0
+Declared license: Apache-2.0
+Notice: texts/58c86a3f2b5cca0ebdf9ed3e7f4e6dc38e3b38796d8c3dc92064c62a4e39d0dd.txt (SHA-256 58c86a3f2b5cca0ebdf9ed3e7f4e6dc38e3b38796d8c3dc92064c62a4e39d0dd)
+
+Python environment: h11 0.16.0
+Declared license: MIT
+Notice: texts/37db5bb85926db28a427a25867f10b1232003aea1be69ccb851138adb8e6f361.txt (SHA-256 37db5bb85926db28a427a25867f10b1232003aea1be69ccb851138adb8e6f361)
+
+Python environment: hf-gradio 0.4.1
+Declared license: MIT
+Notice: texts/58edefee7065c5a51b7a81b875028770d51a5d516cc34eb317012f6138c86fe0.txt (SHA-256 58edefee7065c5a51b7a81b875028770d51a5d516cc34eb317012f6138c86fe0)
+
+Python environment: hf-xet 1.5.2
+Declared license: Apache-2.0
+Notice: texts/c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4.txt (SHA-256 c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4)
+
+Python environment: httpcore 1.0.9
+Declared license: BSD-3-Clause
+Notice: texts/fdcb59154c74cbaba16a11242f7740bea9f23d6feb5547917d8c5f94a80392a5.txt (SHA-256 fdcb59154c74cbaba16a11242f7740bea9f23d6feb5547917d8c5f94a80392a5)
+
+Python environment: httpx 0.28.1
+Declared license: BSD-3-Clause
+Notice: texts/4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d.txt (SHA-256 4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d)
+
+Python environment: huggingface_hub 1.25.1
+Declared license: Apache-2.0
+Notice: texts/c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4.txt (SHA-256 c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4)
+
+Python environment: idna 3.4
+Declared license: None
+Notice: texts/a2d6e4d940bd24dbe7b9645cde19a9792cc51db7ae0d5acd301ac860caa3e836.txt (SHA-256 a2d6e4d940bd24dbe7b9645cde19a9792cc51db7ae0d5acd301ac860caa3e836)
+
+Python environment: imgui 2.0.0
+Declared license: BSD
+Notice: texts/c4504e5689ea002612a1c3fbe6a7d7942f92efa75ce84a97e4982408bcdba7c4.txt (SHA-256 c4504e5689ea002612a1c3fbe6a7d7942f92efa75ce84a97e4982408bcdba7c4)
+
+Python environment: in3d 0.0.1
+Declared license: None
+NOTICE NOT LOCATED — REVIEW REQUIRED
+
+Python environment: jaxtyping 0.3.7
+Declared license: Full notice in package metadata (preserved)
+Notice: texts/2ef67751f7ae1fa8d1765c494d591767fa68dc1e12ab043dd0fbbfbc1ffda5bc.txt (SHA-256 2ef67751f7ae1fa8d1765c494d591767fa68dc1e12ab043dd0fbbfbc1ffda5bc)
+Notice: texts/6163f7987dfb38d6bc320ce2b70b2f02b862bc41126516d552ef1cd43247e758.txt (SHA-256 6163f7987dfb38d6bc320ce2b70b2f02b862bc41126516d552ef1cd43247e758)
+Notice: texts/b671f651d82ea743b40ec5b79037d6c8a4b9b8a1631e3a9f51b8e639e8ec9712.txt (SHA-256 b671f651d82ea743b40ec5b79037d6c8a4b9b8a1631e3a9f51b8e639e8ec9712)
+
+Python environment: Jinja2 3.1.6
+Declared license: None
+Notice: texts/3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b.txt (SHA-256 3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b)
+
+Python environment: joblib 1.5.3
+Declared license: BSD-3-Clause
+Notice: texts/42612911c1872c5e4b43f6ae0e8ee59467cd350332241cf72ce90640264fae6a.txt (SHA-256 42612911c1872c5e4b43f6ae0e8ee59467cd350332241cf72ce90640264fae6a)
+
+Python environment: jsonschema 4.26.0
+Declared license: MIT
+Notice: texts/4f92a015a13c4d1a040bef018aa13430b4f1bc73b41b16bb846c346766de7439.txt (SHA-256 4f92a015a13c4d1a040bef018aa13430b4f1bc73b41b16bb846c346766de7439)
+
+Python environment: jsonschema-specifications 2025.9.1
+Declared license: MIT
+Notice: texts/42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c.txt (SHA-256 42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c)
+
+Python environment: kiwisolver 1.5.0
+Declared license: Full notice in package metadata (preserved)
+Notice: texts/529c40e5f67f2f88904657a9f7879ae2f8dc76bc9bfef9cb10d988b48804ed61.txt (SHA-256 529c40e5f67f2f88904657a9f7879ae2f8dc76bc9bfef9cb10d988b48804ed61)
+Notice: texts/529c40e5f67f2f88904657a9f7879ae2f8dc76bc9bfef9cb10d988b48804ed61.txt (SHA-256 529c40e5f67f2f88904657a9f7879ae2f8dc76bc9bfef9cb10d988b48804ed61)
+
+Python environment: lietorch 0.3
+Declared license: BSD-3-Clause
+Notice: texts/4261dca112b565843598e0db554ff90e578701fca983262bd4f5a7ce67d81f89.txt (SHA-256 4261dca112b565843598e0db554ff90e578701fca983262bd4f5a7ce67d81f89)
+
+Python environment: lxml 6.1.1
+Declared license: BSD-3-Clause
+Notice: texts/8fc2b568133516e46845d2147917adeee1648e70ae9ab5ed6c5417afef4ce855.txt (SHA-256 8fc2b568133516e46845d2147917adeee1648e70ae9ab5ed6c5417afef4ce855)
+Notice: texts/41d49dd406aa0e1548a6d5f21a30d6bf638b3cd96eb7289dd348d83ed2e40392.txt (SHA-256 41d49dd406aa0e1548a6d5f21a30d6bf638b3cd96eb7289dd348d83ed2e40392)
+
+Python environment: manifold3d 3.5.2
+Declared license: None
+Notice: texts/074a43d4b1626a34a0a14a036d00100524dd463604b2570c4d76c7baa63608f3.txt (SHA-256 074a43d4b1626a34a0a14a036d00100524dd463604b2570c4d76c7baa63608f3)
+Notice: texts/c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4.txt (SHA-256 c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4)
+
+Python environment: mapbox_earcut 2.0.0
+Declared license: None
+Notice: texts/89ad38409121961753c5aa8863eceacd954183e9b3a7720d88be53fb1a3ecd87.txt (SHA-256 89ad38409121961753c5aa8863eceacd954183e9b3a7720d88be53fb1a3ecd87)
+
+Python environment: Markdown 3.10.2
+Declared license: BSD-3-Clause
+Notice: texts/7ba4eb6d10b32b2d11dce13821340351cdbbb30ba8ccc67841db2ffd86e79aca.txt (SHA-256 7ba4eb6d10b32b2d11dce13821340351cdbbb30ba8ccc67841db2ffd86e79aca)
+
+Python environment: markdown-it-py 4.2.0
+Declared license: None
+Notice: texts/4a2260d6e2cd0f5a151a1e86dbfe7d3ed552b1e2beabf9941c1ba5c49cbce484.txt (SHA-256 4a2260d6e2cd0f5a151a1e86dbfe7d3ed552b1e2beabf9941c1ba5c49cbce484)
+Notice: texts/792c48c5a849a15fdf9e37e8bcf9e6d1dd13b32b46c642a748a0a46a9919d473.txt (SHA-256 792c48c5a849a15fdf9e37e8bcf9e6d1dd13b32b46c642a748a0a46a9919d473)
+
+Python environment: MarkupSafe 3.0.3
+Declared license: BSD-3-Clause
+Notice: texts/489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea.txt (SHA-256 489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea)
+
+Python environment: MAST3R 0.0.1
+Declared license: None
+Notice: texts/f06b394a6b4804e68c4f8ff4298aec5cc981fba8934fc56525c91cc64a7d1d58.txt (SHA-256 f06b394a6b4804e68c4f8ff4298aec5cc981fba8934fc56525c91cc64a7d1d58)
+Notice: texts/bb667d95700cd7b915c055c4ea226dea4e1ac5e07000d399e3be5d2ba5b7e14a.txt (SHA-256 bb667d95700cd7b915c055c4ea226dea4e1ac5e07000d399e3be5d2ba5b7e14a)
+
+Python environment: matplotlib 3.10.9
+Declared license: Full notice in package metadata (preserved)
+Notice: texts/dbb9ad7495a83b0f2f48c94b06e23020587d82f8d1492dcb717fb1ebc2f86c18.txt (SHA-256 dbb9ad7495a83b0f2f48c94b06e23020587d82f8d1492dcb717fb1ebc2f86c18)
+Notice: texts/d75938dec098f06f0ac3c00853065d94f020be1c3c62ef1dc2975ba15b4d9b0e.txt (SHA-256 d75938dec098f06f0ac3c00853065d94f020be1c3c62ef1dc2975ba15b4d9b0e)
+Notice: texts/bab3d31dfef07f483624f2f65f2711e76065b8e7273278b1c071ede1041c9959.txt (SHA-256 bab3d31dfef07f483624f2f65f2711e76065b8e7273278b1c071ede1041c9959)
+Notice: texts/5ac63fabee5bcd7e9de9fcbf42252065ab7bd2b61a0818bea74dd80cfab9287f.txt (SHA-256 5ac63fabee5bcd7e9de9fcbf42252065ab7bd2b61a0818bea74dd80cfab9287f)
+
+Python environment: mdurl 0.1.2
+Declared license: None
+Notice: texts/7c605df6e28667a9603118e98274f64a49ce3eed0d26fccce9534a345e0ef955.txt (SHA-256 7c605df6e28667a9603118e98274f64a49ce3eed0d26fccce9534a345e0ef955)
+
+Python environment: moderngl 5.12.0
+Declared license: MIT
+Notice: texts/20d168158102c3ceea1c76bd7c10a921216dd1ca4a68c8f212a2565bdab6e33e.txt (SHA-256 20d168158102c3ceea1c76bd7c10a921216dd1ca4a68c8f212a2565bdab6e33e)
+
+Python environment: moderngl-window 2.4.6
+Declared license: None
+Notice: texts/b06e465f96328d9b51eca45ca6495169980cf5afad4e3e6989613b966739d589.txt (SHA-256 b06e465f96328d9b51eca45ca6495169980cf5afad4e3e6989613b966739d589)
+
+Python environment: mpmath 1.3.0
+Declared license: BSD
+Notice: texts/c26cae81da4508e5e249985777a33821f183223ebb74d7f8cfbf90fe7eef2fb7.txt (SHA-256 c26cae81da4508e5e249985777a33821f183223ebb74d7f8cfbf90fe7eef2fb7)
+
+Python environment: msgpack 1.2.1
+Declared license: Apache-2.0
+Notice: texts/492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427.txt (SHA-256 492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427)
+
+Python environment: multipledispatch 1.0.0
+Declared license: BSD
+Notice: texts/8767c8a56a24a69d4bf42561c408bdf3e3ffa40699989aec50b96f4b4351efd9.txt (SHA-256 8767c8a56a24a69d4bf42561c408bdf3e3ffa40699989aec50b96f4b4351efd9)
+
+Python environment: munch 4.0.0
+Declared license: MIT
+Notice: texts/57ca95c92059c8380625192462979bd32994aae3fcdf902ff6eb1e467eeb0469.txt (SHA-256 57ca95c92059c8380625192462979bd32994aae3fcdf902ff6eb1e467eeb0469)
+
+Python environment: networkx 3.4.2
+Declared license: None
+Notice: texts/5b433b90f755eb9bbd06feff1d1a4f5f232c5208a185694199e45fa95d762792.txt (SHA-256 5b433b90f755eb9bbd06feff1d1a4f5f232c5208a185694199e45fa95d762792)
+
+Python environment: numpy 1.26.4
+Declared license: Full notice in package metadata (preserved)
+Notice: texts/1107b0c831e918d4f1dbc28a33190c77215ef278d4a4c4009572088770d4334a.txt (SHA-256 1107b0c831e918d4f1dbc28a33190c77215ef278d4a4c4009572088770d4334a)
+Notice: texts/fbc539f47d0cf83bc61378080fb873d5c14630126cacbfe754035c3926daa5ec.txt (SHA-256 fbc539f47d0cf83bc61378080fb873d5c14630126cacbfe754035c3926daa5ec)
+Notice: texts/05f3b88351988ecfad10abe92c0c50e5875c6452d5009a0084cc291551ffcca6.txt (SHA-256 05f3b88351988ecfad10abe92c0c50e5875c6452d5009a0084cc291551ffcca6)
+Notice: texts/103166b62b80443afb9eb3488e052ea06be0cff566b908f199e561fde49af19f.txt (SHA-256 103166b62b80443afb9eb3488e052ea06be0cff566b908f199e561fde49af19f)
+Notice: texts/5f5f6241adb9712b1e1b7fcb4423983c1cdba6c87f879c79c0307db4fda2e243.txt (SHA-256 5f5f6241adb9712b1e1b7fcb4423983c1cdba6c87f879c79c0307db4fda2e243)
+
+Python environment: nvidia-cublas 13.1.1.3
+Declared license: LicenseRef-NVIDIA-Proprietary
+Notice: texts/ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd.txt (SHA-256 ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd)
+
+Python environment: nvidia-cuda-cupti 13.0.85
+Declared license: LicenseRef-NVIDIA-Proprietary
+Notice: texts/ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd.txt (SHA-256 ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd)
+
+Python environment: nvidia-cuda-nvrtc 13.0.88
+Declared license: LicenseRef-NVIDIA-Proprietary
+Notice: texts/ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd.txt (SHA-256 ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd)
+
+Python environment: nvidia-cuda-runtime 13.0.96
+Declared license: LicenseRef-NVIDIA-Proprietary
+Notice: texts/ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd.txt (SHA-256 ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd)
+
+Python environment: nvidia-cudnn-cu13 9.20.0.48
+Declared license: LicenseRef-NVIDIA-Proprietary
+Notice: texts/49cf79bdb35734b52fe6203013b3bd759f81e998cd32aa2c65c51db9a88c61d2.txt (SHA-256 49cf79bdb35734b52fe6203013b3bd759f81e998cd32aa2c65c51db9a88c61d2)
+
+Python environment: nvidia-cufft 12.0.0.61
+Declared license: LicenseRef-NVIDIA-Proprietary
+Notice: texts/ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd.txt (SHA-256 ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd)
+
+Python environment: nvidia-cufile 1.15.1.6
+Declared license: LicenseRef-NVIDIA-Proprietary
+Notice: texts/ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd.txt (SHA-256 ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd)
+
+Python environment: nvidia-curand 10.4.0.35
+Declared license: LicenseRef-NVIDIA-Proprietary
+Notice: texts/ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd.txt (SHA-256 ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd)
+
+Python environment: nvidia-cusolver 12.0.4.66
+Declared license: LicenseRef-NVIDIA-Proprietary
+Notice: texts/ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd.txt (SHA-256 ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd)
+
+Python environment: nvidia-cusparse 12.6.3.3
+Declared license: LicenseRef-NVIDIA-Proprietary
+Notice: texts/ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd.txt (SHA-256 ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd)
+
+Python environment: nvidia-cusparselt-cu13 0.8.1
+Declared license: NVIDIA Proprietary Software
+Notice: texts/e8d158885a681b95ec7a6fc06dd8d4a52989f374cb1380c8a4c8fb27fd3d5d5e.txt (SHA-256 e8d158885a681b95ec7a6fc06dd8d4a52989f374cb1380c8a4c8fb27fd3d5d5e)
+
+Python environment: nvidia-nccl-cu13 2.29.7
+Declared license: LicenseRef-NVIDIA-Proprietary
+Notice: texts/0f0174a6b4e0b33ac26375bf729533075b32f4c51a5b6802a3d742d7dcdc9a76.txt (SHA-256 0f0174a6b4e0b33ac26375bf729533075b32f4c51a5b6802a3d742d7dcdc9a76)
+
+Python environment: nvidia-nvjitlink 13.3.33
+Declared license: LicenseRef-NVIDIA-Proprietary
+Notice: texts/ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd.txt (SHA-256 ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd)
+
+Python environment: nvidia-nvshmem-cu13 3.4.5
+Declared license: LicenseRef-NVIDIA-Proprietary
+Notice: texts/ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd.txt (SHA-256 ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd)
+
+Python environment: nvidia-nvtx 13.0.85
+Declared license: Apache 2.0
+Notice: texts/9e45e856bedccee9f67254082ca11851d954de2fed7448c4bed19ad9aab99a91.txt (SHA-256 9e45e856bedccee9f67254082ca11851d954de2fed7448c4bed19ad9aab99a91)
+
+Python environment: opencv-python 4.11.0.86
+Declared license: Apache 2.0
+Notice: texts/4fc3c113d53e95da0f3c433655a67067b7310e53af31eb6d280e94cc6927a363.txt (SHA-256 4fc3c113d53e95da0f3c433655a67067b7310e53af31eb6d280e94cc6927a363)
+Notice: texts/09d719058e782ac7bc71ba21c944e1136cde2bb957c0e888121f0218d6b5f02c.txt (SHA-256 09d719058e782ac7bc71ba21c944e1136cde2bb957c0e888121f0218d6b5f02c)
+Notice: texts/4fc3c113d53e95da0f3c433655a67067b7310e53af31eb6d280e94cc6927a363.txt (SHA-256 4fc3c113d53e95da0f3c433655a67067b7310e53af31eb6d280e94cc6927a363)
+Notice: texts/09d719058e782ac7bc71ba21c944e1136cde2bb957c0e888121f0218d6b5f02c.txt (SHA-256 09d719058e782ac7bc71ba21c944e1136cde2bb957c0e888121f0218d6b5f02c)
+
+Python environment: openpyxl 3.1.5
+Declared license: MIT
+Notice: texts/0c84bb42f5d367e5ebf9fc2dde35b16141df5ee0fdc189250858bc6c5560f69e.txt (SHA-256 0c84bb42f5d367e5ebf9fc2dde35b16141df5ee0fdc189250858bc6c5560f69e)
+
+Python environment: orjson 3.11.9
+Declared license: MPL-2.0 AND (Apache-2.0 OR MIT)
+Notice: texts/a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2.txt (SHA-256 a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2)
+Notice: texts/23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3.txt (SHA-256 23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3)
+Notice: texts/66a3107d5ad6a058aab753eaac2047ccb2ed0e39465dd0fe5844da3e300d5172.txt (SHA-256 66a3107d5ad6a058aab753eaac2047ccb2ed0e39465dd0fe5844da3e300d5172)
+
+Python environment: packaging 26.0
+Declared license: Apache-2.0 OR BSD-2-Clause
+Notice: texts/4f05cb1d9097c1281d17044b3f15bad364fa99289eba74851cce9fa7ca605bbf.txt (SHA-256 4f05cb1d9097c1281d17044b3f15bad364fa99289eba74851cce9fa7ca605bbf)
+Notice: texts/596ec35e2ca0ebcba9fd8343ff0a51625af548786257815f24b41f7e08613314.txt (SHA-256 596ec35e2ca0ebcba9fd8343ff0a51625af548786257815f24b41f7e08613314)
+Notice: texts/cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48.txt (SHA-256 cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48)
+Notice: texts/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt (SHA-256 0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594)
+Notice: texts/b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5.txt (SHA-256 b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5)
+
+Python environment: pandas 2.3.3
+Declared license: Full notice in package metadata (preserved)
+Notice: texts/1dea2e80ed1cbd0233f84cee4486b29689f133babaccf4d295e51c43051f3216.txt (SHA-256 1dea2e80ed1cbd0233f84cee4486b29689f133babaccf4d295e51c43051f3216)
+Notice: texts/0ca26575ae36b173a7416e656b74838c85f3455140654299bb5cc496232f2ecc.txt (SHA-256 0ca26575ae36b173a7416e656b74838c85f3455140654299bb5cc496232f2ecc)
+
+Python environment: pillow 12.2.0
+Declared license: MIT-CMU
+Notice: texts/13e1d5014de0064b4b1ca4d837111797673cc91a116616e3dde555009243aaf6.txt (SHA-256 13e1d5014de0064b4b1ca4d837111797673cc91a116616e3dde555009243aaf6)
+
+Python environment: pip 23.0.1
+Declared license: MIT
+Notice: texts/634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104.txt (SHA-256 634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104)
+
+Python environment: pip 26.1.2
+Declared license: MIT
+Notice: texts/5b73479bffada0916044cb29c47ab20360215e3c838ff2e7562ecdfcb11645bd.txt (SHA-256 5b73479bffada0916044cb29c47ab20360215e3c838ff2e7562ecdfcb11645bd)
+Notice: texts/634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104.txt (SHA-256 634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104)
+Notice: texts/86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b.txt (SHA-256 86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b)
+Notice: texts/e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7.txt (SHA-256 e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7)
+Notice: texts/808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d.txt (SHA-256 808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d)
+Notice: texts/cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14.txt (SHA-256 cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14)
+Notice: texts/b7a336abf3b04e180ec065cdd16e705d079e1cc7a14f910aa6e9187f36b9cd87.txt (SHA-256 b7a336abf3b04e180ec065cdd16e705d079e1cc7a14f910aa6e9187f36b9cd87)
+Notice: texts/492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427.txt (SHA-256 492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427)
+Notice: texts/cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48.txt (SHA-256 cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48)
+Notice: texts/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt (SHA-256 0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594)
+Notice: texts/b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5.txt (SHA-256 b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5)
+Notice: texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt (SHA-256 86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741)
+Notice: texts/29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6.txt (SHA-256 29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6)
+Notice: texts/a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17.txt (SHA-256 a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17)
+Notice: texts/1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154.txt (SHA-256 1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154)
+Notice: texts/09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b.txt (SHA-256 09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b)
+Notice: texts/f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d.txt (SHA-256 f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d)
+Notice: texts/deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15.txt (SHA-256 deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15)
+Notice: texts/b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe.txt (SHA-256 b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe)
+Notice: texts/b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe.txt (SHA-256 b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe)
+Notice: texts/33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca.txt (SHA-256 33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca)
+Notice: texts/130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686.txt (SHA-256 130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686)
+Notice: texts/86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b.txt (SHA-256 86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b)
+Notice: texts/e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7.txt (SHA-256 e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7)
+Notice: texts/808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d.txt (SHA-256 808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d)
+Notice: texts/cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14.txt (SHA-256 cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14)
+Notice: texts/b7a336abf3b04e180ec065cdd16e705d079e1cc7a14f910aa6e9187f36b9cd87.txt (SHA-256 b7a336abf3b04e180ec065cdd16e705d079e1cc7a14f910aa6e9187f36b9cd87)
+Notice: texts/492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427.txt (SHA-256 492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427)
+Notice: texts/cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48.txt (SHA-256 cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48)
+Notice: texts/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt (SHA-256 0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594)
+Notice: texts/b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5.txt (SHA-256 b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5)
+Notice: texts/fc9c745d1883ff9f296a5b169f22eb2ee879f59a4608f20f5cb29d668f4e26f4.txt (SHA-256 fc9c745d1883ff9f296a5b169f22eb2ee879f59a4608f20f5cb29d668f4e26f4)
+Notice: texts/596ec35e2ca0ebcba9fd8343ff0a51625af548786257815f24b41f7e08613314.txt (SHA-256 596ec35e2ca0ebcba9fd8343ff0a51625af548786257815f24b41f7e08613314)
+Notice: texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt (SHA-256 86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741)
+Notice: texts/29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6.txt (SHA-256 29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6)
+Notice: texts/a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17.txt (SHA-256 a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17)
+Notice: texts/1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154.txt (SHA-256 1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154)
+Notice: texts/09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b.txt (SHA-256 09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b)
+Notice: texts/f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d.txt (SHA-256 f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d)
+Notice: texts/deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15.txt (SHA-256 deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15)
+Notice: texts/b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe.txt (SHA-256 b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe)
+Notice: texts/b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe.txt (SHA-256 b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe)
+Notice: texts/33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca.txt (SHA-256 33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca)
+Notice: texts/130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686.txt (SHA-256 130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686)
+
+Python environment: plyfile 1.1.4
+Declared license: Full notice in package metadata (preserved)
+Notice: texts/8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903.txt (SHA-256 8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903)
+Notice: texts/5f3bb46ca2ae2306829f651e896627f60f87c8050d5d0fad2cd1e80a7209fb4b.txt (SHA-256 5f3bb46ca2ae2306829f651e896627f60f87c8050d5d0fad2cd1e80a7209fb4b)
+
+Python environment: protobuf 7.35.1
+Declared license: 3-Clause BSD License
+Notice: texts/6e5e117324afd944dcf67f36cf329843bc1a92229a8cd9bb573d7a83130fea7d.txt (SHA-256 6e5e117324afd944dcf67f36cf329843bc1a92229a8cd9bb573d7a83130fea7d)
+
+Python environment: pyaml 26.7.0
+Declared license: WTFPL
+Notice: texts/dc1342cc1cb49e24c1c9e8a495acc9625ce2e04146c116279af0ab0949cd829c.txt (SHA-256 dc1342cc1cb49e24c1c9e8a495acc9625ce2e04146c116279af0ab0949cd829c)
+
+Python environment: pycollada 0.9.3
+Declared license: BSD
+Notice: texts/1dafc3828ef26c0a6d67ba63dad91ceaa1ee2cf9545750ad44b2e51589e7ff97.txt (SHA-256 1dafc3828ef26c0a6d67ba63dad91ceaa1ee2cf9545750ad44b2e51589e7ff97)
+Notice: texts/101982d97d9bb81911191b76d8e2c99f49bc1c4ee43c596dda03225aa7346b89.txt (SHA-256 101982d97d9bb81911191b76d8e2c99f49bc1c4ee43c596dda03225aa7346b89)
+
+Python environment: pydantic 2.13.4
+Declared license: MIT
+Notice: texts/a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3.txt (SHA-256 a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3)
+
+Python environment: pydantic_core 2.46.4
+Declared license: MIT
+Notice: texts/2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a.txt (SHA-256 2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a)
+
+Python environment: pydub 0.25.1
+Declared license: MIT
+Notice: texts/ae856536224cc7a389e968771fc5f259814bdd0da63539cf72282adbaef6897a.txt (SHA-256 ae856536224cc7a389e968771fc5f259814bdd0da63539cf72282adbaef6897a)
+
+Python environment: pyglet 2.1.15
+Declared license: None
+Notice: texts/57e7eecb673c8d40cf3192633c4807fba8c81685329a37e1b763e1556d5ded34.txt (SHA-256 57e7eecb673c8d40cf3192633c4807fba8c81685329a37e1b763e1556d5ded34)
+
+Python environment: pyglm 2.8.3
+Declared license: Zlib
+Notice: texts/39233f2e249e36dac3a11a36af833ce73eb6a76ab364071d0b099bbe408b950e.txt (SHA-256 39233f2e249e36dac3a11a36af833ce73eb6a76ab364071d0b099bbe408b950e)
+Notice: texts/13c6ae8a8f9499e8787518db94b1607ac209ae5ad5ec68abfc377cdb1d09aaa1.txt (SHA-256 13c6ae8a8f9499e8787518db94b1607ac209ae5ad5ec68abfc377cdb1d09aaa1)
+Notice: texts/2708a89cbda896d338dcb2bb5c3b7cba9b404df4b5a604b36cfcc7216c0d9c23.txt (SHA-256 2708a89cbda896d338dcb2bb5c3b7cba9b404df4b5a604b36cfcc7216c0d9c23)
+
+Python environment: Pygments 2.20.0
+Declared license: BSD-2-Clause
+Notice: texts/0db603a5f4499f690c4425477ff664c166da325d3acc3b5a8d4de3db072443d0.txt (SHA-256 0db603a5f4499f690c4425477ff664c166da325d3acc3b5a8d4de3db072443d0)
+Notice: texts/a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17.txt (SHA-256 a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17)
+
+Python environment: pyparsing 3.3.2
+Declared license: MIT
+Notice: texts/a5425f9dc14ac74d4c5f0b679e941f2442e32cca7452a4418d5b1a49893ebe4e.txt (SHA-256 a5425f9dc14ac74d4c5f0b679e941f2442e32cca7452a4418d5b1a49893ebe4e)
+
+Python environment: pyrr 0.10.3
+Declared license: BSD
+Notice: texts/389237949c673e9a49da7737489e5e0117196e55fcb0e400134cb1805520bebe.txt (SHA-256 389237949c673e9a49da7737489e5e0117196e55fcb0e400134cb1805520bebe)
+
+Python environment: python-dateutil 2.9.0.post0
+Declared license: Dual License
+Notice: texts/ba00f51a0d92823b5a1cde27d8b5b9d2321e67ed8da9bc163eff96d5e17e577e.txt (SHA-256 ba00f51a0d92823b5a1cde27d8b5b9d2321e67ed8da9bc163eff96d5e17e577e)
+
+Python environment: python-multipart 0.0.32
+Declared license: Apache-2.0
+Notice: texts/cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30.txt (SHA-256 cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30)
+
+Python environment: pytz 2026.3.post1
+Declared license: MIT
+Notice: texts/be8b1a37ebe26c592a90f6c0eb33103a7f383ce2f4d7498c0af9a526990a07b8.txt (SHA-256 be8b1a37ebe26c592a90f6c0eb33103a7f383ce2f4d7498c0af9a526990a07b8)
+
+Python environment: PyYAML 6.0.3
+Declared license: MIT
+Notice: texts/8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4.txt (SHA-256 8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4)
+
+Python environment: rasterio 1.4.3
+Declared license: BSD
+Notice: texts/7666d012678c262c12e4e1ac77c0d1a2080bf020dd19c6745a2e4e874d8208d4.txt (SHA-256 7666d012678c262c12e4e1ac77c0d1a2080bf020dd19c6745a2e4e874d8208d4)
+Notice: texts/1dae3468e81d00da56e2936f74d33b8b3ad09d726437f19ce209a5dabea41f77.txt (SHA-256 1dae3468e81d00da56e2936f74d33b8b3ad09d726437f19ce209a5dabea41f77)
+
+Python environment: referencing 0.37.0
+Declared license: MIT
+Notice: texts/42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c.txt (SHA-256 42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c)
+
+Python environment: requests 2.28.1
+Declared license: Apache 2.0
+Notice: texts/09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b.txt (SHA-256 09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b)
+
+Python environment: rich 15.0.0
+Declared license: MIT
+Notice: texts/deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15.txt (SHA-256 deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15)
+
+Python environment: roma 1.5.7
+Declared license: None
+Notice: texts/c0a0cf991efd3a2103c4db668a04f8d80957ae792d5be6346f899e17011ca68d.txt (SHA-256 c0a0cf991efd3a2103c4db668a04f8d80957ae792d5be6346f899e17011ca68d)
+Notice: texts/c0cc77ed3573488c814aea6454093c70f4604daacbb1fe8fafcc4d6acea562f7.txt (SHA-256 c0cc77ed3573488c814aea6454093c70f4604daacbb1fe8fafcc4d6acea562f7)
+
+Python environment: rpds-py 0.30.0
+Declared license: MIT
+Notice: texts/314e4e91be3baa93c0fb4bccc9e4e97cd643eb839b065af921782c2175fe9909.txt (SHA-256 314e4e91be3baa93c0fb4bccc9e4e97cd643eb839b065af921782c2175fe9909)
+
+Python environment: rtree 1.4.1
+Declared license: MIT
+Notice: texts/2e3e6e756da9258484bdd0e81dcd57c9094a58ca23c37c79b14cc23eeb6b7b21.txt (SHA-256 2e3e6e756da9258484bdd0e81dcd57c9094a58ca23c37c79b14cc23eeb6b7b21)
+
+Python environment: safehttpx 0.1.7
+Declared license: None
+Notice: texts/c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4.txt (SHA-256 c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4)
+
+Python environment: safetensors 0.8.0
+Declared license: None
+Notice: texts/c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4.txt (SHA-256 c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4)
+
+Python environment: scikit-learn 1.7.2
+Declared license: BSD-3-Clause
+Notice: texts/fde6cdc0a86c65a845af17086f964f7a38d934467b7f36203894af30ecee7640.txt (SHA-256 fde6cdc0a86c65a845af17086f964f7a38d934467b7f36203894af30ecee7640)
+Notice: texts/4ffd978e3fa18d058d98c66771cfea7ed634aaf7023cf9612b8b55eee9a8f0fe.txt (SHA-256 4ffd978e3fa18d058d98c66771cfea7ed634aaf7023cf9612b8b55eee9a8f0fe)
+Notice: texts/58494398fe147fdce76a68b2decd4c08ce3a1ea237b6d6785001c15f822c6ed6.txt (SHA-256 58494398fe147fdce76a68b2decd4c08ce3a1ea237b6d6785001c15f822c6ed6)
+Notice: texts/36f048db5651dd450f03e513016b77036cc99a44a66b2fdcecf4f6418657e0e1.txt (SHA-256 36f048db5651dd450f03e513016b77036cc99a44a66b2fdcecf4f6418657e0e1)
+
+Python environment: scipy 1.15.3
+Declared license: Full notice in package metadata (preserved)
+Notice: texts/828cb9a7369c0a9f633ce7c10023f8d822f0f76b54ce25c723361d45b088879a.txt (SHA-256 828cb9a7369c0a9f633ce7c10023f8d822f0f76b54ce25c723361d45b088879a)
+Notice: texts/c80c39b5fce06ba4897e14e0b0a88b54458334d951eb1361402ffad2cfb863b4.txt (SHA-256 c80c39b5fce06ba4897e14e0b0a88b54458334d951eb1361402ffad2cfb863b4)
+Notice: texts/c254b2b5fd30ae3c89d36ba061730563b9760fca04f1b746a1b2c3157da2c789.txt (SHA-256 c254b2b5fd30ae3c89d36ba061730563b9760fca04f1b746a1b2c3157da2c789)
+Notice: texts/0926566f9f406178d1214f8cc796e166b1213dd7c05e0c5b461a8b8ac9e50bbe.txt (SHA-256 0926566f9f406178d1214f8cc796e166b1213dd7c05e0c5b461a8b8ac9e50bbe)
+Notice: texts/34db0c0c4f931861d720555c9cd7a2e228d1290ba29af0f2ee80c41bb2038afb.txt (SHA-256 34db0c0c4f931861d720555c9cd7a2e228d1290ba29af0f2ee80c41bb2038afb)
+Notice: texts/72c0cfc896e69e165d6f5ad998c6cb85239af3b462dd05ed38cad592c97d2721.txt (SHA-256 72c0cfc896e69e165d6f5ad998c6cb85239af3b462dd05ed38cad592c97d2721)
+
+Python environment: semantic-version 2.10.0
+Declared license: BSD
+Notice: texts/a85e7ef2fbc670d26781ed6844cd31a7e8ada65d21328f75a0b02402faae37ea.txt (SHA-256 a85e7ef2fbc670d26781ed6844cd31a7e8ada65d21328f75a0b02402faae37ea)
+
+Python environment: setuptools 79.0.1
+Declared license: None
+Notice: texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt (SHA-256 86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741)
+Notice: texts/ade78d04982d69972d444a8e14a94f87a2334dd3855cc80348ea8e240aa0df2d.txt (SHA-256 ade78d04982d69972d444a8e14a94f87a2334dd3855cc80348ea8e240aa0df2d)
+Notice: texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt (SHA-256 86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741)
+Notice: texts/cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30.txt (SHA-256 cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30)
+Notice: texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt (SHA-256 86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741)
+Notice: texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt (SHA-256 86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741)
+Notice: texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt (SHA-256 86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741)
+Notice: texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt (SHA-256 86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741)
+Notice: texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt (SHA-256 86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741)
+Notice: texts/09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46.txt (SHA-256 09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46)
+Notice: texts/cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48.txt (SHA-256 cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48)
+Notice: texts/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt (SHA-256 0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594)
+Notice: texts/b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5.txt (SHA-256 b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5)
+Notice: texts/d71e4cd671188dc83011b2edd1d5f0cf6ba48ebd7c0e20b30b4b2b690a89f96c.txt (SHA-256 d71e4cd671188dc83011b2edd1d5f0cf6ba48ebd7c0e20b30b4b2b690a89f96c)
+Notice: texts/eb4257919eb9d2b478c7ccb70d365f9b4332795ece180d83b54d57e7cb845f7c.txt (SHA-256 eb4257919eb9d2b478c7ccb70d365f9b4332795ece180d83b54d57e7cb845f7c)
+Notice: texts/6aea3897c9f9c0fcf9d3c4d26b7f06f596a418d1ae0f2981f120c70ade15260c.txt (SHA-256 6aea3897c9f9c0fcf9d3c4d26b7f06f596a418d1ae0f2981f120c70ade15260c)
+Notice: texts/a009b5ced3c5c25b2608a7bb94002cbff38839f4b57160eef5b34191ebbeda7b.txt (SHA-256 a009b5ced3c5c25b2608a7bb94002cbff38839f4b57160eef5b34191ebbeda7b)
+Notice: texts/29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6.txt (SHA-256 29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6)
+Notice: texts/b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe.txt (SHA-256 b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe)
+Notice: texts/6163f7987dfb38d6bc320ce2b70b2f02b862bc41126516d552ef1cd43247e758.txt (SHA-256 6163f7987dfb38d6bc320ce2b70b2f02b862bc41126516d552ef1cd43247e758)
+Notice: texts/3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf.txt (SHA-256 3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf)
+Notice: texts/30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654.txt (SHA-256 30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654)
+Notice: texts/cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48.txt (SHA-256 cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48)
+Notice: texts/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt (SHA-256 0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594)
+Notice: texts/b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5.txt (SHA-256 b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5)
+Notice: texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt (SHA-256 86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741)
+Notice: texts/2dddf08818297a3b89d43d95ff659d8da85741108c9136dfa3a4d856c0623bd8.txt (SHA-256 2dddf08818297a3b89d43d95ff659d8da85741108c9136dfa3a4d856c0623bd8)
+Notice: texts/5d300dbfa643138b013b75ac9caeee591f951b8b0ee24288c34ccd926c4780c8.txt (SHA-256 5d300dbfa643138b013b75ac9caeee591f951b8b0ee24288c34ccd926c4780c8)
+
+Python environment: setuptools 69.5.1
+Declared license: None
+Notice: texts/86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741.txt (SHA-256 86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741)
+
+Python environment: shapely 2.1.2
+Declared license: BSD 3-Clause
+Notice: texts/4a207eac9bf257ed286e1c6f0fce253d1abfdb134fc61ec855e37f5692a3f754.txt (SHA-256 4a207eac9bf257ed286e1c6f0fce253d1abfdb134fc61ec855e37f5692a3f754)
+Notice: texts/138b2c2f9450073d7c116abe397ca4382625671c752b7a9a5f320b33fc3f3f2a.txt (SHA-256 138b2c2f9450073d7c116abe397ca4382625671c752b7a9a5f320b33fc3f3f2a)
+
+Python environment: shellingham 1.5.4
+Declared license: ISC License
+Notice: texts/f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d.txt (SHA-256 f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d)
+
+Python environment: simple_knn 0.0.0
+Declared license: None
+Notice: texts/c5ba70a2194af2aefe85dfe3da68608dcb3abd21a3aa53b55aa297c2f0b60eb3.txt (SHA-256 c5ba70a2194af2aefe85dfe3da68608dcb3abd21a3aa53b55aa297c2f0b60eb3)
+
+Python environment: six 1.17.0
+Declared license: MIT
+Notice: texts/4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0.txt (SHA-256 4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0)
+
+Python environment: starlette 1.3.1
+Declared license: BSD-3-Clause
+Notice: texts/dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf.txt (SHA-256 dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf)
+
+Python environment: svg.path 7.1
+Declared license: MIT
+Notice: texts/f24c7d91c184417924f5428651bcf394f42901b145137a55e4dbf0743b9d9170.txt (SHA-256 f24c7d91c184417924f5428651bcf394f42901b145137a55e4dbf0743b9d9170)
+
+Python environment: sympy 1.14.0
+Declared license: BSD
+Notice: texts/82b1038521b0696c63c90b31ed4a0a2c9c4c16871c648b157b07ca44b6f18f8d.txt (SHA-256 82b1038521b0696c63c90b31ed4a0a2c9c4c16871c648b157b07ca44b6f18f8d)
+Notice: texts/07a5e9819f727b4986ad2829c7a29a6320d42575f720eb24d71b7fef573a0286.txt (SHA-256 07a5e9819f727b4986ad2829c7a29a6320d42575f720eb24d71b7fef573a0286)
+Notice: texts/007bc30a58fa40a996e772047120de4eaf31f5110e4f9c3b5f93fcdfbe2eaca1.txt (SHA-256 007bc30a58fa40a996e772047120de4eaf31f5110e4f9c3b5f93fcdfbe2eaca1)
+
+Python environment: tensorboard 2.21.0
+Declared license: Apache 2.0
+Notice: texts/3cdf6d3c9843007d564c8886a89ed4a05fc351440c1d4b9fadb98e9a5c203939.txt (SHA-256 3cdf6d3c9843007d564c8886a89ed4a05fc351440c1d4b9fadb98e9a5c203939)
+
+Python environment: tensorboard-data-server 0.7.2
+Declared license: Apache 2.0
+NOTICE NOT LOCATED — REVIEW REQUIRED
+
+Python environment: threadpoolctl 3.6.0
+Declared license: BSD-3-Clause
+Notice: texts/81ac619075248b06e53660b652d10e485f4675f5d0ae0f97ea22370da1f7e23b.txt (SHA-256 81ac619075248b06e53660b652d10e485f4675f5d0ae0f97ea22370da1f7e23b)
+
+Python environment: tifffile 2025.5.10
+Declared license: BSD-3-Clause
+Notice: texts/c309a8540535da0e25ae5f60097d939551c8fcad7465c584353f151ac6a954e3.txt (SHA-256 c309a8540535da0e25ae5f60097d939551c8fcad7465c584353f151ac6a954e3)
+
+Python environment: tomlkit 0.14.0
+Declared license: MIT
+Notice: texts/f2f9b460ba719da6626add264d3782f275a4ff7aab677beda08b330911e23adb.txt (SHA-256 f2f9b460ba719da6626add264d3782f275a4ff7aab677beda08b330911e23adb)
+
+Python environment: torch 2.1.2+cu118
+Declared license: BSD-3
+Notice: texts/982ecf9f1351d9538736efbf95e78f2cc937979c5f06a91d9584b6cb8e17d019.txt (SHA-256 982ecf9f1351d9538736efbf95e78f2cc937979c5f06a91d9584b6cb8e17d019)
+Notice: texts/c2cc7bf0caec7652c2b460a8a470bea1677f241e4ab8e431df34cf17f5a9fec0.txt (SHA-256 c2cc7bf0caec7652c2b460a8a470bea1677f241e4ab8e431df34cf17f5a9fec0)
+
+Python environment: torch_scatter 2.1.2
+Declared license: None
+Notice: texts/7cbd1d9075b9cb3daa771f52d10e1a6b9c4577851f055d002449932fee4d7486.txt (SHA-256 7cbd1d9075b9cb3daa771f52d10e1a6b9c4577851f055d002449932fee4d7486)
+
+Python environment: torchaudio 2.1.2+cu118
+Declared license: None
+Notice: texts/93a58861a858cc108e6b6b833e08e76e8b2a66339e4a8007c8a5a8c1ff9c40d6.txt (SHA-256 93a58861a858cc108e6b6b833e08e76e8b2a66339e4a8007c8a5a8c1ff9c40d6)
+
+Python environment: torchvision 0.16.2+cu118
+Declared license: BSD
+Notice: texts/6502f676851cfe25f8af75531dfb32375b7325b73c37e7b43741fa422893e71d.txt (SHA-256 6502f676851cfe25f8af75531dfb32375b7325b73c37e7b43741fa422893e71d)
+
+Python environment: tqdm 4.70.0
+Declared license: MPL-2.0 AND MIT
+Notice: texts/fcff87c3a47ce8028a8512aa182d4fcf0ad1c90544ee75cf9b343684cac194de.txt (SHA-256 fcff87c3a47ce8028a8512aa182d4fcf0ad1c90544ee75cf9b343684cac194de)
+
+Python environment: trimesh 4.12.2
+Declared license: Full notice in package metadata (preserved)
+Notice: texts/fe27b5ef8710676cc85255da28a32f394e2ef3f4ce47075a1c732a9ea1d7bd03.txt (SHA-256 fe27b5ef8710676cc85255da28a32f394e2ef3f4ce47075a1c732a9ea1d7bd03)
+Notice: texts/fe27b5ef8710676cc85255da28a32f394e2ef3f4ce47075a1c732a9ea1d7bd03.txt (SHA-256 fe27b5ef8710676cc85255da28a32f394e2ef3f4ce47075a1c732a9ea1d7bd03)
+
+Python environment: triton 3.7.1
+Declared license: None
+Notice: texts/92640fb97222fd0a698ff28ce0c3782c172623f8d6c609b557636a80f28fb946.txt (SHA-256 92640fb97222fd0a698ff28ce0c3782c172623f8d6c609b557636a80f28fb946)
+
+Python environment: typer 0.27.0
+Declared license: MIT
+Notice: texts/58992cebcf8dfb6e40c4e2112ed12126c243666dca3912a3d78b7ecac4859d49.txt (SHA-256 58992cebcf8dfb6e40c4e2112ed12126c243666dca3912a3d78b7ecac4859d49)
+Notice: texts/9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d.txt (SHA-256 9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d)
+
+Python environment: typing-inspection 0.4.2
+Declared license: MIT
+Notice: texts/804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3.txt (SHA-256 804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3)
+
+Python environment: typing_extensions 4.15.0
+Declared license: PSF-2.0
+Notice: texts/3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf.txt (SHA-256 3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf)
+
+Python environment: tzdata 2026.3
+Declared license: Apache-2.0
+Notice: texts/df58f69ea88683035d720b5375bcef0cf5aeaa98a1d098d572e0992c378deb46.txt (SHA-256 df58f69ea88683035d720b5375bcef0cf5aeaa98a1d098d572e0992c378deb46)
+Notice: texts/c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4.txt (SHA-256 c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4)
+
+Python environment: UNKNOWN 0.0.0
+Declared license: None
+NOTICE NOT LOCATED — REVIEW REQUIRED
+
+Python environment: urllib3 1.26.13
+Declared license: MIT
+Notice: texts/c37bf186e27cf9dbe9619e55edfe3cea7b30091ceb3da63c7dacbe0e6d77907b.txt (SHA-256 c37bf186e27cf9dbe9619e55edfe3cea7b30091ceb3da63c7dacbe0e6d77907b)
+
+Python environment: uvicorn 0.51.0
+Declared license: BSD-3-Clause
+Notice: texts/efe1acf3e62fb99c288b0ec73e5a773b7268ef4320fe757ea994214e4b63c371.txt (SHA-256 efe1acf3e62fb99c288b0ec73e5a773b7268ef4320fe757ea994214e4b63c371)
+
+Python environment: vhacdx 0.0.10
+Declared license: None
+Notice: texts/0cef3813562ecea956317018a5ad41baea84e4317bc57924ff4dfa2ff5c51775.txt (SHA-256 0cef3813562ecea956317018a5ad41baea84e4317bc57924ff4dfa2ff5c51775)
+
+Python environment: wadler_lindig 0.1.7
+Declared license: Full notice in package metadata (preserved)
+Notice: texts/c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4.txt (SHA-256 c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4)
+Notice: texts/283ea6cc2997a1a70da0049e09adf9317bb60ca1b51279b65196b83a69e1996b.txt (SHA-256 283ea6cc2997a1a70da0049e09adf9317bb60ca1b51279b65196b83a69e1996b)
+
+Python environment: Werkzeug 3.1.8
+Declared license: BSD-3-Clause
+Notice: texts/3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b.txt (SHA-256 3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b)
+
+Python environment: wheel 0.47.0
+Declared license: MIT
+Notice: texts/30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654.txt (SHA-256 30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654)
+
+Python environment: xlrd 2.0.2
+Declared license: BSD
+Notice: texts/b5a5dbce60265e305a815a6cb83ed07f24519d8ba644f2a307994488bced8815.txt (SHA-256 b5a5dbce60265e305a815a6cb83ed07f24519d8ba644f2a307994488bced8815)
+
+Python environment: xxhash 3.8.1
+Declared license: BSD-2-Clause
+Notice: texts/b3c620adc9a8812cc0c3c7fc09567fa9a9930d3546de955dfb955b168cf989ac.txt (SHA-256 b3c620adc9a8812cc0c3c7fc09567fa9a9930d3546de955dfb955b168cf989ac)
+

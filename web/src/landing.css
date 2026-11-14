@@ -1,0 +1,138 @@
+/* Landing page. Five type sizes (display, section, sub-head, body 17, small 14), one accent, flat surfaces, no
+   outlines or shadows at rest. Narrow and portrait screens use the same breakpoint as entry_scene.js narrowFrame. */
+.app-shell.is-landing{background:#040404}
+.app-shell.is-landing:before,.app-shell.is-landing .ambient-glow{display:none}
+
+.landing{--bg:#040404;--bg-2:#0f0f0f;--ink:#f2f2f2;--ink-2:#d0d0d0;--accent:#f0f0f0;--accent-ink:#1a1a1a;--mars:#f4a37f;--miss:#f3c27a;--gutter:clamp(16px,5vw,72px);position:relative;min-height:100svh;color:var(--ink);font-size:17px;line-height:1.65}
+.landing h1,.landing h2,.landing h3{font-weight:800;letter-spacing:-.02em;text-wrap:balance}
+.landing h2{margin:0;font-size:clamp(28px,3vw,44px);line-height:1.15}
+.landing p{margin:0}
+.landing a{color:inherit}
+.landing button{font:inherit}
+.landing :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* 3D scene behind the hero; the sections below are opaque and slide over it. */
+.landing-scene{position:fixed;inset:0;z-index:0;background:var(--bg)}
+.landing-canvas{position:absolute;inset:0;transition:opacity .2s linear}
+.landing-canvas canvas{display:block;cursor:grab}
+.landing-scene-label{position:absolute;left:0;top:0;margin:-44px 0 0 16px;padding:6px 12px;border-radius:6px;background:#1a1a1a;color:var(--ink);font-size:14px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .15s}
+.landing-scene-label.is-on{opacity:1}
+
+.landing-nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px var(--gutter)}
+.landing-brand{font-size:17px;font-weight:800;letter-spacing:-.01em;white-space:nowrap}
+.landing-links{display:flex;gap:28px;margin-left:auto;font-size:14px}
+.landing-links a{color:var(--ink-2);text-underline-offset:6px;transition:color .2s}
+.landing-links a:hover{color:var(--ink);text-decoration:underline}
+.landing .language-switch{border:0;background:#ffffff12}
+.landing .language-switch button{font-size:14px;color:var(--ink-2)}
+.landing .language-switch button[aria-pressed=true]{background:var(--ink);color:var(--accent-ink)}
+
+.landing-hero{position:relative;z-index:2;box-sizing:border-box;min-height:100svh;display:flex;align-items:center;padding:96px var(--gutter) 72px;pointer-events:none}
+.landing-hero-text{width:min(620px,calc(44vw - var(--gutter)));pointer-events:auto}
+.landing h1{margin:0 0 24px;font-size:clamp(36px,4.2vw,64px);line-height:1.08}
+html[lang=en] .landing h1{font-size:clamp(34px,3.7vw,56px)}
+.landing h1 span{display:block}
+.landing-lead{max-width:36em}
+.landing-cta{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 28px}
+.landing-primary,.landing-secondary{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border:0;border-radius:8px;font-size:17px;font-weight:700;cursor:pointer;transition:background-color .2s,transform .15s}
+.landing-primary{background:var(--accent);color:var(--accent-ink)}
+.landing-primary:hover{background:#ffffff}
+.landing-secondary{background:#ffffff17;color:var(--ink)}
+.landing-secondary:hover{background:#ffffff2b}
+.landing-primary:active,.landing-secondary:active{transform:translateY(1px) scale(.98)}
+.landing-primary svg{transition:transform .2s}
+.landing-primary:hover svg{transform:translateX(3px)}
+.landing-note{max-width:48ch;margin-top:10px!important;font-size:14px;line-height:1.6;color:var(--ink-2)}
+.landing-note a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.landing-note a:hover{color:var(--accent)}
+.landing-hero-text>*{animation:landing-rise .8s cubic-bezier(.2,.7,.2,1) both}
+.landing-hero-text>:nth-child(2){animation-delay:.08s}
+.landing-hero-text>:nth-child(3){animation-delay:.16s}
+.landing-hero-text>:nth-child(4){animation-delay:.24s}
+.landing-hero-text>:nth-child(5){animation-delay:.32s}
+@keyframes landing-rise{from{opacity:0;transform:translateY(20px)}}
+
+.landing-worlds,.landing-case,.landing-numbers,.landing-footer{position:relative;z-index:2;box-sizing:border-box;padding:clamp(72px,9vw,128px) var(--gutter)}
+.landing-worlds>*,.landing-case>*,.landing-numbers>*{max-width:1240px;margin-left:auto;margin-right:auto}
+.landing-worlds{background:var(--bg)}
+.landing-case{background:var(--bg-2)}
+.landing-numbers{background:var(--bg)}
+
+/* Moon and Mars as a symmetric pair under a centred heading */
+.landing-worlds>h2{margin-bottom:48px;text-align:center}
+.landing-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,64px)}
+.landing-world{display:flex;flex-direction:column;align-items:center;text-align:center}
+.landing-orb{position:relative;width:100%;height:min(52svh,440px)}
+.landing-orb .flat-capable-view,.landing-orb .globe-canvas{width:100%;height:100%}
+.landing .flat-view-toggle{border:0;border-radius:6px;background:#ffffff1c;color:var(--ink);font-size:14px}
+.landing .flat-world-map{border:0;border-radius:8px;overflow:hidden}
+.landing .flat-planet p{font-size:14px;color:var(--ink-2)}
+.landing-world h3{margin:20px 0 8px;font-size:22px}
+.landing-world p{max-width:36ch}
+.landing-text-button{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:10px 4px;border:0;background:none;color:var(--accent);font-size:17px;font-weight:700;cursor:pointer}
+.landing-world.is-mars .landing-text-button{color:var(--mars)}
+.landing-text-button svg{transition:transform .2s}
+.landing-text-button:hover svg{transform:translateX(4px)}
+.landing-text-button:active{transform:translateY(1px)}
+
+/* One real search: heading beside the statement, one wide screenshot, then three pictures of equal height */
+.landing-case-intro{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:start;margin-bottom:48px}
+.landing-case-copy p{max-width:60ch}
+.landing-case-copy p+p{margin-top:16px}
+.landing-shot{margin:0}
+.landing-shot.is-wide{margin-bottom:40px}
+.landing-shot-frame{overflow:hidden;border-radius:10px;background:#171717}
+.landing-shot img{display:block;width:100%;height:auto;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.landing-shot:hover img{transform:scale(1.015)}
+.landing-shot figcaption{max-width:60ch;margin-top:12px;font-size:14px;line-height:1.6;color:var(--ink-2)}
+.landing-shots{display:grid;grid-template-columns:minmax(0,1.74fr) minmax(0,1.6fr) minmax(0,1fr);gap:20px;align-items:start}
+
+/* The numbers as a band: three figures in a row, the miss in amber */
+.landing-numbers>h2{max-width:20ch;margin-bottom:48px}
+.landing-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,64px);margin-top:0;margin-bottom:40px}
+.landing-stats dt{font-size:clamp(28px,3vw,44px);font-weight:800;line-height:1.1;letter-spacing:-.02em;color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap}
+.landing-stats .is-miss dt{color:var(--miss)}
+.landing-stats dd{max-width:30ch;margin:12px 0 0}
+.landing-numbers-note{max-width:62ch}
+.landing-numbers-note a{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.landing-numbers-note a svg{transition:transform .2s}
+.landing-numbers-note a:hover svg{transform:translate(2px,-2px)}
+
+.landing-footer{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:48px;background:var(--bg-2);padding-bottom:56px}
+.landing-footer-brand b{font-size:22px;font-weight:800;letter-spacing:-.01em}
+.landing-footer-brand p{max-width:40ch;margin-top:12px;font-size:14px;line-height:1.6;color:var(--ink-2)}
+.landing-footer-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.landing-footer-links div{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.landing-footer-links b{font-size:14px;color:var(--ink-2)}
+.landing-footer-links a,.landing-footer-links button{padding:0;border:0;background:none;color:var(--ink);font-size:14px;text-align:left;cursor:pointer;text-underline-offset:4px;transition:color .2s}
+.landing-footer-links a:hover,.landing-footer-links button:hover{color:var(--accent);text-decoration:underline}
+
+/* Scroll entrance: only after JS marks the page ready, so content is visible without it */
+.landing.reveal-ready [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1) var(--d,0ms),transform .7s cubic-bezier(.2,.7,.2,1) var(--d,0ms)}
+.landing.reveal-ready [data-reveal].is-in{opacity:1;transform:none}
+
+@media (max-width:819px),(max-aspect-ratio:11/10){
+  .landing-hero{align-items:flex-start;padding-top:46svh;padding-bottom:56px}
+  .landing-hero-text{width:100%;max-width:640px}
+  .landing h1{font-size:clamp(32px,6.2vw,52px)}
+  html[lang=en] .landing h1{font-size:clamp(32px,5.8vw,48px)}
+}
+@media (max-width:819px){
+  .landing-links{display:none}
+  .landing-nav{padding-top:14px;padding-bottom:14px}
+  .landing-pair,.landing-case-intro,.landing-shots,.landing-stats,.landing-footer{grid-template-columns:minmax(0,1fr)}
+  .landing-orb{height:min(44svh,340px)}
+  .landing-world+.landing-world{margin-top:24px}
+  .landing-shots{gap:32px}
+  .landing-shots .landing-shot:last-child{max-width:420px}
+  .landing-footer-links{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:32px}
+}
+@media (max-width:480px){
+  .landing-cta{margin:28px 0 20px}
+  .landing-primary,.landing-secondary{flex:1 1 auto}
+}
+@media (prefers-reduced-motion:reduce){
+  .landing-hero-text>*{animation:none}
+  .landing [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}
+  .landing-shot img,.landing-primary svg,.landing-text-button svg,.landing-numbers-note a svg{transition:none}
+}

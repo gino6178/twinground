@@ -1,0 +1,266 @@
+{
+  "created_utc": "2026-10-11T09:19:55+00:00",
+  "purpose": "Cima 1:24,000 historical USGS mapped-unit overlap independent of DEM rank",
+  "site_id": "CIMA_FIELD",
+  "source_page": "https://pubs.usgs.gov/of/2002/0272/",
+  "source_e00_sha256": "033989594b929e9d07ea139a754f7a76c168e2eb45c53a4483ee0a1d419e36ad",
+  "source_report_sha256": "eef6a8cda13571e7736f3fac3a5ffbc19969b2c28a8474033ffad72133b7c112",
+  "source_metadata_sha256": "5016e9c1aa71e0dee71761dfef08ad8ac578f1d2aa38dfafe4b97a93c25b4105",
+  "source_layer": "PAL",
+  "unit_field": "PTYPE",
+  "gdal_polygon_ring_mode": "ONLY_CCW",
+  "original_crs": "EPSG:26911",
+  "map_scale_denominator": 24000,
+  "original_map_year": 1992,
+  "publication_year": 2002,
+  "published_horizontal_accuracy_m": null,
+  "center_lat_lon": [
+    35.18333333333333,
+    -115.81666666666666
+  ],
+  "cartographic_sampling_m": 10,
+  "grid": "data/research/cima_usgs_24k/cima_usgs_24k_units_10m.npz",
+  "grid_sha256": "b0730168e0c93b357194ccf2de31f03d9286d97331d30b982a0b3a933c1896a2",
+  "mapped_pixel_fraction": 1.0,
+  "polygon_features_intersecting_crop": 122,
+  "units": {
+    "1": {
+      "symbol": "Q2?",
+      "family": "alluvial_sediment",
+      "map_explanation": "Mapped alluvial sand/gravel or active channel deposits",
+      "uncertain_symbol": true
+    },
+    "2": {
+      "symbol": "Q2b",
+      "family": "alluvial_sediment",
+      "map_explanation": "Mapped alluvial sand/gravel or active channel deposits",
+      "uncertain_symbol": false
+    },
+    "3": {
+      "symbol": "Q2b?",
+      "family": "alluvial_sediment",
+      "map_explanation": "Mapped alluvial sand/gravel or active channel deposits",
+      "uncertain_symbol": true
+    },
+    "4": {
+      "symbol": "Q2c",
+      "family": "alluvial_sediment",
+      "map_explanation": "Mapped alluvial sand/gravel or active channel deposits",
+      "uncertain_symbol": false
+    },
+    "5": {
+      "symbol": "Q3-4",
+      "family": "alluvial_sediment",
+      "map_explanation": "Mapped alluvial sand/gravel or active channel deposits",
+      "uncertain_symbol": false
+    },
+    "6": {
+      "symbol": "Q3a",
+      "family": "alluvial_sediment",
+      "map_explanation": "Mapped alluvial sand/gravel or active channel deposits",
+      "uncertain_symbol": false
+    },
+    "7": {
+      "symbol": "Q3b",
+      "family": "alluvial_sediment",
+      "map_explanation": "Mapped alluvial sand/gravel or active channel deposits",
+      "uncertain_symbol": false
+    },
+    "8": {
+      "symbol": "Q4",
+      "family": "alluvial_sediment",
+      "map_explanation": "Mapped alluvial sand/gravel or active channel deposits",
+      "uncertain_symbol": false
+    },
+    "9": {
+      "symbol": "QT1",
+      "family": "alluvial_sediment",
+      "map_explanation": "Mapped alluvial sand/gravel or active channel deposits",
+      "uncertain_symbol": false
+    },
+    "10": {
+      "symbol": "QTf",
+      "family": "basalt_hawaiite_lava_flow",
+      "map_explanation": "Pleistocene–Pliocene alkaline basalt/hawaiite lava flow",
+      "uncertain_symbol": false
+    },
+    "11": {
+      "symbol": "QTf1-1",
+      "family": "basalt_hawaiite_lava_flow",
+      "map_explanation": "Pleistocene–Pliocene alkaline basalt/hawaiite lava flow",
+      "uncertain_symbol": false
+    },
+    "12": {
+      "symbol": "QTf11-1",
+      "family": "basalt_hawaiite_lava_flow",
+      "map_explanation": "Pleistocene–Pliocene alkaline basalt/hawaiite lava flow",
+      "uncertain_symbol": false
+    },
+    "13": {
+      "symbol": "QTf11-2",
+      "family": "basalt_hawaiite_lava_flow",
+      "map_explanation": "Pleistocene–Pliocene alkaline basalt/hawaiite lava flow",
+      "uncertain_symbol": false
+    },
+    "14": {
+      "symbol": "QTf12-1",
+      "family": "basalt_hawaiite_lava_flow",
+      "map_explanation": "Pleistocene–Pliocene alkaline basalt/hawaiite lava flow",
+      "uncertain_symbol": false
+    },
+    "15": {
+      "symbol": "QTf2-1",
+      "family": "basalt_hawaiite_lava_flow",
+      "map_explanation": "Pleistocene–Pliocene alkaline basalt/hawaiite lava flow",
+      "uncertain_symbol": false
+    },
+    "16": {
+      "symbol": "QTf3-1",
+      "family": "basalt_hawaiite_lava_flow",
+      "map_explanation": "Pleistocene–Pliocene alkaline basalt/hawaiite lava flow",
+      "uncertain_symbol": false
+    },
+    "17": {
+      "symbol": "QTf3-2",
+      "family": "basalt_hawaiite_lava_flow",
+      "map_explanation": "Pleistocene–Pliocene alkaline basalt/hawaiite lava flow",
+      "uncertain_symbol": false
+    },
+    "18": {
+      "symbol": "QTf3-3",
+      "family": "basalt_hawaiite_lava_flow",
+      "map_explanation": "Pleistocene–Pliocene alkaline basalt/hawaiite lava flow",
+      "uncertain_symbol": false
+    },
+    "19": {
+      "symbol": "QTf3-3?",
+      "family": "basalt_hawaiite_lava_flow",
+      "map_explanation": "Pleistocene–Pliocene alkaline basalt/hawaiite lava flow",
+      "uncertain_symbol": true
+    },
+    "20": {
+      "symbol": "QTf4-1?",
+      "family": "basalt_hawaiite_lava_flow",
+      "map_explanation": "Pleistocene–Pliocene alkaline basalt/hawaiite lava flow",
+      "uncertain_symbol": true
+    },
+    "21": {
+      "symbol": "QTf4-2",
+      "family": "basalt_hawaiite_lava_flow",
+      "map_explanation": "Pleistocene–Pliocene alkaline basalt/hawaiite lava flow",
+      "uncertain_symbol": false
+    },
+    "22": {
+      "symbol": "QTf4-3",
+      "family": "basalt_hawaiite_lava_flow",
+      "map_explanation": "Pleistocene–Pliocene alkaline basalt/hawaiite lava flow",
+      "uncertain_symbol": false
+    },
+    "23": {
+      "symbol": "QTf6B-1",
+      "family": "basalt_hawaiite_lava_flow",
+      "map_explanation": "Pleistocene–Pliocene alkaline basalt/hawaiite lava flow",
+      "uncertain_symbol": false
+    },
+    "24": {
+      "symbol": "QTf7-4",
+      "family": "basalt_hawaiite_lava_flow",
+      "map_explanation": "Pleistocene–Pliocene alkaline basalt/hawaiite lava flow",
+      "uncertain_symbol": false
+    },
+    "25": {
+      "symbol": "QTf?",
+      "family": "basalt_hawaiite_lava_flow",
+      "map_explanation": "Pleistocene–Pliocene alkaline basalt/hawaiite lava flow",
+      "uncertain_symbol": true
+    },
+    "26": {
+      "symbol": "QTt",
+      "family": "pyroclastic_or_tephra",
+      "map_explanation": "Mapped Cima scoria, blocks, breccia, or tuffaceous deposits",
+      "uncertain_symbol": false
+    },
+    "27": {
+      "symbol": "QTta",
+      "family": "talus_colluvium",
+      "map_explanation": "Talus and colluvium derived from cinder cones and basalt flows",
+      "uncertain_symbol": false
+    },
+    "28": {
+      "symbol": "QTtc",
+      "family": "pyroclastic_or_tephra",
+      "map_explanation": "Mapped Cima scoria, blocks, breccia, or tuffaceous deposits",
+      "uncertain_symbol": false
+    },
+    "29": {
+      "symbol": "Ts",
+      "family": "miocene_sedimentary_rocks",
+      "map_explanation": "Mapped sandstone, shale, limestone, conglomerate, or breccia",
+      "uncertain_symbol": false
+    },
+    "30": {
+      "symbol": "Tsgn",
+      "family": "gneiss_slide_block",
+      "map_explanation": "Mapped gneiss in a Miocene sedimentary rock slide block",
+      "uncertain_symbol": false
+    },
+    "31": {
+      "symbol": "Tsq",
+      "family": "quartzite_shale_carbonate_slide_block",
+      "map_explanation": "Mapped quartzite, shale, and carbonate in a rock slide block",
+      "uncertain_symbol": false
+    },
+    "32": {
+      "symbol": "Xu",
+      "family": "metamorphic_gneiss",
+      "map_explanation": "Mapped undivided mafic and felsic gneiss",
+      "uncertain_symbol": false
+    }
+  },
+  "outputs": {
+    "earth_moon_200m_usgs24k.npz": {
+      "sha256": "fdfa57dca7fbcfef8bf21dae21824e4cb5bf85e4991aeaeb2c318e6fa0bdc950",
+      "gallery_sha256": "855795895d4d002dbadd87cf33bdfa16c540cbbcaed1886496ce140de186dcb1",
+      "cima_windows": 841,
+      "mapped_cima_windows": 841
+    },
+    "earth_moon_500m_usgs24k.npz": {
+      "sha256": "926ea1b92f597f8f6b1eb56a1aab299f443515d46f95192394235d09915dc1f3",
+      "gallery_sha256": "0ecf71c46940b4ff8fc43d2751266e0405eda11da04286039975181687719bf0",
+      "cima_windows": 121,
+      "mapped_cima_windows": 121
+    },
+    "earth_moon_1000m_usgs24k.npz": {
+      "sha256": "c9863cea3015854951b5a9f2c566ec65c0a8717a16b300339bd1a38e9a02f96c",
+      "gallery_sha256": "00e67b1e5e38d81d9aebb54bd4156a7fb42dd987533c97e155a6b1535302eaf8",
+      "cima_windows": 25,
+      "mapped_cima_windows": 25
+    },
+    "earth_mars_200m_usgs24k.npz": {
+      "sha256": "70f5f84a1a1936f1d230ed824bd0cdef4ac69a17b4ca563aefa7d41db0b3f22c",
+      "gallery_sha256": "dded62b53bbe73b5044ddaeceb820f24dfc4d384ecc2bb282feeca002358f824",
+      "cima_windows": 841,
+      "mapped_cima_windows": 841
+    },
+    "earth_mars_500m_usgs24k.npz": {
+      "sha256": "8517522f3b11e362abf9e6f32d951000380ca5d340ff2aff26a1bf751fc79be3",
+      "gallery_sha256": "294236c1f3d7789edd077d8aea548281da0eefac8772bfad4a94d9da6ea4fff7",
+      "cima_windows": 121,
+      "mapped_cima_windows": 121
+    },
+    "earth_mars_1000m_usgs24k.npz": {
+      "sha256": "ca0f9a47491ff7e5186193d9da77bf4549e342a58c1e067b0e4743b2fc75ab1d",
+      "gallery_sha256": "838fe42b00e6189e7b40336ef9f05a51833b5e062f36f8c9534db974b79f8fbe",
+      "cima_windows": 25,
+      "mapped_cima_windows": 25
+    }
+  },
+  "used_in_ranking": false,
+  "interpretation": "Map-unit polygon overlap only; 10 m sampling does not improve 1:24,000 map accuracy or prove rock exposure",
+  "limitations": [
+    "The 2002 database digitized a 1992 map and did not update geologic interpretations.",
+    "The source report does not prescribe positional accuracy to original contacts; some ambiguous attributes carry '?' symbols.",
+    "Mapped volcanic flows may be covered by sediment, vegetation, varnish, or shadow in 2022 NAIP imagery.",
+    "Map-unit families are descriptive groupings of published symbols, not trained per-pixel material labels."
+  ]
+}

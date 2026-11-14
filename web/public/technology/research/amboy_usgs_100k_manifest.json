@@ -1,0 +1,112 @@
+{
+  "created_utc": "2026-10-11T10:08:25+00:00",
+  "purpose": "USGS Amboy surficial map polygon overlap independent of DEM rank",
+  "site_id": "AMBOY_CRATER",
+  "source_page": "https://pubs.usgs.gov/of/2006/1165/",
+  "citation": "Bedford, D.R., Miller, D.M., and Phelps, G.A., 2006, Preliminary Surficial Geologic Map Database of the Amboy 30x60 Minute Quadrangle, California, USGS Open-File Report 2006-1165",
+  "source_files": {
+    "of06-1165_3.zip": "1adf46216673082f7d13167bfea4e63e10de2b94f3115a92fc863182ff6f4986",
+    "of06-1165_2a.e00": "6174ed897a0e39e7ee1cd46a6a2d0ca7e57a0a7ce86e13517cad1b2d0d92b0c1",
+    "of06-1165_1a.txt": "17fed32d0f70e73a1a02f7ade7fd29ab68d4909231ba848d74f09591d7668bae",
+    "of06-1165_1b.txt": "759c4627450941ff748c1c7ccacb3ba44be7a1d8897bbe4010b80a18a6db28f2",
+    "of06-1165_1c.txt": "11acfe3b75c73cba3c0966d9411511188cb22cda36b1213aa3d5e5d512717907",
+    "of06-1165_2b.dbf": "bcdd43fe393925f0f775c82b346661261eddf28eaa2d91883d7a8a26462dd462"
+  },
+  "source_layer": "PAL",
+  "unit_field": "PTYPE",
+  "gdal_polygon_ring_mode": "ONLY_CCW",
+  "original_crs": "EPSG:26911",
+  "map_scale_denominator": 100000,
+  "publication_year": 2006,
+  "contact_accuracy": "原始 metadata：實線接觸線通常優於 5 至 10 m，虛線約 10 至 15 m，漸變邊界寬約 50 至 150 m；本站尚未逐窗格索引接觸線類型",
+  "published_horizontal_accuracy_m": null,
+  "center_lat_lon": [
+    34.54388,
+    -115.79111
+  ],
+  "cartographic_sampling_m": 10,
+  "grid": "data/research/amboy_usgs_surficial_100k/amboy_usgs_100k_units_10m.npz",
+  "grid_sha256": "d8253232e956a90edf2ad10333e7a0ed78356fd60e9cecad1e1ed0fe0698bf49",
+  "mapped_pixel_fraction": 1.0,
+  "polygon_features_intersecting_crop": 7,
+  "field_observation_points_in_3km_crop": 0,
+  "nearest_field_observation_to_crop_center_m": 4114.1,
+  "units": {
+    "1": {
+      "symbol": "Qae/Qmv",
+      "family": "surficial_veneer_over_mafic_volcanic_deposit",
+      "map_explanation": "Active eolian sand veneer over mafic volcanic rock"
+    },
+    "2": {
+      "symbol": "Qha/Qmv",
+      "family": "surficial_veneer_over_mafic_volcanic_deposit",
+      "map_explanation": "Abundant hillslope deposits over mafic volcanic rock"
+    },
+    "3": {
+      "symbol": "Qya",
+      "family": "young_alluvial_fan_deposit",
+      "map_explanation": "Young alluvial fan deposit"
+    },
+    "4": {
+      "symbol": "Qye+Qha/Qmv",
+      "family": "surficial_veneer_over_mafic_volcanic_deposit",
+      "map_explanation": "Young eolian sand with abundant hillslope deposits over mafic volcanic rock"
+    },
+    "5": {
+      "symbol": "Qye/Qmv",
+      "family": "surficial_veneer_over_mafic_volcanic_deposit",
+      "map_explanation": "Young eolian sand veneer over mafic volcanic rock"
+    },
+    "6": {
+      "symbol": "Qyw+Qaw",
+      "family": "wash_deposit_mixture",
+      "map_explanation": "Young and active wash deposits"
+    }
+  },
+  "outputs": {
+    "earth_moon_200m_usgs100k.npz": {
+      "sha256": "537bf59ab9b69cac9f0bd16ba42847ef4c3f765fb2494b1db79f69f59e3571aa",
+      "gallery_sha256": "855795895d4d002dbadd87cf33bdfa16c540cbbcaed1886496ce140de186dcb1",
+      "amboy_windows": 841,
+      "mapped_amboy_windows": 841
+    },
+    "earth_moon_500m_usgs100k.npz": {
+      "sha256": "58972d08a9d1352bbda871013203f66988e20ae865d89fde21a0c534dfe62200",
+      "gallery_sha256": "0ecf71c46940b4ff8fc43d2751266e0405eda11da04286039975181687719bf0",
+      "amboy_windows": 121,
+      "mapped_amboy_windows": 121
+    },
+    "earth_moon_1000m_usgs100k.npz": {
+      "sha256": "2b99cee9885305fd91050915f9066acb9709f23a57eee30ba45ded15e3cf782b",
+      "gallery_sha256": "00e67b1e5e38d81d9aebb54bd4156a7fb42dd987533c97e155a6b1535302eaf8",
+      "amboy_windows": 25,
+      "mapped_amboy_windows": 25
+    },
+    "earth_mars_200m_usgs100k.npz": {
+      "sha256": "607a8d96901fe8c7e47c6e6a36a61913118c46d23faeb139246de8bd3203d0a1",
+      "gallery_sha256": "dded62b53bbe73b5044ddaeceb820f24dfc4d384ecc2bb282feeca002358f824",
+      "amboy_windows": 841,
+      "mapped_amboy_windows": 841
+    },
+    "earth_mars_500m_usgs100k.npz": {
+      "sha256": "dc978b6e14292574ee6f3f2672808b2b3520653204abe049b89b5a371c04a533",
+      "gallery_sha256": "294236c1f3d7789edd077d8aea548281da0eefac8772bfad4a94d9da6ea4fff7",
+      "amboy_windows": 121,
+      "mapped_amboy_windows": 121
+    },
+    "earth_mars_1000m_usgs100k.npz": {
+      "sha256": "68985f994e6423b327c1bdec7149179589d71268973f4fc537c5798ccf3b71f2",
+      "gallery_sha256": "838fe42b00e6189e7b40336ef9f05a51833b5e062f36f8c9534db974b79f8fbe",
+      "amboy_windows": 25,
+      "mapped_amboy_windows": 25
+    }
+  },
+  "used_in_ranking": false,
+  "interpretation": "1:100,000 surficial map polygon overlap only; 10 m sampling does not improve map scale or establish surface mineral composition",
+  "limitations": [
+    "Original mapping was published at 1:100,000; 10 m rasterization only calculates polygon area shares.",
+    "Contact position and gradational boundaries vary; individual polygon edges are not verified here.",
+    "A mapped mafic volcanic unit can include ejecta, flows, sediment veneer, shadows, or vegetation; it is not pixel-level exposed basalt truth.",
+    "The source field-observation DBF contains no observation within this 3 km crop; map polygons here are not locally verified by those station records."
+  ]
+}

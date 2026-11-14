@@ -1,0 +1,390 @@
+{
+  "created_utc": "2026-10-11T08:28:18.403824+00:00",
+  "purpose": "Four-band NAIP surface appearance crops aligned to eight Earth 3DEP research sites",
+  "service_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+  "sites": {
+    "METEOR_CRATER": {
+      "year": 2023,
+      "source_scenes": [
+        {
+          "OBJECTID": 12803,
+          "Name": "m_3511164_se_12_030_20230627",
+          "Year": 2023,
+          "acquisition_date": 1687824000000,
+          "resolution_value": 0.3,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3342924"
+        }
+      ],
+      "scene_query_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/query?f=json&geometry=496272.86410754244%2C3874392.9424380413%2C499672.86410754244%2C3877792.9424380413&geometryType=esriGeometryEnvelope&inSR=26912&spatialRel=esriSpatialRelIntersects&where=Category+%3D+1&outFields=OBJECTID%2CName%2CYear%2Cacquisition_date%2Cresolution_value%2Cband_count%2Cdownload_url&returnGeometry=false&resultRecordCount=500",
+      "source_export_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?f=image&bbox=496272.86410754244%2C3874392.9424380413%2C499672.86410754244%2C3877792.9424380413&bboxSR=26912&imageSR=26912&size=1700%2C1700&format=tiff&pixelType=U8&bandIds=0%2C1%2C2%2C3&interpolation=RSP_Bilinear&mosaicRule=%7B%22mosaicMethod%22%3A%22esriMosaicAttribute%22%2C%22sortField%22%3A%22Year%22%2C%22sortValue%22%3A2023%2C%22where%22%3A%22Year+%3D+2023%22%7D",
+      "source_tiff": "data/research/naip_earth_orthos/meteor_crater_naip2023_utm26912_3400m_2m_4band.tif",
+      "source_tiff_sha256": "face47c1bb9d99daa1a7fdf1d097186c22d26e8a9e84544c515e9d10e07798d0",
+      "source_bytes": 12848262,
+      "source_scene_resolution_m": 0.3,
+      "local_grid_valid_fraction": 1.0,
+      "band_order": [
+        "red",
+        "green",
+        "blue",
+        "near_infrared"
+      ],
+      "export_spacing_m": 2,
+      "anchor_lat_lon": [
+        35.0275,
+        -111.0222222222
+      ],
+      "dem_sha256": "9ba4888e5a8d82d932be342c2e672ce8098868a0b658858ade47a9d3c1af5e73"
+    },
+    "KILBOURNE_HOLE": {
+      "year": 2022,
+      "source_scenes": [
+        {
+          "OBJECTID": 126101,
+          "Name": "m_3110601_nw_13_060_20220529",
+          "Year": 2022,
+          "acquisition_date": 1653782400000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3243892"
+        },
+        {
+          "OBJECTID": 127338,
+          "Name": "m_3210657_sw_13_060_20220529",
+          "Year": 2022,
+          "acquisition_date": 1653782400000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3244376"
+        }
+      ],
+      "scene_query_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/query?f=json&geometry=312488.089935133%2C3538577.844735747%2C315888.089935133%2C3541977.844735747&geometryType=esriGeometryEnvelope&inSR=26913&spatialRel=esriSpatialRelIntersects&where=Category+%3D+1&outFields=OBJECTID%2CName%2CYear%2Cacquisition_date%2Cresolution_value%2Cband_count%2Cdownload_url&returnGeometry=false&resultRecordCount=500",
+      "source_export_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?f=image&bbox=312488.089935133%2C3538577.844735747%2C315888.089935133%2C3541977.844735747&bboxSR=26913&imageSR=26913&size=1700%2C1700&format=tiff&pixelType=U8&bandIds=0%2C1%2C2%2C3&interpolation=RSP_Bilinear&mosaicRule=%7B%22mosaicMethod%22%3A%22esriMosaicAttribute%22%2C%22sortField%22%3A%22Year%22%2C%22sortValue%22%3A2022%2C%22where%22%3A%22Year+%3D+2022%22%7D",
+      "source_tiff": "data/research/naip_earth_orthos/kilbourne_hole_naip2022_utm26913_3400m_2m_4band.tif",
+      "source_tiff_sha256": "c11283a5c972baf1ac669c8f4348c3ef44626ba0b722214455b9e6f2181bed44",
+      "source_bytes": 12848262,
+      "source_scene_resolution_m": 0.6,
+      "local_grid_valid_fraction": 1.0,
+      "band_order": [
+        "red",
+        "green",
+        "blue",
+        "near_infrared"
+      ],
+      "export_spacing_m": 2,
+      "anchor_lat_lon": [
+        31.983333333333334,
+        -106.96666666666667
+      ],
+      "dem_sha256": "8a417d043a5ac11417436e6af31c059628e82107d35c7eb62fb2bfbb7b811868"
+    },
+    "CARRIZOZO_FLOW": {
+      "year": 2022,
+      "source_scenes": [
+        {
+          "OBJECTID": 128470,
+          "Name": "m_3310517_ne_13_060_20220527",
+          "Year": 2022,
+          "acquisition_date": 1653609600000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3251199"
+        },
+        {
+          "OBJECTID": 128471,
+          "Name": "m_3310517_nw_13_060_20220527",
+          "Year": 2022,
+          "acquisition_date": 1653609600000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3251200"
+        },
+        {
+          "OBJECTID": 128472,
+          "Name": "m_3310517_se_13_060_20220527",
+          "Year": 2022,
+          "acquisition_date": 1653609600000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3251201"
+        },
+        {
+          "OBJECTID": 128473,
+          "Name": "m_3310517_sw_13_060_20220527",
+          "Year": 2022,
+          "acquisition_date": 1653609600000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3251202"
+        }
+      ],
+      "scene_query_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/query?f=json&geometry=410255.69122967834%2C3727043.979436408%2C413655.69122967834%2C3730443.979436408&geometryType=esriGeometryEnvelope&inSR=26913&spatialRel=esriSpatialRelIntersects&where=Category+%3D+1&outFields=OBJECTID%2CName%2CYear%2Cacquisition_date%2Cresolution_value%2Cband_count%2Cdownload_url&returnGeometry=false&resultRecordCount=500",
+      "source_export_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?f=image&bbox=410255.69122967834%2C3727043.979436408%2C413655.69122967834%2C3730443.979436408&bboxSR=26913&imageSR=26913&size=1700%2C1700&format=tiff&pixelType=U8&bandIds=0%2C1%2C2%2C3&interpolation=RSP_Bilinear&mosaicRule=%7B%22mosaicMethod%22%3A%22esriMosaicAttribute%22%2C%22sortField%22%3A%22Year%22%2C%22sortValue%22%3A2022%2C%22where%22%3A%22Year+%3D+2022%22%7D",
+      "source_tiff": "data/research/naip_earth_orthos/carrizozo_flow_naip2022_utm26913_3400m_2m_4band.tif",
+      "source_tiff_sha256": "1ef4bacc308551fdf6e369d4a657ea7b9a8be0222ba6e4704f4c7cd22de2c7eb",
+      "source_bytes": 12848262,
+      "source_scene_resolution_m": 0.6,
+      "local_grid_valid_fraction": 1.0,
+      "band_order": [
+        "red",
+        "green",
+        "blue",
+        "near_infrared"
+      ],
+      "export_spacing_m": 2,
+      "anchor_lat_lon": [
+        33.695,
+        -105.95
+      ],
+      "dem_sha256": "a6fae5f09b04898aa988e4ef21f0f34102a36b39e667720308abe8ab15ff6b6d"
+    },
+    "AMBOY_CRATER": {
+      "year": 2022,
+      "source_scenes": [
+        {
+          "OBJECTID": 16415,
+          "Name": "m_3411526_se_11_060_20220428",
+          "Year": 2022,
+          "acquisition_date": 1651104000000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3227079"
+        },
+        {
+          "OBJECTID": 16416,
+          "Name": "m_3411526_sw_11_060_20220428",
+          "Year": 2022,
+          "acquisition_date": 1651104000000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3227080"
+        }
+      ],
+      "scene_query_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/query?f=json&geometry=609224.8068856812%2C3821426.6003943924%2C612624.8068856812%2C3824826.6003943924&geometryType=esriGeometryEnvelope&inSR=26911&spatialRel=esriSpatialRelIntersects&where=Category+%3D+1&outFields=OBJECTID%2CName%2CYear%2Cacquisition_date%2Cresolution_value%2Cband_count%2Cdownload_url&returnGeometry=false&resultRecordCount=500",
+      "source_export_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?f=image&bbox=609224.8068856812%2C3821426.6003943924%2C612624.8068856812%2C3824826.6003943924&bboxSR=26911&imageSR=26911&size=1700%2C1700&format=tiff&pixelType=U8&bandIds=0%2C1%2C2%2C3&interpolation=RSP_Bilinear&mosaicRule=%7B%22mosaicMethod%22%3A%22esriMosaicAttribute%22%2C%22sortField%22%3A%22Year%22%2C%22sortValue%22%3A2022%2C%22where%22%3A%22Year+%3D+2022%22%7D",
+      "source_tiff": "data/research/naip_earth_orthos/amboy_crater_naip2022_utm26911_3400m_2m_4band.tif",
+      "source_tiff_sha256": "dc434df25b01cb8340a68644797db87918c64415cf710826983ba9d02c059281",
+      "source_bytes": 12848262,
+      "source_scene_resolution_m": 0.6,
+      "local_grid_valid_fraction": 1.0,
+      "band_order": [
+        "red",
+        "green",
+        "blue",
+        "near_infrared"
+      ],
+      "export_spacing_m": 2,
+      "anchor_lat_lon": [
+        34.54388,
+        -115.79111
+      ],
+      "dem_sha256": "06ded9b41d660dc747c908b18892accdfc0e75983bc8a21772617f05ce1c3253"
+    },
+    "BIG_PINE_FLOW": {
+      "year": 2022,
+      "source_scenes": [
+        {
+          "OBJECTID": 19552,
+          "Name": "m_3611806_ne_11_060_20220706",
+          "Year": 2022,
+          "acquisition_date": 1657065600000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3234417"
+        },
+        {
+          "OBJECTID": 19557,
+          "Name": "m_3611807_nw_11_060_20220705",
+          "Year": 2022,
+          "acquisition_date": 1656979200000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3234422"
+        }
+      ],
+      "scene_query_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/query?f=json&geometry=386309.9150296178%2C4089696.2330412017%2C389709.9150296178%2C4093096.2330412017&geometryType=esriGeometryEnvelope&inSR=26911&spatialRel=esriSpatialRelIntersects&where=Category+%3D+1&outFields=OBJECTID%2CName%2CYear%2Cacquisition_date%2Cresolution_value%2Cband_count%2Cdownload_url&returnGeometry=false&resultRecordCount=500",
+      "source_export_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?f=image&bbox=386309.9150296178%2C4089696.2330412017%2C389709.9150296178%2C4093096.2330412017&bboxSR=26911&imageSR=26911&size=1700%2C1700&format=tiff&pixelType=U8&bandIds=0%2C1%2C2%2C3&interpolation=RSP_Bilinear&mosaicRule=%7B%22mosaicMethod%22%3A%22esriMosaicAttribute%22%2C%22sortField%22%3A%22Year%22%2C%22sortValue%22%3A2022%2C%22where%22%3A%22Year+%3D+2022%22%7D",
+      "source_tiff": "data/research/naip_earth_orthos/big_pine_flow_naip2022_utm26911_3400m_2m_4band.tif",
+      "source_tiff_sha256": "59202a02914a35e10105bfec42df738b6d507d4f6624f3319e25b8256294565c",
+      "source_bytes": 12848262,
+      "source_scene_resolution_m": 0.6,
+      "local_grid_valid_fraction": 1.0,
+      "band_order": [
+        "red",
+        "green",
+        "blue",
+        "near_infrared"
+      ],
+      "export_spacing_m": 2,
+      "anchor_lat_lon": [
+        36.962,
+        -118.258
+      ],
+      "dem_sha256": "c0a525dc44444e313a3c2da54b1151237abad032902fceb99851e4f3004a310d"
+    },
+    "CIMA_FIELD": {
+      "year": 2022,
+      "source_scenes": [
+        {
+          "OBJECTID": 17770,
+          "Name": "m_3511550_ne_11_060_20220429",
+          "Year": 2022,
+          "acquisition_date": 1651190400000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3228429"
+        },
+        {
+          "OBJECTID": 17771,
+          "Name": "m_3511550_nw_11_060_20220429",
+          "Year": 2022,
+          "acquisition_date": 1651190400000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3228430"
+        },
+        {
+          "OBJECTID": 17772,
+          "Name": "m_3511550_se_11_060_20220429",
+          "Year": 2022,
+          "acquisition_date": 1651190400000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3228431"
+        },
+        {
+          "OBJECTID": 17773,
+          "Name": "m_3511550_sw_11_060_20220429",
+          "Year": 2022,
+          "acquisition_date": 1651190400000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3228432"
+        }
+      ],
+      "scene_query_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/query?f=json&geometry=606042.3242074307%2C3892315.4723718655%2C609442.3242074307%2C3895715.4723718655&geometryType=esriGeometryEnvelope&inSR=26911&spatialRel=esriSpatialRelIntersects&where=Category+%3D+1&outFields=OBJECTID%2CName%2CYear%2Cacquisition_date%2Cresolution_value%2Cband_count%2Cdownload_url&returnGeometry=false&resultRecordCount=500",
+      "source_export_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?f=image&bbox=606042.3242074307%2C3892315.4723718655%2C609442.3242074307%2C3895715.4723718655&bboxSR=26911&imageSR=26911&size=1700%2C1700&format=tiff&pixelType=U8&bandIds=0%2C1%2C2%2C3&interpolation=RSP_Bilinear&mosaicRule=%7B%22mosaicMethod%22%3A%22esriMosaicAttribute%22%2C%22sortField%22%3A%22Year%22%2C%22sortValue%22%3A2022%2C%22where%22%3A%22Year+%3D+2022%22%7D",
+      "source_tiff": "data/research/naip_earth_orthos/cima_field_naip2022_utm26911_3400m_2m_4band.tif",
+      "source_tiff_sha256": "725eaec7fb3a4466b5f3ae7c917f4af0246d7b6b1b3ef3c71dcf34a31a9ff78d",
+      "source_bytes": 12848262,
+      "source_scene_resolution_m": 0.6,
+      "local_grid_valid_fraction": 1.0,
+      "band_order": [
+        "red",
+        "green",
+        "blue",
+        "near_infrared"
+      ],
+      "export_spacing_m": 2,
+      "anchor_lat_lon": [
+        35.18333333333333,
+        -115.81666666666666
+      ],
+      "dem_sha256": "47d29e6b10c3b7e8002bb7058dfe6065457ae20d22c4f2146c9c9604b8ee1aa2"
+    },
+    "DEATH_VALLEY_MARS_HILL": {
+      "year": 2022,
+      "source_scenes": [
+        {
+          "OBJECTID": 19178,
+          "Name": "m_3611634_sw_11_060_20220625",
+          "Year": 2022,
+          "acquisition_date": 1656115200000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3234043"
+        },
+        {
+          "OBJECTID": 19195,
+          "Name": "m_3611642_nw_11_060_20220625",
+          "Year": 2022,
+          "acquisition_date": 1656115200000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3234059"
+        }
+      ],
+      "scene_query_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/query?f=json&geometry=511498.9463654505%2C4024656.9757972453%2C514898.9463654505%2C4028056.9757972453&geometryType=esriGeometryEnvelope&inSR=26911&spatialRel=esriSpatialRelIntersects&where=Category+%3D+1&outFields=OBJECTID%2CName%2CYear%2Cacquisition_date%2Cresolution_value%2Cband_count%2Cdownload_url&returnGeometry=false&resultRecordCount=500",
+      "source_export_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?f=image&bbox=511498.9463654505%2C4024656.9757972453%2C514898.9463654505%2C4028056.9757972453&bboxSR=26911&imageSR=26911&size=1700%2C1700&format=tiff&pixelType=U8&bandIds=0%2C1%2C2%2C3&interpolation=RSP_Bilinear&mosaicRule=%7B%22mosaicMethod%22%3A%22esriMosaicAttribute%22%2C%22sortField%22%3A%22Year%22%2C%22sortValue%22%3A2022%2C%22where%22%3A%22Year+%3D+2022%22%7D",
+      "source_tiff": "data/research/naip_earth_orthos/death_valley_mars_hill_naip2022_utm26911_3400m_2m_4band.tif",
+      "source_tiff_sha256": "852ecfac2859d253260da228d2cde5eb80a21142f1919e5cd86457ea2b692e86",
+      "source_bytes": 12848262,
+      "source_scene_resolution_m": 0.6,
+      "local_grid_valid_fraction": 1.0,
+      "band_order": [
+        "red",
+        "green",
+        "blue",
+        "near_infrared"
+      ],
+      "export_spacing_m": 2,
+      "anchor_lat_lon": [
+        36.38225,
+        -116.8528393
+      ],
+      "dem_sha256": "a789b101df57db1e1c85a4f851fb46ca23383a77533a0f38b115bf03da5ed584"
+    },
+    "CRATERS_MOON_IDAHO": {
+      "year": 2021,
+      "source_scenes": [
+        {
+          "OBJECTID": 48953,
+          "Name": "m_4311336_ne_12_060_20210619",
+          "Year": 2021,
+          "acquisition_date": 1624060800000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3126177"
+        },
+        {
+          "OBJECTID": 48955,
+          "Name": "m_4311336_se_12_060_20210619",
+          "Year": 2021,
+          "acquisition_date": 1624060800000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3126179"
+        },
+        {
+          "OBJECTID": 48958,
+          "Name": "m_4311337_nw_12_060_20210616",
+          "Year": 2021,
+          "acquisition_date": 1623801600000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3126182"
+        },
+        {
+          "OBJECTID": 48960,
+          "Name": "m_4311337_sw_12_060_20210616",
+          "Year": 2021,
+          "acquisition_date": 1623801600000,
+          "resolution_value": 0.6,
+          "band_count": 4,
+          "download_url": "https://earthexplorer.usgs.gov/download/options/naip/3126184"
+        }
+      ],
+      "scene_query_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/query?f=json&geometry=295918.8849963638%2C4808792.593315509%2C299318.8849963638%2C4812192.593315509&geometryType=esriGeometryEnvelope&inSR=26912&spatialRel=esriSpatialRelIntersects&where=Category+%3D+1+AND+Year+%3D+2021&outFields=OBJECTID%2CName%2CYear%2Cacquisition_date%2Cresolution_value%2Cband_count%2Cdownload_url&returnGeometry=false&resultRecordCount=100",
+      "source_export_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?f=image&bbox=295918.8849963638%2C4808792.593315509%2C299318.8849963638%2C4812192.593315509&bboxSR=26912&imageSR=26912&size=1700%2C1700&format=tiff&pixelType=U8&bandIds=0%2C1%2C2%2C3&interpolation=RSP_Bilinear&mosaicRule=%7B%22mosaicMethod%22%3A%22esriMosaicAttribute%22%2C%22sortField%22%3A%22Year%22%2C%22sortValue%22%3A2021%2C%22where%22%3A%22Year+%3D+2021%22%7D",
+      "source_tiff": "data/research/naip_idaho/idaho_naip2021_utm12_3400m_2m_4band.tif",
+      "source_tiff_sha256": "66884e594aec92921352d0c17718eb07eeb05f21b8c96e3d39e3b6c32132c5f2",
+      "source_bytes": 12848262,
+      "source_scene_resolution_m": 0.6,
+      "local_grid_valid_fraction": 1.0,
+      "band_order": [
+        "red",
+        "green",
+        "blue",
+        "near_infrared"
+      ],
+      "export_spacing_m": 2,
+      "anchor_lat_lon": [
+        43.42,
+        -113.5
+      ],
+      "dem_sha256": "2e713fad8855ecb1fdfffc176b91ec50e3cbc09e239ca9b5996c07044f6cbbdc"
+    }
+  },
+  "used_in_terrain_ranking": false,
+  "interpretation": "RGB aerial texture and NIR channel are observations, not exposed rock, mineral, or lithology labels; sources span different years"
+}

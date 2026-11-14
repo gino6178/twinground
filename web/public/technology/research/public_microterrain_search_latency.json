@@ -1,0 +1,247 @@
+{
+  "created_utc": "2026-10-11T09:41:51+00:00",
+  "url": "https://proxy-insulin-loop-locks.trycloudflare.com/api/microterrain/search",
+  "client": "Windows workspace in Taiwan to Cloudflare quick tunnel",
+  "sample_count": 24,
+  "method": "Sequential requests.Session HTTP GET, 12 body-scale-ranker cases repeated twice in deterministic shuffled order; measured full response including transfer and JSON parse",
+  "overall": {
+    "median_ms": 825.0,
+    "p95_ms": 1545.8,
+    "max_ms": 2193.0
+  },
+  "by_body": {
+    "moon": {
+      "n": 12,
+      "median_ms": 1201.3,
+      "p95_ms": 1853.4
+    },
+    "mars": {
+      "n": 12,
+      "median_ms": 644.2,
+      "p95_ms": 900.7
+    }
+  },
+  "samples": [
+    {
+      "body": "mars",
+      "site": "JEZERO_CTX",
+      "size_m": 200,
+      "ranker": "geomorphon",
+      "latency_ms": 804.6,
+      "response_bytes": 61109,
+      "searched_windows": 6728
+    },
+    {
+      "body": "mars",
+      "site": "JEZERO_CTX",
+      "size_m": 200,
+      "ranker": "tiny",
+      "latency_ms": 707.0,
+      "response_bytes": 61917,
+      "searched_windows": 6728
+    },
+    {
+      "body": "moon",
+      "site": "MARIUS3",
+      "size_m": 1000,
+      "ranker": "geomorphon",
+      "latency_ms": 2193.0,
+      "response_bytes": 1074838,
+      "searched_windows": 200
+    },
+    {
+      "body": "moon",
+      "site": "MARIUS3",
+      "size_m": 1000,
+      "ranker": "tiny",
+      "latency_ms": 1575.5,
+      "response_bytes": 1074905,
+      "searched_windows": 200
+    },
+    {
+      "body": "mars",
+      "site": "JEZERO_CTX",
+      "size_m": 500,
+      "ranker": "tiny",
+      "latency_ms": 701.2,
+      "response_bytes": 284707,
+      "searched_windows": 968
+    },
+    {
+      "body": "moon",
+      "site": "MARIUS3",
+      "size_m": 200,
+      "ranker": "geomorphon",
+      "latency_ms": 1317.3,
+      "response_bytes": 695418,
+      "searched_windows": 6728
+    },
+    {
+      "body": "mars",
+      "site": "JEZERO_CTX",
+      "size_m": 200,
+      "ranker": "tiny",
+      "latency_ms": 488.1,
+      "response_bytes": 61917,
+      "searched_windows": 6728
+    },
+    {
+      "body": "moon",
+      "site": "MARIUS3",
+      "size_m": 500,
+      "ranker": "geomorphon",
+      "latency_ms": 1155.4,
+      "response_bytes": 1075909,
+      "searched_windows": 968
+    },
+    {
+      "body": "moon",
+      "site": "MARIUS3",
+      "size_m": 500,
+      "ranker": "tiny",
+      "latency_ms": 1377.8,
+      "response_bytes": 1076526,
+      "searched_windows": 968
+    },
+    {
+      "body": "moon",
+      "site": "MARIUS3",
+      "size_m": 1000,
+      "ranker": "tiny",
+      "latency_ms": 1275.5,
+      "response_bytes": 1074905,
+      "searched_windows": 200
+    },
+    {
+      "body": "mars",
+      "site": "JEZERO_CTX",
+      "size_m": 500,
+      "ranker": "geomorphon",
+      "latency_ms": 651.1,
+      "response_bytes": 283286,
+      "searched_windows": 968
+    },
+    {
+      "body": "moon",
+      "site": "MARIUS3",
+      "size_m": 200,
+      "ranker": "tiny",
+      "latency_ms": 903.1,
+      "response_bytes": 697811,
+      "searched_windows": 6728
+    },
+    {
+      "body": "moon",
+      "site": "MARIUS3",
+      "size_m": 500,
+      "ranker": "geomorphon",
+      "latency_ms": 848.0,
+      "response_bytes": 1075909,
+      "searched_windows": 968
+    },
+    {
+      "body": "moon",
+      "site": "MARIUS3",
+      "size_m": 1000,
+      "ranker": "geomorphon",
+      "latency_ms": 1247.3,
+      "response_bytes": 1074838,
+      "searched_windows": 200
+    },
+    {
+      "body": "moon",
+      "site": "MARIUS3",
+      "size_m": 200,
+      "ranker": "geomorphon",
+      "latency_ms": 681.0,
+      "response_bytes": 695418,
+      "searched_windows": 6728
+    },
+    {
+      "body": "mars",
+      "site": "JEZERO_CTX",
+      "size_m": 500,
+      "ranker": "tiny",
+      "latency_ms": 425.4,
+      "response_bytes": 284707,
+      "searched_windows": 968
+    },
+    {
+      "body": "mars",
+      "site": "JEZERO_CTX",
+      "size_m": 1000,
+      "ranker": "geomorphon",
+      "latency_ms": 878.8,
+      "response_bytes": 1077758,
+      "searched_windows": 200
+    },
+    {
+      "body": "mars",
+      "site": "JEZERO_CTX",
+      "size_m": 200,
+      "ranker": "geomorphon",
+      "latency_ms": 440.1,
+      "response_bytes": 61109,
+      "searched_windows": 6728
+    },
+    {
+      "body": "moon",
+      "site": "MARIUS3",
+      "size_m": 200,
+      "ranker": "tiny",
+      "latency_ms": 698.0,
+      "response_bytes": 697811,
+      "searched_windows": 6728
+    },
+    {
+      "body": "mars",
+      "site": "JEZERO_CTX",
+      "size_m": 500,
+      "ranker": "geomorphon",
+      "latency_ms": 443.2,
+      "response_bytes": 283286,
+      "searched_windows": 968
+    },
+    {
+      "body": "mars",
+      "site": "JEZERO_CTX",
+      "size_m": 1000,
+      "ranker": "geomorphon",
+      "latency_ms": 637.3,
+      "response_bytes": 1077758,
+      "searched_windows": 200
+    },
+    {
+      "body": "mars",
+      "site": "JEZERO_CTX",
+      "size_m": 1000,
+      "ranker": "tiny",
+      "latency_ms": 927.4,
+      "response_bytes": 1077740,
+      "searched_windows": 200
+    },
+    {
+      "body": "mars",
+      "site": "JEZERO_CTX",
+      "size_m": 1000,
+      "ranker": "tiny",
+      "latency_ms": 617.7,
+      "response_bytes": 1077740,
+      "searched_windows": 200
+    },
+    {
+      "body": "moon",
+      "site": "MARIUS3",
+      "size_m": 500,
+      "ranker": "tiny",
+      "latency_ms": 845.5,
+      "response_bytes": 1076526,
+      "searched_windows": 968
+    }
+  ],
+  "limitations": [
+    "Twenty-four requests from one client and one time period are insufficient for a public service or mobile P95 guarantee.",
+    "Cloudflare quick tunnel and local WAN conditions contribute to measured latency.",
+    "This excludes page boot, 3D mesh rendering, orthophoto fetches, and cold service startup."
+  ]
+}

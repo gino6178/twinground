@@ -1,0 +1,76 @@
+{
+  "purpose": "Experimental 4 m Mars-HiRISE-to-Earth 3DEP fine terrain gallery",
+  "mars_source_manifest_sha256": "20344cee1d745265d6e4635dbd1eca620b5a35c5f01c6600753b317760d7d267",
+  "query_sha256": "ec81398b4f6e74b51a33d205827aca1fcb47f1cd6354e685328d40bfab2df5dc",
+  "query_grid_valid_fraction": 0.984,
+  "earth_sources": {
+    "METEOR_CRATER": {
+      "crop_sha256": "9ba4888e5a8d82d932be342c2e672ce8098868a0b658858ade47a9d3c1af5e73",
+      "valid_fraction": 1.0
+    },
+    "KILBOURNE_HOLE": {
+      "crop_sha256": "8a417d043a5ac11417436e6af31c059628e82107d35c7eb62fb2bfbb7b811868",
+      "valid_fraction": 1.0
+    },
+    "CARRIZOZO_FLOW": {
+      "crop_sha256": "a6fae5f09b04898aa988e4ef21f0f34102a36b39e667720308abe8ab15ff6b6d",
+      "valid_fraction": 1.0
+    },
+    "AMBOY_CRATER": {
+      "crop_sha256": "06ded9b41d660dc747c908b18892accdfc0e75983bc8a21772617f05ce1c3253",
+      "valid_fraction": 1.0
+    },
+    "BIG_PINE_FLOW": {
+      "crop_sha256": "c0a525dc44444e313a3c2da54b1151237abad032902fceb99851e4f3004a310d",
+      "valid_fraction": 1.0
+    },
+    "CIMA_FIELD": {
+      "crop_sha256": "47d29e6b10c3b7e8002bb7058dfe6065457ae20d22c4f2146c9c9604b8ee1aa2",
+      "valid_fraction": 1.0
+    },
+    "DEATH_VALLEY_MARS_HILL": {
+      "crop_sha256": "a789b101df57db1e1c85a4f851fb46ca23383a77533a0f38b115bf03da5ed584",
+      "valid_fraction": 1.0
+    },
+    "CRATERS_MOON_IDAHO": {
+      "crop_sha256": "2e713fad8855ecb1fdfffc176b91ec50e3cbc09e239ca9b5996c07044f6cbbdc",
+      "valid_fraction": 1.0
+    }
+  },
+  "model_sha256": "f52b3e201dd8111e50f791c527089b767770de1675b8361f141c1e553e008c76",
+  "comparison_spacing_m": 4,
+  "sizes_m": [
+    200,
+    500,
+    1000
+  ],
+  "outputs": {
+    "earth_hirise_200m.npz": {
+      "sha256": "24cd7dca67628c859c6e1875a9c58fa1880c25db3c97fff7d3f0e1c2fef26498",
+      "candidate_count": 6728,
+      "grid_cells": 50,
+      "signature_dimensions": 55,
+      "embedding_dimensions": 32
+    },
+    "earth_hirise_500m.npz": {
+      "sha256": "4601f1608469723db9f486ce5a09d06a1cdeb4998d16bd073d66bd5cd9366916",
+      "candidate_count": 968,
+      "grid_cells": 125,
+      "signature_dimensions": 55,
+      "embedding_dimensions": 32
+    },
+    "earth_hirise_1000m.npz": {
+      "sha256": "8d2c36a47b37826400b984a695df1b1d23a49d204c7780b88808253220f8c004",
+      "candidate_count": 200,
+      "grid_cells": 250,
+      "signature_dimensions": 55,
+      "embedding_dimensions": 32
+    }
+  },
+  "limitations": [
+    "Eight Earth sites are method-development regions, not a global gallery or independent truth set.",
+    "HiRISE DTM post spacing and Earth 3DEP bare-earth sampling differ in true measurement precision and surface effects.",
+    "The frozen encoder was not trained on expert HiRISE-Earth positive pairs; no cross-body accuracy is implied.",
+    "Four-metre comparison grid preserves substantially more detail than the deployed 20 m CTX mode, but cannot reconstruct missing centimetre-scale rocks."
+  ]
+}

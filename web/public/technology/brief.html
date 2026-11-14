@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>地球能多像月球與火星？ | Analog Atlas 精簡版</title>
+<meta name="description" content="Analog Atlas 五頁精簡版：地球上限與依實測性質逐項檢索月球、火星的地球類比場址。">
+<style>
+  :root{--ink:#1d2327;--muted:#55606a;--line:#d5dbe0;--accent:#1f6f5c;--bg:#ffffff;--soft:#f3f6f7}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ink:#e2eeea;--muted:#a9c2bb;--line:#2b4146;--accent:#7ee0a5;--bg:#0c1d22;--soft:#102a30}}
+  :root[data-theme="dark"]{--ink:#e2eeea;--muted:#a9c2bb;--line:#2b4146;--accent:#7ee0a5;--bg:#0c1d22;--soft:#102a30}
+  html{background:var(--bg)}
+  body{margin:0 auto;max-width:860px;padding:32px 20px 60px;background:var(--bg);color:var(--ink);font:16px/1.75 "Noto Serif CJK TC","Source Han Serif TC","Noto Serif TC",serif}
+  header{border-bottom:2px solid var(--accent);padding-bottom:14px;margin-bottom:20px}
+  .kicker{margin:0;color:var(--accent);font:600 13px/1.4 "Noto Sans CJK TC","Noto Sans TC",system-ui,sans-serif;letter-spacing:.04em}
+  h1{margin:6px 0 6px;font-size:32px;line-height:1.25}
+  .sub{margin:0 0 8px;font-size:18px;color:var(--muted)}
+  .meta{margin:0;font:13px/1.6 "Noto Sans CJK TC","Noto Sans TC",system-ui,sans-serif;color:var(--muted)}
+  .meta a{color:var(--accent)}
+  h2{margin:28px 0 8px;font-size:21px;color:var(--accent)}
+  h3{margin:18px 0 6px;font-size:17px}
+  p{margin:0 0 10px}
+  ol,ul{margin:0 0 12px;padding-left:24px}
+  li{margin:0 0 5px}
+  .lead{font-size:17px}
+  table{width:100%;border-collapse:collapse;margin:10px 0 16px;font:14px/1.6 "Noto Sans CJK TC","Noto Sans TC",system-ui,sans-serif}
+  th,td{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+  th{background:var(--soft);font-weight:700;white-space:nowrap}
+  figure{margin:14px 0 18px}
+  figure img{width:100%;height:auto;border:1px solid var(--line);border-radius:6px;background:#fff}
+  figcaption{margin-top:6px;font:13px/1.55 "Noto Sans CJK TC","Noto Sans TC",system-ui,sans-serif;color:var(--muted)}
+  .case{border-left:4px solid var(--accent);padding:4px 0 4px 14px;margin:14px 0}
+  .note{font:13px/1.6 "Noto Sans CJK TC","Noto Sans TC",system-ui,sans-serif;color:var(--muted)}
+  footer{margin-top:30px;border-top:1px solid var(--line);padding-top:10px;font:12px/1.6 "Noto Sans CJK TC","Noto Sans TC",system-ui,sans-serif;color:var(--muted)}
+  @media (max-width:640px){body{padding:20px 16px 40px}h1{font-size:25px}table{font-size:13px}th,td{padding:5px}th{white-space:normal}}
+  @page{size:A4;margin:16mm 15mm}
+  @media print{body{max-width:none;padding:0;font-size:11pt}h1{font-size:23pt}h2{break-after:avoid}table,figure,.case{break-inside:avoid}a{color:inherit;text-decoration:none}}
+</style>
+</head>
+<body>
+<header>
+  <p class="kicker">2026 NASA Space Apps Challenge · Analog Atlas · 精簡版</p>
+  <h1>地球能多像月球與火星？</h1>
+  <p class="sub">依實測性質逐項比對的月球、火星類比場址，以及地球無法跨越的界線</p>
+  <p class="meta">Analog Atlas 團隊 · 2026 年 10 月 21 日 · 完整論文：<a href="paper.html">地球上限：量化月球與火星地球類比場址的極限與系統性偏差</a> · 互動系統：<a href="../">Analog Atlas</a></p>
+</header>
+
+<h2>1. 問題</h2>
+<p class="lead">地球上沒有與月球或火星某處完全相同的地方。類比場址是依用途挑選的：探測車測試需要相近的坡度與粗糙度，原地資源利用（ISRU）測試需要相近的原料化學成分，熱環境測試需要相近的溫度。因此真正有用的問題是：對這個用途，地球最多能像到什麼程度，最接近的場址又在哪裡。</p>
+<p>目前類比場址多半依專家對場域的判斷挑選，例如乾燥、裸露、玄武岩質、寒冷。我們檢驗了比對這類條件能否找到實測性質正確的場址，並建立逐項直接比對性質的方法，同時說明哪些性質地球無法提供。</p>
+
+<h2>2. Analog Atlas 做什麼</h2>
+<ol>
+  <li><b>選一個窗格。</b>在球體上任選 20、40 或 80 km 的月球或火星窗格。</li>
+  <li><b>以地球單位讀出它的性質。</b>FeO、TiO₂、K 與 Th 來自月球探勘者號與火星奧德賽號的伽瑪射線能譜儀，反照率來自 LROC WAC 與 TES，公里尺度的粗糙度來自 LOLA 與 MOLA。</li>
+  <li><b>與地球比較。</b>75,860 個 40 km 地球窗格帶有實測的航空伽瑪 K 與 Th（澳洲、北美）、表土 FeO 與 TiO₂（美國、澳洲、歐洲）、無雪反照率、粗糙度與地表溫度；距實測 300 km 內另有附 90% 區間的估計值。</li>
+  <li><b>依用途排序。</b>針對資源、移動、熱環境或基地選址，依每項性質落在容差內的機率排序地球窗格（FeO ±3 wt%、TiO₂ ±1.5 wt%、K ±0.2 wt%、Th ±2 ppm、反照率 ±0.05、粗糙度 ±1°、溫度 ±20 K）。</li>
+  <li><b>給出地球上限。</b>對這個查詢與用途，任何實測地球窗格能達到的最佳分數，讓每個候選都能對照「地球最多做得到多少」來解讀。</li>
+  <li><b>描述每個候選。</b>哪些性質相符、哪些不符、哪些地球根本無法提供，並附上原有的場址檔案：環境、地質與資源條件、可以測試什麼，以及如何抵達。</li>
+</ol>
+<figure>
+  <img src="figures/fig_arch_zh.svg" alt="Analog Atlas 系統架構">
+  <figcaption>圖 1　系統架構（取自完整論文）。路徑 P 逐項比對同單位性質，為每個候選給出用途分數，並為每個查詢給出地球上限；路徑 A–D 分別是條件閘門、地形形狀、材質與熔岩管搜尋。</figcaption>
+</figure>
+
+<h2>3. 我們發現了什麼</h2>
+<p>以下每項檢定都在讀取地球資料前以 SHA-256 凍結，並以單一種子執行一次。細節與所有偏離都列在完整論文中。</p>
+<table>
+  <thead><tr><th>問題</th><th>答案</th></tr></thead>
+  <tbody>
+    <tr><td>地球最多能像到什麼程度？</td><td>月球資源用途的上限平均為 0.75，沒有任何地球窗格能同時符合 FeO、TiO₂、K 與 Th。火星 FeO 高於所有實測地球表土足跡（52 個查詢全部），足跡尺度的火星 Th 低於所有被涵蓋的地球窗格。在 18 個火星查詢中有 8 個，沒有任何實測地球地表的溫度落在火星夜溫的 20 K 內。粗糙度則總能找到相符的地球窗格。</td></tr>
+    <tr><td>依性質找類比，比依條件好嗎？</td><td>是。在保留的實測值上，依估計性質排序的檢索效率為 0.52–0.77（月球型 FeO、K、Th），比對條件則為 −0.19 至 0.02（0 等於隨機，1 等於直接用實測值排序）。共變量空間的最近鄰與估計值表現相當。</td></tr>
+    <tr><td>沒有實測的地方能估計地球化學嗎？</td><td>距實測 300 km 內可以：R² 為 K 0.64、Th 0.41、FeO 0.40、TiO₂ 0.32，90% 區間涵蓋 90–93% 的測試窗格。換到另一個大陸則不行：每個情況的 R² 都低於 0.30 的門檻（最高 0.21）。</td></tr>
+    <tr><td>專家式條件找到什麼？</td><td>找到專家所說的那類場域（條件篩選後，預期類型的既有類比密度約提高 12 倍），但找不到查詢的實測性質：條件篩選的候選與隨機窗格相比沒有更接近（+1.3 個百分點；95% 信賴區間 −3.2 至 5.2），而且在全部 20 個不同的候選池中，鉀、釷都比月球與火星的地面高。</td></tr>
+  </tbody>
+</table>
+
+<h2>4. 三個實例</h2>
+<div class="case">
+  <h3>A. 寧靜海天窗坑（月球，北緯 8.3°、東經 33.2°）：資源用途</h3>
+  <p>查詢值：FeO 18.1 wt%、TiO₂ 7.6 wt%、K 0.11 wt%、Th 2.7 ppm。<b>地球上限 0.40。</b>在 TiO₂ 上沒有任何實測地球窗格落在容差內（4,611 個中 0 個），FeO 也只有 4,610 個中 1 個。達到上限的 135 個地球窗格大多在西澳與南澳，其餘在阿拉斯加與曼尼托巴，都只有 K 與 Th 相符。在這個尺度上，地球無法重現高鈦月海玄武岩。</p>
+</div>
+<div class="case">
+  <h3>B. 笛卡兒高地，阿波羅 16 號（月球，南緯 9.0°、東經 15.5°）：資源用途</h3>
+  <p>查詢值：FeO 7.6 wt%、TiO₂ 0.86 wt%、K 0.09 wt%、Th 2.9 ppm。<b>地球上限 0.80。</b>最佳窗格位於美國奧勒岡州的大盆地與哥倫比亞高原：FeO 4.8–9.2 wt%、TiO₂ 0.7–1.9 wt%、Th 4.1–4.6 ppm 都落在容差內，但 K 為 1.1–1.4 wt%，是月球值的十倍以上。地球上有類似高地的鐵與鈦，卻沒有類似月球的低鉀。</p>
+</div>
+<div class="case">
+  <h3>C. Jezero 撞擊坑（火星，北緯 18.4°、東經 77.7°）：資源與基地選址</h3>
+  <p>查詢值：FeO 21.4 wt%、K 0.32 wt%、Th 0.6 ppm。<b>資源上限 0.57。</b>FeO 超出所有實測地球表土足跡（2,868 個中 0 個）。K 與 Th 在加拿大薩斯喀徹溫與阿拉斯加西南部的低鉀地區落在容差內（K 0.37–0.44 wt%、Th 2.1–2.5 ppm），不過 ±2 ppm 的容差對火星釷來說很寬鬆。<b>基地選址：</b>粗糙度與反照率可以同時相符，例如安哥拉西南部的納米貝與考科蘭沙漠，但沒有地球窗格符合模式的夜間溫度，所以基地選址上限為 0.75。互動系統沒有火星溫度資料，只以粗糙度與反照率計算，因此顯示 1.0。</p>
+</div>
+
+<h2>5. 限制</h2>
+<ul>
+  <li>地球化學只在有實測的地方（澳洲、北美、歐洲）或距實測 300 km 內有值；其他地方系統會顯示「無可靠估計」。</li>
+  <li>只有火星足跡上的 K 估計參與計分，因為只有這一項在檢索檢定中勝過最近鄰基線；其他估計附區間顯示，但不計分。</li>
+  <li>容差是絕對值，對月球與火星的低值來說偏寬。</li>
+  <li>候選是初步篩選結果，不是經驗證的類比、安全評估或路線規劃，也沒有辦法做專家評分。</li>
+  <li>以地球上限為主軸的寫法是在看過所有結果之後才選定的；各協定與其標準都沒有改變，完整列於論文。</li>
+</ul>
+
+<h2>6. 使用的開放資料</h2>
+<p class="note">月球：月球探勘者號 GRS、LROC WAC、LOLA。火星：火星奧德賽號 GRS、TES、MOLA、Mars Climate Database。地球：NOAA ETOPO 2022、澳洲放射測量圖 v4 2019、北美放射測量網格（NAMrad）、USGS 美國本土土壤（DS801）、澳洲國家地化調查、FOREGS 歐洲地球化學圖集、GLASS 無雪反照率、MODIS MOD11A2 與 MCD43A4、SoilGrids 2.0、GLiM、ESA WorldCover、Köppen–Geiger、GEOROC。完整參考文獻與授權見論文。</p>
+
+<footer>Analog Atlas 是為 2026 NASA Space Apps Challenge「Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars」所做，不是 NASA 的官方產品，也未經 NASA 背書。</footer>
+</body>
+</html>

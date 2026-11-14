@@ -1,0 +1,56 @@
+{
+  "version": "heldout_geography_v1",
+  "frozen_date": "2026-10-11",
+  "status": "coordinates_frozen_before_dem_acquisition_or_model_ranking; Pilot Valley source amended after coverage check, before model ranking",
+  "purpose": "External geographic stress test of the existing terrain retrieval pipeline; no site or window may be added to model training, gallery development, threshold selection, or reranker tuning.",
+  "model_sha256": {
+    "data/research/microterrain_native/manifest.json": "1e57e0017620acad117b05db8bcb49a2fe2563c4ccac8fe0c838d5cfcc1e4ed4",
+    "data/research/microterrain_native/tiny_morph_encoder.pt": "f52b3e201dd8111e50f791c527089b767770de1675b8361f141c1e553e008c76",
+    "data/research/microterrain_native/tiny_index_manifest.json": "93b047213fa4041fe6d825e705d84f7e42b74eb19fbeaa8580d756efb119bdaf"
+  },
+  "existing_development_earth_sites": ["meteor", "kilbourne", "carrizozo", "amboy", "big_pine", "cima", "death_valley", "craters_moon"],
+  "crop_side_m": 3000,
+  "crop_spacing_m": 2,
+  "window_sizes_m": [200, 500, 1000],
+  "sites": {
+    "kilauea": {
+      "anchor_lat_lon": [19.37, -155.2],
+      "selection": "Fixed study center on the Kilauea volcanic slopes, independent of all retrieval scores; NASA identifies basalt landscapes at Kilauea as a Moon analog. This center is not asserted to be a NASA field instrument station.",
+      "environment_stratum": "volcanic_basalt_context",
+      "nasa_context_url": "https://science.nasa.gov/solar-system/analog-explorer/",
+      "usgs_context_url": "https://www.usgs.gov/volcanoes/k-lauea",
+      "dem_source_project": "HI_Hawaii_Island_Lidar_NOAA_2017_B17",
+      "dem_catalog_query_bbox": [-155.23, 19.35, -155.17, 19.39],
+      "utm_epsg": 26905,
+      "temporal_caveat": "The 2017 terrain predates subsequent eruptions and may differ from current terrain or imagery."
+    },
+    "lava_beds": {
+      "anchor_lat_lon": [41.71, -121.5],
+      "selection": "Fixed center within Lava Beds National Monument on the northern flank of Medicine Lake volcano, a NASA lava-cave analog region. Source availability checked before model ranking; this center is not a mapped individual cave opening or a verified bare-basalt sample.",
+      "environment_stratum": "volcanic_lava_cave_context",
+      "nasa_context_url": "https://science.nasa.gov/solar-system/analog-explorer/",
+      "usgs_context_url": "https://www.usgs.gov/volcanoes/medicine-lake/science/geology-and-history-medicine-lake",
+      "dem_source_project": "CA_NorthernCA_B22",
+      "dem_catalog_query_bbox": [-121.53, 41.69, -121.47, 41.73],
+      "utm_epsg": 26910
+    },
+    "pilot_valley": {
+      "anchor_lat_lon": [41.03, -113.9],
+      "selection": "Fixed study center within the Pilot Valley playa geographic bounds in the USGS hydrologic report, independent of retrieval scores; NASA discusses Pilot Valley salts as a Mars habitability analog. It is an environmental contrast, not a presumed morphological match.",
+      "environment_stratum": "saline_playa_context",
+      "nasa_context_url": "https://science.nasa.gov/solar-system/analog-explorer/",
+      "usgs_context_url": "https://pubs.usgs.gov/publication/ofr95104",
+      "dem_source_project": "UT_StatewideCenSouth_2020_A20",
+      "dem_catalog_query_bbox": [-113.93, 41.0, -113.87, 41.06],
+      "utm_epsg": 26911
+    }
+  },
+  "acquisition_policy": "For each fixed anchor, use every catalog 1 m tile from the selected project intersecting the recorded query bbox. Reproject into a 3 km local azimuthal equidistant square at 2 m. Require at least 99.5% valid pixels, preserve tile URL/ETag and output SHA. If coverage fails, document failure rather than move the anchor to improve a retrieval result.",
+  "amendments_before_model_ranking": [
+    "First acquisition found Kilauea 2017 3DEP crop 0.000% valid; original coordinate retained pending the USGS 2019 Kilauea lidar release.",
+    "Added Lava Beds National Monument volcanic region as a third independent site after checking only DEM availability, before any model score or ranking. This is a supplemental site, not a replacement for the failed Kilauea source.",
+    "First acquisition found Pilot Valley UT_WestEast_B22 crop 0.493% valid; changed only the source project to UT_StatewideCenSouth_2020_A20 after a direct native raster coverage check at the unchanged anchor."
+  ],
+  "analysis_policy": "Holdout sites may be used only for frozen-model evaluation. Any human relevance judgment must be blind to method/rank/site identity until submitted; at least two independent experts are needed for a scored claim. Known NASA analog context is not a positive label for every 200-1000 m window. Do not claim geographic generalization, material classification accuracy, or new analog discovery from an unjudged holdout.",
+  "limitation": "Both sites use USGS 3DEP 1 m DEMs, so this is geographic and environmental holdout, not a sensor/source-family holdout. The Moon/Mars query sources were already used during model development."
+}

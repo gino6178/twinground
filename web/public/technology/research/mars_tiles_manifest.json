@@ -1,0 +1,1578 @@
+{
+  "purpose": "Additional source-documented CTX 3 km search tiles at a true 20 m comparison grid",
+  "tiles": [
+    {
+      "id": "JEZERO_CTX_T000",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 0,
+      "center_lat_lon": [
+        18.1158282,
+        77.5837055
+      ],
+      "offset_east_north_m": [
+        -8000,
+        -20000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T001",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 1,
+      "center_lat_lon": [
+        18.1158282,
+        77.6511879
+      ],
+      "offset_east_north_m": [
+        -4000,
+        -20000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T002",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 2,
+      "center_lat_lon": [
+        18.1158282,
+        77.7186703
+      ],
+      "offset_east_north_m": [
+        0,
+        -20000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T003",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 3,
+      "center_lat_lon": [
+        18.1158282,
+        77.7861527
+      ],
+      "offset_east_north_m": [
+        4000,
+        -20000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T006",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 6,
+      "center_lat_lon": [
+        18.1833106,
+        77.6511879
+      ],
+      "offset_east_north_m": [
+        -4000,
+        -16000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T007",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 7,
+      "center_lat_lon": [
+        18.1833106,
+        77.7186703
+      ],
+      "offset_east_north_m": [
+        0,
+        -16000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T008",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 8,
+      "center_lat_lon": [
+        18.1833106,
+        77.7861527
+      ],
+      "offset_east_north_m": [
+        4000,
+        -16000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T009",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 9,
+      "center_lat_lon": [
+        18.1833106,
+        77.8536351
+      ],
+      "offset_east_north_m": [
+        8000,
+        -16000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T011",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 11,
+      "center_lat_lon": [
+        18.250793,
+        77.5837055
+      ],
+      "offset_east_north_m": [
+        -8000,
+        -12000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T012",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 12,
+      "center_lat_lon": [
+        18.250793,
+        77.6511879
+      ],
+      "offset_east_north_m": [
+        -4000,
+        -12000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T013",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 13,
+      "center_lat_lon": [
+        18.250793,
+        77.7186703
+      ],
+      "offset_east_north_m": [
+        0,
+        -12000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T014",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 14,
+      "center_lat_lon": [
+        18.250793,
+        77.7861527
+      ],
+      "offset_east_north_m": [
+        4000,
+        -12000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T015",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 15,
+      "center_lat_lon": [
+        18.250793,
+        77.8536351
+      ],
+      "offset_east_north_m": [
+        8000,
+        -12000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T016",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 16,
+      "center_lat_lon": [
+        18.250793,
+        77.9211176
+      ],
+      "offset_east_north_m": [
+        12000,
+        -12000
+      ],
+      "native_grid_valid_fraction": 0.999778,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T018",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 18,
+      "center_lat_lon": [
+        18.3182754,
+        77.5837055
+      ],
+      "offset_east_north_m": [
+        -8000,
+        -8000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T019",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 19,
+      "center_lat_lon": [
+        18.3182754,
+        77.6511879
+      ],
+      "offset_east_north_m": [
+        -4000,
+        -8000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T020",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 20,
+      "center_lat_lon": [
+        18.3182754,
+        77.7186703
+      ],
+      "offset_east_north_m": [
+        0,
+        -8000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T021",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 21,
+      "center_lat_lon": [
+        18.3182754,
+        77.7861527
+      ],
+      "offset_east_north_m": [
+        4000,
+        -8000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T022",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 22,
+      "center_lat_lon": [
+        18.3182754,
+        77.8536351
+      ],
+      "offset_east_north_m": [
+        8000,
+        -8000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T023",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 23,
+      "center_lat_lon": [
+        18.3857578,
+        77.5162231
+      ],
+      "offset_east_north_m": [
+        -12000,
+        -4000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T024",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 24,
+      "center_lat_lon": [
+        18.3857578,
+        77.5837055
+      ],
+      "offset_east_north_m": [
+        -8000,
+        -4000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T025",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 25,
+      "center_lat_lon": [
+        18.3857578,
+        77.6511879
+      ],
+      "offset_east_north_m": [
+        -4000,
+        -4000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T026",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 26,
+      "center_lat_lon": [
+        18.3857578,
+        77.7186703
+      ],
+      "offset_east_north_m": [
+        0,
+        -4000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T027",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 27,
+      "center_lat_lon": [
+        18.3857578,
+        77.7861527
+      ],
+      "offset_east_north_m": [
+        4000,
+        -4000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T028",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 28,
+      "center_lat_lon": [
+        18.3857578,
+        77.8536351
+      ],
+      "offset_east_north_m": [
+        8000,
+        -4000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T030",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 30,
+      "center_lat_lon": [
+        18.4532403,
+        77.5162231
+      ],
+      "offset_east_north_m": [
+        -12000,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T031",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 31,
+      "center_lat_lon": [
+        18.4532403,
+        77.5837055
+      ],
+      "offset_east_north_m": [
+        -8000,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T032",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 32,
+      "center_lat_lon": [
+        18.4532403,
+        77.6511879
+      ],
+      "offset_east_north_m": [
+        -4000,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T034",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 34,
+      "center_lat_lon": [
+        18.4532403,
+        77.7861527
+      ],
+      "offset_east_north_m": [
+        4000,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T035",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 35,
+      "center_lat_lon": [
+        18.4532403,
+        77.8536351
+      ],
+      "offset_east_north_m": [
+        8000,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T037",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 37,
+      "center_lat_lon": [
+        18.5207227,
+        77.5162231
+      ],
+      "offset_east_north_m": [
+        -12000,
+        4000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T038",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 38,
+      "center_lat_lon": [
+        18.5207227,
+        77.5837055
+      ],
+      "offset_east_north_m": [
+        -8000,
+        4000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T039",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 39,
+      "center_lat_lon": [
+        18.5207227,
+        77.6511879
+      ],
+      "offset_east_north_m": [
+        -4000,
+        4000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T040",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 40,
+      "center_lat_lon": [
+        18.5207227,
+        77.7861527
+      ],
+      "offset_east_north_m": [
+        4000,
+        4000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T041",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 41,
+      "center_lat_lon": [
+        18.5207227,
+        77.8536351
+      ],
+      "offset_east_north_m": [
+        8000,
+        4000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T042",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 42,
+      "center_lat_lon": [
+        18.5207227,
+        77.9211176
+      ],
+      "offset_east_north_m": [
+        12000,
+        4000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T044",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 44,
+      "center_lat_lon": [
+        18.5882051,
+        77.6511879
+      ],
+      "offset_east_north_m": [
+        -4000,
+        8000
+      ],
+      "native_grid_valid_fraction": 0.999867,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T045",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 45,
+      "center_lat_lon": [
+        18.5882051,
+        77.7186703
+      ],
+      "offset_east_north_m": [
+        0,
+        8000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T046",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 46,
+      "center_lat_lon": [
+        18.5882051,
+        77.7861527
+      ],
+      "offset_east_north_m": [
+        4000,
+        8000
+      ],
+      "native_grid_valid_fraction": 0.999911,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T048",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 48,
+      "center_lat_lon": [
+        18.6556875,
+        77.5162231
+      ],
+      "offset_east_north_m": [
+        -12000,
+        12000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T049",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 49,
+      "center_lat_lon": [
+        18.6556875,
+        77.5837055
+      ],
+      "offset_east_north_m": [
+        -8000,
+        12000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T050",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 50,
+      "center_lat_lon": [
+        18.6556875,
+        77.6511879
+      ],
+      "offset_east_north_m": [
+        -4000,
+        12000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T051",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 51,
+      "center_lat_lon": [
+        18.6556875,
+        77.7186703
+      ],
+      "offset_east_north_m": [
+        0,
+        12000
+      ],
+      "native_grid_valid_fraction": 0.999911,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T052",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 52,
+      "center_lat_lon": [
+        18.6556875,
+        77.7861527
+      ],
+      "offset_east_north_m": [
+        4000,
+        12000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T053",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 53,
+      "center_lat_lon": [
+        18.6556875,
+        77.8536351
+      ],
+      "offset_east_north_m": [
+        8000,
+        12000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T055",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 55,
+      "center_lat_lon": [
+        18.7231699,
+        77.5837055
+      ],
+      "offset_east_north_m": [
+        -8000,
+        16000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T056",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 56,
+      "center_lat_lon": [
+        18.7231699,
+        77.6511879
+      ],
+      "offset_east_north_m": [
+        -4000,
+        16000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T057",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 57,
+      "center_lat_lon": [
+        18.7231699,
+        77.7186703
+      ],
+      "offset_east_north_m": [
+        0,
+        16000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T058",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 58,
+      "center_lat_lon": [
+        18.7231699,
+        77.7861527
+      ],
+      "offset_east_north_m": [
+        4000,
+        16000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T059",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 59,
+      "center_lat_lon": [
+        18.7231699,
+        77.8536351
+      ],
+      "offset_east_north_m": [
+        8000,
+        16000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T060",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 60,
+      "center_lat_lon": [
+        18.7906524,
+        77.5162231
+      ],
+      "offset_east_north_m": [
+        -12000,
+        20000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T061",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 61,
+      "center_lat_lon": [
+        18.7906524,
+        77.5837055
+      ],
+      "offset_east_north_m": [
+        -8000,
+        20000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T062",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 62,
+      "center_lat_lon": [
+        18.7906524,
+        77.6511879
+      ],
+      "offset_east_north_m": [
+        -4000,
+        20000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T063",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 63,
+      "center_lat_lon": [
+        18.7906524,
+        77.7186703
+      ],
+      "offset_east_north_m": [
+        0,
+        20000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T064",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 64,
+      "center_lat_lon": [
+        18.7906524,
+        77.7861527
+      ],
+      "offset_east_north_m": [
+        4000,
+        20000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "JEZERO_CTX_T065",
+      "parent_id": "JEZERO_CTX",
+      "source_window_index": 65,
+      "center_lat_lon": [
+        18.7906524,
+        77.8536351
+      ],
+      "offset_east_north_m": [
+        8000,
+        20000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.298507840584602
+    },
+    {
+      "id": "OLYMPUS_CTX_T000",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 0,
+      "center_lat_lon": [
+        14.8120378,
+        227.5607364
+      ],
+      "offset_east_north_m": [
+        -2250,
+        -2250
+      ],
+      "native_grid_valid_fraction": 0.999867,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T001",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 1,
+      "center_lat_lon": [
+        14.8120397,
+        227.5738243
+      ],
+      "offset_east_north_m": [
+        -1500,
+        -2250
+      ],
+      "native_grid_valid_fraction": 0.999867,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T002",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 2,
+      "center_lat_lon": [
+        14.8120408,
+        227.5869121
+      ],
+      "offset_east_north_m": [
+        -750,
+        -2250
+      ],
+      "native_grid_valid_fraction": 0.999867,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T003",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 3,
+      "center_lat_lon": [
+        14.8120411,
+        227.6
+      ],
+      "offset_east_north_m": [
+        0,
+        -2250
+      ],
+      "native_grid_valid_fraction": 0.999867,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T004",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 4,
+      "center_lat_lon": [
+        14.8120408,
+        227.6130879
+      ],
+      "offset_east_north_m": [
+        750,
+        -2250
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T005",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 5,
+      "center_lat_lon": [
+        14.8120397,
+        227.6261757
+      ],
+      "offset_east_north_m": [
+        1500,
+        -2250
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T007",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 7,
+      "center_lat_lon": [
+        14.8246908,
+        227.5607341
+      ],
+      "offset_east_north_m": [
+        -2250,
+        -1500
+      ],
+      "native_grid_valid_fraction": 0.999867,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T008",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 8,
+      "center_lat_lon": [
+        14.8246926,
+        227.5738227
+      ],
+      "offset_east_north_m": [
+        -1500,
+        -1500
+      ],
+      "native_grid_valid_fraction": 0.999867,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T009",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 9,
+      "center_lat_lon": [
+        14.8246937,
+        227.5869114
+      ],
+      "offset_east_north_m": [
+        -750,
+        -1500
+      ],
+      "native_grid_valid_fraction": 0.999867,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T010",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 10,
+      "center_lat_lon": [
+        14.8246941,
+        227.6
+      ],
+      "offset_east_north_m": [
+        0,
+        -1500
+      ],
+      "native_grid_valid_fraction": 0.999867,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T011",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 11,
+      "center_lat_lon": [
+        14.8246937,
+        227.6130886
+      ],
+      "offset_east_north_m": [
+        750,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T012",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 12,
+      "center_lat_lon": [
+        14.8246926,
+        227.6261773
+      ],
+      "offset_east_north_m": [
+        1500,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T014",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 14,
+      "center_lat_lon": [
+        14.8373437,
+        227.5607318
+      ],
+      "offset_east_north_m": [
+        -2250,
+        -750
+      ],
+      "native_grid_valid_fraction": 0.999822,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T015",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 15,
+      "center_lat_lon": [
+        14.8373456,
+        227.5738212
+      ],
+      "offset_east_north_m": [
+        -1500,
+        -750
+      ],
+      "native_grid_valid_fraction": 0.999822,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T016",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 16,
+      "center_lat_lon": [
+        14.8373467,
+        227.5869106
+      ],
+      "offset_east_north_m": [
+        -750,
+        -750
+      ],
+      "native_grid_valid_fraction": 0.999867,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T017",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 17,
+      "center_lat_lon": [
+        14.837347,
+        227.6
+      ],
+      "offset_east_north_m": [
+        0,
+        -750
+      ],
+      "native_grid_valid_fraction": 0.999867,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T018",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 18,
+      "center_lat_lon": [
+        14.8373467,
+        227.6130894
+      ],
+      "offset_east_north_m": [
+        750,
+        -750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T019",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 19,
+      "center_lat_lon": [
+        14.8373456,
+        227.6261788
+      ],
+      "offset_east_north_m": [
+        1500,
+        -750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T021",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 21,
+      "center_lat_lon": [
+        14.8499967,
+        227.5607295
+      ],
+      "offset_east_north_m": [
+        -2250,
+        0
+      ],
+      "native_grid_valid_fraction": 0.999956,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T022",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 22,
+      "center_lat_lon": [
+        14.8499985,
+        227.5738197
+      ],
+      "offset_east_north_m": [
+        -1500,
+        0
+      ],
+      "native_grid_valid_fraction": 0.999956,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T023",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 23,
+      "center_lat_lon": [
+        14.8499996,
+        227.5869098
+      ],
+      "offset_east_north_m": [
+        -750,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T025",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 25,
+      "center_lat_lon": [
+        14.8499996,
+        227.6130902
+      ],
+      "offset_east_north_m": [
+        750,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T026",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 26,
+      "center_lat_lon": [
+        14.8499985,
+        227.6261803
+      ],
+      "offset_east_north_m": [
+        1500,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T028",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 28,
+      "center_lat_lon": [
+        14.8626496,
+        227.5607272
+      ],
+      "offset_east_north_m": [
+        -2250,
+        750
+      ],
+      "native_grid_valid_fraction": 0.999956,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T029",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 29,
+      "center_lat_lon": [
+        14.8626515,
+        227.5738181
+      ],
+      "offset_east_north_m": [
+        -1500,
+        750
+      ],
+      "native_grid_valid_fraction": 0.999956,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T030",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 30,
+      "center_lat_lon": [
+        14.8626526,
+        227.5869091
+      ],
+      "offset_east_north_m": [
+        -750,
+        750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T031",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 31,
+      "center_lat_lon": [
+        14.862653,
+        227.6
+      ],
+      "offset_east_north_m": [
+        0,
+        750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T032",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 32,
+      "center_lat_lon": [
+        14.8626526,
+        227.6130909
+      ],
+      "offset_east_north_m": [
+        750,
+        750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T033",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 33,
+      "center_lat_lon": [
+        14.8626515,
+        227.6261819
+      ],
+      "offset_east_north_m": [
+        1500,
+        750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T034",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 34,
+      "center_lat_lon": [
+        14.8626496,
+        227.6392728
+      ],
+      "offset_east_north_m": [
+        2250,
+        750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T035",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 35,
+      "center_lat_lon": [
+        14.8753026,
+        227.5607249
+      ],
+      "offset_east_north_m": [
+        -2250,
+        1500
+      ],
+      "native_grid_valid_fraction": 0.999956,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T036",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 36,
+      "center_lat_lon": [
+        14.8753044,
+        227.5738166
+      ],
+      "offset_east_north_m": [
+        -1500,
+        1500
+      ],
+      "native_grid_valid_fraction": 0.999956,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T037",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 37,
+      "center_lat_lon": [
+        14.8753055,
+        227.5869083
+      ],
+      "offset_east_north_m": [
+        -750,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T038",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 38,
+      "center_lat_lon": [
+        14.8753059,
+        227.6
+      ],
+      "offset_east_north_m": [
+        0,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T039",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 39,
+      "center_lat_lon": [
+        14.8753055,
+        227.6130917
+      ],
+      "offset_east_north_m": [
+        750,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T040",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 40,
+      "center_lat_lon": [
+        14.8753044,
+        227.6261834
+      ],
+      "offset_east_north_m": [
+        1500,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T041",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 41,
+      "center_lat_lon": [
+        14.8753026,
+        227.6392751
+      ],
+      "offset_east_north_m": [
+        2250,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T042",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 42,
+      "center_lat_lon": [
+        14.8879555,
+        227.5607226
+      ],
+      "offset_east_north_m": [
+        -2250,
+        2250
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T043",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 43,
+      "center_lat_lon": [
+        14.8879574,
+        227.5738151
+      ],
+      "offset_east_north_m": [
+        -1500,
+        2250
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T044",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 44,
+      "center_lat_lon": [
+        14.8879585,
+        227.5869075
+      ],
+      "offset_east_north_m": [
+        -750,
+        2250
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T045",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 45,
+      "center_lat_lon": [
+        14.8879589,
+        227.6
+      ],
+      "offset_east_north_m": [
+        0,
+        2250
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T046",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 46,
+      "center_lat_lon": [
+        14.8879585,
+        227.6130925
+      ],
+      "offset_east_north_m": [
+        750,
+        2250
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T047",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 47,
+      "center_lat_lon": [
+        14.8879574,
+        227.6261849
+      ],
+      "offset_east_north_m": [
+        1500,
+        2250
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    },
+    {
+      "id": "OLYMPUS_CTX_T048",
+      "parent_id": "OLYMPUS_CTX",
+      "source_window_index": 48,
+      "center_lat_lon": [
+        14.8879555,
+        227.6392774
+      ],
+      "offset_east_north_m": [
+        2250,
+        2250
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 20.0
+    }
+  ],
+  "source_provenance": [
+    {
+      "parent_id": "JEZERO_CTX",
+      "source_manifest": "data/research/highres_mars_dem/manifest.json",
+      "source_manifest_sha256": "c01541a7037366e60ecaf37e34485695b3b08eb495eae0f034e93ee29dc2588b",
+      "preview_npz": "data/research/highres_mars_dem/mars_ctx_3km_96.npz",
+      "preview_npz_sha256": "040eb36ce5c309cf80b66a92738045f9f7a3f334e8f561dc1fe09c37a589303f",
+      "source_tif": "data/demo/mars_ctx_stereo/dtm.tif",
+      "source_tif_sha256": "5f21d37d2c7d50c87f8d16b62e31f279a46e36e92b2710865ddd433f3cad8f3f",
+      "available_additional_tiles": 56
+    },
+    {
+      "parent_id": "OLYMPUS_CTX",
+      "source_manifest": "data/research/highres_mars_dem/olympus_manifest.json",
+      "source_manifest_sha256": "043ad43b32142117ca6eda682dfa69b911c531fb88984598f4a7075569ecd1ae",
+      "preview_npz": "data/research/highres_mars_dem/mars_olympus_3km_96.npz",
+      "preview_npz_sha256": "d86d35f6386ea52046861b0641bd66aa5da4e27c54ae2662cc747fb605178546",
+      "source_tif": "data/demo/mars_ctx_olympus_verified/dtm.tif",
+      "source_tif_sha256": "e2997a659b32259d164e743a0a574010c6827ac37945d4791369ab40872eecc3",
+      "available_additional_tiles": 44
+    }
+  ],
+  "overviews": {
+    "JEZERO_CTX": {
+      "url": "/microterrain/mars-jezero_ctx-dem-relief.webp",
+      "sha256": "41e156b763a1be98da676a65f88e7b3944ecb5108ec26537ab53d077f5598eb9",
+      "west_m": -18635.34341504852,
+      "east_m": 18635.34437336226,
+      "south_m": -29552.540211435524,
+      "north_m": 29566.95975946834,
+      "coverage_mode": "full_source_bbox_with_valid_pixel_alpha",
+      "source_bbox_east_north_m": [
+        -17135.34,
+        -28052.54,
+        17135.34,
+        28066.96
+      ],
+      "width_px": 512,
+      "height_px": 812,
+      "valid_fraction": 0.67021,
+      "rendering": "CTX DTM relative elevation plus directional hillshade; no optical color or material inference"
+    },
+    "OLYMPUS_CTX": {
+      "url": "/microterrain/mars-olympus_ctx-dem-relief.webp",
+      "sha256": "15e1d8879375bf0f83e09f50acb37ca808051b751b5abfbee83783f5afc6a6fb",
+      "west_m": -14009.582680081598,
+      "east_m": 26519.014907336616,
+      "south_m": -107179.25822109733,
+      "north_m": 49465.12706326595,
+      "coverage_mode": "full_source_bbox_with_valid_pixel_alpha",
+      "source_bbox_east_north_m": [
+        -12509.58,
+        -105679.26,
+        25019.01,
+        47965.13
+      ],
+      "width_px": 512,
+      "height_px": 1979,
+      "valid_fraction": 0.48201,
+      "rendering": "CTX DTM relative elevation plus directional hillshade; no optical color or material inference"
+    }
+  },
+  "grid_spacing_m": 20,
+  "physical_side_m": 3000,
+  "minimum_native_valid_fraction": 0.995,
+  "output_npz": "data/research/microterrain_native/mars_tiles_20m.npz",
+  "output_sha256": "7ac1b424f05c5cac686857af185246ab310f63a7bb216e20ae4e16d31aec6a33",
+  "limitations": [
+    "Tiles are selected 3 km centers inside two CTX DTM products, not continuous high-resolution coverage of Mars.",
+    "Jezero centers are mostly spaced 4 km; terrain between these tiles is not indexed here.",
+    "Twenty-meter DTM post spacing does not establish twenty-meter resolved geology or material identity.",
+    "One-kilometer searches still reject any chosen subwindow containing missing DEM cells."
+  ]
+}

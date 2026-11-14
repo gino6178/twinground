@@ -1,0 +1,23 @@
+{
+  "created_utc": "2026-10-11T08:01:05.567930+00:00",
+  "product_page": "https://data.lroc.im-ldi.com/lroc/view_rdr_product/NAC_DTM_MARIUS3_M137909506_2M",
+  "download_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/EXTRAS/BROWSE/NAC_DTM/MARIUS3/NAC_DTM_MARIUS3_M137909506_2M.TIF",
+  "source_image": "data/research/highres_lunar_dem/sources/NAC_DTM_MARIUS3_M137909506_2M.TIF",
+  "source_image_sha256": "9bbd7e0f626df5ae5c93fb7051a275886f65899d6ae56908fa19c560e1e9a7ca",
+  "paired_dtm": "data/research/published_analog_audit/sources/NAC_DTM_MARIUS3.TIF",
+  "paired_dtm_sha256": "1e663bdb8bbef9cb27472d9fab9159d624178a0bb29ade88a68fc6a04ecb80f5",
+  "same_crs_transform_shape_as_dtm": true,
+  "image_shape": [
+    14249,
+    2324
+  ],
+  "image_spacing_m": [
+    2.0000000000006,
+    2.0000000000006
+  ],
+  "image_nodata": 0.0,
+  "image_band_type": "uint8",
+  "observation_id": "M137909506",
+  "interpretation": "DTM-paired grayscale lunar orthophoto; brightness includes illumination and shadows, not rock composition",
+  "used_in_search_ranking": false
+}

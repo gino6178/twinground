@@ -1,0 +1,443 @@
+{
+  "protocol_sha256": "1a50c1710b417535042fd55f506b1e7258efb045e43be6198cb3e2e6b1c5ee11",
+  "selected_epoch": 14,
+  "selected_validation_mrr": 0.01712092191642814,
+  "model_sha256": "2b3ef84a5f054334936fc0dc18b4909c3c87d8bb84e371ac26acfb6cbcce036e",
+  "parameters": 80224,
+  "test": {
+    "sites": [
+      {
+        "site": "METEOR_CRATER",
+        "body": "earth",
+        "gallery_size": 225,
+        "image_to_dem": {
+          "top1": 0.0,
+          "top5": 0.008888888888888889,
+          "mrr": 0.016563983852108687,
+          "median_rank": 115.0,
+          "queries": 225
+        },
+        "dem_to_image": {
+          "top1": 0.0044444444444444444,
+          "top5": 0.013333333333333334,
+          "mrr": 0.02468381125975234,
+          "median_rank": 117.0,
+          "queries": 225
+        }
+      },
+      {
+        "site": "BIG_PINE_FLOW",
+        "body": "earth",
+        "gallery_size": 225,
+        "image_to_dem": {
+          "top1": 0.013333333333333334,
+          "top5": 0.044444444444444446,
+          "mrr": 0.0404261776279723,
+          "median_rank": 100.0,
+          "queries": 225
+        },
+        "dem_to_image": {
+          "top1": 0.008888888888888889,
+          "top5": 0.02666666666666667,
+          "mrr": 0.03555010207263418,
+          "median_rank": 107.0,
+          "queries": 225
+        }
+      },
+      {
+        "site": "SCHRODNGR02",
+        "body": "moon",
+        "gallery_size": 414,
+        "image_to_dem": {
+          "top1": 0.0024154589371980675,
+          "top5": 0.00966183574879227,
+          "mrr": 0.017593102454807455,
+          "median_rank": 193.5,
+          "queries": 414
+        },
+        "dem_to_image": {
+          "top1": 0.007246376811594203,
+          "top5": 0.01932367149758454,
+          "mrr": 0.023599387559736177,
+          "median_rank": 193.0,
+          "queries": 414
+        }
+      },
+      {
+        "site": "FRSHCRATER8",
+        "body": "moon",
+        "gallery_size": 4730,
+        "image_to_dem": {
+          "top1": 0.00021141649048625792,
+          "top5": 0.00021141649048625792,
+          "mrr": 0.0012444510448956978,
+          "median_rank": 2592.0,
+          "queries": 4730
+        },
+        "dem_to_image": {
+          "top1": 0.00042283298097251583,
+          "top5": 0.0012684989429175475,
+          "mrr": 0.0018321925978387569,
+          "median_rank": 2519.0,
+          "queries": 4730
+        }
+      }
+    ],
+    "macro_mrr": 0.020186651058718197
+  },
+  "external_probe": {
+    "sites": [
+      {
+        "site": "JEZERO_HIRISE",
+        "body": "mars",
+        "gallery_size": 225,
+        "image_to_dem": {
+          "top1": 0.0044444444444444444,
+          "top5": 0.017777777777777778,
+          "mrr": 0.025137021329883085,
+          "median_rank": 120.0,
+          "queries": 225
+        },
+        "dem_to_image": {
+          "top1": 0.013333333333333334,
+          "top5": 0.017777777777777778,
+          "mrr": 0.028600334280610852,
+          "median_rank": 125.0,
+          "queries": 225
+        }
+      }
+    ],
+    "macro_mrr": 0.026868677805246967
+  },
+  "missing_image": {
+    "sites": [
+      {
+        "site": "METEOR_CRATER",
+        "body": "earth",
+        "gallery_size": 225,
+        "image_to_dem": {
+          "top1": 0.0044444444444444444,
+          "top5": 0.022222222222222223,
+          "mrr": 0.026646829525515073,
+          "median_rank": 113.0,
+          "queries": 225
+        },
+        "dem_to_image": {
+          "top1": 0.0,
+          "top5": 0.0,
+          "mrr": 0.008849557522123894,
+          "median_rank": 113.0,
+          "queries": 225
+        }
+      },
+      {
+        "site": "BIG_PINE_FLOW",
+        "body": "earth",
+        "gallery_size": 225,
+        "image_to_dem": {
+          "top1": 0.0044444444444444444,
+          "top5": 0.022222222222222223,
+          "mrr": 0.026646829525515073,
+          "median_rank": 113.0,
+          "queries": 225
+        },
+        "dem_to_image": {
+          "top1": 0.0,
+          "top5": 0.0,
+          "mrr": 0.008849557522123894,
+          "median_rank": 113.0,
+          "queries": 225
+        }
+      },
+      {
+        "site": "SCHRODNGR02",
+        "body": "moon",
+        "gallery_size": 414,
+        "image_to_dem": {
+          "top1": 0.0024154589371980675,
+          "top5": 0.012077294685990338,
+          "mrr": 0.01595086496601778,
+          "median_rank": 207.5,
+          "queries": 414
+        },
+        "dem_to_image": {
+          "top1": 0.0,
+          "top5": 0.0,
+          "mrr": 0.006120291038766658,
+          "median_rank": 286.5,
+          "queries": 414
+        }
+      },
+      {
+        "site": "FRSHCRATER8",
+        "body": "moon",
+        "gallery_size": 4730,
+        "image_to_dem": {
+          "top1": 0.00021141649048625792,
+          "top5": 0.0010570824524312897,
+          "mrr": 0.0019109954620414838,
+          "median_rank": 2365.5,
+          "queries": 4730
+        },
+        "dem_to_image": {
+          "top1": 0.0,
+          "top5": 0.0,
+          "mrr": 0.0007230724327547097,
+          "median_rank": 2426.5,
+          "queries": 4730
+        }
+      }
+    ],
+    "macro_mrr": 0.01196224974935732
+  },
+  "missing_dem": {
+    "sites": [
+      {
+        "site": "METEOR_CRATER",
+        "body": "earth",
+        "gallery_size": 225,
+        "image_to_dem": {
+          "top1": 0.0,
+          "top5": 0.0,
+          "mrr": 0.008849557522123894,
+          "median_rank": 113.0,
+          "queries": 225
+        },
+        "dem_to_image": {
+          "top1": 0.0044444444444444444,
+          "top5": 0.022222222222222223,
+          "mrr": 0.026646829525515073,
+          "median_rank": 113.0,
+          "queries": 225
+        }
+      },
+      {
+        "site": "BIG_PINE_FLOW",
+        "body": "earth",
+        "gallery_size": 225,
+        "image_to_dem": {
+          "top1": 0.0,
+          "top5": 0.0,
+          "mrr": 0.008849557522123894,
+          "median_rank": 113.0,
+          "queries": 225
+        },
+        "dem_to_image": {
+          "top1": 0.0044444444444444444,
+          "top5": 0.022222222222222223,
+          "mrr": 0.026646829525515073,
+          "median_rank": 113.0,
+          "queries": 225
+        }
+      },
+      {
+        "site": "SCHRODNGR02",
+        "body": "moon",
+        "gallery_size": 414,
+        "image_to_dem": {
+          "top1": 0.0,
+          "top5": 0.0,
+          "mrr": 0.006769823213026564,
+          "median_rank": 128.5,
+          "queries": 414
+        },
+        "dem_to_image": {
+          "top1": 0.0024154589371980675,
+          "top5": 0.012077294685990338,
+          "mrr": 0.01595238860384599,
+          "median_rank": 207.5,
+          "queries": 414
+        }
+      },
+      {
+        "site": "FRSHCRATER8",
+        "body": "moon",
+        "gallery_size": 4730,
+        "image_to_dem": {
+          "top1": 0.0,
+          "top5": 0.0,
+          "mrr": 0.0007426537801238824,
+          "median_rank": 2426.5,
+          "queries": 4730
+        },
+        "dem_to_image": {
+          "top1": 0.00021141649048625792,
+          "top5": 0.0010570824524312897,
+          "mrr": 0.0019109947917432383,
+          "median_rank": 2365.5,
+          "queries": 4730
+        }
+      }
+    ],
+    "macro_mrr": 0.012046079310502202
+  },
+  "untrained_baseline": {
+    "sites": [
+      {
+        "site": "METEOR_CRATER",
+        "body": "earth",
+        "gallery_size": 225,
+        "image_to_dem": {
+          "top1": 0.008888888888888889,
+          "top5": 0.022222222222222223,
+          "mrr": 0.02746269501016159,
+          "median_rank": 122.0,
+          "queries": 225
+        },
+        "dem_to_image": {
+          "top1": 0.0,
+          "top5": 0.008888888888888889,
+          "mrr": 0.01928033373724972,
+          "median_rank": 125.0,
+          "queries": 225
+        }
+      },
+      {
+        "site": "BIG_PINE_FLOW",
+        "body": "earth",
+        "gallery_size": 225,
+        "image_to_dem": {
+          "top1": 0.0044444444444444444,
+          "top5": 0.017777777777777778,
+          "mrr": 0.0274102214877993,
+          "median_rank": 108.0,
+          "queries": 225
+        },
+        "dem_to_image": {
+          "top1": 0.0044444444444444444,
+          "top5": 0.022222222222222223,
+          "mrr": 0.02608054226244023,
+          "median_rank": 109.0,
+          "queries": 225
+        }
+      },
+      {
+        "site": "SCHRODNGR02",
+        "body": "moon",
+        "gallery_size": 414,
+        "image_to_dem": {
+          "top1": 0.0,
+          "top5": 0.012077294685990338,
+          "mrr": 0.014825448324249263,
+          "median_rank": 211.5,
+          "queries": 414
+        },
+        "dem_to_image": {
+          "top1": 0.0024154589371980675,
+          "top5": 0.00966183574879227,
+          "mrr": 0.014306835409308405,
+          "median_rank": 218.0,
+          "queries": 414
+        }
+      },
+      {
+        "site": "FRSHCRATER8",
+        "body": "moon",
+        "gallery_size": 4730,
+        "image_to_dem": {
+          "top1": 0.00021141649048625792,
+          "top5": 0.0012684989429175475,
+          "mrr": 0.0016919928873935675,
+          "median_rank": 2438.5,
+          "queries": 4730
+        },
+        "dem_to_image": {
+          "top1": 0.00021141649048625792,
+          "top5": 0.00042283298097251583,
+          "mrr": 0.0016674375676561837,
+          "median_rank": 2465.0,
+          "queries": 4730
+        }
+      }
+    ],
+    "macro_mrr": 0.016590688335782283
+  },
+  "gradient_descriptor_baseline": {
+    "sites": [
+      {
+        "site": "METEOR_CRATER",
+        "body": "earth",
+        "gallery_size": 225,
+        "image_to_dem": {
+          "top1": 0.035555555555555556,
+          "top5": 0.09777777777777778,
+          "mrr": 0.07646512908410268,
+          "median_rank": 98.0,
+          "queries": 225
+        },
+        "dem_to_image": {
+          "top1": 0.06666666666666667,
+          "top5": 0.18666666666666668,
+          "mrr": 0.12520491753509103,
+          "median_rank": 93.0,
+          "queries": 225
+        }
+      },
+      {
+        "site": "BIG_PINE_FLOW",
+        "body": "earth",
+        "gallery_size": 225,
+        "image_to_dem": {
+          "top1": 0.06666666666666667,
+          "top5": 0.1511111111111111,
+          "mrr": 0.12130141297333505,
+          "median_rank": 55.0,
+          "queries": 225
+        },
+        "dem_to_image": {
+          "top1": 0.08888888888888889,
+          "top5": 0.19555555555555557,
+          "mrr": 0.16297594172832697,
+          "median_rank": 26.0,
+          "queries": 225
+        }
+      },
+      {
+        "site": "SCHRODNGR02",
+        "body": "moon",
+        "gallery_size": 414,
+        "image_to_dem": {
+          "top1": 0.06521739130434782,
+          "top5": 0.14009661835748793,
+          "mrr": 0.1158039863540063,
+          "median_rank": 62.5,
+          "queries": 414
+        },
+        "dem_to_image": {
+          "top1": 0.04589371980676329,
+          "top5": 0.14492753623188406,
+          "mrr": 0.10512497156132668,
+          "median_rank": 59.0,
+          "queries": 414
+        }
+      },
+      {
+        "site": "FRSHCRATER8",
+        "body": "moon",
+        "gallery_size": 4730,
+        "image_to_dem": {
+          "top1": 0.0008456659619450317,
+          "top5": 0.0027484143763213532,
+          "mrr": 0.0032816294964740345,
+          "median_rank": 2344.5,
+          "queries": 4730
+        },
+        "dem_to_image": {
+          "top1": 0.00021141649048625792,
+          "top5": 0.0014799154334038055,
+          "mrr": 0.0023452773043109157,
+          "median_rank": 2318.0,
+          "queries": 4730
+        }
+      }
+    ],
+    "macro_mrr": 0.08906290825462171
+  },
+  "limits": [
+    "Same-location correspondence is not cross-planet relevance,material equality or engineering suitability.",
+    "Four test sites/two validation sites,previously used in project;new experiment split is not untouched external data.",
+    "Jezero one-site probe cannot establish Mars generalization or calibrated OOD detection.",
+    "No fine surface labels,no geology-fusion claim,no ranking deployment.",
+    "Missing-modality zero input is a stress test,not a calibrated rejector."
+  ]
+}

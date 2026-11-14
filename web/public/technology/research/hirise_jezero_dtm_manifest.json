@@ -1,0 +1,121 @@
+{
+  "purpose": "Frozen 3 km approximately 1 m HiRISE Mars DTM research crop",
+  "protocol_sha256": "d50d9d9cbad29ba85321585668b3aa8ed2e88c25628cd3bfd9dc0bbeaba41cf2",
+  "source_url": "https://hirise.lpl.arizona.edu/PDS/DTM/ESP/ORB_023500_023599/ESP_023524_1985_ESP_023379_1985/DTEEC_023524_1985_023379_1985_U01.IMG",
+  "source_etag": "\"597a727a-29bd4b64\"",
+  "source_bytes": 700271460,
+  "source_header_sha256": "6bb4a178203828c57a456f5dc75b40daed9578da52d00bb6baa408104ee9b9c4",
+  "source_rows": [
+    {
+      "source_rows": [
+        11518,
+        12017
+      ],
+      "file": "ranges/rows_11518_12017.bin",
+      "byte_range": [
+        379435860,
+        395905859
+      ],
+      "bytes": 16470000,
+      "source_etag": "\"597a727a-29bd4b64\"",
+      "sha256": "88d6487c74dd3483d968683099574ef26933ea9071cda4db9ad5f1852f194598"
+    },
+    {
+      "source_rows": [
+        12018,
+        12517
+      ],
+      "file": "ranges/rows_12018_12517.bin",
+      "byte_range": [
+        395905860,
+        412375859
+      ],
+      "bytes": 16470000,
+      "source_etag": "\"597a727a-29bd4b64\"",
+      "sha256": "e36a462ab0f1820d8ccfa3fd8628db2ceb65395a3cf69d83b4d0ddd5196c9177"
+    },
+    {
+      "source_rows": [
+        12518,
+        13017
+      ],
+      "file": "ranges/rows_12518_13017.bin",
+      "byte_range": [
+        412375860,
+        428845859
+      ],
+      "bytes": 16470000,
+      "source_etag": "\"597a727a-29bd4b64\"",
+      "sha256": "cc5c009a3ecc70fe83e3ebc0e530c4ad6b6f3963ccd209a51ad889080921ea75"
+    },
+    {
+      "source_rows": [
+        13018,
+        13517
+      ],
+      "file": "ranges/rows_13018_13517.bin",
+      "byte_range": [
+        428845860,
+        445315859
+      ],
+      "bytes": 16470000,
+      "source_etag": "\"597a727a-29bd4b64\"",
+      "sha256": "d2c658baa47e11111db9f796bae009acd0fbb6103d7010c60c69dfb6a86de769"
+    },
+    {
+      "source_rows": [
+        13518,
+        14017
+      ],
+      "file": "ranges/rows_13518_14017.bin",
+      "byte_range": [
+        445315860,
+        461785859
+      ],
+      "bytes": 16470000,
+      "source_etag": "\"597a727a-29bd4b64\"",
+      "sha256": "e25037355282b641d1c6a3edbe11a547a8a64484e7482150ded32eeac40729ee"
+    },
+    {
+      "source_rows": [
+        14018,
+        14488
+      ],
+      "file": "ranges/rows_14018_14488.bin",
+      "byte_range": [
+        461785860,
+        477300599
+      ],
+      "bytes": 15514740,
+      "source_etag": "\"597a727a-29bd4b64\"",
+      "sha256": "9b952381830913bb255e7de2af081d9919fdefc7d1e4c5389970f5575653ddfa"
+    }
+  ],
+  "crop_start_row_col": [
+    11518,
+    2887
+  ],
+  "crop_pixel_count": 2971,
+  "crop_source_pixel_spacing_m": 1.0096633268711,
+  "crop_valid_fraction": 1.0,
+  "crop_min_max_m": [
+    -2691.781494140625,
+    -2649.501708984375
+  ],
+  "crop_crs_wkt": "PROJCS[\"EQUIRECTANGULAR MARS\",GEOGCS[\"GCS_MARS\",DATUM[\"D_MARS\",SPHEROID[\"MARS_localRadius\",3394839.8133163,0]],PRIMEM[\"Reference_Meridian\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Equirectangular\"],PARAMETER[\"standard_parallel_1\",15],PARAMETER[\"central_meridian\",77.53],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+  "crop_affine": [
+    1.0096633268711,
+    0.0,
+    -1499.3500404036845,
+    0.0,
+    -1.0096633268711,
+    1085794.9707072624
+  ],
+  "crop_sha256": "69ea73ee76db73f5bf8b3afdb81871514ec861ec9e231b07c1b5fe2d36468e63",
+  "limitations": [
+    "A 1 m DTM post spacing is not a 1 m guarantee of resolved rocks or rover-scale hazards.",
+    "The PDS elevation is in metres above the Mars 2000 equipotential surface; cross-site morphology uses median-subtracted heights, never absolute Earth-Mars datum equality.",
+    "This Jezero site is a known scientific field area, not a new Mars analog discovery or independent heldout reference.",
+    "The paired orthophoto and surface composition remain separate acquisitions and interpretations."
+  ]
+}

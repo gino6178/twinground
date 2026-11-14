@@ -1,0 +1,54 @@
+{
+  "repository": "https://github.com/geomorphlab/dune-world",
+  "commit": "044be99b50bade9129b57e8a2d9d2318fd16bf66",
+  "paper": "https://doi.org/10.1038/s41467-026-75466-y",
+  "files": [
+    {
+      "name": "LICENSE",
+      "url": "https://raw.githubusercontent.com/geomorphlab/dune-world/044be99b50bade9129b57e8a2d9d2318fd16bf66/LICENSE",
+      "sha256": "16af361adb880f6f6fe8080703948dd572bf2140ad43ce543bac5b9a182c9b0c",
+      "bytes": 1068
+    },
+    {
+      "name": "README.md",
+      "url": "https://raw.githubusercontent.com/geomorphlab/dune-world/044be99b50bade9129b57e8a2d9d2318fd16bf66/README.md",
+      "sha256": "2f22bf24ab600d5784d8c734bc5e1e552a77940ad9cbf3f0e053579806d0eb2e",
+      "bytes": 1821
+    },
+    {
+      "name": "dune-mask-rev1.tif",
+      "url": "https://raw.githubusercontent.com/geomorphlab/dune-world/044be99b50bade9129b57e8a2d9d2318fd16bf66/dune-mask-rev1.tif",
+      "sha256": "0a57f644278c57ef6c9edb6191ead83eb53a0715f550b24e4723da3706ec616b",
+      "bytes": 25956772
+    },
+    {
+      "name": "dune-mask-rev1.tif.aux.xml",
+      "url": "https://raw.githubusercontent.com/geomorphlab/dune-world/044be99b50bade9129b57e8a2d9d2318fd16bf66/dune-mask-rev1.tif.aux.xml",
+      "sha256": "aaab59b282ef78ff9d4b8bca645a6132b5f7b9cc28d4b25bcd8c0a1eaba78cc7",
+      "bytes": 409
+    }
+  ],
+  "status": "audited: published presence-only regional evidence; not pixel labels",
+  "license": "MIT repository license, copyright2026 Andrew Gunn; retained LICENSE",
+  "paper_license_distinct": "Article CC BY-NC-ND4.0; article figures are not redistributed",
+  "raster_shape": [
+    1801,
+    3600
+  ],
+  "crs": "EPSG:4326",
+  "transform": [
+    0.1,
+    0.0,
+    -180.05,
+    0.0,
+    -0.09999999999999999,
+    90.05
+  ],
+  "positive_cells": 106540,
+  "unrecorded_cells": 6377060,
+  "invalid_cells": 0,
+  "positive_definition": "At least part of one or more dunes was identified within a0.1degree cell. No morphology class.",
+  "zero_definition": "Unrecorded; not verified absence. Some regions not assessed and coastal cells excluded.",
+  "training_use": "Positive-unlabeled regional evidence only. Do not train a supervised negative class from zeros or label each image pixel as sand.",
+  "cross_planet_limit": "Not equivalent to DoMars image-level aeolian class or a cross-planet relevance label."
+}

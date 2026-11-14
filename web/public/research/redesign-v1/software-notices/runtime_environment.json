@@ -1,0 +1,136 @@
+{
+  "checked_at": "2026-10-11T16:45:47.262980+00:00",
+  "entry": "web_server.py",
+  "local_modules": [
+    "src/build_highres_dem_cohort.py",
+    "src/build_highres_mars_cohort.py",
+    "src/build_microterrain_native_index.py",
+    "src/build_microterrain_tiny_index.py",
+    "src/candidate_groups.py",
+    "src/context_ranker.py",
+    "src/copernicus_dem.py",
+    "src/dune_context.py",
+    "src/earth_environment.py",
+    "src/earth_landform_context.py",
+    "src/etopo_sampling.py",
+    "src/fetch_kaguya_mineral_window.py",
+    "src/global_mineral_inference.py",
+    "src/highres_lunar_preview.py",
+    "src/kaguya_phase_inference.py",
+    "src/lroc_dtm_coverage.py",
+    "src/lunar_pipeline.py",
+    "src/mars_global.py",
+    "src/mars_imagery.py",
+    "src/mars_reference.py",
+    "src/microterrain_geomorphon.py",
+    "src/microterrain_orthophoto.py",
+    "src/microterrain_service.py",
+    "src/moon_crater_inference.py",
+    "src/moon_geology.py",
+    "src/moon_locator.py",
+    "src/moon_mineral_maps.py",
+    "src/surface_textures.py",
+    "src/terrain_match.py",
+    "src/train_microterrain_tiny_encoder.py",
+    "src/train_tiny_material_head.py",
+    "web_server.py"
+  ],
+  "static_import_distributions": {
+    "pillow": "12.2.0",
+    "matplotlib": "3.10.9",
+    "numpy": "1.26.4",
+    "rasterio": "1.4.3",
+    "requests": "2.28.1",
+    "scipy": "1.15.3",
+    "shapely": "2.1.2",
+    "tifffile": "2025.5.10",
+    "torch": "2.1.2+cu118"
+  },
+  "unmapped_nonstdlib_imports": [],
+  "declared_requirements": [
+    {
+      "file": "requirements.txt",
+      "requirement": "numpy>=2.0",
+      "installed": "1.26.4",
+      "satisfied": false
+    },
+    {
+      "file": "requirements.txt",
+      "requirement": "rasterio>=1.4",
+      "installed": "1.4.3",
+      "satisfied": true
+    },
+    {
+      "file": "requirements.txt",
+      "requirement": "plotly>=5.24",
+      "installed": null,
+      "satisfied": false
+    },
+    {
+      "file": "requirements.txt",
+      "requirement": "streamlit>=1.40",
+      "installed": null,
+      "satisfied": false
+    },
+    {
+      "file": "requirements.txt",
+      "requirement": "pandas>=2.2",
+      "installed": "2.3.3",
+      "satisfied": true
+    },
+    {
+      "file": "requirements.txt",
+      "requirement": "requests>=2.31",
+      "installed": "2.28.1",
+      "satisfied": false
+    },
+    {
+      "file": "requirements.txt",
+      "requirement": "scipy>=1.11",
+      "installed": "1.15.3",
+      "satisfied": true
+    },
+    {
+      "file": "requirements.txt",
+      "requirement": "pyshp>=3.1",
+      "installed": null,
+      "satisfied": false
+    },
+    {
+      "file": "requirements.txt",
+      "requirement": "lxml>=5.0",
+      "installed": "6.1.1",
+      "satisfied": true
+    },
+    {
+      "file": "requirements.txt",
+      "requirement": "scikit-learn>=1.5",
+      "installed": "1.7.2",
+      "satisfied": true
+    },
+    {
+      "file": "requirements-research.txt",
+      "requirement": "pyogrio==0.13.0",
+      "installed": null,
+      "satisfied": false
+    },
+    {
+      "file": "requirements-research.txt",
+      "requirement": "shapely>=2.0",
+      "installed": "2.1.2",
+      "satisfied": true
+    }
+  ],
+  "pip_check": {
+    "exit_code": 1,
+    "output": "torch 2.1.2+cu118 has requirement triton==2.1.0; platform_system == \"Linux\" and platform_machine == \"x86_64\", but you have triton 3.7.1.\nplyfile 1.1.4 has requirement numpy>=2.0, but you have numpy 1.26.4.",
+    "stderr": ""
+  },
+  "status": "Observed environment snapshot, not a verified clean-install lockfile",
+  "limits": [
+    "Static traversal includes conditional imports and misses dynamic imports",
+    "Native/Conda/CUDA libraries need separate lock and notices",
+    "No packages were installed,removed or upgraded",
+    "Shared environment dependency conflicts remain;isolated rebuild required before reproducibility gate passes"
+  ]
+}

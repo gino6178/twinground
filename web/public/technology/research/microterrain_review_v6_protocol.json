@@ -1,0 +1,61 @@
+{
+  "version": "v6",
+  "status": "frozen_before_human_ratings_not_before_method_development",
+  "seed": 20261012,
+  "body_sites": {
+    "moon": [
+      "MARIUS3",
+      "FECUNDITATIS",
+      "SCHRODNGR02",
+      "ANDERSON01",
+      "NASSAU02",
+      "FRSHCRATER8"
+    ],
+    "mars": [
+      "JEZERO_CTX",
+      "OLYMPUS_CTX"
+    ]
+  },
+  "earth_gallery_sites": [
+    "METEOR_CRATER",
+    "KILBOURNE_HOLE",
+    "CARRIZOZO_FLOW",
+    "AMBOY_CRATER",
+    "BIG_PINE_FLOW",
+    "CIMA_FIELD",
+    "DEATH_VALLEY_MARS_HILL",
+    "CRATERS_MOON_IDAHO"
+  ],
+  "sizes_m": [
+    200,
+    500,
+    1000
+  ],
+  "source_sha256": {
+    "data/research/microterrain_native/manifest.json": "1e57e0017620acad117b05db8bcb49a2fe2563c4ccac8fe0c838d5cfcc1e4ed4",
+    "data/research/microterrain_native/tiny_morph_encoder.pt": "f52b3e201dd8111e50f791c527089b767770de1675b8361f141c1e553e008c76",
+    "data/research/microterrain_native/tiny_index_manifest.json": "93b047213fa4041fe6d825e705d84f7e42b74eb19fbeaa8580d756efb119bdaf",
+    "data/research/microterrain_native/earth_moon_200m.npz": "855795895d4d002dbadd87cf33bdfa16c540cbbcaed1886496ce140de186dcb1",
+    "data/research/microterrain_native/earth_moon_500m.npz": "0ecf71c46940b4ff8fc43d2751266e0405eda11da04286039975181687719bf0",
+    "data/research/microterrain_native/earth_moon_1000m.npz": "00e67b1e5e38d81d9aebb54bd4156a7fb42dd987533c97e155a6b1535302eaf8",
+    "data/research/microterrain_native/earth_mars_200m.npz": "dded62b53bbe73b5044ddaeceb820f24dfc4d384ecc2bb282feeca002358f824",
+    "data/research/microterrain_native/earth_mars_500m.npz": "294236c1f3d7789edd077d8aea548281da0eefac8772bfad4a94d9da6ea4fff7",
+    "data/research/microterrain_native/earth_mars_1000m.npz": "838fe42b00e6189e7b40336ef9f05a51833b5e062f36f8c9534db974b79f8fbe",
+    "data/research/microterrain_landcover/manifest.json": "d5101171a8dae9cde366d40998668a8a0ed3be4d41b4e7d769e89fa674dcd059",
+    "data/research/microterrain_geology/manifest.json": "3f640d4702ab9b7b83c1ce845aa68211e9b244764835f96eee33ddc94460690f",
+    "data/research/nps_cotm_geology/manifest.json": "4373161a6b711be72f5502a164c59ccc8bad5e743af1143f3e170976d34cc61e",
+    "data/research/cima_usgs_24k/manifest.json": "61d6c49ea7279a62ee25d4a9ff6e1f4a45767c29c529011a226b2419170dc281",
+    "data/research/amboy_usgs_surficial_100k/manifest.json": "a77ca3c0145f3338022d2e69b4534fdcea74536dd32bbe2b4307977db060c7e2"
+  },
+  "candidate_selection": "Per query: two unique displayed geomorphon candidates, two unique displayed TinyMorph candidates, and site-stratified random controls until five exact windows. Shared candidates are selected once; random sites prefer sites not yet present. No expert label was used for selection.",
+  "display": "Each pair uses 64x64 preview from native DEM comparison grids, same horizontal metres and common pair-relative elevation limits, gray hillshade with 8x vertical display exaggeration. Images are not surface photographs.",
+  "rating": "At least two independent geoscience/remote-sensing reviewers rate morphology 0-3/U before seeing Earth geology; then separately rate material and mission 0-3/U when independent evidence permits. Store per-reviewer JSON without sending it to the server.",
+  "answer_key_policy": "Private answer key contains candidate site, exact gallery row, selection arm and displayed top-five positions; never place under web/public or web/dist.",
+  "limitations": [
+    "All reference and Earth sites were available during method design; this is not a new geographic holdout or prospective discovery benchmark.",
+    "The eight Earth sites are roughly 3 km crops with overlapping windows; 120 pairs do not represent 120 independent landforms.",
+    "A random gallery control is not a verified negative analog. Top-five results outside the judged pool remain unjudged.",
+    "Published geologic maps are cartographic polygons, not observed rock exposure or per-window mineral truth; Moon/Mars matching material data remain incomplete.",
+    "No independent ratings exist at freeze time; do not report model superiority, global Recall@5, or a new valid analog discovery from this pack alone."
+  ]
+}

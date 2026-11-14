@@ -1,0 +1,267 @@
+{
+  "purpose": "Scale-aware 2014-style geomorphon baseline gallery with bare-earth USGS 3DEP candidates",
+  "earth_site_ids": [
+    "METEOR_CRATER",
+    "KILBOURNE_HOLE",
+    "CARRIZOZO_FLOW",
+    "AMBOY_CRATER",
+    "BIG_PINE_FLOW",
+    "CIMA_FIELD",
+    "DEATH_VALLEY_MARS_HILL",
+    "CRATERS_MOON_IDAHO"
+  ],
+  "moon_reference_ids": [
+    "MARIUS3",
+    "FECUNDITATIS",
+    "SCHRODNGR02",
+    "ANDERSON01",
+    "NASSAU02",
+    "FRSHCRATER8"
+  ],
+  "mars_reference_ids": [
+    "JEZERO_CTX",
+    "OLYMPUS_CTX"
+  ],
+  "physical_site_side_m": 3000,
+  "query_sizes_m": [
+    200,
+    500,
+    1000
+  ],
+  "comparison_grid_spacing_m": {
+    "moon": 5,
+    "mars": 20
+  },
+  "geomorphon_sight_radius_m": {
+    "moon": 30,
+    "mars": 40
+  },
+  "source_rows": [
+    {
+      "mode": "moon",
+      "site_id": "METEOR_CRATER",
+      "path": "data/research/earth_3dep_meteor/meteor_crater_3km_2m.tif",
+      "sha256": "9ba4888e5a8d82d932be342c2e672ce8098868a0b658858ade47a9d3c1af5e73",
+      "native_spacing_m": 1,
+      "saved_crop_spacing_m": 2,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "moon",
+      "site_id": "KILBOURNE_HOLE",
+      "path": "data/research/earth_3dep_kilbourne/kilbourne_hole_3km_2m.tif",
+      "sha256": "8a417d043a5ac11417436e6af31c059628e82107d35c7eb62fb2bfbb7b811868",
+      "native_spacing_m": 1,
+      "saved_crop_spacing_m": 2,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "moon",
+      "site_id": "CARRIZOZO_FLOW",
+      "path": "data/research/earth_3dep_carrizozo/carrizozo_flow_3km_2m.tif",
+      "sha256": "a6fae5f09b04898aa988e4ef21f0f34102a36b39e667720308abe8ab15ff6b6d",
+      "native_spacing_m": 1,
+      "saved_crop_spacing_m": 2,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "moon",
+      "site_id": "AMBOY_CRATER",
+      "path": "data/research/earth_3dep_amboy/amboy_crater_3km_2m.tif",
+      "sha256": "06ded9b41d660dc747c908b18892accdfc0e75983bc8a21772617f05ce1c3253",
+      "native_spacing_m": 1,
+      "saved_crop_spacing_m": 2,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "moon",
+      "site_id": "BIG_PINE_FLOW",
+      "path": "data/research/earth_3dep_big_pine/big_pine_flow_3km_2m.tif",
+      "sha256": "c0a525dc44444e313a3c2da54b1151237abad032902fceb99851e4f3004a310d",
+      "native_spacing_m": 1,
+      "saved_crop_spacing_m": 2,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "moon",
+      "site_id": "CIMA_FIELD",
+      "path": "data/research/earth_3dep_cima/cima_field_3km_2m.tif",
+      "sha256": "47d29e6b10c3b7e8002bb7058dfe6065457ae20d22c4f2146c9c9604b8ee1aa2",
+      "native_spacing_m": 1,
+      "saved_crop_spacing_m": 2,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "moon",
+      "site_id": "DEATH_VALLEY_MARS_HILL",
+      "path": "data/research/earth_3dep_death_valley/death_valley_mars_hill_3km_2m.tif",
+      "sha256": "a789b101df57db1e1c85a4f851fb46ca23383a77533a0f38b115bf03da5ed584",
+      "native_spacing_m": 1,
+      "saved_crop_spacing_m": 2,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "moon",
+      "site_id": "CRATERS_MOON_IDAHO",
+      "path": "data/research/earth_3dep_craters_moon/craters_moon_field_3km_2m.tif",
+      "sha256": "2e713fad8855ecb1fdfffc176b91ec50e3cbc09e239ca9b5996c07044f6cbbdc",
+      "native_spacing_m": 1,
+      "saved_crop_spacing_m": 2,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "moon",
+      "site_id": "MARIUS3",
+      "path": "data/research/published_analog_audit/sources/NAC_DTM_MARIUS3.TIF",
+      "sha256": "1e663bdb8bbef9cb27472d9fab9159d624178a0bb29ade88a68fc6a04ecb80f5",
+      "native_spacing_m": 2,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "moon",
+      "site_id": "FECUNDITATIS",
+      "path": "data/research/highres_lunar_dem/sources/NAC_DTM_FECUNDITATIS.TIF",
+      "sha256": "e2b27bfff270ebbb593219c7856296dccb2c8831229b787d46f4935cb3b19b35",
+      "native_spacing_m": 3,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "moon",
+      "site_id": "SCHRODNGR02",
+      "path": "data/research/highres_lunar_dem/sources/NAC_DTM_SCHRODNGR02.TIF",
+      "sha256": "f68cba06b1249e1ee2266eaa09b127fd2ab6df1a32e05d1131f6f066d19f5b6e",
+      "native_spacing_m": 4,
+      "valid_fraction": 0.9949305555555555
+    },
+    {
+      "mode": "moon",
+      "site_id": "ANDERSON01",
+      "path": "data/research/highres_lunar_dem/sources/NAC_DTM_ANDERSON01.TIF",
+      "sha256": "1e552b0ba412e8a3f761c95d77036de0aab3e3b3bac92931df2f68ae5fa6fc26",
+      "native_spacing_m": 4,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "moon",
+      "site_id": "NASSAU02",
+      "path": "data/research/highres_lunar_dem/sources/NAC_DTM_NASSAU02.TIF",
+      "sha256": "69688c434ac593d54a9ae2897d96044dbcebfb5ad5b540ec5becf74e1059dfe4",
+      "native_spacing_m": 4,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "moon",
+      "site_id": "FRSHCRATER8",
+      "path": "data/research/highres_lunar_dem/sources/NAC_DTM_FRSHCRATER8.TIF",
+      "sha256": "92f9448e2c93c6558b53b61cf8603c1c2f22063e90586e6116dba6d6871a50d3",
+      "native_spacing_m": 5,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "mars",
+      "site_id": "METEOR_CRATER",
+      "path": "data/research/earth_3dep_meteor/meteor_crater_3km_2m.tif",
+      "sha256": "9ba4888e5a8d82d932be342c2e672ce8098868a0b658858ade47a9d3c1af5e73",
+      "native_spacing_m": 1,
+      "saved_crop_spacing_m": 2,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "mars",
+      "site_id": "KILBOURNE_HOLE",
+      "path": "data/research/earth_3dep_kilbourne/kilbourne_hole_3km_2m.tif",
+      "sha256": "8a417d043a5ac11417436e6af31c059628e82107d35c7eb62fb2bfbb7b811868",
+      "native_spacing_m": 1,
+      "saved_crop_spacing_m": 2,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "mars",
+      "site_id": "CARRIZOZO_FLOW",
+      "path": "data/research/earth_3dep_carrizozo/carrizozo_flow_3km_2m.tif",
+      "sha256": "a6fae5f09b04898aa988e4ef21f0f34102a36b39e667720308abe8ab15ff6b6d",
+      "native_spacing_m": 1,
+      "saved_crop_spacing_m": 2,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "mars",
+      "site_id": "AMBOY_CRATER",
+      "path": "data/research/earth_3dep_amboy/amboy_crater_3km_2m.tif",
+      "sha256": "06ded9b41d660dc747c908b18892accdfc0e75983bc8a21772617f05ce1c3253",
+      "native_spacing_m": 1,
+      "saved_crop_spacing_m": 2,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "mars",
+      "site_id": "BIG_PINE_FLOW",
+      "path": "data/research/earth_3dep_big_pine/big_pine_flow_3km_2m.tif",
+      "sha256": "c0a525dc44444e313a3c2da54b1151237abad032902fceb99851e4f3004a310d",
+      "native_spacing_m": 1,
+      "saved_crop_spacing_m": 2,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "mars",
+      "site_id": "CIMA_FIELD",
+      "path": "data/research/earth_3dep_cima/cima_field_3km_2m.tif",
+      "sha256": "47d29e6b10c3b7e8002bb7058dfe6065457ae20d22c4f2146c9c9604b8ee1aa2",
+      "native_spacing_m": 1,
+      "saved_crop_spacing_m": 2,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "mars",
+      "site_id": "DEATH_VALLEY_MARS_HILL",
+      "path": "data/research/earth_3dep_death_valley/death_valley_mars_hill_3km_2m.tif",
+      "sha256": "a789b101df57db1e1c85a4f851fb46ca23383a77533a0f38b115bf03da5ed584",
+      "native_spacing_m": 1,
+      "saved_crop_spacing_m": 2,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "mars",
+      "site_id": "CRATERS_MOON_IDAHO",
+      "path": "data/research/earth_3dep_craters_moon/craters_moon_field_3km_2m.tif",
+      "sha256": "2e713fad8855ecb1fdfffc176b91ec50e3cbc09e239ca9b5996c07044f6cbbdc",
+      "native_spacing_m": 1,
+      "saved_crop_spacing_m": 2,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "mars",
+      "site_id": "JEZERO_CTX",
+      "path": "data/demo/mars_ctx_stereo/dtm.tif",
+      "sha256": "5f21d37d2c7d50c87f8d16b62e31f279a46e36e92b2710865ddd433f3cad8f3f",
+      "native_spacing_m": 20.299,
+      "valid_fraction": 1.0
+    },
+    {
+      "mode": "mars",
+      "site_id": "OLYMPUS_CTX",
+      "path": "data/demo/mars_ctx_olympus_verified/dtm.tif",
+      "sha256": "e2997a659b32259d164e743a0a574010c6827ac37945d4791369ab40872eecc3",
+      "native_spacing_m": 20.0,
+      "valid_fraction": 1.0
+    }
+  ],
+  "outputs_sha256": {
+    "moon_anchors_5m.npz": "2c65b6f7162f9023224727be38c58c3e352614132ed0baf64bffa0e41f34421d",
+    "earth_moon_200m.npz": "855795895d4d002dbadd87cf33bdfa16c540cbbcaed1886496ce140de186dcb1",
+    "earth_moon_500m.npz": "0ecf71c46940b4ff8fc43d2751266e0405eda11da04286039975181687719bf0",
+    "earth_moon_1000m.npz": "00e67b1e5e38d81d9aebb54bd4156a7fb42dd987533c97e155a6b1535302eaf8",
+    "mars_anchors_20m.npz": "0dc696331ddd92ceefc3d006094693c8acc3cb0017fc031cb2601286bd1dbb49",
+    "earth_mars_200m.npz": "dded62b53bbe73b5044ddaeceb820f24dfc4d384ecc2bb282feeca002358f824",
+    "earth_mars_500m.npz": "294236c1f3d7789edd077d8aea548281da0eefac8772bfad4a94d9da6ea4fff7",
+    "earth_mars_1000m.npz": "838fe42b00e6189e7b40336ef9f05a51833b5e062f36f8c9534db974b79f8fbe"
+  },
+  "limitations": [
+    "Meteor Crater, Kilbourne Hole, Amboy Crater and Death Valley Mars Hill are known analog research sites. Carrizozo and Big Pine are search-corpus research candidates in documented basalt-flow regions, not verified new analogs; none provide per-window positive/negative labels.",
+    "The 5 m and 20 m modes use different grids; compare retrieval methods within a mode, not raw scores across modes.",
+    "Moon 5 m output may downsample 2–4 m LROC data; Mars 20 m CTX post spacing overstates its true resolved feature scale.",
+    "USGS 3DEP is bare-earth elevation, not a bare-rock or mineral map.",
+    "Nearby windows overlap strongly and cannot be randomly split for scientific evaluation.",
+    "Geomorphon local radius is adapted to these small windows; this does not reproduce all 2014 paper settings."
+  ]
+}

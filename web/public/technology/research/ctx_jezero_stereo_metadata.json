@@ -1,0 +1,51 @@
+{
+  "description": "USGS MRO CTX stereo pair product. DTM derived from stereo imagery; not locally reconstructed by this project.",
+  "collection": "mro_ctx_controlled_usgs_dtms",
+  "item_id": "G13_023102_1986_XN_18N282W__G13_023168_1986_XN_18N282W",
+  "stereo_pair_id": "G13_023102_1986_XN_18N282W__G13_023168_1986_XN_18N282W",
+  "target_center": {
+    "latitude": 18.4,
+    "longitude_east": 77.7
+  },
+  "product_centroid": {
+    "lat": 18.451888759517697,
+    "lon": 77.71556522916349
+  },
+  "product_bbox_lon_lat": [
+    77.40619547818675,
+    17.971374635028095,
+    78.02541721907681,
+    18.929108488147936
+  ],
+  "gsd_m": 20.298507840584602,
+  "shape": [
+    2764,
+    1775
+  ],
+  "transform": [
+    4588735.748741297,
+    20.298507840584602,
+    0,
+    1121862.7725673248,
+    0,
+    -20.298507840584602
+  ],
+  "crs_wkt": "PROJCS[\"Mars (2015) - Sphere / Ocentric / Equirectangular, clon = 0\",GEOGCS[\"Mars (2015) - Sphere / Ocentric\",DATUM[\"Mars (2015) - Sphere\",SPHEROID[\"Mars (2015) - Sphere\",3396190,0]],PRIMEM[\"Reference Meridian\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Equirectangular\"],PARAMETER[\"standard_parallel_1\",0],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+  "license": "CC0-1.0",
+  "doi": "https://doi.org/10.5066/P9JKVWR3",
+  "stac_item_url": "https://g6goyz4w56.execute-api.us-west-2.amazonaws.com/prod/collections/mro_ctx_controlled_usgs_dtms/items/G13_023102_1986_XN_18N282W__G13_023168_1986_XN_18N282W",
+  "assets": {
+    "orthoimage": "orthoimage.tif",
+    "qa_metrics": "qa_metrics.txt",
+    "dtm": "dtm.tif",
+    "intersection_error": "intersection_error.tif"
+  },
+  "asset_urls": {
+    "orthoimage": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/mars/mro/ctx/controlled/usgs/G13_023102_1986_XN_18N282W__G13_023168_1986_XN_18N282W/G13_023102_1986_XN_18N282W__G13_023168_1986_XN_18N282W_orthoimage.tif",
+    "qa_metrics": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/mars/mro/ctx/controlled/usgs/G13_023102_1986_XN_18N282W__G13_023168_1986_XN_18N282W/qa_metrics.txt",
+    "dtm": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/mars/mro/ctx/controlled/usgs/G13_023102_1986_XN_18N282W__G13_023168_1986_XN_18N282W/G13_023102_1986_XN_18N282W__G13_023168_1986_XN_18N282W_dtm.tif",
+    "intersection_error": "https://astrogeo-ard.s3-us-west-2.amazonaws.com/mars/mro/ctx/controlled/usgs/G13_023102_1986_XN_18N282W__G13_023168_1986_XN_18N282W/G13_023102_1986_XN_18N282W__G13_023168_1986_XN_18N282W_intersection_error.tif"
+  },
+  "source_note": "USGS documentation describes these CTX DTMs as stereo reconstructions from different MRO orbits, ASP point-cloud triangulation, and MOLA control. The orthoimage is terrain-corrected context imagery, not the raw stereo pair.",
+  "orthoimage_sha256": "2717f7f9f909c3d76973fecc3eba6d6612cc18a57390787d28d1c29d44c1ffcd"
+}

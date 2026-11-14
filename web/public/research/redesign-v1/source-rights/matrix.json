@@ -1,0 +1,1298 @@
+{
+  "checked_at": "2026-10-11T16:42:02.125508+00:00",
+  "scope": "10core source families,not all historical artifacts or software dependencies",
+  "rows": [
+    {
+      "id": "etopo",
+      "name": "ETOPO 2022",
+      "use": "Global elevation ranking",
+      "rights": "CC0-1.0 in official NOAA metadata",
+      "credit": "NOAA NCEI, ETOPO 2022, DOI 10.25921/fd45-gt74",
+      "obligations": "Retain source/version and citation; not navigation data.",
+      "evidence": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ngdc.mgg.dem%3Aetopo_2022/html",
+      "status": "documented_terms"
+    },
+    {
+      "id": "glim",
+      "name": "GLiM 0.5°",
+      "use": "Regional lithology condition",
+      "rights": "CC BY 3.0",
+      "credit": "Hartmann, Jens; Moosdorf, Nils (2012), DOI 10.1594/PANGAEA.788537",
+      "obligations": "Credit authors, link license and identify resampling/derived regional probes; does not establish exposed-rock labels.",
+      "evidence": "https://doi.pangaea.de/10.1594/PANGAEA.788537",
+      "status": "documented_terms"
+    },
+    {
+      "id": "resolve",
+      "name": "RESOLVE Ecoregions 2017",
+      "use": "Desert/xeric regional condition",
+      "rights": "CC BY 4.0 in the actual ArcGIS item",
+      "credit": "RESOLVE, Esri; Dinerstein et al. (2017), DOI 10.1093/biosci/bix014",
+      "obligations": "Credit source and license; document desert subset,0.02degree geometry generalization and0.05degree raster sampling. Original local manifest attribution was blank; this inventory supplies attribution without modifying frozen source records.",
+      "evidence": "https://www.arcgis.com/sharing/rest/content/items/37ea320eebb647c6838c23f72abae5ef?f=json",
+      "status": "documented_terms"
+    },
+    {
+      "id": "esri",
+      "name": "Esri World Imagery",
+      "use": "Interactive display only",
+      "rights": "Esri Master License Agreement; not an open-data license",
+      "credit": "Esri, Vantor, Earthstar Geographics, GIS User Community",
+      "obligations": "Keep visible attribution and terms links. Exclude imagery pixels from an unrestricted redistribution bundle until applicable rights are established. Item warns against offline tile export; ordinary display access is not evidence of redistribution permission.",
+      "evidence": "https://www.arcgis.com/sharing/rest/content/items/10df2279f9684e4a9f6a7f08febac2a9?f=json",
+      "status": "redistribution_unresolved"
+    },
+    {
+      "id": "copernicus",
+      "name": "Copernicus GLO-90",
+      "use": "Refined elevation display",
+      "rights": "Specific Copernicus WorldDEM-90 free license, not CC0",
+      "credit": "DLR / Airbus Defence and Space; EU / ESA Copernicus",
+      "obligations": "Preserve the required original/modified-data notice from the authoritative license and link it. Audit every derivative/export before packaging; do not infer public-domain status from free access.",
+      "evidence": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+      "status": "derivative_notice_audit_pending"
+    },
+    {
+      "id": "moon",
+      "name": "NASA SVS CGI Moon Kit",
+      "use": "Moon color/display and LOLA elevation",
+      "rights": "Product-specific NASA credits; complete usage-policy crosscheck pending",
+      "credit": "NASA's Scientific Visualization Studio; LROC/LOLA source teams",
+      "obligations": "Color maps are adjusted for visual appearance and include filled areas; use original scientific products for material analysis. Preserve product-specific credits and do not imply endorsement.",
+      "evidence": "https://svs.gsfc.nasa.gov/4720/",
+      "status": "usage_policy_audit_pending"
+    },
+    {
+      "id": "domars",
+      "name": "DoMars16k",
+      "use": "Research image classifier",
+      "rights": "CC BY 4.0, archived Zenodo record",
+      "credit": "Wilhelm, Thorsten; Geis, Melina; Püttschneider, Jens; Sievernich, Timo; Weber, Tobias; Wohlfarth, Kay; Wöhler, Christian · DOI 10.5281/zenodo.4291940",
+      "obligations": "Retain creator list,record DOI/license and transformation notes;Mars geomorphology labels are not cross-planet relevance truth.",
+      "evidence": "https://zenodo.org/records/4291940",
+      "status": "documented_terms"
+    },
+    {
+      "id": "dunes",
+      "name": "Gunn dune-world data",
+      "use": "Published dune-presence condition",
+      "rights": "MIT at pinned repository commit; article license is separate",
+      "credit": "Andrew Gunn (2026), commit044be99b50bade9129b57e8a2d9d2318fd16bf66",
+      "obligations": "Retain repository LICENSE with redistributed data; do not extend its MIT terms to article text/figures. Zero cells are unlabeled, not verified negatives.",
+      "evidence": "https://github.com/geomorphlab/dune-world/tree/044be99b50bade9129b57e8a2d9d2318fd16bf66",
+      "status": "documented_terms"
+    },
+    {
+      "id": "ctx_jezero",
+      "name": "USGS CTX Jezero",
+      "use": "Local orthoimage / DTM research and display",
+      "rights": "CC0-1.0",
+      "credit": "NASA/JPL-Caltech/MSSS; USGS",
+      "obligations": "Keep product IDs,source hashes,CRS and reprojected-mask provenance; product date is not verified acquisition date.",
+      "evidence": "https://doi.org/10.5066/P9JKVWR3",
+      "status": "documented_terms"
+    },
+    {
+      "id": "ctx_olympus",
+      "name": "USGS CTX Olympus",
+      "use": "Local orthoimage / DTM research and display",
+      "rights": "CC0-1.0",
+      "credit": "NASA/JPL-Caltech/MSSS; USGS",
+      "obligations": "Keep product IDs,source hashes,CRS and reprojected-mask provenance; product date is not verified acquisition date.",
+      "evidence": "https://doi.org/10.5066/P9JKVWR3",
+      "status": "documented_terms"
+    }
+  ],
+  "official_snapshots": {
+    "etopo": {
+      "url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ngdc.mgg.dem%3Aetopo_2022/html",
+      "final_url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ngdc.mgg.dem%3Aetopo_2022/html",
+      "status": 200,
+      "sha256": "5d0c8dabeea6d3f6f261ed5429e951db4c1fb3e242c77da5d893599144346730",
+      "path": "data/research/redesign_v1/source_rights_v1/snapshots/etopo.txt"
+    },
+    "glim": {
+      "url": "https://doi.pangaea.de/10.1594/PANGAEA.788537",
+      "final_url": "https://doi.pangaea.de/10.1594/PANGAEA.788537",
+      "status": 200,
+      "sha256": "3f99fe1da8a127d1f04766ab90adf009bee5ef3ac9c62fc1e5a33d2770db08cd",
+      "path": "data/research/redesign_v1/source_rights_v1/snapshots/glim.txt"
+    },
+    "resolve": {
+      "url": "https://www.arcgis.com/sharing/rest/content/items/37ea320eebb647c6838c23f72abae5ef?f=json",
+      "final_url": "https://www.arcgis.com/sharing/rest/content/items/37ea320eebb647c6838c23f72abae5ef?f=json",
+      "status": 200,
+      "sha256": "38415574a1a5affeb6a2774a0e0c69027461df77cc25b48b230bb8cd122ca3d6",
+      "path": "data/research/redesign_v1/source_rights_v1/snapshots/resolve.txt"
+    },
+    "esri": {
+      "url": "https://www.arcgis.com/sharing/rest/content/items/10df2279f9684e4a9f6a7f08febac2a9?f=json",
+      "final_url": "https://www.arcgis.com/sharing/rest/content/items/10df2279f9684e4a9f6a7f08febac2a9?f=json",
+      "status": 200,
+      "sha256": "e394892579b79ecaa4ee0d9da88c0753a9d163a62ab613532789db7e037964a2",
+      "path": "data/research/redesign_v1/source_rights_v1/snapshots/esri.txt"
+    },
+    "copernicus": {
+      "url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+      "final_url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+      "status": 200,
+      "sha256": "eaff54d9978b09455fd46d732db2e65d7631c6611f698bb390209675e885de85",
+      "path": "data/research/redesign_v1/source_rights_v1/snapshots/copernicus.txt"
+    },
+    "moon": {
+      "url": "https://svs.gsfc.nasa.gov/4720/",
+      "final_url": "https://svs.gsfc.nasa.gov/4720/",
+      "status": 200,
+      "sha256": "30d7425e5590e84bd22b856d91070d499d6c6ec884a9607cb89180fe4900fef8",
+      "path": "data/research/redesign_v1/source_rights_v1/snapshots/moon.txt"
+    }
+  },
+  "local_evidence": {
+    "domars": {
+      "path": "data/research/redesign_v1/source_audit/4291940.json",
+      "sha256": "bd355af64952dc37583bd31604a1c0420be30145903f287f1b42a6dbf43219c8"
+    },
+    "dunes": {
+      "path": "data/research/redesign_v1/earth_dunes/source_manifest.json",
+      "sha256": "bca38107af1fe873e8215427ce15f79d7b2334c294c9dcd0d3eadd84343f47ea"
+    },
+    "ctx_jezero": {
+      "path": "data/demo/mars_ctx_stereo/metadata.json",
+      "sha256": "39e8b1725445034f45ccf33115f2f6df01a827955579fa17ac8b3487fe1d8c9f"
+    },
+    "ctx_olympus": {
+      "path": "data/demo/mars_ctx_olympus_verified/stac_item.json",
+      "sha256": "5517ce58a99bd77e1dd425895869a9e62a1a2f0bf830f6a3e39e552967891a13"
+    }
+  },
+  "historical_artifacts": [
+    {
+      "path": "data/research/amboy_usgs_surficial_100k/manifest.json",
+      "baseline_sha256": "a77ca3c0145f3338022d2e69b4534fdcea74536dd32bbe2b4307977db060c7e2",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "a77ca3c0145f3338022d2e69b4534fdcea74536dd32bbe2b4307977db060c7e2",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/analog_review/method_comparison_v3_protocol.json",
+      "baseline_sha256": "e28bd47e08f81564f7b30e186f38251eb09bcf7613f880371a26eebb44148c01",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "e28bd47e08f81564f7b30e186f38251eb09bcf7613f880371a26eebb44148c01",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/analog_review_v4/protocol.json",
+      "baseline_sha256": "749c75b5533fc573b9e086dc0e525c43795d55d7d34ce6447f4cb404c9c7a784",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "749c75b5533fc573b9e086dc0e525c43795d55d7d34ce6447f4cb404c9c7a784",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/analog_review_v4/source_proxy_protocol.json",
+      "baseline_sha256": "154b3e9cb27120b87ebd1a55727a5e1da13c44eb2281134a57c5168b8697685e",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "154b3e9cb27120b87ebd1a55727a5e1da13c44eb2281134a57c5168b8697685e",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/cima_geology_review_v1/blinded_protocol.json",
+      "baseline_sha256": "afe5171b91cf706deea0aaa03edae5c7f61d48ec09b32586121cb245bf361ff3",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "afe5171b91cf706deea0aaa03edae5c7f61d48ec09b32586121cb245bf361ff3",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/cima_usgs_24k/manifest.json",
+      "baseline_sha256": "61d6c49ea7279a62ee25d4a9ff6e1f4a45767c29c529011a226b2419170dc281",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "61d6c49ea7279a62ee25d4a9ff6e1f4a45767c29c529011a226b2419170dc281",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/cima_usgs_24k/source_manifest.json",
+      "baseline_sha256": "35c6433a2248b873416d719dded3f8c4ccf8e41cdf98a522ed98066f0a1faa0c",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "35c6433a2248b873416d719dded3f8c4ccf8e41cdf98a522ed98066f0a1faa0c",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/cross_body_morphology_holdout/evaluation.json",
+      "baseline_sha256": "fad7b2afc7b8cf907b6491199dbcc6a8918f300df582092b8f5042f27ebbb4e0",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "fad7b2afc7b8cf907b6491199dbcc6a8918f300df582092b8f5042f27ebbb4e0",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/cross_body_morphology_holdout/manifest.json",
+      "baseline_sha256": "7c9c2ce6b5debd23898d64cff1a91ced245b4d80b884b2696bf7c8c0bd68611e",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "7c9c2ce6b5debd23898d64cff1a91ced245b4d80b884b2696bf7c8c0bd68611e",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/cuprite_field_points/corr_rescue_protocol_frozen.json",
+      "baseline_sha256": "3cdaf7ed99536e13a84a5d57ac807918c19e091da1de76016ba9a0ce754efbc7",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "3cdaf7ed99536e13a84a5d57ac807918c19e091da1de76016ba9a0ce754efbc7",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/cuprite_field_points/field_image_comparison_protocol_frozen.json",
+      "baseline_sha256": "e2b6fadf58eb2aa806e652435f0095810f68925a73cf169d3f6382379efca26a",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "e2b6fadf58eb2aa806e652435f0095810f68925a73cf169d3f6382379efca26a",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/cuprite_field_points/pairing_protocol_frozen.json",
+      "baseline_sha256": "21385cb4612fc3347926b0c4a46e2a9d428c039a2e309a10626d9c8006f21275",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "21385cb4612fc3347926b0c4a46e2a9d428c039a2e309a10626d9c8006f21275",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/cuprite_field_points/spectral_download_manifest.json",
+      "baseline_sha256": "0f87df33a8c7e7fd959ac7a55187fe6d1aea5f861836c953d4e1afa89718d45b",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "0f87df33a8c7e7fd959ac7a55187fe6d1aea5f861836c953d4e1afa89718d45b",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/d4_orientation_audit/first_evaluation.json",
+      "baseline_sha256": "81cbe9b7d2b390cea95770e2de527374db59dd61029704e097ae4a73dbd51299",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "81cbe9b7d2b390cea95770e2de527374db59dd61029704e097ae4a73dbd51299",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/d4_orientation_audit/protocol.json",
+      "baseline_sha256": "66896f7a7d206f0a0a5e2756706e14e7ad5956d9c7a26daafd28c4c9c5311a9a",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "66896f7a7d206f0a0a5e2756706e14e7ad5956d9c7a26daafd28c4c9c5311a9a",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/dense_80km_index/evaluation.json",
+      "baseline_sha256": "57d2264638aa69a123c0f3e780270a2e3a80ca7c432a6655c528734ef722666f",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "57d2264638aa69a123c0f3e780270a2e3a80ca7c432a6655c528734ef722666f",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/dense_80km_index/protocol.json",
+      "baseline_sha256": "3e2ed9c391f515fffe74d75c5facbfba1891c50a92222d9c4ed6e59ed9b91fb9",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "3e2ed9c391f515fffe74d75c5facbfba1891c50a92222d9c4ed6e59ed9b91fb9",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/earth_3dep_amboy/manifest.json",
+      "baseline_sha256": "66cce24f59a837addd485bf5679e4ebb8361837b4704ebfe824dc905bf6bbd2b",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "66cce24f59a837addd485bf5679e4ebb8361837b4704ebfe824dc905bf6bbd2b",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/earth_3dep_big_pine/manifest.json",
+      "baseline_sha256": "ec52f901a34351e45aee56a803e2aaa4b8c605752344aed69df803e465321ddf",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "ec52f901a34351e45aee56a803e2aaa4b8c605752344aed69df803e465321ddf",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/earth_3dep_carrizozo/manifest.json",
+      "baseline_sha256": "f9965954571266c740f1279ec9219996e3907fcf1d605ed2ddfeaa83909c7063",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "f9965954571266c740f1279ec9219996e3907fcf1d605ed2ddfeaa83909c7063",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/earth_3dep_cima/manifest.json",
+      "baseline_sha256": "8abc0c59ff24a9aee5f7ed509dfbeb0b4ecf5d3fb2e381569752fd1e8e33a39d",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "8abc0c59ff24a9aee5f7ed509dfbeb0b4ecf5d3fb2e381569752fd1e8e33a39d",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/earth_3dep_craters_moon/manifest.json",
+      "baseline_sha256": "565a7d78817f4fa506b163d175f491b34c07335c3410b137ea013fc3c0bf40e3",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "565a7d78817f4fa506b163d175f491b34c07335c3410b137ea013fc3c0bf40e3",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/earth_3dep_death_valley/manifest.json",
+      "baseline_sha256": "a7b4ccba7e4d4998662a9e89d77667671f57e8349c4218ac653a983306e2f11b",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "a7b4ccba7e4d4998662a9e89d77667671f57e8349c4218ac653a983306e2f11b",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/earth_3dep_kilbourne/manifest.json",
+      "baseline_sha256": "f6dc98f2167ffc22a80b0695bd2ca5405d045edbbc2b16a2ca140725c8fee1d1",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "f6dc98f2167ffc22a80b0695bd2ca5405d045edbbc2b16a2ca140725c8fee1d1",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/earth_3dep_meteor/manifest.json",
+      "baseline_sha256": "d4db88e089a116ea640a8eacc3b2bcf00e848953a74306aaf0d8e5fca90fbf66",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "d4db88e089a116ea640a8eacc3b2bcf00e848953a74306aaf0d8e5fca90fbf66",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/earth_highres_10km_holdout/manifest.json",
+      "baseline_sha256": "14aec728521e10fc457962e48236b43a985038f20f246d44484003fe08838af0",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "14aec728521e10fc457962e48236b43a985038f20f246d44484003fe08838af0",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/earth_highres_10km_holdout/transfer_first_evaluation.json",
+      "baseline_sha256": "73c10bb245f90f2c06155a935400e6340a71f95b1176c6662ff483f21735a475",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "73c10bb245f90f2c06155a935400e6340a71f95b1176c6662ff483f21735a475",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/earth_highres_10km_holdout/transfer_protocol_frozen.json",
+      "baseline_sha256": "005d26d86cd899e93998e99779a173fa9a922c4eaafc8a97a98c9630ffca3a97",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "005d26d86cd899e93998e99779a173fa9a922c4eaafc8a97a98c9630ffca3a97",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/earth_lunar_3km_crater_holdout/bowl_first_evaluation.json",
+      "baseline_sha256": "268c7221e667473cae522580910b933f7171931712b6c93319497ced9c5bb438",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "268c7221e667473cae522580910b933f7171931712b6c93319497ced9c5bb438",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/earth_lunar_3km_crater_holdout/bowl_protocol_frozen.json",
+      "baseline_sha256": "7b1cef01679e5e4be11c873323f6f7e0f5a54dddffbf737c3b0e3f4e87e70d9d",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "7b1cef01679e5e4be11c873323f6f7e0f5a54dddffbf737c3b0e3f4e87e70d9d",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/earth_lunar_3km_crater_holdout/cog_source_manifest.json",
+      "baseline_sha256": "30e1874624ddb2845ed0c51d6726276c81db05a75dc3b480fc78d1738b43804a",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "30e1874624ddb2845ed0c51d6726276c81db05a75dc3b480fc78d1738b43804a",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/earth_lunar_3km_crater_holdout/manifest.json",
+      "baseline_sha256": "63451b5dfdc28665b8e01ce499d870fa9a20fd35112affef4575b3606db9221c",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "63451b5dfdc28665b8e01ce499d870fa9a20fd35112affef4575b3606db9221c",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/ecostress_cross_library/download_manifest.json",
+      "baseline_sha256": "7955a362df89da4d0af5779102ea0d9a4c2759f0b56a3709efbb5909524e7f9c",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "7955a362df89da4d0af5779102ea0d9a4c2759f0b56a3709efbb5909524e7f9c",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/ecostress_cross_library/family_v2_download_manifest.json",
+      "baseline_sha256": "04329e42404b424529f8f70770484209b80be3cae2c65e1b306be59c9c73b520",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "04329e42404b424529f8f70770484209b80be3cae2c65e1b306be59c9c73b520",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/ecostress_cross_library/family_v2_frozen_manifest.json",
+      "baseline_sha256": "98f02844a1779017876f8c659750b244f9090d30ebf3e314a2ce83f8c14f6cb1",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "98f02844a1779017876f8c659750b244f9090d30ebf3e314a2ce83f8c14f6cb1",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/ecostress_cross_library/family_v2_one_shot_evaluation.json",
+      "baseline_sha256": "d19b6cbab730a6eae7a715ca2a862e72349011f81aa2af6843147b998b956564",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "d19b6cbab730a6eae7a715ca2a862e72349011f81aa2af6843147b998b956564",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/ecostress_cross_library/first_external_evaluation.json",
+      "baseline_sha256": "b44c96178bb310268c5e16b50b056dffcf92d7f7f2b2b75575575774cba587fe",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "b44c96178bb310268c5e16b50b056dffcf92d7f7f2b2b75575575774cba587fe",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/ecostress_cross_library/strict_four_mineral_manifest.json",
+      "baseline_sha256": "f99cc8daaff6d197e570986aa2f09766bdf337c7bbd5e54847252e97ba1cf209",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "f99cc8daaff6d197e570986aa2f09766bdf337c7bbd5e54847252e97ba1cf209",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/frankenspectra_reference/manifest.json",
+      "baseline_sha256": "ca9d90a92f4589cb78ddd44d9ed9c5cb6f5ffbe5526bfdf4dff9cf25c5843578",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "ca9d90a92f4589cb78ddd44d9ed9c5cb6f5ffbe5526bfdf4dff9cf25c5843578",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/global_radial_morphology_index/build_report.json",
+      "baseline_sha256": "dad37d0bc65da4168e1d970c2df03dc1a444a4cbceef5f20ff5d56519078614e",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "dad37d0bc65da4168e1d970c2df03dc1a444a4cbceef5f20ff5d56519078614e",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/global_radial_morphology_index/evaluation.json",
+      "baseline_sha256": "812b14c51262f0d2ca22dee89376cb2569c473a9deb27e83bc7bff198f1064a1",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "812b14c51262f0d2ca22dee89376cb2569c473a9deb27e83bc7bff198f1064a1",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/global_radial_morphology_index/evaluation_protocol.json",
+      "baseline_sha256": "6018bf239fbe9cc068a75d4ca1bf76c9c7fa5a404e193b436115891d1b22ec89",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "6018bf239fbe9cc068a75d4ca1bf76c9c7fa5a404e193b436115891d1b22ec89",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/heldout_geography_v1/descriptor_manifest.json",
+      "baseline_sha256": "dc464a8903cf35e09a620c5b879da4223c9d305039331e59feabad287ff5fb21",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "dc464a8903cf35e09a620c5b879da4223c9d305039331e59feabad287ff5fb21",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/heldout_geography_v1/protocol.json",
+      "baseline_sha256": "29cfe41f789f8072c7cdc7cd0770fd231e42e98886138c4b172b6483fa2a426c",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "29cfe41f789f8072c7cdc7cd0770fd231e42e98886138c4b172b6483fa2a426c",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/highres_earth_dem/manifest.json",
+      "baseline_sha256": "6b95c4506c958554df12315e12737e3c27a170edecd65a4302abf3210d960319",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "6b95c4506c958554df12315e12737e3c27a170edecd65a4302abf3210d960319",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/highres_lunar_dem/manifest.json",
+      "baseline_sha256": "b10e868a7e68a967b724c0c3e373ad5042f1c4d89d5294a59c2034e1e1ba9f83",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "b10e868a7e68a967b724c0c3e373ad5042f1c4d89d5294a59c2034e1e1ba9f83",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/highres_lunar_dem/tinyradial_3km_first_evaluation.json",
+      "baseline_sha256": "c42dc89f6ebe21e55660ef36c4329e193e22a30ecdbf5b75b40ac6ae408001c2",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "c42dc89f6ebe21e55660ef36c4329e193e22a30ecdbf5b75b40ac6ae408001c2",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/highres_lunar_dem/tinyradial_3km_protocol_frozen.json",
+      "baseline_sha256": "bd600a213aa28e3f67e03f4e3ccc45bc7ee8b05b115751d95837adc0cc296c0b",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "bd600a213aa28e3f67e03f4e3ccc45bc7ee8b05b115751d95837adc0cc296c0b",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/highres_mars_dem/manifest.json",
+      "baseline_sha256": "c01541a7037366e60ecaf37e34485695b3b08eb495eae0f034e93ee29dc2588b",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "c01541a7037366e60ecaf37e34485695b3b08eb495eae0f034e93ee29dc2588b",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/highres_mars_dem/olympus_manifest.json",
+      "baseline_sha256": "043ad43b32142117ca6eda682dfa69b911c531fb88984598f4a7075569ecd1ae",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "043ad43b32142117ca6eda682dfa69b911c531fb88984598f4a7075569ecd1ae",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/hirise_jezero_1m/manifest.json",
+      "baseline_sha256": "20344cee1d745265d6e4635dbd1eca620b5a35c5f01c6600753b317760d7d267",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "20344cee1d745265d6e4635dbd1eca620b5a35c5f01c6600753b317760d7d267",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/hirise_jezero_1m/ortho_manifest.json",
+      "baseline_sha256": "d4aabf2cadd321232e9841b74dead0261762f2b3eedcb4e51d56c364685987f6",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "d4aabf2cadd321232e9841b74dead0261762f2b3eedcb4e51d56c364685987f6",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/hirise_jezero_1m/protocol.json",
+      "baseline_sha256": "d50d9d9cbad29ba85321585668b3aa8ed2e88c25628cd3bfd9dc0bbeaba41cf2",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "d50d9d9cbad29ba85321585668b3aa8ed2e88c25628cd3bfd9dc0bbeaba41cf2",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/hytes_cima/manifest.json",
+      "baseline_sha256": "5666cfbfa574e5ab3e0195132d69edaee6e59c68e61efddc6e434444f486449b",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "5666cfbfa574e5ab3e0195132d69edaee6e59c68e61efddc6e434444f486449b",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/independent_d4_encoder/protocol.json",
+      "baseline_sha256": "47a1fe4c630da4b47691ae543395a0c61dbf8e6103a646a1a4a1f7b051af61af",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "47a1fe4c630da4b47691ae543395a0c61dbf8e6103a646a1a4a1f7b051af61af",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/independent_d4_encoder/training_report.json",
+      "baseline_sha256": "3353d49c579899c45d55b143b28d84c9f20a066e229a065aa3c210168e316b9f",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "3353d49c579899c45d55b143b28d84c9f20a066e229a065aa3c210168e316b9f",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/kaguya_global_4ppd/evaluation_seal.json",
+      "baseline_sha256": "d7c7b3eb0ec48d7ebe783b14a4f7eda93981a42adb0bda14f773c68742a14ea2",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "d7c7b3eb0ec48d7ebe783b14a4f7eda93981a42adb0bda14f773c68742a14ea2",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/kaguya_global_4ppd/first_spatial_evaluation.json",
+      "baseline_sha256": "02bce35d887072b40ac57a3f26edf328ad8ca376ba955989129b6d9265c3dcf6",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "02bce35d887072b40ac57a3f26edf328ad8ca376ba955989129b6d9265c3dcf6",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/kaguya_global_4ppd/frozen_protocol.json",
+      "baseline_sha256": "944c64dd28a1f2f72c9bd3d34bb39a0554e0bb5395d0c214cabfe79468a52169",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "944c64dd28a1f2f72c9bd3d34bb39a0554e0bb5395d0c214cabfe79468a52169",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/kaguya_global_4ppd/router_v2_evaluation_seal.json",
+      "baseline_sha256": "eff4c34082b9ff178b5a788844c673406195ac7e23897743a273ae1249144156",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "eff4c34082b9ff178b5a788844c673406195ac7e23897743a273ae1249144156",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/kaguya_global_4ppd/router_v2_first_spatial_evaluation.json",
+      "baseline_sha256": "52511cf3e73db3bdd715508c249280630e8d864839f75a70d736877bafd4a581",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "52511cf3e73db3bdd715508c249280630e8d864839f75a70d736877bafd4a581",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/kaguya_global_4ppd/router_v2_protocol.json",
+      "baseline_sha256": "3f526f6e160a24b826f22017f2065e189eaaeb63a96d3be084c6ba669945cd49",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "3f526f6e160a24b826f22017f2065e189eaaeb63a96d3be084c6ba669945cd49",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/kaguya_global_4ppd/router_v2_spatial_envelope_first_evaluation.json",
+      "baseline_sha256": "105f872f88b9601e444507fb622e7d17e099a67ce45317f2a8fb41abc122f564",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "105f872f88b9601e444507fb622e7d17e099a67ce45317f2a8fb41abc122f564",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/kaguya_global_4ppd/router_v2_spatial_envelope_protocol.json",
+      "baseline_sha256": "18d5f311b7ea0f95b5d0ae071b9972d39c1e56d1aaa9a59f6aea2f16ba207f07",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "18d5f311b7ea0f95b5d0ae071b9972d39c1e56d1aaa9a59f6aea2f16ba207f07",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/kaguya_global_4ppd/source_manifest.json",
+      "baseline_sha256": "6b51e79fb9cbc90e39553a737bd00cac339875c1388141cc4ae0059228746f71",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "6b51e79fb9cbc90e39553a737bd00cac339875c1388141cc4ae0059228746f71",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/lroc_marius_ortho/manifest.json",
+      "baseline_sha256": "30f6a09c193f9bf90b38a0c1f647d1e2190ce4eb0bde17de6c82b705a3a8fc4a",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "30f6a09c193f9bf90b38a0c1f647d1e2190ce4eb0bde17de6c82b705a3a8fc4a",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/lroc_paired_orthos/manifest.json",
+      "baseline_sha256": "570b462e9f65c54484f21feaa5a1b01a67c53d28b6ded0b28cc64e9644019891",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "570b462e9f65c54484f21feaa5a1b01a67c53d28b6ded0b28cc64e9644019891",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/m3_geographic_holdout/first_evaluation.json",
+      "baseline_sha256": "f044b54b95f0b3ec695ba2ab85911feaf30258596bb8ae33e8cefe505c313585",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "f044b54b95f0b3ec695ba2ab85911feaf30258596bb8ae33e8cefe505c313585",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/m3_geographic_holdout/manifest.json",
+      "baseline_sha256": "a4c9c0fef0996f12dc7605cb6041562054babef2221ee466e96d2ba9c36b1235",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "a4c9c0fef0996f12dc7605cb6041562054babef2221ee466e96d2ba9c36b1235",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/m3_kaguya_weak_head/scene_holdout_report.json",
+      "baseline_sha256": "f4f46a8081f79ec9dc395aa70e72d70488aac0d0a8a629f320151a99a114c962",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "f4f46a8081f79ec9dc395aa70e72d70488aac0d0a8a629f320151a99a114c962",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/m3_orbital_v2_holdout/diverse_manifest.json",
+      "baseline_sha256": "9b926976007333dfb3af462f3df0afcfd8e21c428c716273616ee3a79c59d615",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "9b926976007333dfb3af462f3df0afcfd8e21c428c716273616ee3a79c59d615",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/m3_orbital_v2_holdout/evaluation_seal.json",
+      "baseline_sha256": "9125dc9a2b565de7561540b84ea6e16dc5812c0f15570eaff9ded8aed378af55",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "9125dc9a2b565de7561540b84ea6e16dc5812c0f15570eaff9ded8aed378af55",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/m3_orbital_v2_holdout/first_evaluation.json",
+      "baseline_sha256": "9a0f8d9d141528dafacbdb887a25d83a3b24b62e6cc405c503edd5cd2d68c023",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "9a0f8d9d141528dafacbdb887a25d83a3b24b62e6cc405c503edd5cd2d68c023",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/m3_orbital_v2_holdout/manifest.json",
+      "baseline_sha256": "f9362af89da5c8e3b0579fe922398f4e0208940e86daec5420eb826b91249a7a",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "f9362af89da5c8e3b0579fe922398f4e0208940e86daec5420eb826b91249a7a",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/macrostrat_lithology_support/report.json",
+      "baseline_sha256": "b01562081911bfa96f6faedf5af06abc53ae4459a07b29faeffe918d92765b9e",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "b01562081911bfa96f6faedf5af06abc53ae4459a07b29faeffe918d92765b9e",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/microterrain_geology/manifest.json",
+      "baseline_sha256": "3f640d4702ab9b7b83c1ce845aa68211e9b244764835f96eee33ddc94460690f",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "3f640d4702ab9b7b83c1ce845aa68211e9b244764835f96eee33ddc94460690f",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/microterrain_geomorphon/manifest.json",
+      "baseline_sha256": "12b75a1965e902c918432734ad271f5e8f4afc13f15d3e22823e95e5e1135efe",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "12b75a1965e902c918432734ad271f5e8f4afc13f15d3e22823e95e5e1135efe",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/microterrain_landcover/manifest.json",
+      "baseline_sha256": "d5101171a8dae9cde366d40998668a8a0ed3be4d41b4e7d769e89fa674dcd059",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "d5101171a8dae9cde366d40998668a8a0ed3be4d41b4e7d769e89fa674dcd059",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/microterrain_native/manifest.json",
+      "baseline_sha256": "1e57e0017620acad117b05db8bcb49a2fe2563c4ccac8fe0c838d5cfcc1e4ed4",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "1e57e0017620acad117b05db8bcb49a2fe2563c4ccac8fe0c838d5cfcc1e4ed4",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/microterrain_native/mars_tiles_manifest.json",
+      "baseline_sha256": "0d104eeec0a1c47cee6af2d761d39efb10492942c7520071788f3aca14d8baf7",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "0d104eeec0a1c47cee6af2d761d39efb10492942c7520071788f3aca14d8baf7",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/microterrain_native/moon_tiles_manifest.json",
+      "baseline_sha256": "d798ed59f839d97aeab36f570a4404c5164b9f8b5520244cf0370efb560bc5ad",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "d798ed59f839d97aeab36f570a4404c5164b9f8b5520244cf0370efb560bc5ad",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/microterrain_native/tiny_index_manifest.json",
+      "baseline_sha256": "93b047213fa4041fe6d825e705d84f7e42b74eb19fbeaa8580d756efb119bdaf",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "93b047213fa4041fe6d825e705d84f7e42b74eb19fbeaa8580d756efb119bdaf",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/microterrain_review_v5/protocol.json",
+      "baseline_sha256": "820be791165cb543df12dcd28e3973c8c4b7b4960a374a588fbf627d41655555",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "820be791165cb543df12dcd28e3973c8c4b7b4960a374a588fbf627d41655555",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/microterrain_review_v6/protocol.json",
+      "baseline_sha256": "719561607a5e0e3e7c516b1f1a628c5349d32eb67a408fa1f3c297a2c780ce42",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "719561607a5e0e3e7c516b1f1a628c5349d32eb67a408fa1f3c297a2c780ce42",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/microterrain_review_v7/protocol.json",
+      "baseline_sha256": "4fea9b5966604398199690a22efabe80dcb2a0d4267bd51bbec75c24a98255b7",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "4fea9b5966604398199690a22efabe80dcb2a0d4267bd51bbec75c24a98255b7",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/naip_earth_orthos/manifest.json",
+      "baseline_sha256": "359ae9a291066c23621ed8fa74d6d0f3c63fce9a2a1dc2689ef90ff7ea12e672",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "359ae9a291066c23621ed8fa74d6d0f3c63fce9a2a1dc2689ef90ff7ea12e672",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/naip_earth_signal/manifest.json",
+      "baseline_sha256": "a8fb74ca287462b39d099cf5e6d436d6a027bbaf7c3b92f8493e81b48ec25090",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "a8fb74ca287462b39d099cf5e6d436d6a027bbaf7c3b92f8493e81b48ec25090",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/naip_idaho/manifest.json",
+      "baseline_sha256": "99482ae61ef711ac07d508f94bafe4465ccd1a6f6b7e691144b407efe368a30b",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "99482ae61ef711ac07d508f94bafe4465ccd1a6f6b7e691144b407efe368a30b",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/nps_cotm_geology/manifest.json",
+      "baseline_sha256": "4373161a6b711be72f5502a164c59ccc8bad5e743af1143f3e170976d34cc61e",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "4373161a6b711be72f5502a164c59ccc8bad5e743af1143f3e170976d34cc61e",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/planetgsd/legacy_s4_manifest.json",
+      "baseline_sha256": "81e1b046327cd16752806503d7a1721eec255f02dd3e51df8dcd903f44bb91b0",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "81e1b046327cd16752806503d7a1721eec255f02dd3e51df8dcd903f44bb91b0",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/planetgsd/source_manifest.json",
+      "baseline_sha256": "abc85f1980188728f1c9eacd6d28a71b4d41cc7914f9d808c2fab3e398a274dd",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "abc85f1980188728f1c9eacd6d28a71b4d41cc7914f9d808c2fab3e398a274dd",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/published_analog_audit/protocol.json",
+      "baseline_sha256": "1314870d288a796927a2e3c695e0895605e52c2543ad1971ea96396e51f3ea22",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "1314870d288a796927a2e3c695e0895605e52c2543ad1971ea96396e51f3ea22",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/published_analog_audit/protocol_amendment_1.json",
+      "baseline_sha256": "ddfe68264737813715e3a9ba4030fe818ba490887cba70d7aab9cdd157b4e9fd",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "ddfe68264737813715e3a9ba4030fe818ba490887cba70d7aab9cdd157b4e9fd",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/relab_material_pilot/manifest.json",
+      "baseline_sha256": "6d565b56ac0e96ca17ec6c597267887cb49050e30916f5aa42d0e208776a7c9a",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "6d565b56ac0e96ca17ec6c597267887cb49050e30916f5aa42d0e208776a7c9a",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/relab_material_pilot/training_report.json",
+      "baseline_sha256": "7ba0b1d243ceb01575acdee33c5853d21060c38329243e800ae8ffe37915c73e",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "7ba0b1d243ceb01575acdee33c5853d21060c38329243e800ae8ffe37915c73e",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/relab_new_known_holdout/evaluation_seal.json",
+      "baseline_sha256": "c3426e8d0025ad8119984e0db30c23eff4614402bdd5e36d347ab4cffda78471",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "c3426e8d0025ad8119984e0db30c23eff4614402bdd5e36d347ab4cffda78471",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/relab_new_known_holdout/first_known_evaluation.json",
+      "baseline_sha256": "86b3da367895d488fe59bf1376568ca40ed6fd2e3698787d32c8e27db7926727",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "86b3da367895d488fe59bf1376568ca40ed6fd2e3698787d32c8e27db7926727",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/relab_new_known_holdout/manifest.json",
+      "baseline_sha256": "52d451c62fb425cac68d60a81cf60cb9a2442c82b628dbde9933e80cd1eda517",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "52d451c62fb425cac68d60a81cf60cb9a2442c82b628dbde9933e80cd1eda517",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/relab_new_known_holdout/next_known_holdout_manifest.json",
+      "baseline_sha256": "711f2959c7d5355cc0b231b8245d03028bb7df4b17af65bfc7a0ed6c4c8776dc",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "711f2959c7d5355cc0b231b8245d03028bb7df4b17af65bfc7a0ed6c4c8776dc",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/relab_new_known_holdout/spectrum_download_manifest.json",
+      "baseline_sha256": "8bf415743a9eb58dec6203bc99922c54fa14a79eea43086165ef59ce9fae28ea",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "8bf415743a9eb58dec6203bc99922c54fa14a79eea43086165ef59ce9fae28ea",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/relab_new_known_holdout/v4_first_known_evaluation.json",
+      "baseline_sha256": "dc3049b3d5310575bf2a874d623dd5c0b700f240ba27e68c2f23981fd5e51711",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "dc3049b3d5310575bf2a874d623dd5c0b700f240ba27e68c2f23981fd5e51711",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/relab_new_known_holdout/v4_spectrum_download_manifest.json",
+      "baseline_sha256": "cfbd73789b8a23fbf8100346370cbeb72ee54e11b4b5610053162d2f38071f1c",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "cfbd73789b8a23fbf8100346370cbeb72ee54e11b4b5610053162d2f38071f1c",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/sanjuan_aster_material/field_pairing_protocol_frozen.json",
+      "baseline_sha256": "66b316a17b51e132c5290ed1a6709808882f082046803b6b08453fceffdfc201",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "66b316a17b51e132c5290ed1a6709808882f082046803b6b08453fceffdfc201",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/sanjuan_aster_material/first_spatial_evaluation.json",
+      "baseline_sha256": "c6fd01f7bf553b89e689ad3fa9658d61cbcc0cc8e13ee9c9f48aecc28b160381",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "c6fd01f7bf553b89e689ad3fa9658d61cbcc0cc8e13ee9c9f48aecc28b160381",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/sanjuan_aster_material/protocol_frozen.json",
+      "baseline_sha256": "e6a4fc24883bbd07c4131d74cbbe299787d11f86865de1bba8ccea3ca85996ec",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "e6a4fc24883bbd07c4131d74cbbe299787d11f86865de1bba8ccea3ca85996ec",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/sanjuan_aviris_classic/execution_manifest_frozen.json",
+      "baseline_sha256": "b2e20d35b489925fca58e531f1e891336949ec7b874c2b33211df4589441ddea",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "b2e20d35b489925fca58e531f1e891336949ec7b874c2b33211df4589441ddea",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/sanjuan_aviris_classic/field_model_protocol_frozen.json",
+      "baseline_sha256": "c32f8c9965ce3e77e801771c7a12412ba51e8e75fcaf86c0b9df250901841fe1",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "c32f8c9965ce3e77e801771c7a12412ba51e8e75fcaf86c0b9df250901841fe1",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/sanjuan_aviris_classic/tiny_field_material_first_evaluation.json",
+      "baseline_sha256": "6b5db0a8b97ba596704908883f40e9e5f4cb551b9f53100708e0d169069f6215",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "6b5db0a8b97ba596704908883f40e9e5f4cb551b9f53100708e0d169069f6215",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/small_earth_morphology_holdout/earth_untouched_transfer_first_evaluation.json",
+      "baseline_sha256": "44453ae401a49f046736a71ca53285f617a497b6ece952204dd788a1d1c6632d",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "44453ae401a49f046736a71ca53285f617a497b6ece952204dd788a1d1c6632d",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/small_earth_morphology_holdout/earth_untouched_transfer_protocol_frozen.json",
+      "baseline_sha256": "83760662924589344a047818c8638db4109be92ff7a320ddf90da7c6ac2c3d72",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "83760662924589344a047818c8638db4109be92ff7a320ddf90da7c6ac2c3d72",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/small_earth_morphology_holdout/manifest.json",
+      "baseline_sha256": "a13fcebdf8148ac42f9a96a0b74a83acdbd15ee3d48d56ac989bc4a29268c729",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "a13fcebdf8148ac42f9a96a0b74a83acdbd15ee3d48d56ac989bc4a29268c729",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/small_earth_morphology_holdout/moon_geographic_test_20km_first_evaluation.json",
+      "baseline_sha256": "5056e7013a858ddc497dadf68d44b33b72a297579572f0d9cd2e84a95a0f083a",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "5056e7013a858ddc497dadf68d44b33b72a297579572f0d9cd2e84a95a0f083a",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/sombench_crater_audit/first_dtm_morphology_evaluation.json",
+      "baseline_sha256": "f1b7cfd730026b37e4eb459281cd8baae5f2c363a01668ed4cad182a48ae56d4",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "f1b7cfd730026b37e4eb459281cd8baae5f2c363a01668ed4cad182a48ae56d4",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/sombench_crater_audit/first_validation_dtm_morphology_evaluation.json",
+      "baseline_sha256": "eda56fb37d67db311fdf3e8c862f41cb19ddcb3d6347903af288d9790ef8a38b",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "eda56fb37d67db311fdf3e8c862f41cb19ddcb3d6347903af288d9790ef8a38b",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/sombench_crater_audit/frozen_dtm_morphology_protocol.json",
+      "baseline_sha256": "ae3a55a7353d2c0c17877ce5612c25672ff7903f83bf59e6c98297041bf74ba8",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "ae3a55a7353d2c0c17877ce5612c25672ff7903f83bf59e6c98297041bf74ba8",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/sombench_crater_audit/frozen_validation_dtm_morphology_protocol.json",
+      "baseline_sha256": "cf5f21ae2b57496fcc9d3a1b48a89b42cfbdff2a0c6f5e8d131e31f1b20f740f",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "cf5f21ae2b57496fcc9d3a1b48a89b42cfbdff2a0c6f5e8d131e31f1b20f740f",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/sombench_crater_audit/nonoverlap_wac_test_protocol.json",
+      "baseline_sha256": "78786a8db46e67580c385f53492dd9502984eb1e8f9f43a5d01120fa96b78b28",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "78786a8db46e67580c385f53492dd9502984eb1e8f9f43a5d01120fa96b78b28",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/source_paired_20_40_80km/manifest.json",
+      "baseline_sha256": "9970a1d5eb3eb57193095cf72e03467d4229aa87a28e11d61e66f85b9faab181",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "9970a1d5eb3eb57193095cf72e03467d4229aa87a28e11d61e66f85b9faab181",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/source_paired_20_40_80km/report.json",
+      "baseline_sha256": "2d9238a54dd2fd28b3a608f714464b7d81a6211071eb294a182a3d08679cfe29",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "2d9238a54dd2fd28b3a608f714464b7d81a6211071eb294a182a3d08679cfe29",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/unseen_glo90_triscale_transfer/first_evaluation.json",
+      "baseline_sha256": "21ea406e2d82ef1138ba8c7cf6f2dbe93550c964742de0a07f7ecd282bcd08a8",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "21ea406e2d82ef1138ba8c7cf6f2dbe93550c964742de0a07f7ecd282bcd08a8",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/unseen_glo90_triscale_transfer/manifest.json",
+      "baseline_sha256": "a8e2000a0adf502129c53e1c744eef08a03e1e0260ed301074ef6240f12f0153",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "a8e2000a0adf502129c53e1c744eef08a03e1e0260ed301074ef6240f12f0153",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/usgs_splib05_open_set/first_evaluation.json",
+      "baseline_sha256": "927b5811c6a7c6f600768bc855e4ee461af62a5ea8733e081a4084b71057e9eb",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "927b5811c6a7c6f600768bc855e4ee461af62a5ea8733e081a4084b71057e9eb",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/usgs_splib05_open_set/manifest.json",
+      "baseline_sha256": "0b7b7ca56bdab4bae26a05e0968d9422dc7f3e8bb079633cf84ded2d7c63994d",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "0b7b7ca56bdab4bae26a05e0968d9422dc7f3e8bb079633cf84ded2d7c63994d",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/usgs_splib05_open_set/next_evaluation_seal.json",
+      "baseline_sha256": "ff44b1daa26e72ae0a150dcee7982a53a8aef2c2d56c479f18e24408c7eed497",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "ff44b1daa26e72ae0a150dcee7982a53a8aef2c2d56c479f18e24408c7eed497",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/usgs_splib05_open_set/next_holdout_first_evaluation.json",
+      "baseline_sha256": "f1565c3b0301d0cdf196f07329caf4b313b2d1b179de9534e9d176ee28e5d00e",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "f1565c3b0301d0cdf196f07329caf4b313b2d1b179de9534e9d176ee28e5d00e",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/usgs_splib05_open_set/next_holdout_manifest.json",
+      "baseline_sha256": "d6c550a9b4031d5076312c69ba255721efb5137488a77e55f59b49dc375f7872",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "d6c550a9b4031d5076312c69ba255721efb5137488a77e55f59b49dc375f7872",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/usgs_splib05_open_set/next_spectrum_download_manifest.json",
+      "baseline_sha256": "99f5b680a7afa010eaee24b0c198a44e78f8d16eb728420f9115fa42759c09f2",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "99f5b680a7afa010eaee24b0c198a44e78f8d16eb728420f9115fa42759c09f2",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/usgs_splib05_open_set/spectrum_download_manifest.json",
+      "baseline_sha256": "780a86279035b751023b311c91fc90bcc7939a151d538bfffd773f17cfa62807",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "780a86279035b751023b311c91fc90bcc7939a151d538bfffd773f17cfa62807",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/usgs_splib05_open_set/v3_frozen_protocol.json",
+      "baseline_sha256": "7cb830135652fde989af5c2f7992059a7b67c50f7e4264b4780f7b9582396700",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "7cb830135652fde989af5c2f7992059a7b67c50f7e4264b4780f7b9582396700",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/usgs_splib05_open_set/v4_evaluation_seal.json",
+      "baseline_sha256": "5a48602ed9fb9de66768f35b99cecf021f61b90f216035d1a2d048381e0d76b7",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "5a48602ed9fb9de66768f35b99cecf021f61b90f216035d1a2d048381e0d76b7",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/usgs_splib05_open_set/v4_frozen_protocol.json",
+      "baseline_sha256": "3464f38b75e14001eff25fe6b0f0e03d9b8e41e03559a5ccc48d6c292c43b8e5",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "3464f38b75e14001eff25fe6b0f0e03d9b8e41e03559a5ccc48d6c292c43b8e5",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/usgs_splib05_open_set/v4_spectrum_download_manifest.json",
+      "baseline_sha256": "f057747ec4491017d35f22b5933424471909f6659b9e2ca269695f66307924ce",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "f057747ec4491017d35f22b5933424471909f6659b9e2ca269695f66307924ce",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/usgs_splib05_open_set/v4_training_report.json",
+      "baseline_sha256": "17767f9fcb71917c565ebcd5dceebfaa5354bb9d444993baaf81326d165450c0",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "17767f9fcb71917c565ebcd5dceebfaa5354bb9d444993baaf81326d165450c0",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/usgs_splib05_open_set/v4_unknown_first_evaluation.json",
+      "baseline_sha256": "3cd86c41f75b2e31ca97208e5500642484f0f53697d04e28192bc44358e6d321",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "3cd86c41f75b2e31ca97208e5500642484f0f53697d04e28192bc44358e6d321",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/usgs_splib05_open_set/v4_unknown_holdout_manifest.json",
+      "baseline_sha256": "84ba9e689a89979f06c2f6d17bbca142c34ebda5eb9cc2e2907eee6887b0510c",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "84ba9e689a89979f06c2f6d17bbca142c34ebda5eb9cc2e2907eee6887b0510c",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/usgs_splib05_pilot/first_external_evaluation.json",
+      "baseline_sha256": "ffe8739672a968e37e2d9a89e78794d61ae904277815eb1c2d0bf585dddbb0a5",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "ffe8739672a968e37e2d9a89e78794d61ae904277815eb1c2d0bf585dddbb0a5",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/usgs_splib05_pilot/spectrum_download_manifest.json",
+      "baseline_sha256": "53a10d5b07b49faa1cf3c22b2ce15c1d83a4b4e6972a760da458ac0ee3f0f45b",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "53a10d5b07b49faa1cf3c22b2ce15c1d83a4b4e6972a760da458ac0ee3f0f45b",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/visible_earth_multiscale_holdout/first_evaluation.json",
+      "baseline_sha256": "8b4aa79dc2eb78aec558d8d55af0807d241d2ec44d3b5493713c7a4f8fd337c7",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "8b4aa79dc2eb78aec558d8d55af0807d241d2ec44d3b5493713c7a4f8fd337c7",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/visible_earth_multiscale_holdout/first_evaluation_protocol.json",
+      "baseline_sha256": "de91f9784ea27a95bec615db15be069f890de0b997dc60e10d70080227892ed1",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "de91f9784ea27a95bec615db15be069f890de0b997dc60e10d70080227892ed1",
+      "unchanged_from_baseline": true
+    },
+    {
+      "path": "data/research/visible_earth_multiscale_holdout/manifest.json",
+      "baseline_sha256": "140147545aad1171498fe5937be187823a43534eee31e80c69189ced7bb465c1",
+      "exists": true,
+      "review_status": "pending artifact-level semantic/license audit",
+      "current_sha256": "140147545aad1171498fe5937be187823a43534eee31e80c69189ced7bb465c1",
+      "unchanged_from_baseline": true
+    }
+  ],
+  "distribution_bundle_policy": "Not authorized by this inventory. Exclude unresolved third-party pixels;no blanket open license for source data.",
+  "remaining": [
+    "Artifact-by-artifact historical review",
+    "Software dependency notices and project original-code license",
+    "Full Copernicus derivative notices",
+    "NASA product-specific usage policies",
+    "SRTM,MOLA/HRSC,gazetteer,NAIP,geology/climate/mineral source terms and acquisition lineage"
+  ]
+}

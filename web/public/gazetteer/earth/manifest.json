@@ -1,0 +1,15 @@
+{
+ "schema": "earth-place-tiles/v1",
+ "res_deg": 0.05,
+ "tile_deg": 10,
+ "tiles": 454,
+ "layout": "row 0 north, column 0 west; rle = [label, count, ...]; label 0 = no land",
+ "sources": [
+  "Natural Earth 1:10m admin-1 states and provinces",
+  "Natural Earth 1:50m admin-0 countries",
+  "Natural Earth 1:10m geography regions (polygons)"
+ ],
+ "source_url": "https://www.naturalearthdata.com/",
+ "license": "Public domain (Natural Earth)",
+ "chinese": "Natural Earth NAME_ZHT / NAME_ZH, converted to Traditional (Taiwan) with OpenCC s2twp"
+}

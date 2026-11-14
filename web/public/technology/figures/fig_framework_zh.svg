@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="510.23622pt" height="260.787402pt" viewBox="0 0 510.23622 260.787402" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ 
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 260.787402 
+L 510.23622 260.787402 
+L 510.23622 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 9.070866 85.03937 
+L 121.322835 85.03937 
+Q 124.724409 85.03937 124.724409 81.637795 
+L 124.724409 26.07874 
+Q 124.724409 22.677165 121.322835 22.677165 
+L 9.070866 22.677165 
+Q 5.669291 22.677165 5.669291 26.07874 
+L 5.669291 81.637795 
+Q 5.669291 85.03937 9.070866 85.03937 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #f1f5f9; stroke: #cbd5e1; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 9.070866 161.574803 
+L 121.322835 161.574803 
+Q 124.724409 161.574803 124.724409 158.173228 
+L 124.724409 99.779528 
+Q 124.724409 96.377953 121.322835 96.377953 
+L 9.070866 96.377953 
+Q 5.669291 96.377953 5.669291 99.779528 
+L 5.669291 158.173228 
+Q 5.669291 161.574803 9.070866 161.574803 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #f1f5f9; stroke: #cbd5e1; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 9.070866 249.448819 
+L 121.322835 249.448819 
+Q 124.724409 249.448819 124.724409 246.047244 
+L 124.724409 176.314961 
+Q 124.724409 172.913386 121.322835 172.913386 
+L 9.070866 172.913386 
+Q 5.669291 172.913386 5.669291 176.314961 
+L 5.669291 246.047244 
+Q 5.669291 249.448819 9.070866 249.448819 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #f1f5f9; stroke: #cbd5e1; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 145.133858 96.377953 
+L 257.385827 96.377953 
+Q 260.787402 96.377953 260.787402 92.976378 
+L 260.787402 26.07874 
+Q 260.787402 22.677165 257.385827 22.677165 
+L 145.133858 22.677165 
+Q 141.732283 22.677165 141.732283 26.07874 
+L 141.732283 92.976378 
+Q 141.732283 96.377953 145.133858 96.377953 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #dbeafe; stroke: #1d4ed8; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 145.133858 181.417323 
+L 257.385827 181.417323 
+Q 260.787402 181.417323 260.787402 178.015748 
+L 260.787402 111.11811 
+Q 260.787402 107.716535 257.385827 107.716535 
+L 145.133858 107.716535 
+Q 141.732283 107.716535 141.732283 111.11811 
+L 141.732283 178.015748 
+Q 141.732283 181.417323 145.133858 181.417323 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #dbeafe; stroke: #1d4ed8; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 145.133858 249.448819 
+L 257.385827 249.448819 
+Q 260.787402 249.448819 260.787402 246.047244 
+L 260.787402 196.15748 
+Q 260.787402 192.755906 257.385827 192.755906 
+L 145.133858 192.755906 
+Q 141.732283 192.755906 141.732283 196.15748 
+L 141.732283 246.047244 
+Q 141.732283 249.448819 145.133858 249.448819 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #fef3c7; stroke: #b45309; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 281.19685 96.377953 
+L 399.11811 96.377953 
+Q 402.519685 96.377953 402.519685 92.976378 
+L 402.519685 26.07874 
+Q 402.519685 22.677165 399.11811 22.677165 
+L 281.19685 22.677165 
+Q 277.795276 22.677165 277.795276 26.07874 
+L 277.795276 92.976378 
+Q 277.795276 96.377953 281.19685 96.377953 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #ccfbf1; stroke: #0f766e; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 281.19685 175.748031 
+L 399.11811 175.748031 
+Q 402.519685 175.748031 402.519685 172.346457 
+L 402.519685 111.11811 
+Q 402.519685 107.716535 399.11811 107.716535 
+L 281.19685 107.716535 
+Q 277.795276 107.716535 277.795276 111.11811 
+L 277.795276 172.346457 
+Q 277.795276 175.748031 281.19685 175.748031 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #dcfce7; stroke: #15803d; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 281.19685 249.448819 
+L 399.11811 249.448819 
+Q 402.519685 249.448819 402.519685 246.047244 
+L 402.519685 190.488189 
+Q 402.519685 187.086614 399.11811 187.086614 
+L 281.19685 187.086614 
+Q 277.795276 187.086614 277.795276 190.488189 
+L 277.795276 246.047244 
+Q 277.795276 249.448819 281.19685 249.448819 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #ffffff; stroke: #b45309; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 422.929134 76.535433 
+L 501.165354 76.535433 
+Q 504.566929 76.535433 504.566929 73.133858 
+L 504.566929 31.748031 
+Q 504.566929 28.346457 501.165354 28.346457 
+L 422.929134 28.346457 
+Q 419.527559 28.346457 419.527559 31.748031 
+L 419.527559 73.133858 
+Q 419.527559 76.535433 422.929134 76.535433 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #ffffff; stroke: #475569; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 422.929134 133.228346 
+L 501.165354 133.228346 
+Q 504.566929 133.228346 504.566929 129.826772 
+L 504.566929 88.440945 
+Q 504.566929 85.03937 501.165354 85.03937 
+L 422.929134 85.03937 
+Q 419.527559 85.03937 419.527559 88.440945 
+L 419.527559 129.826772 
+Q 419.527559 133.228346 422.929134 133.228346 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #ffffff; stroke: #475569; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 422.929134 189.92126 
+L 501.165354 189.92126 
+Q 504.566929 189.92126 504.566929 186.519685 
+L 504.566929 145.133858 
+Q 504.566929 141.732283 501.165354 141.732283 
+L 422.929134 141.732283 
+Q 419.527559 141.732283 419.527559 145.133858 
+L 419.527559 186.519685 
+Q 419.527559 189.92126 422.929134 189.92126 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #ffffff; stroke: #475569; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 422.929134 246.614173 
+L 501.165354 246.614173 
+Q 504.566929 246.614173 504.566929 243.212598 
+L 504.566929 201.826772 
+Q 504.566929 198.425197 501.165354 198.425197 
+L 422.929134 198.425197 
+Q 419.527559 198.425197 419.527559 201.826772 
+L 419.527559 243.212598 
+Q 419.527559 246.614173 422.929134 246.614173 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #ffffff; stroke: #475569; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 133.228346 221.102362 
+L 133.228346 53.858268 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 124.724409 53.858268 
+Q 128.976378 53.858268 133.228346 53.858268 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 124.724409 128.976378 
+Q 128.976378 128.976378 133.228346 128.976378 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 124.724409 211.181102 
+Q 128.976378 211.181102 133.228346 211.181102 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 133.228346 59.527559 
+Q 137.480315 59.527559 141.061463 59.527559 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+    <path d="M 138.461463 58.227559 
+L 141.061463 59.527559 
+L 138.461463 60.827559 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #475569; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 133.228346 144.566929 
+Q 137.480315 144.566929 141.061463 144.566929 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+    <path d="M 138.461463 143.266929 
+L 141.061463 144.566929 
+L 138.461463 145.866929 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #475569; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 133.228346 221.102362 
+Q 137.480315 221.102362 141.061463 221.102362 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+    <path d="M 138.461463 219.802362 
+L 141.061463 221.102362 
+L 138.461463 222.402362 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #475569; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 269.291339 218.267717 
+L 269.291339 59.527559 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 260.787402 59.527559 
+Q 265.03937 59.527559 269.291339 59.527559 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 260.787402 144.566929 
+Q 265.03937 144.566929 269.291339 144.566929 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 260.787402 221.102362 
+Q 265.03937 221.102362 269.291339 221.102362 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 269.291339 59.527559 
+Q 273.543307 59.527559 277.124455 59.527559 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+    <path d="M 274.524455 58.227559 
+L 277.124455 59.527559 
+L 274.524455 60.827559 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #475569; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 269.291339 141.732283 
+Q 273.543307 141.732283 277.124455 141.732283 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+    <path d="M 274.524455 140.432283 
+L 277.124455 141.732283 
+L 274.524455 143.032283 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #475569; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 269.291339 218.267717 
+Q 273.543307 218.267717 277.124455 218.267717 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+    <path d="M 274.524455 216.967717 
+L 277.124455 218.267717 
+L 274.524455 219.567717 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #475569; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 411.023622 222.519685 
+L 411.023622 52.440945 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linecap: square"/>
+   </g>
+   <g id="patch_27">
+    <path d="M 402.519685 59.527559 
+Q 406.771654 59.527559 411.023622 59.527559 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_28">
+    <path d="M 402.519685 141.732283 
+Q 406.771654 141.732283 411.023622 141.732283 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_29">
+    <path d="M 402.519685 218.267717 
+Q 406.771654 218.267717 411.023622 218.267717 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_30">
+    <path d="M 411.023622 52.440945 
+Q 415.275591 52.440945 418.856739 52.440945 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+    <path d="M 416.256739 51.140945 
+L 418.856739 52.440945 
+L 416.256739 53.740945 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #475569; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_31">
+    <path d="M 411.023622 109.133858 
+Q 415.275591 109.133858 418.856739 109.133858 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+    <path d="M 416.256739 107.833858 
+L 418.856739 109.133858 
+L 416.256739 110.433858 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #475569; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_32">
+    <path d="M 411.023622 165.826772 
+Q 415.275591 165.826772 418.856739 165.826772 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+    <path d="M 416.256739 164.526772 
+L 418.856739 165.826772 
+L 416.256739 167.126772 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #475569; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_33">
+    <path d="M 411.023622 222.519685 
+Q 415.275591 222.519685 418.856739 222.519685 
+" clip-path="url(#pa4d7ba7a4b)" style="fill: none; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+    <path d="M 416.256739 221.219685 
+L 418.856739 222.519685 
+L 416.256739 223.819685 
+z
+" clip-path="url(#pa4d7ba7a4b)" style="fill: #475569; stroke: #475569; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #64748b" x="5.669291" y="11.78676" transform="rotate(-0 5.669291 11.78676)">實測資料</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #64748b" x="141.732283" y="11.78676" transform="rotate(-0 141.732283 11.78676)">尺度整合</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #64748b" x="277.795276" y="11.78676" transform="rotate(-0 277.795276 11.78676)">性質空間</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: start; fill: #64748b" x="413.858268" y="11.78676" transform="rotate(-0 413.858268 11.78676)">評估</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 7px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #1e293b" x="65.19685" y="42.726808" transform="rotate(-0 65.19685 42.726808)">月球（軌道）</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="65.19685" y="51.758313" transform="rotate(-0 65.19685 51.758313)">Lunar Prospector GRS：Fe、Ti、K、Th</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="65.19685" y="60.539547" transform="rotate(-0 65.19685 60.539547)">LOLA 地形</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="65.19685" y="69.35078" transform="rotate(-0 65.19685 69.35078)">LROC WAC I/F（代理）</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 7px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #1e293b" x="65.19685" y="117.844918" transform="rotate(-0 65.19685 117.844918)">火星（軌道）</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="65.19685" y="126.861423" transform="rotate(-0 65.19685 126.861423)">Mars Odyssey GRS：Fe、K、Th</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="65.19685" y="135.657657" transform="rotate(-0 65.19685 135.657657)">MOLA 地形；TES 反照率</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="65.19685" y="144.43889" transform="rotate(-0 65.19685 144.43889)">火星氣候資料庫溫度（模式）</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 7px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #1e293b" x="65.19685" y="195.659026" transform="rotate(-0 65.19685 195.659026)">地球（實測）</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="65.19685" y="204.690531" transform="rotate(-0 65.19685 204.690531)">航空伽瑪射線 K、eTh</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="65.19685" y="213.471765" transform="rotate(-0 65.19685 213.471765)">表土 FeO、TiO₂</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="65.19685" y="222.252998" transform="rotate(-0 65.19685 222.252998)">全岩分析（GEOROC）</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="65.19685" y="231.034231" transform="rotate(-0 65.19685 231.034231)">ETOPO；GLASS；MODIS</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 7px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #1e293b" x="201.259843" y="44.005483" transform="rotate(-0 201.259843 44.005483)">空間支撐</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="201.259843" y="53.036988" transform="rotate(-0 201.259843 53.036988)">1–2 km 航空格網</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="201.259843" y="61.818221" transform="rotate(-0 201.259843 61.818221)">→ 40 km 窗格（式 1）</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="201.259843" y="70.599455" transform="rotate(-0 201.259843 70.599455)">→ 45 km 高斯核（月球）</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="201.259843" y="79.380688" transform="rotate(-0 201.259843 79.380688)">→ 220 km 圓盤（火星）</text>
+   </g>
+   <g id="text_23">
+    <text style="font-weight: 700; font-size: 7px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #1e293b" x="201.259843" y="129.044853" transform="rotate(-0 201.259843 129.044853)">深度與單位</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="201.259843" y="138.076358" transform="rotate(-0 201.259843 138.076358)">伽瑪射線：上部約 30 cm</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="201.259843" y="146.857591" transform="rotate(-0 201.259843 146.857591)">表土樣本：上部 5–25 cm</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="201.259843" y="155.638825" transform="rotate(-0 201.259843 155.638825)">全岩：手標本</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="201.259843" y="164.420058" transform="rotate(-0 201.259843 164.420058)">氧化物 wt%；1.88 km 坡度</text>
+   </g>
+   <g id="text_28">
+    <text style="font-weight: 700; font-size: 7px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #1e293b" x="201.259843" y="209.970903" transform="rotate(-0 201.259843 209.970903)">估計（地球）</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="201.259843" y="219.002408" transform="rotate(-0 201.259843 219.002408)">以不含化學的</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="201.259843" y="227.783641" transform="rotate(-0 201.259843 227.783641)">共變量訓練樹模型；</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="201.259843" y="236.564874" transform="rotate(-0 201.259843 236.564874)">90% 保形區間</text>
+   </g>
+   <g id="text_32">
+    <text style="font-weight: 700; font-size: 7px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #1e293b" x="340.15748" y="48.3961" transform="rotate(-0 340.15748 48.3961)">風化層軌</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="340.15748" y="57.427605" transform="rotate(-0 340.15748 57.427605)">表土與航空值</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="340.15748" y="66.238838" transform="rotate(-0 340.15748 66.238838)">p = Pr(|q − e| ≤ τ)（式 2）</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="340.15748" y="74.990071" transform="rotate(-0 340.15748 74.990071)">S、C（式 3）</text>
+   </g>
+   <g id="text_36">
+    <text style="font-weight: 700; font-size: 7px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #1e293b" x="340.15748" y="130.600824" transform="rotate(-0 340.15748 130.600824)">基岩軌</text>
+   </g>
+   <g id="text_37">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="340.15748" y="139.632329" transform="rotate(-0 340.15748 139.632329)">全岩中位數</text>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="340.15748" y="148.413562" transform="rotate(-0 340.15748 148.413562)">（每窗格 ≥ 3 筆分析）</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="340.15748" y="157.194796" transform="rotate(-0 340.15748 157.194796)">相同的分數與上限</text>
+   </g>
+   <g id="text_40">
+    <text style="font-weight: 700; font-size: 7px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #1e293b" x="340.15748" y="211.526874" transform="rotate(-0 340.15748 211.526874)">啟發式條件篩選</text>
+   </g>
+   <g id="text_41">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="340.15748" y="220.558379" transform="rotate(-0 340.15748 220.558379)">由圖資得場域條件；</text>
+   </g>
+   <g id="text_42">
+    <text style="font-size: 6px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="340.15748" y="229.339612" transform="rotate(-0 340.15748 229.339612)">候選池：F ≥ 0.75</text>
+   </g>
+   <g id="text_43">
+    <text style="font-weight: 700; font-size: 6.8px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #1e293b" x="462.047244" y="46.09997" transform="rotate(-0 462.047244 46.09997)">地球上限</text>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 5.9px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="462.047244" y="54.64426" transform="rotate(-0 462.047244 54.64426)">風化層與基岩；</text>
+   </g>
+   <g id="text_45">
+    <text style="font-size: 5.9px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="462.047244" y="62.967328" transform="rotate(-0 462.047244 62.967328)">權重、容差</text>
+   </g>
+   <g id="text_46">
+    <text style="font-weight: 700; font-size: 6.8px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #1e293b" x="462.047244" y="102.792884" transform="rotate(-0 462.047244 102.792884)">檢索效率</text>
+   </g>
+   <g id="text_47">
+    <text style="font-size: 5.9px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="462.047244" y="111.337173" transform="rotate(-0 462.047244 111.337173)">保留的地球窗格</text>
+   </g>
+   <g id="text_48">
+    <text style="font-size: 5.9px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="462.047244" y="119.660241" transform="rotate(-0 462.047244 119.660241)">（式 4）</text>
+   </g>
+   <g id="text_49">
+    <text style="font-weight: 700; font-size: 6.8px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #1e293b" x="462.047244" y="159.485797" transform="rotate(-0 462.047244 159.485797)">相符率檢定</text>
+   </g>
+   <g id="text_50">
+    <text style="font-size: 5.9px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="462.047244" y="168.030086" transform="rotate(-0 462.047244 168.030086)">篩選 vs 隨機；</text>
+   </g>
+   <g id="text_51">
+    <text style="font-size: 5.9px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="462.047244" y="176.353155" transform="rotate(-0 462.047244 176.353155)">地球正對照</text>
+   </g>
+   <g id="text_52">
+    <text style="font-weight: 700; font-size: 6.8px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #1e293b" x="462.047244" y="216.17871" transform="rotate(-0 462.047244 216.17871)">尺度與遷移</text>
+   </g>
+   <g id="text_53">
+    <text style="font-size: 5.9px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="462.047244" y="224.723" transform="rotate(-0 462.047244 224.723)">1–40 km 支撐；</text>
+   </g>
+   <g id="text_54">
+    <text style="font-size: 5.9px; font-family: 'Noto Sans CJK TC', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif, 'Liberation Sans', Arial, Helvetica, sans-serif, 'DejaVu Sans', Arial, sans-serif, sans-serif; text-anchor: middle; fill: #475569" x="462.047244" y="233.046068" transform="rotate(-0 462.047244 233.046068)">跨區域 R²</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pa4d7ba7a4b">
+   <rect x="0" y="0" width="510.23622" height="260.787402"/>
+  </clipPath>
+ </defs>
+</svg>

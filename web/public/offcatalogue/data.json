@@ -1,0 +1,844 @@
+[
+ {
+  "id": "central_oregon",
+  "lat": 44.19,
+  "lon": -121.22,
+  "name": {
+   "zh": "奧勒岡中部（Bend 與 Newberry 火山一帶）",
+   "en": "Central Oregon (Bend and Newberry volcano)"
+  },
+  "history": {
+   "zh": "1964 到 1966 年間，Apollo 太空人在這一帶接受過地質訓練（熔岩流、黑曜岩流、浮石平原）。現在常用的類比場址目錄沒有收錄它：這是一個被遺忘的訓練場。",
+   "en": "Apollo astronauts trained in field geology here between 1964 and 1966 (lava flows, obsidian flows, pumice plains). The analog catalogues in use today do not list it: a forgotten training ground."
+  },
+  "test": {
+   "zh": "月面資源原料的化學對照、玄武岩與浮石地形上的行走與取樣。",
+   "en": "A chemistry reference for lunar feedstock, and walking and sampling on basalt and pumice ground."
+  },
+  "image": "img/central_oregon.jpg",
+  "ceiling": {
+   "zh": "Artemis 南極資源用途的地球上限 0.80，全世界只有 7 個窗格達到，這裡是其中之一。知名場址反而較低：Ries 與 Lava Beds 0.60、Meteor Crater 0.30、Craters of the Moon 0。",
+   "en": "Earth ceiling for the Artemis south-polar resource use is 0.80, reached by only 7 windows worldwide; this is one of them. The famous sites score lower: Ries and Lava Beds 0.60, Meteor Crater 0.30, Craters of the Moon 0."
+  },
+  "nearest": {
+   "id": "paad_22",
+   "name": "Shifting Sands dune field/Christmas Valley sand dunes",
+   "name_zh": null,
+   "distance_km": 117.1,
+   "named_region": null,
+   "off_catalogue": true
+  },
+  "microbiome": {
+   "available": true,
+   "radius_km": 50.0,
+   "total": 6,
+   "by_class": {
+    "hydrothermal": 0,
+    "saline_evaporite": 0,
+    "cryo": 0,
+    "arid_soil": 0,
+    "subsurface_rock": 0
+   },
+   "labels": {
+    "hydrothermal": {
+     "zh": "溫泉與火山熱液",
+     "en": "hot springs and volcanic heat"
+    },
+    "saline_evaporite": {
+     "zh": "鹽湖與鹼湖",
+     "en": "salt and soda lakes"
+    },
+    "cryo": {
+     "zh": "冰川與凍土",
+     "en": "glaciers and permafrost"
+    },
+    "arid_soil": {
+     "zh": "沙漠土壤",
+     "en": "desert soil"
+    },
+    "subsurface_rock": {
+     "zh": "地下、洞穴、礦坑與岩石表面",
+     "en": "deep subsurface, caves, mines and rock surfaces"
+    }
+   }
+  }
+ },
+ {
+  "id": "pinacate",
+  "lat": 31.61696,
+  "lon": -113.03775,
+  "name": {
+   "zh": "El Pinacate 火山區（墨西哥索諾拉）",
+   "en": "El Pinacate volcanic field (Sonora, Mexico)"
+  },
+  "history": {
+   "zh": "1965 到 1970 年，NASA 在這裡訓練 Apollo 太空人，包括 Apollo 14 與 Apollo 17 的組員。現在常用的類比目錄沒有收錄。",
+   "en": "NASA trained Apollo astronauts here from 1965 to 1970, including the Apollo 14 and Apollo 17 crews. The catalogues in use today do not list it."
+  },
+  "test": {
+   "zh": "瑪珥火山口與熔岩流：天窗坑與熔岩管搜尋方法、地下空間的通訊與導航。",
+   "en": "Maar craters and lava flows: methods to find skylights and tubes, communication and navigation underground."
+  },
+  "image": "img/pinacate.jpg",
+  "target": {
+   "zh": "月球天窗坑（地下探測用途）",
+   "en": "lunar skylights (subsurface use)",
+   "rank": 1,
+   "score": 100.0,
+   "body": "moon"
+  },
+  "strong": [
+   {
+    "zh": "裸露地表",
+    "en": "Bare ground"
+   },
+   {
+    "zh": "岩性（ISRU 原料）",
+    "en": "Rock type (ISRU feedstock)"
+   },
+   {
+    "zh": "乾燥",
+    "en": "Dryness"
+   },
+   {
+    "zh": "火山作用",
+    "en": "Volcanism"
+   },
+   {
+    "zh": "熔岩管地形",
+    "en": "Lava-tube terrain"
+   },
+   {
+    "zh": "洞穴或坑道",
+    "en": "Caves or mines"
+   },
+   {
+    "zh": "野外可到達",
+    "en": "Field access"
+   },
+   {
+    "zh": "後勤",
+    "en": "Logistics"
+   }
+  ],
+  "breaks": [
+   {
+    "zh": "年均溫",
+    "en": "Mean temperature"
+   },
+   {
+    "zh": "極低溫",
+    "en": "Extreme cold"
+   }
+  ],
+  "nearest": {
+   "id": "paad_2",
+   "name": "Gran Desierto",
+   "name_zh": null,
+   "distance_km": 126.7,
+   "named_region": null,
+   "off_catalogue": true
+  },
+  "microbiome": {
+   "available": true,
+   "radius_km": 50.0,
+   "total": 0,
+   "by_class": {
+    "hydrothermal": 0,
+    "saline_evaporite": 0,
+    "cryo": 0,
+    "arid_soil": 0,
+    "subsurface_rock": 0
+   },
+   "labels": {
+    "hydrothermal": {
+     "zh": "溫泉與火山熱液",
+     "en": "hot springs and volcanic heat"
+    },
+    "saline_evaporite": {
+     "zh": "鹽湖與鹼湖",
+     "en": "salt and soda lakes"
+    },
+    "cryo": {
+     "zh": "冰川與凍土",
+     "en": "glaciers and permafrost"
+    },
+    "arid_soil": {
+     "zh": "沙漠土壤",
+     "en": "desert soil"
+    },
+    "subsurface_rock": {
+     "zh": "地下、洞穴、礦坑與岩石表面",
+     "en": "deep subsurface, caves, mines and rock surfaces"
+    }
+   }
+  }
+ },
+ {
+  "id": "harrat_ash_shaam",
+  "lat": 31.97628,
+  "lon": 37.41297,
+  "name": {
+   "zh": "Harrat ash Shaam 玄武岩高原（敘利亞南部與約旦東北）",
+   "en": "Harrat ash Shaam basalt plateau (southern Syria and north-east Jordan)"
+  },
+  "history": {
+   "zh": "2018 與 2019 年有兩篇學會摘要提出：這裡的「jubot」窪地可以當作行星表面坑洞的類比。系統沒有讀過這些研究，卻把這裡排在月球天窗坑的第一名。目前的安全情勢可能讓實地工作困難。",
+   "en": "Two conference abstracts (2018 and 2019) proposed its \"jubot\" depressions as analogs for planetary pits. The ranking had no access to that work and still put this plateau first for a lunar skylight. The present security situation may make fieldwork difficult."
+  },
+  "test": {
+   "zh": "坑洞成因（塌陷或其他）的判讀、玄武岩高原上的移動。",
+   "en": "Telling how pits form (collapse or otherwise), and mobility on a basalt plateau."
+  },
+  "image": "img/harrat_ash_shaam.jpg",
+  "target": {
+   "zh": "Marius Hills 天窗坑",
+   "en": "Marius Hills skylight",
+   "rank": 1,
+   "score": 84.3,
+   "body": "moon"
+  },
+  "strong": [
+   {
+    "zh": "裸露地表",
+    "en": "Bare ground"
+   },
+   {
+    "zh": "岩性（ISRU 原料）",
+    "en": "Rock type (ISRU feedstock)"
+   },
+   {
+    "zh": "日夜溫差",
+    "en": "Day-night swing"
+   },
+   {
+    "zh": "乾燥",
+    "en": "Dryness"
+   },
+   {
+    "zh": "細粒鬆散表土",
+    "en": "Loose fine soil"
+   },
+   {
+    "zh": "火山作用",
+    "en": "Volcanism"
+   },
+   {
+    "zh": "熔岩管地形",
+    "en": "Lava-tube terrain"
+   },
+   {
+    "zh": "野外可到達",
+    "en": "Field access"
+   },
+   {
+    "zh": "後勤",
+    "en": "Logistics"
+   }
+  ],
+  "breaks": [
+   {
+    "zh": "年均溫",
+    "en": "Mean temperature"
+   },
+   {
+    "zh": "極低溫",
+    "en": "Extreme cold"
+   },
+   {
+    "zh": "洞穴或坑道",
+    "en": "Caves or mines"
+   }
+  ],
+  "nearest": {
+   "id": "paad_32",
+   "name": "Nahal Kasuy mega-ripple filed",
+   "name_zh": null,
+   "distance_km": 320.9,
+   "named_region": null,
+   "off_catalogue": true
+  },
+  "microbiome": {
+   "available": true,
+   "radius_km": 50.0,
+   "total": 0,
+   "by_class": {
+    "hydrothermal": 0,
+    "saline_evaporite": 0,
+    "cryo": 0,
+    "arid_soil": 0,
+    "subsurface_rock": 0
+   },
+   "labels": {
+    "hydrothermal": {
+     "zh": "溫泉與火山熱液",
+     "en": "hot springs and volcanic heat"
+    },
+    "saline_evaporite": {
+     "zh": "鹽湖與鹼湖",
+     "en": "salt and soda lakes"
+    },
+    "cryo": {
+     "zh": "冰川與凍土",
+     "en": "glaciers and permafrost"
+    },
+    "arid_soil": {
+     "zh": "沙漠土壤",
+     "en": "desert soil"
+    },
+    "subsurface_rock": {
+     "zh": "地下、洞穴、礦坑與岩石表面",
+     "en": "deep subsurface, caves, mines and rock surfaces"
+    }
+   }
+  }
+ },
+ {
+  "id": "harrat_khaybar",
+  "lat": 23.44413,
+  "lon": 39.98724,
+  "name": {
+   "zh": "Harrat Khaybar 與 Harrat Rahat 熔岩原（沙烏地阿拉伯，麥地那附近）",
+   "en": "Harrat Khaybar and Harrat Rahat lava fields (Saudi Arabia, near Medina)"
+  },
+  "history": {
+   "zh": "我們沒有找到把這裡當作月球或火星類比的研究。這片熔岩原裡有 Umm Jirsan 熔岩管，長約 1.5 公里，是沙烏地阿拉伯已知最長的。",
+   "en": "We found no study that uses these fields as a lunar or Martian analog. They hold the Umm Jirsan lava tube, about 1.5 km long, the longest known in Saudi Arabia."
+  },
+  "test": {
+   "zh": "熔岩管入口與天窗坑的偵測、玄武岩熔岩流與流紋岩穹丘並存的地形。",
+   "en": "Detecting tube entrances and skylights; basalt flows next to rhyolite domes."
+  },
+  "image": "img/harrat_khaybar.jpg",
+  "target": {
+   "zh": "Marius Hills 天窗坑",
+   "en": "Marius Hills skylight",
+   "rank": 2,
+   "score": 83.2,
+   "body": "moon"
+  },
+  "strong": [
+   {
+    "zh": "裸露地表",
+    "en": "Bare ground"
+   },
+   {
+    "zh": "岩性（ISRU 原料）",
+    "en": "Rock type (ISRU feedstock)"
+   },
+   {
+    "zh": "日夜溫差",
+    "en": "Day-night swing"
+   },
+   {
+    "zh": "正午太陽仰角",
+    "en": "Noon Sun elevation"
+   },
+   {
+    "zh": "乾燥",
+    "en": "Dryness"
+   },
+   {
+    "zh": "火山作用",
+    "en": "Volcanism"
+   },
+   {
+    "zh": "熔岩管地形",
+    "en": "Lava-tube terrain"
+   },
+   {
+    "zh": "野外可到達",
+    "en": "Field access"
+   },
+   {
+    "zh": "後勤",
+    "en": "Logistics"
+   }
+  ],
+  "breaks": [
+   {
+    "zh": "年均溫",
+    "en": "Mean temperature"
+   },
+   {
+    "zh": "極低溫",
+    "en": "Extreme cold"
+   },
+   {
+    "zh": "洞穴或坑道",
+    "en": "Caves or mines"
+   }
+  ],
+  "nearest": {
+   "id": "paad_32",
+   "name": "Nahal Kasuy mega-ripple filed",
+   "name_zh": null,
+   "distance_km": 879.8,
+   "named_region": null,
+   "off_catalogue": true
+  },
+  "microbiome": {
+   "available": true,
+   "radius_km": 50.0,
+   "total": 0,
+   "by_class": {
+    "hydrothermal": 0,
+    "saline_evaporite": 0,
+    "cryo": 0,
+    "arid_soil": 0,
+    "subsurface_rock": 0
+   },
+   "labels": {
+    "hydrothermal": {
+     "zh": "溫泉與火山熱液",
+     "en": "hot springs and volcanic heat"
+    },
+    "saline_evaporite": {
+     "zh": "鹽湖與鹼湖",
+     "en": "salt and soda lakes"
+    },
+    "cryo": {
+     "zh": "冰川與凍土",
+     "en": "glaciers and permafrost"
+    },
+    "arid_soil": {
+     "zh": "沙漠土壤",
+     "en": "desert soil"
+    },
+    "subsurface_rock": {
+     "zh": "地下、洞穴、礦坑與岩石表面",
+     "en": "deep subsurface, caves, mines and rock surfaces"
+    }
+   }
+  }
+ },
+ {
+  "id": "victoria_island",
+  "lat": 72.03737,
+  "lon": -108.93119,
+  "name": {
+   "zh": "加拿大北極 Victoria Island 西部",
+   "en": "Western Victoria Island, Canadian Arctic"
+  },
+  "history": {
+   "zh": "文獻很少：有一篇以島上 Gossan Hill 為火星凍土礦物類比的研究，但沒有以月球南極為目標的研究。",
+   "en": "Little literature: one study uses Gossan Hill on the island as a Mars permafrost-mineral analog; none targets the lunar south pole."
+  },
+  "test": {
+   "zh": "低太陽角與長陰影下的導航與相機曝光、凍土、極地後勤。",
+   "en": "Navigation and camera exposure under a low Sun and long shadows, permafrost, polar logistics."
+  },
+  "image": "img/victoria_island.jpg",
+  "target": {
+   "zh": "Artemis III 南極候選區（Mons Mouton）",
+   "en": "Artemis III south-polar region (Mons Mouton)",
+   "rank": 1,
+   "score": 64.7,
+   "body": "moon"
+  },
+  "strong": [
+   {
+    "zh": "裸露地表",
+    "en": "Bare ground"
+   },
+   {
+    "zh": "岩性（ISRU 原料）",
+    "en": "Rock type (ISRU feedstock)"
+   },
+   {
+    "zh": "極低溫",
+    "en": "Extreme cold"
+   },
+   {
+    "zh": "低太陽角",
+    "en": "Low sun"
+   },
+   {
+    "zh": "水冰（資源）",
+    "en": "Water ice (resource)"
+   },
+   {
+    "zh": "細粒鬆散表土",
+    "en": "Loose fine soil"
+   }
+  ],
+  "breaks": [
+   {
+    "zh": "年均溫",
+    "en": "Mean temperature"
+   },
+   {
+    "zh": "日夜溫差",
+    "en": "Day-night swing"
+   },
+   {
+    "zh": "撞擊作用",
+    "en": "Impact cratering"
+   },
+   {
+    "zh": "野外可到達",
+    "en": "Field access"
+   }
+  ],
+  "nearest": {
+   "id": "haughton_devon_island",
+   "name": "Haughton impact structure, Devon Island",
+   "name_zh": "霍頓撞擊坑（德文島）",
+   "distance_km": 701.9,
+   "named_region": null,
+   "off_catalogue": true
+  },
+  "microbiome": {
+   "available": true,
+   "radius_km": 50.0,
+   "total": 0,
+   "by_class": {
+    "hydrothermal": 0,
+    "saline_evaporite": 0,
+    "cryo": 0,
+    "arid_soil": 0,
+    "subsurface_rock": 0
+   },
+   "labels": {
+    "hydrothermal": {
+     "zh": "溫泉與火山熱液",
+     "en": "hot springs and volcanic heat"
+    },
+    "saline_evaporite": {
+     "zh": "鹽湖與鹼湖",
+     "en": "salt and soda lakes"
+    },
+    "cryo": {
+     "zh": "冰川與凍土",
+     "en": "glaciers and permafrost"
+    },
+    "arid_soil": {
+     "zh": "沙漠土壤",
+     "en": "desert soil"
+    },
+    "subsurface_rock": {
+     "zh": "地下、洞穴、礦坑與岩石表面",
+     "en": "deep subsurface, caves, mines and rock surfaces"
+    }
+   }
+  }
+ },
+ {
+  "id": "sistan",
+  "lat": 31.25764,
+  "lon": 61.89153,
+  "name": {
+   "zh": "錫斯坦盆地（阿富汗與伊朗交界的 Hamun 湖區）",
+   "en": "Sistan basin (Hamun lakes, Afghanistan and Iran)"
+  },
+  "history": {
+   "zh": "我們沒有找到把這裡當作火星類比的研究。這是一個內流盆地，Hamun 湖會隨上游來水擴張與乾涸，1998 到 2005 年乾旱時幾乎完全乾掉。",
+   "en": "We found no study that uses it as a Mars analog. It is an endorheic basin whose Hamun lakes grow and dry with river inflow; they almost dried out completely in the 1998–2005 drought."
+  },
+  "test": {
+   "zh": "乾涸湖床與三角洲沉積、鹽類、風蝕：對照 Jezero 的湖相沉積與三角洲。",
+   "en": "Dried lake beds, delta deposits, salts and wind erosion, to compare with the lake and delta deposits of Jezero."
+  },
+  "image": "img/sistan.jpg",
+  "target": {
+   "zh": "Jezero 撞擊坑",
+   "en": "Jezero crater",
+   "rank": 2,
+   "score": 82.1,
+   "body": "mars"
+  },
+  "strong": [
+   {
+    "zh": "裸露地表",
+    "en": "Bare ground"
+   },
+   {
+    "zh": "岩性",
+    "en": "Rock type"
+   },
+   {
+    "zh": "日夜溫差",
+    "en": "Day-night swing"
+   },
+   {
+    "zh": "乾燥",
+    "en": "Dryness"
+   },
+   {
+    "zh": "含水礦物（資源）",
+    "en": "Hydrated minerals (resource)"
+   },
+   {
+    "zh": "水流作用",
+    "en": "Fluvial activity"
+   },
+   {
+    "zh": "缺水",
+    "en": "Water-limited"
+   },
+   {
+    "zh": "鹽類",
+    "en": "Salts"
+   },
+   {
+    "zh": "野外可到達",
+    "en": "Field access"
+   },
+   {
+    "zh": "後勤",
+    "en": "Logistics"
+   }
+  ],
+  "breaks": [
+   {
+    "zh": "年均溫",
+    "en": "Mean temperature"
+   },
+   {
+    "zh": "極低溫",
+    "en": "Extreme cold"
+   },
+   {
+    "zh": "長年冰凍",
+    "en": "Freezing"
+   },
+   {
+    "zh": "紫外線",
+    "en": "Ultraviolet"
+   },
+   {
+    "zh": "低氣壓",
+    "en": "Low pressure"
+   }
+  ],
+  "nearest": {
+   "id": "paad_24",
+   "name": "Lut desert",
+   "name_zh": null,
+   "distance_km": 306.1,
+   "named_region": null,
+   "off_catalogue": true
+  },
+  "microbiome": {
+   "available": true,
+   "radius_km": 50.0,
+   "total": 0,
+   "by_class": {
+    "hydrothermal": 0,
+    "saline_evaporite": 0,
+    "cryo": 0,
+    "arid_soil": 0,
+    "subsurface_rock": 0
+   },
+   "labels": {
+    "hydrothermal": {
+     "zh": "溫泉與火山熱液",
+     "en": "hot springs and volcanic heat"
+    },
+    "saline_evaporite": {
+     "zh": "鹽湖與鹼湖",
+     "en": "salt and soda lakes"
+    },
+    "cryo": {
+     "zh": "冰川與凍土",
+     "en": "glaciers and permafrost"
+    },
+    "arid_soil": {
+     "zh": "沙漠土壤",
+     "en": "desert soil"
+    },
+    "subsurface_rock": {
+     "zh": "地下、洞穴、礦坑與岩石表面",
+     "en": "deep subsurface, caves, mines and rock surfaces"
+    }
+   }
+  }
+ },
+ {
+  "id": "chott_el_djerid",
+  "lat": 34.13223,
+  "lon": 8.46496,
+  "name": {
+   "zh": "Chott el Djerid 鹽湖（突尼西亞）",
+   "en": "Chott el Djerid salt pan (Tunisia)"
+  },
+  "history": {
+   "zh": "研究者已經在用：2010 到 2012 年歐洲團隊在這裡做過火星類比調查，層狀氯鹽與火星高緯度的氯鹽相似，鑽到 3.6 公尺深仍找到微生物。它不在我們的目錄裡，系統卻把它排進前五名。",
+   "en": "Researchers already use it: a European team ran Mars-analog campaigns here in 2010–2012; its layered chloride salts resemble Martian chlorides, and drilling to 3.6 m still found microbes. It is not in our catalogue, yet the ranking put it in the top five."
+  },
+  "test": {
+   "zh": "鹽類沉積中的生命痕跡、地下水與鹽殼的偵測。",
+   "en": "Biosignatures in salt deposits; detecting groundwater and salt crusts."
+  },
+  "image": "img/chott_el_djerid.jpg",
+  "target": {
+   "zh": "Jezero 撞擊坑",
+   "en": "Jezero crater",
+   "rank": 5,
+   "score": 80.8,
+   "body": "mars"
+  },
+  "strong": [
+   {
+    "zh": "裸露地表",
+    "en": "Bare ground"
+   },
+   {
+    "zh": "岩性",
+    "en": "Rock type"
+   },
+   {
+    "zh": "乾燥",
+    "en": "Dryness"
+   },
+   {
+    "zh": "含水礦物（資源）",
+    "en": "Hydrated minerals (resource)"
+   },
+   {
+    "zh": "水流作用",
+    "en": "Fluvial activity"
+   },
+   {
+    "zh": "鹽類",
+    "en": "Salts"
+   },
+   {
+    "zh": "野外可到達",
+    "en": "Field access"
+   },
+   {
+    "zh": "後勤",
+    "en": "Logistics"
+   }
+  ],
+  "breaks": [
+   {
+    "zh": "年均溫",
+    "en": "Mean temperature"
+   },
+   {
+    "zh": "極低溫",
+    "en": "Extreme cold"
+   },
+   {
+    "zh": "長年冰凍",
+    "en": "Freezing"
+   },
+   {
+    "zh": "紫外線",
+    "en": "Ultraviolet"
+   },
+   {
+    "zh": "低氣壓",
+    "en": "Low pressure"
+   }
+  ],
+  "nearest": {
+   "id": "rio_tinto",
+   "name": "Rio Tinto headwaters (Pena de Hierro, near Nerva)",
+   "name_zh": "廷托河源頭（佩尼亞德耶羅礦區，西班牙）",
+   "distance_km": 1408.3,
+   "named_region": null,
+   "off_catalogue": true
+  },
+  "microbiome": {
+   "available": true,
+   "radius_km": 50.0,
+   "total": 0,
+   "by_class": {
+    "hydrothermal": 0,
+    "saline_evaporite": 0,
+    "cryo": 0,
+    "arid_soil": 0,
+    "subsurface_rock": 0
+   },
+   "labels": {
+    "hydrothermal": {
+     "zh": "溫泉與火山熱液",
+     "en": "hot springs and volcanic heat"
+    },
+    "saline_evaporite": {
+     "zh": "鹽湖與鹼湖",
+     "en": "salt and soda lakes"
+    },
+    "cryo": {
+     "zh": "冰川與凍土",
+     "en": "glaciers and permafrost"
+    },
+    "arid_soil": {
+     "zh": "沙漠土壤",
+     "en": "desert soil"
+    },
+    "subsurface_rock": {
+     "zh": "地下、洞穴、礦坑與岩石表面",
+     "en": "deep subsurface, caves, mines and rock surfaces"
+    }
+   }
+  }
+ },
+ {
+  "id": "sw_alaska",
+  "lat": 61.26,
+  "lon": -158.65,
+  "name": {
+   "zh": "阿拉斯加西南部（Kuskokwim 河中游）",
+   "en": "South-west Alaska (middle Kuskokwim River)"
+  },
+  "history": {
+   "zh": "我們沒有找到把這一帶當作火星類比的研究（阿拉斯加其他地方，例如 Kobuk 沙丘與 Katmai，有人研究過）。",
+   "en": "We found no Mars-analog study of this area (other Alaskan sites, such as the Kobuk dunes and Katmai, have been studied)."
+  },
+  "test": {
+   "zh": "火星表土化學的地球對照樣本，用來校正儀器。",
+   "en": "Earth reference samples for Martian surface chemistry, to calibrate instruments."
+  },
+  "image": "img/sw_alaska.jpg",
+  "ceiling": {
+   "zh": "Jezero 資源用途（FeO、K、Th）的地球上限 0.57，全世界只有 15 個窗格達到，這裡是其中一群。10 個有實測化學的火星類比場址全部 0 分。",
+   "en": "Earth ceiling for the Jezero resource use (FeO, K, Th) is 0.57, reached by only 15 windows worldwide; this is one cluster. All 10 catalogued Mars analogs with measured chemistry score 0."
+  },
+  "nearest": {
+   "id": "valley_of_ten_thousand_smokes",
+   "name": "Valley of Ten Thousand Smokes (Katmai NP)",
+   "name_zh": "萬煙谷（阿拉斯加）",
+   "distance_km": 367.1,
+   "named_region": null,
+   "off_catalogue": true
+  },
+  "microbiome": {
+   "available": true,
+   "radius_km": 50.0,
+   "total": 0,
+   "by_class": {
+    "hydrothermal": 0,
+    "saline_evaporite": 0,
+    "cryo": 0,
+    "arid_soil": 0,
+    "subsurface_rock": 0
+   },
+   "labels": {
+    "hydrothermal": {
+     "zh": "溫泉與火山熱液",
+     "en": "hot springs and volcanic heat"
+    },
+    "saline_evaporite": {
+     "zh": "鹽湖與鹼湖",
+     "en": "salt and soda lakes"
+    },
+    "cryo": {
+     "zh": "冰川與凍土",
+     "en": "glaciers and permafrost"
+    },
+    "arid_soil": {
+     "zh": "沙漠土壤",
+     "en": "desert soil"
+    },
+    "subsurface_rock": {
+     "zh": "地下、洞穴、礦坑與岩石表面",
+     "en": "deep subsurface, caves, mines and rock surfaces"
+    }
+   }
+  }
+ }
+]

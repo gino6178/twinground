@@ -1,0 +1,105 @@
+{
+  "sealed_at": "2026-10-11T16:37:27.177862+00:00",
+  "temperature": 1.6644717811422274,
+  "threshold": 0.75,
+  "validation_choices": [
+    {
+      "threshold": 0.5,
+      "accepted": 1312,
+      "coverage": 0.47761194029850745,
+      "errors": 376,
+      "error_rate": 0.2865853658536585,
+      "wilson95_upper_error": 0.31164752324713213
+    },
+    {
+      "threshold": 0.55,
+      "accepted": 1098,
+      "coverage": 0.39970877320713505,
+      "errors": 269,
+      "error_rate": 0.24499089253187614,
+      "wilson95_upper_error": 0.2712900105325373
+    },
+    {
+      "threshold": 0.6,
+      "accepted": 919,
+      "coverage": 0.3345467783036039,
+      "errors": 190,
+      "error_rate": 0.20674646354733406,
+      "wilson95_upper_error": 0.2341238795828236
+    },
+    {
+      "threshold": 0.65,
+      "accepted": 791,
+      "coverage": 0.28795049144521295,
+      "errors": 144,
+      "error_rate": 0.1820480404551201,
+      "wilson95_upper_error": 0.2104552177607727
+    },
+    {
+      "threshold": 0.7,
+      "accepted": 650,
+      "coverage": 0.23662176920276665,
+      "errors": 97,
+      "error_rate": 0.14923076923076922,
+      "wilson95_upper_error": 0.1786808428882278
+    },
+    {
+      "threshold": 0.75,
+      "accepted": 518,
+      "coverage": 0.18856934838005096,
+      "errors": 58,
+      "error_rate": 0.11196911196911197,
+      "wilson95_upper_error": 0.1420305694177313
+    },
+    {
+      "threshold": 0.8,
+      "accepted": 429,
+      "coverage": 0.156170367673826,
+      "errors": 38,
+      "error_rate": 0.08857808857808858,
+      "wilson95_upper_error": 0.11924476593522457
+    },
+    {
+      "threshold": 0.85,
+      "accepted": 357,
+      "coverage": 0.12995995631598106,
+      "errors": 22,
+      "error_rate": 0.06162464985994398,
+      "wilson95_upper_error": 0.09153824393133284
+    },
+    {
+      "threshold": 0.9,
+      "accepted": 285,
+      "coverage": 0.10374954495813615,
+      "errors": 9,
+      "error_rate": 0.031578947368421054,
+      "wilson95_upper_error": 0.05891638560831524
+    },
+    {
+      "threshold": 0.95,
+      "accepted": 210,
+      "coverage": 0.07644703312704769,
+      "errors": 5,
+      "error_rate": 0.023809523809523808,
+      "wilson95_upper_error": 0.054515763850960984
+    },
+    {
+      "threshold": 0.975,
+      "accepted": 161,
+      "coverage": 0.05860939206406989,
+      "errors": 1,
+      "error_rate": 0.006211180124223602,
+      "wilson95_upper_error": 0.03433956187680337
+    },
+    {
+      "threshold": 0.99,
+      "accepted": 110,
+      "coverage": 0.04004368401892974,
+      "errors": 0,
+      "error_rate": 0.0,
+      "wilson95_upper_error": 0.033743935298164184
+    }
+  ],
+  "validation_prediction_sha256": "39ecbbc50007950fba787e363a5f970cbcc35fe53c33f24c8ee72cb48a847c23",
+  "protocol_sha256": "c32f34d14bdb98bb6f57547d1d97fb011701b024cd5057179e36652c1efb6b9a"
+}

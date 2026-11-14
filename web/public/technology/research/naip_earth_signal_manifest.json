@@ -1,0 +1,137 @@
+{
+  "created_utc": "2026-10-11T08:42:11+00:00",
+  "purpose": "Window-level four-band NAIP near-infrared vegetation diagnostics for eight Earth sites",
+  "source_catalog": "data/research/naip_earth_orthos/manifest.json",
+  "source_catalog_sha256": "359ae9a291066c23621ed8fa74d6d0f3c63fce9a2a1dc2689ef90ff7ea12e672",
+  "metric_columns": [
+    "valid_fraction",
+    "median_ndvi",
+    "ndvi_p10",
+    "ndvi_p90",
+    "fraction_ndvi_ge_0_1",
+    "fraction_ndvi_ge_0_2",
+    "fraction_ndvi_ge_0_3"
+  ],
+  "analysis_spacing_m": 2,
+  "thresholds": [
+    0.1,
+    0.2,
+    0.3
+  ],
+  "site_valid_fraction": {
+    "METEOR_CRATER": 1.0,
+    "KILBOURNE_HOLE": 1.0,
+    "CARRIZOZO_FLOW": 1.0,
+    "AMBOY_CRATER": 1.0,
+    "BIG_PINE_FLOW": 1.0,
+    "CIMA_FIELD": 1.0,
+    "DEATH_VALLEY_MARS_HILL": 1.0,
+    "CRATERS_MOON_IDAHO": 1.0
+  },
+  "outputs": {
+    "earth_moon_200m_naip_ndvi.npz": {
+      "sha256": "2a9dbc6f18dec2ad2aeda9f52f0bf22995c83a1fae8b6b4a4b4e3d95715e853c",
+      "gallery_sha256": "855795895d4d002dbadd87cf33bdfa16c540cbbcaed1886496ce140de186dcb1",
+      "candidate_windows": 6728,
+      "valid_candidate_windows": 6728,
+      "valid_by_site": {
+        "METEOR_CRATER": 841,
+        "KILBOURNE_HOLE": 841,
+        "CARRIZOZO_FLOW": 841,
+        "AMBOY_CRATER": 841,
+        "BIG_PINE_FLOW": 841,
+        "CIMA_FIELD": 841,
+        "DEATH_VALLEY_MARS_HILL": 841,
+        "CRATERS_MOON_IDAHO": 841
+      }
+    },
+    "earth_moon_500m_naip_ndvi.npz": {
+      "sha256": "6ddc388938d67848cccbe3a5c9c5547845aa67018625b0ecce0f715903c0ac0e",
+      "gallery_sha256": "0ecf71c46940b4ff8fc43d2751266e0405eda11da04286039975181687719bf0",
+      "candidate_windows": 968,
+      "valid_candidate_windows": 968,
+      "valid_by_site": {
+        "METEOR_CRATER": 121,
+        "KILBOURNE_HOLE": 121,
+        "CARRIZOZO_FLOW": 121,
+        "AMBOY_CRATER": 121,
+        "BIG_PINE_FLOW": 121,
+        "CIMA_FIELD": 121,
+        "DEATH_VALLEY_MARS_HILL": 121,
+        "CRATERS_MOON_IDAHO": 121
+      }
+    },
+    "earth_moon_1000m_naip_ndvi.npz": {
+      "sha256": "7a2b9ffbb6b7c18c6e66c36567dd25a4eed3482d31b38e9c24832d09475cc5cb",
+      "gallery_sha256": "00e67b1e5e38d81d9aebb54bd4156a7fb42dd987533c97e155a6b1535302eaf8",
+      "candidate_windows": 200,
+      "valid_candidate_windows": 200,
+      "valid_by_site": {
+        "METEOR_CRATER": 25,
+        "KILBOURNE_HOLE": 25,
+        "CARRIZOZO_FLOW": 25,
+        "AMBOY_CRATER": 25,
+        "BIG_PINE_FLOW": 25,
+        "CIMA_FIELD": 25,
+        "DEATH_VALLEY_MARS_HILL": 25,
+        "CRATERS_MOON_IDAHO": 25
+      }
+    },
+    "earth_mars_200m_naip_ndvi.npz": {
+      "sha256": "98caac63fe77fb5879b50931d763703c10bd6e1f911c1a6a314dcedba8150eaa",
+      "gallery_sha256": "dded62b53bbe73b5044ddaeceb820f24dfc4d384ecc2bb282feeca002358f824",
+      "candidate_windows": 6728,
+      "valid_candidate_windows": 6728,
+      "valid_by_site": {
+        "METEOR_CRATER": 841,
+        "KILBOURNE_HOLE": 841,
+        "CARRIZOZO_FLOW": 841,
+        "AMBOY_CRATER": 841,
+        "BIG_PINE_FLOW": 841,
+        "CIMA_FIELD": 841,
+        "DEATH_VALLEY_MARS_HILL": 841,
+        "CRATERS_MOON_IDAHO": 841
+      }
+    },
+    "earth_mars_500m_naip_ndvi.npz": {
+      "sha256": "c6d2e7e5bc5787dc1fb856620fe875c8281b9e90ca58ce5624470b9a21628bce",
+      "gallery_sha256": "294236c1f3d7789edd077d8aea548281da0eefac8772bfad4a94d9da6ea4fff7",
+      "candidate_windows": 968,
+      "valid_candidate_windows": 968,
+      "valid_by_site": {
+        "METEOR_CRATER": 121,
+        "KILBOURNE_HOLE": 121,
+        "CARRIZOZO_FLOW": 121,
+        "AMBOY_CRATER": 121,
+        "BIG_PINE_FLOW": 121,
+        "CIMA_FIELD": 121,
+        "DEATH_VALLEY_MARS_HILL": 121,
+        "CRATERS_MOON_IDAHO": 121
+      }
+    },
+    "earth_mars_1000m_naip_ndvi.npz": {
+      "sha256": "0bdef90e0e3b1276ce33bc347181ff071348844719a8de07393771d9b968e866",
+      "gallery_sha256": "838fe42b00e6189e7b40336ef9f05a51833b5e062f36f8c9534db974b79f8fbe",
+      "candidate_windows": 200,
+      "valid_candidate_windows": 200,
+      "valid_by_site": {
+        "METEOR_CRATER": 25,
+        "KILBOURNE_HOLE": 25,
+        "CARRIZOZO_FLOW": 25,
+        "AMBOY_CRATER": 25,
+        "BIG_PINE_FLOW": 25,
+        "CIMA_FIELD": 25,
+        "DEATH_VALLEY_MARS_HILL": 25,
+        "CRATERS_MOON_IDAHO": 25
+      }
+    }
+  },
+  "used_in_search_ranking": false,
+  "interpretation": "Uncalibrated vegetation response only; not a rock-exposure, lithology, or mineral classifier",
+  "limitations": [
+    "NAIP acquisitions span 2021–2023; NLCD comparison refers to 2024 and different class semantics.",
+    "NDVI thresholds lack independent field or pixel-level vegetation-mask validation.",
+    "Shadows, dark lava, sparse vegetation, image mosaics, and band calibration may shift NDVI.",
+    "Low NDVI cannot identify exposed rock versus sand, soil, regolith, or nonphotosynthetic surfaces."
+  ]
+}

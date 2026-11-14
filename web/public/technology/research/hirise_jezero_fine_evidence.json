@@ -1,0 +1,151 @@
+{
+  "created_utc": "2026-10-11T11:29:13+00:00",
+  "purpose": "Source map and NAIP evidence at exact 4 m Earth candidate centers",
+  "fine_gallery_manifest_sha256": "ecce122d08de87ffe38047393f587f9f4f7d89b6cf3c4d9518744ffcf40be5c4",
+  "source_manifest_sha256": {
+    "geology": "3f640d4702ab9b7b83c1ce845aa68211e9b244764835f96eee33ddc94460690f",
+    "landcover": "d5101171a8dae9cde366d40998668a8a0ed3be4d41b4e7d769e89fa674dcd059",
+    "naip": "359ae9a291066c23621ed8fa74d6d0f3c63fce9a2a1dc2689ef90ff7ea12e672",
+    "CRATERS_MOON_IDAHO": "4373161a6b711be72f5502a164c59ccc8bad5e743af1143f3e170976d34cc61e",
+    "CIMA_FIELD": "61d6c49ea7279a62ee25d4a9ff6e1f4a45767c29c529011a226b2419170dc281",
+    "AMBOY_CRATER": "a77ca3c0145f3338022d2e69b4534fdcea74536dd32bbe2b4307977db060c7e2"
+  },
+  "geology_site_key_order": {
+    "METEOR_CRATER": [
+      0,
+      2981036,
+      2759495
+    ],
+    "KILBOURNE_HOLE": [
+      0,
+      2767124,
+      2766437,
+      2786104
+    ],
+    "CARRIZOZO_FLOW": [
+      0,
+      2965261,
+      2995702
+    ],
+    "AMBOY_CRATER": [
+      0,
+      2776850,
+      2885167
+    ],
+    "BIG_PINE_FLOW": [
+      0,
+      2875507,
+      2791855
+    ],
+    "CIMA_FIELD": [
+      0,
+      2813730,
+      2885167
+    ],
+    "DEATH_VALLEY_MARS_HILL": [
+      0,
+      2885167,
+      2940070,
+      2826177
+    ],
+    "CRATERS_MOON_IDAHO": [
+      0,
+      2960470,
+      2991913
+    ]
+  },
+  "detailed_site_key_order": {
+    "CRATERS_MOON_IDAHO": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "CIMA_FIELD": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "AMBOY_CRATER": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "outputs": {
+    "earth_hirise_200m_evidence.npz": {
+      "sha256": "dcac6f325204792e73433f3b3f617461598ceaea3c86ff6ed70cb58df54a7607",
+      "candidate_count": 6728,
+      "fine_gallery_sha256": "24cd7dca67628c859c6e1875a9c58fa1880c25db3c97fff7d3f0e1c2fef26498",
+      "nlcd_all_sampled": true,
+      "geology_all_sampled": true,
+      "naip_valid_count": 6728
+    },
+    "earth_hirise_500m_evidence.npz": {
+      "sha256": "7cf4a753b2d20f48be012491c269d4c81e014d6f1e98909bb398c0fcc2886931",
+      "candidate_count": 968,
+      "fine_gallery_sha256": "4601f1608469723db9f486ce5a09d06a1cdeb4998d16bd073d66bd5cd9366916",
+      "nlcd_all_sampled": true,
+      "geology_all_sampled": true,
+      "naip_valid_count": 968
+    },
+    "earth_hirise_1000m_evidence.npz": {
+      "sha256": "f1497e067b5057a8ade1483f2078af5448f11fe064053e569dee5d3e09e4c394",
+      "candidate_count": 200,
+      "fine_gallery_sha256": "8d2c36a47b37826400b984a695df1b1d23a49d204c7780b88808253220f8c004",
+      "nlcd_all_sampled": true,
+      "geology_all_sampled": true,
+      "naip_valid_count": 200
+    }
+  },
+  "used_in_geometry_rank": false,
+  "limitations": [
+    "Exact candidate-footprint sampling removes nearest-index displacement, not published map scale or registration uncertainty.",
+    "NLCD is 30 m thematic land cover; class 31 includes rock, sand and clay and is not a rock or mineral label.",
+    "USGS/Macrostrat and detailed map units are cartographic interpretations, not measured surface exposure.",
+    "NAIP NDVI is uncalibrated vegetation response across different acquisition years, not material classification."
+  ]
+}

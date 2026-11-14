@@ -1,0 +1,31 @@
+{
+  "version": "hirise_jezero_1m_v1",
+  "frozen_date": "2026-10-11",
+  "purpose": "Acquire a true approximately 1 m post-spacing Mars DTM for 200-1000 m morphology; do not call a 20 m CTX grid a fine-terrain reference.",
+  "site_id": "JEZERO_HIRISE_023524",
+  "anchor_lat_lon": [18.3, 77.53],
+  "anchor_basis": "Published HiRISE DTM product center coordinate, chosen before reading candidate windows or retrieval scores.",
+  "product_page": "https://hirise.lpl.arizona.edu/dtm/ESP_023524_1985",
+  "dtm_product_id": "DTEEC_023524_1985_023379_1985_U01",
+  "dtm_url": "https://hirise.lpl.arizona.edu/PDS/DTM/ESP/ORB_023500_023599/ESP_023524_1985_ESP_023379_1985/DTEEC_023524_1985_023379_1985_U01.IMG",
+  "source_http_etag": "\"597a727a-29bd4b64\"",
+  "source_bytes": 700271460,
+  "pds_record_bytes": 32940,
+  "pds_header_records": 1,
+  "pds_lines": 21258,
+  "pds_samples_per_line": 8235,
+  "pds_sample_type": "PC_REAL little-endian float32",
+  "pds_nodata": -3.4028226550889045e+38,
+  "source_pixel_spacing_m": 1.0096633268711,
+  "source_center_pixel_row_col": [13003, 4372],
+  "crop_pixel_count": 2971,
+  "crop_start_row_col": [11518, 2887],
+  "read_policy": "Retrieve full contiguous source rows by HTTP Range in 500-row chunks, validate each Content-Range and length, then slice columns locally. This bounds network transfer to approximately 98 MB instead of downloading the 700 MB image or triggering thousands of small GDAL reads.",
+  "coverage_gate": "At least 99.5% finite non-nodata pixels in the frozen crop before it can enter 200/500/1000 m comparisons.",
+  "limitations": [
+    "A 1 m DTM post spacing is not a 1 m guarantee of resolved rocks or rover-scale hazards.",
+    "The PDS elevation is in metres above the Mars 2000 equipotential surface; cross-site morphology uses median-subtracted heights, never absolute Earth-Mars datum equality.",
+    "This Jezero site is a known scientific field area, not a new Mars analog discovery or independent heldout reference.",
+    "The paired orthophoto and surface composition remain separate acquisitions and interpretations."
+  ]
+}

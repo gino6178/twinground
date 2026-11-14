@@ -1,0 +1,7 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Analog Atlas · Recovery diagnostics</title></head><body>
+<section id="fault-controls" aria-label="Recovery diagnostics" style="position:relative;z-index:100;background:#26313b;color:white;padding:12px;font:14px sans-serif">
+<strong>Recovery diagnostics — isolated test page</strong>
+<p id="fault-mode"></p><button id="lose-graphics" type="button" style="padding:10px">Simulate graphics context loss</button>
+<output id="fault-status" role="status" style="display:block;margin-top:8px">Initializing…</output>
+<label>API network simulation <select id="network-mode"><option value="normal">Normal</option><option value="offline">Fail requests</option><option value="slow">Delay responses 2 seconds</option><option value="stall">Never respond</option></select></label><output id="network-status" role="status" style="display:block"></output>
+</section><div id="root"></div><script type="module" src="/src/recovery_diagnostics.js"></script></body></html>

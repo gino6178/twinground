@@ -1,0 +1,41 @@
+{
+  "created_utc": "2026-10-11T08:52:25+00:00",
+  "publication_title": "Digital Version of Open-File Report 92-181: Geologic Map of the Indian Spring Quadrangle, San Bernardino County, California",
+  "publication_url": "https://pubs.usgs.gov/of/2002/0272/",
+  "publication_year": 2002,
+  "original_map_year": 1992,
+  "map_scale_denominator": 24000,
+  "site_id": "CIMA_FIELD",
+  "research_anchor_lat_lon": [
+    35.18333333333333,
+    -115.81666666666666
+  ],
+  "metadata_bounds_lon_lat": [
+    -115.877559,
+    35.123761,
+    -115.748919,
+    35.25121
+  ],
+  "source_files": {
+    "of02-272_2a.e00": {
+      "description": "Geologic contacts, faults, map units, and volcanic-vent identifiers",
+      "source_url": "https://pubs.usgs.gov/of/2002/0272/of02-272_2a.e00",
+      "bytes": 1931567,
+      "sha256": "033989594b929e9d07ea139a754f7a76c168e2eb45c53a4483ee0a1d419e36ad"
+    },
+    "of02-272_1b.txt": {
+      "description": "FGDC metadata",
+      "source_url": "https://pubs.usgs.gov/of/2002/0272/of02-272_1b.txt",
+      "bytes": 30659,
+      "sha256": "5016e9c1aa71e0dee71761dfef08ad8ac578f1d2aa38dfafe4b97a93c25b4105"
+    },
+    "of02-272_1a.txt": {
+      "description": "Report and map explanation",
+      "source_url": "https://pubs.usgs.gov/of/2002/0272/of02-272_1a.txt",
+      "bytes": 83791,
+      "sha256": "eef6a8cda13571e7736f3fac3a5ffbc19969b2c28a8474033ffad72133b7c112"
+    }
+  },
+  "interpretation": "Digitized 1992 geologic map polygons, not updated geology, per-pixel surface exposure, or mineral truth",
+  "used_in_search_ranking": false
+}

@@ -1,0 +1,26 @@
+{
+  "created_at": "2026-10-11T16:37:24.651990+00:00",
+  "model_sha256": "d3192c80afe88e439d72a7691fd9f9b2b931573aa45fef86e4425ad42929e1da",
+  "dataset_protocol_sha256": "3889816d5f6bb88a8c4335b68352f0ad4b8a07551fb6e0cc4b9ad33216867502",
+  "script_sha256": "8bf5677c365e3959d286b6aa788dcb50cfec1804f212e8dd968fd60dbaacdf18",
+  "temperature": "Fit scalar T in [0.05,20] by validation NLL; log probabilities floored at1e-12.",
+  "threshold_grid": [
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    0.975,
+    0.99
+  ],
+  "selection": "Maximum validation coverage with >=100 accepted and Wilson95 upper error <=0.15; if none, reject all with threshold1.000001.",
+  "test_policy": "Existing consumed test split is a post-hoc audit, not a newly untouched holdout. Never tune on this audit.",
+  "validation_limitation": "Same validation sources previously selected the checkpoint; calibration validation metrics are not independent generalization estimates.",
+  "stress": "32each zeros/constant0.5/ones;64seeded uniform noise. Synthetic corrupt inputs are not real OOD classes.",
+  "deployment": "Research only; no production ranking/classification changes."
+}

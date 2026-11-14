@@ -1,0 +1,38 @@
+{
+  "version": "paired-correspondence-v1",
+  "dataset_protocol_sha256": "27ae22a13434771af3b5747725fcef15330328a33c690047da9cdbdb8f8a813b",
+  "dataset_manifest_sha256": "fd40e566ed771c5bd726727de6e6114756b3679d121947a17f263c5e45b33e9f",
+  "script_sha256": "f9082ebf5d416bb25158545caaa989570a355109a51d931bfb73cfcab8be7d8d",
+  "frozen_before_training": true,
+  "seed": 20261011,
+  "epochs": 15,
+  "batch": 64,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "implementation_note": "Fixed2x2 average pool on4x4features;archived first-backward adaptive-pooling failure;no test read in failed run",
+  "encoder": "Separate image/DEM encoders,2-channel normalized values+mask,conv16/32/64,groupnorm,GELU,pool2x2,64D L2",
+  "objective": "Symmetric within-site InfoNCE temperature0.1;same original footprint positive,other identities in batch contrast",
+  "normalization": "Per-window valid mean/std with std floor1;clip[-5,5];missing zero+mask;no test-fitted stats",
+  "sampling": "Uniform training site,64unique windows;138steps/epoch;pairedD4augmentation",
+  "selection": "Max equal-site/equal-direction validation MRR across epochs0..15;strict increase;never test",
+  "evaluation": "Within-source full-gallery exact-identity retrieval in both directions;mid-rank ties;report every site",
+  "runs": [
+    "aligned_pairs",
+    "shuffled_pairs"
+  ],
+  "baselines": [
+    "untrained fixed-seed model",
+    "pooled gradient magnitude4x4"
+  ],
+  "missing_modalities": [
+    "all-zero image+mask",
+    "all-zero DEM+mask"
+  ],
+  "limits": [
+    "Same-location correspondence is not cross-planet relevance,material equality or engineering suitability.",
+    "Four test sites/two validation sites,previously used in project;new experiment split is not untouched external data.",
+    "Jezero one-site probe cannot establish Mars generalization or calibrated OOD detection.",
+    "No fine surface labels,no geology-fusion claim,no ranking deployment.",
+    "Missing-modality zero input is a stress test,not a calibrated rejector."
+  ]
+}

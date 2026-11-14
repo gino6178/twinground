@@ -1,0 +1,91 @@
+{
+  "checked_at": "2026-10-11T16:56:32.100741+00:00",
+  "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+  "prefix": "/home/gino/nasa-terrain-analog-finder/workspace/.analog-runtime-v1",
+  "base_prefix": "/home/gino/miniconda3/envs/moonsplat",
+  "pip_check": "No broken requirements found.",
+  "shared_site_packages": false,
+  "torch_path": "/home/gino/nasa-terrain-analog-finder/workspace/.analog-runtime-v1/lib/python3.10/site-packages/torch/__init__.py",
+  "torch_version": "2.1.2+cu118",
+  "cuda_version": "11.8",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "cuda_forward_backward": "passed",
+  "queries": [
+    {
+      "request": "/api/mars-search?lat=18.4&lon=77.7&size_km=40&surface=any&rock=any",
+      "candidate_ids": [
+        "etopo15-0174540",
+        "etopo15-0091364",
+        "etopo15-0304764",
+        "etopo15-0166917",
+        "etopo15-0023294"
+      ],
+      "model_sha256": "14e1d107fcde20549b007deaa30abb172cddf9e1ad733b8093afe4d4f0894b4d",
+      "index_sha256": "a9df9b4762f07cca2013ae3dc99dd51d1165f2271ad5235d5f983db7ac8e04a1",
+      "index_reference": "current live service plus independent file hashes; field absent from historical baseline",
+      "numeric_rows_and_query_dem": "match"
+    },
+    {
+      "request": "/api/mars-search?lat=18.4&lon=77.7&size_km=40&surface=desert&rock=vb",
+      "candidate_ids": [
+        "etopo15-0063841",
+        "etopo15-0099425",
+        "etopo15-0155497",
+        "etopo15-0114984",
+        "etopo15-0114946"
+      ],
+      "model_sha256": "14e1d107fcde20549b007deaa30abb172cddf9e1ad733b8093afe4d4f0894b4d",
+      "index_sha256": "a9df9b4762f07cca2013ae3dc99dd51d1165f2271ad5235d5f983db7ac8e04a1",
+      "index_reference": "current live service plus independent file hashes; field absent from historical baseline",
+      "numeric_rows_and_query_dem": "match"
+    },
+    {
+      "request": "/api/search?lat=8.7&lon=27.4&size_km=40&surface=any&rock=any",
+      "candidate_ids": [
+        "etopo15-0308716",
+        "etopo15-0015356",
+        "etopo15-0111317",
+        "etopo15-0264816",
+        "etopo15-0187254"
+      ],
+      "model_sha256": "14e1d107fcde20549b007deaa30abb172cddf9e1ad733b8093afe4d4f0894b4d",
+      "index_sha256": "a9df9b4762f07cca2013ae3dc99dd51d1165f2271ad5235d5f983db7ac8e04a1",
+      "index_reference": "current live service plus independent file hashes; field absent from historical baseline",
+      "numeric_rows_and_query_dem": "match"
+    },
+    {
+      "request": "/api/search?lat=8.7&lon=27.4&size_km=40&surface=desert&rock=vb",
+      "candidate_ids": [
+        "etopo15-0100136",
+        "etopo15-0115003",
+        "etopo15-0120417",
+        "etopo15-0106164",
+        "etopo15-0100026"
+      ],
+      "model_sha256": "14e1d107fcde20549b007deaa30abb172cddf9e1ad733b8093afe4d4f0894b4d",
+      "index_sha256": "a9df9b4762f07cca2013ae3dc99dd51d1165f2271ad5235d5f983db7ac8e04a1",
+      "index_reference": "current live service plus independent file hashes; field absent from historical baseline",
+      "numeric_rows_and_query_dem": "match"
+    }
+  ],
+  "extra_endpoints": [
+    {
+      "request": "/api/mars-imagery?lat=18.4&lon=77.7&size_km=40",
+      "status": 200
+    },
+    {
+      "request": "/api/mars-imagery?lat=0&lon=0&size_km=40&format=png",
+      "status": 404
+    },
+    {
+      "request": "/api/search?lat=nan&lon=0&size_km=40",
+      "status": 400
+    }
+  ],
+  "production_service_changed": false,
+  "limits": [
+    "Same host and existing immutable data;not a new-machine/full-dataset rebuild",
+    "Historical research training and all optional endpoints not exhaustively reproduced",
+    "Base Python comes from existing server Conda installation;native/system provenance still required"
+  ]
+}

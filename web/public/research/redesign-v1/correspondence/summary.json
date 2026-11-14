@@ -1,0 +1,69 @@
+{
+  "protocol_sha256": "1a50c1710b417535042fd55f506b1e7258efb045e43be6198cb3e2e6b1c5ee11",
+  "metric": "equal-site/equal-direction mean reciprocal rank for exact same-location correspondence",
+  "sites": [
+    "BIG_PINE_FLOW",
+    "FRSHCRATER8",
+    "METEOR_CRATER",
+    "SCHRODNGR02"
+  ],
+  "comparisons": {
+    "untrained": {
+      "delta_macro_mrr": 0.2618715177873798,
+      "site_bootstrap_95_percentile": [
+        0.09239797446695729,
+        0.437362943801142
+      ],
+      "site_deltas": {
+        "BIG_PINE_FLOW": 0.26546554865606564,
+        "FRSHCRATER8": 0.034708783070587834,
+        "METEOR_CRATER": 0.24624172153201462,
+        "SCHRODNGR02": 0.5010700178908511
+      }
+    },
+    "gradient_descriptor": {
+      "delta_macro_mrr": 0.18939929786854037,
+      "site_bootstrap_95_percentile": [
+        0.06737583682232104,
+        0.3413968238950612
+      ],
+      "site_deltas": {
+        "BIG_PINE_FLOW": 0.1500722531803544,
+        "FRSHCRATER8": 0.03357504489772023,
+        "METEOR_CRATER": 0.16877821259612344,
+        "SCHRODNGR02": 0.4051716807999635
+      }
+    },
+    "shuffled_pairs": {
+      "delta_macro_mrr": 0.2582755550644439,
+      "site_bootstrap_95_percentile": [
+        0.08969333002777966,
+        0.43352727065021607
+      ],
+      "site_deltas": {
+        "BIG_PINE_FLOW": 0.25422279068088216,
+        "FRSHCRATER8": 0.03485017647674548,
+        "METEOR_CRATER": 0.24898933834978976,
+        "SCHRODNGR02": 0.4950399147503582
+      }
+    }
+  },
+  "selected_epochs": {
+    "aligned": 15,
+    "shuffled": 14
+  },
+  "parameters": 80224,
+  "test_mrr": 0.2784622061231621,
+  "shuffled_mrr": 0.020186651058718197,
+  "untrained_mrr": 0.016590688335782283,
+  "descriptor_mrr": 0.08906290825462171,
+  "jezero_probe_mrr": 0.2484310160932261,
+  "missing_image_mrr": 0.011932996256951555,
+  "missing_dem_mrr": 0.011987748999311685,
+  "uncertainty_limit": "Only four previously used source sites;bootstrap describes this small benchmark,not global generalization.",
+  "deployment": {
+    "enabled": false,
+    "reason": "No independent cross-planet material or mission-relevance validation."
+  },
+  "test_source_groups": 4
+}

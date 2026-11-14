@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Close Can Earth Get? | Analog Atlas brief</title>
+<meta name="description" content="A five-page brief of Analog Atlas: the Earth ceiling and property-level retrieval of terrestrial analogs for the Moon and Mars.">
+<style>
+  :root{--ink:#1d2327;--muted:#55606a;--line:#d5dbe0;--accent:#1f6f5c;--bg:#ffffff;--soft:#f3f6f7}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ink:#e2eeea;--muted:#a9c2bb;--line:#2b4146;--accent:#7ee0a5;--bg:#0c1d22;--soft:#102a30}}
+  :root[data-theme="dark"]{--ink:#e2eeea;--muted:#a9c2bb;--line:#2b4146;--accent:#7ee0a5;--bg:#0c1d22;--soft:#102a30}
+  html{background:var(--bg)}
+  body{margin:0 auto;max-width:860px;padding:32px 20px 60px;background:var(--bg);color:var(--ink);font:16px/1.6 Georgia,"Times New Roman",serif}
+  header{border-bottom:2px solid var(--accent);padding-bottom:14px;margin-bottom:20px}
+  .kicker{margin:0;color:var(--accent);font:600 13px/1.4 system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase}
+  h1{margin:6px 0 6px;font-size:34px;line-height:1.15}
+  .sub{margin:0 0 8px;font-size:18px;color:var(--muted)}
+  .meta{margin:0;font:13px/1.5 system-ui,sans-serif;color:var(--muted)}
+  .meta a{color:var(--accent)}
+  h2{margin:28px 0 8px;font-size:21px;color:var(--accent)}
+  h3{margin:18px 0 6px;font-size:17px}
+  p{margin:0 0 10px}
+  ol,ul{margin:0 0 12px;padding-left:22px}
+  li{margin:0 0 5px}
+  .lead{font-size:17px}
+  table{width:100%;border-collapse:collapse;margin:10px 0 16px;font:14px/1.45 system-ui,sans-serif}
+  th,td{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+  th{background:var(--soft);font-weight:700}
+  .num{white-space:nowrap}
+  figure{margin:14px 0 18px}
+  figure img{width:100%;height:auto;border:1px solid var(--line);border-radius:6px;background:#fff}
+  figcaption{margin-top:6px;font:13px/1.45 system-ui,sans-serif;color:var(--muted)}
+  .case{border-left:4px solid var(--accent);padding:4px 0 4px 14px;margin:14px 0}
+  .note{font:13px/1.5 system-ui,sans-serif;color:var(--muted)}
+  footer{margin-top:30px;border-top:1px solid var(--line);padding-top:10px;font:12px/1.5 system-ui,sans-serif;color:var(--muted)}
+  @media (max-width:640px){body{padding:20px 16px 40px}h1{font-size:27px}table{font-size:13px}th,td{padding:5px}}
+  @page{size:A4;margin:16mm 15mm}
+  @media print{body{max-width:none;padding:0;font-size:11.5pt}h1{font-size:25pt}h2{break-after:avoid}table,figure,.case{break-inside:avoid}a{color:inherit;text-decoration:none}}
+</style>
+</head>
+<body>
+<header>
+  <p class="kicker">NASA Space Apps Challenge 2026 · Analog Atlas · Brief</p>
+  <h1>How Close Can Earth Get?</h1>
+  <p class="sub">Property-level analogs for the Moon and Mars, with the limits Earth cannot cross</p>
+  <p class="meta">Analog Atlas Team · 21 October 2026 · Full paper: <a href="paper-en.html">The Earth Ceiling: Quantifying the Limits and Systematic Biases of Terrestrial Analogs for the Moon and Mars</a> · Interactive system: <a href="../">Analog Atlas</a></p>
+</header>
+
+<h2>1. The question</h2>
+<p class="lead">No place on Earth is identical to a site on the Moon or Mars. Analog sites are chosen for a use: rover trials need similar slopes and roughness, resource (ISRU) trials need similar feedstock chemistry, and thermal trials need similar temperatures. The useful questions are therefore how close Earth can get for that use, and where the closest sites are.</p>
+<p>Today analogs are chosen mostly by expert judgement of the setting: dry, bare, basaltic, cold. We tested whether matching such conditions finds sites with the right measured properties, and built a direct, property-by-property comparison that also states what Earth cannot supply.</p>
+
+<h2>2. What Analog Atlas does</h2>
+<ol>
+  <li><b>Pick a window.</b> Any lunar or Martian window of 20, 40 or 80 km, chosen on the globe.</li>
+  <li><b>Read its properties in Earth units.</b> FeO, TiO₂, K and Th from the Lunar Prospector and Mars Odyssey gamma-ray spectrometers, albedo from LROC WAC and TES, and kilometre-scale roughness from LOLA and MOLA.</li>
+  <li><b>Compare with Earth.</b> 75,860 Earth windows of 40 km carry measured airborne K and Th (Australia, North America), topsoil FeO and TiO₂ (United States, Australia, Europe), snow-free albedo, roughness and surface temperature, plus estimates with 90% intervals within 300 km of measurements.</li>
+  <li><b>Rank for a use.</b> For resources, mobility, thermal work or base siting, Earth windows are ranked by the probability that each property lies within tolerance (FeO ±3 wt%, TiO₂ ±1.5 wt%, K ±0.2 wt%, Th ±2 ppm, albedo ±0.05, roughness ±1°, temperature ±20 K).</li>
+  <li><b>State the Earth ceiling.</b> For the query and use, the best score any measured Earth window reaches, so every candidate is read against what is possible at all.</li>
+  <li><b>Describe each candidate.</b> Which properties match, which do not and which Earth cannot supply, together with the existing site dossier: environment, geology and resource conditions, what can be tested there and how to get there.</li>
+</ol>
+<figure>
+  <img src="figures/fig_arch_en.svg" alt="System architecture of Analog Atlas">
+  <figcaption>Figure 1. System architecture (from the full paper). Path P compares same-unit properties and gives every candidate a use score and every query its Earth ceiling; paths A–D are the condition gate, terrain shape, composition and the lava-tube search.</figcaption>
+</figure>
+
+<h2>3. What we found</h2>
+<p>Every test below was frozen with a SHA-256 hash before its Earth data were read, and run once with one seed. Details and all deviations are in the full paper.</p>
+<table>
+  <thead><tr><th>Question</th><th>Answer</th></tr></thead>
+  <tbody>
+    <tr><td>How close can Earth get?</td><td>For lunar resource use the mean ceiling is 0.75, and no Earth window matches FeO, TiO₂, K and Th together. Martian FeO lies above every measured Earth topsoil footprint (52 of 52 queries) and Martian footprint-scale Th below every covered Earth window. For 8 of 18 Martian queries no measured Earth surface comes within 20 K of the night temperature. Roughness can always be matched.</td></tr>
+    <tr><td>Do properties find better analogs than conditions?</td><td>Yes. On held-out measurements, ranking by estimated properties reached a retrieval efficiency of 0.52–0.77 for lunar-type FeO, K and Th, against −0.19 to 0.02 for condition matching (0 = random, 1 = as good as the measurements themselves). Nearest neighbours in covariate space did as well as the estimates.</td></tr>
+    <tr><td>Can Earth chemistry be estimated where it was not measured?</td><td>Within 300 km of measurements, yes: R² 0.64 (K), 0.41 (Th), 0.40 (FeO) and 0.32 (TiO₂), with 90% intervals covering 90–93% of test windows. On another continent, no: R² stayed below the 0.30 threshold in every case (best 0.21).</td></tr>
+    <tr><td>What do expert-style conditions find?</td><td>The kind of setting experts name (catalogued analogs of the expected type were about 12 times denser among gated windows), but not the query’s measured properties: gated candidates were no closer than random windows (+1.3 percentage points; 95% CI −3.2 to 5.2) and were richer in K and Th than the lunar and Martian ground in all 20 distinct pools.</td></tr>
+  </tbody>
+</table>
+
+<h2>4. Three worked cases</h2>
+<div class="case">
+  <h3>A. Mare Tranquillitatis pit (Moon, 8.3°N 33.2°E): resources</h3>
+  <p>Query: FeO 18.1 wt%, TiO₂ 7.6 wt%, K 0.11 wt%, Th 2.7 ppm. <b>Earth ceiling 0.40.</b> No measured Earth window lies within tolerance on TiO₂ (0 of 4,611) and only one on FeO (1 of 4,610). The 135 Earth windows that reach the ceiling, most of them in Western and South Australia and others in Alaska and Manitoba, match K and Th only. High-titanium mare basalt cannot be reproduced on Earth at this scale.</p>
+</div>
+<div class="case">
+  <h3>B. Descartes highlands, Apollo 16 (Moon, 9.0°S 15.5°E): resources</h3>
+  <p>Query: FeO 7.6 wt%, TiO₂ 0.86 wt%, K 0.09 wt%, Th 2.9 ppm. <b>Earth ceiling 0.80.</b> The best windows lie in the Great Basin and on the Columbia Plateau of Oregon: FeO 4.8–9.2 wt%, TiO₂ 0.7–1.9 wt% and Th 4.1–4.6 ppm are within tolerance, but K is 1.1–1.4 wt%, more than ten times the lunar value. Highland-like iron and titanium exist on Earth; lunar-like potassium does not.</p>
+</div>
+<div class="case">
+  <h3>C. Jezero crater (Mars, 18.4°N 77.7°E): resources and base siting</h3>
+  <p>Query: FeO 21.4 wt%, K 0.32 wt%, Th 0.6 ppm. <b>Resource ceiling 0.57.</b> FeO lies beyond every measured Earth topsoil footprint (0 of 2,868). K and Th are within tolerance in low-K terrains of Saskatchewan and southwest Alaska (K 0.37–0.44 wt%, Th 2.1–2.5 ppm), although the ±2 ppm tolerance is lenient for Martian thorium. <b>Base siting:</b> roughness and albedo both match, for example in the Namibe and Kaokoland desert of southwest Angola, but no Earth window matches the modelled night temperature, so the base-siting ceiling is 0.75. The interactive system, which has no Martian temperature, shows 1.0 from roughness and albedo alone.</p>
+</div>
+
+<h2>5. Limits</h2>
+<ul>
+  <li>Earth chemistry exists only where it was measured (Australia, North America, Europe) or within 300 km of measurements; elsewhere the system says there is no reliable estimate.</li>
+  <li>Estimates enter the scores only for K at the Martian footprint, the one retrieval test in which they beat the nearest-neighbour baseline; other estimates are shown with their intervals but not scored.</li>
+  <li>The tolerances are absolute, so they are lenient for low lunar and Martian values.</li>
+  <li>Candidates are screening results. They are not verified analogs, safety assessments or traverse plans, and no expert rating was possible.</li>
+  <li>The paper’s framing around the Earth ceiling was chosen after all results had been seen; every protocol and its criteria are unchanged and listed in the full paper.</li>
+</ul>
+
+<h2>6. Open data used</h2>
+<p class="note">Moon: Lunar Prospector GRS, LROC WAC, LOLA. Mars: Mars Odyssey GRS, TES, MOLA, Mars Climate Database. Earth: NOAA ETOPO 2022, Radiometric Map of Australia v4 2019, North American radiometric grids (NAMrad), USGS soils of the conterminous US (DS801), National Geochemical Survey of Australia, FOREGS Geochemical Atlas of Europe, GLASS snow-free albedo, MODIS MOD11A2 and MCD43A4, SoilGrids 2.0, GLiM, ESA WorldCover, Köppen–Geiger, GEOROC. Full references and licences are in the paper.</p>
+
+<footer>Analog Atlas was made for the NASA Space Apps Challenge 2026, “Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars”. It is not an official NASA product and is not endorsed by NASA.</footer>
+</body>
+</html>

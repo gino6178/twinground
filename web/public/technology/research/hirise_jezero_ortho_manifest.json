@@ -1,0 +1,45 @@
+{
+  "product_id": "ESP_023524_1985_RED_C_01_ORTHO",
+  "product_page": "https://hirise.lpl.arizona.edu/dtm/ESP_023524_1985",
+  "source_url": "https://hirise.lpl.arizona.edu/PDS/DTM/ESP/ORB_023500_023599/ESP_023524_1985_ESP_023379_1985/ESP_023524_1985_RED_C_01_ORTHO.JP2",
+  "source_sha256": "82bb6218cf7acf1001b2e09107afe3d3474488f744422b35224cb2051ab108bc",
+  "source_bytes": 59563062,
+  "source_crs_wkt": "PROJCS[\"Equirectangular MARS\",GEOGCS[\"GCS_MARS\",DATUM[\"unnamed\",SPHEROID[\"unnamed\",3394839.8133163,0]],PRIMEM[\"Reference meridian\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Equirectangular\"],PARAMETER[\"latitude_of_origin\",15],PARAMETER[\"central_meridian\",77.53],PARAMETER[\"standard_parallel_1\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+  "source_transform": [
+    1.0096633268711,
+    0.0,
+    -4412.733570090243,
+    0.0,
+    -1.0096633268711,
+    1097422.7584111735
+  ],
+  "source_size_pixels": [
+    8235,
+    21258
+  ],
+  "source_resolution_m": [
+    1.0096633268711,
+    1.0096633268711
+  ],
+  "source_bounds": [
+    -4412.733570090243,
+    1075959.3354085477,
+    3901.8439266932646,
+    1097422.7584111735
+  ],
+  "bands": 1,
+  "paired_pixel_origin_difference_m": [
+    1.514495,
+    -1.514495
+  ],
+  "local_crop": {
+    "path": "data/research/hirise_jezero_1m/jezero_hirise_3km_ortho_2m.tif",
+    "sha256": "379a572ac825800a5b3b175f8b54bd08ab72e276638cbb7a9372f53e60e7d8b0",
+    "spacing_m": 1.9998064960893587,
+    "valid_fraction": 1.0,
+    "size_pixels": [
+      1500,
+      1500
+    ]
+  }
+}

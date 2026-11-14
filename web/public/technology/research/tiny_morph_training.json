@@ -1,0 +1,136 @@
+{
+  "model": "TinyMorphEncoder",
+  "architecture": "3-channel normalized DEM, slope, curvature → four small convolutions → 32-D unit embedding; relief scalar at head",
+  "parameter_count": 30024,
+  "training": "Self-supervised D4/noise positives; Meteor Crater 5m/20m same-location cross-resolution positives; nearby same-site windows masked as negatives",
+  "seed": 20261011,
+  "device": "cpu",
+  "train_site_ids": [
+    "MARIUS3",
+    "FECUNDITATIS",
+    "ANDERSON01",
+    "NASSAU02",
+    "FRSHCRATER8",
+    "JEZERO_CTX",
+    "METEOR_CRATER"
+  ],
+  "heldout_site_ids": [
+    "SCHRODNGR02",
+    "OLYMPUS_CTX",
+    "KILBOURNE_HOLE"
+  ],
+  "train_examples": 1470,
+  "heldout_examples": 225,
+  "scales_m": [
+    200,
+    500,
+    1000
+  ],
+  "best_epoch": 15,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 3.3959,
+      "heldout_view_loss": 3.0713
+    },
+    {
+      "epoch": 2,
+      "train_loss": 2.3553,
+      "heldout_view_loss": 2.6691
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.7626,
+      "heldout_view_loss": 2.5921
+    },
+    {
+      "epoch": 4,
+      "train_loss": 1.6287,
+      "heldout_view_loss": 2.385
+    },
+    {
+      "epoch": 5,
+      "train_loss": 1.5655,
+      "heldout_view_loss": 2.2625
+    },
+    {
+      "epoch": 6,
+      "train_loss": 1.4743,
+      "heldout_view_loss": 2.2849
+    },
+    {
+      "epoch": 7,
+      "train_loss": 1.3217,
+      "heldout_view_loss": 2.0455
+    },
+    {
+      "epoch": 8,
+      "train_loss": 1.2106,
+      "heldout_view_loss": 1.8221
+    },
+    {
+      "epoch": 9,
+      "train_loss": 1.1281,
+      "heldout_view_loss": 1.8172
+    },
+    {
+      "epoch": 10,
+      "train_loss": 1.0581,
+      "heldout_view_loss": 1.7415
+    },
+    {
+      "epoch": 11,
+      "train_loss": 1.0234,
+      "heldout_view_loss": 1.6453
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.9757,
+      "heldout_view_loss": 1.6407
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.9387,
+      "heldout_view_loss": 1.4949
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.8534,
+      "heldout_view_loss": 1.4584
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.8512,
+      "heldout_view_loss": 1.3586
+    }
+  ],
+  "heldout_augmented_view_retrieval": {
+    "overall_same_window_recall_at_1": 0.96,
+    "overall_same_window_recall_at_5": 1.0,
+    "by_heldout_site": {
+      "KILBOURNE_HOLE": {
+        "queries": 75,
+        "same_window_recall_at_1": 0.9733,
+        "same_window_recall_at_5": 1.0
+      },
+      "OLYMPUS_CTX": {
+        "queries": 75,
+        "same_window_recall_at_1": 0.9733,
+        "same_window_recall_at_5": 1.0
+      },
+      "SCHRODNGR02": {
+        "queries": 75,
+        "same_window_recall_at_1": 0.9333,
+        "same_window_recall_at_5": 1.0
+      }
+    }
+  },
+  "model_sha256": "f52b3e201dd8111e50f791c527089b767770de1675b8361f141c1e553e008c76",
+  "limitations": [
+    "Same-window augmented-view retrieval is not a Moon/Earth or Mars/Earth analog relevance metric.",
+    "No expert cross-body pairs, material labels, or mission-environment labels are used.",
+    "Only one Earth site and one Mars site contribute to training; transfer uncertainty is high.",
+    "The 32x32 common physical image can upsample Mars CTX 200 m from about ten true DEM posts; it cannot restore missing detail.",
+    "Heldout site groups are disjoint, but the tiny number of sites prevents a generalization claim."
+  ]
+}

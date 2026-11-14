@@ -1,0 +1,364 @@
+{
+  "version": "domars-branch-report-v1",
+  "source": "https://zenodo.org/records/4291940",
+  "license": "CC BY4.0",
+  "source_sha256": "9229a663fdf2086197415e383f6bba58bb5e8a799ca381590db2f56adb4c592a",
+  "protocol_sha256": "3889816d5f6bb88a8c4335b68352f0ad4b8a07551fb6e0cc4b9ad33216867502",
+  "split": {
+    "train": {
+      "images": 8115,
+      "sources": 80,
+      "groups": 37,
+      "classes": {
+        "aec": 548,
+        "ael": 547,
+        "cli": 393,
+        "cra": 579,
+        "fse": 839,
+        "fsf": 611,
+        "fsg": 475,
+        "fss": 560,
+        "mix": 459,
+        "rid": 478,
+        "rou": 213,
+        "sfe": 74,
+        "sfx": 1043,
+        "smo": 491,
+        "tex": 805
+      }
+    },
+    "validation": {
+      "images": 2747,
+      "sources": 31,
+      "groups": 11,
+      "classes": {
+        "aec": 118,
+        "ael": 309,
+        "cli": 258,
+        "cra": 115,
+        "fse": 195,
+        "fsf": 82,
+        "fsg": 5,
+        "fss": 194,
+        "mix": 84,
+        "rid": 126,
+        "rou": 57,
+        "sfe": 896,
+        "sfx": 135,
+        "smo": 80,
+        "tex": 93
+      }
+    },
+    "test": {
+      "images": 5288,
+      "sources": 52,
+      "groups": 13,
+      "classes": {
+        "aec": 392,
+        "ael": 160,
+        "cli": 349,
+        "cra": 470,
+        "fse": 39,
+        "fsf": 479,
+        "fsg": 522,
+        "fss": 320,
+        "mix": 471,
+        "rid": 414,
+        "rou": 737,
+        "sfe": 35,
+        "sfx": 164,
+        "smo": 588,
+        "tex": 148
+      }
+    }
+  },
+  "grouping": "Connected source-center components within350km on Mars radius3389.5km; source center approximated from CTX ID, not verified crop footprint.",
+  "labels": [
+    "aec",
+    "ael",
+    "cli",
+    "cra",
+    "fse",
+    "fsf",
+    "fsg",
+    "fss",
+    "mix",
+    "rid",
+    "rou",
+    "sfe",
+    "sfx",
+    "smo",
+    "tex"
+  ],
+  "runs": [
+    {
+      "run": "run_v1",
+      "name": "CNN + supervised contrastive learning",
+      "model_sha256": "d3192c80afe88e439d72a7691fd9f9b2b931573aa45fef86e4425ad42929e1da",
+      "selected_epoch": 15,
+      "parameters": 295647,
+      "macro_f1": 0.4198658294927092,
+      "balanced_accuracy": 0.43438207228133147,
+      "per_class_f1": [
+        0.5085803432137286,
+        0.30579964850615116,
+        0.13471502590673576,
+        0.7875848690591658,
+        0.0,
+        0.5044359949302915,
+        0.6253807106598985,
+        0.418212478920742,
+        0.3870967741935484,
+        0.5680851063829787,
+        0.7855495772482706,
+        0.0,
+        0.4924924924924925,
+        0.6382978723404256,
+        0.14175654853620956
+      ],
+      "texture_macro_f1": 0.373812511234907,
+      "majority_macro_f1": 0.0040107605771582296,
+      "paired_group_bootstrap_delta_interval": [
+        0.005532269983039794,
+        0.07912768962318383
+      ],
+      "relative_baseline_gate": true,
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 2.264860155075554,
+          "validation_macro_f1": 0.2150785455907052,
+          "seconds": 3.719969798112288
+        },
+        {
+          "epoch": 2,
+          "loss": 1.8222949974180207,
+          "validation_macro_f1": 0.32368808834924784,
+          "seconds": 2.014003708958626
+        },
+        {
+          "epoch": 3,
+          "loss": 1.628278705078786,
+          "validation_macro_f1": 0.33122674578022626,
+          "seconds": 2.017498563043773
+        },
+        {
+          "epoch": 4,
+          "loss": 1.4971612710652389,
+          "validation_macro_f1": 0.3709263331761402,
+          "seconds": 1.962600916158408
+        },
+        {
+          "epoch": 5,
+          "loss": 1.3283694597679798,
+          "validation_macro_f1": 0.3165025356634389,
+          "seconds": 1.5453549029771239
+        },
+        {
+          "epoch": 6,
+          "loss": 1.2215958383139662,
+          "validation_macro_f1": 0.165471094504157,
+          "seconds": 1.5007573659531772
+        },
+        {
+          "epoch": 7,
+          "loss": 1.1586742039740554,
+          "validation_macro_f1": 0.47533683650111525,
+          "seconds": 2.0180226711090654
+        },
+        {
+          "epoch": 8,
+          "loss": 1.1050739743578153,
+          "validation_macro_f1": 0.42573395887962345,
+          "seconds": 1.9495739028789103
+        },
+        {
+          "epoch": 9,
+          "loss": 1.0746095696772178,
+          "validation_macro_f1": 0.4348772067146811,
+          "seconds": 1.965393739985302
+        },
+        {
+          "epoch": 10,
+          "loss": 1.017511710876555,
+          "validation_macro_f1": 0.354261386515971,
+          "seconds": 1.8711074381135404
+        },
+        {
+          "epoch": 11,
+          "loss": 0.9852292767659886,
+          "validation_macro_f1": 0.4456017657125706,
+          "seconds": 1.8917750711552799
+        },
+        {
+          "epoch": 12,
+          "loss": 0.9387792714937465,
+          "validation_macro_f1": 0.45795187742690985,
+          "seconds": 1.9892160010058433
+        },
+        {
+          "epoch": 13,
+          "loss": 0.9188831345302853,
+          "validation_macro_f1": 0.4012755655398863,
+          "seconds": 1.9896562779322267
+        },
+        {
+          "epoch": 14,
+          "loss": 0.8986594156017453,
+          "validation_macro_f1": 0.40450798396691573,
+          "seconds": 1.9800116079859436
+        },
+        {
+          "epoch": 15,
+          "loss": 0.8722565699750044,
+          "validation_macro_f1": 0.48603482285389715,
+          "seconds": 1.9969843130093068
+        }
+      ]
+    },
+    {
+      "run": "run_ce_ablation_v1",
+      "name": "CNN / cross-entropy only",
+      "model_sha256": "2ff12d3bfe58a4a68690026f334c43aee8bf042d407cab329853b5faed05d4a8",
+      "selected_epoch": 14,
+      "parameters": 295647,
+      "macro_f1": 0.3696763422651231,
+      "balanced_accuracy": 0.38001202258076233,
+      "per_class_f1": [
+        0.5203252032520326,
+        0.19347037484885127,
+        0.2913907284768212,
+        0.74189364461738,
+        0.03626220362622036,
+        0.34539473684210525,
+        0.22741433021806853,
+        0.310935441370224,
+        0.5786407766990291,
+        0.43792766373411535,
+        0.5384615384615384,
+        0.0,
+        0.5185185185185185,
+        0.6812705366922235,
+        0.12323943661971831
+      ],
+      "texture_macro_f1": 0.374106973392217,
+      "majority_macro_f1": 0.0040107605771582296,
+      "paired_group_bootstrap_delta_interval": [
+        -0.044232567608069054,
+        0.06429582668436974
+      ],
+      "relative_baseline_gate": false,
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 1.871260239383367,
+          "validation_macro_f1": 0.12397774909834242,
+          "seconds": 2.8300828670617193
+        },
+        {
+          "epoch": 2,
+          "loss": 1.4864258522123803,
+          "validation_macro_f1": 0.2973508268659752,
+          "seconds": 1.9607777770143002
+        },
+        {
+          "epoch": 3,
+          "loss": 1.3121496889534898,
+          "validation_macro_f1": 0.3060311364986415,
+          "seconds": 1.982938334112987
+        },
+        {
+          "epoch": 4,
+          "loss": 1.1670538834699495,
+          "validation_macro_f1": 0.274444903078206,
+          "seconds": 1.9337613149546087
+        },
+        {
+          "epoch": 5,
+          "loss": 1.031031587931115,
+          "validation_macro_f1": 0.3826095813507874,
+          "seconds": 1.985225809039548
+        },
+        {
+          "epoch": 6,
+          "loss": 0.9254696275305561,
+          "validation_macro_f1": 0.26629355790583287,
+          "seconds": 1.9498338759876788
+        },
+        {
+          "epoch": 7,
+          "loss": 0.8593055723220344,
+          "validation_macro_f1": 0.4136701466323763,
+          "seconds": 1.9901219559833407
+        },
+        {
+          "epoch": 8,
+          "loss": 0.8085234449135037,
+          "validation_macro_f1": 0.26173230082527293,
+          "seconds": 1.9262027980294079
+        },
+        {
+          "epoch": 9,
+          "loss": 0.768576756706388,
+          "validation_macro_f1": 0.34216578398995096,
+          "seconds": 1.9347668618429452
+        },
+        {
+          "epoch": 10,
+          "loss": 0.7280621462919581,
+          "validation_macro_f1": 0.3404417192566196,
+          "seconds": 1.9476236819755286
+        },
+        {
+          "epoch": 11,
+          "loss": 0.7001403131353574,
+          "validation_macro_f1": 0.3822320006937561,
+          "seconds": 1.5803631991147995
+        },
+        {
+          "epoch": 12,
+          "loss": 0.6528328199555554,
+          "validation_macro_f1": 0.5253615613710559,
+          "seconds": 1.1649678950197995
+        },
+        {
+          "epoch": 13,
+          "loss": 0.6359512050320782,
+          "validation_macro_f1": 0.40295240949428984,
+          "seconds": 1.1686900830827653
+        },
+        {
+          "epoch": 14,
+          "loss": 0.6005545326574581,
+          "validation_macro_f1": 0.5367505415215077,
+          "seconds": 1.8172544268891215
+        },
+        {
+          "epoch": 15,
+          "loss": 0.5832782350187227,
+          "validation_macro_f1": 0.5082046441330387,
+          "seconds": 1.296900994842872
+        }
+      ]
+    }
+  ],
+  "deployment_status": "research only; not used in live candidate ranking",
+  "limitations": [
+    "Mars-only image-level geomorphology, not pixel segmentation or material labels",
+    "350km nominal grouping reduces related-source leakage but exact source/crop footprint separation remains unverified",
+    "No Earth analogy or field suitability truth in this dataset",
+    "Some classes have very uneven source-group support; inspect every class.",
+    "This test has now been evaluated for both preregistered runs. Further tuned experiments must not call it untouched.",
+    "No human ratings were collected; image-class labels are supplied by the dataset authors.",
+    "Contrastive loss ablation is not a multimodal DEM/imagery/geology ablation."
+  ],
+  "loss_ablation": {
+    "contrastive_minus_ce_macro_f1": 0.050189487227586094,
+    "paired_spatial_group_bootstrap_95pct": [
+      -0.015835595872426327,
+      0.08658560873458401
+    ],
+    "scope": "Preregistered loss ablation on Mars image classification only",
+    "note": "Each run fit its own texture baseline; tiny solver differences are reported rather than treating the two baselines as bit-identical."
+  }
+}

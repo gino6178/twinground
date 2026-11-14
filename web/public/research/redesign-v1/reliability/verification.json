@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-10-11T16:38:20.955460+00:00",
+  "independent_sklearn_nll": "passed",
+  "accepted_error_and_group_class_counts": "passed",
+  "seal_precedes_test_access": "passed",
+  "limitations": [
+    "Validation reused for checkpoint selection and calibration",
+    "Test had already been consumed",
+    "Wilson bound is an image-level heuristic; within-source dependence means it is not a group-level risk guarantee",
+    "Synthetic inputs are stress cases, not a comprehensive real-OOD benchmark"
+  ],
+  "browser": {
+    "mobile_client_width": 375,
+    "mobile_scroll_width": 375,
+    "chart_natural_width": 1760,
+    "console_errors": 0,
+    "desktop_visual": "passed"
+  },
+  "public_report_matches_source": true
+}

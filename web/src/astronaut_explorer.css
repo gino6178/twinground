@@ -1,0 +1,231 @@
+.eva{position:fixed;inset:0;z-index:2000;background:#040404;color:#efefef;font-family:Manrope,'Noto Sans TC',sans-serif;overflow:hidden;--eva-accent:#f8f8f8;--eva-panel:#131313d6;--eva-line:#f8f8f83d}
+.eva-canvas{position:absolute;inset:0;outline:none}.eva-canvas:focus-visible{box-shadow:inset 0 0 0 2px var(--eva-accent)}.eva-canvas canvas{display:block;cursor:grab}.eva-canvas canvas:active{cursor:grabbing}
+.eva button{font:inherit;color:inherit;cursor:pointer}
+.eva button:focus-visible,.eva input:focus-visible,.eva select:focus-visible,.eva canvas:focus-visible{outline:2px solid var(--eva-accent);outline-offset:2px}
+.eva kbd{display:inline-block;min-width:1.6em;padding:1px 5px;border:1px solid #ffffff38;border-bottom-width:2px;border-radius:4px;background:#ffffff12;font:500 10px 'DM Mono',monospace;text-align:center;color:#e9e9e9}
+.eva-loading,.eva-error{position:absolute;inset:0;display:grid;place-content:center;gap:14px;text-align:center;font-size:14px;color:#c2c2c2;background:radial-gradient(circle,#1f1f1f,#040404 70%)}
+.eva-error button{border:1px solid var(--eva-line);background:var(--eva-panel);padding:9px 14px;border-radius:6px}
+
+.eva-top{position:absolute;left:0;right:0;top:0;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:14px 16px;pointer-events:none;background:linear-gradient(#000a,transparent)}
+.eva-top>*{pointer-events:auto}
+.eva-place{display:flex;flex-direction:column;gap:3px;min-width:0;max-width:34%}
+.eva-place strong{font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 1px 3px #000}
+.eva-place small{font:500 11px 'DM Mono',monospace;color:#dadada;text-shadow:0 1px 3px #000}
+.eva-badge{align-self:flex-start;padding:3px 8px;border-radius:999px;font:600 10px 'DM Mono',monospace;letter-spacing:.06em;background:#6b6b6b;color:#fff}.eva-badge.mars{background:#b9563c}.eva-badge.moon{background:#737373}.eva-badge.earth{background:#6c6c6c}
+.eva-tools{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:46%}
+.eva-tools button{border:1px solid var(--eva-line);background:var(--eva-panel);backdrop-filter:blur(6px);border-radius:7px;padding:7px 10px;font-size:12px;white-space:nowrap}
+.eva-tools button[aria-pressed=true],.eva-tools button[aria-expanded=true]{border-color:var(--eva-accent);color:var(--eva-accent)}
+.eva-tools .eva-switch{background:#4c4c4ce6;border-color:#f8f8f8aa;font-weight:700}
+.eva-tools .eva-close{width:34px;padding:7px 0;font-size:14px}
+
+.eva-compass{position:relative;flex:0 0 260px;height:34px;overflow:hidden;border:1px solid var(--eva-line);border-radius:7px;background:var(--eva-panel);-webkit-mask-image:linear-gradient(90deg,transparent,#000 22%,#000 78%,transparent);mask-image:linear-gradient(90deg,transparent,#000 22%,#000 78%,transparent)}
+.eva-compass-strip{position:absolute;left:130px;top:0;height:100%}
+.eva-compass-strip span{position:absolute;top:4px;width:1px;height:8px;background:#ffffff70;font:600 10px 'DM Mono',monospace;color:#eaeaea}
+.eva-compass-strip span.major{height:12px;background:var(--eva-accent)}
+.eva-compass-strip span:not(:empty){width:auto;background:none;transform:translateX(-50%);top:14px;height:auto}
+.eva-compass i{position:absolute;left:50%;top:0;width:2px;height:10px;background:#ffcf6e;transform:translateX(-50%)}
+.eva-compass b{position:absolute;right:6px;bottom:2px;font:500 9px 'DM Mono',monospace;color:#b8b8b8}
+
+.eva-telemetry{position:absolute;left:16px;bottom:16px;width:236px;padding:12px 13px;border:1px solid var(--eva-line);border-radius:10px;background:var(--eva-panel);backdrop-filter:blur(8px)}
+.eva-telemetry dl{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;margin:0}
+.eva-telemetry dt{font-size:10px;color:#acacac}.eva-telemetry dd{margin:2px 0 0;font:500 13px 'DM Mono',monospace;color:#ffffff}
+.eva-suit{margin-top:11px;padding-top:9px;border-top:1px solid #ffffff1c}
+.eva-suit span{font-size:10px;color:#acacac}.eva-suit small{display:block;margin-top:5px;font:500 10px 'DM Mono',monospace;color:#dddddd}
+.eva-bar{height:5px;margin-top:5px;border-radius:3px;background:#ffffff1a;overflow:hidden}.eva-bar i{display:block;height:100%;background:linear-gradient(90deg,#b2b2b2,var(--eva-accent))}
+
+.eva-map{position:absolute;right:16px;bottom:16px;display:flex;flex-direction:column;gap:5px;align-items:flex-end}
+.eva-map canvas{width:184px;height:184px;border:1px solid var(--eva-line);border-radius:10px;cursor:crosshair;box-shadow:0 10px 30px #0008;image-rendering:auto}
+.eva-map span{font-size:10px;color:#d0d0d0;text-shadow:0 1px 3px #000}
+
+.eva-actions{position:absolute;left:50%;bottom:62px;transform:translateX(-50%);display:flex;gap:6px}
+.eva-actions button{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:62px;padding:8px 9px;border:1px solid var(--eva-line);border-radius:9px;background:var(--eva-panel);backdrop-filter:blur(6px);font-size:12px}
+.eva-actions button[aria-pressed=true]{border-color:var(--eva-accent);color:var(--eva-accent)}
+
+.eva-toast{position:absolute;left:50%;top:76px;transform:translateX(-50%);padding:9px 14px;border:1px solid var(--eva-line);border-radius:8px;background:#161616e8;font-size:13px;animation:eva-in .18s ease-out;max-width:calc(100% - 32px);text-align:center}
+@keyframes eva-in{from{opacity:0;transform:translate(-50%,-6px)}to{opacity:1;transform:translate(-50%,0)}}
+
+.eva-scan,.eva-settings,.eva-help{position:absolute;border:1px solid var(--eva-line);border-radius:12px;background:#131313f0;backdrop-filter:blur(10px);box-shadow:0 20px 50px #000a}
+.eva-scan{right:16px;top:78px;width:min(380px,calc(100% - 32px));padding:14px 16px}
+.eva-scan header{display:flex;justify-content:space-between;align-items:center}.eva-scan header button{border:0;background:none;font-size:14px}
+.eva-scan p{margin:6px 0 10px;font-size:11px;color:#c2c2c2}
+.eva-scan table{width:100%;border-collapse:collapse;font-size:12px}.eva-scan th,.eva-scan td{padding:6px 4px;border-bottom:1px solid #ffffff14;text-align:right}.eva-scan th[scope=row]{text-align:left;font-weight:500;color:#c2c2c2}.eva-scan thead th{font-size:11px;color:var(--eva-accent)}
+.eva-scan td{font-family:'DM Mono',monospace}
+.eva-scan small,.eva-settings small{display:block;margin-top:9px;font-size:10px;line-height:1.6;color:#a5a5a5}
+.eva-settings{right:16px;top:78px;width:min(300px,calc(100% - 32px));padding:14px 16px;display:flex;flex-direction:column;gap:12px}
+.eva-settings label{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;font-size:12px;color:#dadada}
+.eva-settings input[type=range]{width:100%;accent-color:#f8f8f8}
+.eva-settings output{font:500 11px 'DM Mono',monospace;color:var(--eva-accent)}
+.eva-settings select{width:100%;background:#202020;color:#eaeaea;border:1px solid #5b5b5b;border-radius:6px;padding:7px}
+.eva-settings .eva-check{justify-content:flex-start;align-items:center;gap:8px}
+.eva-settings button{border:1px solid var(--eva-line);background:#252525;border-radius:7px;padding:8px;font-size:12px}
+.eva-help{left:50%;top:50%;transform:translate(-50%,-50%);width:min(470px,calc(100% - 32px));max-height:calc(100% - 140px);overflow:auto;padding:20px 22px}
+.eva-help h2{margin:0 0 6px;font-size:19px}.eva-help p{margin:0 0 12px;font-size:12px;line-height:1.7;color:#c2c2c2}
+.eva-help ul{list-style:none;padding:0;margin:0 0 16px;display:grid;gap:8px;font-size:12px;color:#e6e6e6}
+.eva-start{width:100%;padding:11px;border:0;border-radius:8px;background:var(--eva-accent);color:#1a1a1a!important;font-weight:800}
+
+.eva-note{position:absolute;left:268px;right:216px;bottom:12px;font-size:10px;line-height:1.5;color:#d2d2d2;text-align:center;text-shadow:0 1px 3px #000,0 0 8px #000}
+.eva-visor{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 78% 70% at 50% 48%,transparent 62%,#c9962a1f 74%,#080808cc 92%),linear-gradient(115deg,#ffffff0d 0 18%,transparent 18% 100%)}
+
+.eva.is-touch .eva-actions{left:auto;right:16px;bottom:228px;transform:none;flex-direction:column}
+.eva.is-touch .eva-actions button{min-width:58px;padding:9px 6px}.eva.is-touch .eva-actions kbd{display:none}
+.eva-joystick{position:absolute;left:24px;bottom:24px;width:124px;height:124px;border-radius:50%;border:1px solid #f8f8f855;background:radial-gradient(circle,#f8f8f81c,#131313b3 70%);touch-action:none}
+.eva-joystick span{position:absolute;left:50%;top:50%;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;background:#f8f8f8bb;box-shadow:0 0 18px #f8f8f866}
+.eva.is-touch .eva-telemetry{left:16px;bottom:auto;top:86px;width:200px;padding:9px 10px}
+.eva.is-touch .eva-telemetry dl{gap:5px 10px}.eva.is-touch .eva-telemetry dd{font-size:11px}
+
+@media (max-width:900px){
+  .eva-compass{display:none}
+  .eva-place{max-width:44%}
+  .eva-tools{max-width:56%}
+  .eva-note{left:16px;right:16px;bottom:auto;top:auto;bottom:4px;font-size:9px}
+  .eva-map canvas{width:140px;height:140px}
+  .eva-map{bottom:30px}
+  .eva-telemetry{bottom:30px}
+}
+@media (max-width:640px){
+  .eva-top{padding:10px}
+  .eva-tools button{padding:6px 8px;font-size:11px}
+  .eva-tools{gap:4px}
+  .eva-map canvas{width:112px;height:112px}
+  .eva-map span{display:none}
+  .eva-telemetry{width:178px}
+  .eva-telemetry .eva-suit{display:none}
+  .eva:not(.is-touch) .eva-actions{bottom:auto;top:auto;bottom:34px;left:16px;transform:none;flex-wrap:wrap;max-width:calc(100% - 150px)}
+}
+@media (prefers-reduced-motion:reduce){.eva-toast{animation:none}}
+
+.eva-tools .eva-rover{background:#6b2f1fe6;border-color:#f0946aaa;font-weight:700}
+.eva-tiles-loading{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:12px 18px;border:1px solid var(--eva-line);border-radius:10px;background:#161616e8;font-size:13px}
+
+.eva-weather{position:absolute;right:16px;top:78px;width:min(400px,calc(100% - 32px));max-height:calc(100% - 300px);overflow:auto;padding:14px 16px;display:flex;flex-direction:column;gap:10px;border:1px solid var(--eva-line);border-radius:12px;background:#131313f0;backdrop-filter:blur(10px);box-shadow:0 20px 50px #000a}
+.eva-weather header{display:flex;justify-content:space-between;align-items:center}.eva-weather header button{border:0;background:none;font-size:14px}
+.eva-wx-now{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:2px 12px}
+.eva-wx-now b{font:600 30px 'DM Mono',monospace;color:#ffffff}.eva-wx-now span{font-size:15px;color:var(--eva-accent)}.eva-wx-now small{grid-column:1/-1;font-size:11px;color:#c2c2c2}
+.eva-weather label{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;font-size:12px;color:#dadada}
+.eva-weather input[type=range]{width:100%;accent-color:#f8f8f8}.eva-weather output{font:500 11px 'DM Mono',monospace;color:var(--eva-accent)}
+.eva-weather select{width:100%;background:#202020;color:#eaeaea;border:1px solid #5b5b5b;border-radius:6px;padding:7px}
+.eva-weather>button{border:1px solid var(--eva-line);background:#252525;border-radius:7px;padding:8px;font-size:12px}
+.eva-compare{width:100%;border-collapse:collapse;font-size:11px}.eva-compare caption{text-align:left;font-size:12px;color:#eaeaea;margin-bottom:6px}
+.eva-compare th,.eva-compare td{padding:5px 3px;border-bottom:1px solid #ffffff14;text-align:right}.eva-compare th[scope=row]{text-align:left;font-weight:500;color:#c2c2c2}.eva-compare td{font-family:'DM Mono',monospace}
+.eva-chip{display:inline-block;padding:2px 6px;border-radius:999px;font:600 10px Manrope,'Noto Sans TC',sans-serif;white-space:nowrap}
+.eva-chip.ok{background:#595959;color:#ffffff}.eva-chip.mid{background:#6b5a1f;color:#fff3c9}.eva-chip.bad{background:#6b2a1f;color:#ffd9cf}.eva-chip.never{background:#3e3e3e;color:#d9d9d9}
+.eva-weather small{font-size:10px;line-height:1.6;color:#a5a5a5}
+.eva-wx-line{margin:8px 0 0;font:500 11px 'DM Mono',monospace;color:#dddddd}
+.eva-actions .eva-attention{border-color:#ffcf6e;color:#ffcf6e;box-shadow:0 0 0 3px #ffcf6e33}
+
+/* loading screen until the terrain and models are ready (no visible swaps) */
+.eva-canvas.is-hidden{visibility:hidden}
+
+.eva-loading-card{width:min(86vw,440px);display:flex;flex-direction:column;gap:10px;text-align:left}
+.eva-loading-card strong{font-size:17px;font-weight:700;color:#efefef}
+.eva-loading-place{font:500 12px 'DM Mono',monospace;color:#ababab;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eva-progress{position:relative;height:6px;margin-top:6px;border-radius:999px;background:#ffffff14;overflow:hidden}
+.eva-progress span{position:absolute;inset:0;transform-origin:left center;border-radius:inherit;background:linear-gradient(90deg,#a1a1a1,#f8f8f8);transition:transform .4s ease-out}
+.eva-progress::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,#ffffff3d,transparent);transform:translateX(-100%);animation:eva-shimmer 1.3s linear infinite}
+@keyframes eva-shimmer{to{transform:translateX(100%)}}
+.eva-progress-meta{display:flex;justify-content:space-between;align-items:baseline;gap:14px;font-size:12.5px;line-height:1.45;color:#c2c2c2}
+.eva-progress-meta b{flex:none;font:600 12px 'DM Mono',monospace;color:var(--eva-accent)}
+@media (prefers-reduced-motion:reduce){.eva-progress::after{animation:none}.eva-progress span{transition:none}}
+.eva-help-credits{display:flex;flex-direction:column;gap:3px;margin:4px 0 12px;font-size:11px;line-height:1.5;color:#ababab}
+
+/* A8 cover style (2026-10-20): flat near-black panels, no outlines, translucent buttons, mint only for the main action */
+.eva{--eva-accent:#f0f0f0;--eva-panel:#040404cc;--eva-line:transparent;background:#040404}
+.eva-top{background:linear-gradient(#040404b3,transparent)}
+.eva-tools button,.eva-actions button,.eva-settings button,.eva-weather>button,.eva-error button,.eva-route button{border:0;border-radius:8px;background:#121212cc;color:#f2f2f2;backdrop-filter:blur(8px);transition:background-color .2s}
+.eva-tools button:hover,.eva-actions button:hover,.eva-settings button:hover,.eva-weather>button:hover,.eva-route button:hover{background:#242424dd}
+.eva-tools button[aria-pressed=true],.eva-tools button[aria-expanded=true],.eva-actions button[aria-pressed=true],.eva-route button[aria-pressed=true]{background:#f2f2f2;color:#1a1a1a}
+.eva-tools .eva-switch{background:#f0f0f0;color:#1a1a1a;font-weight:700}
+.eva-tools .eva-switch:hover{background:#ffffff}
+.eva-tools .eva-rover{background:#f4a37f;color:#2a0f06;border:0}
+.eva-actions .eva-attention{background:#f3c27a;color:#2a1a04;box-shadow:none}
+.eva-telemetry,.eva-scan,.eva-settings,.eva-help,.eva-weather,.eva-route,.eva-toast,.eva-tiles-loading{border:0;border-radius:12px;background:#040404d9;box-shadow:none}
+.eva-compass,.eva-map canvas{border:0;box-shadow:none}
+.eva-compass{background:#040404a6}
+.eva-suit{border-top-color:#ffffff14}
+.eva kbd{border:0;background:#ffffff1f;color:#d0d0d0}
+.eva-settings select,.eva-weather select,.eva-route select{border:0;border-radius:8px;background:#ffffff14;color:#f2f2f2;padding:7px}
+.eva-start{background:#f0f0f0;color:#1a1a1a!important}
+.eva-joystick{border:0;background:radial-gradient(circle,#ffffff14,#040404b3 70%)}
+.eva-joystick span{background:#f0f0f0cc;box-shadow:none}
+.eva-badge{font-family:Manrope,'Noto Sans TC',sans-serif;letter-spacing:0;font-size:11px}
+
+/* B2/B1 route planner */
+.eva-route{position:absolute;right:16px;top:78px;width:min(400px,calc(100% - 32px));max-height:calc(100% - 300px);overflow:auto;padding:14px 16px;display:flex;flex-direction:column;gap:10px;backdrop-filter:blur(10px)}
+.eva-route header{display:flex;justify-content:space-between;align-items:center}
+.eva-route header button{background:none!important;font-size:14px}
+.eva-route-hint{margin:0;font-size:12px;line-height:1.6;color:#d0d0d0}
+.eva-route-buttons{display:flex;flex-wrap:wrap;gap:6px}
+.eva-route-buttons button{padding:7px 10px;font-size:12px}
+.eva-route-buttons button:disabled{opacity:.45;cursor:default}
+.eva-route-buttons .is-primary{background:#f0f0f0;color:#1a1a1a;font-weight:700}
+.eva-route-buttons .is-primary[aria-pressed=true]{background:#f3c27a;color:#2a1a04}
+.eva-route-load{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12px;color:#d0d0d0}
+.eva-route-load select{width:auto}
+.eva-route-table td{font-variant-numeric:tabular-nums;font-family:Manrope,'Noto Sans TC',sans-serif}
+.eva-route-warn{margin:0;padding:8px 10px;border-radius:8px;background:#f3c27a22;color:#f3c27a;font-size:12px;line-height:1.55}
+.eva-route-profile{margin:0}
+.eva-route-profile svg{display:block;width:100%;height:auto;border-radius:8px;background:#ffffff08}
+.eva-route-profile figcaption,.eva-route-legend{margin:4px 0 0;font-size:11px;color:#acacac}
+.eva-route-legend i{display:inline-block;width:12px;height:3px;margin:0 5px 2px 8px;border-radius:2px;vertical-align:middle}
+.eva-route-legend i:first-child{margin-left:0}
+.eva-route-score{padding:10px 12px;border-radius:10px;background:#ffffff0a}
+.eva-route-score>div{display:flex;align-items:baseline;gap:10px}
+.eva-route-score b{font-size:30px;font-weight:800;color:#f0f0f0;font-variant-numeric:tabular-nums}
+.eva-route-score>div span{font-size:12px;color:#d0d0d0}
+.eva-route-score ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:5px;font-size:11.5px;color:#d0d0d0;font-variant-numeric:tabular-nums}
+.eva-route-score p{margin:8px 0 0;font-size:12px;line-height:1.55;color:#f2f2f2}
+.eva-route small{font-size:10.5px;line-height:1.6;color:#9e9e9e}
+@media (max-width:640px){.eva-route{top:auto;bottom:150px;max-height:52%}}
+
+/* Phase 2 (2026-10-20): life support, comms, full-day daylight, coverage toggle */
+.eva-life{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:4px}
+.eva-life li{display:grid;grid-template-columns:44px 1fr 38px;align-items:center;gap:6px;font-size:10px;color:#d0d0d0}
+.eva-life li .eva-bar{margin:0}
+.eva-life li b{font:500 10px 'DM Mono',monospace;text-align:right;color:#f2f2f2}
+.eva-life li.is-limit span{color:#f3c27a}
+.eva-life li.is-limit .eva-bar i{background:linear-gradient(90deg,#d99a4e,#f3c27a)}
+.eva-life-warn{margin:6px 0 0;padding:6px 8px;border-radius:8px;background:#e65a5426;color:#ffb3a8;font-size:10.5px;line-height:1.5}
+.eva-comm{margin:8px 0 0;display:grid;gap:3px;font:500 10px 'DM Mono',monospace;color:#dddddd}
+.eva-comm span{padding-left:10px;position:relative}
+.eva-comm span::before{content:'';position:absolute;left:0;top:4px;width:5px;height:5px;border-radius:50%;background:#f0f0f0}
+.eva-comm span.bad::before{background:#e65a54}
+.eva-cover-toggle{border:0;border-radius:8px;padding:5px 9px;font-size:10.5px;background:#121212cc;color:#f2f2f2;backdrop-filter:blur(8px);cursor:pointer}
+.eva-cover-toggle[aria-pressed=true]{background:#f2f2f2;color:#1a1a1a}
+.eva-day{display:flex;flex-direction:column;gap:7px;padding:10px 12px;border-radius:10px;background:#ffffff0a}
+.eva-day h3{margin:0;font-size:12px;font-weight:600;color:#f2f2f2}
+.eva-day svg{display:block;width:100%;height:auto}
+.eva-day svg text{font:10px 'DM Mono',monospace;fill:#acacac}
+.eva-day-legend{margin:0;display:flex;flex-wrap:wrap;gap:4px 12px;font-size:10.5px;color:#acacac}
+.eva-day-legend i{display:inline-block;width:12px;height:3px;margin:0 5px 2px 0;border-radius:2px;vertical-align:middle}
+.eva-day-sum{list-style:none;margin:0;padding:0;display:grid;gap:5px;font-size:11.5px;line-height:1.5;color:#d0d0d0;font-variant-numeric:tabular-nums}
+.eva-day-sum b{margin-right:6px}
+.eva-weather .eva-day-lapse{align-self:flex-start;padding:7px 10px;font-size:12px}
+.eva-weather .eva-day-lapse[aria-pressed=true]{background:#f3c27a;color:#2a1a04}
+.eva-day small{font-size:10.5px;line-height:1.6;color:#9e9e9e}
+.eva .eva-suit small{font-size:11px;margin-top:3px;line-height:1.45}
+.eva .eva-comm,.eva .eva-life li b{font-family:var(--cv-font,inherit);font-variant-numeric:tabular-nums}
+.eva .eva-comm{font-size:10.5px}
+@media (max-width:640px){.eva-telemetry .eva-comm{display:none}.eva-cover-toggle{display:none}}
+
+/* Phase 3 (2026-10-20): mission and base panel, drive legs in the route table */
+.eva-mission-tabs{display:flex;gap:4px;padding:3px;border-radius:10px;background:#ffffff0d}
+.eva-mission-tabs button{flex:1;padding:7px 8px;font-size:12px;background:none!important}
+.eva-mission-tabs button[aria-selected=true]{background:#f2f2f2!important;color:#1a1a1a}
+.eva-mission-body{display:flex;flex-direction:column;gap:9px}
+.eva-mission-tasks{margin:0;padding-left:20px;display:grid;gap:7px;font-size:12px;line-height:1.5;color:#d0d0d0}
+.eva-mission-tasks li.is-done{color:#f0f0f0}
+.eva-mission-tasks li.is-done::marker{content:'✓  '}
+.eva-mission-tasks span{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.eva-mission-tasks i{font-style:normal;font-size:10.5px;padding:2px 7px;border-radius:999px;background:#ffffff12;color:#acacac}
+.eva-mission-tasks i.on{background:#f0f0f033;color:#f0f0f0}
+.eva-mission-note{margin:0;padding:7px 9px;border-radius:8px;background:#ffffff0d;font-size:11.5px;line-height:1.55;color:#f2f2f2}
+.eva-mission-log{list-style:none;margin:0;padding:0;display:grid;gap:5px;font-size:11px;line-height:1.5;color:#d0d0d0;font-variant-numeric:tabular-nums}
+.eva-mission-log b{color:#f2f2f2;margin-right:4px}
+.eva-mission-photo{display:flex;align-items:center;gap:8px}
+.eva-mission-photo img{width:128px;height:72px;object-fit:cover;border-radius:6px}
+.eva-mission-done{margin:0;padding:8px 10px;border-radius:8px;background:#f0f0f02b;color:#f0f0f0;font-size:12.5px;font-weight:600}
+.eva-isru{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:12px;line-height:1.55;color:#d0d0d0}
+.eva-isru b{display:block;color:#f2f2f2;font-size:12px;margin-bottom:2px}
+.eva-isru span{display:block;font-size:11px;color:#acacac}
+.eva-isru .eva-isru-check{display:block;margin-top:4px;padding:6px 10px;font-size:11.5px}
+.eva-route-group th{padding-top:9px!important;text-align:left!important;font-size:11px;color:#f0f0f0!important;font-weight:600!important}

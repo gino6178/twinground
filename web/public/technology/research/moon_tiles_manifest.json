@@ -1,0 +1,2760 @@
+{
+  "purpose": "Source-documented LROC NAC 3 km query tiles at an actual 5 m comparison grid",
+  "tiles": [
+    {
+      "id": "MARIUS3_T000",
+      "parent_id": "MARIUS3",
+      "source_window_index": 0,
+      "center_lat_lon": [
+        13.3537309,
+        -56.0754206
+      ],
+      "offset_east_north_m": [
+        -750,
+        -10500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T001",
+      "parent_id": "MARIUS3",
+      "source_window_index": 1,
+      "center_lat_lon": [
+        13.3537322,
+        -56.05
+      ],
+      "offset_east_north_m": [
+        0,
+        -10500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T002",
+      "parent_id": "MARIUS3",
+      "source_window_index": 2,
+      "center_lat_lon": [
+        13.4031977,
+        -56.0754258
+      ],
+      "offset_east_north_m": [
+        -750,
+        -9000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T003",
+      "parent_id": "MARIUS3",
+      "source_window_index": 3,
+      "center_lat_lon": [
+        13.403199,
+        -56.05
+      ],
+      "offset_east_north_m": [
+        0,
+        -9000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T004",
+      "parent_id": "MARIUS3",
+      "source_window_index": 4,
+      "center_lat_lon": [
+        13.4526646,
+        -56.0754311
+      ],
+      "offset_east_north_m": [
+        -750,
+        -7500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T005",
+      "parent_id": "MARIUS3",
+      "source_window_index": 5,
+      "center_lat_lon": [
+        13.4526659,
+        -56.05
+      ],
+      "offset_east_north_m": [
+        0,
+        -7500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T006",
+      "parent_id": "MARIUS3",
+      "source_window_index": 6,
+      "center_lat_lon": [
+        13.5021314,
+        -56.0754364
+      ],
+      "offset_east_north_m": [
+        -750,
+        -6000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T007",
+      "parent_id": "MARIUS3",
+      "source_window_index": 7,
+      "center_lat_lon": [
+        13.5021327,
+        -56.05
+      ],
+      "offset_east_north_m": [
+        0,
+        -6000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T008",
+      "parent_id": "MARIUS3",
+      "source_window_index": 8,
+      "center_lat_lon": [
+        13.5515982,
+        -56.0754417
+      ],
+      "offset_east_north_m": [
+        -750,
+        -4500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T009",
+      "parent_id": "MARIUS3",
+      "source_window_index": 9,
+      "center_lat_lon": [
+        13.5515995,
+        -56.05
+      ],
+      "offset_east_north_m": [
+        0,
+        -4500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T010",
+      "parent_id": "MARIUS3",
+      "source_window_index": 10,
+      "center_lat_lon": [
+        13.601065,
+        -56.075447
+      ],
+      "offset_east_north_m": [
+        -750,
+        -3000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T011",
+      "parent_id": "MARIUS3",
+      "source_window_index": 11,
+      "center_lat_lon": [
+        13.6010663,
+        -56.05
+      ],
+      "offset_east_north_m": [
+        0,
+        -3000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T012",
+      "parent_id": "MARIUS3",
+      "source_window_index": 12,
+      "center_lat_lon": [
+        13.6505319,
+        -56.0754524
+      ],
+      "offset_east_north_m": [
+        -750,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T013",
+      "parent_id": "MARIUS3",
+      "source_window_index": 13,
+      "center_lat_lon": [
+        13.6505332,
+        -56.05
+      ],
+      "offset_east_north_m": [
+        0,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T014",
+      "parent_id": "MARIUS3",
+      "source_window_index": 14,
+      "center_lat_lon": [
+        13.6999987,
+        -56.0754577
+      ],
+      "offset_east_north_m": [
+        -750,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T016",
+      "parent_id": "MARIUS3",
+      "source_window_index": 16,
+      "center_lat_lon": [
+        13.7494655,
+        -56.0754631
+      ],
+      "offset_east_north_m": [
+        -750,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T017",
+      "parent_id": "MARIUS3",
+      "source_window_index": 17,
+      "center_lat_lon": [
+        13.7494668,
+        -56.05
+      ],
+      "offset_east_north_m": [
+        0,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T018",
+      "parent_id": "MARIUS3",
+      "source_window_index": 18,
+      "center_lat_lon": [
+        13.7989324,
+        -56.0754685
+      ],
+      "offset_east_north_m": [
+        -750,
+        3000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T019",
+      "parent_id": "MARIUS3",
+      "source_window_index": 19,
+      "center_lat_lon": [
+        13.7989337,
+        -56.05
+      ],
+      "offset_east_north_m": [
+        0,
+        3000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T020",
+      "parent_id": "MARIUS3",
+      "source_window_index": 20,
+      "center_lat_lon": [
+        13.8483992,
+        -56.0754738
+      ],
+      "offset_east_north_m": [
+        -750,
+        4500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T021",
+      "parent_id": "MARIUS3",
+      "source_window_index": 21,
+      "center_lat_lon": [
+        13.8484005,
+        -56.05
+      ],
+      "offset_east_north_m": [
+        0,
+        4500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T022",
+      "parent_id": "MARIUS3",
+      "source_window_index": 22,
+      "center_lat_lon": [
+        13.897866,
+        -56.0754793
+      ],
+      "offset_east_north_m": [
+        -750,
+        6000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T023",
+      "parent_id": "MARIUS3",
+      "source_window_index": 23,
+      "center_lat_lon": [
+        13.8978673,
+        -56.05
+      ],
+      "offset_east_north_m": [
+        0,
+        6000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T024",
+      "parent_id": "MARIUS3",
+      "source_window_index": 24,
+      "center_lat_lon": [
+        13.9473328,
+        -56.0754847
+      ],
+      "offset_east_north_m": [
+        -750,
+        7500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T025",
+      "parent_id": "MARIUS3",
+      "source_window_index": 25,
+      "center_lat_lon": [
+        13.9473341,
+        -56.05
+      ],
+      "offset_east_north_m": [
+        0,
+        7500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T026",
+      "parent_id": "MARIUS3",
+      "source_window_index": 26,
+      "center_lat_lon": [
+        13.9967997,
+        -56.0754901
+      ],
+      "offset_east_north_m": [
+        -750,
+        9000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T027",
+      "parent_id": "MARIUS3",
+      "source_window_index": 27,
+      "center_lat_lon": [
+        13.996801,
+        -56.05
+      ],
+      "offset_east_north_m": [
+        0,
+        9000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T028",
+      "parent_id": "MARIUS3",
+      "source_window_index": 28,
+      "center_lat_lon": [
+        14.0462665,
+        -56.0754956
+      ],
+      "offset_east_north_m": [
+        -750,
+        10500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T029",
+      "parent_id": "MARIUS3",
+      "source_window_index": 29,
+      "center_lat_lon": [
+        14.0462678,
+        -56.05
+      ],
+      "offset_east_north_m": [
+        0,
+        10500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T030",
+      "parent_id": "MARIUS3",
+      "source_window_index": 30,
+      "center_lat_lon": [
+        14.0957333,
+        -56.0755011
+      ],
+      "offset_east_north_m": [
+        -750,
+        12000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "MARIUS3_T031",
+      "parent_id": "MARIUS3",
+      "source_window_index": 31,
+      "center_lat_lon": [
+        14.0957346,
+        -56.05
+      ],
+      "offset_east_north_m": [
+        0,
+        12000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 2
+    },
+    {
+      "id": "FECUNDITATIS_T032",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 32,
+      "center_lat_lon": [
+        -7.6257346,
+        53.24
+      ],
+      "offset_east_north_m": [
+        0,
+        -12000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "FECUNDITATIS_T033",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 33,
+      "center_lat_lon": [
+        -7.5762678,
+        53.24
+      ],
+      "offset_east_north_m": [
+        0,
+        -10500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "FECUNDITATIS_T034",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 34,
+      "center_lat_lon": [
+        -7.526801,
+        53.24
+      ],
+      "offset_east_north_m": [
+        0,
+        -9000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "FECUNDITATIS_T035",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 35,
+      "center_lat_lon": [
+        -7.4773341,
+        53.24
+      ],
+      "offset_east_north_m": [
+        0,
+        -7500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "FECUNDITATIS_T036",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 36,
+      "center_lat_lon": [
+        -7.4278673,
+        53.24
+      ],
+      "offset_east_north_m": [
+        0,
+        -6000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "FECUNDITATIS_T037",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 37,
+      "center_lat_lon": [
+        -7.3784005,
+        53.24
+      ],
+      "offset_east_north_m": [
+        0,
+        -4500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "FECUNDITATIS_T038",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 38,
+      "center_lat_lon": [
+        -7.3289337,
+        53.24
+      ],
+      "offset_east_north_m": [
+        0,
+        -3000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "FECUNDITATIS_T039",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 39,
+      "center_lat_lon": [
+        -7.2794668,
+        53.24
+      ],
+      "offset_east_north_m": [
+        0,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "FECUNDITATIS_T041",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 41,
+      "center_lat_lon": [
+        -7.1805332,
+        53.24
+      ],
+      "offset_east_north_m": [
+        0,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "FECUNDITATIS_T042",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 42,
+      "center_lat_lon": [
+        -7.1310663,
+        53.24
+      ],
+      "offset_east_north_m": [
+        0,
+        3000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "FECUNDITATIS_T043",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 43,
+      "center_lat_lon": [
+        -7.0815995,
+        53.24
+      ],
+      "offset_east_north_m": [
+        0,
+        4500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "FECUNDITATIS_T044",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 44,
+      "center_lat_lon": [
+        -7.0321327,
+        53.24
+      ],
+      "offset_east_north_m": [
+        0,
+        6000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "FECUNDITATIS_T045",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 45,
+      "center_lat_lon": [
+        -6.9826659,
+        53.24
+      ],
+      "offset_east_north_m": [
+        0,
+        7500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "FECUNDITATIS_T046",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 46,
+      "center_lat_lon": [
+        -6.933199,
+        53.24
+      ],
+      "offset_east_north_m": [
+        0,
+        9000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "FECUNDITATIS_T047",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 47,
+      "center_lat_lon": [
+        -6.9331984,
+        53.2649155
+      ],
+      "offset_east_north_m": [
+        750,
+        9000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "FECUNDITATIS_T048",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 48,
+      "center_lat_lon": [
+        -6.8837322,
+        53.24
+      ],
+      "offset_east_north_m": [
+        0,
+        10500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "FECUNDITATIS_T049",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 49,
+      "center_lat_lon": [
+        -6.8837315,
+        53.2649129
+      ],
+      "offset_east_north_m": [
+        750,
+        10500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "FECUNDITATIS_T050",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 50,
+      "center_lat_lon": [
+        -6.8342654,
+        53.24
+      ],
+      "offset_east_north_m": [
+        0,
+        12000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "FECUNDITATIS_T051",
+      "parent_id": "FECUNDITATIS",
+      "source_window_index": 51,
+      "center_lat_lon": [
+        -6.8342647,
+        53.2649102
+      ],
+      "offset_east_north_m": [
+        750,
+        12000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 3
+    },
+    {
+      "id": "ANDERSON01_T055",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 55,
+      "center_lat_lon": [
+        14.8905275,
+        169.9688143
+      ],
+      "offset_east_north_m": [
+        -1500,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T056",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 56,
+      "center_lat_lon": [
+        14.8905317,
+        169.9944071
+      ],
+      "offset_east_north_m": [
+        -750,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T057",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 57,
+      "center_lat_lon": [
+        14.8905332,
+        170.02
+      ],
+      "offset_east_north_m": [
+        0,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T058",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 58,
+      "center_lat_lon": [
+        14.8905317,
+        170.0455929
+      ],
+      "offset_east_north_m": [
+        750,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T059",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 59,
+      "center_lat_lon": [
+        14.8905275,
+        170.0711857
+      ],
+      "offset_east_north_m": [
+        1500,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T060",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 60,
+      "center_lat_lon": [
+        14.9152609,
+        169.9688084
+      ],
+      "offset_east_north_m": [
+        -1500,
+        -750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T061",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 61,
+      "center_lat_lon": [
+        14.9152652,
+        169.9944042
+      ],
+      "offset_east_north_m": [
+        -750,
+        -750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T062",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 62,
+      "center_lat_lon": [
+        14.9152666,
+        170.02
+      ],
+      "offset_east_north_m": [
+        0,
+        -750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T063",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 63,
+      "center_lat_lon": [
+        14.9152652,
+        170.0455958
+      ],
+      "offset_east_north_m": [
+        750,
+        -750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T064",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 64,
+      "center_lat_lon": [
+        14.9152609,
+        170.0711916
+      ],
+      "offset_east_north_m": [
+        1500,
+        -750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T065",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 65,
+      "center_lat_lon": [
+        14.9399943,
+        169.9688025
+      ],
+      "offset_east_north_m": [
+        -1500,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T066",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 66,
+      "center_lat_lon": [
+        14.9399986,
+        169.9944013
+      ],
+      "offset_east_north_m": [
+        -750,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T068",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 68,
+      "center_lat_lon": [
+        14.9399986,
+        170.0455987
+      ],
+      "offset_east_north_m": [
+        750,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T069",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 69,
+      "center_lat_lon": [
+        14.9399943,
+        170.0711975
+      ],
+      "offset_east_north_m": [
+        1500,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T070",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 70,
+      "center_lat_lon": [
+        14.9647277,
+        169.9687966
+      ],
+      "offset_east_north_m": [
+        -1500,
+        750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T071",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 71,
+      "center_lat_lon": [
+        14.964732,
+        169.9943983
+      ],
+      "offset_east_north_m": [
+        -750,
+        750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T072",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 72,
+      "center_lat_lon": [
+        14.9647334,
+        170.02
+      ],
+      "offset_east_north_m": [
+        0,
+        750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T073",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 73,
+      "center_lat_lon": [
+        14.964732,
+        170.0456017
+      ],
+      "offset_east_north_m": [
+        750,
+        750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T074",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 74,
+      "center_lat_lon": [
+        14.9647277,
+        170.0712034
+      ],
+      "offset_east_north_m": [
+        1500,
+        750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T075",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 75,
+      "center_lat_lon": [
+        14.9894611,
+        169.9687907
+      ],
+      "offset_east_north_m": [
+        -1500,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T076",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 76,
+      "center_lat_lon": [
+        14.9894654,
+        169.9943953
+      ],
+      "offset_east_north_m": [
+        -750,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T077",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 77,
+      "center_lat_lon": [
+        14.9894668,
+        170.02
+      ],
+      "offset_east_north_m": [
+        0,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T078",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 78,
+      "center_lat_lon": [
+        14.9894654,
+        170.0456047
+      ],
+      "offset_east_north_m": [
+        750,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "ANDERSON01_T079",
+      "parent_id": "ANDERSON01",
+      "source_window_index": 79,
+      "center_lat_lon": [
+        14.9894611,
+        170.0712093
+      ],
+      "offset_east_north_m": [
+        1500,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T083",
+      "parent_id": "NASSAU02",
+      "source_window_index": 83,
+      "center_lat_lon": [
+        -21.6189252,
+        178.4567901
+      ],
+      "offset_east_north_m": [
+        -1500,
+        -3000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T084",
+      "parent_id": "NASSAU02",
+      "source_window_index": 84,
+      "center_lat_lon": [
+        -21.6189315,
+        178.4833951
+      ],
+      "offset_east_north_m": [
+        -750,
+        -3000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T085",
+      "parent_id": "NASSAU02",
+      "source_window_index": 85,
+      "center_lat_lon": [
+        -21.6189337,
+        178.51
+      ],
+      "offset_east_north_m": [
+        0,
+        -3000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T086",
+      "parent_id": "NASSAU02",
+      "source_window_index": 86,
+      "center_lat_lon": [
+        -21.6189315,
+        178.5366049
+      ],
+      "offset_east_north_m": [
+        750,
+        -3000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T087",
+      "parent_id": "NASSAU02",
+      "source_window_index": 87,
+      "center_lat_lon": [
+        -21.6189252,
+        178.5632099
+      ],
+      "offset_east_north_m": [
+        1500,
+        -3000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T088",
+      "parent_id": "NASSAU02",
+      "source_window_index": 88,
+      "center_lat_lon": [
+        -21.5941918,
+        178.4567992
+      ],
+      "offset_east_north_m": [
+        -1500,
+        -2250
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T089",
+      "parent_id": "NASSAU02",
+      "source_window_index": 89,
+      "center_lat_lon": [
+        -21.5941981,
+        178.4833996
+      ],
+      "offset_east_north_m": [
+        -750,
+        -2250
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T090",
+      "parent_id": "NASSAU02",
+      "source_window_index": 90,
+      "center_lat_lon": [
+        -21.5942002,
+        178.51
+      ],
+      "offset_east_north_m": [
+        0,
+        -2250
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T091",
+      "parent_id": "NASSAU02",
+      "source_window_index": 91,
+      "center_lat_lon": [
+        -21.5941981,
+        178.5366004
+      ],
+      "offset_east_north_m": [
+        750,
+        -2250
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T092",
+      "parent_id": "NASSAU02",
+      "source_window_index": 92,
+      "center_lat_lon": [
+        -21.5941918,
+        178.5632008
+      ],
+      "offset_east_north_m": [
+        1500,
+        -2250
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T093",
+      "parent_id": "NASSAU02",
+      "source_window_index": 93,
+      "center_lat_lon": [
+        -21.5694584,
+        178.4568083
+      ],
+      "offset_east_north_m": [
+        -1500,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T094",
+      "parent_id": "NASSAU02",
+      "source_window_index": 94,
+      "center_lat_lon": [
+        -21.5694647,
+        178.4834041
+      ],
+      "offset_east_north_m": [
+        -750,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T095",
+      "parent_id": "NASSAU02",
+      "source_window_index": 95,
+      "center_lat_lon": [
+        -21.5694668,
+        178.51
+      ],
+      "offset_east_north_m": [
+        0,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T096",
+      "parent_id": "NASSAU02",
+      "source_window_index": 96,
+      "center_lat_lon": [
+        -21.5694647,
+        178.5365959
+      ],
+      "offset_east_north_m": [
+        750,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T097",
+      "parent_id": "NASSAU02",
+      "source_window_index": 97,
+      "center_lat_lon": [
+        -21.5694584,
+        178.5631917
+      ],
+      "offset_east_north_m": [
+        1500,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T098",
+      "parent_id": "NASSAU02",
+      "source_window_index": 98,
+      "center_lat_lon": [
+        -21.544725,
+        178.4568174
+      ],
+      "offset_east_north_m": [
+        -1500,
+        -750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T099",
+      "parent_id": "NASSAU02",
+      "source_window_index": 99,
+      "center_lat_lon": [
+        -21.5447313,
+        178.4834087
+      ],
+      "offset_east_north_m": [
+        -750,
+        -750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T100",
+      "parent_id": "NASSAU02",
+      "source_window_index": 100,
+      "center_lat_lon": [
+        -21.5447334,
+        178.51
+      ],
+      "offset_east_north_m": [
+        0,
+        -750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T101",
+      "parent_id": "NASSAU02",
+      "source_window_index": 101,
+      "center_lat_lon": [
+        -21.5447313,
+        178.5365913
+      ],
+      "offset_east_north_m": [
+        750,
+        -750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T102",
+      "parent_id": "NASSAU02",
+      "source_window_index": 102,
+      "center_lat_lon": [
+        -21.544725,
+        178.5631826
+      ],
+      "offset_east_north_m": [
+        1500,
+        -750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T103",
+      "parent_id": "NASSAU02",
+      "source_window_index": 103,
+      "center_lat_lon": [
+        -21.5199916,
+        178.4568264
+      ],
+      "offset_east_north_m": [
+        -1500,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T104",
+      "parent_id": "NASSAU02",
+      "source_window_index": 104,
+      "center_lat_lon": [
+        -21.5199979,
+        178.4834132
+      ],
+      "offset_east_north_m": [
+        -750,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T106",
+      "parent_id": "NASSAU02",
+      "source_window_index": 106,
+      "center_lat_lon": [
+        -21.5199979,
+        178.5365868
+      ],
+      "offset_east_north_m": [
+        750,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T107",
+      "parent_id": "NASSAU02",
+      "source_window_index": 107,
+      "center_lat_lon": [
+        -21.5199916,
+        178.5631736
+      ],
+      "offset_east_north_m": [
+        1500,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T108",
+      "parent_id": "NASSAU02",
+      "source_window_index": 108,
+      "center_lat_lon": [
+        -21.4952582,
+        178.4568355
+      ],
+      "offset_east_north_m": [
+        -1500,
+        750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T109",
+      "parent_id": "NASSAU02",
+      "source_window_index": 109,
+      "center_lat_lon": [
+        -21.4952645,
+        178.4834177
+      ],
+      "offset_east_north_m": [
+        -750,
+        750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T110",
+      "parent_id": "NASSAU02",
+      "source_window_index": 110,
+      "center_lat_lon": [
+        -21.4952666,
+        178.51
+      ],
+      "offset_east_north_m": [
+        0,
+        750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T111",
+      "parent_id": "NASSAU02",
+      "source_window_index": 111,
+      "center_lat_lon": [
+        -21.4952645,
+        178.5365823
+      ],
+      "offset_east_north_m": [
+        750,
+        750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T112",
+      "parent_id": "NASSAU02",
+      "source_window_index": 112,
+      "center_lat_lon": [
+        -21.4952582,
+        178.5631645
+      ],
+      "offset_east_north_m": [
+        1500,
+        750
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T113",
+      "parent_id": "NASSAU02",
+      "source_window_index": 113,
+      "center_lat_lon": [
+        -21.4705248,
+        178.4568445
+      ],
+      "offset_east_north_m": [
+        -1500,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T114",
+      "parent_id": "NASSAU02",
+      "source_window_index": 114,
+      "center_lat_lon": [
+        -21.4705311,
+        178.4834223
+      ],
+      "offset_east_north_m": [
+        -750,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T115",
+      "parent_id": "NASSAU02",
+      "source_window_index": 115,
+      "center_lat_lon": [
+        -21.4705332,
+        178.51
+      ],
+      "offset_east_north_m": [
+        0,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T116",
+      "parent_id": "NASSAU02",
+      "source_window_index": 116,
+      "center_lat_lon": [
+        -21.4705311,
+        178.5365777
+      ],
+      "offset_east_north_m": [
+        750,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "NASSAU02_T117",
+      "parent_id": "NASSAU02",
+      "source_window_index": 117,
+      "center_lat_lon": [
+        -21.4705248,
+        178.5631555
+      ],
+      "offset_east_north_m": [
+        1500,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 4
+    },
+    {
+      "id": "FRSHCRATER8_T118",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 118,
+      "center_lat_lon": [
+        39.6537098,
+        -134.9675504
+      ],
+      "offset_east_north_m": [
+        -750,
+        -10500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T119",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 119,
+      "center_lat_lon": [
+        39.6537143,
+        -134.9354257
+      ],
+      "offset_east_north_m": [
+        0,
+        -10500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T120",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 120,
+      "center_lat_lon": [
+        39.6537098,
+        -134.903301
+      ],
+      "offset_east_north_m": [
+        750,
+        -10500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T121",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 121,
+      "center_lat_lon": [
+        39.7031767,
+        -134.9675734
+      ],
+      "offset_east_north_m": [
+        -750,
+        -9000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T122",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 122,
+      "center_lat_lon": [
+        39.7031811,
+        -134.9354257
+      ],
+      "offset_east_north_m": [
+        0,
+        -9000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T123",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 123,
+      "center_lat_lon": [
+        39.7031767,
+        -134.903278
+      ],
+      "offset_east_north_m": [
+        750,
+        -9000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T124",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 124,
+      "center_lat_lon": [
+        39.7526435,
+        -134.9675965
+      ],
+      "offset_east_north_m": [
+        -750,
+        -7500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T125",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 125,
+      "center_lat_lon": [
+        39.752648,
+        -134.9354257
+      ],
+      "offset_east_north_m": [
+        0,
+        -7500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T126",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 126,
+      "center_lat_lon": [
+        39.7526435,
+        -134.9032549
+      ],
+      "offset_east_north_m": [
+        750,
+        -7500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T127",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 127,
+      "center_lat_lon": [
+        39.8021103,
+        -134.9676197
+      ],
+      "offset_east_north_m": [
+        -750,
+        -6000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T128",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 128,
+      "center_lat_lon": [
+        39.8021148,
+        -134.9354257
+      ],
+      "offset_east_north_m": [
+        0,
+        -6000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T129",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 129,
+      "center_lat_lon": [
+        39.8021103,
+        -134.9032317
+      ],
+      "offset_east_north_m": [
+        750,
+        -6000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T130",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 130,
+      "center_lat_lon": [
+        39.8020969,
+        -134.8710377
+      ],
+      "offset_east_north_m": [
+        1500,
+        -6000
+      ],
+      "native_grid_valid_fraction": 0.999422,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T131",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 131,
+      "center_lat_lon": [
+        39.8515771,
+        -134.9676429
+      ],
+      "offset_east_north_m": [
+        -750,
+        -4500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T132",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 132,
+      "center_lat_lon": [
+        39.8515816,
+        -134.9354257
+      ],
+      "offset_east_north_m": [
+        0,
+        -4500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T133",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 133,
+      "center_lat_lon": [
+        39.8515771,
+        -134.9032085
+      ],
+      "offset_east_north_m": [
+        750,
+        -4500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T134",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 134,
+      "center_lat_lon": [
+        39.8515638,
+        -134.8709913
+      ],
+      "offset_east_north_m": [
+        1500,
+        -4500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T135",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 135,
+      "center_lat_lon": [
+        39.901044,
+        -134.9676662
+      ],
+      "offset_east_north_m": [
+        -750,
+        -3000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T136",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 136,
+      "center_lat_lon": [
+        39.9010484,
+        -134.9354257
+      ],
+      "offset_east_north_m": [
+        0,
+        -3000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T137",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 137,
+      "center_lat_lon": [
+        39.901044,
+        -134.9031852
+      ],
+      "offset_east_north_m": [
+        750,
+        -3000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T138",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 138,
+      "center_lat_lon": [
+        39.9010306,
+        -134.8709447
+      ],
+      "offset_east_north_m": [
+        1500,
+        -3000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T139",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 139,
+      "center_lat_lon": [
+        39.9505108,
+        -134.9676895
+      ],
+      "offset_east_north_m": [
+        -750,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T140",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 140,
+      "center_lat_lon": [
+        39.9505153,
+        -134.9354257
+      ],
+      "offset_east_north_m": [
+        0,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T141",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 141,
+      "center_lat_lon": [
+        39.9505108,
+        -134.9031619
+      ],
+      "offset_east_north_m": [
+        750,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T142",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 142,
+      "center_lat_lon": [
+        39.9504974,
+        -134.8708981
+      ],
+      "offset_east_north_m": [
+        1500,
+        -1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T143",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 143,
+      "center_lat_lon": [
+        39.9999776,
+        -134.9677129
+      ],
+      "offset_east_north_m": [
+        -750,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T145",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 145,
+      "center_lat_lon": [
+        39.9999776,
+        -134.9031385
+      ],
+      "offset_east_north_m": [
+        750,
+        0
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T146",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 146,
+      "center_lat_lon": [
+        39.9999642,
+        -134.8708514
+      ],
+      "offset_east_north_m": [
+        1500,
+        0
+      ],
+      "native_grid_valid_fraction": 0.99925,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T147",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 147,
+      "center_lat_lon": [
+        40.0494444,
+        -134.9677363
+      ],
+      "offset_east_north_m": [
+        -750,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T148",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 148,
+      "center_lat_lon": [
+        40.0494489,
+        -134.9354257
+      ],
+      "offset_east_north_m": [
+        0,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T149",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 149,
+      "center_lat_lon": [
+        40.0494444,
+        -134.9031151
+      ],
+      "offset_east_north_m": [
+        750,
+        1500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T151",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 151,
+      "center_lat_lon": [
+        40.0989113,
+        -134.9677598
+      ],
+      "offset_east_north_m": [
+        -750,
+        3000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T152",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 152,
+      "center_lat_lon": [
+        40.0989158,
+        -134.9354257
+      ],
+      "offset_east_north_m": [
+        0,
+        3000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T153",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 153,
+      "center_lat_lon": [
+        40.0989113,
+        -134.9030916
+      ],
+      "offset_east_north_m": [
+        750,
+        3000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T154",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 154,
+      "center_lat_lon": [
+        40.1483646,
+        -135.0001408
+      ],
+      "offset_east_north_m": [
+        -1500,
+        4500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T155",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 155,
+      "center_lat_lon": [
+        40.1483781,
+        -134.9677833
+      ],
+      "offset_east_north_m": [
+        -750,
+        4500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T156",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 156,
+      "center_lat_lon": [
+        40.1483826,
+        -134.9354257
+      ],
+      "offset_east_north_m": [
+        0,
+        4500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T157",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 157,
+      "center_lat_lon": [
+        40.1483781,
+        -134.9030681
+      ],
+      "offset_east_north_m": [
+        750,
+        4500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T158",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 158,
+      "center_lat_lon": [
+        40.1978314,
+        -135.000188
+      ],
+      "offset_east_north_m": [
+        -1500,
+        6000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T159",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 159,
+      "center_lat_lon": [
+        40.1978449,
+        -134.9678068
+      ],
+      "offset_east_north_m": [
+        -750,
+        6000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T160",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 160,
+      "center_lat_lon": [
+        40.1978494,
+        -134.9354257
+      ],
+      "offset_east_north_m": [
+        0,
+        6000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T161",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 161,
+      "center_lat_lon": [
+        40.1978449,
+        -134.9030446
+      ],
+      "offset_east_north_m": [
+        750,
+        6000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T162",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 162,
+      "center_lat_lon": [
+        40.2472982,
+        -135.0002352
+      ],
+      "offset_east_north_m": [
+        -1500,
+        7500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T163",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 163,
+      "center_lat_lon": [
+        40.2473117,
+        -134.9678304
+      ],
+      "offset_east_north_m": [
+        -750,
+        7500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T164",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 164,
+      "center_lat_lon": [
+        40.2473162,
+        -134.9354257
+      ],
+      "offset_east_north_m": [
+        0,
+        7500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T165",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 165,
+      "center_lat_lon": [
+        40.2473117,
+        -134.903021
+      ],
+      "offset_east_north_m": [
+        750,
+        7500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T166",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 166,
+      "center_lat_lon": [
+        40.296765,
+        -135.0002825
+      ],
+      "offset_east_north_m": [
+        -1500,
+        9000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T167",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 167,
+      "center_lat_lon": [
+        40.2967786,
+        -134.9678541
+      ],
+      "offset_east_north_m": [
+        -750,
+        9000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T168",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 168,
+      "center_lat_lon": [
+        40.2967831,
+        -134.9354257
+      ],
+      "offset_east_north_m": [
+        0,
+        9000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T169",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 169,
+      "center_lat_lon": [
+        40.2967786,
+        -134.9029973
+      ],
+      "offset_east_north_m": [
+        750,
+        9000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T170",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 170,
+      "center_lat_lon": [
+        40.3462319,
+        -135.00033
+      ],
+      "offset_east_north_m": [
+        -1500,
+        10500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T171",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 171,
+      "center_lat_lon": [
+        40.3462454,
+        -134.9678778
+      ],
+      "offset_east_north_m": [
+        -750,
+        10500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T172",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 172,
+      "center_lat_lon": [
+        40.3462499,
+        -134.9354257
+      ],
+      "offset_east_north_m": [
+        0,
+        10500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T173",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 173,
+      "center_lat_lon": [
+        40.3462454,
+        -134.9029736
+      ],
+      "offset_east_north_m": [
+        750,
+        10500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T174",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 174,
+      "center_lat_lon": [
+        40.3956987,
+        -135.0003775
+      ],
+      "offset_east_north_m": [
+        -1500,
+        12000
+      ],
+      "native_grid_valid_fraction": 0.999203,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T175",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 175,
+      "center_lat_lon": [
+        40.3957122,
+        -134.9679016
+      ],
+      "offset_east_north_m": [
+        -750,
+        12000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T176",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 176,
+      "center_lat_lon": [
+        40.3957167,
+        -134.9354257
+      ],
+      "offset_east_north_m": [
+        0,
+        12000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T177",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 177,
+      "center_lat_lon": [
+        40.3957122,
+        -134.9029498
+      ],
+      "offset_east_north_m": [
+        750,
+        12000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T178",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 178,
+      "center_lat_lon": [
+        40.445179,
+        -134.9679254
+      ],
+      "offset_east_north_m": [
+        -750,
+        13500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T179",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 179,
+      "center_lat_lon": [
+        40.4451836,
+        -134.9354257
+      ],
+      "offset_east_north_m": [
+        0,
+        13500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T180",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 180,
+      "center_lat_lon": [
+        40.445179,
+        -134.902926
+      ],
+      "offset_east_north_m": [
+        750,
+        13500
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T181",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 181,
+      "center_lat_lon": [
+        40.4946459,
+        -134.9679493
+      ],
+      "offset_east_north_m": [
+        -750,
+        15000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T182",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 182,
+      "center_lat_lon": [
+        40.4946504,
+        -134.9354257
+      ],
+      "offset_east_north_m": [
+        0,
+        15000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    },
+    {
+      "id": "FRSHCRATER8_T183",
+      "parent_id": "FRSHCRATER8",
+      "source_window_index": 183,
+      "center_lat_lon": [
+        40.4946459,
+        -134.9029021
+      ],
+      "offset_east_north_m": [
+        750,
+        15000
+      ],
+      "native_grid_valid_fraction": 1.0,
+      "source_resolution_m": 5
+    }
+  ],
+  "source_provenance": [
+    {
+      "parent_id": "MARIUS3",
+      "source_tif": "data/research/published_analog_audit/sources/NAC_DTM_MARIUS3.TIF",
+      "source_tif_sha256": "1e663bdb8bbef9cb27472d9fab9159d624178a0bb29ade88a68fc6a04ecb80f5",
+      "available_additional_tiles": 31,
+      "rejected_cohort_windows": 0
+    },
+    {
+      "parent_id": "FECUNDITATIS",
+      "source_tif": "data/research/highres_lunar_dem/sources/NAC_DTM_FECUNDITATIS.TIF",
+      "source_tif_sha256": "e2b27bfff270ebbb593219c7856296dccb2c8831229b787d46f4935cb3b19b35",
+      "available_additional_tiles": 19,
+      "rejected_cohort_windows": 0
+    },
+    {
+      "parent_id": "SCHRODNGR02",
+      "source_tif": "data/research/highres_lunar_dem/sources/NAC_DTM_SCHRODNGR02.TIF",
+      "source_tif_sha256": "f68cba06b1249e1ee2266eaa09b127fd2ab6df1a32e05d1131f6f066d19f5b6e",
+      "available_additional_tiles": 0,
+      "rejected_cohort_windows": 2
+    },
+    {
+      "parent_id": "ANDERSON01",
+      "source_tif": "data/research/highres_lunar_dem/sources/NAC_DTM_ANDERSON01.TIF",
+      "source_tif_sha256": "1e552b0ba412e8a3f761c95d77036de0aab3e3b3bac92931df2f68ae5fa6fc26",
+      "available_additional_tiles": 24,
+      "rejected_cohort_windows": 3
+    },
+    {
+      "parent_id": "NASSAU02",
+      "source_tif": "data/research/highres_lunar_dem/sources/NAC_DTM_NASSAU02.TIF",
+      "source_tif_sha256": "69688c434ac593d54a9ae2897d96044dbcebfb5ad5b540ec5becf74e1059dfe4",
+      "available_additional_tiles": 34,
+      "rejected_cohort_windows": 0
+    },
+    {
+      "parent_id": "FRSHCRATER8",
+      "source_tif": "data/research/highres_lunar_dem/sources/NAC_DTM_FRSHCRATER8.TIF",
+      "source_tif_sha256": "92f9448e2c93c6558b53b61cf8603c1c2f22063e90586e6116dba6d6871a50d3",
+      "available_additional_tiles": 64,
+      "rejected_cohort_windows": 1
+    }
+  ],
+  "overviews": {
+    "MARIUS3": {
+      "url": "/microterrain/moon-marius3-dem-relief.webp",
+      "sha256": "8bc9b563bb3918022f99d10021ac905cae558fb6c89fe8db4d034b4425a39099",
+      "west_m": -4049.4716983956732,
+      "east_m": 3613.259239720948,
+      "south_m": -15007.900809657143,
+      "north_m": 16490.55785773554,
+      "coverage_mode": "full_source_bbox_with_valid_pixel_alpha",
+      "source_bbox_east_north_m": [
+        -2549.47,
+        -13507.9,
+        2113.26,
+        14990.56
+      ],
+      "width_px": 512,
+      "height_px": 2105,
+      "valid_fraction": 0.53351,
+      "rendering": "LROC NAC DTM relative elevation plus directional hillshade; no optical color or material inference"
+    },
+    "FECUNDITATIS": {
+      "url": "/microterrain/moon-fecunditatis-dem-relief.webp",
+      "sha256": "4e1a255f072037e5caa78efd7c0b117b153d613442d1d8891a5494f9beae5bd4",
+      "west_m": -3819.3338758268806,
+      "east_m": 4013.2112599535353,
+      "south_m": -15788.411281007766,
+      "north_m": 15897.8235549542,
+      "coverage_mode": "full_source_bbox_with_valid_pixel_alpha",
+      "source_bbox_east_north_m": [
+        -2319.33,
+        -14288.41,
+        2513.21,
+        14397.82
+      ],
+      "width_px": 512,
+      "height_px": 2071,
+      "valid_fraction": 0.48156,
+      "rendering": "LROC NAC DTM relative elevation plus directional hillshade; no optical color or material inference"
+    },
+    "SCHRODNGR02": {
+      "url": "/microterrain/moon-schrodngr02-dem-relief.webp",
+      "sha256": "5ac2726288f0cf2c35e990137064f44284215bc55d6339857916258a0ce9d93a",
+      "west_m": -3565.758296064971,
+      "east_m": 3594.3024153448855,
+      "south_m": -4518.355934305442,
+      "north_m": 4328.391552899057,
+      "coverage_mode": "full_source_bbox_with_valid_pixel_alpha",
+      "source_bbox_east_north_m": [
+        -2065.76,
+        -3018.36,
+        2094.3,
+        2828.39
+      ],
+      "width_px": 512,
+      "height_px": 633,
+      "valid_fraction": 0.31846,
+      "rendering": "LROC NAC DTM relative elevation plus directional hillshade; no optical color or material inference"
+    },
+    "ANDERSON01": {
+      "url": "/microterrain/moon-anderson01-dem-relief.webp",
+      "sha256": "b20530f4cd7783a70f2f910c98a075d9626af3842cf3b042d78cc1f65ffa97a5",
+      "west_m": -7145.5425669565,
+      "east_m": 7292.209575574624,
+      "south_m": -5242.854925340382,
+      "north_m": 5439.723688842504,
+      "coverage_mode": "full_source_bbox_with_valid_pixel_alpha",
+      "source_bbox_east_north_m": [
+        -5645.54,
+        -3742.85,
+        5792.21,
+        3939.72
+      ],
+      "width_px": 512,
+      "height_px": 379,
+      "valid_fraction": 0.5187,
+      "rendering": "LROC NAC DTM relative elevation plus directional hillshade; no optical color or material inference"
+    },
+    "NASSAU02": {
+      "url": "/microterrain/moon-nassau02-dem-relief.webp",
+      "sha256": "ec2e902cf93f5cadb417e8cc372149bb470bf2685acfed7d05e6a110f13a0ebe",
+      "west_m": -6907.244885659594,
+      "east_m": 6818.5227155911625,
+      "south_m": -7584.815802754004,
+      "north_m": 5618.500905267375,
+      "coverage_mode": "full_source_bbox_with_valid_pixel_alpha",
+      "source_bbox_east_north_m": [
+        -5407.24,
+        -6084.82,
+        5318.52,
+        4118.5
+      ],
+      "width_px": 512,
+      "height_px": 493,
+      "valid_fraction": 0.49388,
+      "rendering": "LROC NAC DTM relative elevation plus directional hillshade; no optical color or material inference"
+    },
+    "FRSHCRATER8": {
+      "url": "/microterrain/moon-frshcrater8-dem-relief.webp",
+      "sha256": "fe66354947952f6db17db206df23bbf39682593d7ba4c48f1d5cf9ee4e834c63",
+      "west_m": -4767.148716513006,
+      "east_m": 4738.9052623355055,
+      "south_m": -14688.474130296967,
+      "north_m": 23664.056408332614,
+      "coverage_mode": "full_source_bbox_with_valid_pixel_alpha",
+      "source_bbox_east_north_m": [
+        -3267.15,
+        -13188.47,
+        3238.91,
+        22164.06
+      ],
+      "width_px": 512,
+      "height_px": 2066,
+      "valid_fraction": 0.54444,
+      "rendering": "LROC NAC DTM relative elevation plus directional hillshade; no optical color or material inference"
+    }
+  },
+  "grid_spacing_m": 5,
+  "physical_side_m": 3000,
+  "minimum_native_valid_fraction": 0.98,
+  "output_npz": "data/research/microterrain_native/moon_tiles_5m.npz",
+  "output_sha256": "f52d7d4a6153e21da494835fc7dc719df1b16b580baa93d0ce3bf49301ffc7ed",
+  "cohort_manifest": "data/research/highres_lunar_dem/manifest.json",
+  "cohort_manifest_sha256": "b10e868a7e68a967b724c0c3e373ad5042f1c4d89d5294a59c2034e1e1ba9f83",
+  "preview_npz": "data/research/highres_lunar_dem/moon_3km_96.npz",
+  "preview_npz_sha256": "6c8b68a6cedbf0c7d316b14c55f177bf7f712a6623b7525b40852dfa8f355840",
+  "limitations": [
+    "These are selected 3 km centers inside six LROC NAC DTM products, not continuous 5 m coverage of the Moon.",
+    "Some centers overlap; tile count is not an independent-sample count.",
+    "A 5 m comparison grid may downsample 2-4 m source products and does not prove 5 m resolved geology or material identity.",
+    "Queries with missing DEM cells are rejected; site context is not a per-window landform or material label."
+  ]
+}

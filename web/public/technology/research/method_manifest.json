@@ -1,0 +1,396 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-10-11T10:43:49+00:00",
+  "status": "research prototype",
+  "coverage": {
+    "moon_reference_count": 6,
+    "moon_3km_crop_count": 178,
+    "mars_reference_count": 2,
+    "mars_3km_crop_count": 102,
+    "earth_site_count": 8,
+    "earth_site_ids": [
+      "METEOR_CRATER",
+      "KILBOURNE_HOLE",
+      "CARRIZOZO_FLOW",
+      "AMBOY_CRATER",
+      "BIG_PINE_FLOW",
+      "CIMA_FIELD",
+      "DEATH_VALLEY_MARS_HILL",
+      "CRATERS_MOON_IDAHO"
+    ],
+    "query_sizes_m": [
+      200,
+      500,
+      1000
+    ],
+    "grid_spacing_m": {
+      "moon": 5,
+      "mars": 20
+    }
+  },
+  "tiny_morph": {
+    "status": "deployed experimental ranker",
+    "parameter_count": 30024,
+    "embedding_dimensions": 32,
+    "training_examples": 1470,
+    "heldout_examples": 225,
+    "heldout_site_ids": [
+      "SCHRODNGR02",
+      "OLYMPUS_CTX",
+      "KILBOURNE_HOLE"
+    ],
+    "model_sha256": "f52b3e201dd8111e50f791c527089b767770de1675b8361f141c1e553e008c76",
+    "evaluation_target": "same-window augmented-view retrieval",
+    "same_window_recall_at_1": 0.96,
+    "same_window_recall_at_5": 1.0,
+    "cross_body_analog_relevance": null,
+    "material_validation": null
+  },
+  "candidate_index": {
+    "search_type": "exact cosine via unit embeddings; ANN unnecessary for at most 6,728 current rows",
+    "rows_by_body_and_size": {
+      "earth_moon_200m": 6728,
+      "earth_moon_500m": 968,
+      "earth_moon_1000m": 200,
+      "earth_mars_200m": 6728,
+      "earth_mars_500m": 968,
+      "earth_mars_1000m": 200
+    },
+    "same_rows_as_geomorphon": true
+  },
+  "blinded_review_v6": {
+    "status": "frozen_before_human_ratings_not_before_method_development",
+    "earth_gallery_site_count": 8,
+    "reference_query_count": 24,
+    "blinded_pair_count": 120,
+    "public_pack_sha256": "824a7ddacb8b32daa57f597b0292f7fbac3c6417999576d05e332ac00d686f0e",
+    "protocol_url": "/technology/research/microterrain_review_v6_protocol.json",
+    "interpretation": "Within-pool review awaiting two independent expert exports; all Earth and reference sites existed during method design"
+  },
+  "external_geography_v1": {
+    "status": "two geographic holdout DEMs/descriptors frozen before model ranking; no independent relevance scores",
+    "acquired_sites": [
+      "lava_beds",
+      "pilot_valley"
+    ],
+    "failed_source_site": "kilauea",
+    "protocol_sha256": "29cfe41f789f8072c7cdc7cd0770fd231e42e98886138c4b172b6483fa2a426c",
+    "candidate_rows_by_body_size": {
+      "heldout_moon_200m.npz": 1680,
+      "heldout_moon_500m.npz": 241,
+      "heldout_moon_1000m.npz": 49,
+      "heldout_mars_200m.npz": 1680,
+      "heldout_mars_500m.npz": 242,
+      "heldout_mars_1000m.npz": 49
+    },
+    "interpretation": "Lava Beds and Pilot Valley are geographic and environmental holdouts only; overlapping windows are correlated. Kilauea remains at its fixed coordinate but the selected 2017 DEM had no valid crop. No expert labels or cross-body accuracy claim."
+  },
+  "blinded_review_v7": {
+    "status": "candidate_selection_frozen_before_ranking_and_human_ratings",
+    "earth_holdout_site_count": 2,
+    "reference_query_count": 24,
+    "blinded_pair_count": 120,
+    "public_pack_sha256": "33de785b5285b925a3df017f34e87ad38f25a5bcea2471c53bfb17f9af3abf25",
+    "protocol_url": "/technology/research/microterrain_review_v7_protocol.json",
+    "interpretation": "New Earth geography, previously used Moon/Mars query sites; no independent ratings yet"
+  },
+  "development_audit": {
+    "query_sources": 8,
+    "size_count": 3,
+    "ranker_count": 2,
+    "top_five_results_per_comparison": 240,
+    "shape_relief_mismatch_fraction": 0.3792,
+    "meter_relief_mismatch_fraction": 0.0542,
+    "raw_moon_screen_conflicts": 9,
+    "screened_moon_conflicts": 0,
+    "interpretation": "Known-site geometric and rule-effect diagnostics only; no independent analog or material accuracy labels"
+  },
+  "earth_detailed_map": {
+    "site_id": "CRATERS_MOON_IDAHO",
+    "source_page": "https://catalog.data.gov/dataset/digital-geologic-gis-map-of-the-craters-of-the-moon-national-monument-area-idaho-nps--1989",
+    "map_scale_denominator": 24000,
+    "published_horizontal_accuracy_m": 12.2,
+    "mapped_pixel_fraction": 1.0,
+    "mapped_units_in_3km_crop": 12,
+    "interpretation": "NPS mapped unit overlap for Idaho only; not measured surface exposure or per-window mineral truth"
+  },
+  "earth_detailed_maps": {
+    "idaho": {
+      "site_id": "CRATERS_MOON_IDAHO",
+      "source_page": "https://catalog.data.gov/dataset/digital-geologic-gis-map-of-the-craters-of-the-moon-national-monument-area-idaho-nps--1989",
+      "mapped_pixel_fraction": 1.0,
+      "map_scale_denominator": 24000
+    },
+    "cima": {
+      "site_id": "CIMA_FIELD",
+      "source_page": "https://pubs.usgs.gov/of/2002/0272/",
+      "source_manifest_url": "/technology/research/cima_usgs_24k_manifest.json",
+      "mapped_pixel_fraction": 1.0,
+      "map_scale_denominator": 24000,
+      "published_horizontal_accuracy_m": null,
+      "mapped_units_in_3km_crop": 32,
+      "used_in_ranking": false,
+      "interpretation": "Historical USGS polygon-unit overlap; not observed rock exposure or validated surface material"
+    },
+    "amboy": {
+      "site_id": "AMBOY_CRATER",
+      "source_page": "https://pubs.usgs.gov/of/2006/1165/",
+      "source_manifest_url": "/technology/research/amboy_usgs_100k_manifest.json",
+      "mapped_pixel_fraction": 1.0,
+      "map_scale_denominator": 100000,
+      "field_observation_points_in_3km_crop": 0,
+      "mapped_units_in_3km_crop": 6,
+      "used_in_ranking": false,
+      "interpretation": "Surficial unit polygons distinguish sediment veneers over volcanic substrate; no local field station in crop or pixel-level mineral truth"
+    }
+  },
+  "earth_naip_signal": {
+    "site_id": "CRATERS_MOON_IDAHO",
+    "year": 2021,
+    "source_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "source_scene_count": 4,
+    "source_scene_resolution_m": 0.6,
+    "analysis_spacing_m": 2,
+    "local_grid_valid_fraction": 1.0,
+    "interpretation": "Exploratory NDVI vegetation response, not rock exposure or a trained material classifier"
+  },
+  "all_earth_naip_signal_pilot": {
+    "site_count": 8,
+    "status": "research_only_not_deployed_or_ranked",
+    "comparison": "NAIP 2021–2023 2 m NDVI versus Annual NLCD 2024 30 m shrub class in overlapping 500 m windows",
+    "interpretation": "Research-only uncalibrated NDVI; not deployed as a vegetation or rock material screen",
+    "audit_url": "/technology/research/naip_earth_signal_audit.json"
+  },
+  "hytes_cima_research": {
+    "collection_doi": "10.3334/ORNLDAAC/2460",
+    "granule_concept_id": "G4247416906-ORNL_CLOUD",
+    "cmr_footprint_intersection_fraction_of_3km_square": 0.69624,
+    "moon_500m_candidate_windows_fully_inside_cmr_footprint": 66,
+    "material_pixel_data_acquired": false,
+    "interpretation": "CMR flight footprint only; valid emissivity pixels and material labels not yet checked",
+    "source_manifest_url": "/technology/research/hytes_cima_manifest.json"
+  },
+  "cima_surface_review": {
+    "status": "blinded RGB review interface ready; no independent reviewer labels yet",
+    "window_count": 12,
+    "source_naip_year": 2022,
+    "review_url": "/material-review/",
+    "blinded_pack_url": "/material-review/pack.json",
+    "historical_map_answer_key_public": false,
+    "limitations": "Historical map-stratified research sample; no validated surface material labels, no effective HyTES pixels, and no cross-body accuracy"
+  },
+  "public_latency_sample": {
+    "sample_count": 24,
+    "median_ms": 825.0,
+    "p95_ms": 1545.8,
+    "max_ms": 2193.0,
+    "source_url": "/technology/research/public_microterrain_search_latency.json",
+    "interpretation": "One short warm public HTTP sample from one Taiwan client; no mobile or SLA guarantee"
+  },
+  "microterrain_3d_imagery": {
+    "moon": {
+      "site_ids": [
+        "MARIUS3",
+        "FECUNDITATIS",
+        "SCHRODNGR02",
+        "ANDERSON01",
+        "NASSAU02",
+        "FRSHCRATER8"
+      ],
+      "source_manifest_url": "/technology/research/lroc_paired_orthos_manifest.json",
+      "kind": "six grayscale LROC NAC DTM-paired orthophotos",
+      "grid_caveat": "FRSHCRATER8 orthophoto lacks the southernmost 5 m row; each requested crop is checked for image coverage"
+    },
+    "mars": {
+      "site_ids": [
+        "JEZERO_CTX",
+        "OLYMPUS_CTX"
+      ],
+      "source_pages": [
+        "https://g6goyz4w56.execute-api.us-west-2.amazonaws.com/prod/collections/mro_ctx_controlled_usgs_dtms/items/G13_023102_1986_XN_18N282W__G13_023168_1986_XN_18N282W",
+        "https://g6goyz4w56.execute-api.us-west-2.amazonaws.com/prod/collections/mro_ctx_controlled_usgs_dtms/items/P02_001920_1958_XN_15N132W__B21_017888_1944_XN_14N132W"
+      ],
+      "image_spacing_m": [
+        20.298507840584602,
+        20.0
+      ],
+      "kind": "two grayscale CTX I/F DTM-paired orthoimages"
+    },
+    "earth": {
+      "site_ids": [
+        "METEOR_CRATER",
+        "KILBOURNE_HOLE",
+        "CARRIZOZO_FLOW",
+        "AMBOY_CRATER",
+        "BIG_PINE_FLOW",
+        "CIMA_FIELD",
+        "DEATH_VALLEY_MARS_HILL",
+        "CRATERS_MOON_IDAHO"
+      ],
+      "years_by_site": {
+        "METEOR_CRATER": 2023,
+        "KILBOURNE_HOLE": 2022,
+        "CARRIZOZO_FLOW": 2022,
+        "AMBOY_CRATER": 2022,
+        "BIG_PINE_FLOW": 2022,
+        "CIMA_FIELD": 2022,
+        "DEATH_VALLEY_MARS_HILL": 2022,
+        "CRATERS_MOON_IDAHO": 2021
+      },
+      "source_page": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "source_manifest_url": "/technology/research/naip_earth_orthos_manifest.json",
+      "image_spacing_m": 2,
+      "kind": "RGB USGS NAIP aerial imagery on eight Earth 3DEP research sites"
+    },
+    "method": "georeferenced imagery draped on DEM meshes; not Skyfall-GS 3D Gaussian Splatting or per-pixel lithology inference"
+  },
+  "material_pilot": {
+    "status": "negative Earth-only field pilot; not deployed in search or material panel",
+    "parameters": 163,
+    "valid_specimens": 31,
+    "site_groups": {
+      "I": 12,
+      "S": 14,
+      "O": 5
+    },
+    "held_site_aggregate_auroc": {
+      "XRD_Chlorite_pct": 0.5761904761904761,
+      "XRD_Calcite_pct": 0.2404761904761905,
+      "XRD_Muscovite_pct": 0.6095238095238095
+    },
+    "targets": [
+      "XRD_Chlorite_pct",
+      "XRD_Calcite_pct",
+      "XRD_Muscovite_pct"
+    ],
+    "interpretation": "USGS hand-specimen XRD paired with NASA AVIRIS-Classic 2011 reflectance; small, duplicated coordinates and temporal/spatial mismatch; no Moon/Mars transfer accuracy"
+  },
+  "sources": {
+    "manifest.json": {
+      "url": "/technology/research/manifest.json",
+      "sha256": "1e57e0017620acad117b05db8bcb49a2fe2563c4ccac8fe0c838d5cfcc1e4ed4"
+    },
+    "tiny_morph_training.json": {
+      "url": "/technology/research/tiny_morph_training.json",
+      "sha256": "78d841452e1009d4370885a458708b3e5c5283c61e05c5403890a44ac4d0d1e1"
+    },
+    "tiny_index_manifest.json": {
+      "url": "/technology/research/tiny_index_manifest.json",
+      "sha256": "93b047213fa4041fe6d825e705d84f7e42b74eb19fbeaa8580d756efb119bdaf"
+    },
+    "mars_tiles_manifest.json": {
+      "url": "/technology/research/mars_tiles_manifest.json",
+      "sha256": "0d104eeec0a1c47cee6af2d761d39efb10492942c7520071788f3aca14d8baf7"
+    },
+    "moon_tiles_manifest.json": {
+      "url": "/technology/research/moon_tiles_manifest.json",
+      "sha256": "d798ed59f839d97aeab36f570a4404c5164b9f8b5520244cf0370efb560bc5ad"
+    },
+    "physical_scale_comparison.json": {
+      "url": "/technology/research/physical_scale_comparison.json",
+      "sha256": "7d0d81dc4e6d7dfe47ff56826890f9cd38e910f1650daabff25479a7fad7d18b"
+    },
+    "surface_screen_audit.json": {
+      "url": "/technology/research/surface_screen_audit.json",
+      "sha256": "8cd0a5c463cdaf20a4c7927b265681f306f12563771cd806514b8e34631beb9d"
+    },
+    "tiny_field_material_first_evaluation.json": {
+      "url": "/technology/research/tiny_field_material_first_evaluation.json",
+      "sha256": "6b5db0a8b97ba596704908883f40e9e5f4cb551b9f53100708e0d169069f6215"
+    },
+    "field_model_protocol_frozen.json": {
+      "url": "/technology/research/field_model_protocol_frozen.json",
+      "sha256": "c32f8c9965ce3e77e801771c7a12412ba51e8e75fcaf86c0b9df250901841fe1"
+    },
+    "tiny_field_material_all_sites.npz": {
+      "url": "/technology/research/tiny_field_material_all_sites.npz",
+      "sha256": "5d9593fe30017bc3aa6ee17e51f0b27eb63f47a0a8bbbe12d6937ac05cfbbd3f"
+    },
+    "nps_idaho_geology_manifest.json": {
+      "url": "/technology/research/nps_idaho_geology_manifest.json",
+      "sha256": "4373161a6b711be72f5502a164c59ccc8bad5e743af1143f3e170976d34cc61e"
+    },
+    "cima_usgs_24k_manifest.json": {
+      "url": "/technology/research/cima_usgs_24k_manifest.json",
+      "sha256": "61d6c49ea7279a62ee25d4a9ff6e1f4a45767c29c529011a226b2419170dc281"
+    },
+    "cima_usgs_24k_source_manifest.json": {
+      "url": "/technology/research/cima_usgs_24k_source_manifest.json",
+      "sha256": "35c6433a2248b873416d719dded3f8c4ccf8e41cdf98a522ed98066f0a1faa0c"
+    },
+    "cima_usgs_naip_registration_review.png": {
+      "url": "/technology/research/cima_usgs_naip_registration_review.png",
+      "sha256": "20788efd3bb7acafb36ef38e3578886e10e27c41435def9b9dd1b7b9dd963789"
+    },
+    "amboy_usgs_100k_manifest.json": {
+      "url": "/technology/research/amboy_usgs_100k_manifest.json",
+      "sha256": "a77ca3c0145f3338022d2e69b4534fdcea74536dd32bbe2b4307977db060c7e2"
+    },
+    "microterrain_review_v6_protocol.json": {
+      "url": "/technology/research/microterrain_review_v6_protocol.json",
+      "sha256": "719561607a5e0e3e7c516b1f1a628c5349d32eb67a408fa1f3c297a2c780ce42"
+    },
+    "microterrain_review_v7_protocol.json": {
+      "url": "/technology/research/microterrain_review_v7_protocol.json",
+      "sha256": "4fea9b5966604398199690a22efabe80dcb2a0d4267bd51bbec75c24a98255b7"
+    },
+    "heldout_geography_v1_protocol.json": {
+      "url": "/technology/research/heldout_geography_v1_protocol.json",
+      "sha256": "29cfe41f789f8072c7cdc7cd0770fd231e42e98886138c4b172b6483fa2a426c"
+    },
+    "heldout_geography_v1_descriptor_manifest.json": {
+      "url": "/technology/research/heldout_geography_v1_descriptor_manifest.json",
+      "sha256": "dc464a8903cf35e09a620c5b879da4223c9d305039331e59feabad287ff5fb21"
+    },
+    "public_microterrain_search_latency.json": {
+      "url": "/technology/research/public_microterrain_search_latency.json",
+      "sha256": "a65d38f22dd26ceb08f263e2df3875589a5b6079788680f252aa366548c74314"
+    },
+    "naip_idaho_manifest.json": {
+      "url": "/technology/research/naip_idaho_manifest.json",
+      "sha256": "99482ae61ef711ac07d508f94bafe4465ccd1a6f6b7e691144b407efe368a30b"
+    },
+    "naip_earth_orthos_manifest.json": {
+      "url": "/technology/research/naip_earth_orthos_manifest.json",
+      "sha256": "359ae9a291066c23621ed8fa74d6d0f3c63fce9a2a1dc2689ef90ff7ea12e672"
+    },
+    "naip_earth_signal_manifest.json": {
+      "url": "/technology/research/naip_earth_signal_manifest.json",
+      "sha256": "a8fb74ca287462b39d099cf5e6d436d6a027bbaf7c3b92f8493e81b48ec25090"
+    },
+    "naip_earth_signal_audit.json": {
+      "url": "/technology/research/naip_earth_signal_audit.json",
+      "sha256": "ea13e2a437697ea50e9c18d274c48b7b21984a4d7b65cb761fc9ce2562964336"
+    },
+    "hytes_cima_manifest.json": {
+      "url": "/technology/research/hytes_cima_manifest.json",
+      "sha256": "5666cfbfa574e5ab3e0195132d69edaee6e59c68e61efddc6e434444f486449b"
+    },
+    "lroc_marius_ortho_manifest.json": {
+      "url": "/technology/research/lroc_marius_ortho_manifest.json",
+      "sha256": "30f6a09c193f9bf90b38a0c1f647d1e2190ce4eb0bde17de6c82b705a3a8fc4a"
+    },
+    "lroc_paired_orthos_manifest.json": {
+      "url": "/technology/research/lroc_paired_orthos_manifest.json",
+      "sha256": "570b462e9f65c54484f21feaa5a1b01a67c53d28b6ded0b28cc64e9644019891"
+    },
+    "ctx_jezero_stereo_metadata.json": {
+      "url": "/technology/research/ctx_jezero_stereo_metadata.json",
+      "sha256": "39e8b1725445034f45ccf33115f2f6df01a827955579fa17ac8b3487fe1d8c9f"
+    },
+    "ctx_olympus_ortho_manifest.json": {
+      "url": "/technology/research/ctx_olympus_ortho_manifest.json",
+      "sha256": "e5d6e2bccb259e16205345961fc72fc4bca00c13320051ac357d492c5e3e130f"
+    }
+  },
+  "limitations": [
+    "Same-window augmented-view retrieval is not a Moon/Earth or Mars/Earth analog relevance metric.",
+    "No expert cross-body pairs, material labels, or mission-environment labels are used.",
+    "Only one Earth site and one Mars site contribute to training; transfer uncertainty is high.",
+    "The 32x32 common physical image can upsample Mars CTX 200 m from about ten true DEM posts; it cannot restore missing detail.",
+    "Heldout site groups are disjoint, but the tiny number of sites prevents a generalization claim.",
+    "The model was trained on view consistency and one Earth cross-resolution site, not expert cross-body analog pairs.",
+    "Tiny and geomorphon scores can be ranked on the same candidate rows but neither score is an analog probability.",
+    "No independent expert relevance set exists yet to compare retrieval accuracy or claim an improvement."
+  ]
+}

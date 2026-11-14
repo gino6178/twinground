@@ -1,0 +1,125 @@
+{
+  "checked_at": "2026-10-11T17:23:26.802182+00:00",
+  "baseline_inventory_sha256": "fa5a389703392b804eca2e53747b84abec880b812816621f2afcc6f4e3389ec9",
+  "scope": "Supplemental source evidence; does not change frozen missing-notice findings or grant blanket redistribution permission",
+  "records": [
+    {
+      "package": "@esbuild/linux-x64",
+      "version": "0.25.12",
+      "status": "Matching parent-project notice located; bundled native component audit remains",
+      "license_declared": "MIT",
+      "artifacts": [
+        "esbuild-LICENSE.txt"
+      ],
+      "license_sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+      "linkage": "Same version and exact optionalDependencies entry in installed parent package.json",
+      "parent_manifest_sha256": "cb7d5b1fe478f8cbaae566a86031b6fdf5f7d444354f35d1cb3cba9adf6d2935",
+      "child_manifest_sha256": "fdf02f1b53a4651a3eea731e2ad0a9c7d4fd8646430a5935d551e610e8d469fc"
+    },
+    {
+      "package": "@rollup/rollup-linux-x64-gnu",
+      "version": "4.64.3",
+      "status": "Matching parent-project notice located; bundled native component audit remains",
+      "license_declared": "MIT",
+      "artifacts": [
+        "rollup-LICENSE.txt"
+      ],
+      "license_sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+      "linkage": "Same version and exact optionalDependencies entry in installed parent package.json",
+      "parent_manifest_sha256": "a797ed8df5c383fa4aec8bdfcfa35711d4f22fda282d934aff5f562474132efb",
+      "child_manifest_sha256": "f347562130f1c5359ec50dba9f0e56bb5448fba6a6c61ebdb31cbae88b91b940"
+    },
+    {
+      "package": "gradio-client",
+      "version": "2.5.0",
+      "status": "Publishing-commit project license located; payload comparison recorded",
+      "license_declared": "Apache-2.0",
+      "pypi_metadata_url": "https://pypi.org/pypi/gradio-client/2.5.0/json",
+      "wheel_url": "https://files.pythonhosted.org/packages/78/81/0a861b8e1ff42960139c6cd4c7dd591292fa09ea1ae2d87677441cba4c00/gradio_client-2.5.0-py3-none-any.whl",
+      "wheel_sha256": "d43e2179c29076292a76485ad7ed2e6eaa19d14ac58283bd7f5beabfe4ca958c",
+      "installed_payload_matching_files": 11,
+      "installed_payload_mismatches": [],
+      "artifacts": [
+        "gradio-client-pypi.json",
+        "gradio-publishing-commit-LICENSE.txt",
+        "gradio-pypi-provenance.json"
+      ],
+      "license_source_url": "https://raw.githubusercontent.com/gradio-app/gradio/43f5de68579919b0632ceb6107a99c629483ea2f/LICENSE",
+      "publishing_commit_source": "https://pypi.org/project/gradio-client/2.5.0/#files",
+      "provenance_note": "PyPI-served statement digest and certificate commit checked; signature chain not independently verified here."
+    },
+    {
+      "package": "tensorboard-data-server",
+      "version": "0.7.2",
+      "status": "Published wheel inspected; source/native notice linkage still under review",
+      "license_declared": "Apache 2.0",
+      "pypi_metadata_url": "https://pypi.org/pypi/tensorboard-data-server/0.7.2/json",
+      "wheel_url": "https://files.pythonhosted.org/packages/73/c6/825dab04195756cf8ff2e12698f22513b3db2f64925bdd41671bfb33aaa5/tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl",
+      "wheel_sha256": "ef687163c24185ae9754ed5650eb5bc4d84ff257aabdc33f0cc6f74d8ba54530",
+      "installed_payload_matching_files": 2,
+      "installed_payload_mismatches": [],
+      "artifacts": [
+        "tensorboard-data-server-pypi.json"
+      ]
+    },
+    {
+      "package": "cuda-toolkit",
+      "version": "13.0.3.0",
+      "status": "Published wheel inspected; source/native notice linkage still under review",
+      "license_declared": null,
+      "pypi_metadata_url": "https://pypi.org/pypi/cuda-toolkit/13.0.3.0/json",
+      "wheel_url": "https://files.pythonhosted.org/packages/d1/c7/a79086a62c98befcdb8349656c6f114e2db3b8b2422f6e25c97a7f2a9a3c/cuda_toolkit-13.0.3.0-py2.py3-none-any.whl",
+      "wheel_sha256": "d693caaa261214ddd7dbb60d68e71cbed884e68c2be7509778f3051da0b91c3f",
+      "installed_payload_matching_files": 0,
+      "installed_payload_mismatches": [],
+      "artifacts": [
+        "cuda-toolkit-pypi.json"
+      ]
+    },
+    {
+      "package": "curope",
+      "version": "0.0.0",
+      "status": "Source notice located: non-commercial restriction explicitly present",
+      "license_declared": "CC BY-NC-SA 4.0",
+      "artifacts": [
+        "curope-project-LICENSE.txt",
+        "curope-source-header.txt"
+      ],
+      "source_setup_sha256": "8cdb30aa96562ea7a0048e551f55331a3e0bb854d4b4987ab7474940dccd021e",
+      "license_sha256": "2c701261a5f4a07764b29aa85caf2a6187408a53b59f2c2a10940d74c9f6c8f1",
+      "limit": "Installed direct_url identifies checkout; does not prove compiled binary build commit. Not included in isolated 35-artifact web runtime."
+    },
+    {
+      "package": "@napi-rs/lzma-linux-x64-gnu",
+      "status": "Parent wrapper not present in installed lock inventory; exact upstream and native-code notices remain",
+      "artifacts": []
+    },
+    {
+      "package": "in3d",
+      "status": "Local editable checkout; root notice not found; authorship/license unresolved",
+      "artifacts": []
+    },
+    {
+      "package": "UNKNOWN",
+      "status": "Local MoonSplat checkout; distribution has no usable identity/license; unresolved",
+      "artifacts": []
+    }
+  ],
+  "original_project_license": "Pending owner decision; no project-original license assigned",
+  "isolated_runtime": "These old-environment Python packages are not among the 35 locked isolated web-runtime artifacts",
+  "files": {
+    "curope-source-header.txt": "ea7802b2242ebd52650435df7741b854a960c144218eefd48dd88107e46ac682",
+    "tensorboard-data-server-pypi.json": "7d1b92cbcdd1542f0d3125528848eafe97a3f72299ce8de1cbb03be9f75b7561",
+    "cuda-toolkit-pypi.json": "3bec8279451386a1180c395a2c6c88db56c3d101b4451b15fc9633ae34e0b194",
+    "cuda_toolkit-13.0.3.0-py2.py3-none-any.whl": "d693caaa261214ddd7dbb60d68e71cbed884e68c2be7509778f3051da0b91c3f",
+    "gradio-publishing-commit-LICENSE.txt": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "gradio_client-2.5.0-py3-none-any.whl": "d43e2179c29076292a76485ad7ed2e6eaa19d14ac58283bd7f5beabfe4ca958c",
+    "rollup-LICENSE.txt": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+    "gradio-client-pypi.json": "5d8ecf0faab6e0f3eeb7219814505c8a5040e7cf0196bced05860ea324a78219",
+    "tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl": "ef687163c24185ae9754ed5650eb5bc4d84ff257aabdc33f0cc6f74d8ba54530",
+    "esbuild-LICENSE.txt": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+    "curope-project-LICENSE.txt": "2c701261a5f4a07764b29aa85caf2a6187408a53b59f2c2a10940d74c9f6c8f1",
+    "gradio-pypi-provenance.json": "6fe862f26ca0091f951759b20f56f023f56bbd483480ad9600a902f11eee290d"
+  },
+  "isolated_runtime_exclusion_verified": true
+}

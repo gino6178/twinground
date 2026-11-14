@@ -1,0 +1,134 @@
+{
+  "created_utc": "2026-10-11T08:08:58.385911+00:00",
+  "purpose": "Official grayscale LROC NAC stereo DTM-paired orthophotos for six searchable Moon sources",
+  "sites": {
+    "MARIUS3": {
+      "product_id": "NAC_DTM_MARIUS3_M137909506_2M",
+      "product_page": "https://data.lroc.im-ldi.com/lroc/view_rdr_product/NAC_DTM_MARIUS3_M137909506_2M",
+      "download_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/EXTRAS/BROWSE/NAC_DTM/MARIUS3/NAC_DTM_MARIUS3_M137909506_2M.TIF",
+      "source_image": "data/research/highres_lunar_dem/sources/NAC_DTM_MARIUS3_M137909506_2M.TIF",
+      "source_image_sha256": "9bbd7e0f626df5ae5c93fb7051a275886f65899d6ae56908fa19c560e1e9a7ca",
+      "source_bytes": 33153321,
+      "paired_dtm": "data/research/published_analog_audit/sources/NAC_DTM_MARIUS3.TIF",
+      "paired_dtm_sha256": "1e663bdb8bbef9cb27472d9fab9159d624178a0bb29ade88a68fc6a04ecb80f5",
+      "aligned_to_paired_dtm_grid": true,
+      "missing_south_rows_vs_dtm": 0,
+      "image_spacing_m": [
+        2.0000000000006,
+        2.0000000000006
+      ],
+      "nodata": 0.0,
+      "image_shape": [
+        14249,
+        2324
+      ]
+    },
+    "FECUNDITATIS": {
+      "product_id": "NAC_DTM_FECUNDITATIS_M150164898_3M",
+      "product_page": "https://data.lroc.im-ldi.com/lroc/view_rdr_product/NAC_DTM_FECUNDITATIS_M150164898_3M",
+      "download_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/EXTRAS/BROWSE/NAC_DTM/FECUNDITATIS/NAC_DTM_FECUNDITATIS_M150164898_3M.TIF",
+      "source_image": "data/research/highres_lunar_dem/sources/NAC_DTM_FECUNDITATIS_M150164898_3M.TIF",
+      "source_image_sha256": "aa505b235fa6c5add3fc76bb6d85f281d109998c2051de4b1960c923f8be3cf2",
+      "source_bytes": 15410769,
+      "paired_dtm": "data/research/highres_lunar_dem/sources/NAC_DTM_FECUNDITATIS.TIF",
+      "paired_dtm_sha256": "e2b27bfff270ebbb593219c7856296dccb2c8831229b787d46f4935cb3b19b35",
+      "aligned_to_paired_dtm_grid": true,
+      "missing_south_rows_vs_dtm": 0,
+      "image_spacing_m": [
+        2.999999999999,
+        2.999999999999
+      ],
+      "nodata": 0.0,
+      "image_shape": [
+        9562,
+        1610
+      ]
+    },
+    "SCHRODNGR02": {
+      "product_id": "NAC_DTM_SCHRODNGR02_M1401445728_4M",
+      "product_page": "https://data.lroc.im-ldi.com/lroc/view_rdr_product/NAC_DTM_SCHRODNGR02_M1401445728_4M",
+      "download_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/EXTRAS/BROWSE/NAC_DTM/SCHRODNGR02/NAC_DTM_SCHRODNGR02_M1401445728_4M.TIF",
+      "source_image": "data/research/highres_lunar_dem/sources/NAC_DTM_SCHRODNGR02_M1401445728_4M.TIF",
+      "source_image_sha256": "0fe0be92f6416dc989ff911f60edfa0e35e8de7c89f81feb3774779362a1279d",
+      "source_bytes": 1511538,
+      "paired_dtm": "data/research/highres_lunar_dem/sources/NAC_DTM_SCHRODNGR02.TIF",
+      "paired_dtm_sha256": "f68cba06b1249e1ee2266eaa09b127fd2ab6df1a32e05d1131f6f066d19f5b6e",
+      "aligned_to_paired_dtm_grid": true,
+      "missing_south_rows_vs_dtm": 0,
+      "image_spacing_m": [
+        3.9999999999986,
+        3.9999999999986
+      ],
+      "nodata": 0.0,
+      "image_shape": [
+        1458,
+        1035
+      ]
+    },
+    "ANDERSON01": {
+      "product_id": "NAC_DTM_ANDERSON01_M1414064868_4M",
+      "product_page": "https://data.lroc.im-ldi.com/lroc/view_rdr_product/NAC_DTM_ANDERSON01_M1414064868_4M",
+      "download_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/EXTRAS/BROWSE/NAC_DTM/ANDERSON01/NAC_DTM_ANDERSON01_M1414064868_4M.TIF",
+      "source_image": "data/research/highres_lunar_dem/sources/NAC_DTM_ANDERSON01_M1414064868_4M.TIF",
+      "source_image_sha256": "a3f53a99429d60488c4608907204b95050908bb2fce6ec7329dac2274a15fcb2",
+      "source_bytes": 5493965,
+      "paired_dtm": "data/research/highres_lunar_dem/sources/NAC_DTM_ANDERSON01.TIF",
+      "paired_dtm_sha256": "1e552b0ba412e8a3f761c95d77036de0aab3e3b3bac92931df2f68ae5fa6fc26",
+      "aligned_to_paired_dtm_grid": true,
+      "missing_south_rows_vs_dtm": 0,
+      "image_spacing_m": [
+        3.9999999999986,
+        3.9999999999986
+      ],
+      "nodata": 0.0,
+      "image_shape": [
+        1920,
+        2857
+      ]
+    },
+    "NASSAU02": {
+      "product_id": "NAC_DTM_NASSAU02_M1413993891_4M",
+      "product_page": "https://data.lroc.im-ldi.com/lroc/view_rdr_product/NAC_DTM_NASSAU02_M1413993891_4M",
+      "download_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/EXTRAS/BROWSE/NAC_DTM/NASSAU02/NAC_DTM_NASSAU02_M1413993891_4M.TIF",
+      "source_image": "data/research/highres_lunar_dem/sources/NAC_DTM_NASSAU02_M1413993891_4M.TIF",
+      "source_image_sha256": "1d01b96e024e1620522a002b69dfeef03a09f5da67fcba0c3c977aa7a70fb468",
+      "source_bytes": 6816145,
+      "paired_dtm": "data/research/highres_lunar_dem/sources/NAC_DTM_NASSAU02.TIF",
+      "paired_dtm_sha256": "69688c434ac593d54a9ae2897d96044dbcebfb5ad5b540ec5becf74e1059dfe4",
+      "aligned_to_paired_dtm_grid": true,
+      "missing_south_rows_vs_dtm": 0,
+      "image_spacing_m": [
+        3.9999999999986,
+        3.9999999999986
+      ],
+      "nodata": 0.0,
+      "image_shape": [
+        2550,
+        2670
+      ]
+    },
+    "FRSHCRATER8": {
+      "product_id": "NAC_DTM_FRSHCRATER8_M171434005_5M",
+      "product_page": "https://data.lroc.im-ldi.com/lroc/view_rdr_product/NAC_DTM_FRSHCRATER8_M171434005_5M",
+      "download_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/EXTRAS/BROWSE/NAC_DTM/FRSHCRATER8/NAC_DTM_FRSHCRATER8_M171434005_5M.TIF",
+      "source_image": "data/research/highres_lunar_dem/sources/NAC_DTM_FRSHCRATER8_M171434005_5M.TIF",
+      "source_image_sha256": "8c32933f661ea7270274b70c48bb1ca4010d48d998b57c9bb418cf1d9510ecae",
+      "source_bytes": 9150492,
+      "paired_dtm": "data/research/highres_lunar_dem/sources/NAC_DTM_FRSHCRATER8.TIF",
+      "paired_dtm_sha256": "92f9448e2c93c6558b53b61cf8603c1c2f22063e90586e6116dba6d6871a50d3",
+      "aligned_to_paired_dtm_grid": true,
+      "missing_south_rows_vs_dtm": 1,
+      "image_spacing_m": [
+        4.9999999999999,
+        4.9999999999999
+      ],
+      "nodata": 0.0,
+      "image_shape": [
+        7069,
+        1293
+      ]
+    }
+  },
+  "interpretation": "Illuminated grayscale surface appearance, not mineral or rock-type ground truth; used only for 3D visualization",
+  "used_in_search_ranking": false
+}

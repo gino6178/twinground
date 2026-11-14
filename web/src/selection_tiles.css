@@ -1,0 +1,47 @@
+/* Selection page tiles (selection_tiles.jsx) in the cover's style: flat dark tiles, the chosen one lit in the
+   cover's ink with a mint ring; animated pictures on top, label below. */
+.tile-group{margin:0 0 18px;padding:0;border:0;min-width:0}
+.tile-group legend{padding:0;margin:0 0 10px;font-size:14px;font-weight:700;color:var(--cv-ink,#f2f2f2)}
+.tile-grid{display:grid;gap:8px}
+.tile-grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tile-grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.sel-tile{display:flex;flex-direction:column;align-items:stretch;gap:0;min-width:0;padding:0;border:0;border-radius:10px;overflow:hidden;background:#171717;color:var(--cv-ink-2,#d0d0d0);text-align:left;cursor:pointer;transition:background-color .2s,box-shadow .2s,transform .15s}
+.sel-tile:hover{background:#212121}
+.sel-tile:active{transform:translateY(1px) scale(.985)}
+.sel-tile.is-on{background:#2a2a2a;color:var(--cv-ink,#f2f2f2);box-shadow:inset 0 0 0 1.5px var(--cv-accent,#f0f0f0)}
+.sel-tile:focus-visible{outline:2px solid var(--cv-accent,#f0f0f0);outline-offset:2px}
+.sel-tile-art{display:block;position:relative;height:62px;background:#131313}
+.purpose-tiles .sel-tile-art{height:84px}
+.cols-3 .sel-tile-art{height:52px}
+.sel-tile-canvas{display:block;width:100%;height:100%}
+.sel-tile-canvas.is-rock{background:radial-gradient(ellipse at 50% 60%,#2e2e2e,#151515 72%)}
+.sel-tile:not(.is-on) .sel-tile-art{filter:saturate(.75) brightness(.85);transition:filter .2s}
+.sel-tile:hover .sel-tile-art{filter:none}
+.sel-tile-text{display:flex;flex-direction:column;gap:2px;padding:8px 10px 9px}
+.sel-tile-text b{font-size:13.5px;line-height:1.3;font-weight:700;overflow-wrap:break-word}
+.sel-tile-text small{font-size:12px;line-height:1.35;color:var(--cv-ink-3,#acacac)}
+.cols-3 .sel-tile-text{padding:6px 8px 7px}
+.cols-3 .sel-tile-text b{font-size:12.5px;font-weight:600}
+.tile-note{margin:12px 0 0;font-size:12.5px;line-height:1.6;color:var(--cv-ink-3,#acacac)}
+.condition-tiles>summary{margin-bottom:12px}
+.condition-tiles>small{display:block;margin-top:-4px;font-size:12px;line-height:1.6;color:var(--cv-ink-3,#acacac)}
+
+/* the selected coordinates sit on the globe's top-right corner */
+.app-shell .selection-workspace .globe-panel .globe-coordinate{display:flex;flex-direction:column;align-items:flex-end;gap:2px;position:absolute;left:auto;top:20px;right:22px;z-index:4;font:800 clamp(20px,1.9vw,28px)/1.15 var(--cv-font,Manrope,sans-serif);letter-spacing:-.01em;color:var(--cv-ink,#f2f2f2);font-variant-numeric:tabular-nums;text-shadow:0 1px 14px #000;pointer-events:none}
+.app-shell .selection-workspace .globe-panel .globe-coordinate span{font-size:14px;font-weight:600;color:var(--cv-ink-2,#d0d0d0)}
+
+/* the search button is the first thing after the purpose and scale; on one-column screens it stays pinned */
+.app-shell .selection-workspace .selection-side .search-button{margin:4px 0 0}
+@media (max-width:640px){
+  .app-shell .selection-workspace .selection-side .search-button{position:fixed;left:16px;right:16px;bottom:max(16px,env(safe-area-inset-bottom));z-index:60;width:auto;margin:0;box-shadow:0 10px 32px #000c}
+  .app-shell .selection-workspace{padding-bottom:104px}
+  .app-shell .selection-workspace .globe-panel .globe-coordinate{top:14px;right:14px;font-size:20px}
+}
+@media (prefers-reduced-motion:reduce){.sel-tile,.sel-tile-art{transition:none}}
+
+/* physical-match use chips */
+.use-chips{margin-top:-4px}
+.use-chip-row{display:flex;flex-wrap:wrap;gap:6px}
+.use-chip{padding:4px 10px;border:1px solid #454545;border-radius:999px;background:#202020;color:#dedede;font:inherit;font-size:12px;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
+.use-chip.is-on{background:#f3f3f3;border-color:#f3f3f3;color:#1a1a1a;font-weight:700}
+.use-chip:focus-visible{outline:2px solid #f5f5f5;outline-offset:1px}

@@ -1,0 +1,9 @@
+# Data lives outside the repo (71 GB); link it as ./data (see README)
+/data
+__pycache__/
+*.pyc
+node_modules/
+web/dist/
+*.log
+.env
+.venv/

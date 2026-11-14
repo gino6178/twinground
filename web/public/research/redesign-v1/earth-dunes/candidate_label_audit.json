@@ -1,0 +1,117 @@
+{
+  "version": "earth-dune-positive-unlabeled-inventory-v1",
+  "source_sha256": "0a57f644278c57ef6c9edb6191ead83eb53a0715f550b24e4723da3706ec616b",
+  "index_provenance": {
+    "version": "earth-index-content-v1",
+    "sha256": "a9df9b4762f07cca2013ae3dc99dd51d1165f2271ad5235d5f983db7ac8e04a1",
+    "files": [
+      {
+        "path": "data/moon/earth_window_index.json",
+        "sha256": "6ab96dbf76ae7aa7aa08fb2ce4469c6b249a59f2cde5bf72e41fa47553cb6bc0",
+        "bytes": 127550
+      },
+      {
+        "path": "data/moon/earth_window_index.npz",
+        "sha256": "500ce55d0b25682ac7fa22edbf3e756971f644315466b3a9e2db136c7e9aba33",
+        "bytes": 26440
+      },
+      {
+        "path": "data/earth_global/etopo_80km_index.json",
+        "sha256": "916cfb4328dd76369c4447ae1292d157c06419bdd784b512b81990a0d0801735",
+        "bytes": 8919945
+      },
+      {
+        "path": "data/earth_global/etopo_80km_index.npz",
+        "sha256": "a71e54408bbe33e3f68816cdcd875ba16e96499a20218060134a1fe882710b41",
+        "bytes": 1818548
+      },
+      {
+        "path": "data/earth_global/etopo_80km_supplement.json",
+        "sha256": "a7fa4b3a830ac74f204f483e2c9f114281c2097142093d36cf7168219380e4f1",
+        "bytes": 31203179
+      },
+      {
+        "path": "data/earth_global/etopo_80km_supplement.npz",
+        "sha256": "4b080254e8074388fd495cb616173a0078c66658ddfe05260d6edfec08571573",
+        "bytes": 5446471
+      },
+      {
+        "path": "data/earth_global/etopo_15s_20_40km_index.json",
+        "sha256": "917d80a8f1020895178bc9eb4843d15f6af9cf76d66fadad0a9dba24d8bdeaca",
+        "bytes": 121976310
+      },
+      {
+        "path": "data/earth_global/etopo_15s_20_40km_index.npz",
+        "sha256": "5adadcffdbf488443fcca6a84a349bd3cb12013e52f7df47b1824ddae5379f05",
+        "bytes": 18419375
+      }
+    ],
+    "refresh": "Bound to the running service; restart service after any index replacement."
+  },
+  "scales": {
+    "20": {
+      "windows": 337384,
+      "published_positive_supported": 24957,
+      "unlabeled": 312427,
+      "verified_negatives": 0,
+      "dune_supported_outside_desert_condition": 6204,
+      "desert_supported_without_dune_support": 42736
+    },
+    "40": {
+      "windows": 81138,
+      "published_positive_supported": 5670,
+      "unlabeled": 75468,
+      "verified_negatives": 0,
+      "dune_supported_outside_desert_condition": 1370,
+      "desert_supported_without_dune_support": 10476
+    },
+    "80": {
+      "windows": 81863,
+      "published_positive_supported": 5308,
+      "unlabeled": 76555,
+      "verified_negatives": 0,
+      "dune_supported_outside_desert_condition": 1273,
+      "desert_supported_without_dune_support": 10699
+    }
+  },
+  "interpretation": "Region-level positive evidence only; all other windows unlabeled. No verified negative class, pixel truth or cross-planet relevance ground truth.",
+  "frozen_spatial_split": {
+    "train": {
+      "windows": 228179,
+      "blocks": 673,
+      "positive_supported": 15849,
+      "unlabeled": 212330
+    },
+    "validation": {
+      "windows": 74114,
+      "blocks": 223,
+      "positive_supported": 6532,
+      "unlabeled": 67582
+    },
+    "test": {
+      "windows": 73319,
+      "blocks": 222,
+      "positive_supported": 5411,
+      "unlabeled": 67908
+    },
+    "excluded": {
+      "windows": 124773,
+      "blocks": 1139,
+      "positive_supported": 8143,
+      "unlabeled": 116630
+    }
+  },
+  "split_protocol": {
+    "block_degrees": 5,
+    "footprint_guard_degrees": 0.15,
+    "allocation": "SHA256 earth-dunes-v1:block modulo5:0=test,1=validation,2-4=train",
+    "unit": "All scales of a5degree block share a split; footprint intersects block buffer ->excluded",
+    "limitations": [
+      "One map source only; not source-heldout validation.",
+      "Source mapping is incomplete; zeros remain unlabeled.",
+      "Frozen inventory is not evidence of predictive accuracy.",
+      "No imagery branch data or fine-scale rock truth included."
+    ]
+  },
+  "candidate_labels_sha256": "295efdb81af42cf2cf0818e4feef241a192e5e6d571cb6c9baea571c1aa31213"
+}

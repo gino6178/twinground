@@ -1,0 +1,309 @@
+import React, { useEffect, useRef, useState } from 'react'
+import * as THREE from 'three'
+import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js'
+import { getLanguage } from './i18n/core.js'
+import { BARE, DUNES, FIRE_2D, FIRE_BED, HYDRATED, LOW_SUN, PERMAFROST, RAIN, SNOW, STEAM, VOLCANO } from './conditions_scenes.js'
+import './conditions_art.css'
+
+// Animated illustration for each condition card, driven by the candidate's own value: a WebGL campfire when the
+// place is dry and rain when it is wet, snowfall scaled by the cold share, an erupting cone when a basaltic volcano
+// is close, and rotating rock models for lithology. Decorative only; the gauge beside it carries the data.
+// Animation pauses off screen and stops under prefers-reduced-motion.
+const tr = (zh, en) => (getLanguage() === 'en' ? en : zh)
+const reduced = () => typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches
+
+// Run `draw(t, dt)` every frame while the canvas is on screen.
+function useFrameLoop(ref, setup, deps) {
+  useEffect(() => {
+    const cv = ref.current
+    if (!cv) return
+    const api = setup(cv)
+    if (!api) return
+    const reduce = reduced()
+    let raf = 0, visible = true, last = performance.now(), t = 0
+    const frame = now => {
+      const dt = Math.min(0.05, (now - last) / 1000); last = now; t += dt
+      api.draw(t, dt)
+      if (visible && !reduce) raf = requestAnimationFrame(frame)
+    }
+    if (reduce) { for (let i = 0; i < 60; i++) { t += 1 / 30; api.draw(t, 1 / 30) } }
+    const io = typeof IntersectionObserver === 'undefined' ? null : new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting; cancelAnimationFrame(raf)
+      if (visible && !reduce) { last = performance.now(); raf = requestAnimationFrame(frame) }
+    })
+    if (io) io.observe(cv); else if (!reduce) raf = requestAnimationFrame(frame)
+    const resize = () => api.fit?.()
+    window.addEventListener('resize', resize)
+    return () => { cancelAnimationFrame(raf); io?.disconnect(); window.removeEventListener('resize', resize); api.dispose?.() }
+  }, deps) // eslint-disable-line react-hooks/exhaustive-deps
+}
+
+export function SceneCanvas({ scene, params }) {
+  const ref = useRef(null)
+  const key = JSON.stringify(params)
+  useFrameLoop(ref, cv => {
+    const ctx = cv.getContext('2d')
+    if (!ctx) return null
+    const fit = () => {
+      const dpr = Math.min(2, window.devicePixelRatio || 1)
+      cv.width = Math.round((cv.clientWidth || 84) * dpr); cv.height = Math.round((cv.clientHeight || 84) * dpr)
+      ctx.setTransform(cv.width / 88, 0, 0, cv.height / 88, 0, 0)
+    }
+    fit()
+    const st = { p: params, t: 0 }
+    scene.init?.(st)
+    return { fit, draw: (t, dt) => { st.t = t; ctx.clearRect(0, 0, 88, 88); scene.draw(ctx, st, dt) } }
+  }, [scene, key])
+  return <canvas ref={ref} className="cart-canvas" aria-hidden="true" />
+}
+
+// Campfire flame: three noise-driven tongues rising through a white -> yellow -> orange -> red temperature ramp.
+const FLAME_FS = `precision mediump float;
+uniform vec2 uRes; uniform float uTime; uniform float uPower;
+float h21(vec2 p){ vec3 q = fract(vec3(p.xyx) * .1031); q += dot(q, q.yzx + 33.33); return fract((q.x + q.y) * q.z); }
+float vn(vec2 p){ vec2 i = floor(p), f = fract(p); f = f * f * (3. - 2. * f);
+  return mix(mix(h21(i), h21(i + vec2(1., 0.)), f.x), mix(h21(i + vec2(0., 1.)), h21(i + vec2(1., 1.)), f.x), f.y); }
+float fbm(vec2 p){ float s = 0., a = .5; mat2 m = mat2(1.6, 1.2, -1.2, 1.6);
+  for (int i = 0; i < 5; i++) { s += a * vn(p); p = m * p; a *= .5; } return s; }
+float tongue(vec2 uv, float off, float hs, float ph){
+  float x = uv.x - .5 - off;
+  float s = (uv.y - .1) / (.66 * uPower * hs);
+  float cs = clamp(s, 0., 1.);
+  float w = .36 * (.55 + .45 * hs) * sqrt(clamp(s + .05, 0., 1.)) * pow(1. - cs, 1.5);
+  float n1 = fbm(vec2(x * 3. + ph, uv.y * 3. - uTime * 2.6));
+  float n2 = fbm(vec2(x * 6. + 3.1 + ph, uv.y * 6.5 - uTime * 4.42));
+  float k = 1. - abs(x + (n1 - .5) * .24 * cs) / max(w, 1e-3) - (n2 - .35) * 2.4 * cs;
+  return clamp(k, 0., 1.) * smoothstep(-.06, .04, s) * (1. - .3 * cs) * (1. - smoothstep(.85, 1., s));
+}
+vec3 ramp(float h){
+  vec3 c = mix(vec3(.35, .04, 0.), vec3(.78, .13, .02), clamp(h / .18, 0., 1.));
+  c = mix(c, vec3(1., .45, .06), clamp((h - .18) / .24, 0., 1.));
+  c = mix(c, vec3(1., .8, .3), clamp((h - .42) / .26, 0., 1.));
+  return mix(c, vec3(1., .97, .86), clamp((h - .68) / .24, 0., 1.));
+}
+void main(){
+  vec2 uv = gl_FragCoord.xy / uRes;
+  float h = tongue(uv, -.13, .6, 1.7) + tongue(uv, 0., 1., 0.) + tongue(uv, .12, .72, 4.1);
+  h = clamp(h * .95, 0., 1.) * (.82 + .18 * fbm(vec2((uv.x - .5) * 2. + 9., uv.y * 2. - uTime * 5.)));
+  float a = smoothstep(.02, .28, h);
+  gl_FragColor = vec4(ramp(h) * a, a);
+}`
+
+function FlameGL({ power, onFail }) {
+  const ref = useRef(null)
+  useFrameLoop(ref, cv => {
+    const g = cv.getContext('webgl', { alpha: true, premultipliedAlpha: true, antialias: false })
+    if (!g) { onFail(); return null }
+    const shader = (type, src) => { const s = g.createShader(type); g.shaderSource(s, src); g.compileShader(s); return g.getShaderParameter(s, g.COMPILE_STATUS) ? s : null }
+    const vs = shader(g.VERTEX_SHADER, 'attribute vec2 p; void main(){ gl_Position = vec4(p, 0., 1.); }'), fs = shader(g.FRAGMENT_SHADER, FLAME_FS)
+    const pr = g.createProgram()
+    if (!vs || !fs) { onFail(); return null }
+    g.attachShader(pr, vs); g.attachShader(pr, fs); g.linkProgram(pr)
+    if (!g.getProgramParameter(pr, g.LINK_STATUS)) { onFail(); return null }
+    g.useProgram(pr)
+    g.bindBuffer(g.ARRAY_BUFFER, g.createBuffer())
+    g.bufferData(g.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), g.STATIC_DRAW)
+    const loc = g.getAttribLocation(pr, 'p'); g.enableVertexAttribArray(loc); g.vertexAttribPointer(loc, 2, g.FLOAT, false, 0, 0)
+    const uRes = g.getUniformLocation(pr, 'uRes'), uTime = g.getUniformLocation(pr, 'uTime'), uPower = g.getUniformLocation(pr, 'uPower')
+    const fit = () => {
+      const dpr = Math.min(2, window.devicePixelRatio || 1)
+      cv.width = Math.round((cv.clientWidth || 84) * dpr); cv.height = Math.round((cv.clientHeight || 84) * dpr); g.viewport(0, 0, cv.width, cv.height)
+    }
+    fit()
+    return {
+      fit,
+      draw: t => { g.uniform2f(uRes, cv.width, cv.height); g.uniform1f(uTime, t + 3); g.uniform1f(uPower, power); g.clearColor(0, 0, 0, 0); g.clear(g.COLOR_BUFFER_BIT); g.drawArrays(g.TRIANGLE_STRIP, 0, 4) },
+      dispose: () => g.getExtension('WEBGL_lose_context')?.loseContext(),
+    }
+  }, [power])
+  return <canvas ref={ref} className="cart-canvas" aria-hidden="true" />
+}
+
+function Fire({ power }) {
+  const [gl, setGl] = useState(true)
+  return <div className="cart-stack">
+    <SceneCanvas scene={gl ? FIRE_BED : FIRE_2D} params={{ power }} />
+    {gl && <FlameGL key={power} power={power} onFail={() => setGl(false)} />}
+  </div>
+}
+
+// ---------------------------------------------------------------- rotating rock models (three.js, one canvas)
+const LOOKS = {
+  basalt: { base: '#33363a', alt: '#4f5358', speck: 0.25, dot: '#8d918d' },
+  anorthosite: { base: '#d2d0c8', alt: '#ebe9e2', speck: 0.22, dot: '#6f6c64' },
+  andesite: { base: '#6d6e6c', alt: '#8a8b88', speck: 0.25, dot: '#2e2f2e' },
+  rhyolite: { base: '#c9a9a0', alt: '#dcc2b9', speck: 0.15, dot: '#8c6c63' },
+  pyroclastic: { base: '#8a4f3a', alt: '#a8654b', speck: 0.35, dot: '#3f2219' },
+  gabbro: { base: '#2f3a33', alt: '#46534a', speck: 0.4, dot: '#c9cfc8' },
+  diorite: { base: '#8d8f8c', alt: '#b5b7b3', speck: 0.45, dot: '#262726' },
+  granite: { base: '#c8a59a', alt: '#e2d2c8', speck: 0.45, dot: '#2b2626' },
+  sandstone: { base: '#c99c60', alt: '#a8784a', band: 11 },
+  mixed: { base: '#9a8f7c', alt: '#6f6a60', band: 8 },
+  limestone: { base: '#ddd6c1', alt: '#bdb49b', band: 9 },
+  sand: { base: '#d6b77d', alt: '#bf9c62', speck: 0.5, dot: '#8e6f40' },
+  gneiss: { base: '#a2a2a2', alt: '#3f3f42', band: 14, wavy: true },
+  evaporite: { base: '#f1ece6', alt: '#e7d3d0', speck: 0.15, dot: '#b9a7a3', rough: 0.45 },
+  ice: { base: '#d6eef9', alt: '#9fd0ee', rough: 0.15, opacity: 0.9 },
+  unknown: { base: '#7c8783', alt: '#96a19c', speck: 0.1, dot: '#4a524f' },
+}
+const KIND_LOOK = { basaltic: 'basalt', anorthositic: 'anorthosite', sedimentary: 'sandstone' }
+const KIND_NAME = { basaltic: ['玄武岩', 'basalt'], anorthositic: ['斜長岩', 'anorthosite'], sedimentary: ['沉積岩', 'sedimentary rock'] }
+const GLIM = {
+  vb: ['basalt', '基性火山岩', 'basic volcanic'], vi: ['andesite', '中性火山岩', 'intermediate volcanic'], va: ['rhyolite', '酸性火山岩', 'acid volcanic'],
+  py: ['pyroclastic', '火山碎屑岩', 'pyroclastic'], pb: ['gabbro', '基性深成岩', 'basic plutonic'], pi: ['diorite', '中性深成岩', 'intermediate plutonic'],
+  pa: ['granite', '酸性深成岩', 'acid plutonic'], ss: ['sandstone', '矽質碎屑沉積岩', 'siliciclastic sedimentary'], sm: ['mixed', '混合沉積岩', 'mixed sedimentary'],
+  sc: ['limestone', '碳酸鹽沉積岩', 'carbonate sedimentary'], su: ['sand', '未固結沉積物', 'unconsolidated sediment'], mt: ['gneiss', '變質岩', 'metamorphic'],
+  ev: ['evaporite', '蒸發岩', 'evaporite'], ig: ['ice', '冰與冰川', 'ice and glaciers'], nd: ['unknown', '未分類', 'unclassified'],
+}
+
+const hash = (x, y, z) => { const s = Math.sin(x * 12.9898 + y * 78.233 + z * 37.719) * 43758.5453; return s - Math.floor(s) }
+function noise3(x, y, z) {
+  const xi = Math.floor(x), yi = Math.floor(y), zi = Math.floor(z)
+  const sm = v => v * v * (3 - 2 * v), fx = sm(x - xi), fy = sm(y - yi), fz = sm(z - zi)
+  const L = (a, b, k) => a + (b - a) * k, h = (a, b, c) => hash(xi + a, yi + b, zi + c)
+  return L(L(L(h(0, 0, 0), h(1, 0, 0), fx), L(h(0, 1, 0), h(1, 1, 0), fx), fy), L(L(h(0, 0, 1), h(1, 0, 1), fx), L(h(0, 1, 1), h(1, 1, 1), fx), fy), fz)
+}
+const fbm3 = (x, y, z, o = 4) => { let s = 0, a = 0.5, f = 1; for (let i = 0; i < o; i++) { s += a * noise3(x * f, y * f, z * f); f *= 2.03; a *= 0.5 } return s }
+
+export function rockMesh(lookKey, seed) {
+  const look = LOOKS[lookKey] || LOOKS.unknown
+  let g = new THREE.IcosahedronGeometry(1, 5)
+  g.deleteAttribute('normal'); g.deleteAttribute('uv')
+  g = mergeVertices(g)
+  const pos = g.attributes.position, v = new THREE.Vector3(), P = new THREE.Vector3()
+  let sd = seed
+  const rnd = () => { sd = (sd * 16807) % 2147483647; return sd / 2147483647 }
+  const o = [rnd() * 50, rnd() * 50, rnd() * 50]
+  // a few cleavage planes give the flat fractured faces of a broken rock
+  const cuts = Array.from({ length: 6 }, () => [new THREE.Vector3(rnd() * 2 - 1, rnd() * 2 - 1, rnd() * 2 - 1).normalize(), 0.62 + rnd() * 0.22])
+  const stretch = new THREE.Vector3(1.18, 0.78, 0.95)
+  for (let i = 0; i < pos.count; i++) {
+    v.fromBufferAttribute(pos, i).normalize()
+    const r = 1 + 0.34 * (fbm3(v.x * 1.4 + o[0], v.y * 1.4 + o[1], v.z * 1.4 + o[2], 3) - 0.5)
+    P.copy(v).multiplyScalar(r)
+    for (const [n, d] of cuts) { const k = P.dot(n) - d; if (k > 0) P.addScaledVector(n, -k * 0.92) }
+    const mid = fbm3(v.x * 4 + o[1], v.y * 4 + o[2], v.z * 4 + o[0], 2) - 0.5
+    const fine = fbm3(v.x * 13 + o[2], v.y * 13 + o[0], v.z * 13 + o[1], 3) - 0.5
+    const pit = Math.max(0, fbm3(v.x * 22, v.y * 22, v.z * 22, 2) - 0.62) // small pits and chips
+    P.addScaledVector(v, 0.09 * mid + 0.05 * fine - 0.08 * pit).multiply(stretch)
+    pos.setXYZ(i, P.x, P.y, P.z)
+  }
+  const base = new THREE.Color(look.base), alt = new THREE.Color(look.alt), dot = new THREE.Color(look.dot || look.base), c = new THREE.Color()
+  const colors = new Float32Array(pos.count * 3)
+  for (let i = 0; i < pos.count; i++) {
+    const x = pos.getX(i), y = pos.getY(i), z = pos.getZ(i)
+    const grain = fbm3(x * 6 + o[2], y * 6, z * 6, 3)
+    if (look.band) c.copy(base).lerp(alt, 0.5 + 0.5 * Math.sin(y * look.band + (look.wavy ? Math.sin(x * 3) * 1.6 : 0) + (grain - 0.5) * 1.5))
+    else c.copy(base).lerp(alt, Math.min(1, Math.max(0, (grain - 0.5) * 2.2 + 0.5)))
+    colors.set([c.r, c.g, c.b], i * 3)
+  }
+  g.setAttribute('color', new THREE.BufferAttribute(colors, 3))
+  g.computeVertexNormals()
+  const m = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: look.rough ?? 0.93, metalness: 0, transparent: !!look.opacity, opacity: look.opacity ?? 1 })
+  // per-pixel grain, mineral speckles and (basalt) vesicles in object space, finer than the mesh can carry
+  m.onBeforeCompile = sh => {
+    sh.uniforms.uDot = { value: dot }
+    sh.uniforms.uSpeck = { value: look.speck || 0 }
+    sh.uniforms.uPits = { value: lookKey === 'basalt' || lookKey === 'pyroclastic' ? 1 : 0 }
+    sh.vertexShader = sh.vertexShader.replace('#include <common>', '#include <common>\nvarying vec3 vObj;').replace('#include <begin_vertex>', '#include <begin_vertex>\nvObj = position;')
+    sh.fragmentShader = sh.fragmentShader.replace('#include <common>', `#include <common>
+varying vec3 vObj; uniform vec3 uDot; uniform float uSpeck; uniform float uPits;
+float gh(vec3 p){ p = fract(p * .3183099 + .1); p *= 17.; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
+float gn(vec3 x){ vec3 i = floor(x), f = fract(x); f = f * f * (3. - 2. * f);
+  return mix(mix(mix(gh(i), gh(i + vec3(1., 0., 0.)), f.x), mix(gh(i + vec3(0., 1., 0.)), gh(i + vec3(1., 1., 0.)), f.x), f.y),
+             mix(mix(gh(i + vec3(0., 0., 1.)), gh(i + vec3(1., 0., 1.)), f.x), mix(gh(i + vec3(0., 1., 1.)), gh(i + vec3(1., 1., 1.)), f.x), f.y), f.z); }`)
+      .replace('#include <color_fragment>', `#include <color_fragment>
+  diffuseColor.rgb *= .74 + .34 * gn(vObj * 34.) + .16 * gn(vObj * 90.);
+  diffuseColor.rgb = mix(diffuseColor.rgb, uDot, smoothstep(1. - uSpeck * .55, 1. - uSpeck * .5, gn(vObj * 70. + 7.)) * .9);
+  diffuseColor.rgb *= 1. - uPits * .6 * smoothstep(.78, .84, gn(vObj * 48. + 3.));`)
+  }
+  return new THREE.Mesh(g, m)
+}
+
+let shadowTexture
+function groundShadow() {
+  if (!shadowTexture) {
+    const cv = document.createElement('canvas'); cv.width = cv.height = 64
+    const x = cv.getContext('2d'), gr = x.createRadialGradient(32, 32, 0, 32, 32, 32)
+    gr.addColorStop(0, 'rgba(0,0,0,0.55)'); gr.addColorStop(1, 'rgba(0,0,0,0)')
+    x.fillStyle = gr; x.fillRect(0, 0, 64, 64)
+    shadowTexture = new THREE.CanvasTexture(cv)
+  }
+  const mesh = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 1.3), new THREE.MeshBasicMaterial({ map: shadowTexture, transparent: true, depthWrite: false }))
+  mesh.rotation.x = -Math.PI / 2
+  return mesh
+}
+
+function RockSpin({ rocks }) {
+  const ref = useRef(null)
+  const [failed, setFailed] = useState(false)
+  const keyOf = rocks.map(r => r.look).join('|')
+  useEffect(() => {
+    const canvas = ref.current
+    if (!canvas) return
+    let renderer
+    try { renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: 'low-power' }) } catch { setFailed(true); return }
+    renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1))
+    const size = () => { const w = canvas.clientWidth || 240, h = canvas.clientHeight || 96; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix() }
+    const scene = new THREE.Scene()
+    const camera = new THREE.PerspectiveCamera(28, 2.5, 0.1, 50)
+    camera.position.set(0, 0.45, 6.1); camera.lookAt(0, 0, 0)
+    scene.add(new THREE.HemisphereLight(0xe6f2ee, 0x1b2b2b, 0.75))
+    const sun = new THREE.DirectionalLight(0xfff4e6, 3.3); sun.position.set(3, 4, 5); scene.add(sun)
+    const rim = new THREE.DirectionalLight(0x9fd8ff, 1.6); rim.position.set(-4, 2, -5); scene.add(rim)
+    const meshes = rocks.map((r, i) => { const m = rockMesh(r.look, 9301 + i * 4049 + r.look.length * 97); m.position.x = rocks.length === 2 ? (i ? 1.45 : -1.45) : 0; scene.add(m); return m })
+    const shadows = meshes.map(m => { const sh = groundShadow(); sh.position.set(m.position.x, -0.95, 0); scene.add(sh); return sh })
+    size()
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
+    let raf = 0, visible = true
+    const t0 = performance.now()
+    const frame = now => {
+      const t = (now - t0) / 1000
+      meshes.forEach((m, i) => { m.rotation.y = t * 0.6 + i * 1.7; m.rotation.x = Math.sin(t * 0.45 + i) * 0.22; m.position.y = 0.06 * Math.sin(t * 1.2 + i) })
+      renderer.render(scene, camera)
+      if (!reduce && visible) raf = requestAnimationFrame(frame)
+    }
+    const io = typeof IntersectionObserver === 'undefined' ? null : new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting; cancelAnimationFrame(raf); if (visible) raf = requestAnimationFrame(frame)
+    })
+    io?.observe(canvas)
+    window.addEventListener('resize', size)
+    frame(t0)
+    return () => {
+      cancelAnimationFrame(raf); io?.disconnect(); window.removeEventListener('resize', size)
+      for (const m of [...meshes, ...shadows]) { m.geometry.dispose(); m.material.dispose() }
+      renderer.dispose(); renderer.forceContextLoss()
+    }
+  }, [keyOf])
+  return <div className="cart-rocks">
+    {failed ? <div className="cart-rocks-fallback">{rocks.map(r => <i key={r.look} style={{ background: LOOKS[r.look]?.base }} />)}</div>
+      : <canvas key={keyOf} ref={ref} className="cart-rock-canvas" aria-hidden="true" />}
+    <div className={`cart-rock-labels n${rocks.length}`}>{rocks.map(r => <span key={r.label}><small>{r.label}</small>{r.name}</span>)}</div>
+  </div>
+}
+
+export function ConditionArt({ row, earthLithology }) {
+  const g = row.gauge || {}, v = g.raw ?? g.value
+  const unknown = row.verdict === -1
+  if (row.id === 'lithology') {
+    const kind = g.kind || 'basaltic'
+    const rocks = [{ look: KIND_LOOK[kind] || 'basalt', label: tr('需要', 'needs'), name: tr(...(KIND_NAME[kind] || KIND_NAME.basaltic)) }]
+    const gl = earthLithology?.available && GLIM[earthLithology.code]
+    if (gl) rocks.push({ look: gl[0], label: tr('候選中心格', 'candidate centre'), name: tr(gl[1], gl[2]) })
+    return <div className={`cart is-wide ${unknown ? 'is-unknown' : ''}`}><RockSpin rocks={rocks} /></div>
+  }
+  const num = x => (Number.isFinite(x) ? Math.round(x * 1000) / 1000 : null)
+  const art = {
+    dry: () => row.verdict === 2 ? <Fire power={0.8 + 0.2 * (1 - Math.min(1, Math.max(0, (v ?? 0.2) / 0.2)))} />
+      : row.verdict === 1 ? <SceneCanvas scene={STEAM} params={{}} /> : <SceneCanvas scene={RAIN} params={{ aridity: num(v) }} />,
+    bare: () => <SceneCanvas scene={BARE} params={{ bare: num(v), ice: !!g.ice_cover }} />,
+    cold: () => <SceneCanvas scene={SNOW} params={{ cold: num(v) }} />,
+    ground_ice: () => <SceneCanvas scene={PERMAFROST} params={{ ice: num(v) }} />,
+    low_sun: () => <SceneCanvas scene={LOW_SUN} params={{ lat: num(v) }} />,
+    volcanic: () => <SceneCanvas scene={VOLCANO} params={{ km: num(v) }} />,
+    aeolian: () => <SceneCanvas scene={DUNES} params={{ dune: g.via_sand ? 0.02 : num(v) }} />,
+    hydrated: () => <SceneCanvas scene={HYDRATED} params={{ hyd: num(v) }} />,
+  }[row.id]
+  if (!art) return null
+  return <div className={`cart ${unknown ? 'is-unknown' : ''}`}>{art()}</div>
+}

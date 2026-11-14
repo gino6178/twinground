@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071419">
+  <title>Analog Atlas · Cima 地表證據盲審</title>
+  <link rel="stylesheet" href="./review.css">
+  <script src="/i18n/static-i18n.js?v=i18n-v2"></script><script src="/i18n/material-review.en.js?v=i18n-v2"></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><a href="/">ANALOG ATLAS ↗</a><span>RESEARCH / SURFACE REVIEW</span><div data-language-switch></div></header>
+    <section class="intro">
+      <p class="eyebrow">01 / INDEPENDENT OBSERVATION</p>
+      <h1>從航照判讀<br><em>地表證據。</em></h1>
+      <p>這是 Cima 火山區 12 個匿名 500 m 方框。請只根據 2022 年 USGS NAIP RGB 航照，記錄可見岩石、鬆散沉積、植被與陰影；地質圖答案與搜尋分數不在此頁。</p>
+      <div class="limits"><strong>判讀限制</strong><span>RGB 外觀無法確認礦物或月／火材質等效性。樣本方框可能重疊；落在 NASA HyTES 航線足跡內也不代表已有有效光譜像元。</span></div>
+    </section>
+    <section id="loading" class="loading" role="status">讀取固定的匿名資料包…</section>
+    <section id="setup" class="setup" hidden>
+      <label for="reviewer">評分者代號</label>
+      <div class="setup-row"><input id="reviewer" autocomplete="off" maxlength="64" placeholder="例如 geology-a"><button id="start" type="button">開始獨立評估 →</button></div>
+      <p>同一瀏覽器會依代號分開儲存草稿；資料不會自動上傳。完成後請匯出 JSON，交由研究團隊與另一位獨立評分者的結果比對。</p>
+      <p id="setup-message" class="message" role="status"></p>
+    </section>
+    <section id="review" class="review" hidden>
+      <div class="review-head"><div><p class="eyebrow" id="counter"></p><h2 id="review-id"></h2></div><div><strong id="progress"></strong><button id="switch" class="text-button" type="button">切換評分者</button></div></div>
+      <div class="review-grid">
+        <figure class="photo"><a id="photo-link" target="_blank" rel="noreferrer"><img id="photo-image" alt="匿名 Cima 500 公尺 USGS NAIP RGB 航照"></a><figcaption>USGS NAIP 2022 · 500 m 方框 · 點擊開啟原尺寸</figcaption></figure>
+        <div class="form">
+          <p class="form-lead">目測面積比例：0 無、1 少於 25%、2 約 25–75%、3 多於 75%；無法判斷選「?」。各項分開判讀，不需加總為 100%。</p>
+          <div class="rating-group"><h3>可見岩石／岩層</h3><div id="exposed_rock" class="rating" role="group" aria-label="可見岩石比例"></div></div>
+          <div class="rating-group"><h3>鬆散沉積物</h3><div id="loose_sediment" class="rating" role="group" aria-label="鬆散沉積物比例"></div></div>
+          <div class="rating-group"><h3>植被遮蔽</h3><div id="vegetation" class="rating" role="group" aria-label="植被遮蔽比例"></div></div>
+          <div class="rating-group"><h3>陰影遮蔽</h3><div id="shadow" class="rating" role="group" aria-label="陰影遮蔽比例"></div></div>
+          <div class="rating-group"><h3>整體判讀信心</h3><div id="confidence" class="rating" role="group" aria-label="判讀信心"></div></div>
+          <label class="note-label" for="note">觀察依據、疑點或其他表面類型<textarea id="note" rows="4" maxlength="2000" placeholder="例如：深色區可能是熔岩或陰影，僅憑 RGB 無法判斷"></textarea></label>
+        </div>
+      </div>
+      <div class="actions"><button id="previous" type="button">← 上一格</button><button id="next" type="button">下一格 →</button><button id="export" class="primary" type="button">匯出本人的評分 JSON</button><label class="import-button">匯入先前評分<input id="import" type="file" accept="application/json,.json"></label></div>
+      <p id="message" class="message" role="status"></p>
+    </section>
+    <footer>這是地表外觀審核，尚無獨立現地岩性真值。請勿打開歷史地質圖答案鍵後再提交盲審。<a href="/">回到探索頁 ↗</a></footer>
+  </main>
+  <script src="./review.js?v=i18n2" defer></script>
+</body>
+</html>

@@ -1,0 +1,756 @@
+{
+  "purpose": "Pre-pixel frozen, exploratory AVIRIS-to-field-XRD material experiment",
+  "source_aviris_cmr_granule": "G3477026421-ORNL_CLOUD",
+  "source_aviris_archive_url": "https://popo.jpl.nasa.gov/avcl/y11_data/f110609t01p00r12rfl.tar.gz",
+  "source_aviris_archive_expected_bytes": 1992395593,
+  "source_field_xls_sha256": "43b52ea2ccfc538c937ce399911d29ed8c06d39378797ed72b4bd80f074fb732",
+  "coverage_inventory_sha256": "79dfe3103e91aa257e7b1ea384749e2a80589f4c21247e3578a1f353da48174b",
+  "alteration_polygon_overlap_sha256": "a34d37750e992c3a2e384d07b84137c5f6cb85c58e113ce357729e738fbc11f7",
+  "cohort": [
+    {
+      "lab_no": "C-234676",
+      "field_no": "IRDY0103",
+      "site": "I",
+      "lat": 37.89216,
+      "lon": -107.69021,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 0.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": false,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-234677",
+      "field_no": "IRDY0203",
+      "site": "I",
+      "lat": 37.89214,
+      "lon": -107.69051,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 8.0,
+        "XRD_Calcite_pct": 2.0,
+        "XRD_Muscovite_pct": 7.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": true
+      }
+    },
+    {
+      "lab_no": "C-234678",
+      "field_no": "IRDY0303",
+      "site": "I",
+      "lat": 37.89248,
+      "lon": -107.6885,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 0.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 21.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": false,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": true
+      }
+    },
+    {
+      "lab_no": "C-234680",
+      "field_no": "SDY0305",
+      "site": "S",
+      "lat": 37.87124,
+      "lon": -107.64271,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 6.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 29.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": true
+      }
+    },
+    {
+      "lab_no": "C-234681",
+      "field_no": "SDY0306",
+      "site": "S",
+      "lat": 37.82908,
+      "lon": -107.63692,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 19.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 5.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-234682",
+      "field_no": "SDY0307",
+      "site": "S",
+      "lat": 37.83242,
+      "lon": -107.63792,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 18.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 33.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": true
+      }
+    },
+    {
+      "lab_no": "C-234683",
+      "field_no": "SDY0308",
+      "site": "S",
+      "lat": 37.83685,
+      "lon": -107.63614,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 18.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-234684",
+      "field_no": "SDY0309",
+      "site": "S",
+      "lat": 37.84082,
+      "lon": -107.63406,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 14.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-234694",
+      "field_no": "SDY0319",
+      "site": "S",
+      "lat": 37.79982,
+      "lon": -107.675,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 3.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 3.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": false,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-234695",
+      "field_no": "SDY0320",
+      "site": "S",
+      "lat": 37.83556,
+      "lon": -107.72421,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 4.0,
+        "XRD_Calcite_pct": 3.0,
+        "XRD_Muscovite_pct": 23.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": false,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": true
+      }
+    },
+    {
+      "lab_no": "C-234696",
+      "field_no": "IDY0321",
+      "site": "I",
+      "lat": 37.87324,
+      "lon": -107.74037,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 0.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 35.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": false,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": true
+      }
+    },
+    {
+      "lab_no": "C-234699",
+      "field_no": "SDY0324",
+      "site": "S",
+      "lat": 37.85638,
+      "lon": -107.72193,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 20.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-234700",
+      "field_no": "SDY0325",
+      "site": "S",
+      "lat": 37.858,
+      "lon": -107.71694,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 12.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 11.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": true
+      }
+    },
+    {
+      "lab_no": "C-234701",
+      "field_no": "SDY0326",
+      "site": "S",
+      "lat": 37.86005,
+      "lon": -107.71432,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 7.0,
+        "XRD_Calcite_pct": 3.0,
+        "XRD_Muscovite_pct": 4.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-234702",
+      "field_no": "SDY0327",
+      "site": "S",
+      "lat": 37.86025,
+      "lon": -107.71392,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 15.0,
+        "XRD_Calcite_pct": 9.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": true,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-234703",
+      "field_no": "IDY0328",
+      "site": "I",
+      "lat": 37.89538,
+      "lon": -107.72372,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 14.0,
+        "XRD_Calcite_pct": 10.0,
+        "XRD_Muscovite_pct": 19.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": true,
+        "XRD_Muscovite_pct": true
+      }
+    },
+    {
+      "lab_no": "C-234704",
+      "field_no": "IDY0329",
+      "site": "I",
+      "lat": 37.89609,
+      "lon": -107.72996,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 9.0,
+        "XRD_Calcite_pct": 8.0,
+        "XRD_Muscovite_pct": 27.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": true,
+        "XRD_Muscovite_pct": true
+      }
+    },
+    {
+      "lab_no": "C-234705",
+      "field_no": "SDY0330",
+      "site": "S",
+      "lat": 37.84663,
+      "lon": -107.74681,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 11.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 11.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": true
+      }
+    },
+    {
+      "lab_no": "C-234706",
+      "field_no": "ODY0331",
+      "site": "O",
+      "lat": 37.85076,
+      "lon": -107.77834,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 12.0,
+        "XRD_Calcite_pct": 3.0,
+        "XRD_Muscovite_pct": 10.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": true
+      }
+    },
+    {
+      "lab_no": "C-234679",
+      "field_no": "IRDY0403",
+      "site": "I",
+      "lat": 37.88562,
+      "lon": -107.66711,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 24.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 9.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": true
+      }
+    },
+    {
+      "lab_no": "C-278514",
+      "field_no": "SDY090532",
+      "site": "S",
+      "lat": 37.8169,
+      "lon": -107.74424,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 3.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 2.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": false,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-278515",
+      "field_no": "SDY090533",
+      "site": "S",
+      "lat": 37.80735,
+      "lon": -107.70367,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 20.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-278516",
+      "field_no": "SDY090534A",
+      "site": "S",
+      "lat": 37.80832,
+      "lon": -107.70413,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 2.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": false,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-278517",
+      "field_no": "SDY090534B",
+      "site": "S",
+      "lat": 37.80832,
+      "lon": -107.70413,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 2.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": false,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-278518",
+      "field_no": "SDY090535A",
+      "site": "S",
+      "lat": 37.86369,
+      "lon": -107.72785,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 15.0,
+        "XRD_Calcite_pct": 7.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": true,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-278519",
+      "field_no": "SDY090535B",
+      "site": "S",
+      "lat": 37.86369,
+      "lon": -107.72785,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 12.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-278520",
+      "field_no": "SDY090536",
+      "site": "S",
+      "lat": 37.86173,
+      "lon": -107.73027,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 23.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-278521",
+      "field_no": "IDY090537A",
+      "site": "I",
+      "lat": 37.87625,
+      "lon": -107.73569,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 4.0,
+        "XRD_Calcite_pct": 10.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": false,
+        "XRD_Calcite_pct": true,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-278522",
+      "field_no": "IDY090537B",
+      "site": "I",
+      "lat": 37.87625,
+      "lon": -107.73569,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 17.0,
+        "XRD_Calcite_pct": 20.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": true,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-278523",
+      "field_no": "IDY090537C",
+      "site": "I",
+      "lat": 37.87625,
+      "lon": -107.70367,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 14.0,
+        "XRD_Calcite_pct": 9.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": true,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-278524",
+      "field_no": "IDY090538E",
+      "site": "I",
+      "lat": 37.8721,
+      "lon": -107.74138,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 2.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": false,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-278525",
+      "field_no": "IDY090538G",
+      "site": "I",
+      "lat": 37.8721,
+      "lon": -107.74138,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 21.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-278526",
+      "field_no": "SDY090539",
+      "site": "S",
+      "lat": 37.8074,
+      "lon": -107.6814,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 5.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": false,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-278533",
+      "field_no": "SDY090545",
+      "site": "S",
+      "lat": 37.85645,
+      "lon": -107.7221,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 21.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-278534",
+      "field_no": "SDY090548",
+      "site": "S",
+      "lat": 37.79294,
+      "lon": -107.66163,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 4.0,
+        "XRD_Calcite_pct": 0.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": false,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-278537",
+      "field_no": "ODY090552A",
+      "site": "O",
+      "lat": 37.8219,
+      "lon": -107.77485,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 6.0,
+        "XRD_Calcite_pct": 13.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": true,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-278538",
+      "field_no": "ODY090552B",
+      "site": "O",
+      "lat": 37.8219,
+      "lon": -107.77485,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 15.0,
+        "XRD_Calcite_pct": 10.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": true,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-278539",
+      "field_no": "ODY090552C",
+      "site": "O",
+      "lat": 37.8219,
+      "lon": -107.77485,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 16.0,
+        "XRD_Calcite_pct": 5.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-278540",
+      "field_no": "ODY090553",
+      "site": "O",
+      "lat": 37.8134,
+      "lon": -107.76957,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 4.0,
+        "XRD_Calcite_pct": 5.0,
+        "XRD_Muscovite_pct": 0.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": false,
+        "XRD_Calcite_pct": false,
+        "XRD_Muscovite_pct": false
+      }
+    },
+    {
+      "lab_no": "C-306678",
+      "field_no": "IDY070604",
+      "site": "I",
+      "lat": 37.8924056,
+      "lon": -107.6904528,
+      "xrd_pct": {
+        "XRD_Chlorite_pct": 18.0,
+        "XRD_Calcite_pct": 8.0,
+        "XRD_Muscovite_pct": 16.0
+      },
+      "positive_gt_5_pct": {
+        "XRD_Chlorite_pct": true,
+        "XRD_Calcite_pct": true,
+        "XRD_Muscovite_pct": true
+      }
+    }
+  ],
+  "outer_holdout": "Leave one of I, S, O field-site groups out; IDY0 and IRDY are combined because their closest samples are 30 m apart",
+  "training_exclusion_buffer_m": 500,
+  "targets": [
+    "XRD_Chlorite_pct",
+    "XRD_Calcite_pct",
+    "XRD_Muscovite_pct"
+  ],
+  "positive_definition": "USGS semi-quantitative XRD result strictly greater than 5 wt%; exact named XRD column",
+  "feature_wavelengths_nm": [
+    550,
+    860,
+    1000,
+    1650,
+    2100,
+    2150,
+    2190,
+    2200,
+    2210,
+    2250,
+    2280,
+    2300,
+    2320,
+    2340,
+    2360,
+    2400
+  ],
+  "band_selection": "Nearest valid ENVI corr wavelength within 15 nm; reject target if no such band. Reject bands marked bad in header and nonfinite, zero or >1 values.",
+  "spatial_spectrum": "Coordinate to rotated UTM using the ENVI header; median of center 3x3 pixels per band, requiring at least 5 complete valid spectra; repeat with 5x5 as sensitivity only",
+  "spectral_preprocessing": "For each spectrum, log(max(reflectance,0.0001) / geometric_mean(reflectance_2100, reflectance_2400)); feature mean and SD fitted on each training fold only",
+  "model": {
+    "type": "two-layer ReLU MLP",
+    "layers": [
+      16,
+      8,
+      3
+    ],
+    "parameter_count": 163,
+    "seed": 20261011,
+    "epochs": 150,
+    "optimizer": "Adam",
+    "learning_rate": 0.01,
+    "weight_decay": 0.05,
+    "loss": "per-target weighted BCE; positive weight min(4, negatives/positives) fitted from training fold only"
+  },
+  "baselines": [
+    "L2 regularized balanced logistic regression C=1 per target",
+    "training-set positive/negative centroid distance in the same feature space",
+    "fixed continuum depth indices: 2200 vs 2150/2250 for muscovite; 2250 and 2340 vs 2190/2400 for chlorite; 2340 vs 2300/2400 for calcite"
+  ],
+  "metrics": [
+    "site-held-out AUROC",
+    "site-held-out average precision",
+    "balanced accuracy at 0.5",
+    "macro F1 at 0.5",
+    "confusion matrices",
+    "per-site scores and number of valid specimens"
+  ],
+  "deployment_gate": "No Earth pixel material claim until valid field-site-out results beat both learned linear and fixed physics baselines on target recall, have stable coverage across sites, and receive independent spatial/temporal confirmation beyond these 40 hand samples",
+  "limitations_known_before_pixels": [
+    "This is only one AVIRIS flight line and 40 metadata-footprint specimens.",
+    "Hand specimens were collected 2001-2006, and the imagery is from 2011.",
+    "XRD composition of a hand sample is not the same quantity as a mixed airborne pixel.",
+    "USGS SIM 2976 alteration polygons include AVIRIS evidence and are contextual weak labels, not an independent test set.",
+    "A metadata footprint does not establish science-pixel validity or exact sample registration."
+  ]
+}

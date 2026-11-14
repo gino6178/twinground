@@ -1,0 +1,66 @@
+{
+  "created_utc": "2026-10-11T08:47:31+00:00",
+  "collection_doi": "10.3334/ORNLDAAC/2460",
+  "collection_concept_id": "C4247014847-ORNL_CLOUD",
+  "collection_short_name": "HyTES_L2_Emissivity_LST_2460",
+  "collection_query_url": "https://cmr.earthdata.nasa.gov/search/collections.json?doi=10.3334%2FORNLDAAC%2F2460&page_size=10",
+  "granule_query_url": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C4247014847-ORNL_CLOUD&bounding_box=-115.85%2C35.16%2C-115.78%2C35.22&temporal=2014-07-06T00%3A00%3A00Z%2C2014-07-07T00%3A00%3A00Z&page_size=200",
+  "granule_concept_id": "G4247416906-ORNL_CLOUD",
+  "granule_title": "2014-07-06.234502.CIMA.Line1-Run1-Segment01.L2",
+  "granule_data_url": "https://data.ornldaac.earthdata.nasa.gov/ornl-cumulus-prod-protected/hytes/HyTES_L2_Emissivity_LST/data/2014-07-06.234502.CIMA.Line1-Run1-Segment01.L2.hdf5",
+  "granule_footprint_lat_lon": [
+    [
+      "35.1687576 -115.7348591 35.1875411 -115.7339557 35.1934051 -115.8558861 35.1746216 -115.8567894 35.1687576 -115.7348591"
+    ]
+  ],
+  "research_site_id": "CIMA_FIELD",
+  "research_anchor_lat_lon": [
+    35.1833333333,
+    -115.8166666667
+  ],
+  "research_square_side_m": 3000,
+  "cmr_footprint_intersection_fraction_of_3km_square": 0.69624,
+  "candidate_window_footprint_counts": {
+    "moon_200m": {
+      "candidate_count": 841,
+      "cmr_footprint_intersecting_windows": 668,
+      "cmr_footprint_fully_inside_windows": 546,
+      "gallery_sha256": "855795895d4d002dbadd87cf33bdfa16c540cbbcaed1886496ce140de186dcb1"
+    },
+    "moon_500m": {
+      "candidate_count": 121,
+      "cmr_footprint_intersecting_windows": 110,
+      "cmr_footprint_fully_inside_windows": 66,
+      "gallery_sha256": "0ecf71c46940b4ff8fc43d2751266e0405eda11da04286039975181687719bf0"
+    },
+    "moon_1000m": {
+      "candidate_count": 25,
+      "cmr_footprint_intersecting_windows": 25,
+      "cmr_footprint_fully_inside_windows": 10,
+      "gallery_sha256": "00e67b1e5e38d81d9aebb54bd4156a7fb42dd987533c97e155a6b1535302eaf8"
+    },
+    "mars_200m": {
+      "candidate_count": 841,
+      "cmr_footprint_intersecting_windows": 667,
+      "cmr_footprint_fully_inside_windows": 543,
+      "gallery_sha256": "dded62b53bbe73b5044ddaeceb820f24dfc4d384ecc2bb282feeca002358f824"
+    },
+    "mars_500m": {
+      "candidate_count": 121,
+      "cmr_footprint_intersecting_windows": 110,
+      "cmr_footprint_fully_inside_windows": 72,
+      "gallery_sha256": "294236c1f3d7789edd077d8aea548281da0eefac8772bfad4a94d9da6ea4fff7"
+    },
+    "mars_1000m": {
+      "candidate_count": 25,
+      "cmr_footprint_intersecting_windows": 25,
+      "cmr_footprint_fully_inside_windows": 10,
+      "gallery_sha256": "838fe42b00e6189e7b40336ef9f05a51833b5e062f36f8c9534db974b79f8fbe"
+    }
+  },
+  "hdf5_content_length_bytes": 3332423527,
+  "anonymous_get_status": 302,
+  "material_pixel_data_acquired": false,
+  "interpretation": "NASA CMR flight footprint is a coarse overlap indicator, not valid L2 emissivity coverage or a material map",
+  "next_gate": "Obtain L2 emissivity with authorized Earthdata access, inspect per-pixel geolocation and quality, then pair with independent geology or field labels"
+}

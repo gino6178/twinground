@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-11T16:46:22.139831+00:00",
+  "npm_installed_matches_lock": 74,
+  "python_environment_distributions": 155,
+  "unique_notice_texts": 242,
+  "notice_references_verified": 355,
+  "missing_notice_packages": 9,
+  "runtime_static_modules": 32,
+  "runtime_direct_distributions": 9,
+  "requirements_unsatisfied": 6,
+  "pip_check_passed": false,
+  "full_reproduction_gate_passed": false
+}

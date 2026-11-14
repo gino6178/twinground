@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Analog Atlas · 月火地窗格研究評估</title>
+  <link rel="stylesheet" href="./review.css">
+  <script src="/i18n/static-i18n.js?v=i18n-v2"></script><script src="/i18n/research-review.en.js?v=i18n-v2"></script>
+</head>
+<body>
+  <main class="shell">
+    <header><a href="/">ANALOG ATLAS ↗</a><span>RESEARCH / WINDOW REVIEW</span><div data-language-switch></div></header>
+    <section class="intro">
+      <p class="eyebrow">FIXED MODEL CANDIDATES · HUMAN EVIDENCE</p>
+      <h1>月火地窗格研究評估</h1>
+      <p id="study-description">正在載入固定月／火－地球窗格評估資料。先評形狀，再看來源資料評材質與基地情境。請分開判斷；資料不足時選「無法判定」。候選的原始排名與分數在另一份檔案，不會出現在此頁。</p>
+      <p class="warning">目前還沒有獨立專家標註。完成評估前不能宣稱月／火－地類比準確率；抽樣候選也不足以計算全球 Recall@K。</p>
+    </section>
+    <section class="toolbar">
+      <label>評分者代號 <input id="reviewer" autocomplete="off" placeholder="例如 reviewer-a" maxlength="64"></label>
+      <div class="buttons"><button id="previous" type="button">← 上一對</button><button id="next" type="button">下一對 →</button><button id="export" type="button">匯出評分 JSON</button><label class="import-button">匯入評分<input id="import" type="file" accept="application/json,.json"></label></div>
+    </section>
+    <section id="loading" class="loading">載入固定評估資料…</section>
+    <section id="card" hidden>
+      <div class="card-head"><div><p class="eyebrow" id="counter"></p><h2 id="query-title"></h2></div><div id="progress"></div></div>
+      <div class="pair-grid">
+        <figure><figcaption id="reference-caption">MOON · LOLA</figcaption><img id="moon" alt="月球或火星相對高程及陰影地形"><small id="moon-relief"></small></figure>
+        <figure><figcaption id="earth-caption">EARTH · ETOPO / SRTM</figcaption><img id="earth" alt="地球候選相對高程及陰影地形"><small id="earth-relief"></small></figure>
+      </div>
+      <p class="render-note" id="render-note">兩圖以相同尺度展示 DEM 陰影，不能顯示礦物或基地安全。</p>
+      <div class="rating-block"><h3>① 地貌形狀相似度</h3><p>只依兩側地形判斷輪廓、坡度與空間尺度。0 無關；1 弱；2 中；3 高。看不清或 DEM 不足時選無法判定。</p><div class="rating" id="morphology"></div></div>
+      <section id="evidence" class="evidence" hidden><h3>來源證據 · 評完形狀後顯示</h3><div id="evidence-content"></div><p>地質圖、光譜、岩性與 DEM 是不同證據；未取得窗格級可比較資料時，材質及任務條件應標為未知。</p></section>
+      <div id="other-ratings" hidden>
+        <div class="rating-block"><h3>② 表面材質相似度</h3><p>只有兩地都具可比較的材質證據才給 0–3；目前常應選無法判定。</p><div class="rating" id="material"></div></div>
+        <div class="rating-block"><h3>③ 基地／登陸情境類比</h3><p>需安全、環境與資源條件等獨立證據；幾何相似不足以支持評分。</p><div class="rating" id="mission"></div></div>
+      </div>
+      <label class="note-label">觀察依據或無法判定原因 <textarea id="note" rows="3" maxlength="2000" placeholder="請記錄可見形態、資料限制或應補的證據"></textarea></label>
+      <p id="message" role="status"></p>
+    </section>
+    <footer>本頁資料留在此瀏覽器，按「匯出」才會下載 JSON。v6／v7／v8 草稿依評分者代號分開保存；請兩人各自獨立評估。缺少的材質或環境資料請標為無法判定。</footer>
+  </main>
+  <script src="./review.js?v=20261011-v8-i18n2" defer></script>
+</body>
+</html>
