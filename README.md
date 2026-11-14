@@ -8,9 +8,6 @@ Pick a window on the Moon or Mars, read its conditions from NASA orbital data, a
 (about 484,000 across 20/40/80 km scales) as analog candidates. Each candidate shows which conditions hold
 and which do not, side-by-side 3D terrain, and an astronaut explorer for walking the site.
 
-This repository is a rebuild of our team's pre-event prototype (then called Analog Atlas): the runtime code was carried over, restructured
-and optimized (see *Changes from the prototype*). The datasets and trained weights are reused as-is.
-
 ## Layout
 
 | Path | What it is |
@@ -38,33 +35,25 @@ ATLAS_PORT=8765 python web_server.py
 
 Environment variables: `ATLAS_PORT` (default 8765), `ATLAS_HOST` (default 0.0.0.0), `ATLAS_TORCH_THREADS` (default 4).
 
-## Changes from the prototype
+## Design notes
 
 **Server**
-- The 936-line `web_server.py` is split into the `server/` package. Search is a five-step pipeline, with one
-  ranking function per purpose instead of one long branch.
-- Six copy-pasted orthophoto handlers are now a single table-driven route.
-- The model SHA-256 is computed once per process instead of on every search.
-- Missing required query parameters return 400 instead of 500.
-- Lunar Prospector bin lookup uses a grid index instead of a linear scan: 8 s → 2 ms for 3,000 points,
-  verified identical on random points. First searches at a new location are 2–3× faster
-  (e.g. 1.2 s → 0.36 s).
-- Removed hard-coded absolute paths and `sys.path` hacks; the server reads the data directory through a symlink.
+- `server/` holds config, query validation, resource loading, routes and the search pipeline. Search runs in
+  five steps, with one ranking function per purpose.
+- The model SHA-256 is computed once per process; every Earth index is checked against it at startup.
+- Missing or invalid query parameters return 400.
+- Lunar Prospector bins are looked up through a grid index (about 2 ms for 3,000 points).
+- `POST /api/chat-search` (language model to search spec) and the image-search POST share one handler.
 
 **Front end**
-- The selection-page reading card and the procedural rock mesh have their own modules, so the results-only
-  condition art loads with the results page instead of on the cover.
-- React and Motion are separate vendor chunks that stay cached across app deploys.
-- First-load JavaScript: 209.5 KB → 183.7 KB gzipped.
+- Results-only code (condition art, process scenes) is lazy-loaded with the results page.
+- React, Motion and three.js are separate vendor chunks so they stay cached across deploys.
+- First-load JavaScript is about 184 KB gzipped.
 
-**Also**
-- `POST /api/chat-search` and the image-search POST now coexist (in the prototype the chat route replaced the
-  image-search POST handler, so image search returned 404).
-
-**Verification**
+**Testing**
 `tools/compare_servers.py` sends 32 requests (every search purpose on the Moon and Mars, the observation
-endpoints, chat search through the language model, and the error cases) to the prototype and to this rebuild
-on the same VM. All responses are identical.
+endpoints, chat search through the language model, and the error cases) to two running servers and reports
+any JSON difference. Use it to check a deployment against a known-good server.
 
 ## Deployment (GCP VM)
 
