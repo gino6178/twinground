@@ -69,3 +69,25 @@ journalctl --user -u twinground-tunnel | grep -o 'https://[a-z0-9-]*\.trycloudfl
 ```
 
 Chat search also needs `transformers` and the LoRA-merged model weights in `~/llm/serve` (not in this repository).
+
+## Site assistant
+
+A chat button on every page (`web/src/assistant_widget.jsx`) answers questions about the site, the method and the
+paper, and on the results page explains why the viewed candidate was chosen. `POST /api/assistant` turns the search
+answer the page already holds into a text brief (`scripts/assistant/site_brief.py`) and forwards it with the
+conversation to `scripts/assistant/service.py` (port 8791), which retrieves passages with multilingual-e5 and answers
+with a fine-tuned Llama 3.2 1B. Every answer lists the passages it was given.
+
+Building it (`scripts/assistant/`):
+
+1. `build_corpus.py`: RAG corpus from our paper (EN/ZH, SI), brief, archive, research pages, README, UI text and the
+   cited works (open-access full text through OpenAlex, otherwise the citation only) → `build/assistant/chunks.jsonl`.
+2. `dump_site_cases.py`: run next to the live server; saves site briefs of real search results.
+3. `gen_dialogues.py`: on a GPU node, Meta Llama 3.3 70B Instruct (vLLM) writes questions and grounded answers in the
+   exact prompt format of `prompt.py` (docs, site explanations, out-of-scope requests, follow-ups).
+4. `train.py`: full fine-tune of Llama 3.2 1B Instruct on those dialogues (loss on assistant turns only);
+   `probe.py` checks it before deployment.
+
+Only US-origin models are used (Meta Llama, Microsoft e5). Deploy: copy the model to `~/llm/assistant`, the e5 model
+to `~/llm/e5`, `build/assistant/` (chunks + vectors) to the server, then
+`systemctl --user enable --now twinground-assistant`.

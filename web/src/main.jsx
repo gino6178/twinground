@@ -37,6 +37,7 @@ import { TerrainView } from './terrain_view.jsx'
 let resultsModule = null
 const loadResults = () => import('./results_stage.jsx').then(module => (resultsModule = module))
 const ChatSearch = React.lazy(() => import('./chat_search.jsx'))
+const AssistantWidget = React.lazy(() => import('./assistant_widget.jsx'))
 const ResultsStage = React.lazy(() => (resultsModule ? { then: resolve => resolve(resultsModule) } : loadResults()))
 
 const PRESETS = [
@@ -1408,6 +1409,9 @@ function App() {
           </Suspense>
         )}
       </AnimatePresence>
+      <Suspense fallback={null}>
+        <AssistantWidget searchData={searchData} activeId={activeId} onResults={stage === 2} />
+      </Suspense>
       {stage !== 0 && (
         <footer className="site-footer">
           <div>

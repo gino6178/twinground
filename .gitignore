@@ -7,3 +7,4 @@ web/dist/
 *.log
 .env
 .venv/
+/build/

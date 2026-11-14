@@ -60,6 +60,8 @@ class Handler(VisualMixin, BaseHandler):
             self.send_json({"error": "Local model unavailable"}, 500)
 
     def do_POST(self):
+        if urlparse(self.path).path == "/api/assistant":
+            return self.assistant()
         if urlparse(self.path).path != "/api/chat-search":
             return super().do_POST()  # visual-geology image search
         try:
@@ -74,6 +76,23 @@ class Handler(VisualMixin, BaseHandler):
         except Exception as exc:
             print("Chat search error:", repr(exc), flush=True)
             self.send_json({"error": "Chat search unavailable"}, 500)
+
+    def assistant(self):
+        """Site assistant: build the [SITE] brief here (pure Python), let the model service answer."""
+        try:
+            length = int(self.headers.get("Content-Length", 0) or 0)
+            if length > 3_000_000:
+                raise ValueError("Request too large")
+            body = json.loads(self.rfile.read(length) or b"{}")
+            if not isinstance(body, dict):
+                raise ValueError("Body must be a JSON object")
+            from scripts.assistant import client
+            self.send_json(client.handle(body))
+        except (ValueError, TypeError) as exc:
+            self.send_json({"error": str(exc)}, 400)
+        except Exception as exc:
+            print("Assistant error:", repr(exc), flush=True)
+            self.send_json({"error": "Assistant unavailable"}, 500)
 
 
 def main():

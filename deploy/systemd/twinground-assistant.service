@@ -1,0 +1,11 @@
+[Unit]
+Description=TwinGround site assistant (fine-tuned Llama 3.2 1B + RAG, port 8791)
+[Service]
+Type=simple
+WorkingDirectory=/home/gino/nasa_2026/comp1/scripts/assistant
+ExecStart=/usr/bin/python3 service.py /home/gino/llm/assistant /home/gino/nasa_2026/comp1/build/assistant /home/gino/llm/e5 8791
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+[Install]
+WantedBy=default.target
