@@ -26,8 +26,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-3D models in the astronaut explorer (as packaged by the lunar-walk project, public/models)
+3D models in the astronaut explorer
 
-- Lunar module: "Apollo Lunar Module" by jgut028
-  https://sketchfab.com/3d-models/apollo-lunar-module-e7458d5b149b482d9829ff90ea6bc233
-  Licence: CC BY-NC 4.0 (non-commercial use only), https://creativecommons.org/licenses/by-nc/4.0/
+- Astronaut, lunar module, rovers and habitat: NASA 3D Resources (https://science.nasa.gov/3d-resources/),
+  sources and checksums in public/assets/nasa3d/manifest.json.

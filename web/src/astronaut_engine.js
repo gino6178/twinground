@@ -65,7 +65,7 @@ export const WORLD_PROFILES = {
 }
 // NASA 3D Resources models placed near the start for scale and context (conceptual placement).
 const PROPS = {
-  moon: { path: '/assets/lunar-walk/lunar_module.glb', width: 9.4, at: [17, -26], yaw: 0.5, name: 'Apollo Lunar Module' },
+  moon: { path: '/assets/nasa3d/apollo_lunar_module.glb', width: 9.4, at: [17, -26], yaw: 0.5, name: 'Apollo Lunar Module' },
   mars: { path: '/assets/nasa3d/perseverance_rover.glb', width: 3, at: [-6, -11], yaw: -0.8, name: 'Perseverance' },
   earth: { path: '/assets/nasa3d/habitat_demo_part1.glb', width: 5, at: [15, -18], yaw: 0.3, name: 'Habitat Demonstration Unit' },
 }

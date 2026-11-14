@@ -26,7 +26,7 @@ export const EXPLORER_MODELS = {
   roverMobile: { url: '/assets/nasa3d/sev_rover_mobile.glb', bytes: 1714364 },
 }
 export const EXPLORER_PROPS = {
-  moon: { url: '/assets/lunar-walk/lunar_module.glb', bytes: 3641048 },
+  moon: { url: '/assets/nasa3d/apollo_lunar_module.glb', bytes: 716840 },
   mars: { url: '/assets/nasa3d/perseverance_rover.glb', bytes: 4987176 },
   earth: { url: '/assets/nasa3d/habitat_demo_part1.glb', bytes: 516748 },
 }

@@ -418,7 +418,7 @@ export default function AstronautExplorer({ target, earth, initialWorld = 'targe
         {stats.textureState === 'ready' && stats.textureCredit && <span>{tr('地表影像', 'Surface imagery')}：{stats.textureCredit}</span>}
         {stats.prop && <span>{tr(`NASA 3D Resources ${stats.prop} 模型為比例參考的示意擺放`, `NASA 3D Resources ${stats.prop} model placed for scale only`)}</span>}
         {stats.earthInSky && <span>{tr(`天空中的地球依月面經緯度估算（仰角約 ${fmt(stats.earthElevation)}°，未計天平動）`, `Earth in the sky is placed from the site's selenographic position (elevation ≈ ${fmt(stats.earthElevation)}°, libration ignored)`)}</span>}
-        {stats.suitModel && <span>{tr('太空人：NASA Z-2 太空衣（NASA 3D Resources，NASA/LaRC 先進概念實驗室，關節為執行時加入的示意骨架）；登月艙：Apollo Lunar Module，jgut028，CC BY-NC 4.0（模型取自 lunar-walk 專案）', 'Astronaut: NASA Z-2 spacesuit (NASA 3D Resources, NASA/LaRC Advanced Concepts Lab; joints are an illustrative rig added at runtime); lunar module: Apollo Lunar Module by jgut028, CC BY-NC 4.0 (models as packaged by the lunar-walk project)')}</span>}
+        {stats.suitModel && <span>{tr('太空人：NASA Z-2 太空衣（NASA 3D Resources，NASA/LaRC 先進概念實驗室，關節為執行時加入的示意骨架）；登月艙：NASA Apollo Lunar Module（NASA 3D Resources）', 'Astronaut: NASA Z-2 spacesuit (NASA 3D Resources, NASA/LaRC Advanced Concepts Lab; joints are an illustrative rig added at runtime); lunar module: NASA Apollo Lunar Module (NASA 3D Resources)')}</span>}
         <span>{tr('不代表實際可通行或任務安全', 'Not an assessment of trafficability or mission safety')}</span>
       </p>}
       <button type="button" className="eva-start" onClick={() => { setHelp(false); host.current?.focus() }}>{tr('開始探索', 'Start exploring')}</button>
@@ -427,7 +427,7 @@ export default function AstronautExplorer({ target, earth, initialWorld = 'targe
     {stats && isRover && <footer className="eva-note">
       {tr('地形：NASA/JPL-Caltech 好奇號立體影像網格（NASA-AMMOS 3DTilesSampleData，執行時讀取、未轉散布）· 位置在蓋爾撞擊坑 Dingo Gap，不是你選的區域 · 網格外與相機死角沒有資料',
         'Terrain: NASA/JPL-Caltech Curiosity stereo mesh (NASA-AMMOS 3DTilesSampleData, streamed at runtime, not redistributed) · Dingo Gap in Gale crater, not your selected region · no data outside the mesh or in camera blind spots')}
-      {stats.suitModel && <span> · {tr('太空人：NASA Z-2 太空衣（NASA 3D Resources，NASA/LaRC 先進概念實驗室，關節為執行時加入的示意骨架）；登月艙：Apollo Lunar Module，jgut028，CC BY-NC 4.0（模型取自 lunar-walk 專案）', 'Astronaut: NASA Z-2 spacesuit (NASA 3D Resources, NASA/LaRC Advanced Concepts Lab; joints are an illustrative rig added at runtime); lunar module: Apollo Lunar Module by jgut028, CC BY-NC 4.0 (models as packaged by the lunar-walk project)')}</span>}
+      {stats.suitModel && <span> · {tr('太空人：NASA Z-2 太空衣（NASA 3D Resources，NASA/LaRC 先進概念實驗室，關節為執行時加入的示意骨架）；登月艙：NASA Apollo Lunar Module（NASA 3D Resources）', 'Astronaut: NASA Z-2 spacesuit (NASA 3D Resources, NASA/LaRC Advanced Concepts Lab; joints are an illustrative rig added at runtime); lunar module: NASA Apollo Lunar Module (NASA 3D Resources)')}</span>}
     </footer>}
     {stats && !isRover && <footer className="eva-note">
       {tr(`DEM 原生格距約 ${fmt(stats.nativeCell)} m · 垂直比例 ${stats.exaggeration}× · 地平線約 ${fmt(stats.horizonKm, 1)} km · 周圍的小坑、岩塊、腳印與塵土為示意，不是量測資料`,
