@@ -8,7 +8,7 @@ import sys
 import urllib.error
 import urllib.request
 
-VOLATILE = {"fine_job", "elapsed_ms", "elapsed_s", "generated_at", "job", "started_at"}
+VOLATILE = {"fine_job", "elapsed_ms", "elapsed_s", "generated_at", "job", "started_at", "total_ms", "model_ms"}
 
 REQUESTS = [
     "/api/status",
@@ -43,8 +43,19 @@ REQUESTS = [
 ]
 
 
-def fetch(base, path):
-    req = urllib.request.Request(base + path, headers={"Accept-Encoding": "gzip"})
+POSTS = [
+    ("/api/chat-search", {"spec": {"target": None}, "lang": "zh"}),
+    ("/api/chat-search", {"message": "find a cold dry basalt plain like the lunar maria", "lang": "en"}),
+    ("/api/chat-search", {"message": "像火星一樣乾冷的沙丘", "lang": "zh"}),
+]
+
+
+def fetch(base, path, payload=None):
+    data = None if payload is None else json.dumps(payload).encode("utf-8")
+    headers = {"Accept-Encoding": "gzip"}
+    if data is not None:
+        headers["Content-Type"] = "application/json"
+    req = urllib.request.Request(base + path, data=data, headers=headers)
     try:
         with urllib.request.urlopen(req, timeout=600) as r:
             code, body, enc = r.status, r.read(), r.headers.get("Content-Encoding")
@@ -90,7 +101,15 @@ def main(old, new):
         for p in problems[:8]:
             print("     ", p)
         failures += bool(problems)
-    print(f"{len(REQUESTS) - failures}/{len(REQUESTS)} identical")
+    for path, payload in POSTS:
+        (ca, a), (cb, b) = fetch(old, path, payload), fetch(new, path, payload)
+        problems = ([f"status {ca} != {cb}"] if ca != cb else []) + diff(a, b)
+        print(("OK  " if not problems else "DIFF") + f" {ca} POST {path} {json.dumps(payload, ensure_ascii=False)[:60]}")
+        for p in problems[:8]:
+            print("     ", p)
+        failures += bool(problems)
+    total = len(REQUESTS) + len(POSTS)
+    print(f"{total - failures}/{total} identical")
     return failures
 
 

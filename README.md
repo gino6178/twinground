@@ -55,6 +55,26 @@ Environment variables: `ATLAS_PORT` (default 8765), `ATLAS_HOST` (default 0.0.0.
 - React and Motion are separate vendor chunks that stay cached across app deploys.
 - First-load JavaScript: 209.5 KB → 183.7 KB gzipped.
 
+**Also**
+- `POST /api/chat-search` and the image-search POST now coexist (in the prototype the chat route replaced the
+  image-search POST handler, so image search returned 404).
+
 **Verification**
-`tools/compare_servers.py` sends 29 requests (every search purpose on the Moon and Mars, the observation
-endpoints and the error cases) to the prototype and to this rebuild. All responses are identical.
+`tools/compare_servers.py` sends 32 requests (every search purpose on the Moon and Mars, the observation
+endpoints, chat search through the language model, and the error cases) to the prototype and to this rebuild
+on the same VM. All responses are identical.
+
+## Deployment (GCP VM)
+
+The site runs on a GCP `g2-standard-8` VM with an NVIDIA L4 as systemd user services (`deploy/systemd/`):
+the web server, the fine-tuned Llama 3.2 1B that turns a chat message into a search spec (`/api/chat-search`),
+and a Cloudflare quick tunnel. The quick-tunnel address changes whenever the tunnel restarts.
+
+```bash
+cp deploy/systemd/*.service ~/.config/systemd/user/
+systemctl --user daemon-reload
+systemctl --user enable --now analog-atlas-web-v2 analog-atlas-tunnel-v2
+journalctl --user -u analog-atlas-tunnel-v2 | grep -o 'https://[a-z0-9-]*\.trycloudflare\.com' | tail -1
+```
+
+Chat search also needs `transformers` and the LoRA-merged model weights in `~/llm/serve` (not in this repository).

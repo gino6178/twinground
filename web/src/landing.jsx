@@ -63,7 +63,7 @@ function EntryCosmos({ onPick }) {
 
 // Landing page: the solar system is the way in (click the Moon or Mars), then the two worlds and the footer.
 // Worked examples and validation numbers belong on the methods page, not here.
-export function Landing({ Globe, onStart, onStartMars, onPickMoon, onPickMars, selected, selectedMars }) {
+export function Landing({ Globe, onStart, onStartMars, onChat, onPickMoon, onPickMars, selected, selectedMars }) {
   const en = getLanguage() === 'en'
   const lang = en ? 'en' : 'zh'
   const method = en ? '/technology/en.html' : '/technology/'
@@ -92,6 +92,7 @@ export function Landing({ Globe, onStart, onStartMars, onPickMoon, onPickMars, s
           <div className="landing-cta">
             <button type="button" className="landing-primary" onClick={onStart}>{tr('從月球開始', 'Start on the Moon')} <ArrowRight size={18} aria-hidden="true" /></button>
             <button type="button" className="landing-secondary" onClick={onStartMars}>{tr('從火星開始', 'Start on Mars')}</button>
+            {onChat && <button type="button" className="landing-secondary" onClick={onChat}>{tr('用對話描述條件', 'Describe it in words')}</button>}
           </div>
           <p className="landing-note">{tr('拖曳旋轉，點月球或火星直接進入。天體大小依真實比例，距離已壓縮。', 'Drag to turn the view; click the Moon or Mars to enter. Sizes are to scale, distances are compressed.')}</p>
           <p className="landing-note">{tr('2026 NASA Space Apps Challenge 參賽作品，題目：', '2026 NASA Space Apps Challenge entry for ')}<a href="https://www.spaceappschallenge.org/2026/challenges/permanent-moon-base-locations-and-mars/" target="_blank" rel="noreferrer">Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars</a></p>

@@ -36,6 +36,7 @@ import { TerrainView } from './terrain_view.jsx'
 // is loaded, and React.lazy then resolves synchronously instead of flashing the Suspense fallback.
 let resultsModule = null
 const loadResults = () => import('./results_stage.jsx').then(module => (resultsModule = module))
+const ChatSearch = React.lazy(() => import('./chat_search.jsx'))
 const ResultsStage = React.lazy(() => (resultsModule ? { then: resolve => resolve(resultsModule) } : loadResults()))
 
 const PRESETS = [
@@ -395,7 +396,7 @@ function MoonGlobe({ selected, onPick, onHover, onDraft, mode = 'rotate', sizeKm
   )
 }
 
-function Header({ stage, body, onHome, onBody, onResults }) {
+function Header({ stage, body, onHome, onBody, onResults, onChat }) {
   const method = getLanguage() === 'en' ? '/technology/en.html' : '/technology/'
   const current = key => (key === 'results' ? stage === 2 : stage === 1 && body === key) ? 'page' : undefined
   return <header className="topbar">
@@ -406,6 +407,7 @@ function Header({ stage, body, onHome, onBody, onResults }) {
       <button type="button" className="topnav-link" aria-current={current('moon')} onClick={() => onBody('moon')}>月球</button>
       <button type="button" className="topnav-link" aria-current={current('mars')} onClick={() => onBody('mars')}>火星</button>
       {onResults && <button type="button" className="topnav-link" aria-current={current('results')} onClick={onResults}>搜尋結果</button>}
+      {onChat && <button type="button" className="topnav-link" aria-current={stage === 3 ? 'page' : undefined} onClick={onChat}>{getLanguage() === 'en' ? 'Ask' : '對話搜尋'}</button>}
       <a className="topnav-link" href={getLanguage() === 'en' ? '/offcatalogue/en.html' : '/offcatalogue/'}>{getLanguage() === 'en' ? 'Off-catalogue' : '目錄外的候選'}</a>
       <a className="topnav-link" href={method}>方法與原理 <ArrowUpRight size={13} /></a>
     </nav>
@@ -1343,6 +1345,7 @@ function App() {
           onHome={() => navigate(0)}
           onBody={next => (next === body ? navigate(1) : startBody(next))}
           onResults={searchData ? () => navigate(2) : null}
+          onChat={() => navigate(3)}
         />
       )}
       <AnimatePresence mode="wait">
@@ -1351,6 +1354,7 @@ function App() {
             Globe={MoonGlobe}
             onStart={() => startBody('moon')}
             onStartMars={() => startBody('mars')}
+            onChat={() => navigate(3)}
             onPickMoon={pickFromHero}
             selected={selected}
             selectedMars={marsSelected}
@@ -1360,6 +1364,8 @@ function App() {
             }}
             status={status}
           />
+        ) : stage === 3 ? (
+          <Suspense fallback={null}><ChatSearch /></Suspense>
         ) : stage === 1 ? (
           <SelectStage
             body={body}

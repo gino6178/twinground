@@ -1,6 +1,7 @@
 """HTTP entry point: routes API requests and serves the built front end."""
 from __future__ import annotations
 
+import json
 import sys
 from http.server import ThreadingHTTPServer
 from urllib.parse import urlparse
@@ -57,6 +58,22 @@ class Handler(VisualMixin, BaseHandler):
         except Exception as exc:
             print("Request error:", repr(exc), flush=True)
             self.send_json({"error": "Local model unavailable"}, 500)
+
+    def do_POST(self):
+        if urlparse(self.path).path != "/api/chat-search":
+            return super().do_POST()  # visual-geology image search
+        try:
+            length = min(int(self.headers.get("Content-Length", 0) or 0), 20000)
+            body = json.loads(self.rfile.read(length) or b"{}")
+            if not isinstance(body, dict):
+                raise ValueError("Body must be a JSON object")
+            from scripts.chat_search import chat
+            self.send_json(chat.handle(body, resources().rows))
+        except (ValueError, TypeError) as exc:
+            self.send_json({"error": str(exc)}, 400)
+        except Exception as exc:
+            print("Chat search error:", repr(exc), flush=True)
+            self.send_json({"error": "Chat search unavailable"}, 500)
 
 
 def main():

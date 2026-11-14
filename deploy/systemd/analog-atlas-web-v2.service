@@ -1,0 +1,14 @@
+[Unit]
+Description=Analog Atlas rebuilt web server (port 8766)
+After=network-online.target
+[Service]
+Type=simple
+WorkingDirectory=/home/gino/nasa_2026/comp1
+ExecStart=/usr/bin/python3 web_server.py
+Restart=on-failure
+RestartSec=3
+Environment=PYTHONUNBUFFERED=1
+Environment=ATLAS_PORT=8766
+Environment=ANALOG_LLM_URL=http://127.0.0.1:8790/spec
+[Install]
+WantedBy=default.target
