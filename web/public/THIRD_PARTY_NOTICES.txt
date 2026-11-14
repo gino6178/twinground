@@ -28,10 +28,6 @@ SOFTWARE.
 
 3D models in the astronaut explorer (as packaged by the lunar-walk project, public/models)
 
-- Astronaut: "Tripo Astronaut 2 (Stylized and animated)" by Jungle Jim
-  https://sketchfab.com/3d-models/tripo-astronaut-2-stylized-and-animated-fe594ac4364942e8abad34744e507038
-  Licence: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/
-  Changes: scaled to 1.9 m; motion clips blended and slowed for low gravity.
 - Lunar module: "Apollo Lunar Module" by jgut028
   https://sketchfab.com/3d-models/apollo-lunar-module-e7458d5b149b482d9829ff90ea6bc233
   Licence: CC BY-NC 4.0 (non-commercial use only), https://creativecommons.org/licenses/by-nc/4.0/

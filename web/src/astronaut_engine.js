@@ -13,7 +13,6 @@ import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js'
 import { makeAstronaut } from './astronaut_model.js'
 import { NearField, microRelief, fbm, blockCraters } from './astronaut_surface.js'
 import { makeZ2Astronaut } from './astronaut_z2.js'
-import { makeLwAstronaut } from './astronaut_lw.js'
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js'
 import { gravelGeometry, withStoneDetail } from './lunar_walk_port.js'
 import { TilesRenderer } from '3d-tiles-renderer'
@@ -818,16 +817,15 @@ export function createAstronautEngine({ container, minimap, worlds, initial = 't
     if (buffer) { assets.models[name] = null; gltf.parse(buffer, '/assets/nasa3d/', onLoad, onError) }
     else gltf.load(url, onLoad, undefined, onError)
   }
-  loadModel('suit', '/assets/lunar-walk/astronaut.glb', result => {
+  loadModel('suit', '/assets/nasa3d/z2_spacesuit_webp.glb', result => {
     if (disposed) return
     try {
-      const z2 = makeLwAstronaut(result)
-      // the suit fabric is near-white; at albedo 1 it clips to flat white in sunlight, at 0.84 it keeps its shading
+      const z2 = makeZ2Astronaut(result.scene, { lite: mobile })
       objectSunTree(z2.root)
       adoptHeadlamp(z2)
       z2.root.position.copy(astro.root.position); z2.root.rotation.copy(astro.root.rotation); z2.root.visible = astro.root.visible
       scene.remove(astro.root); astro.dispose()
-      astro = z2; suitModel = 'Tripo Astronaut 2'; scene.add(z2.root)
+      astro = z2; suitModel = 'NASA Z-2'; scene.add(z2.root)
       gaitReset()
       astro.setDust(new THREE.Color(state[active].profile.suitDust), player.dustByWorld[active] / 1500)
     } catch { if (!astro.root.parent) scene.add(astro.root) /* procedural suit as fallback */ }

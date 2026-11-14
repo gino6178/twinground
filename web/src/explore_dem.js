@@ -21,7 +21,7 @@ export function prefetchExploreDem(w) {
 
 // NASA 3D models used by the explorer (bytes are the fallback total when a response has no Content-Length).
 export const EXPLORER_MODELS = {
-  suit: { url: '/assets/lunar-walk/astronaut.glb', bytes: 5098972 },
+  suit: { url: '/assets/nasa3d/z2_spacesuit_webp.glb', bytes: 2065416 },
   roverDesktop: { url: '/assets/nasa3d/sev_rover_desktop.glb', bytes: 1965324 },
   roverMobile: { url: '/assets/nasa3d/sev_rover_mobile.glb', bytes: 1714364 },
 }

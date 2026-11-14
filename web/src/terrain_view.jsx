@@ -97,6 +97,9 @@ export function TerrainView({ terrain, tone = 'moon', label, wireframe = false, 
     controls.maxDistance = 8
     let applying = false
     const publishCamera = () => {
+      // Without damping, OrbitControls updates the camera inside its pointer handlers, so the render loop's
+      // controls.update() returns false; mark this view dirty or the dragged side never redraws.
+      dirty = true
       host.current?.setAttribute('data-camera-position', camera.position.toArray().join(','))
       if (!cameraSync || applying) return
       cameraSync.last = { source: renderer.domElement, position: camera.position.toArray(), target: controls.target.toArray() }
