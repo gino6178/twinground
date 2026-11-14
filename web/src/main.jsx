@@ -398,7 +398,7 @@ function MoonGlobe({ selected, onPick, onHover, onDraft, mode = 'rotate', sizeKm
 }
 
 function Header({ stage, body, onHome, onBody, onResults, onChat }) {
-  const method = getLanguage() === 'en' ? '/technology/en.html' : '/technology/'
+  const method = '/technology/paper-en.html'
   const current = key => (key === 'results' ? stage === 2 : stage === 1 && body === key) ? 'page' : undefined
   return <header className="topbar">
     <button className="brand" onClick={onHome} aria-label="返回入口頁">

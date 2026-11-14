@@ -66,8 +66,7 @@ function EntryCosmos({ onPick }) {
 export function Landing({ Globe, onStart, onStartMars, onChat, onPickMoon, onPickMars, selected, selectedMars }) {
   const en = getLanguage() === 'en'
   const lang = en ? 'en' : 'zh'
-  const method = en ? '/technology/en.html' : '/technology/'
-  const paper = en ? '/technology/paper-en.html' : '/technology/paper.html'
+  const method = '/technology/paper-en.html'
   const root = useRef(null)
   useReveal(root)
   return (
@@ -126,7 +125,7 @@ export function Landing({ Globe, onStart, onStartMars, onChat, onPickMoon, onPic
         </div>
         <div className="landing-footer-links" data-reveal style={delay(80)}>
           <div><b>{tr('開始', 'Start')}</b><button type="button" onClick={onStart}>{tr('月球', 'Moon')}</button><button type="button" onClick={onStartMars}>{tr('火星', 'Mars')}</button></div>
-          <div><b>{tr('了解', 'Learn')}</b><a href={method}>{tr('方法與原理', 'Methods')}</a><a href={paper}>{tr('論文全文', 'Full paper')}</a></div>
+          <div><b>{tr('了解', 'Learn')}</b><a href={method}>{tr('方法與原理', 'Methods')}</a></div>
           <div><b>NASA</b><a href="https://science.nasa.gov/solar-system/analog-explorer/" target="_blank" rel="noreferrer">Planetary Analog Explorer</a><a href="https://www.nasa.gov/analog-missions/" target="_blank" rel="noreferrer">Analog Missions</a></div>
           <div><b>{tr('資料', 'Data')}</b><a href="https://svs.gsfc.nasa.gov/4720/" target="_blank" rel="noreferrer">{tr('月球貼圖（SVS）', 'Moon maps (SVS)')}</a><a href="https://maps.jpl.nasa.gov/tmaps/mars.html" target="_blank" rel="noreferrer">{tr('火星貼圖（JPL）', 'Mars maps (JPL)')}</a></div>
         </div>
