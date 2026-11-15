@@ -4,14 +4,38 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import { useFlatView, ViewToggle, FlatTerrain } from './flat_view.jsx'
 import { renderGate } from './render_gate.js'
 
+// Phones (touch, small shared GPU memory): lighter comparison views. Framebuffers at <= 1.5x instead of the DPR 3
+// screen, meshes <= 256 x 256, textures <= 1024 px. Desktop keeps <= 2x, 512 and 2048.
+const coarse = typeof matchMedia !== 'undefined' && matchMedia('(hover: none) and (pointer: coarse)').matches
+const LIMIT = coarse ? { ratio: 1.5, mesh: 256, texture: 1024 } : { ratio: 2, mesh: 512, texture: 2048 }
+// The DEM grid at no more than LIMIT.mesh points a side (nearest sample; the comparison views are small).
+function meshGrid(terrain) {
+  const n = terrain.size
+  if (n <= LIMIT.mesh) return { count: n, heights: terrain.heights_m }
+  const m = LIMIT.mesh, heights = new Array(m * m)
+  for (let r = 0; r < m; r++) for (let c = 0; c < m; c++) {
+    heights[r * m + c] = terrain.heights_m[Math.round(r * (n - 1) / (m - 1)) * n + Math.round(c * (n - 1) / (m - 1))]
+  }
+  return { count: m, heights }
+}
+// Panels build one at a time (each on its own frame), so two views never allocate their GPU resources at once.
+let buildQueue = Promise.resolve()
+
 export function TerrainView({ terrain, tone = 'moon', label, wireframe = false, textureUrl = null, textureCredit = '', heightScaleM = null, cameraSync = null, onExplore = null }) {
   const host = useRef(null)
   const exploreRef = useRef(onExplore)
   exploreRef.current = onExplore
   const [flat,setFlat]=useFlatView()
   const [textureState, setTextureState] = useState(textureUrl ? 'loading' : 'none')
+  const [lostNote, setLostNote] = useState(false)
   useEffect(() => {
     if (!host.current || !terrain || flat) return
+    let cleanup = null, cancelled = false
+    buildQueue = buildQueue.then(() => new Promise(resolve => requestAnimationFrame(() => {
+      try { if (!cancelled && host.current) cleanup = build() } finally { resolve() }
+    })))
+    return () => { cancelled = true; cleanup?.() }
+  function build() {
     setTextureState(textureUrl ? 'loading' : 'none')
     const width = host.current.clientWidth
     const height = host.current.clientHeight
@@ -19,20 +43,21 @@ export function TerrainView({ terrain, tone = 'moon', label, wireframe = false, 
     const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 100)
     camera.position.set(2.7, 2.6, 3.1)
     let renderer
-    try {renderer = new THREE.WebGLRenderer({ antialias: window.devicePixelRatio < 2, alpha: true })} catch {setFlat(true);return}
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    try {renderer = new THREE.WebGLRenderer({ antialias: window.devicePixelRatio < 2, alpha: true })} catch {setFlat(true);return null}
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, LIMIT.ratio))
     renderer.setSize(width, height)
     // Static scene: render on demand (camera moves, texture arrives, resize), not every frame.
     let dirty = true, onScreen = true
     const visibility = new IntersectionObserver(entries => { onScreen = entries[0]?.isIntersecting ?? true; dirty = true }, { threshold: 0.01 })
     visibility.observe(host.current)
-    renderer.domElement.addEventListener('webglcontextlost', event=>{event.preventDefault();setFlat(true)}, {once:true})
+    // The browser took the context back (low graphics memory): fall back to the 2D view and say why.
+    const onLost = event=>{event.preventDefault();setLostNote(true);setFlat(true)}
+    renderer.domElement.addEventListener('webglcontextlost', onLost, {once:true})
     renderer.outputColorSpace = THREE.SRGBColorSpace
     host.current.appendChild(renderer.domElement)
-    const count = terrain.size
+    const { count, heights } = meshGrid(terrain)
     const geometry = new THREE.PlaneGeometry(3.2, 3.2, count - 1, count - 1)
     const pos = geometry.attributes.position
-    const heights = terrain.heights_m
     const maxAbs = heightScaleM || Math.max(300, ...heights.map(Math.abs))
     const colors = []
     const low = new THREE.Color(tone === 'shape' ? '#344349' : tone === 'moon' ? '#263a46' : tone === 'mars' ? '#572d2b' : '#215256')
@@ -55,6 +80,13 @@ export function TerrainView({ terrain, tone = 'moon', label, wireframe = false, 
       new THREE.TextureLoader().load(textureUrl, loaded => {
         if (disposed) { loaded.dispose(); return }
         imageTexture = loaded
+        const img = loaded.image
+        if (img && Math.max(img.width, img.height) > LIMIT.texture) {
+          const k = LIMIT.texture / Math.max(img.width, img.height), cv = document.createElement('canvas')
+          cv.width = Math.round(img.width * k); cv.height = Math.round(img.height * k)
+          cv.getContext('2d').drawImage(img, 0, 0, cv.width, cv.height)
+          imageTexture.image = cv
+        }
         imageTexture.colorSpace = THREE.SRGBColorSpace
         imageTexture.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy())
         mesh.material.map = imageTexture
@@ -149,8 +181,12 @@ export function TerrainView({ terrain, tone = 'moon', label, wireframe = false, 
       geometry.dispose(); mesh.material.dispose()
       if (imageTexture) imageTexture.dispose()
       if (meshLines) { meshLines.geometry.dispose(); meshLines.material.dispose() }
-      renderer.dispose(); renderer.domElement.remove()
+      // Release the GPU context now rather than at garbage collection: every view switch builds new ones, and on a
+      // phone the stale contexts still hold graphics memory when the explorer opens. (Not a loss to fall back from.)
+      renderer.domElement.removeEventListener('webglcontextlost', onLost)
+      renderer.dispose(); renderer.forceContextLoss(); renderer.domElement.remove()
     }
+  }
   }, [terrain, tone, wireframe, textureUrl, heightScaleM, cameraSync, flat])
   return (
     <div className="terrain-viewport flat-capable-view">
@@ -170,6 +206,7 @@ export function TerrainView({ terrain, tone = 'moon', label, wireframe = false, 
         ref={host}
         aria-label={flat ? label?.replace(/(?:DEM )?三維重建|實測地形/g, 'DEM 平面高程') : label}
       >
+        {flat && lostNote && <p className="terrain-lost-note" role="status">3D 繪圖資源不足，已改為平面顯示。</p>}
         {flat && (
           <FlatTerrain
             terrain={terrain}

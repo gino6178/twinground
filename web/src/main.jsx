@@ -111,7 +111,8 @@ function MoonGlobe({ selected, onPick, onHover, onDraft, mode = 'rotate', sizeKm
     const mobileRenderer = window.matchMedia('(max-width: 700px)').matches
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, mobileRenderer ? 1.35 : 2))
     renderer.setSize(width, height)
-    renderer.domElement.addEventListener('webglcontextlost', event=>{event.preventDefault();setFlat(true)}, {once:true})
+    const onLost = event=>{event.preventDefault();setFlat(true)}
+    renderer.domElement.addEventListener('webglcontextlost', onLost, {once:true})
     renderer.outputColorSpace = THREE.SRGBColorSpace
     host.current.appendChild(renderer.domElement)
     const light = new THREE.DirectionalLight(0xf8eee0, 3.6)
@@ -321,7 +322,9 @@ function MoonGlobe({ selected, onPick, onHover, onDraft, mode = 'rotate', sizeKm
       viewRef.current = null
       markerRef.current=null;frameRef.current=null;fillRef.current=null;groupRef.current=null
       scene.traverse(obj => { if (obj.geometry) obj.geometry.dispose(); if (obj.material) obj.material.dispose() })
-      color.dispose(); heightMap?.dispose(); renderer.dispose()
+      // Free the GPU context now, not at garbage collection (phones run short when the 3D explorer opens later).
+      renderer.domElement.removeEventListener('webglcontextlost', onLost)
+      color.dispose(); heightMap?.dispose(); renderer.dispose(); renderer.forceContextLoss()
       renderer.domElement.remove()
     }
   }, [compact, body, flat])
@@ -1448,4 +1451,19 @@ function App() {
   )
 }
 
-createRoot(document.getElementById('root')).render(<App />)
+// An error nothing else catches would unmount the whole app and leave a black page: show it, with a way to reload.
+class AppBoundary extends React.Component {
+  constructor(props) { super(props); this.state = { error: null } }
+  static getDerivedStateFromError(error) { return { error } }
+  componentDidCatch(error, info) { console.error('[app]', error, info?.componentStack) }
+  render() {
+    if (!this.state.error) return this.props.children
+    return <div className="app-crash" role="alert">
+      <p>載入出了問題，頁面無法顯示。</p>
+      <small>{String(this.state.error?.message || this.state.error).slice(0, 240)}</small>
+      <button type="button" onClick={() => window.location.reload()}>重新載入</button>
+    </div>
+  }
+}
+
+createRoot(document.getElementById('root')).render(<AppBoundary><App /></AppBoundary>)

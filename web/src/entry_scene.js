@@ -220,7 +220,9 @@ export function createEntryScene({ container, onHover, onPick, reducedMotion = f
       renderer.domElement.removeEventListener('pointermove', onMove)
       renderer.domElement.removeEventListener('pointerdown', onDown)
       renderer.domElement.removeEventListener('pointerup', onUp)
-      disposables.forEach(x => x.dispose?.()); renderer.dispose(); renderer.domElement.remove()
+      // forceContextLoss frees the GPU context now; otherwise it (and its 2048 x 1024 textures) lingers until garbage
+      // collection while the results page and the 3D views build theirs.
+      disposables.forEach(x => x.dispose?.()); renderer.dispose(); renderer.forceContextLoss(); renderer.domElement.remove()
     },
   }
 }

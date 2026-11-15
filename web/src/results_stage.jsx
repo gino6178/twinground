@@ -57,7 +57,7 @@ function EarthCandidates({ matches, activeId, onActive }) {
     camera.position.set(0, 0.6, 4.3)
     let renderer
     try {renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true })} catch {setRenderError(true);setFlat(true);return}
-    renderer.setPixelRatio(Math.min(devicePixelRatio, 1.7))
+    renderer.setPixelRatio(Math.min(devicePixelRatio, matchMedia('(hover: none) and (pointer: coarse)').matches ? 1.5 : 1.7))
     renderer.domElement.addEventListener('webglcontextlost', event=>{event.preventDefault();setFlat(true)}, {once:true})
     renderer.outputColorSpace = THREE.SRGBColorSpace
     element.appendChild(renderer.domElement)

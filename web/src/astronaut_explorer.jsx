@@ -103,7 +103,28 @@ function Joystick({ engine }) {
   </div>
 }
 
-export default function AstronautExplorer({ target, earth, initialWorld = 'target', onClose }) {
+// A failure inside the explorer must not take the page with it: with no boundary React unmounts the whole app and
+// leaves a black screen. Show what failed instead, with the way back.
+function ExplorerFailed({ error, onClose }) {
+  const lang = useLanguage()
+  const tr = (zh, en) => lang === 'en' ? en : zh
+  return createPortal(<div className="eva" role="dialog" aria-modal="true" aria-label={tr('太空人地形探索', 'Astronaut terrain exploration')}>
+    <div className="eva-error" role="alert"><p>{tr('探索場景發生錯誤，無法繼續。', 'The exploration scene stopped with an error.')}</p>
+      <p><small>{String(error?.message || error).slice(0, 200)}</small></p>
+      <button type="button" onClick={onClose}>{tr('返回地形比較', 'Back to comparison')}</button></div>
+  </div>, document.body)
+}
+class ExplorerBoundary extends React.Component {
+  constructor(props) { super(props); this.state = { error: null } }
+  static getDerivedStateFromError(error) { return { error } }
+  componentDidCatch(error) { console.error('[explorer]', error) }
+  render() { return this.state.error ? <ExplorerFailed error={this.state.error} onClose={this.props.onClose} /> : this.props.children }
+}
+export default function AstronautExplorer(props) {
+  return <ExplorerBoundary onClose={props.onClose}><Explorer {...props} /></ExplorerBoundary>
+}
+
+function Explorer({ target, earth, initialWorld = 'target', onClose }) {
   const lang = useLanguage()
   const tr = (zh, en) => lang === 'en' ? en : zh
   const dialog = useRef(null), host = useRef(null), map = useRef(null), engine = useRef(null), toastTimer = useRef(0)
@@ -206,7 +227,12 @@ export default function AstronautExplorer({ target, earth, initialWorld = 'targe
 
   useEffect(() => {
     if (!assets) return undefined
-    let created, timer = 0
+    let created, timer = 0, lostCanvas = null
+    const onLost = event => {
+      event.preventDefault()
+      console.warn('[explorer] WebGL context lost')
+      setError(trRef.current('手機收回了 3D 場景的繪圖記憶體，場景無法繼續繪製。', 'The device took back the 3D scene’s graphics memory, so the scene stopped drawing.'))
+    }
     // Let the loading screen paint its "building terrain" step before the synchronous scene build.
     const frameId = requestAnimationFrame(() => { timer = window.setTimeout(() => {
       try {
@@ -219,11 +245,14 @@ export default function AstronautExplorer({ target, earth, initialWorld = 'targe
         })
         engine.current = created
         for (const [k, d] of Object.entries(lateDetails.current)) created.setDetail(k, d)
+        // Phones can reclaim the GPU context (low graphics memory); the canvas then stays black. Say so instead.
+        lostCanvas = host.current?.querySelector('canvas')
+        lostCanvas?.addEventListener('webglcontextlost', onLost)
       } catch (err) {
         setError(trRef.current('此裝置無法建立 3D 場景（WebGL 不可用）。', 'This device cannot create the 3D scene (WebGL unavailable).'))
       }
     }, 30) })
-    return () => { cancelAnimationFrame(frameId); window.clearTimeout(timer); window.clearTimeout(toastTimer.current); created?.dispose(); engine.current = null }
+    return () => { lostCanvas?.removeEventListener('webglcontextlost', onLost); cancelAnimationFrame(frameId); window.clearTimeout(timer); window.clearTimeout(toastTimer.current); created?.dispose(); engine.current = null }
     // The scene is created once per opening; candidate changes close the explorer first.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [assets])

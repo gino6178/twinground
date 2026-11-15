@@ -117,7 +117,10 @@ export default function AssistantWidget({ searchData, activeId, onResults, open,
     const raf = requestAnimationFrame(toNewest)
     return () => cancelAnimationFrame(raf)
   }, [log, busy, open])
-  useEffect(() => { if (open) inputRef.current?.focus() }, [open])
+  // A phone opened by the mission (not by a tap) gets no focus: an unrequested keyboard would shift the fixed panel
+  // and cover half of it.
+  const noFocus = useRef(false)
+  useEffect(() => { if (open && !noFocus.current) inputRef.current?.focus(); noFocus.current = false }, [open])
 
   // The input grows with its text up to about four lines, then scrolls.
   useLayoutEffect(() => {
@@ -162,7 +165,7 @@ export default function AssistantWidget({ searchData, activeId, onResults, open,
   useEffect(() => {
     const onMission = e => {
       const d = e.detail || {}
-      if (d.type === 'prefill') { setOpen(true); setDraft(d.text || '') }
+      if (d.type === 'prefill') { noFocus.current = matchMedia('(hover: none) and (pointer: coarse)').matches; setOpen(true); setDraft(d.text || '') }
       if (d.type === 'send') sendRef.current?.(d.text)
     }
     window.addEventListener('twinground:assistant', onMission)

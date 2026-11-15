@@ -613,6 +613,10 @@ html[lang=en] .analog-target select{max-width:100%}
 .terrain-explore-hint{position:absolute;z-index:7;left:50%;top:50%;transform:translate(-50%,-50%);padding:8px 12px;border-radius:999px;background:#131313cc;border:1px solid #f8f8f866;color:#ffffff;font-size:14px;pointer-events:none;opacity:0;transition:opacity .2s}
 .terrain-viewport:hover .terrain-explore-hint{opacity:1}
 @media (hover:none){.terrain-explore-hint{display:none}}
+.terrain-lost-note{position:absolute;z-index:7;left:10px;right:10px;top:10px;margin:0;padding:6px 10px;border-radius:8px;background:#131313e6;color:#e8e8e8;font-size:14px;pointer-events:none}
+.app-crash{position:fixed;inset:0;z-index:3000;display:grid;place-content:center;gap:14px;padding:24px;text-align:center;background:#040404;color:#e8e8e8;font:15px/1.5 var(--font-ui)}
+.app-crash small{color:#a5a5a5;overflow-wrap:anywhere}
+.app-crash button{justify-self:center;min-height:44px;padding:0 20px;border:1px solid #ffffff4d;border-radius:10px;background:#f2f2f2;color:#0b0b0b;font:700 15px var(--font-ui);cursor:pointer}
 .eva-boot{position:fixed;inset:0;z-index:2000;display:grid;place-content:center;background:#040404;color:#c2c2c2;font-size:14px}
 .lavatube-panel{margin:18px 0;padding:18px 20px;border:1px solid rgba(255,170,90,.28);border-radius:14px;background:linear-gradient(180deg,rgba(255,140,60,.07),rgba(255,255,255,.02))}
 .lavatube-head h2{margin:4px 0 6px;font-size:1.25rem}

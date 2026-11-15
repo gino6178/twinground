@@ -279,7 +279,7 @@ function placeCallout(rect, avoid, w0, h0, coverTarget) {
   const cx = rect.left + rect.width / 2, cy = rect.top + rect.height / 2
   const near = [], free = []
   for (const w of [...new Set([w0, Math.round(Math.min(w0, Math.max(220, W * 0.6)))])]) {
-    const h = Math.round(h0 * w0 / w)
+    const h = heightAt(h0, w0, w)
     const x = Math.max(pad, Math.min(W - w - pad, cx - w / 2))
     const yMid = Math.max(pad, Math.min(H - h - pad, cy - h / 2))
     near.push({ mode: 'below', x, y: rect.top + rect.height + gap, w, h }, { mode: 'above', x, y: rect.top - gap - h, w, h },
@@ -291,17 +291,31 @@ function placeCallout(rect, avoid, w0, h0, coverTarget) {
   const ok = [...near, ...free.sort((a, b) => dist(a) - dist(b))].filter(fits)
   return ok.find(c => hit(c) < 1)
     || ok.reduce((best, c) => (!best || hit(c) < hit(best) ? c : best), null)
-    || { mode: 'free', x: pad, y: pad, w: w0, h: h0 }
+    || { mode: 'free', x: pad, y: pad, w: w0, h: heightAt(h0, w0, w0) }
+}
+// Callout height at width w: measured at that width when known, else scaled from a known one (text reflows).
+function heightAt(heights, w0, w) {
+  if (heights[w]) return heights[w]
+  const [kw, kh] = Object.entries(heights).map(([k, v]) => [Number(k), v])[0] || [w0, 240]
+  return Math.round(kh * kw / w)
 }
 function Callout({ rect, avoid, coverTarget, ch, title, text, action, onAct, waiting, muted, onMute, onQuit }) {
   const ref = useRef(null)
-  const [h, setH] = useState(240)
+  // Measured heights by width. A single height stored without its width looped: the narrow placement measured taller,
+  // which was read as the wide height and scaled up again, so placement flipped wide/narrow on every layout and React
+  // stopped it with error #185 (seen on iPhone Safari's short viewport, at the agent step).
+  const [heights, setHeights] = useState({})
   const [, setTick] = useState(0)
-  useLayoutEffect(() => { const n = ref.current?.offsetHeight; if (n && Math.abs(n - h) > 2) setH(n) })
+  useLayoutEffect(() => {
+    const el = ref.current, n = el?.offsetHeight, w = Math.round(el?.offsetWidth || 0)
+    if (n && w && !(Math.abs((heights[w] || 0) - n) <= 2)) setHeights(prev => ({ ...prev, [w]: n }))
+  })
+  // The text changes between steps: start measuring again.
+  useEffect(() => { setHeights({}) }, [title, text])
   // Panels can open or move around the callout without the target moving (a scan result, the agent's answer).
   useEffect(() => { const id = window.setInterval(() => setTick(t => t + 1), 500); return () => window.clearInterval(id) }, [])
   const w0 = Math.min(400, window.innerWidth - 24)
-  const at = placeCallout(rect, avoid(), w0, h, coverTarget)
+  const at = placeCallout(rect, avoid(), w0, heights, coverTarget)
   const arrowX = Math.max(24, Math.min(at.w - 24, rect.left + rect.width / 2 - at.x))
   return <section ref={ref} className={`mt-callout is-${at.mode}`} style={{ top: at.y, left: at.x, width: at.w, '--arrow-x': `${arrowX}px` }} aria-live="polite" aria-label="Mission objective">
     <Head ch={ch} muted={muted} onMute={onMute} onQuit={onQuit} />
