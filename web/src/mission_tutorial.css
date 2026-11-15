@@ -1,23 +1,23 @@
 /* Game mode intro video */
 .mt-intro{position:fixed;inset:0;z-index:2200;display:grid;place-items:center;background:#000;animation:mt-fade .4s ease both}
 .mt-intro video{width:100%;height:100%;object-fit:contain;background:#000}
-.mt-intro video::cue{font:600 24px/1.4 Manrope,system-ui,sans-serif;color:#fff;background:#000000b3}
+.mt-intro video::cue{font:600 24px/1.4 var(--font-ui);color:#fff;background:#000000b3}
 .mt-intro-bar{position:fixed;top:max(16px,env(safe-area-inset-top));right:16px;display:flex;gap:10px}
-.mt-intro-bar button{min-height:48px;padding:0 20px;border-radius:10px;font:700 16px/1 Manrope,system-ui,sans-serif;cursor:pointer}
-.mt-intro-play{position:fixed;min-height:60px;padding:0 32px;border:1px solid #fff;border-radius:12px;background:#f2f2f2;color:#0b0b0b;font:800 20px/1 Manrope,system-ui,sans-serif;cursor:pointer}
+.mt-intro-bar button{min-height:48px;padding:0 20px;border-radius:10px;font:700 16px/1 var(--font-ui);cursor:pointer}
+.mt-intro-play{position:fixed;min-height:60px;padding:0 32px;border:1px solid #fff;border-radius:12px;background:#f2f2f2;color:#0b0b0b;font:800 20px/1 var(--font-ui);cursor:pointer}
 /* Captions drawn by the page (the native track is hidden): they wrap inside the screen on any phone. */
-.mt-cap{position:fixed;left:50%;bottom:calc(max(24px,env(safe-area-inset-bottom)) + 4vh);translate:-50% 0;width:max-content;max-width:min(900px,calc(100vw - 32px));margin:0;padding:8px 14px;border-radius:8px;background:#000000b3;color:#fff;font:600 24px/1.4 Manrope,system-ui,sans-serif;text-align:center;white-space:pre-line;overflow-wrap:anywhere;pointer-events:none}
+.mt-cap{position:fixed;left:50%;bottom:calc(max(24px,env(safe-area-inset-bottom)) + 4vh);translate:-50% 0;width:max-content;max-width:min(900px,calc(100vw - 32px));margin:0;padding:8px 14px;border-radius:8px;background:#000000b3;color:#fff;font:600 24px/1.4 var(--font-ui);text-align:center;white-space:pre-line;overflow-wrap:anywhere;pointer-events:none}
 @media (max-width:640px){.mt-intro video::cue{font-size:16px}.mt-cap{font-size:17px;padding:6px 10px;max-width:calc(100vw - 24px)}.mt-intro-bar{right:12px}.mt-intro-bar button{min-height:44px;padding:0 16px;font-size:15px}}
 
 /* Mission tutorial (mission_tutorial.jsx). Every mission surface (briefing, done card, callouts, side card) shares
    one see-through glass look so the page or the 3D scene shows behind it. Large type throughout: nothing under 14px.
    Above the explorer (z 2000); inside 3D the mission renders within the explorer's dialog. */
-.mt-brief,.mt-callout,.mt-objective{border:1px solid #ffffff24;background:#0a0a0a8c;color:#ededed;box-shadow:0 12px 30px #0006;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-family:Manrope,system-ui,sans-serif}
+.mt-brief,.mt-callout,.mt-objective{border:1px solid #ffffff24;background:#0a0a0a8c;color:#ededed;box-shadow:0 12px 30px #0006;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-family:var(--font-ui)}
 .mt-brief p,.mt-callout p,.mt-objective p,.mt-brief h2,.mt-callout h2,.mt-objective h2,.mt-kicker,.mt-route li,.mt-learned li,.mt-tasks li{text-shadow:0 1px 2px #000}
 
 .mt-backdrop{position:fixed;inset:0;z-index:2100;display:grid;place-items:center;padding:16px;background:#0000008c;animation:mt-fade .3s ease both}
 .mt-brief{width:min(560px,100%);max-height:calc(100svh - 32px);overflow:auto;padding:26px;border-radius:18px;animation:mt-rise .4s cubic-bezier(.22,1,.36,1) both}
-.mt-kicker{display:inline-flex;align-items:center;gap:8px;font:600 15px/1.2 Manrope,system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#d0d0d0}
+.mt-kicker{display:inline-flex;align-items:center;gap:8px;font:600 15px/1.2 var(--font-ui);letter-spacing:.04em;text-transform:uppercase;color:#d0d0d0}
 .mt-brief h2{margin:14px 0 12px;font-size:clamp(26px,5vw,32px);line-height:1.15;color:#fff}
 .mt-brief p{margin:0 0 12px;font-size:18px;line-height:1.6;color:#e4e4e4}
 .mt-brief b{color:#fff}
@@ -28,9 +28,9 @@
 .mt-learned li{display:flex;align-items:center;gap:10px;font-size:17px;color:#ececec}
 .mt-learned li span{flex:1}
 .mt-learned svg{color:#9ee6a8;flex:none}
-.mt-learned kbd{flex:none;padding:3px 7px;border:1px solid #ffffff40;border-radius:6px;font:600 14px/1 'DM Mono',ui-monospace,monospace}
+.mt-learned kbd{flex:none;padding:3px 7px;border:1px solid #ffffff40;border-radius:6px;font:600 14px/1 var(--font-mono)}
 .mt-buttons{display:flex;justify-content:flex-end;gap:10px;margin-top:22px;flex-wrap:wrap}
-.mt-buttons button{min-height:52px;padding:0 24px;border-radius:10px;font:700 17px/1 Manrope,system-ui,sans-serif;cursor:pointer}
+.mt-buttons button{min-height:52px;padding:0 24px;border-radius:10px;font:700 17px/1 var(--font-ui);cursor:pointer}
 /* Mission buttons share the glass look: see-through fill, bright border, bold white text. Selectors are doubled up so
    the explorer's own button styles (inside 3D) never win, and no state can turn into white on white. */
 body button.mt-primary,body button.mt-act{-webkit-appearance:none;appearance:none;border:2px solid #9ee6a8;background:#ffffff14;color:#fff;font-weight:800;text-shadow:0 1px 2px #000;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:background-color .2s,border-color .2s}
@@ -48,6 +48,8 @@ body button.mt-secondary:hover{background:#ffffff1f;border-color:#fff}
 .mt-objective p{margin:0;font-size:17px;line-height:1.5;color:#e4e4e4}
 /* In 3D: under the toolbar (its height is measured at runtime into --mt-eva-top) and above the minimap. */
 .mt-objective.is-eva{top:var(--mt-eva-top,72px);left:auto;right:16px;translate:none;width:min(340px,calc(100vw - 32px));max-height:calc(100% - var(--mt-eva-top,72px) - 230px);overflow:auto;padding:12px 14px 14px}
+/* Methods step with the paper open: the card moves to the bottom-right corner so the paper stays readable. */
+.mt-objective.is-corner{top:auto;bottom:24px;left:auto;right:24px;translate:none;width:min(380px,calc(100vw - 32px))}
 .mt-objective.is-eva h2{font-size:20px;margin:6px 0 4px}
 .mt-objective.is-eva p{font-size:16px}
 .mt-quit{display:grid;place-items:center;width:40px;height:40px;margin:-8px -8px 0 0;border:0;border-radius:10px;background:none;color:#e0e0e0;cursor:pointer}
@@ -56,7 +58,7 @@ body button.mt-secondary:hover{background:#ffffff1f;border-color:#fff}
 .mt-tasks li{display:flex;align-items:center;gap:12px;min-height:34px;padding:4px 10px;border-radius:10px;font-size:16px;color:#d2d2d2;transition:background .25s,color .25s}
 .mt-tasks li.is-now{background:#ffffff1f;color:#fff;font-weight:700}
 .mt-tasks li.is-done{color:#9ee6a8}
-.mt-tasks kbd{margin-left:auto;padding:4px 8px;border:1px solid #ffffff40;border-radius:6px;font:600 14px/1 'DM Mono',ui-monospace,monospace;color:inherit}
+.mt-tasks kbd{margin-left:auto;padding:4px 8px;border:1px solid #ffffff40;border-radius:6px;font:600 14px/1 var(--font-mono);color:inherit}
 .mt-check{display:grid;place-items:center;flex:none;width:24px;height:24px;border:2px solid currentColor;border-radius:50%}
 .mt-tasks li.is-done .mt-check{background:#9ee6a8;border-color:#9ee6a8;color:#0b0b0b;animation:mt-pop .35s cubic-bezier(.22,1.6,.36,1)}
 
@@ -67,7 +69,7 @@ body button.mt-secondary:hover{background:#ffffff1f;border-color:#fff}
 .mt-head-tools{display:flex;gap:2px}
 .mt-callout h2{margin:8px 0 6px;font-size:24px;line-height:1.2;color:#fff}
 .mt-callout p{margin:0;font-size:17px;line-height:1.5;color:#e4e4e4}
-body button.mt-act{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 8px;width:100%;min-height:52px;margin-top:14px;padding:8px 14px;border-radius:12px;font:800 19px/1.2 Manrope,system-ui,sans-serif;cursor:pointer}
+body button.mt-act{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 8px;width:100%;min-height:52px;margin-top:14px;padding:8px 14px;border-radius:12px;font:800 19px/1.2 var(--font-ui);cursor:pointer}
 .mt-act-main{font-size:19px;font-weight:800}
 .mt-act-sub{font-size:17px;font-weight:600;color:#e6e6e6}
 .mt-act svg{flex:none}
@@ -85,8 +87,8 @@ body button.mt-act:disabled{border-style:dashed;border-color:#ffffff80;backgroun
 /* Search Candidates (a separate page) shown inside the mission, in the same glass frame. The block dims the page and
    takes its clicks while the frame steps run, so they cannot be passed by accident. */
 .mt-block{position:fixed;inset:0;z-index:2097;background:#00000080}
-body button.mt-open{width:100%;min-height:48px;margin-top:10px;border-radius:12px;font:700 17px/1.2 Manrope,system-ui,sans-serif;cursor:pointer}
-.mt-frame{position:fixed;inset:16px;z-index:2098;display:flex;flex-direction:column;border:1px solid #ffffff24;border-radius:16px;background:#0a0a0a8c;box-shadow:0 12px 30px #0006;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);overflow:hidden;font-family:Manrope,system-ui,sans-serif;animation:mt-rise .35s cubic-bezier(.22,1,.36,1) both}
+body button.mt-open{width:100%;min-height:48px;margin-top:10px;border-radius:12px;font:700 17px/1.2 var(--font-ui);cursor:pointer}
+.mt-frame{position:fixed;inset:16px;z-index:2098;display:flex;flex-direction:column;border:1px solid #ffffff24;border-radius:16px;background:#0a0a0a8c;box-shadow:0 12px 30px #0006;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);overflow:hidden;font-family:var(--font-ui);animation:mt-rise .35s cubic-bezier(.22,1,.36,1) both}
 .mt-frame header{display:flex;align-items:center;gap:12px;padding:10px 14px 10px 18px;color:#fff;text-shadow:0 1px 2px #000}
 .mt-frame header b{font-size:18px}
 .mt-frame header span{flex:1;min-width:0;font-size:15px;color:#d6d6d6}
@@ -109,7 +111,6 @@ body.tw-mission .eva .eva-scan{top:var(--mt-card-bottom,78px);max-height:max(120
   .mt-callout p{font-size:16px}
   body button.mt-act{min-height:50px}
   .mt-act-main{font-size:18px}
-  .mt-callout.is-compact p{display:none}
   /* In 3D the phone screen is crowded: the toolbar wraps at the top, the joystick sits bottom-left and the action
      buttons run up the right edge. The card takes the free left column under the toolbar and shows only the chapter
      and the current task. */
@@ -123,9 +124,10 @@ body.tw-mission .eva .eva-scan{top:var(--mt-card-bottom,78px);max-height:max(120
   .eva-lead{max-width:50%}
   body.tw-mission .eva .eva-telemetry,body.tw-mission .eva .eva-note{display:none}
   /* Scan result: a compact scrolling panel between the card and the joystick, clear of the action buttons. */
-  body.tw-mission .eva .eva-scan{left:10px;right:84px;width:auto;padding:10px 12px}
+  body.tw-mission .eva .eva-scan{left:10px;right:var(--mt-scan-right,84px);width:auto;padding:10px 12px}
   body.tw-mission .eva .eva-scan p{margin:4px 0 6px}
   body.tw-mission .eva .eva-scan small{display:none}
   body.tw-mission .eva .eva-scan th,body.tw-mission .eva .eva-scan td{padding:4px 3px}
 }
 @media (prefers-reduced-motion:reduce){.mt-backdrop,.mt-brief,.mt-objective,.mt-spot,.mt-callout,.mt-tasks li.is-done .mt-check{animation:none}}
+.mt-intro-bar .mt-sound{display:grid;place-items:center;width:48px;padding:0}

@@ -21,6 +21,8 @@
 .fx-counts{display:flex;flex-wrap:wrap;gap:6px 16px;margin:4px 0 0;padding:0;list-style:none;font-size:14px;color:#d6d6d6}
 .fx-counts b{margin-right:3px;font-variant-numeric:tabular-nums;color:#f5f5f5}
 .fx-counts .is-partial b{color:var(--c-partial)}.fx-counts .is-break b{color:var(--c-miss)}.fx-counts .is-unknown b{color:#a3a3a3}
+.fx-counts .is-na b{color:#8a8a8a}
+.fx-count-note{margin:4px 0 0;font-size:12px;color:#a3a3a3}
 .fx-legend{display:flex;align-items:center;gap:6px;margin:0;font-size:14px;color:#a3a3a3}
 .fx-key{display:inline-block;width:18px;height:0;border-top:2px solid #f5f5f5}
 .fx-key.is-ceiling{border-top:2px dashed #8a8a8a;margin-left:10px}

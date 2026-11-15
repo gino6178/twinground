@@ -353,7 +353,7 @@ export default function ResultsStage({ onVisual, onTerrain, data, activeId, onAc
   const moonTextureUrl = isMars ? null : `/api/surface-texture?body=moon&lat=${data.window.lat}&lon=${data.window.lon}&size_km=${data.window.patch_km}`
   const earthTextureUrl = `/api/surface-texture?extent=v2&body=earth&lat=${active.center.latitude}&lon=${active.center.longitude_east}&size_km=${data.window.patch_km}`
   const downloadDossier = () => {
-    const content = candidateDossier({ data, active, rank: data.matches.findIndex(row => row.id === active.id) + 1,
+    const content = candidateDossier({ data, active, placeName: places[active.id]?.[getLanguage() === 'en' ? 1 : 0], rank: data.matches.findIndex(row => row.id === active.id) + 1,
       status, refinedCandidate, refineStatus: refineState[active.id], earthEnvironment, mineralMap, materialModel, marsImagery:isMars?reportImagery:undefined })
     const blob = new Blob([content], { type: 'text/markdown;charset=utf-8' })
     const url = URL.createObjectURL(blob)

@@ -154,7 +154,9 @@ export function createVehicle(template, scene) {
 
   return {
     group, state, eyeOffset: template.eyeOffset || new THREE.Vector3(0, 3.1, 2.4), seat: template.seat || null, length: template.length,
-    place(x, z, yaw, ground) { state.x = x; state.z = z; state.yaw = yaw; state.speed = 0; settle(ground); this.sync() },
+    // A fresh placement starts level: if the ground under the wheels is not known yet (a mesh still streaming), the
+    // tilt from the previous world must not carry over.
+    place(x, z, yaw, ground) { Object.assign(state, { x, z, yaw, speed: 0, steer: 0, pitch: 0, roll: 0, liftVel: 0, slip: 0 }); if (!settle(ground)) { const h = ground(x, z); if (Number.isFinite(h)) state.y = h } this.sync() },
     // Inputs: throttle -1..1, steer -1..1 (positive = left), brake 0/1.
     update(dt, input, ground, { gravity, speedMult = 1, colliders = [], half = Infinity, onDust, onBlocked, terra = null }) {
       const maxSpeed = 3.0 * speedMult, accel = Math.min(0.9, 0.5 * gravity) * (speedMult > 1 ? 15 : 1)

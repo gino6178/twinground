@@ -1,6 +1,8 @@
 import {translate,message,getLanguage} from './i18n/core.js'
 const coord=(v,p,n)=>Math.abs(v).toFixed(1)+'°'+(v>=0?p:n)
 const formatCoord=(lat,lon)=>coord(lat,'N','S')+' · '+coord(lon,'E','W')
+// Flat "key: value; ..." text for a small server object (nested values stay compact JSON), skipping empty fields.
+const fields=o=>!o||typeof o!=='object'?String(o??'—'):Object.entries(o).filter(([,v])=>v!==null&&v!==undefined&&v!=='').map(([k,v])=>`${k.replace(/_/g,' ')}: ${typeof v==='object'?JSON.stringify(v):typeof v==='number'?+v.toFixed(4):v}`).join('; ')||'—'
 
 export function marsImageryEvidence(query,imagery){
   if(query.body!=='mars'||imagery===undefined)return []
@@ -63,10 +65,10 @@ function conditionsSection(active, data, env) {
   ]
 }
 
-export function candidateDossier({ data, active, rank, status, refinedCandidate, refineStatus, earthEnvironment, mineralMap, materialModel, marsImagery, origin = typeof window === "undefined" ? "" : window.location.origin, exportedAt = new Date().toISOString() }) {
+export function candidateDossier({ data, active, placeName, rank, status, refinedCandidate, refineStatus, earthEnvironment, mineralMap, materialModel, marsImagery, origin = typeof window === "undefined" ? "" : window.location.origin, exportedAt = new Date().toISOString() }) {
   const isMars = data.window.body === 'mars'
   const names = [translate('高鈣輝石'), translate('低鈣輝石'), translate('橄欖石'), translate('斜長石')]
-  const minerals = values => names.map((name, index) => message`${name} ${Number(values[index]).toFixed(1)} wt%`).join('；')
+  const minerals = values => names.map((name, index) => message`${name} ${Number(values[index]).toFixed(1)} wt%`).join(getLanguage()==='en' ? '; ' : '；')
   const landforms = active.earth_landform_context
   const catalogLine = (item, kind) => item
     ? message`${kind}：最近已收錄中心 ${item.name}，距候選中心 ${item.distance_km} km；${item.within_search_radius ? translate('在查詢半徑內') : translate('不在查詢半徑內')}。這是目錄點位距離，不是本窗格的地貌標籤。`
@@ -92,8 +94,9 @@ export function candidateDossier({ data, active, rank, status, refinedCandidate,
   if(data.global_visual) queryUrl += `&visual=${data.global_visual.mode || "complete"}`
   const refinedSource = refinedCandidate?.source
   return [
-    message`# TwinGround 候選地點證據摘要：${active.name}`,
+    message`# TwinGround 候選地點證據摘要：${placeName || active.name}`,
     '',
+    ...(placeName && placeName !== active.name ? [getLanguage()==='en' ? `- Index name: ${active.name}` : `- 索引名稱：${active.name}`] : []),
     message`- 匯出時間（UTC）：${exportedAt}`,
     message`- 候選 ID：${active.id}；本次排名：${rank}/${data.matches.length}`,
     message`- 參考窗格：${isMars ? translate('火星') : translate('月球')} ${formatCoord(data.window.lat, data.window.lon)}；${data.window.patch_km} × ${data.window.patch_km} km。`,
@@ -109,6 +112,9 @@ export function candidateDossier({ data, active, rank, status, refinedCandidate,
     ...(data.stored_dem_quality_gate ? [getLanguage()==='en' ? `- Stored local DEM eligibility: ${data.stored_dem_quality_gate.excluded_local_windows}/${data.stored_dem_quality_gate.checked_local_windows} local windows excluded for missing source pixels or edge clamping. Policy: ${data.stored_dem_quality_gate.version}.` : `- 舊局部DEM篩選：${data.stored_dem_quality_gate.checked_local_windows}個窗格中，${data.stored_dem_quality_gate.excluded_local_windows}個因來源缺值或邊界裁切而排除。規則版本：${data.stored_dem_quality_gate.version}。`] : []),
     ...(data.global_dem_quality_gate ? [getLanguage()==='en' ? `- Stored global ETOPO eligibility: ${data.global_dem_quality_gate.excluded_global_windows}/${data.global_dem_quality_gate.checked_global_windows} windows excluded. Policy: ${data.global_dem_quality_gate.version}; audit SHA256: ${data.global_dem_quality_gate.audit_sha256}. Stored pixels and bounds only; original sensor coverage, geolocation and terrain material are not validated.` : `- 全球ETOPO篩選：${data.global_dem_quality_gate.checked_global_windows}個窗格中排除${data.global_dem_quality_gate.excluded_global_windows}個。規則版本：${data.global_dem_quality_gate.version}；稽核SHA256：${data.global_dem_quality_gate.audit_sha256}。僅核對儲存像元及邊界，未驗證原始感測器覆蓋率、定位或地表材質。`] : []),
     message`- 地球高解析重建：${refinedCandidate ? message`${refinedSource?.dataset || 'Copernicus GLO-90'}；${refinedSource?.resolution_note || translate('約 90 m')}；來源 ${refinedSource?.source_url || translate('未提供')}。` : refineStatus === 'loading' || !refineStatus ? translate('載入中；請稍後重新下載。') : translate('未取得，畫面使用粗篩格網。')} 高解析重建不改變粗篩排名。`,
+    getLanguage()==='en'
+      ? `- DEM spacings differ by use: the search grid is the screening DEM above (${data.window.sampling?.source_grid_north_south_spacing_m ? `query side about ${Math.round(data.window.sampling.source_grid_north_south_spacing_m).toLocaleString('en-US')} m` : 'coarse'}); the Walk-in-3D scene loads a finer DEM for the central ${Math.min(16, data.window.patch_km)} km (${isMars ? 'Mars: HRSC-MOLA blend, 200 m' : 'Moon: SLDEM2015, about 59 m'}; Earth: Copernicus GLO-30 resampled to 40 m).`
+      : `- 不同用途的 DEM 格距不同：搜尋格網為上述粗篩高程；3D 漫步場景另載入中央 ${Math.min(16, data.window.patch_km)} km 的較細 DEM（${isMars ? '火星 HRSC-MOLA 200 m' : '月球 SLDEM2015 約 59 m'}；地球 Copernicus GLO-30 重取樣為 40 m）。`,
     ...(refinedSource?.attribution ? [
       `- ${refinedSource.attribution}`,
       `- ${getLanguage()==='en'?'Copernicus licence and citation':'Copernicus 授權與引用'}: ${refinedSource.license_url}`,
@@ -117,7 +123,8 @@ export function candidateDossier({ data, active, rank, status, refinedCandidate,
     message`- 參考／地球顯示網格 P90–P10 高程起伏：${data.window.terrain.relief_m.toFixed(1)}／${(refinedCandidate?.terrain || active.terrain).relief_m.toFixed(1)} m；視覺垂直比例經放大。`,
     message`- 索引版本：${data.index_provenance?.sha256 || translate('未提供')}`,
     message`- 已載入分頁（相同查詢搭配 offset／limit 重現）：${JSON.stringify(data.loaded_pages || [])}`,
-    ...(data.global_visual ? [`- Global visual index / ranking: ${JSON.stringify(data.global_visual)}`, `- Candidate image sample: ${JSON.stringify(active.visual_similarity || null)}`] : []),
+    ...(data.global_visual ? [`- Global visual index / ranking: ${fields(data.global_visual)}`,
+      ...(active.visual_similarity?.available ? [`- Candidate image sample: ${fields(active.visual_similarity)}`] : [getLanguage()==='en' ? '- Candidate image sample: not available for this candidate.' : '- 候選影像樣本：此候選沒有資料。'])] : []),
     (getLanguage()==='en' && data.context_ranking?.target?.rock_label ? message`- 聯合評分設定（rock_label 以英文顯示）：${JSON.stringify({...data.context_ranking, target: {...data.context_ranking.target, rock_label: translate(data.context_ranking.target.rock_label, 'en')}})}` : message`- 聯合評分設定：${JSON.stringify(data.context_ranking || null)}`),
     message`- 參考高程來源：${isMars ? data.mars_reference?.source_page || 'USGS MOLA/HRSC' : status?.source_moon || 'https://svs.gsfc.nasa.gov/4720/'}。此處「重建」是 DEM 網格化視圖，不是獨立的高解析攝影測量。`,
     ...(isMars ? [] : [message`- 月球視覺材質：NASA SVS LROC color mosaic（https://svs.gsfc.nasa.gov/4720/），有覆蓋的位置加入 LROC WAC 643 nm 局部亮度細節（https://data.lroc.im-ldi.com/lroc/view_rdr/WAC_HAPKE）。它是軌道反射影像，不是礦物比例。`]),

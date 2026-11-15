@@ -6,13 +6,16 @@
 // is scrolled out of view. With prefers-reduced-motion the rain is drawn once as a still frame and nothing flickers.
 import React, { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { ArrowDown } from 'lucide-react'
+import { ArrowDown, Volume2, VolumeX } from 'lucide-react'
+import { useGameSound } from './mission_tutorial.jsx'
 import './mission_start.css'
 
 const GLYPHS = '0123456789ABCDEF<>/=+*#'
 const hex = n => Math.floor(Math.random() * 16 ** n).toString(16).toUpperCase().padStart(n, '0')
 const pick = s => s[Math.floor(Math.random() * s.length)]
-const GREEN = '#00ff41'
+const MINT = '#9ee6a8' // the app's accent (Game mode "Next" border)
+const GREY = '#acacac' // app ink-3, for the hex blips
+const BG = '#040404' // app background
 const FLASH_MS = 520
 
 function runScreen({ section, rain, arc, wrap, state, readouts }) {
@@ -34,8 +37,8 @@ function runScreen({ section, rain, arc, wrap, state, readouts }) {
     cols = Array.from({ length: n }, () => ({
       on: Math.random() < density, y: Math.random() * (h / rowH), v: 0.25 + Math.random() * 0.55, row: -1,
     }))
-    rctx.fillStyle = '#000'; rctx.fillRect(0, 0, w, h)
-    rctx.font = `500 ${mobile ? 16 : 15}px 'DM Mono', ui-monospace, monospace`
+    rctx.fillStyle = BG; rctx.fillRect(0, 0, w, h)
+    rctx.font = `500 ${mobile ? 16 : 15}px "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace`
     rctx.textAlign = 'center'; rctx.textBaseline = 'top'
     const b = wrap.getBoundingClientRect()
     M = 22; aw = b.width + 2 * M; ah = b.height + 2 * M
@@ -47,17 +50,17 @@ function runScreen({ section, rain, arc, wrap, state, readouts }) {
 
   // A still frame for reduced motion: scattered dim glyphs, no movement.
   const still = () => {
-    rctx.fillStyle = '#000'; rctx.fillRect(0, 0, w, h)
+    rctx.fillStyle = BG; rctx.fillRect(0, 0, w, h)
     for (let x = 0; x < w; x += colW) for (let y = 0; y < h; y += rowH) {
-      if (Math.random() < 0.18) { rctx.globalAlpha = 0.08 + Math.random() * 0.25; rctx.fillStyle = GREEN; rctx.fillText(pick(GLYPHS), x + colW / 2, y) }
+      if (Math.random() < 0.18) { rctx.globalAlpha = 0.08 + Math.random() * 0.25; rctx.fillStyle = MINT; rctx.fillText(pick(GLYPHS), x + colW / 2, y) }
     }
     rctx.globalAlpha = 1
   }
 
   const drawRain = () => {
     rctx.globalAlpha = 1
-    rctx.fillStyle = 'rgba(0,0,0,0.075)'; rctx.fillRect(0, 0, w, h)
-    rctx.fillStyle = GREEN
+    rctx.fillStyle = 'rgba(4,4,4,0.075)'; rctx.fillRect(0, 0, w, h)
+    rctx.fillStyle = MINT
     for (let i = 0; i < cols.length; i++) {
       const c = cols[i]
       if (!c.on) continue
@@ -74,7 +77,7 @@ function runScreen({ section, rain, arc, wrap, state, readouts }) {
     if (Math.random() < (mobile ? 0.05 : 0.09)) blips.push({ x: Math.random() * w, y: Math.random() * h, t: Math.random() < 0.5 ? `0x${hex(4)}` : `${hex(2)} ${hex(2)} ${hex(2)}`, life: 6 + Math.floor(Math.random() * 16) })
     for (const b of blips) {
       b.life--
-      if (Math.random() < 0.6) { rctx.globalAlpha = 0.25 + Math.random() * 0.5; rctx.fillText(b.t, b.x, b.y) }
+      if (Math.random() < 0.6) { rctx.globalAlpha = 0.25 + Math.random() * 0.5; rctx.fillStyle = GREY; rctx.fillText(b.t, b.x, b.y); rctx.fillStyle = MINT }
     }
     blips = blips.filter(b => b.life > 0)
     rctx.globalAlpha = 1
@@ -98,15 +101,15 @@ function runScreen({ section, rain, arc, wrap, state, readouts }) {
       const o = (s === 0 || s >= len - 5) ? 0 : (Math.random() * 2 - 1) * amp
       s === 0 ? actx.moveTo(x + nx * o, y + ny * o) : actx.lineTo(x + nx * o, y + ny * o)
     }
-    actx.strokeStyle = GREEN; actx.lineWidth = width; actx.shadowColor = GREEN; actx.shadowBlur = 10; actx.stroke()
-    actx.strokeStyle = '#eaffef'; actx.lineWidth = Math.max(0.6, width / 2.5); actx.shadowBlur = 0; actx.stroke()
+    actx.strokeStyle = MINT; actx.lineWidth = width; actx.shadowColor = MINT; actx.shadowBlur = 6; actx.stroke()
+    actx.strokeStyle = '#f2f2f2'; actx.lineWidth = Math.max(0.6, width / 2.5); actx.shadowBlur = 0; actx.stroke()
     // An occasional branch jumping off the border.
     if (Math.random() < 0.35) {
       const [x, y, nx, ny] = at(t0 + Math.random() * len), reach = 6 + Math.random() * (amp * 3)
       actx.beginPath(); actx.moveTo(x, y)
       actx.lineTo(x + nx * reach * 0.5 + (Math.random() - 0.5) * 8, y + ny * reach * 0.5 + (Math.random() - 0.5) * 8)
       actx.lineTo(x + nx * reach + (Math.random() - 0.5) * 10, y + ny * reach + (Math.random() - 0.5) * 10)
-      actx.strokeStyle = GREEN; actx.lineWidth = 1; actx.shadowBlur = 8; actx.stroke(); actx.shadowBlur = 0
+      actx.strokeStyle = MINT; actx.lineWidth = 1; actx.shadowBlur = 5; actx.stroke(); actx.shadowBlur = 0
     }
   }
   const drawArcs = dt => {
@@ -165,6 +168,7 @@ export function MissionStart({ onStart, skipTo = 'landing-hero' }) {
   const section = useRef(null), rain = useRef(null), arc = useRef(null), wrap = useRef(null)
   const state = useRef({ hover: false, launch: false }), readouts = useRef({})
   const [phase, setPhase] = useState('idle') // idle -> launching -> gone
+  const [sound, setSound] = useGameSound()
 
   useEffect(() => {
     if (phase === 'gone') return
@@ -224,15 +228,22 @@ export function MissionStart({ onStart, skipTo = 'landing-hero' }) {
         <span className="ms-ring" aria-hidden="true" />
         <canvas ref={arc} className="ms-arc" aria-hidden="true" />
         <i className="ms-tick is-tl" aria-hidden="true" /><i className="ms-tick is-tr" aria-hidden="true" /><i className="ms-tick is-bl" aria-hidden="true" /><i className="ms-tick is-br" aria-hidden="true" />
-        <button type="button" className="ms-button" onClick={launch} disabled={phase !== 'idle'}
+        <button type="button" className="ms-button" aria-label="Start mission" onClick={launch} disabled={phase !== 'idle'}
           onPointerEnter={hover(true)} onPointerLeave={hover(false)} onFocus={hover(true)} onBlur={hover(false)}>
           <span className="ms-label" data-text="START MISSION">START MISSION</span>
         </button>
       </div>
-      <p className="ms-caption">Game mode · voice briefing · sound on</p>
+      {/* One switch for all Game mode sound; the choice is remembered and can be changed again during the mission. */}
+      <div className="ms-sound-row">
+        <button type="button" className={`ms-sound${sound ? ' is-on' : ''}`} onClick={() => setSound(!sound)} aria-pressed={sound}
+          aria-label={sound ? 'Sound on' : 'Sound off'} title={sound ? 'Sound on' : 'Sound off'}>
+          {sound ? <Volume2 size={22} aria-hidden="true" /> : <VolumeX size={22} aria-hidden="true" />}
+        </button>
+        <p className="ms-caption">Game mode · voice briefing · sound {sound ? 'on' : 'off'}</p>
+      </div>
     </div>
 
-    <button type="button" className="ms-skip" onClick={skip}>
+    <button type="button" className="ms-skip" aria-label="Skip the mission and enter the site" onClick={skip}>
       <span>Skip<span className="ms-k-wide"> the mission</span> · enter the site</span><ArrowDown size={18} aria-hidden="true" />
     </button>
 

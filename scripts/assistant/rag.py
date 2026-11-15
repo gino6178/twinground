@@ -56,6 +56,8 @@ class Index:
             c = self.chunks[i]
             if c['doc'] == 'citation':
                 s -= 0.03  # bare citations only when nothing better
+            if c.get('source') == 'about':
+                s += 0.02  # the short overview passages state definitions plainly; prefer them when they are close
             if prefer_lang and c['lang'] == prefer_lang:
                 s += 0.01
             scored.append((s, int(i)))

@@ -59,7 +59,10 @@ function armRetry() {
 function pump() {
   const { voice } = audioEls()
   if (!voice || radio.current || radio.muted || !radio.queue.length) return
-  const key = radio.queue.shift()
+  const now = Date.now()
+  radio.queue = radio.queue.filter(q => now - q.t < 4000)  // a line that waited too long is stale
+  if (!radio.queue.length) return
+  const key = radio.queue.shift().key
   radio.current = key
   bedSync()
   voice.src = voUrl(key)
@@ -69,13 +72,13 @@ function pump() {
     if (radio.current !== key) return  // muted or replaced meanwhile
     window.clearTimeout(radio.watchdog)
     radio.current = null
-    if (err?.name === 'NotAllowedError') { radio.queue.unshift(key); armRetry(); bedSync(); return }
+    if (err?.name === 'NotAllowedError') { radio.queue.unshift({ key, t: Date.now() }); armRetry(); bedSync(); return }
     lineOver()  // unplayable file: skip it
   })
 }
 function say(key) {
   if (radio.muted) return
-  radio.queue = [key]  // only the newest line waits: a stale instruction is worse than none
+  radio.queue = [...radio.queue, { key, t: Date.now() }].slice(-2)  // at most two waiting; stale ones drop in pump()
   pump()
 }
 function setRadioMuted(m) {
@@ -86,18 +89,53 @@ function setRadioMuted(m) {
 function setBed(on) { radio.bedOn = on; bedSync() }
 function silenceRadio() { radio.queue = []; radio.current = null; window.clearTimeout(radio.watchdog); radio.voice?.pause(); setBed(false) }
 
+// ---- One sound switch for all of Game mode -------------------------------------------------------------------------
+// The Mission Start screen, the briefing/debrief video bar and the mission cards share it; the choice is remembered.
+const SOUND_KEY = 'twinground:game-sound:v1'
+let soundOn = true
+try { soundOn = window.localStorage.getItem(SOUND_KEY) !== 'off' } catch { /* default on */ }
+radio.muted = !soundOn
+const soundSubs = new Set()
+export function setGameSound(on) {
+  soundOn = on
+  try { window.localStorage.setItem(SOUND_KEY, on ? 'on' : 'off') } catch { /* still works for this visit */ }
+  setRadioMuted(!on)
+  if (on) unlockVoice()  // called from the tap on the toggle, so phones allow the sound that follows
+  soundSubs.forEach(f => f(on))
+}
+export function useGameSound() {
+  const [on, set] = useState(soundOn)
+  useEffect(() => { soundSubs.add(set); set(soundOn); return () => { soundSubs.delete(set) } }, [])
+  return [on, setGameSound]
+}
+export function SoundToggle({ className = 'mt-quit' }) {
+  const [on, toggle] = useGameSound()
+  return <button type="button" className={className} onClick={() => toggle(!on)} aria-pressed={on} aria-label={on ? 'Sound on' : 'Sound off'} title={on ? 'Sound on' : 'Sound off'}>
+    {on ? <Volume2 size={20} aria-hidden="true" /> : <VolumeX size={20} aria-hidden="true" />}</button>
+}
+
 export function unlockVoice() {
   const { voice, bed } = audioEls()
   if (!voice) return
   if (!radio.current) { voice.src = SILENT_MP3; voice.play().catch(() => {}) }
   radio.unlocking = true
-  const settle = () => { radio.unlocking = false; bedSync() }
+  bed.muted = radio.muted  // sound off: unlock without a burst of static; turning it on later unlocks again in that tap
+  const settle = () => { radio.unlocking = false; bed.muted = false; bedSync() }
   bed.play().then(settle, settle)
 }
 
 // ---- The mission ---------------------------------------------------------------------------------------------------
 const CHAPTERS = { 1: 'Choose', 2: 'Compare', 3: 'Field training', 4: 'Final challenge' }
 const in3D = s => s.ch === 3 || s.ch === 4
+const touch = () => typeof matchMedia !== 'undefined' && matchMedia('(hover: none) and (pointer: coarse)').matches
+const phone = () => window.innerWidth <= 640
+// The words for this device: touch help instead of keys, and a one-line version on phones.
+const textOf = s => (touch() && s.touchText) || (phone() && s.short) || s.text
+// The comparison panels stack on narrow screens: then the words say top and bottom, not left and right.
+const stacked = () => {
+  const [a, b] = document.querySelectorAll('.terrain-pair .terrain-panel')
+  return !!(a && b && b.getBoundingClientRect().top >= a.getBoundingClientRect().bottom - 4)
+}
 // kind: page = spotlight on the page; drill = 3D task in the side card; point = spotlight on a 3D control.
 // click: a click inside this completes the step. Other steps complete on explorer events (see onEva below).
 const STEPS = [
@@ -111,35 +149,40 @@ const STEPS = [
   { id: 'found', ch: 2, kind: 'card', act: 'open Search Candidates',
     title: 'Already found', text: 'Look: the system has already scanned all of Earth for places like the Moon and Mars. They live under Search Candidates in the top menu. Let’s take a look.' },
   { id: 'foundlist', ch: 2, kind: 'page', target: { frame: '.mt-frame iframe', sel: 'section.cand', text: 'Marius Hills', child: 'dl > div' }, act: 'back to our search',
-    title: 'One for our skylight', text: '“Found for” names the Moon or Mars site, its rank and score. Tags show what matches and, struck through, what does not. Explore in 3D walks it; we will walk our own match next.' },
+    title: 'One for our skylight', text: '“Found for” names the Moon or Mars site, its rank and score. Tags show what matches and, struck through, what does not. Explore in 3D walks it; we will walk our own match next.', short: '“Found for” names the Moon site, rank and score; the tags show what matches.',
+    scrollTo: { frame: '.mt-frame iframe', sel: 'section.cand', text: 'Marius Hills' },
+    avoid: ['h3', 'dl > div:nth-child(2)', 'dl > div:nth-child(3)', 'a.go'].map(child => ({ frame: '.mt-frame iframe', sel: 'section.cand', text: 'Marius Hills', child })) },
   { id: 'methods', ch: 2, kind: 'card', act: 'got it',
     title: 'How does it find them?', text: 'Methods, in the top menu, explains it: Moon, Mars and Earth windows are put in the same physical units, Earth places are ranked by measured terrain and properties, and it shows what Earth cannot reproduce.' },
   { id: 'card', ch: 2, kind: 'page', target: '.glance-cards .glance-card:first-child .glance-card-actions .outline-button', click: '.glance-card-actions .outline-button', act: 'open 3D compare',
+    scrollTo: '.glance-cards .glance-card:first-child', avoid: ['.glance-cards .glance-card:first-child'],
     title: 'Read the top match', text: 'Card #1 is the Earth place most like the skylight. The Terrain bar is its match score out of 100, and the lines below say what agrees. Tap 3D compare.' },
   // The agent (assistant_widget.jsx): the mission opens it with a question typed in; the reply completes the step.
   { id: 'agent', ch: 2, kind: 'page', target: '.aw-panel', inPanel: true, act: 'ask the agent',
-    title: 'Ask the Agent', text: 'Our agent is a language model trained on TwinGround’s paper and data. It reads the candidate you are viewing, explains why it ranked here, compares sites and cites every source. Send this question, or type your own.' },
+    title: 'Ask the Agent', text: 'Our agent is a small language model that answers from our paper and the site’s data, with sources. It reads the candidate you are viewing, explains why it ranked here and compares sites. Send this question, or type your own.', short: 'A small language model that answers from our paper and this site’s data, with sources. Send the question.' },
   { id: 'agentread', ch: 2, kind: 'page', target: '.aw-log > .aw-turn.is-bot:not(.is-busy):last-child', inPanel: true, gone: true, act: 'close the agent',
-    title: 'Check its sources', text: 'Tags in brackets show where each claim comes from: [SITE] is this candidate’s data, numbers are passages from our paper. The list under the answer shows what it read. Close the panel when you are done.' },
+    title: 'Check its sources', text: 'Tags in brackets show where each claim comes from: this candidate’s data on the page, or a passage from our paper. The list under the answer shows what it read. Close the panel when you are done.', short: 'Tags in brackets show the source of each claim; the list under the answer shows what it read.' },
   { id: 'compare', ch: 2, kind: 'page', target: '.comparison-switch button:not(.active)', click: '.comparison-switch button', act: 'switch the view',
-    title: 'Moon and Earth side by side', text: 'Left: the skylight. Right: the Earth match, at the same vertical scale; drag either to turn it. This switch flips between bare terrain and real imagery.' },
+    avoid: ['.terrain-pair'],
+    title: 'Moon and Earth side by side', text: 'Left: the skylight. Right: the Earth match, at the same vertical scale; drag either to turn it. This switch flips between bare terrain and real imagery.',
+    stackedText: 'Top: the skylight. Below it: the Earth match, at the same vertical scale; drag either to turn it. This switch flips between bare terrain and real imagery.' },
   { id: 'explore', ch: 2, kind: 'page', target: ['.terrain-pair .terrain-panel:last-child .terrain-explore-button', '.glance-explore'], act: 'explore on foot',
     title: 'Walk it', text: 'Step onto the Earth match as an astronaut.' },
-  { id: 'walk', ch: 3, kind: 'drill', keys: 'W A S D', task: 'Walk 20 metres', text: 'Hold W to walk forward; A and D turn, S steps back. On a phone, use the joystick.' },
-  { id: 'run', ch: 3, kind: 'drill', keys: 'Shift', task: 'Run', text: 'Hold Shift while you walk, or tap Run. On the Moon and Mars this becomes a low-gravity lope.' },
-  { id: 'jump', ch: 3, kind: 'drill', keys: 'Space', task: 'Jump', text: 'Press Space, or tap Jump. Gravity here decides how high you go.' },
-  { id: 'scan', ch: 3, kind: 'drill', keys: 'C', task: 'Scan the ground', text: 'Press C, or tap Scan. The scan reads this spot and the same spot in the other world.' },
+  { id: 'walk', ch: 3, kind: 'drill', keys: 'W A S D', task: 'Walk 20 metres', text: 'Hold W to walk forward; A and D turn, S steps back. On a phone, use the joystick.', touchText: 'Push the joystick to walk. Give me 20 metres.' },
+  { id: 'run', ch: 3, kind: 'drill', keys: 'Shift', task: 'Run', text: 'Hold Shift while you walk, or tap Run. On the Moon and Mars this becomes a low-gravity lope.', touchText: 'Tap Run, then push the joystick.' },
+  { id: 'jump', ch: 3, kind: 'drill', keys: 'Space', task: 'Jump', text: 'Press Space, or tap Jump. Gravity here decides how high you go.', touchText: 'Tap Jump. Gravity here decides how high you go.' },
+  { id: 'scan', ch: 3, kind: 'drill', keys: 'C', task: 'Scan the ground', text: 'Press C, or tap Scan. The scan reads this spot and the same spot in the other world.', touchText: 'Tap Scan. It reads this spot and the same spot in the other world.' },
   { id: 'readscan', ch: 3, kind: 'point', target: '.eva-scan', gone: true, task: 'Read the scan', act: 'close the scan',
-    title: 'Read the scan', text: 'Each row puts this spot next to the same spot on the Moon: elevation, slope, roughness, even bootprint depth. Close it when you are done.' },
-  { id: 'flag', ch: 3, kind: 'drill', keys: 'F', task: 'Plant a flag', text: 'Press F, or tap Flag, to mark where you stand.' },
+    title: 'Read the scan', text: 'Each row puts this spot next to the same spot on the Moon: elevation, slope, roughness, even bootprint depth. Close it when you are done.', short: 'Each row compares this spot with the same spot on the Moon. Close it when done.' },
+  { id: 'flag', ch: 3, kind: 'drill', keys: 'F', task: 'Plant a flag', text: 'Press F, or tap Flag, to mark where you stand.', touchText: 'Tap Flag to mark where you stand.' },
   { id: 'map', ch: 3, kind: 'point', target: '.eva-map canvas', task: 'Travel with the minimap', act: 'travel there',
-    title: 'Use the minimap', text: 'North is up and the dot is you. Tap anywhere on the map to travel there at once.' },
+    title: 'Use the minimap', text: 'North is up and the dot is you. Tap anywhere on the map to travel there at once.', short: 'North is up, the dot is you. Tap the map to travel there.' },
   { id: 'switch', ch: 4, kind: 'point', target: '.eva-switch', keys: 'T', task: 'Cross to the other world', act: 'cross over',
-    title: 'Cross to the other world', text: 'Press T or this button. You arrive at the same position in the other window.' },
-  { id: 'flag2', ch: 4, kind: 'drill', keys: 'F', task: 'Plant a flag there', text: 'Mark the matching spot. You know the key.' },
-  { id: 'scan2', ch: 4, kind: 'drill', keys: 'C', task: 'Scan it', text: 'Compare the ground in both worlds right here.' },
+    title: 'Cross to the other world', text: 'Press T or this button. You arrive at the same position in the other window.', touchText: 'Tap this button. You arrive at the same position in the other window.' },
+  { id: 'flag2', ch: 4, kind: 'drill', keys: 'F', task: 'Plant a flag there', text: 'Mark the matching spot. You know the key.', touchText: 'Mark the matching spot: tap Flag.' },
+  { id: 'scan2', ch: 4, kind: 'drill', keys: 'C', task: 'Scan it', text: 'Compare the ground in both worlds right here.', touchText: 'Tap Scan to compare the ground in both worlds here.' },
   { id: 'exit', ch: 4, kind: 'point', target: '.eva-back', keys: 'Esc', task: 'Leave the 3D view', act: 'exit 3D',
-    title: 'Head home', text: 'Field test passed. Press Exit, top left, or Esc, to leave the 3D view.' },
+    title: 'Head home', text: 'Field test passed. Press Exit, top left, or Esc, to leave the 3D view.', touchText: 'Field test passed. Tap Exit, top left, to leave the 3D view.' },
 ]
 const LEARNED = [
   ['Set the purpose and window size', ''], ['Search Earth and read the match cards', ''], ['Browse the sites already found', ''], ['Find the Methods behind it', ''], ['Ask the Agent and check its sources', ''],
@@ -172,7 +215,18 @@ function locate(sel) {
 const visibleEl = sel => locate(sel)?.el || null
 
 // Follow the element to press: its box on screen, whether it is disabled, and scroll it into view once.
-function useTargetRect(selector) {
+// The bottom of any bar stuck to the top of the window (site header, results bar), so a target is not scrolled under it.
+function stickyBottom() {
+  let b = 0
+  for (const el of document.querySelectorAll('header, nav, [class*="nav"], [class*="bar"]')) {
+    const cs = getComputedStyle(el)
+    if (cs.position !== 'sticky' && cs.position !== 'fixed') continue
+    const r = el.getBoundingClientRect()
+    if (r.top <= 2 && r.height > 0 && r.height < window.innerHeight / 3 && r.bottom > b) b = r.bottom
+  }
+  return b
+}
+function useTargetRect(selector, scrollSel) {
   const [rect, setRect] = useState(null)
   const key = selector ? JSON.stringify(selector) : ''
   useEffect(() => {
@@ -181,11 +235,13 @@ function useTargetRect(selector) {
     // Once, after the page change has settled (repeated scrolling fought the page's own scroll-to-top); a target in
     // an iframe is retried until the frame has loaded.
     const scrollOnce = () => {
-      const hit = locate(selector)
+      const hit = locate(scrollSel || selector)
       if (!hit) { if (++tries < 20) settle = window.setTimeout(scrollOnce, 300); return }
       if (hit.framed) { hit.el.scrollIntoView({ block: 'start' }); return }
-      const r = hit.rect
-      if (!hit.el.closest('.eva, .aw-panel') && (r.top < 70 || r.top + r.height > window.innerHeight - 10)) hit.el.scrollIntoView({ block: 'center' })
+      if (hit.el.closest('.eva, .aw-panel, .mt-frame')) return
+      // The whole box below any sticky bar: centred in the space left, or top-aligned when it is taller than that.
+      const r = hit.el.getBoundingClientRect(), top = stickyBottom() + 12, room = window.innerHeight - top - 10
+      if (r.top < top || r.bottom > window.innerHeight - 10) window.scrollBy({ top: r.top - top - (r.height < room ? (room - r.height) / 2 : 0) })
     }
     settle = window.setTimeout(scrollOnce, 700)
     const tick = () => {
@@ -213,35 +269,41 @@ function Head({ ch, muted, onMute, onQuit }) {
       <button type="button" className="mt-quit" onClick={onQuit} aria-label="Leave the mission"><X size={18} /></button></span></header>
 }
 
-// Callout beside the spotlighted element: below it when it fits, otherwise above, otherwise pinned to the far edge of
-// the screen (a tall target on a phone), with an arrow at the element when it sits next to it.
-function Callout({ rect, ch, title, text, action, onAct, waiting, muted, onMute, onQuit, inPanel }) {
+// Callout placement: next to the target when that spot is free (with an arrow at it), otherwise the free spot nearest
+// to it. "Free" means on screen and clear of the target and of every rect in avoid (the explorer's buttons, the scan
+// result, the agent's header and input, the panels a step talks about). Measured on every render, nothing assumed.
+function placeCallout(rect, avoid, w0, h0, coverTarget) {
+  const W = window.innerWidth, H = window.innerHeight, gap = 22, pad = 12
+  const boxes = coverTarget ? avoid : [rect, ...avoid]
+  const hit = c => boxes.reduce((a, b) => a + Math.max(0, Math.min(c.x + c.w, b.left + b.width) - Math.max(c.x, b.left)) * Math.max(0, Math.min(c.y + c.h, b.top + b.height) - Math.max(c.y, b.top)), 0)
+  const cx = rect.left + rect.width / 2, cy = rect.top + rect.height / 2
+  const near = [], free = []
+  for (const w of [...new Set([w0, Math.round(Math.min(w0, Math.max(220, W * 0.6)))])]) {
+    const h = Math.round(h0 * w0 / w)
+    const x = Math.max(pad, Math.min(W - w - pad, cx - w / 2))
+    const yMid = Math.max(pad, Math.min(H - h - pad, cy - h / 2))
+    near.push({ mode: 'below', x, y: rect.top + rect.height + gap, w, h }, { mode: 'above', x, y: rect.top - gap - h, w, h },
+      { mode: 'side', x: rect.left + rect.width + gap, y: yMid, w, h }, { mode: 'side', x: rect.left - gap - w, y: yMid, w, h })
+    for (const fx of [x, pad, W - w - pad]) for (let y = pad; y <= H - h - pad; y += 16) free.push({ mode: 'free', x: fx, y, w, h })
+  }
+  const fits = c => c.x >= pad - 1 && c.x + c.w <= W - pad + 1 && c.y >= pad - 1 && c.y + c.h <= H - pad + 1
+  const dist = c => Math.hypot(c.x + c.w / 2 - cx, c.y + c.h / 2 - cy)
+  const ok = [...near, ...free.sort((a, b) => dist(a) - dist(b))].filter(fits)
+  return ok.find(c => hit(c) < 1)
+    || ok.reduce((best, c) => (!best || hit(c) < hit(best) ? c : best), null)
+    || { mode: 'free', x: pad, y: pad, w: w0, h: h0 }
+}
+function Callout({ rect, avoid, coverTarget, ch, title, text, action, onAct, waiting, muted, onMute, onQuit }) {
   const ref = useRef(null)
   const [h, setH] = useState(240)
+  const [, setTick] = useState(0)
   useLayoutEffect(() => { const n = ref.current?.offsetHeight; if (n && Math.abs(n - h) > 2) setH(n) })
-  const W = window.innerWidth, H = window.innerHeight, gap = 22, pad = 12
-  // In 3D on a phone the explorer's action buttons must stay reachable: a column on the right edge (touch) narrows
-  // the callout; a row along the bottom keeps a bottom-pinned callout above it.
-  const bar = W <= 640 ? document.querySelector('.eva .eva-actions')?.getBoundingClientRect() : null
-  const column = bar && bar.height > bar.width && bar.left > W / 2
-  const w = Math.min(400, W - 24, column ? bar.left - 8 - pad : Infinity)
-  const left = Math.max(pad, Math.min(W - w - pad, rect.left + rect.width / 2 - w / 2))
-  const arrowX = Math.max(24, Math.min(w - 24, rect.left + rect.width / 2 - left))
-  const floor = bar && !column ? bar.top - 10 : H - pad
-  // Steps inside the agent panel keep the whole panel clear: beside it when there is room, else at the top of the
-  // screen (on a phone the panel's input and newest answer sit at the bottom).
-  const panel = inPanel ? document.querySelector('.aw-panel')?.getBoundingClientRect() : null
-  let mode, style, x = left
-  if (panel) {
-    if (panel.left - gap - w >= pad) { mode = 'side'; x = panel.left - gap - w; style = { top: Math.max(pad, Math.min(H - h - pad, rect.top + rect.height / 2 - h / 2)) } }
-    else { mode = 'pinned'; style = { top: pad } }
-  } else {
-    mode = rect.top + rect.height + gap + h <= floor ? 'below' : rect.top - gap - h >= pad ? 'above' : 'pinned'
-    style = mode === 'below' ? { top: rect.top + rect.height + gap }
-      : mode === 'above' ? { top: rect.top - gap - h }
-      : rect.top + rect.height / 2 < H / 2 ? { bottom: H - floor } : { top: pad }
-  }
-  return <section ref={ref} className={`mt-callout is-${mode}${panel ? ' is-compact' : ''}`} style={{ ...style, left: x, width: w, '--arrow-x': `${arrowX}px` }} aria-live="polite" aria-label="Mission objective">
+  // Panels can open or move around the callout without the target moving (a scan result, the agent's answer).
+  useEffect(() => { const id = window.setInterval(() => setTick(t => t + 1), 500); return () => window.clearInterval(id) }, [])
+  const w0 = Math.min(400, window.innerWidth - 24)
+  const at = placeCallout(rect, avoid(), w0, h, coverTarget)
+  const arrowX = Math.max(24, Math.min(at.w - 24, rect.left + rect.width / 2 - at.x))
+  return <section ref={ref} className={`mt-callout is-${at.mode}`} style={{ top: at.y, left: at.x, width: at.w, '--arrow-x': `${arrowX}px` }} aria-live="polite" aria-label="Mission objective">
     <Head ch={ch} muted={muted} onMute={onMute} onQuit={onQuit} />
     <h2>{title}</h2>
     <p>{text}</p>
@@ -265,8 +327,11 @@ const VIDEOS = {
   intro: { src: '/game/intro.mp4?v=5', vtt: '/game/intro.en.vtt?v=5', name: 'briefing', label: 'Mission briefing video' },
   outro: { src: '/game/outro.mp4?v=3', vtt: '/game/outro.en.vtt?v=3', name: 'debrief', label: 'Mission debrief video' },
 }
-function IntroVideo({ onDone, onQuit, kind = 'intro', muted = false }) {
+function IntroVideo({ onDone, onQuit, kind = 'intro' }) {
   const v = VIDEOS[kind]
+  const [soundIsOn] = useGameSound()
+  const muted = !soundIsOn
+  useEffect(() => { if (video.current) video.current.muted = muted }, [muted])  // the attribute alone is not live in every browser
   const video = useRef(null)
   const track = useRef(null)
   const [blocked, setBlocked] = useState(false)
@@ -294,6 +359,7 @@ function IntroVideo({ onDone, onQuit, kind = 'intro', muted = false }) {
     {caption && <p className="mt-cap" aria-live="off">{caption}</p>}
     {blocked && <button type="button" className="mt-intro-play" onClick={() => { setBlocked(false); video.current?.play() }}>Play {v.name}</button>}
     <div className="mt-intro-bar">
+      <SoundToggle className="mt-secondary mt-sound" />
       {onQuit && <button type="button" className="mt-secondary" onClick={onQuit}>Exit</button>}
       <button type="button" className="mt-primary" onClick={() => { unlockVoice(); onDone() }} autoFocus>Skip {v.name}</button>
     </div>
@@ -306,9 +372,11 @@ export function MissionTutorial({ stage, runId, autoStart, onBegin, onPurpose, o
   const [done, setDone] = useState({})
   const [inEva, setInEva] = useState(false)
   const [evaEl, setEvaEl] = useState(null)
-  const [muted, setMuted] = useState(false)
+  const [soundIsOn] = useGameSound()
+  const muted = !soundIsOn
   const [frameUrl, setFrameUrl] = useState(null)  // Search Candidates, shown in a frame during chapter 5
   const [methodsOpen, setMethodsOpen] = useState(false)
+  const [searching, setSearching] = useState(false)  // Search pressed: a disabled button now means "searching", not "loading"
   const [chosen, setChosen] = useState(null)       // a candidate picked there to explore after the mission
   const spoken = useRef(new Set())
 
@@ -330,6 +398,7 @@ export function MissionTutorial({ stage, runId, autoStart, onBegin, onPurpose, o
   const cur = phase === 'run' ? STEPS.find(s => !done[s.id]) || null : null
   useEffect(() => { if (phase === 'run' && !cur) setPhase('outro') }, [phase, cur])
   const curRef = useRef(cur); curRef.current = cur
+  useEffect(() => { if (cur?.id !== 'search') setSearching(false) }, [cur?.id])
 
   // Page progress follows the page: results arriving finish chapter 1; going back to the selection reopens the search.
   useEffect(() => {
@@ -345,6 +414,7 @@ export function MissionTutorial({ stage, runId, autoStart, onBegin, onPurpose, o
       // The Search Candidates link would leave the app (and the mission): open it in the mission's frame instead.
       const link = s?.id === 'found' && e.target instanceof Element && e.target.closest('a[href*="offcatalogue"]')
       if (link) { e.preventDefault(); setFrameUrl(link.getAttribute('href')); mark('found'); return }
+      if (s?.id === 'search' && e.target instanceof Element && e.target.closest('.search-button')) setSearching(true)
       if (s?.click && e.target instanceof Element && e.target.closest(s.click)) {
         mark(s.id)
         if (s.id === 'purpose') onPurpose?.('lavatube')
@@ -401,7 +471,7 @@ export function MissionTutorial({ stage, runId, autoStart, onBegin, onPurpose, o
   const landing = cur?.ch === 1 && stage === 0
   const pointing = cur && !landing && (cur.kind === 'page' ? !inEva && (cur.ch === 1 ? stage === 1 : stage === 2) : cur.kind === 'point' && inEva)
   const target = landing ? '.landing-primary' : pointing ? cur.target : null
-  const rect = useTargetRect(target)
+  const rect = useTargetRect(target, pointing ? cur.scrollTo : null)
 
   // The scan step completes when the panel it points at has been closed.
   const seen = useRef(null)
@@ -420,8 +490,8 @@ export function MissionTutorial({ stage, runId, autoStart, onBegin, onPurpose, o
   }, [target && String(target), !!rect]) // eslint-disable-line react-hooks/exhaustive-deps
   // Close a scan result left open once the mission has moved on, so it never covers the action buttons on a phone.
   useEffect(() => {
-    if (!inEva || !(cur?.id === 'flag' || cur?.id === 'exit')) return undefined
-    const id = window.setTimeout(() => document.querySelector('.eva-scan header button')?.click(), cur.id === 'exit' ? 5000 : 1500)
+    if (!inEva || cur?.id !== 'flag') return undefined  // the final scan stays open while it is read
+    const id = window.setTimeout(() => document.querySelector('.eva-scan header button')?.click(), 1500)
     return () => window.clearTimeout(id)
   }, [cur?.id, inEva])
 
@@ -437,10 +507,15 @@ export function MissionTutorial({ stage, runId, autoStart, onBegin, onPurpose, o
       root.style.setProperty('--mt-eva-top', `${top}px`)
       root.style.setProperty('--mt-card-bottom', `${Math.round(card ? card.bottom + 10 : top)}px`)
       // The scan panel stops above whatever sits under it (action bar, minimap, joystick), whichever layout is used.
-      const scan = document.querySelector('.eva-scan')?.getBoundingClientRect()
-      const [x0, x1] = scan ? [scan.left, scan.right] : [0, window.innerWidth]
+      // On a phone a column of action buttons down the right edge narrows the scan panel; the floor then comes only from
+      // what really sits under the panel (overlapping it by more than a few pixels), so it is not squeezed.
+      const W = window.innerWidth, acts = document.querySelector('.eva-actions')?.getBoundingClientRect()
+      const column = acts && acts.height > acts.width && acts.left > W / 2
+      const right = W <= 640 ? (column ? Math.round(W - acts.left + 8) : 10) : 16
+      root.style.setProperty('--mt-scan-right', `${right}px`)
+      const x0 = W <= 640 ? 10 : (document.querySelector('.eva-scan')?.getBoundingClientRect().left ?? 0), x1 = W - right
       const floor = Math.min(window.innerHeight - 16, ...[...document.querySelectorAll('.eva-actions, .eva-map, .eva-joystick')]
-        .map(e => e.getBoundingClientRect()).filter(r => r.height && r.right > x0 && r.left < x1).map(r => r.top - 10))
+        .map(e => e.getBoundingClientRect()).filter(r => r.height && Math.min(r.right, x1) - Math.max(r.left, x0) > 8).map(r => r.top - 10))
       root.style.setProperty('--mt-scan-floor', `${Math.round(floor)}px`)
     }
     measure()
@@ -477,14 +552,14 @@ export function MissionTutorial({ stage, runId, autoStart, onBegin, onPurpose, o
   // The commander's lines, each once per mission.
   const voiceKey = phase === 'done' ? 'done'
     : !cur || landing ? null
-    : cur.id === 'search' ? (pointing && rect ? (rect.disabled ? 'loading' : 'search') : null)
+    : cur.id === 'search' ? (pointing && rect && !searching ? (rect.disabled ? 'loading' : 'search') : null)
     : in3D(cur) !== inEva ? null
     : cur.id
   useEffect(() => {
     if (!voiceKey || muted || spoken.current.has(voiceKey)) return
     spoken.current.add(voiceKey)
     say(voiceKey)
-  }, [voiceKey]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [voiceKey, muted]) // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { setRadioMuted(muted) }, [muted])
   useEffect(() => { if (phase === 'off' || phase === 'outro') silenceRadio() }, [phase])  // the debrief has its own sound
   // Quiet radio static under the whole tutorial (not during the intro video, which has its own sound).
@@ -512,15 +587,22 @@ export function MissionTutorial({ stage, runId, autoStart, onBegin, onPurpose, o
     }
     el.click()
   }
-  const onMute = () => setMuted(m => !m)
+  const onMute = () => setGameSound(muted)
 
   if (phase === 'off') return null
   if (phase === 'intro') return <IntroVideo onDone={begin} onQuit={finish} />
-  if (phase === 'outro') return <IntroVideo kind="outro" muted={muted} onDone={() => setPhase('done')} />
+  if (phase === 'outro') return <IntroVideo kind="outro" onDone={() => setPhase('done')} />
 
   if (phase === 'brief' || phase === 'done') {
     const brief = phase === 'brief'
-    const close = () => { finish(); if (!brief) onFinish?.() }
+    const close = () => {
+      finish()
+      if (brief) return
+      onFinish?.()
+      // The selection page mounts with an animation that can interrupt a smooth scroll: land at the top for sure.
+      const top = () => window.scrollTo({ top: 0, behavior: 'auto' })
+      top(); window.setTimeout(top, 120); window.setTimeout(top, 500)
+    }
     return createPortal(<div className="mt-backdrop">
       <section className="mt-brief" role="dialog" aria-modal="true" aria-labelledby="mt-brief-title">
         <span className="mt-kicker"><Rocket size={18} aria-hidden="true" /> {brief ? 'Mission briefing' : 'Mission complete'}</span>
@@ -568,18 +650,27 @@ export function MissionTutorial({ stage, runId, autoStart, onBegin, onPurpose, o
         } catch { /* not same-origin */ }
       }} />
     </div>}</>, document.body) : null
+  // What a callout must leave visible: the explorer's controls and scan result in 3D, the agent's header, input and newest
+  // answer, and whatever the step itself talks about.
+  const avoidRects = () => [
+    ...(inEva ? ['.eva-actions', '.eva-joystick', '.eva-map', '.eva-scan', '.eva-tools', '.eva-lead'] : []),
+    ...(cur.inPanel ? ['.aw-panel header', '.aw-input', '.aw-log > .aw-turn.is-bot:last-child'] : []),
+    ...(!inEva ? ['.gt-help'] : []),
+    ...(cur.avoid || []),
+  ].map(a => locate(a)?.rect).filter(Boolean)
   // Inside 3D the mission lives in the explorer's own dialog: the explorer makes everything else on the page inert.
   const host = inEva && evaEl?.isConnected ? evaEl : document.body
 
   if (rect && (pointing || landing)) {
     const step = landing ? { title: 'Press this button', text: 'Go to the Moon to start the search.', act: 'start on the Moon' }
+      : cur.id === 'search' && rect.disabled && searching ? { title: 'Searching Earth…', text: 'Comparing the skylight with every Earth window. The results open on their own in a few seconds.', act: cur.act }
       : cur.id === 'search' && rect.disabled ? { title: 'Loading the skylight terrain…', text: 'Your window is on the Marius Hills skylight and the search is set to lava tubes. This button lights up in a moment.', act: cur.act }
       : cur.id === 'agent' && agentWait === 'busy' ? { ...cur, text: 'The agent is reading the paper and this candidate’s data. An answer takes a few seconds.' }
       : cur.id === 'agent' && agentWait === 'slow' ? { ...cur, text: 'The agent is taking long today. Its answer will still appear here; you can move on.', act: 'skip' }
-      : cur
+      : { ...cur, text: cur.stackedText && stacked() ? cur.stackedText : textOf(cur) }
     return <>{frame}{createPortal(<>
       <div className={`mt-spot${rect.disabled ? ' is-waiting' : ''}`} aria-hidden="true" style={{ top: rect.top - 8, left: rect.left - 8, width: rect.width + 16, height: rect.height + 16 }} />
-      <Callout rect={rect} ch={cur.ch} title={step.title} text={step.text} action={step.act} onAct={act} waiting={cur.id === 'agent' && agentWait === 'busy'} inPanel={!!cur.inPanel} muted={muted} onMute={onMute} onQuit={finish} />
+      <Callout rect={rect} avoid={avoidRects} coverTarget={!!cur.inPanel} ch={cur.ch} title={step.title} text={step.text} action={step.act} onAct={act} waiting={cur.id === 'agent' && agentWait === 'busy'} muted={muted} onMute={onMute} onQuit={finish} />
     </>, host)}</>
   }
   if ((pointing || landing) && !lost) return frame  // its control is about to appear
@@ -589,9 +680,9 @@ export function MissionTutorial({ stage, runId, autoStart, onBegin, onPurpose, o
   const count = tasks ? `${tasks.filter(t => done[t.id]).length}/${tasks.length}` : ''
   const title = !tasks ? cur.title : `${CHAPTERS[cur.ch]} · ${count}`
   const waiting = in3D(cur) !== inEva  // between pages and 3D (the explorer is loading or closing)
-  const text = waiting ? (inEva ? 'Finish here first.' : 'Loading the 3D scene…') : cur.text
+  const text = waiting ? (inEva ? 'Finish here first.' : 'Loading the 3D scene…') : textOf(cur)
   return <>{frame}{createPortal(
-    <section className={`mt-objective${inEva ? ' is-eva' : ''}`} aria-live="polite" aria-label="Mission objective">
+    <section className={`mt-objective${inEva ? ' is-eva' : ''}${cur.id === 'methods' && methodsOpen ? ' is-corner' : ''}`} aria-live="polite" aria-label="Mission objective">
       <Head ch={cur.ch} muted={muted} onMute={onMute} onQuit={finish} />
       <h2>{title}</h2>
       <p>{text}</p>

@@ -15,7 +15,12 @@ const STATUS = {
   unmeasured: ['is-unmeasured', ['地球未測', 'Not measured on Earth']],
 }
 
-function fmt(v, unit) {
+// Temperatures arrive in kelvin; the rest of the site uses °C, so absolute values are converted (a tolerance is a
+// difference and keeps its number). The kelvin value stays in the cell's tooltip.
+const toC = (v, unit, diff) => (unit === 'K' && Number.isFinite(v) ? [diff ? v : v - 273.15, '°C'] : [v, unit])
+const kTitle = (v, unit, src) => [src, unit === 'K' && Number.isFinite(v) ? `${Math.round(v)} K` : ''].filter(Boolean).join(' · ')
+function fmt(v0, unit0, diff = false) {
+  const [v, unit] = toC(v0, unit0, diff)
   if (v === null || v === undefined || !Number.isFinite(v)) return '—'
   const a = Math.abs(v)
   const n = a >= 100 ? Math.round(v) : a >= 10 ? Math.round(v * 10) / 10 : a >= 1 ? Math.round(v * 100) / 100 : Math.round(v * 1000) / 1000
@@ -61,18 +66,21 @@ export function PrefieldCheck({ body, qlat, qlon, lat, lon }) {
   const d = st.d, v = VERDICT[d.verdict] || VERDICT.no_record
   const lit = d.literature || {}, res = d.resources || {}, cat = d.catalogue || {}
   const ed = res.earthdata || {}, s1 = res.sentinel1 || {}, r1 = res.radarsat1 || {}, wv = res.worldview || {}
-  const town = d.place?.name ? `${d.place.name}${d.place.admin1 ? '，' + d.place.admin1 : ''}${d.place.country ? '，' + d.place.country : ''}` : ''
+  const sep = tr('，', ', ')
+  const town = d.place?.name ? `${d.place.name}${d.place.admin1 ? sep + d.place.admin1 : ''}${d.place.country ? sep + d.place.country : ''}` : ''
+  const paren = v => tr(`（${v}）`, ` (${v})`)
+  const wvDates = [...new Set(wv.dates || [])]
   const ex = (lit.place?.examples || []).filter(e => e.title).slice(0, 2)
   return <div className="mm-check">
     <h3>{tr('出發前查核', 'Pre-field check')} <span className={'mm-verdict ' + v[0]}>{tr(...v[1])}</span></h3>
     <dl>
-      <div><dt>{tr('最近的已知類比場址', 'Nearest documented analog site')}</dt><dd>{(getLanguage() === 'en' ? cat.name : cat.name_zh || cat.name) || '—'}{Number.isFinite(cat.distance_km) ? `（${Math.round(cat.distance_km).toLocaleString()} km）` : ''}</dd></div>
+      <div><dt>{tr('最近的已知類比場址', 'Nearest documented analog site')}</dt><dd>{(getLanguage() === 'en' ? cat.name : cat.name_zh || cat.name) || '—'}{Number.isFinite(cat.distance_km) ? paren(`${Math.round(cat.distance_km).toLocaleString('en-US')} km`) : ''}</dd></div>
       <div><dt>{tr('文獻（OpenAlex）', 'Papers (OpenAlex)')}</dt><dd>{town && <>{tr(`提到「${d.place.name}」並談月球／火星類比：`, `naming “${d.place.name}” with Moon/Mars analog: `)}<b>{lit.place?.count ?? '—'}</b>{tr(' 篇', '')}</>}{d.place?.admin1 && <>{tr(`；「${d.place.admin1}」：`, `; “${d.place.admin1}”: `)}<b>{lit.region?.count ?? '—'}</b>{tr(' 篇', '')}</>}</dd></div>
       <div><dt>{tr('NASA Earthdata 可用資料', 'NASA Earthdata granules')}</dt><dd>{Number.isFinite(ed.granules) ? ed.granules.toLocaleString() : '—'}{ed.link && <> · <a href={ed.link} target="_blank" rel="noreferrer">{tr('開啟搜尋', 'open search')}</a></>}</dd></div>
-      <div><dt>{tr('雷達', 'Radar')}</dt><dd>{s1.date ? `Sentinel-1 ${s1.date}` : 'Sentinel-1 —'}{Number.isFinite(r1.images) ? ` · RADARSAT-1 ${r1.images} ${tr('張', 'images')}${r1.first ? `（${r1.first}–${r1.last}）` : ''}` : ''}{res.rcm ? ' · RCM' : ''}</dd></div>
-      {wv.link && <div><dt>{tr('衛星影像', 'Imagery')}</dt><dd><a href={wv.link} target="_blank" rel="noreferrer">NASA Worldview</a>{wv.dates?.length ? ` · ${wv.dates.join('、')}` : ''}</dd></div>}
+      <div><dt>{tr('雷達', 'Radar')}</dt><dd>{s1.date ? `Sentinel-1 ${s1.date}` : 'Sentinel-1 —'}{Number.isFinite(r1.images) ? ` · RADARSAT-1 ${r1.images} ${tr('張', 'images')}${r1.first ? paren(`${r1.first}–${r1.last}`) : ''}` : ''}{res.rcm ? ' · RCM' : ''}</dd></div>
+      {wv.link && <div><dt>{tr('衛星影像', 'Imagery')}</dt><dd><a href={wv.link} target="_blank" rel="noreferrer">NASA Worldview</a>{wvDates.length ? ` · ${wvDates.join(tr('、', ', '))}` : ''}</dd></div>}
     </dl>
-    {ex.length > 0 && <ul className="mm-papers">{ex.map(e => <li key={e.title}>{e.doi ? <a href={e.doi} target="_blank" rel="noreferrer">{e.title}</a> : e.title}{e.year ? `（${e.year}）` : ''}</li>)}</ul>}
+    {ex.length > 0 && <ul className="mm-papers">{ex.map(e => <li key={e.title}>{e.doi ? <a href={e.doi} target="_blank" rel="noreferrer">{e.title}</a> : e.title}{e.year ? paren(e.year) : ''}</li>)}</ul>}
   </div>
 }
 
@@ -104,10 +112,10 @@ export function MaxMatchPanel({ data, active }) {
       <thead><tr><th>{tr('性質', 'Property')}</th><th>{where}</th><th>{tr('這個地球窗格', 'This Earth window')}</th><th>{tr('容許差', 'Tolerance')}</th><th>{tr('結果', 'Result')}</th></tr></thead>
       <tbody>
         {block.items.map(x => <tr key={x.id} className={(STATUS[x.status] || STATUS.unmeasured)[0]}>
-          <th scope="row">{lab(x.label)}{x.earth_limit && <em className="mm-tag">{tr('地球做不到', 'beyond Earth')}</em>}</th>
-          <td title={x.source_query || ''}>{fmt(x.query, x.unit)}</td>
-          <td title={x.source_earth || ''}>{fmt(x.earth, x.unit)}</td>
-          <td>±{fmt(x.tolerance, x.unit)}</td>
+          <th scope="row">{lab(x.label)}{x.earth_limit && <>{' '}<em className="mm-tag">{tr('地球做不到', 'beyond Earth')}</em></>}</th>
+          <td title={kTitle(x.query, x.unit, x.source_query)}>{fmt(x.query, x.unit)}</td>
+          <td title={kTitle(x.earth, x.unit, x.source_earth)}>{fmt(x.earth, x.unit)}</td>
+          <td>±{fmt(x.tolerance, x.unit, true)}</td>
           <td><span className="mm-status">{tr(...(STATUS[x.status] || STATUS.unmeasured)[1])}</span></td>
         </tr>)}
       </tbody>

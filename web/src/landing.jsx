@@ -141,7 +141,7 @@ export function Landing({ Globe, onStart, onStartMars, onChat, onAsk, onGame, ca
           <p>{tr('候選地點是同類場域的提案，實測物理性質（例如化學成分）不一定相符，也不代表已驗證的類比場址。本網站未經 NASA 背書。', 'Candidates are proposals of the same kind of setting; measured properties such as chemistry may not match, and they are not validated analog sites. This site is not endorsed by NASA.')}</p>
         </div>
         <div className="landing-footer-links" data-reveal style={delay(80)}>
-          <div><b>{tr('開始', 'Start')}</b><button type="button" onClick={onStart}>{tr('月球', 'Moon')}</button><button type="button" onClick={onStartMars}>{tr('火星', 'Mars')}</button></div>
+          <div><b>{tr('開始', 'Start')}</b><button type="button" aria-label={tr('從月球開始', 'Start on the Moon')} onClick={onStart}>{tr('月球', 'Moon')}</button><button type="button" aria-label={tr('從火星開始', 'Start on Mars')} onClick={onStartMars}>{tr('火星', 'Mars')}</button></div>
           <div><b>{tr('了解', 'Learn')}</b><a href={method}>{tr('方法與原理', 'Methods')}</a></div>
           <div><b>NASA</b><a href="https://science.nasa.gov/solar-system/analog-explorer/" target="_blank" rel="noreferrer">Planetary Analog Explorer</a><a href="https://www.nasa.gov/analog-missions/" target="_blank" rel="noreferrer">Analog Missions</a></div>
           <div><b>{tr('資料', 'Data')}</b><a href="https://svs.gsfc.nasa.gov/4720/" target="_blank" rel="noreferrer">{tr('月球貼圖（SVS）', 'Moon maps (SVS)')}</a><a href="https://maps.jpl.nasa.gov/tmaps/mars.html" target="_blank" rel="noreferrer">{tr('火星貼圖（JPL）', 'Mars maps (JPL)')}</a></div>

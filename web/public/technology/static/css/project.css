@@ -6,7 +6,7 @@
   --gradient-accent: linear-gradient(135deg, #2dd4bf 0%, #0f766e 100%);
 }
 body, .teaser, .publication-title, .publication-authors, .title, .subtitle, .content, .button {
-  font-family: 'Inter', 'Noto Sans TC', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-family: Manrope,"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif !important;
 }
 .publication-title { font-size: clamp(2rem, 4.6vw, 3.1rem) !important; margin-bottom: 1.4rem !important; }
 .publication-title .title-name { display: block; color: var(--primary-color); font-size: .62em; letter-spacing: .14em; font-weight: 800; margin-bottom: .55rem; }
@@ -26,7 +26,7 @@ body, .teaser, .publication-title, .publication-authors, .title, .subtitle, .con
 .figure-svg figcaption b, .fig-caption b { color: var(--text-primary); }
 
 .method-card { height: 100%; padding: 1.4rem 1.5rem; background: #fff; border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-sm); text-align: left; }
-.method-card .tag-line { display: inline-block; margin-bottom: .6rem; padding: .2rem .65rem; border-radius: 999px; background: #ccfbf1; color: #115e59; font-size: .78rem; font-weight: 700; letter-spacing: .06em; }
+.method-card .tag-line { display: inline-block; margin-bottom: .6rem; padding: .2rem .65rem; border-radius: 999px; background: #ccfbf1; color: #115e59; font-size: .875rem; font-weight: 700; letter-spacing: .06em; }
 .method-card h3 { margin: 0 0 .6rem !important; font-size: 1.2rem !important; font-weight: 700; }
 .method-card p { font-size: .97rem; line-height: 1.7; color: var(--text-primary); margin-bottom: .6rem; }
 .method-card ul { margin: 0 0 0 1.1rem; font-size: .92rem; color: var(--text-secondary); line-height: 1.65; }
@@ -58,16 +58,16 @@ body, .teaser, .publication-title, .publication-authors, .title, .subtitle, .con
 .footer .content p { font-size: .9rem; line-height: 1.7; color: var(--text-secondary); }
 
 /* diagrams (shared with the full paper) */
-svg text { font-family: 'Inter', 'Noto Sans TC', sans-serif; }
+svg text { font-family: Manrope,"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif; }
 svg .box { fill: #fff; stroke: #475569; stroke-width: 1.2; }
 svg .box.accent { fill: #ccfbf1; stroke: #0f766e; }
 svg .box.warm { fill: #fef3c7; stroke: #b45309; }
 svg .lane { fill: #f1f5f9; stroke: none; }
 svg .arrow { stroke: #475569; stroke-width: 1.4; fill: none; marker-end: url(#arrowhead); }
-svg .t { font-size: 13px; fill: #1e293b; }
+svg .t { font-size: 14px; fill: #1e293b; }
 svg .t.b { font-weight: 700; }
-svg .t.s { font-size: 11.5px; fill: #64748b; }
-svg .t.lane-title { font-size: 12px; font-weight: 700; letter-spacing: .06em; fill: #0f766e; }
+svg .t.s { font-size: 14px; fill: #64748b; }
+svg .t.lane-title { font-size: 14px; font-weight: 700; letter-spacing: .06em; fill: #0f766e; }
 
 @media (max-width: 768px) {
   .content.has-text-justified, .has-text-justified { text-align: left !important; }
@@ -111,7 +111,7 @@ svg .t.lane-title { font-size: 12px; font-weight: 700; letter-spacing: .06em; fi
 .bibtex-header .title { font-size: 2rem !important; }
 .more-works-btn { font-size: .875rem !important; }
 .method-card .tag-line { letter-spacing: 0; }
-#bibtex-code, #bibtex-code code { font-family: monospace !important; }
+#bibtex-code, #bibtex-code code { font-family: "DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace !important; }
 @media (max-width: 1100px) {
   .more-works-container { position: absolute; top: 1rem; right: 1rem; bottom: auto; }
   .more-works-dropdown { top: calc(100% + .5rem); bottom: auto; }
@@ -127,27 +127,27 @@ svg .t.lane-title { font-size: 12px; font-weight: 700; letter-spacing: .06em; fi
 }
 
 /* Journal-article layout (2026-10-19): the project page reads as a planetary-science paper (key points, abstract,
-   numbered sections, booktabs tables, figure captions, references). Serif body, sans-serif tables and figures. */
+   numbered sections, booktabs tables, figure captions, references). Manrope throughout (2026-11-15 typography pass). */
 body.journal { background: #fff; }
 .journal .publication-hero .hero-body { padding-bottom: 1rem; }
-.journal .paper-kicker { margin: 0 0 .9rem; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--primary-color); }
-.journal .publication-title { font-family: 'Source Serif 4', 'Noto Serif TC', Georgia, serif !important; font-weight: 700 !important; line-height: 1.22; letter-spacing: -.01em; max-width: 22em; margin-left: auto; margin-right: auto; }
+.journal .paper-kicker { margin: 0 0 .9rem; font-size: .875rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--primary-color); }
+.journal .publication-title { font-family: Manrope,"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif !important; font-weight: 700 !important; line-height: 1.22; letter-spacing: -.01em; max-width: 22em; margin-left: auto; margin-right: auto; }
 .journal .publication-authors { margin-top: .2rem; font-weight: 600; }
 .journal .publication-authors sup, .journal .paper-affil sup { font-size: .7em; margin-left: .1em; }
 .journal .paper-affil { max-width: 40rem; margin: .35rem auto 0; font-size: .9rem; color: var(--text-secondary); line-height: 1.55; }
 .journal .teaser .hero-body { padding-bottom: .5rem; }
 
-.paper-body { max-width: 46rem; margin: 0 auto; padding: 1.75rem 1.25rem 3rem; font-family: 'Source Serif 4', 'Noto Serif TC', Georgia, serif; color: #1e293b; }
-.paper-body p, .paper-body li { font-family: 'Source Serif 4', 'Noto Serif TC', Georgia, serif !important; font-size: 1.06rem; line-height: 1.75; color: #1e293b; }
+.paper-body { max-width: 46rem; margin: 0 auto; padding: 1.75rem 1.25rem 3rem; font-family: Manrope,"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif; color: #1e293b; }
+.paper-body p, .paper-body li { font-family: Manrope,"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif !important; font-size: 1.06rem; line-height: 1.75; color: #1e293b; }
 .paper-body p { margin: 0 0 1rem; text-align: justify; hyphens: auto; }
-.paper-body h2 { font-family: 'Source Serif 4', 'Noto Serif TC', Georgia, serif !important; font-size: 1.45rem; font-weight: 700; line-height: 1.3; margin: 2.6rem 0 1rem; padding-top: 1.1rem; border-top: 1px solid #e2e8f0; color: #0f172a; }
+.paper-body h2 { font-family: Manrope,"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif !important; font-size: 1.45rem; font-weight: 700; line-height: 1.3; margin: 2.6rem 0 1rem; padding-top: 1.1rem; border-top: 1px solid #e2e8f0; color: #0f172a; }
 .paper-body h2 .sec-num { display: inline-block; min-width: 1.7em; color: var(--primary-color); }
-.paper-body h3 { font-family: 'Source Serif 4', 'Noto Serif TC', Georgia, serif !important; font-size: 1.12rem; font-weight: 700; font-style: italic; margin: 1.8rem 0 .6rem; color: #0f172a; }
+.paper-body h3 { font-family: Manrope,"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif !important; font-size: 1.12rem; font-weight: 700; font-style: italic; margin: 1.8rem 0 .6rem; color: #0f172a; }
 .paper-body b { color: #0f172a; }
 .paper-body a { color: var(--primary-color); }
 
 .key-points { margin: 0 0 2.2rem; padding: 1.1rem 1.4rem 1rem; border-left: 4px solid var(--primary-color); background: #f0fdfa; border-radius: 0 6px 6px 0; }
-.paper-body .key-points h2 { margin: 0 0 .6rem; padding: 0; border: 0; font-family: 'Inter', 'Noto Sans TC', sans-serif !important; font-size: .85rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--primary-color); }
+.paper-body .key-points h2 { margin: 0 0 .6rem; padding: 0; border: 0; font-family: Manrope,"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif !important; font-size: .875rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--primary-color); }
 .key-points ul { margin: 0; padding-left: 1.2rem; list-style: disc; }
 .key-points li { margin-bottom: .45rem; font-size: 1rem !important; line-height: 1.6 !important; }
 .key-points li::marker { color: var(--primary-color); }
@@ -160,8 +160,8 @@ body.journal { background: #fff; }
 .paper-body .eq .tag { position: absolute; right: 0; color: #475569; }
 
 .paper-table { margin: 1.4rem 0 1.9rem; overflow-x: auto; }
-.paper-table table { width: 100%; border-collapse: collapse; font-family: 'Inter', 'Noto Sans TC', sans-serif; font-size: .875rem; border-top: 2px solid #0f172a; border-bottom: 2px solid #0f172a; }
-.paper-table caption { caption-side: top; text-align: left; padding: 0 0 .55rem; font-family: 'Source Serif 4', 'Noto Serif TC', Georgia, serif; font-size: .95rem; line-height: 1.5; color: #1e293b; }
+.paper-table table { width: 100%; border-collapse: collapse; font-family: Manrope,"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif; font-size: .875rem; border-top: 2px solid #0f172a; border-bottom: 2px solid #0f172a; }
+.paper-table caption { caption-side: top; text-align: left; padding: 0 0 .55rem; font-family: Manrope,"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif; font-size: .95rem; line-height: 1.5; color: #1e293b; }
 .paper-table th { padding: .45rem .6rem; border-bottom: 1px solid #0f172a; font-weight: 700; text-align: left; white-space: nowrap; color: #0f172a; }
 .paper-table td { padding: .35rem .6rem; border: 0; color: #1e293b; }
 .paper-table .r { text-align: right; font-variant-numeric: tabular-nums; }
@@ -169,7 +169,7 @@ body.journal { background: #fff; }
 .paper-table td.miss { color: #b45309; }
 
 .paper-body .figure-svg { max-width: none; margin: 1.6rem 0 2rem; }
-.paper-body .figure-svg figcaption, .paper-fig figcaption { max-width: none; margin-top: .7rem; font-family: 'Source Serif 4', 'Noto Serif TC', Georgia, serif; font-size: .95rem !important; line-height: 1.6; color: #334155; }
+.paper-body .figure-svg figcaption, .paper-fig figcaption { max-width: none; margin-top: .7rem; font-family: Manrope,"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif; font-size: .95rem !important; line-height: 1.6; color: #334155; }
 .paper-fig { margin: 2rem 0; }
 .fig-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: .8rem; align-items: start; }
 .fig-stack { display: grid; gap: .8rem; }
@@ -192,11 +192,11 @@ body.journal { background: #fff; }
 /* revision v4 (2026-10-19): the project page carries the paper's main text */
 .paper-body .refs-ay { list-style: none; padding-left: 0; }
 .paper-body .refs-ay li { padding-left: 1.6em; text-indent: -1.6em; }
-.paper-body .table-note { margin: -1.2rem 0 1.8rem; font-family: 'Inter', 'Noto Sans TC', sans-serif !important; font-size: .82rem !important; color: #475569; text-align: left; }
+.paper-body .table-note { margin: -1.2rem 0 1.8rem; font-family: Manrope,"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif !important; font-size: .875rem !important; color: #475569; text-align: left; }
 .paper-body figure { margin: 1.8rem 0 2rem; }
 .paper-body figure img { display: block; width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 4px; }
 .paper-body figure.narrow { max-width: 560px; margin-left: auto; margin-right: auto; }
-.paper-body figure figcaption { margin-top: .7rem; font-family: 'Source Serif 4', 'Noto Serif TC', Georgia, serif; font-size: .95rem; line-height: 1.6; color: #334155; }
+.paper-body figure figcaption { margin-top: .7rem; font-family: Manrope,"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif; font-size: .95rem; line-height: 1.6; color: #334155; }
 .paper-body .figure-svg svg { display: block; width: 100%; height: auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; }
 .paper-body .paper-table th[rowspan] { vertical-align: top; }
 .paper-body .paper-table td, .paper-body .paper-table th { white-space: normal; }
@@ -217,7 +217,7 @@ body.journal { background: #fff; }
 /* TwinGround site theme (2026-11-15): the same dark monochrome system as the app and the other static pages
    (Manrope for UI and headings, DM Mono for codes, flat dark panels, text never below 14px). Print stays light. */
 @media screen {
-  :root { color-scheme: dark; --primary-color: #f0f0f0; --primary-hover: #ffffff; --accent-color: #d0d0d0; --text-primary: #d6d6d6; --text-secondary: #acacac; --text-light: #acacac; --background-primary: #050505; --background-secondary: #0f0f0f; --background-accent: #141414; --border-color: rgba(255,255,255,.12); --shadow-sm: none; --shadow-md: none; --shadow-lg: none; --shadow-xl: none; --tg-ink: #f2f2f2; --tg-ink-2: #d6d6d6; --tg-ink-3: #acacac; --tg-hair: rgba(255,255,255,.08); --tg-rule: rgba(255,255,255,.14); --tg-sans: Manrope, 'Noto Sans TC', system-ui, sans-serif; --tg-gutter: clamp(16px, 5vw, 72px); }
+  :root { color-scheme: dark; --primary-color: #f0f0f0; --primary-hover: #ffffff; --accent-color: #d0d0d0; --text-primary: #d6d6d6; --text-secondary: #acacac; --text-light: #acacac; --background-primary: #050505; --background-secondary: #0f0f0f; --background-accent: #141414; --border-color: rgba(255,255,255,.12); --shadow-sm: none; --shadow-md: none; --shadow-lg: none; --shadow-xl: none; --tg-ink: #f2f2f2; --tg-ink-2: #d6d6d6; --tg-ink-3: #acacac; --tg-hair: rgba(255,255,255,.08); --tg-rule: rgba(255,255,255,.14); --tg-sans: Manrope,"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif; --tg-gutter: clamp(16px, 5vw, 72px); }
   html { background: #050505; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   body.journal, body.journal .hero, body.journal .section, body.journal .footer { background: #050505 !important; color: var(--tg-ink-2); }
   body.journal { overflow-wrap: break-word; }
@@ -280,7 +280,7 @@ body.journal { background: #fff; }
   body.journal .copy-bibtex-btn { min-height: 44px; padding: 0 16px; background: transparent; color: var(--tg-ink); border: 1px solid var(--tg-rule); border-radius: 8px; font: 700 14px/1 var(--tg-sans); }
   body.journal .copy-bibtex-btn:hover { transform: none; background: rgba(255,255,255,.06); }
   body.journal .copy-bibtex-btn.copied { background: #f0f0f0; color: #1a1a1a; }
-  body.journal pre, body.journal #bibtex-code { background: #111 !important; color: var(--tg-ink-2) !important; border: 1px solid var(--tg-hair) !important; border-radius: 10px; font: 14px/1.6 'DM Mono', ui-monospace, monospace !important; white-space: pre-wrap; overflow-wrap: anywhere; }
+  body.journal pre, body.journal #bibtex-code { background: #111 !important; color: var(--tg-ink-2) !important; border: 1px solid var(--tg-hair) !important; border-radius: 10px; font: 14px/1.6 "DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace !important; white-space: pre-wrap; overflow-wrap: anywhere; }
   body.journal pre code, body.journal #bibtex-code code { background: transparent !important; color: inherit !important; font: inherit !important; }
   body.journal .footer { padding: 32px 20px calc(48px + env(safe-area-inset-bottom)); border-top: 1px solid var(--tg-hair); }
   body.journal .footer .content p { font-size: 14px; color: var(--tg-ink-3); }

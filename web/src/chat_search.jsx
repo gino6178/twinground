@@ -39,7 +39,23 @@ function worldSite(spec, x) {
   const [body, lat, lon, zh, en] = WORLD_TARGETS[spec.target] || WORLD_TARGETS[spec.body === 'mars' ? 'jezero' : 'marius_hills']
   const place = x.place ? `${x.place.name}, ${x.place.country}` : null
   const at = `${x.lat.toFixed(2)}°, ${x.lon.toFixed(2)}°`
-  return { earth: { lat: x.lat, lon: x.lon, name: { zh: place ? `${place} · ${at}` : at, en: place ? `${place} · ${at}` : at } }, target: { body, lat, lon, name: [zh, en] } }
+  return { earth: { lat: x.lat, lon: x.lon, name: { zh: place ? `${place} · ${at}` : at, en: place ? `${place} · ${at}` : at } }, target: { body, lat, lon, name: [zh, titleName(en)] } }
+}
+// "the lunar south pole" reads as a sentence fragment when it heads a label: drop the article and capitalise.
+const titleName = en => { const t = en.replace(/^the /, ''); return t.charAt(0).toUpperCase() + t.slice(1) }
+const EXPLORE_KM = 20  // candidate_explore.jsx opens a 20 x 20 km scene (high-resolution DEM for the central 16 km)
+// The server reply lists conditions as "must cold, must low sun, prefer clay" and names the target in lower case
+// ("Target: the lunar south pole"). Rewrite that part from the structured spec so it reads as a sentence.
+function tidyReply(res) {
+  let text = res.reply || ''
+  if (getLanguage() !== 'en') return text
+  const lab = c => res.labels?.[c] || c
+  const groups = { must: [], prefer: [], avoid: [] }
+  Object.entries(res.applied || {}).forEach(([c, imp]) => groups[imp]?.push(lab(c)))
+  const parts = [['Required', groups.must], ['Preferred', groups.prefer], ['Avoided', groups.avoid]].filter(([, l]) => l.length).map(([k, l]) => `${k}: ${l.join(', ')}`)
+  const region = text.match(/Your conditions: (region: [^,.]+)/)?.[1]
+  if (parts.length || region) text = text.replace(/Your conditions: [^.]*\./, `${[region && region[0].toUpperCase() + region.slice(1), ...parts].filter(Boolean).join('. ')}.`)
+  return text.replace(/Target: the ([a-z])/, (_, ch) => `Target: ${ch.toUpperCase()}`)
 }
 const GRADE = { 2: 'is-match', 1: 'is-partial', 0: 'is-miss', [-1]: 'is-unknown' }
 
@@ -68,7 +84,7 @@ function ResultMap({ results, active, onPick }) {
         if (on) { const k = (t % 1.6) / 1.6; x.strokeStyle = `rgba(255,255,255,${1 - k})`; x.lineWidth = 1.5; x.beginPath(); x.arc(px, py, 5 + 14 * k, 0, Math.PI * 2); x.stroke() }
         x.fillStyle = on ? '#ffffff' : '#bdbdbd'; x.beginPath(); x.arc(px, py, on ? 4.5 : 3.2, 0, Math.PI * 2); x.fill()
         x.strokeStyle = '#000'; x.lineWidth = 1; x.stroke()
-        if (on || results.length <= 12) { x.fillStyle = on ? '#fff' : '#cfcfcf'; x.font = `${on ? 700 : 600} 14px Manrope, system-ui, sans-serif`; x.fillText(String(i + 1), px + 6, py - 6) }
+        if (on || results.length <= 12) { x.fillStyle = on ? '#fff' : '#cfcfcf'; x.font = `${on ? 700 : 600} 14px Manrope, "Noto Sans TC", system-ui, -apple-system, "Segoe UI", sans-serif`; x.fillText(String(i + 1), px + 6, py - 6) }
       })
       raf = requestAnimationFrame(draw)
     }
@@ -90,7 +106,7 @@ function Chips({ data, onSpec }) {
   const lab = c => data.labels?.[c] || c
   const drop = patch => onSpec({ ...spec, ...patch })
   const chips = []
-  if (spec.target) chips.push(['target', data.target_label || spec.target, () => drop({ target: null })])
+  if (spec.target) chips.push(['target', titleName(data.target_label || spec.target), () => drop({ target: null })])
   else if (spec.body) chips.push(['body', spec.body === 'moon' ? tr('月球', 'Moon') : tr('火星', 'Mars'), () => drop({ body: null })])
   Object.entries(applied).forEach(([c, imp]) => {
     const fromTarget = implied.includes(c)
@@ -128,7 +144,7 @@ export default function ChatSearch() {
         if (res.available === false) { setError(res.reason); setTurns(t => [...t, { who: 'bot', text: res.reason, failed: true }]); return }
         if (res.chat_only) { setTurns(t => [...t, { who: 'bot', text: res.reply }]); return }  // small talk: keep the current results
         setData(res); setActive(0)
-        setTurns(t => [...t, { who: 'bot', text: res.reply, ms: res.model_ms }])
+        setTurns(t => [...t, { who: 'bot', text: tidyReply(res), ms: res.model_ms }])
       })
       .catch(e => { if (e.name !== 'AbortError') { setError(e.message); setTurns(t => [...t, { who: 'bot', text: tr('搜尋失敗：', 'Search failed: ') + e.message, failed: true }]) } })
       .finally(() => { if (abort.current === ctl) setBusy(false) })
@@ -173,13 +189,13 @@ export default function ChatSearch() {
           <button type="button" className="cs-item" onClick={() => setActive(i)} aria-pressed={i === active}>
             <span className="cs-rank">{i + 1}</span>
             <span className="cs-where"><b>{x.place ? `${x.place.name}, ${x.place.country}` : tr('偏遠地區', 'Remote area')}</b>
-              <small>{x.lat.toFixed(2)}°, {x.lon.toFixed(2)}° · {x.patch_km} km {tr('窗格', 'window')}{x.place ? ` · ${tr('距', '')}${x.place.name} ${x.place.km} km` : ''}</small></span>
+              <small>{x.lat.toFixed(2)}°, {x.lon.toFixed(2)}° · {tr(`${x.patch_km} km 搜尋窗格`, `${x.patch_km} km search window`)}{x.patch_km !== EXPLORE_KM ? tr(`（3D 漫步為中央 ${EXPLORE_KM} km）`, ` (3D walk: central ${EXPLORE_KM} km)`) : ''}{x.place ? ` · ${tr('距', '')}${x.place.name} ${x.place.km} km` : ''}</small></span>
             {x.known_analog && <span className="cs-known">{tr('已知類比地附近', 'near a known analog')}</span>}
           </button>
           {i === active && <div className="cs-detail">
             {x.measured && <MaxMatchList block={x.measured} />}
             <ul>{x.conditions.map(c => <li key={c.id} className={GRADE[c.grade]}><span>{data.labels?.[c.id] || c.id}</span><b>{c.text}</b><em>{c.grade === 2 ? tr('符合', 'match') : c.grade === 1 ? tr('部分', 'partial') : c.grade === 0 ? tr('不符', 'miss') : tr('無資料', 'no data')}</em></li>)}</ul>
-            <p>{tr('距最近道路', 'Nearest road')} {x.road_km} km{x.known_analog ? ` · ${tr('附近已知類比地：', 'known analog nearby: ')}${(getLanguage() === 'en' ? x.known_analog.name : x.known_analog.name_zh || x.known_analog.name)}（${x.known_analog.distance_km} km）` : ''}</p>
+            <p>{tr('距最近道路', 'Nearest road')} {x.road_km} km{x.known_analog ? ` · ${tr('附近已知類比地：', 'known analog nearby: ')}${(getLanguage() === 'en' ? x.known_analog.name : x.known_analog.name_zh || x.known_analog.name)}${tr(`（${x.known_analog.distance_km} km）`, ` (${x.known_analog.distance_km} km)`)}` : ''}</p>
             <div className="cs-actions">
               <button type="button" onClick={() => setWorld(worldSite(spec, x))}><Footprints size={13} /> {tr('走進 3D 世界', 'Walk in 3D')}</button>
               <button type="button" onClick={() => navigator.clipboard?.writeText(`${x.lat}, ${x.lon}`)}><Copy size={13} /> {tr('複製座標', 'Copy coordinates')}</button>

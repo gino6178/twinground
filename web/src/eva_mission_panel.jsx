@@ -2,6 +2,7 @@
 // distance and energy on each site), B8 base-site check and habitat placement, and in-situ resource estimates.
 // Every number is a model estimate; thresholds are illustrative screening values.
 import React, { useState } from 'react'
+import { EN } from './i18n/catalog.js'
 
 const num = (v, d = 0) => Number.isFinite(v) ? (Math.abs(v) < 0.5 * 10 ** -d ? 0 : v).toLocaleString(undefined, { minimumFractionDigits: d, maximumFractionDigits: d }) : '—'
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v))
@@ -9,7 +10,9 @@ const dist = v => !Number.isFinite(v) ? '—' : v >= 1000 ? `${num(v / 1000, 2)}
 const minutes = s => !Number.isFinite(s) ? '—' : s >= 3600 ? `${Math.floor(s / 3600)} h ${Math.round((s % 3600) / 60)} min` : `${Math.max(1, Math.round(s / 60))} min`
 const MINERAL = { Clinopyroxene: ['單斜輝石', 'clinopyroxene'], Orthopyroxene: ['斜方輝石', 'orthopyroxene'], Olivine: ['橄欖石', 'olivine'], Plagioclase: ['斜長石', 'plagioclase'] }
 const KIND = { flat: ['平地', 'level ground'], slope: ['坡面', 'slope'], hollow: ['窪地／坑底', 'hollow or crater floor'], other: ['其他', 'other'] }
-const BASE = { moon: ['登月艙', 'the lander'], mars: ['毅力號', 'Perseverance'], earth: ['棲地模組', 'the habitat'] }
+const BASE = { moon: ['登月艙', 'the lander'], mars: ['基地', 'the base'], earth: ['棲地模組', 'the habitat'] }
+// Regional lithology arrives as the Chinese GLiM class name; English mode shows the catalogue's translation.
+const lithologyName = (v, tr) => (v ? tr(v, EN[v] || v) : v)
 const O2_PER_PERSON_DAY = 0.84   // kg, a common life-support planning value
 
 function mineralAt(minerals, u, v) {
@@ -78,7 +81,7 @@ function Mission({ engine, stats, target, earth, tr, mission, setMission }) {
         {(m.samples.length > 0 || m.photo) && <ul className="eva-mission-log">
           {m.samples.map((s, i) => <li key={i}><b>{tr(`樣本 ${i + 1}`, `Sample ${i + 1}`)}</b> {tr(KIND[s.kind][0], KIND[s.kind][1])} · {num(s.slope, 1)}° · {num(s.elevation)} m
             {s.mineral ? tr(` · 軌道礦物圖此區以${MINERAL[s.mineral]?.[0] || s.mineral}為主`, ` · orbital map: ${MINERAL[s.mineral]?.[1] || s.mineral}-dominated`) : ''}
-            {s.lithology ? tr(` · 區域岩性：${s.lithology}`, ` · regional lithology: ${s.lithology}`) : ''}</li>)}
+            {s.lithology ? tr(` · 區域岩性：${s.lithology}`, ` · regional lithology: ${lithologyName(s.lithology, tr)}`) : ''}</li>)}
           {m.photo?.thumb && <li className="eva-mission-photo"><img src={m.photo.thumb} alt={tr('坑壁照片', 'Crater-wall photo')} /><span>{num(m.photo.slope)}° · {num(m.photo.relief, 1)} m</span></li>}
         </ul>}
         {m.done && <p className="eva-mission-done">{tr('任務完成', 'Mission complete')} · {minutes(m.done.t - m.start.t)} · {dist(m.done.dist - m.start.dist)} · {num((m.done.energyJ - m.start.energyJ) / 4184)} kcal</p>}
@@ -153,7 +156,7 @@ function Resources({ engine, target, earth, tr }) {
           : ice === false ? tr('此處一年中會被照到，表土含水極低（主要是太陽風植入的氫，換算水約 0.05 wt% 以下）。', 'This spot is sunlit during the year; the regolith holds very little water (mostly implanted solar-wind hydrogen, below about 0.05 wt% as water).')
             : tr('無法判斷（不在月球場景）。', 'Cannot tell here (not in the Moon scene).')}</li>
     </ul> : <p className="eva-route-hint">{tr('這個選區沒有區域元素豐度資料，無法估算產氧量。', 'No regional element abundances for this selection, so oxygen yield cannot be estimated.')}</p>}
-    {earth.lithology && <p className="eva-route-hint">{tr(`地球候選的區域岩性是「${earth.lithology}」；訓練時可用來練習採樣與描述，但不代表月壤成分。`, `The Earth candidate’s regional lithology is “${earth.lithology}”; useful for practising sampling and description, not a stand-in for lunar regolith chemistry.`)}</p>}
+    {earth.lithology && <p className="eva-route-hint">{tr(`地球候選的區域岩性是「${earth.lithology}」；訓練時可用來練習採樣與描述，但不代表月壤成分。`, `The Earth candidate’s regional lithology is “${lithologyName(earth.lithology, tr)}”; useful for practising sampling and description, not a stand-in for lunar regolith chemistry.`)}</p>}
     <small>{tr('化學計量估算：TiO₂ = Ti × 1.668，氫還原可從鈦鐵礦 FeTiO₃ 取出約其質量 10.6% 的氧，FeO 含氧 22.3%；不含提取效率與設備能耗。只供篩選與教學。',
       'Stoichiometric estimate: TiO₂ = Ti × 1.668, ilmenite FeTiO₃ is 10.6% recoverable oxygen, FeO is 22.3% oxygen; extraction efficiency and plant energy are not included. For screening and teaching only.')}</small>
   </div>

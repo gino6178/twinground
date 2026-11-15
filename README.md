@@ -80,8 +80,11 @@ with a fine-tuned Llama 3.2 1B. Every answer lists the passages it was given.
 
 Building it (`scripts/assistant/`):
 
-1. `build_corpus.py`: RAG corpus from our paper (EN/ZH, SI), brief, archive, research pages, README, UI text and the
-   cited works (open-access full text through OpenAlex, otherwise the citation only) → `build/assistant/chunks.jsonl`.
+1. `build_corpus.py`: RAG corpus from short "About TwinGround" / data-source passages, the public pages only (full
+   paper EN/ZH with its SI, brief, methods archive, Search Candidates, research pages; every passage links to its page
+   and section) and the cited works (open-access full text through OpenAlex, otherwise the citation only) →
+   `build/assistant/chunks.jsonl` (`--reuse-refs` keeps the reference passages already there). Re-embed on the GPU
+   host afterwards (`Index.build` in `rag.py` writes `vectors.npy`).
 2. `dump_site_cases.py`: run next to the live server; saves site briefs of real search results.
 3. `gen_dialogues.py`: on a GPU node, Meta Llama 3.3 70B Instruct (vLLM) writes questions and grounded answers in the
    exact prompt format of `prompt.py` (docs, site explanations, out-of-scope requests, follow-ups).

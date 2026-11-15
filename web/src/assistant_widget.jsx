@@ -2,7 +2,7 @@
 // passages retrieved from the TwinGround paper, its SI, the site text and the works it cites (RAG), and, on the results
 // page, a brief of the candidate being viewed, so it can explain why that place was chosen. Every answer lists the
 // passages it was given; numbers in brackets point to them.
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { MessageCircle, X, ArrowUp, RotateCcw, ExternalLink } from 'lucide-react'
 import { getLanguage } from './i18n/core.js'
 import './assistant_widget.css'
@@ -35,13 +35,38 @@ function ABOUT_SITE() {
   ]
 }
 
+// Inline citations: [n] links to source n; [candidate] (the service's rendering of its internal [SITE] tag) marks a
+// fact taken from the search result of the candidate being viewed. A stray [SITE] from an older service is shown the
+// same way, so the internal tag never reaches the reader.
+const CITE = /\[(\d{1,2}|candidate|候選|SITE)\]/g
+function AnswerText({ text, sources, site }) {
+  const parts = []
+  let last = 0
+  for (const m of text.matchAll(CITE)) {
+    if (m.index > last) parts.push(text.slice(last, m.index))
+    const key = `c${m.index}`
+    if (/^\d+$/.test(m[1])) {
+      const s = (sources || []).find(x => x.n === Number(m[1]))
+      parts.push(s?.url
+        ? <a key={key} className="aw-cite" href={s.url} target="_blank" rel="noreferrer" title={s.title}>{m[1]}</a>
+        : <span key={key} className="aw-cite">{m[1]}</span>)
+    } else if (site) {
+      parts.push(<span key={key} className="aw-cite is-site" title={tr(`來自候選 #${site} 的搜尋結果（結果頁）`, `From the search result for candidate #${site} on the results page`)}>
+        {tr('候選', 'candidate')}</span>)
+    }
+    last = m.index + m[0].length
+  }
+  if (last < text.length) parts.push(text.slice(last))
+  return <p>{parts}</p>
+}
+
 function Answer({ turn }) {
   const [open, setOpen] = useState(false)
   const cited = (turn.sources || []).filter(s => s.cited)
   const shown = open ? turn.sources || [] : cited
   return (
     <div className={`aw-turn is-bot${turn.failed ? ' is-failed' : ''}`}>
-      <p>{turn.content}</p>
+      {turn.failed ? <p>{turn.content}</p> : <AnswerText text={turn.content} sources={turn.sources} site={turn.site} />}
       {turn.sources?.length > 0 && (
         <div className="aw-sources">
           {shown.map(s => (
@@ -57,7 +82,9 @@ function Answer({ turn }) {
           )}
         </div>
       )}
-      {turn.site && <small>{tr(`已參考：候選 #${turn.site}`, `Read: candidate #${turn.site}`)}</small>}
+      {turn.site
+        ? <small>{tr(`已參考：候選 #${turn.site} 的搜尋結果`, `Read: search result for candidate #${turn.site}`)}</small>
+        : turn.noSite && <small>{tr('未參考候選地點', 'Candidate not included')}</small>}
     </div>
   )
 }
@@ -74,8 +101,53 @@ export default function AssistantWidget({ searchData, activeId, onResults, open,
   const index = Math.max(0, matches.findIndex(m => m.id === activeId))
   const candidate = matches.length ? matches[index] : null
 
-  useEffect(() => { listRef.current?.scrollTo({ top: listRef.current.scrollHeight, behavior: 'smooth' }) }, [log, busy])
+  // Keep the newest message in view. Instant (not smooth) scrolling, set during layout and again on the next frame, so
+  // it also lands when the panel is in a background tab or the answer's fonts settle late. A long answer is shown from
+  // its first line rather than its last.
+  useLayoutEffect(() => {
+    const el = listRef.current
+    if (!el || !open) return undefined
+    const toNewest = () => {
+      const lastTurn = el.lastElementChild
+      const max = el.scrollHeight - el.clientHeight
+      const top = lastTurn && !busy && log[log.length - 1]?.role === 'assistant' ? Math.min(max, lastTurn.offsetTop - 8) : max
+      el.scrollTop = Math.max(0, top)
+    }
+    toNewest()
+    const raf = requestAnimationFrame(toNewest)
+    return () => cancelAnimationFrame(raf)
+  }, [log, busy, open])
   useEffect(() => { if (open) inputRef.current?.focus() }, [open])
+
+  // The input grows with its text up to about four lines, then scrolls.
+  useLayoutEffect(() => {
+    const el = inputRef.current
+    if (!el) return
+    el.style.height = 'auto'
+    const max = parseFloat(getComputedStyle(el).lineHeight || '21') * 4 || 84
+    el.style.height = `${Math.min(el.scrollHeight, max)}px`
+    el.style.overflowY = el.scrollHeight > max ? 'auto' : 'hidden'
+  }, [draft, open])
+
+  // Phones: the on-screen keyboard shrinks the visual viewport but not 100svh/100dvh on every browser, so the panel
+  // reads window.visualViewport and docks above the keyboard (CSS vars --aw-vh and --aw-kb, class is-kb).
+  const panelRef = useRef(null)
+  useEffect(() => {
+    const vv = window.visualViewport
+    if (!open || !vv) return undefined
+    const sync = () => {
+      const p = panelRef.current
+      if (!p) return
+      const kb = Math.max(0, window.innerHeight - vv.height - vv.offsetTop)
+      p.style.setProperty('--aw-vh', `${vv.height}px`)
+      p.style.setProperty('--aw-kb', `${kb}px`)
+      p.classList.toggle('is-kb', kb > 80)
+    }
+    sync()
+    vv.addEventListener('resize', sync)
+    vv.addEventListener('scroll', sync)
+    return () => { vv.removeEventListener('resize', sync); vv.removeEventListener('scroll', sync) }
+  }, [open])
   useEffect(() => {
     if (!open) return undefined
     const onKey = e => { if (e.key === 'Escape') setOpen(false) }
@@ -104,9 +176,16 @@ export default function AssistantWidget({ searchData, activeId, onResults, open,
     report({ type: 'sent' })
     let ok = false
     setDraft('')
-    const withSite = useSite && candidate
+    const withSite = Boolean(useSite && candidate)
     const userTurn = { role: 'user', content: q }
-    const history = [...log.filter(t => !t.failed).map(t => ({ role: t.role, content: t.content })), userTurn].slice(-6)
+    // Without the candidate, earlier answers about it must not leak back in through the history.
+    const past = log.filter(t => !t.failed).map(t => ({
+      role: t.role,
+      content: !withSite && t.role === 'assistant' && t.site
+        ? tr('（先前關於候選地點的回答，這次未納入。）', '(An earlier answer about a candidate site, not included now.)')
+        : t.content,
+    }))
+    const history = [...past, userTurn].slice(-6)
     setLog(l => [...l, userTurn])
     setBusy(true)
     try {
@@ -117,7 +196,8 @@ export default function AssistantWidget({ searchData, activeId, onResults, open,
       })
       const j = await r.json().catch(() => ({}))
       if (!r.ok || j.available === false || !j.answer) throw new Error(j.reason || j.error || `HTTP ${r.status}`)
-      setLog(l => [...l, { role: 'assistant', content: j.answer, sources: j.sources, site: j.site_used ? index + 1 : null }])
+      setLog(l => [...l, { role: 'assistant', content: j.answer, sources: j.sources, site: j.site_used ? index + 1 : null,
+        noSite: !j.site_used && Boolean(candidate) }])
       ok = true
     } catch (e) {
       setLog(l => [...l, { role: 'assistant', failed: true, content: tr(`抱歉，小助手暫時無法回答（${e.message}）。`, `Sorry, the assistant could not answer (${e.message}).`) }])
@@ -134,7 +214,7 @@ export default function AssistantWidget({ searchData, activeId, onResults, open,
       {/* The assistant opens from the Help button (guided_tour.jsx) or the landing card; the panel has its own close. */}
       {open && cover && <div className="aw-backdrop" onClick={() => setOpen(false)} />}
       {open && (
-        <section className={`aw-panel${cover ? ' is-cover' : ''}`} role="dialog" aria-label={tr('TwinGround 小助手', 'TwinGround assistant')}>
+        <section ref={panelRef} className={`aw-panel${cover ? ' is-cover' : ''}`} role="dialog" aria-label={tr('TwinGround 小助手', 'TwinGround assistant')}>
           <header>
             <div>
               <b>{tr('TwinGround 小助手', 'TwinGround assistant')}</b>
@@ -148,10 +228,12 @@ export default function AssistantWidget({ searchData, activeId, onResults, open,
             </span>
           </header>
           {candidate && (
-            <label className="aw-site">
+            <label className={`aw-site${useSite ? ' is-on' : ''}`}>
               <input type="checkbox" checked={useSite} onChange={e => setUseSite(e.target.checked)} />
               <span>{tr(`一起參考目前的候選 #${index + 1}`, `Include the current candidate #${index + 1}`)}
-                <em>{candidate.name}</em></span>
+                <em>{useSite
+                  ? tr(`開啟：回答會讀取 ${candidate.name} 的搜尋結果`, `On: answers read the search result for ${candidate.name}`)
+                  : tr('關閉：只根據論文與網站內容回答，不談這個候選', 'Off: answers use only the paper and site, not this candidate')}</em></span>
             </label>
           )}
           <div className="aw-log" ref={listRef} aria-live="polite">
@@ -167,7 +249,7 @@ export default function AssistantWidget({ searchData, activeId, onResults, open,
             {busy && <div className="aw-turn is-bot is-busy" aria-label={tr('思考中', 'Thinking')}><i /><i /><i /></div>}
           </div>
           <form className="aw-input" onSubmit={e => { e.preventDefault(); send() }}>
-            <textarea ref={inputRef} rows={1} value={draft} maxLength={600}
+            <textarea ref={inputRef} rows={1} value={draft} maxLength={600} aria-label={tr('你的問題', 'Your question')}
               placeholder={tr('問任何關於 TwinGround 的問題…', 'Ask anything about TwinGround…')}
               onChange={e => setDraft(e.target.value)}
               onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey && !e.nativeEvent.isComposing) { e.preventDefault(); send() } }} />

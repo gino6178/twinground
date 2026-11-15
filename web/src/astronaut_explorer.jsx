@@ -14,6 +14,8 @@ const KIND = {
   clear: ['晴', 'Clear'], cloudy: ['多雲', 'Cloudy'], rain: ['雨', 'Rain'], snow: ['雪', 'Snow'], fog: ['霧', 'Fog'], dust: ['沙塵', 'Blowing dust'],
   dusty: ['多塵', 'Dusty'], storm: ['沙塵暴', 'Dust storm'], vacuum: ['真空・無天氣', 'Vacuum, no weather'],
 }
+// Earth weather is shown only once the NASA POWER climatology is in; before that the model has no basis for it.
+const wxKnown = s => s.body !== 'earth' || (s.climateState === 'ready' && !s.weather?.estimated)
 const hhmm = h => `${String(Math.floor(h)).padStart(2, '0')}:${String(Math.floor((h % 1) * 60)).padStart(2, '0')}`
 const marsSeason = (ls, tr) => ls < 90 ? tr('北半球春', 'northern spring') : ls < 180 ? tr('北半球夏', 'northern summer') : ls < 270 ? tr('北半球秋・沙塵季', 'northern autumn, dust season') : tr('北半球冬・沙塵季', 'northern winter, dust season')
 
@@ -30,8 +32,8 @@ function WeatherPanel({ stats, target, tr, engine, onClose }) {
   return <section className="eva-weather" aria-label={tr('時間與天氣', 'Time and weather')}>
     <header><strong>{tr('時間與天氣', 'Time and weather')}</strong><button type="button" onClick={onClose} aria-label={tr('關閉', 'Close')}>✕</button></header>
     <div className="eva-wx-now">
-      <b>{Math.round(wx.temperature)}°C</b>
-      <span>{tr(KIND[wx.kind]?.[0] || wx.kind, KIND[wx.kind]?.[1] || wx.kind)}</span>
+      <b>{wxKnown(stats) ? `${Math.round(wx.temperature)}°C` : '—'}</b>
+      <span>{wxKnown(stats) ? tr(KIND[wx.kind]?.[0] || wx.kind, KIND[wx.kind]?.[1] || wx.kind) : stats.climateState === 'loading' ? tr('讀取氣候資料中', 'Loading climate data') : '—'}</span>
       <small>{tr('太陽高度', 'Sun')} {Math.round(stats.sunElevation)}° · {tr('白晝', 'Daylight')} {stats.dayLength?.toFixed(1)} h · {tr('風', 'Wind')} {wx.wind.toFixed(1)} m/s{isEarth ? ` · ${tr('雲量', 'Cloud')} ${Math.round(wx.cloud * 100)}%` : ''}</small>
     </div>
     <label>{tr('當地時間', 'Local time')} <output>{hhmm(t.hour)}{body === 'mars' ? tr('（火星時）', ' (Mars time)') : body === 'moon' ? tr('（月球時，1 小時 ≈ 29.5 地球小時）', ' (lunar; 1 h ≈ 29.5 Earth h)') : ''}</output>
@@ -67,6 +69,10 @@ const BODY_NAME = { moon: ['月球', 'Moon'], mars: ['火星', 'Mars'], earth: [
 const ACTION_KEYS = { KeyV: 'view', KeyL: 'lamp', KeyT: 'switch', KeyF: 'flag', KeyR: 'rocks', KeyG: 'speed', KeyP: 'photo', KeyC: 'scan', KeyM: 'rover', KeyB: 'board', Home: 'recenter' }
 const fmt = (v, d = 0) => Number.isFinite(v) ? (Math.abs(v) < 0.5 * 10 ** -d ? 0 : v).toLocaleString(undefined, { minimumFractionDigits: d, maximumFractionDigits: d }) : '—'
 const coord = (lat, lon) => `${Math.abs(lat).toFixed(4)}°${lat >= 0 ? 'N' : 'S'} ${Math.abs(lon).toFixed(4)}°${lon >= 0 ? 'E' : 'W'}`
+// The place name without the coordinates and window size some callers append (they are on the line below, and the
+// size there is the scene actually built, which can differ from the search window).
+const placeName = label => String(label || '').replace(/\s*·\s*-?\d[\d.]*°.*$/, '')
+const sceneKm = km => { const v = km < 1 ? `${fmt(km * 1000)} m` : `${fmt(km, km < 10 ? 1 : 0)} km`; return `${v.replace(/ (k?m)$/, '')} × ${v}` }
 const clock = s => { const t = Math.floor(s); return `${String(Math.floor(t / 3600)).padStart(2, '0')}:${String(Math.floor(t / 60) % 60).padStart(2, '0')}:${String(t % 60).padStart(2, '0')}` }
 
 function Compass({ bearing }) {
@@ -306,7 +312,7 @@ export default function AstronautExplorer({ target, earth, initialWorld = 'targe
         <div className="eva-progress-meta" aria-hidden="true"><span>{loadingView.text}</span><b>{percent}%</b></div>
       </div>
     </div>}
-    {stats?.loading && <div className="eva-tiles-loading" role="status">{tr('正在從 NASA-AMMOS 載入 Dingo Gap 實測網格…', 'Loading the Dingo Gap mesh from NASA-AMMOS…')}</div>}
+    {stats?.ready && stats.meshLoading && <div className="eva-tiles-loading" role="status">{tr('正在從 NASA-AMMOS 載入 Dingo Gap 實測網格…', 'Loading the Dingo Gap mesh from NASA-AMMOS…')}</div>}
     {error && <div className="eva-error" role="alert"><p>{error}</p><button type="button" onClick={onClose}>{tr('返回地形比較', 'Back to comparison')}</button></div>}
 
     <header className="eva-top">
@@ -316,8 +322,8 @@ export default function AstronautExplorer({ target, earth, initialWorld = 'targe
       </button>
       <div className="eva-place">
         <span className={`eva-badge ${isEarth ? 'earth' : target.body}`}>{worldLabel}</span>
-        <strong>{isRover ? tr('Dingo Gap · 蓋爾撞擊坑（好奇號第 528 火星日）', 'Dingo Gap · Gale crater (Curiosity sol 528)') : isEarth ? earth.label : target.label}</strong>
-        {stats && !isRover && <small>{coord(stats.lat, stats.lon)}</small>}
+        <strong>{isRover ? tr('Dingo Gap · 蓋爾撞擊坑（好奇號第 528 火星日）', 'Dingo Gap · Gale crater (Curiosity sol 528)') : placeName(isEarth ? earth.label : target.label)}</strong>
+        {stats && !isRover && <small>{tr(`${sceneKm(stats.sizeKm)} 場景`, `${sceneKm(stats.sizeKm)} scene`)} · {coord(stats.lat, stats.lon)}</small>}
         {isRover && <small>{tr('實測立體影像網格 · 不是你選的區域', 'Measured stereo mesh · not your selected region')}</small>}
       </div>
       </div>
@@ -359,7 +365,7 @@ export default function AstronautExplorer({ target, earth, initialWorld = 'targe
         <div><dt>{tr('原地跳高', 'Jump height')}</dt><dd>{fmt(stats.jumpHeight, 2)} m</dd></div>
         {!stats.grounded && <div><dt>{tr('離地', 'Airborne')}</dt><dd>{fmt(stats.altitude, 2)} m</dd></div>}
       </dl>}
-      {stats.weather && <p className="eva-wx-line">{hhmm(stats.time.hour)} · {tr(KIND[stats.weather.kind]?.[0] || '', KIND[stats.weather.kind]?.[1] || '')} · {Math.round(stats.weather.temperature)}°C{stats.sunVisHere < 0.5 && stats.sunElevation > 0 ? tr(' · 地形陰影中', ' · in terrain shadow') : ''}</p>}
+      {stats.weather && <p className="eva-wx-line">{hhmm(stats.time.hour)} · {!wxKnown(stats) ? '—' : <>{tr(KIND[stats.weather.kind]?.[0] || '', KIND[stats.weather.kind]?.[1] || '')} · {Math.round(stats.weather.temperature)}°C</>}{stats.sunVisHere < 0.5 && stats.sunElevation > 0 ? tr(' · 地形陰影中', ' · in terrain shadow') : ''}</p>}
       <div className="eva-suit">
         <span>{tr('生命維持（模擬）', 'Life support (simulated)')}</span>
         {stats.life ? <LifeSupport stats={stats} tr={tr} clock={clock} /> : <><div className="eva-bar"><i style={{ width: `${stats.o2}%` }} /></div>
@@ -415,8 +421,17 @@ export default function AstronautExplorer({ target, earth, initialWorld = 'targe
 
     {help && <section className="eva-help" aria-label={tr('操作說明', 'Controls')}>
       <h2>{tr('太空人探索', 'Astronaut exploration')}</h2>
-      <p>{tr('地形是這個窗格的實測 DEM，按真實水平尺度與各星球重力模擬步行。', 'The ground is this window’s measured DEM at true horizontal scale, walked under each body’s gravity.')}</p>
-      <ul>
+      <p>{tr('地形是這個窗格的實測 DEM，按真實水平尺度與各星球重力模擬步行。', 'The ground is this window’s measured DEM at true horizontal scale, walked under each body’s gravity.')}
+        {stats && !isRover ? tr(` 3D 場景範圍為 ${sceneKm(stats.sizeKm)}。`, ` The 3D scene covers ${sceneKm(stats.sizeKm)}.`) : ''}</p>
+      {mobile ? <ul>
+        <li>{tr('左下搖桿：移動；推到底即奔跑', 'Joystick (bottom left): walk; push it all the way to run')}</li>
+        <li>{tr('單指拖曳畫面：轉動視角；雙指捏合：縮放', 'Drag with one finger: look around; pinch: zoom')}</li>
+        <li>{tr('畫面按鈕：上下車、叫車、跳躍（開車時為煞車）、奔跑、地形掃描、插旗、移動倍率', 'On-screen buttons: board or leave the rover, call it, jump (brake while driving), run, terrain scan, flag, travel speed')}</li>
+        <li>{tr('上方工具列（可左右滑動）：切換世界、視角、頭燈、路線規劃、任務、時間天氣、設定、拍照', 'Toolbar at the top (swipe sideways): switch world, view, lamp, route, mission, time & weather, settings, photo')}</li>
+        <li>{tr('點小地圖即可移動到該處；開啟「路線規劃」時改為加入路線點', 'Tap the minimap to travel there; with Route open, a tap adds a route point')}</li>
+        <li>{tr('生命維持：O₂、冷卻水與電池隨活動與日照／陰影變化，剩餘量不夠走回時會警告；小地圖上方的「通訊覆蓋」顯示無線電與地球直視範圍', 'Life support: O₂, cooling water and battery follow activity and sun or shade, with a warning when they may not cover the walk back; “Comms coverage” above the minimap shows radio and Earth line of sight')}</li>
+        <li>{tr('「任務」：野外科學任務、基地選址檢查與現地資源估算', '“Mission”: a field-science task set, base-site checks and resource estimates')}</li>
+      </ul> : <ul>
         <li><kbd>W A S D</kbd> / <kbd>↑ ↓ ← →</kbd> {tr('移動', 'Move')}</li>
         <li><kbd>Shift</kbd> {tr('奔跑（月球、火星為低重力跳步）', 'Run (low-gravity lope on Moon and Mars)')}</li>
         <li><kbd>Space</kbd> {tr('跳躍', 'Jump')}</li>
@@ -429,9 +444,14 @@ export default function AstronautExplorer({ target, earth, initialWorld = 'targe
         <li>{tr('生命維持：O₂、冷卻水與電池隨活動與日照／陰影變化，剩餘量不夠走回時會警告；小地圖「通訊覆蓋」顯示基地無線電與地球直視範圍', 'Life support: O₂, cooling water and battery follow activity and sun or shade, with a warning when they may not cover the walk back; “Comms coverage” on the minimap shows radio and Earth line of sight')}</li>
         <li>{tr('「任務」：野外科學任務（採樣站、地震儀、坑壁照片）、基地選址檢查與現地資源估算；路線規劃可選「開車到某點再步行」', '“Mission”: a field-science task set (stations, seismometer, crater-wall photo), base-site checks and resource estimates; the route planner can drive part of the way')}</li>
         <li><kbd>Esc</kbd> {tr('離開', 'Exit')}</li>
-      </ul>
+      </ul>}
+      {stats && isRover && <p className="eva-help-credits">
+        <span>{tr('地形：NASA/JPL-Caltech 好奇號立體影像網格（NASA-AMMOS 3DTilesSampleData，執行時讀取、未轉散布）；位置在蓋爾撞擊坑 Dingo Gap，不是你選的區域；網格外與相機死角沒有資料',
+          'Terrain: NASA/JPL-Caltech Curiosity stereo mesh (NASA-AMMOS 3DTilesSampleData, streamed at runtime, not redistributed); Dingo Gap in Gale crater, not your selected region; no data outside the mesh or in camera blind spots')}</span>
+        {stats.suitModel && <span>{tr('太空人：NASA Z-2 太空衣（NASA 3D Resources，NASA/LaRC 先進概念實驗室，關節為執行時加入的示意骨架）', 'Astronaut: NASA Z-2 spacesuit (NASA 3D Resources, NASA/LaRC Advanced Concepts Lab; joints are an illustrative rig added at runtime)')}</span>}
+      </p>}
       {stats && !isRover && <p className="eva-help-credits">
-        {stats.textureState === 'ready' && stats.textureCredit && <span>{tr('地表影像', 'Surface imagery')}：{stats.textureCredit}</span>}
+        {stats.textureState === 'ready' && stats.textureCredit && <span>{tr('地表影像：', 'Surface imagery: ')}{stats.textureCredit}</span>}
         {stats.prop && <span>{tr(`NASA 3D Resources ${stats.prop} 模型為比例參考的示意擺放`, `NASA 3D Resources ${stats.prop} model placed for scale only`)}</span>}
         {stats.earthInSky && <span>{tr(`天空中的地球依月面經緯度估算（仰角約 ${fmt(stats.earthElevation)}°，未計天平動）`, `Earth in the sky is placed from the site's selenographic position (elevation ≈ ${fmt(stats.earthElevation)}°, libration ignored)`)}</span>}
         {stats.suitModel && <span>{tr('太空人：NASA Z-2 太空衣（NASA 3D Resources，NASA/LaRC 先進概念實驗室，關節為執行時加入的示意骨架）；登月艙：NASA Apollo Lunar Module（NASA 3D Resources）', 'Astronaut: NASA Z-2 spacesuit (NASA 3D Resources, NASA/LaRC Advanced Concepts Lab; joints are an illustrative rig added at runtime); lunar module: NASA Apollo Lunar Module (NASA 3D Resources)')}</span>}
@@ -440,10 +460,10 @@ export default function AstronautExplorer({ target, earth, initialWorld = 'targe
       <button type="button" className="eva-start" onClick={() => { setHelp(false); host.current?.focus() }}>{tr('開始探索', 'Start exploring')}</button>
     </section>}
 
+    {/* Short enough for two lines over the action row; the full credits are in the help card (?). */}
     {stats && isRover && <footer className="eva-note">
-      {tr('地形：NASA/JPL-Caltech 好奇號立體影像網格（NASA-AMMOS 3DTilesSampleData，執行時讀取、未轉散布）· 位置在蓋爾撞擊坑 Dingo Gap，不是你選的區域 · 網格外與相機死角沒有資料',
-        'Terrain: NASA/JPL-Caltech Curiosity stereo mesh (NASA-AMMOS 3DTilesSampleData, streamed at runtime, not redistributed) · Dingo Gap in Gale crater, not your selected region · no data outside the mesh or in camera blind spots')}
-      {stats.suitModel && <span> · {tr('太空人：NASA Z-2 太空衣（NASA 3D Resources，NASA/LaRC 先進概念實驗室，關節為執行時加入的示意骨架）；登月艙：NASA Apollo Lunar Module（NASA 3D Resources）', 'Astronaut: NASA Z-2 spacesuit (NASA 3D Resources, NASA/LaRC Advanced Concepts Lab; joints are an illustrative rig added at runtime); lunar module: NASA Apollo Lunar Module (NASA 3D Resources)')}</span>}
+      {tr('地形：NASA/JPL-Caltech 好奇號立體影像網格（NASA-AMMOS）· 蓋爾撞擊坑 Dingo Gap，不是你選的區域 · 網格外沒有資料 · 完整來源見「?」',
+        'Terrain: NASA/JPL-Caltech Curiosity stereo mesh (NASA-AMMOS) · Dingo Gap, Gale crater, not your selected region · no data outside the mesh · full credits under ?')}
     </footer>}
     {stats && !isRover && <footer className="eva-note">
       {tr(`DEM 原生格距約 ${fmt(stats.nativeCell)} m · 垂直比例 ${stats.exaggeration}× · 地平線約 ${fmt(stats.horizonKm, 1)} km · 周圍的小坑、岩塊、腳印與塵土為示意，不是量測資料`,

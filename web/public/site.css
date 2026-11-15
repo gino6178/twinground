@@ -1,0 +1,42 @@
+/* TwinGround shared style for the static research and review pages: the same dark monochrome system as
+   /offcatalogue/en.html and /technology/paper.css (Manrope for text, DM Mono for codes, flat dark panels).
+   .top is the site navigation bar; body.doc gives a plain long-form page its base typography. */
+:root{color-scheme:dark;--bg:#040404;--bg-2:#0f0f0f;--card:#141414;--card-2:#1b1b1b;--ink:#f2f2f2;--ink-2:#d0d0d0;--ink-3:#acacac;--hair:rgba(255,255,255,.10);--line:rgba(255,255,255,.16);--accent:#f0f0f0;--accent-ink:#1a1a1a;--warn:#f3c27a;--font:Manrope,"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace;--gutter:clamp(16px,5vw,72px)}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.top{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0 24px;min-height:64px;margin:0;padding:0 max(var(--gutter),env(safe-area-inset-right)) 0 max(var(--gutter),env(safe-area-inset-left));background:rgba(4,4,4,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair);font:500 14px/1.4 var(--font);letter-spacing:normal;text-align:left}
+.top>a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);font-size:17px;font-weight:800;letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
+.top nav{display:flex;flex-wrap:wrap;gap:0 28px}
+.top nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink-2);font-size:14px;font-weight:500;text-decoration:none;text-underline-offset:6px;white-space:nowrap}
+.top nav a:hover,.top nav a[aria-current]{color:var(--ink);text-decoration:underline}
+.top a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+@media (max-width:760px){.top{position:static}}
+@media (max-width:520px){.top{padding-top:6px;padding-bottom:4px}.top nav{gap:0 20px;width:100%}}
+
+body.doc{margin:0;min-width:0;background:var(--bg);color:var(--ink-2);font:16px/1.7 var(--font);-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
+.doc *{box-sizing:border-box}
+.doc main{max-width:1000px;margin:0 auto;padding:36px max(var(--gutter),env(safe-area-inset-right)) calc(80px + env(safe-area-inset-bottom)) max(var(--gutter),env(safe-area-inset-left))}
+.doc a{color:var(--ink);text-decoration-color:rgba(255,255,255,.45);text-underline-offset:3px;overflow-wrap:anywhere}
+.doc a:hover{text-decoration-color:currentColor;text-decoration-thickness:2px}
+.doc a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.doc .back{display:inline-flex;align-items:center;min-height:44px;font-size:14px;font-weight:600}
+.doc .kicker{margin:8px 0 0;color:var(--ink-3);font:500 14px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.doc h1{color:var(--ink);font-weight:800;font-size:clamp(28px,4vw,44px);line-height:1.15;letter-spacing:-.02em;margin:12px 0 18px}
+.doc h2{color:var(--ink);font-weight:800;font-size:clamp(21px,2.4vw,26px);line-height:1.3;letter-spacing:-.01em;margin:44px 0 14px}
+.doc h3{color:var(--ink);font-weight:700;font-size:18px;line-height:1.35}
+.doc p,.doc li{max-width:78ch}
+.doc li{margin:8px 0}
+.doc strong{color:var(--ink)}
+.doc small{color:var(--ink-3);font-size:14px}
+.doc code{font:14px/1.5 var(--mono);color:var(--ink);overflow-wrap:anywhere}
+.doc img{max-width:100%;height:auto;border-radius:10px}
+.doc .status,.doc .note{border-left:3px solid var(--warn);background:var(--card);padding:14px 18px;border-radius:0 10px 10px 0}
+.doc .scroll,.doc .table{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.doc table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+.doc th,.doc td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--hair)}
+.doc thead th{color:var(--ink);background:var(--card)}
+.doc tbody th{color:var(--ink);font-weight:600}
+.doc svg{width:100%;max-width:650px;height:auto;background:var(--card);border-radius:10px}
+.doc svg text{fill:var(--ink-2);font:14px var(--font)}
+.doc input,.doc select{font:inherit;min-height:44px;padding:8px 10px;color:var(--ink);background:var(--bg-2);border:1px solid var(--line);border-radius:8px;max-width:100%}
+.doc input:focus-visible,.doc select:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.doc details summary{cursor:pointer;min-height:44px;display:flex;align-items:center;color:var(--ink);font-weight:600}

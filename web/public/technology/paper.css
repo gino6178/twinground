@@ -1,5 +1,5 @@
 /* TwinGround methods paper. On screen it uses the app's dark monochrome system (Manrope for UI and headings,
-   DM Mono for codes, flat dark panels); the body text stays a serif for long reading. Print restores a light page. */
+   DM Mono for codes, flat dark panels); the body text is Manrope too, set at 17px/1.7 for long reading. Print restores a light page. */
 :root {
   color-scheme: dark;
   --paper: #050505;
@@ -15,14 +15,13 @@
   --accent-soft: #141414;
   --warn: #f3c27a;
   --code: #1c1c1c;
-  --serif: 'Source Serif 4', 'Noto Serif TC', 'Songti TC', 'PMingLiU', Georgia, serif;
-  --sans: Manrope, 'Noto Sans TC', system-ui, 'Helvetica Neue', Arial, sans-serif;
-  --mono: 'DM Mono', 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+  --sans: Manrope,"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono: "DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   --gutter: clamp(16px, 5vw, 72px);
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-body { margin: 0; background: var(--paper); color: var(--ink-2); font: 18px/1.75 var(--serif); -webkit-font-smoothing: antialiased; overflow-wrap: break-word; }
+body { margin: 0; background: var(--paper); color: var(--ink-2); font: 17px/1.7 var(--sans); -webkit-font-smoothing: antialiased; overflow-wrap: break-word; }
 img { max-width: 100%; height: auto; }
 a { color: var(--ink); text-decoration-color: rgba(255, 255, 255, .45); text-underline-offset: 3px; }
 a:hover { text-decoration-color: currentColor; text-decoration-thickness: 2px; }

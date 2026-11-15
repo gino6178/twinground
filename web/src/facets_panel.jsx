@@ -16,6 +16,13 @@ const STATUS = {
   breaks: ['is-break', '✗', ['不成立', 'Breaks down']], unknown: ['is-unknown', '?', ['地球無資料', 'No Earth data']],
   not_applicable: ['is-na', '–', ['不適用', 'Not applicable']],
 }
+// Facet labels that would read the same as a Conditions card but measure something else: on the Moon facet F only
+// checks loose fine topsoil (there is no wind), facet C the latitude-model temperature, facet G the geologic setting.
+const LABEL_OVERRIDE = {
+  moon: { F: ['沙塵（鬆散細粒表土）', 'Dust (loose fine soil)'], C: ['熱環境（對照目標）', 'Thermal (vs target)'], G: ['地表作用（地質背景）', 'Surface processes (geologic setting)'] },
+  mars: { G: ['地表作用（地質背景）', 'Surface processes (geologic setting)'] },
+}
+const facetLabel = (f, body) => (LABEL_OVERRIDE[body]?.[f.id] ? tr(...LABEL_OVERRIDE[body][f.id]) : pick(f.label))
 const NA_REASON = {
   H: ['月球沒有已知生物，這個面向不計分。', 'The Moon has no known life, so this facet is not scored.'],
 }
@@ -67,7 +74,7 @@ function Facet({ f, body }) {
   return <details className={'fx-facet ' + cls} open={f.status === 'breaks' || undefined}>
     <summary>
       <span className="fx-mark" aria-hidden="true">{mark}</span>
-      <b>{pick(f.label)}</b>
+      <b>{facetLabel(f, body)}</b>
       <span className="fx-bar" aria-hidden="true"><i style={{ width: Number.isFinite(f.score) ? `${Math.round(f.score * 100)}%` : 0 }} /></span>
       <span className="fx-score">{na ? tr(...text) : Number.isFinite(f.score) ? pct(f.score) : tr(...text)}</span>
     </summary>
@@ -79,8 +86,8 @@ function Facet({ f, body }) {
             <span className="fx-mark" aria-hidden="true">{m2}</span>
             <div>
               <b>{pick(t.label)}</b>
-              <small>{body === 'mars' ? tr('火星：', 'Mars: ') : tr('月球：', 'Moon: ')}{pick(t.query)}</small>
-              {t.unit && Number.isFinite(t.earth_value) && <small>{tr('地球此處：', 'Earth here: ')}{fmt(t.earth_value, t.unit)}</small>}
+              <small>{body === 'mars' ? tr('火星：', 'Mars: ') : tr('月球：', 'Moon: ')}{t.unit === 'K' ? pick(t.query).replace(/(\d) K(?![A-Za-z])/g, '$1 °C') : pick(t.query)}</small>
+              {t.unit && Number.isFinite(t.earth_value) && <small>{tr('地球此處：', 'Earth here: ')}{fmt(t.earth_value, t.unit === 'K' ? '°C' : t.unit)}</small>}
             </div>
             <span className="fx-verdict">{tr(...t2)}{t.counted ? '' : tr('（此用途不計分）', ' (not scored for this use)')}</span>
           </li>
@@ -113,7 +120,9 @@ export function FacetsPanel({ data, active }) {
   if (!block || !sum) return null
   const body = sum.body === 'mars' ? 'mars' : 'moon'
   const ranked = sum.ranking && !/^not used/.test(sum.ranking)
-  const count = k => block[k]?.length || 0
+  // Count the ten facets by their own verdict so the header matches the tiles below (block.strong etc. list sub-checks).
+  const count = k => block.facets.filter(f => f.status === k).length
+  const naCount = count('not_applicable')
   return <section id="facets-panel" className="fx-panel" aria-labelledby="fx-title">
     <header className="fx-head">
       <h2 id="fx-title">{tr('十個面向的類比程度', 'How good the analog is, facet by facet')}</h2>
@@ -131,7 +140,9 @@ export function FacetsPanel({ data, active }) {
           <li className="is-partial"><b>{count('partial')}</b>{tr('項部分相符', ' partial')}</li>
           <li className="is-break"><b>{count('breaks')}</b>{tr('項不成立', ' break down')}</li>
           <li className="is-unknown"><b>{count('unknown')}</b>{tr('項無資料', ' unknown')}</li>
+          {naCount > 0 && <li className="is-na"><b>{naCount}</b>{tr('項不適用', ' not applicable')}</li>}
         </ul>
+        <p className="fx-count-note">{tr(`以上為 ${block.facets.length} 個面向的判定。`, `Counts are of the ${block.facets.length} facets.`)}</p>
         {sum.ceiling && <p className="fx-legend"><i className="fx-key is-score" />{tr('這個候選', 'this candidate')}<i className="fx-key is-ceiling" />{tr('地球最高', 'best on Earth')}</p>}
       </div>
     </div>

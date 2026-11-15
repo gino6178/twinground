@@ -38,14 +38,18 @@ export function buildRunExport(data, activeId, time = new Date().toISOString()) 
   }
 }
 
-export function candidateGeoJSON(data) {
+// Display name of a candidate: the place name the app shows (main.jsx places map) when known, else the server name.
+const placeName = (places, m) => places?.[m.id]?.[getLanguage()==='en'?1:0] || m.name
+// English mode writes the resolution note in English (the Chinese source text stays available as source_resolution_zh).
+const resolutionText = note => getLanguage()==='en' ? translate(note,'en') : note
+export function candidateGeoJSON(data, places) {
   return {type:'FeatureCollection',
     name:'TwinGround candidate centers',
     description:'Earth sampling footprints where source geometry is verified; otherwise center points. OGC:CRS84. Not surveyed site boundaries or validated analog sites.',
     features:data.matches.map(row => ({type:'Feature',id:row.id,geometry:row.sampling_footprint?.geometry || {type:'Point',coordinates:[row.center.longitude_east,row.center.latitude]},properties:{
-      name:row.name,geometry_interpretation:row.sampling_footprint?.interpretation || 'Candidate center only; sampling boundary unavailable',index_sha256:data.index_provenance?.sha256 || null,source_product:row.sampling_footprint?.source_product || null,window_km:data.window.patch_km,geometry_cosine:row.cosine,
+      name:placeName(places,row),server_name:row.name,geometry_interpretation:row.sampling_footprint?.interpretation || 'Candidate center only; sampling boundary unavailable',index_sha256:data.index_provenance?.sha256 || null,source_product:row.sampling_footprint?.source_product || null,window_km:data.window.patch_km,geometry_cosine:row.cosine,
       joint_score:row.context_match?.fusion_score ?? null,model_sha256:data.model_sha256,
-      source_url:row.source_url,source_resolution:row.resolution_note,...(getLanguage()==='en'?{source_resolution_en:translate(row.resolution_note,'en')}:{}),
+      source_url:row.source_url,source_resolution:resolutionText(row.resolution_note),...(getLanguage()==='en'?{source_resolution_zh:row.resolution_note}:{}),
       regional_rock:row.earth_lithology?.available ? row.earth_lithology.code : null,
       desert_sample_share:row.context_match?.desert_sample_share ?? null,
       rock_sample_share:row.context_match?.rock_sample_share ?? null,
@@ -58,10 +62,9 @@ export function candidateGeoJSON(data) {
     }}))}
 }
 const cell = value => '"' + String(value ?? '').replace(/^[=+@\t\r]/, "'$&").replace(/"/g,'""') + '"'
-export function candidateCSV(data) {
-  const rows=[['id','name','longitude_east','latitude','window_km','geometry_cosine','joint_score','source_url','source_resolution','model_sha256','index_sha256','sampling_footprint_geojson','dune_positive_sample_share','dune_source_sha256','dune_interpretation']]
-  for (const m of data.matches) rows.push([m.id,m.name,m.center.longitude_east,m.center.latitude,data.window.patch_km,m.cosine,m.context_match?.fusion_score,m.source_url,m.resolution_note,data.model_sha256,data.index_provenance?.sha256,JSON.stringify(m.sampling_footprint?.geometry ?? null),m.mapped_dunes?.positive_sample_share,m.mapped_dunes?.source_sha256,m.mapped_dunes?.interpretation])
-  if (getLanguage()==='en') { rows[0].push('source_resolution_en'); data.matches.forEach((m,i)=>rows[i+1].push(translate(m.resolution_note,'en'))) }
+export function candidateCSV(data, places) {
+  const rows=[['id','name','server_name','longitude_east','latitude','window_km','geometry_cosine','joint_score','source_url','source_resolution','model_sha256','index_sha256','sampling_footprint_geojson','dune_positive_sample_share','dune_source_sha256','dune_interpretation']]
+  for (const m of data.matches) rows.push([m.id,placeName(places,m),m.name,m.center.longitude_east,m.center.latitude,data.window.patch_km,m.cosine,m.context_match?.fusion_score,m.source_url,resolutionText(m.resolution_note),data.model_sha256,data.index_provenance?.sha256,JSON.stringify(m.sampling_footprint?.geometry ?? null),m.mapped_dunes?.positive_sample_share,m.mapped_dunes?.source_sha256,m.mapped_dunes?.interpretation])
   return rows.map(row => row.map(cell).join(',')).join('\r\n')
 }
 export function downloadText(name, content, type) {
@@ -70,12 +73,12 @@ export function downloadText(name, content, type) {
   document.body.appendChild(link);link.click();link.remove()
   window.setTimeout(()=>URL.revokeObjectURL(url),1000)
 }
-export function RunDownloads({data, activeId, onReport}) {
+export function RunDownloads({data, activeId, onReport, places}) {
   const [format,setFormat]=React.useState('report')
   const save=()=>{
     if(format==='report') return onReport()
     const ext=format==='geojson'?'geojson':format
-    const content=format==='csv'?candidateCSV(data):JSON.stringify(format==='json'?buildRunExport(data,activeId):candidateGeoJSON(data),null,2)
+    const content=format==='csv'?candidateCSV(data,places):JSON.stringify(format==='json'?buildRunExport(data,activeId):candidateGeoJSON(data,places),null,2)
     downloadText('twinground-'+data.window.body+'-'+data.window.patch_km+'km.'+ext,content,format==='csv'?'text/csv;charset=utf-8':'application/json;charset=utf-8')
   }
   return <div className="run-downloads"><label className="sr-only" htmlFor="run-format">匯出格式</label><select id="run-format" value={format} onChange={e=>setFormat(e.target.value)}><option value="report">目前場址報告</option><option value="json">完整查詢 JSON</option><option value="geojson">候選範圍 GeoJSON</option><option value="csv">地球候選 CSV</option></select><button type="button" className="outline-button" onClick={save}>匯出</button></div>
@@ -89,7 +92,7 @@ export function TerrainDiagnostics({data,active}) {
     <p>使用搜尋時兩側的粗格網，未混用稍後載入的高解析度重建。剖面沿窗格中央由西向東，分別扣除各自高程中位數；不表示海拔基準相同。</p>
     <svg viewBox="0 0 600 205" role="img" aria-label={'中央剖面：長度'+data.window.patch_km+'公里；相對高程'+low.toFixed(0)+'至'+high.toFixed(0)+'公尺'}>
       <line x1="30" y1="170" x2="570" y2="170" stroke="#687c85"/><path d={path(a.profile)} fill="none" stroke="#dfb294" strokeWidth="2.5"/><path d={path(b.profile)} fill="none" stroke="#dedede" strokeWidth="2.5"/>
-      <text x="30" y="195">0 km / 西</text><text x="490" y="195">{data.window.patch_km} km / 東</text><text x="30" y="22">相對高程 {low.toFixed(0)}～{high.toFixed(0)} m</text>
+      <text x="30" y="195">{getLanguage()==='en'?'0 km / W':'0 km / 西'}</text><text x="490" y="195">{data.window.patch_km}{getLanguage()==='en'?' km / E':' km / 東'}</text><text x="30" y="22">{getLanguage()==='en'?`Relative elevation ${low.toFixed(0)} to ${high.toFixed(0)} m`:`相對高程 ${low.toFixed(0)}～${high.toFixed(0)} m`}</text>
     </svg><div className="measurement-legend"><span>● {data.window.body==='mars'?'火星':'月球'}</span><span>● 地球</span></div>
     <table className="slope-table"><caption>坡度格點占比（相同 {a.spacing_m.toFixed(0)} m 分析格距）</caption><thead><tr><th>坡度</th><th>{data.window.body==='mars'?'火星':'月球'}</th><th>地球</th></tr></thead><tbody>{a.percent.map((v,i)=><tr key={i}><th>{a.edges[i]}–{a.edges[i+1]}°</th><td><span className="distribution-bar reference-measure" style={{width:v+'%'}}/>{v.toFixed(1)}%</td><td><span className="distribution-bar earth-measure" style={{width:b.percent[i]+'%'}}/>{b.percent[i].toFixed(1)}%</td></tr>)}</tbody></table><p>比例來自可計算中央差分的內部格點；解析度低於分析格距的來源仍受原生資料限制。這些量測不證明車輛可通行。</p>
   </details>

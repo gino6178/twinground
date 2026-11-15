@@ -1,43 +1,44 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>TwinGround · 月火地窗格研究評估</title>
-  <link rel="stylesheet" href="./review.css">
+  <title>TwinGround · Moon/Mars–Earth Window Research Assessment</title><meta name="description" content="Research assessment of fixed Moon/Mars–Earth candidate windows: rate landform shape first, then material and mission scenario from source evidence."/><link rel="icon" href="/favicon.svg"/><meta name="theme-color" content="#040404"/><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/site.css">
+  <link rel="stylesheet" href="./review.css?v=mono1">
   <script src="/i18n/static-i18n.js?v=i18n-v2"></script><script src="/i18n/research-review.en.js?v=i18n-v2"></script>
 </head>
 <body>
+  <header class="top"><a href="/">TwinGround</a><nav aria-label="Site navigation"><a href="/">Explore</a><a href="/offcatalogue/en.html">Search Candidates</a><a href="/technology/paper-en.html">Methods</a></nav></header>
   <main class="shell">
-    <header><a href="/">TWINGROUND ↗</a><span>RESEARCH / WINDOW REVIEW</span><div data-language-switch></div></header>
+    <p class="eyebrow kicker-top">RESEARCH / WINDOW REVIEW</p>
     <section class="intro">
       <p class="eyebrow">FIXED MODEL CANDIDATES · HUMAN EVIDENCE</p>
-      <h1>月火地窗格研究評估</h1>
-      <p id="study-description">正在載入固定月／火－地球窗格評估資料。先評形狀，再看來源資料評材質與基地情境。請分開判斷；資料不足時選「無法判定」。候選的原始排名與分數在另一份檔案，不會出現在此頁。</p>
-      <p class="warning">目前還沒有獨立專家標註。完成評估前不能宣稱月／火－地類比準確率；抽樣候選也不足以計算全球 Recall@K。</p>
+      <h1>Moon/Mars–Earth Window Research Assessment</h1>
+      <p id="study-description">Loading the fixed Moon/Mars–Earth window assessment data. Rate shape first, then view source data to rate material and base scenario. Judge each separately; choose "Cannot determine" when data are insufficient. The candidates' original ranks and scores are in a separate file and will not appear on this page.</p>
+      <p class="warning">There are no independent expert annotations yet. Moon/Mars–Earth analog accuracy cannot be claimed until the assessment is complete; the sampled candidates are also insufficient to compute global Recall@K.</p>
     </section>
     <section class="toolbar">
-      <label>評分者代號 <input id="reviewer" autocomplete="off" placeholder="例如 reviewer-a" maxlength="64"></label>
-      <div class="buttons"><button id="previous" type="button">← 上一對</button><button id="next" type="button">下一對 →</button><button id="export" type="button">匯出評分 JSON</button><label class="import-button">匯入評分<input id="import" type="file" accept="application/json,.json"></label></div>
+      <label>Rater ID <input id="reviewer" autocomplete="off" placeholder="e.g. reviewer-a" maxlength="64"></label>
+      <div class="buttons"><button id="previous" type="button">← Previous pair</button><button id="next" type="button">Next pair →</button><button id="export" type="button">Export ratings JSON</button><label class="import-button">Import ratings<input id="import" type="file" accept="application/json,.json"></label></div>
     </section>
-    <section id="loading" class="loading">載入固定評估資料…</section>
+    <section id="loading" class="loading">Loading fixed assessment data…</section>
     <section id="card" hidden>
       <div class="card-head"><div><p class="eyebrow" id="counter"></p><h2 id="query-title"></h2></div><div id="progress"></div></div>
       <div class="pair-grid">
-        <figure><figcaption id="reference-caption">MOON · LOLA</figcaption><img id="moon" alt="月球或火星相對高程及陰影地形"><small id="moon-relief"></small></figure>
-        <figure><figcaption id="earth-caption">EARTH · ETOPO / SRTM</figcaption><img id="earth" alt="地球候選相對高程及陰影地形"><small id="earth-relief"></small></figure>
+        <figure><figcaption id="reference-caption">MOON · LOLA</figcaption><img id="moon" alt="Moon or Mars relative elevation and shaded relief"><small id="moon-relief"></small></figure>
+        <figure><figcaption id="earth-caption">EARTH · ETOPO / SRTM</figcaption><img id="earth" alt="Earth candidate relative elevation and shaded relief"><small id="earth-relief"></small></figure>
       </div>
-      <p class="render-note" id="render-note">兩圖以相同尺度展示 DEM 陰影，不能顯示礦物或基地安全。</p>
-      <div class="rating-block"><h3>① 地貌形狀相似度</h3><p>只依兩側地形判斷輪廓、坡度與空間尺度。0 無關；1 弱；2 中；3 高。看不清或 DEM 不足時選無法判定。</p><div class="rating" id="morphology"></div></div>
-      <section id="evidence" class="evidence" hidden><h3>來源證據 · 評完形狀後顯示</h3><div id="evidence-content"></div><p>地質圖、光譜、岩性與 DEM 是不同證據；未取得窗格級可比較資料時，材質及任務條件應標為未知。</p></section>
+      <p class="render-note" id="render-note">Both images show DEM hillshade at the same scale; they cannot show mineralogy or base safety.</p>
+      <div class="rating-block"><h3>① Landform shape similarity</h3><p>Judge outline, slope and spatial scale from the two terrains only. 0 unrelated; 1 weak; 2 moderate; 3 high. Choose Cannot determine if unclear or the DEM is insufficient.</p><div class="rating" id="morphology"></div></div>
+      <section id="evidence" class="evidence" hidden><h3>Source evidence · shown after rating shape</h3><div id="evidence-content"></div><p>Geologic maps, spectra, lithology and DEMs are different kinds of evidence; when window-level comparable data have not been obtained, material and mission conditions should be marked unknown.</p></section>
       <div id="other-ratings" hidden>
-        <div class="rating-block"><h3>② 表面材質相似度</h3><p>只有兩地都具可比較的材質證據才給 0–3；目前常應選無法判定。</p><div class="rating" id="material"></div></div>
-        <div class="rating-block"><h3>③ 基地／登陸情境類比</h3><p>需安全、環境與資源條件等獨立證據；幾何相似不足以支持評分。</p><div class="rating" id="mission"></div></div>
+        <div class="rating-block"><h3>② Surface material similarity</h3><p>Give 0–3 only if both sites have comparable material evidence; for now, Cannot determine should often be chosen.</p><div class="rating" id="material"></div></div>
+        <div class="rating-block"><h3>③ Base / landing scenario analog</h3><p>Requires independent evidence on safety, environmental and resource conditions; geometric similarity alone is insufficient to support a rating.</p><div class="rating" id="mission"></div></div>
       </div>
-      <label class="note-label">觀察依據或無法判定原因 <textarea id="note" rows="3" maxlength="2000" placeholder="請記錄可見形態、資料限制或應補的證據"></textarea></label>
+      <label class="note-label">Observational basis or reason for Cannot determine <textarea id="note" rows="3" maxlength="2000" placeholder="Record visible morphology, data limitations or evidence that should be added"></textarea></label>
       <p id="message" role="status"></p>
     </section>
-    <footer>本頁資料留在此瀏覽器，按「匯出」才會下載 JSON。v6／v7／v8 草稿依評分者代號分開保存；請兩人各自獨立評估。缺少的材質或環境資料請標為無法判定。</footer>
+    <footer>Data on this page stays in this browser; JSON is downloaded only when you press "Export". v6/v7/v8 drafts are saved separately by rater code; the two raters should each evaluate independently. Mark missing material or environment data as undeterminable.</footer>
   </main>
   <script src="./review.js?v=20261011-v8-i18n2" defer></script>
 </body>

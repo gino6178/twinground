@@ -25,9 +25,9 @@ function temperature(env, mars) {
     verdict = mars ? (mean <= -20 && lo <= -45 ? 2 : mean <= 0 || lo <= -30 || swing >= 20 ? 1 : 0) : (swing >= 20 || hi - lo >= 70 ? 1 : 0)
   }
   return {
-    id: 'temperature', title: ['溫度與極端環境', 'Temperature and extremes'], verdict,
+    id: 'temperature', title: ['現地氣溫能涵蓋多少', 'Field temperatures (2001–2025 climate)'], verdict,
     here: tr(`年均 ${num(mean, 1)} °C；紀錄最低 ${num(lo, 0)} °C、最高 ${num(hi, 0)} °C；平均日夜溫差 ${num(swing, 0)} °C`,
-      `annual mean ${num(mean, 1)} °C; lowest ${num(lo, 0)} °C, highest ${num(hi, 0)} °C on record; mean day–night swing ${num(swing, 0)} °C`),
+      `air at 2 m (NASA POWER 2001–2025): annual mean ${num(mean, 1)} °C; lowest ${num(lo, 0)} °C, highest ${num(hi, 0)} °C; mean day–night swing ${num(swing, 0)} °C`),
     there: mars ? tr('平均約 −63 °C，日夜溫差約 60–80 °C', 'mean about −63 °C, day–night swing about 60–80 °C')
       : tr('赤道日夜溫差約 250 °C，永久陰影區低於 −200 °C', 'equatorial day–night swing about 250 °C; permanently shadowed regions below −200 °C'),
     use: verdict === 2 ? tr('可在接近火星白天的低溫下測試電池、潤滑與取樣機構。', 'Batteries, lubricants and sampling mechanisms can be tested at temperatures close to a Martian day.')
@@ -42,7 +42,7 @@ function dust(env, mars) {
   const dusty = ok && peak >= 0.3
   const verdict = !ok ? -1 : !mars ? 0 : dusty && wind >= 4 ? 2 : peak >= 0.15 || wind >= 5 ? 1 : 0
   return {
-    id: 'dust', title: ['沙塵、風與大氣過程', 'Dust, wind and atmospheric processes'], verdict,
+    id: 'dust', title: mars ? ['沙塵、風與大氣過程', 'Airborne dust and wind'] : ['風吹沙塵（大氣過程）', 'Wind-blown dust (an atmospheric process)'], verdict,
     here: tr(`氣膠光學厚度年均 ${num(aod, 2)}、最高月份 ${num(peak, 2)}；10 m 風速平均 ${num(wind, 1)} m/s、最大 ${num(gust, 0)} m/s`,
       `aerosol optical depth ${num(aod, 2)} on average, ${num(peak, 2)} in the peak month; 10 m wind ${num(wind, 1)} m/s on average, ${num(gust, 0)} m/s at most`),
     there: mars ? tr('平時塵埃光學厚度約 0.3–1，全球沙塵暴時超過 5；風速多為 2–10 m/s，風沙搬運仍在進行', 'dust optical depth about 0.3–1 in clear seasons and above 5 in global storms; winds mostly 2–10 m/s; aeolian transport is active today')
@@ -60,9 +60,9 @@ function habitability(env, mars) {
   const mean = env.temperature_annual_c, uv = env.uv_index, rh = env.relative_humidity_pct
   const verdict = !has(rain, mean) ? -1 : rain <= 100 ? 2 : rain <= 400 ? 1 : 0
   return {
-    id: 'habitability', title: ['生物與適居性', 'Biology and habitability'], verdict,
+    id: 'habitability', title: mars ? ['生物與適居性', 'Life at the site and dry limits'] : ['生物背景（污染管制）', 'Biological background (contamination control)'], verdict,
     here: tr(`年降水約 ${num(rain, 0)} mm；相對濕度 ${num(rh, 0)}%；年均氣溫 ${num(mean, 1)} °C；紫外線指數 ${num(uv, 1)}`,
-      `about ${num(rain, 0)} mm of precipitation a year; relative humidity ${num(rh, 0)}%; annual mean ${num(mean, 1)} °C; UV index ${num(uv, 1)}`),
+      `about ${num(rain, 0)} mm of precipitation a year (NASA POWER 2001–2025 mean); relative humidity ${num(rh, 0)}%; annual mean ${num(mean, 1)} °C; UV index ${num(uv, 1)}`),
     there: mars ? tr('地表沒有穩定的液態水；紫外線含 UVC 直達地表；尚未發現生命', 'no stable liquid water at the surface; ultraviolet light including UVC reaches the ground; no life found so far')
       : tr('沒有液態水、沒有已知生命', 'no liquid water and no known life'),
     use: verdict === 2 ? (mars ? tr('水極少、生物量低，接近生命的乾燥極限：適合測試生命偵測儀器的靈敏度與生物特徵的保存。', 'Very little water and low biomass, near the dry limit of life: suited to testing the sensitivity of life-detection instruments and the preservation of biosignatures.')

@@ -169,7 +169,7 @@ function ToleranceGauge({ tok }) {
   const q = tok.query_value, e = tok.earth_value, tau = tok.tolerance
   const iv = tok.earth_interval90
   const vals = [q - 2 * tau, q + 2 * tau, e, ...(iv || [])].filter(Number.isFinite)
-  const lo = Math.max(0, Math.min(...vals)), hi = Math.max(...vals), span = hi - lo || 1   // every property here is non-negative
+  const lo = tok.unit === '°C' ? Math.min(...vals) : Math.max(0, Math.min(...vals)), hi = Math.max(...vals), span = hi - lo || 1   // non-negative except °C
   const x = v => Math.min(100, Math.max(0, 100 * (v - lo) / span))
   const unit = tok.unit === '1' ? '' : tok.unit === 'deg' ? '°' : ` ${tok.unit}`
   return <div ref={ref} className="pm-gauge">
@@ -183,21 +183,41 @@ function ToleranceGauge({ tok }) {
   </div>
 }
 
-function TokenTile({ tok }) {
+// What each property actually is on the query side, where the short label would mislead. The lunar "albedo" is the
+// LROC WAC 643 nm Hapke-normalised reflectance (I/F at 60° incidence), not normal albedo (mare about 0.07–0.10); the
+// Earth value is GLASS broadband snow-free albedo. Roughness is the median absolute slope at about 1.9 km baselines.
+const LABEL_NOTE = {
+  albedo: { moon: [['反射率（WAC 643 nm）', 'Reflectance (WAC 643 nm)'], ['月球：LROC WAC 643 nm Hapke 正規化反射率（入射角 60° 的 I/F），不是正規反照率；地球：GLASS 寬波段無雪反照率。兩者量的不是同一物理量。', 'Moon: LROC WAC 643 nm Hapke-normalised reflectance (I/F at 60° incidence), not normal albedo; Earth: GLASS broadband snow-free albedo. The two are not the same quantity.']],
+    mars: [null, ['火星：TES 熱輻射光譜儀反照率；地球：GLASS 寬波段無雪反照率。', 'Mars: TES bolometric albedo; Earth: GLASS broadband snow-free albedo.']] },
+  roughness: { any: [['粗糙度（坡度中位數）', 'Roughness (median slope)'], ['約 1.9 km 基線的坡度絕對值中位數（度），與結果卡片上的「起伏 P90（公尺）」不是同一個量。', 'Median absolute slope (degrees) over about 1.9 km baselines; not the relief P90 in metres shown on the result cards.']] },
+}
+// Temperatures come in kelvin; show °C like the rest of the site (the tolerance is a difference, same number).
+const asCelsius = tok => {
+  if (tok.unit !== 'K') return tok
+  const c = v => (Number.isFinite(v) ? v - 273.15 : v)
+  return { ...tok, unit: '°C', query_value: c(tok.query_value), earth_value: c(tok.earth_value), earth_interval90: tok.earth_interval90?.map(c), kelvin: tok }
+}
+function TokenTile({ tok: raw, body }) {
+  const tok = asCelsius(raw)
   const [cls, mark, word] = VERDICT[tok.verdict] || VERDICT.unknown
+  const note = LABEL_NOTE[tok.id]?.[body] || LABEL_NOTE[tok.id]?.any
+  const noEarth = !Number.isFinite(tok.earth_value)
   const u = tok.unit === '1' ? '' : tok.unit === 'deg' ? '°' : ` ${tok.unit}`
   const d = DIGITS[tok.id]
   return <article className={`pm-tile ${cls}`}>
-    <header><h4>{pick(tok.label)}</h4><span className="pm-verdict"><span aria-hidden="true">{mark}</span> {tr(...word)}</span></header>
-    <TokenScene tok={tok} />
+    <header><h4>{note?.[0] ? tr(...note[0]) : pick(tok.label)}</h4><span className="pm-verdict"><span aria-hidden="true">{mark}</span> {tr(...word)}</span></header>
+    <TokenScene tok={raw} />
     <ToleranceGauge tok={tok} />
     <dl className="pm-values">
-      <div><dt>{tr('查詢地', 'Query')}</dt><dd>{fmt(tok.query_value, d)}{u}</dd></div>
+      <div><dt>{tr('查詢地', 'Query')}</dt><dd title={tok.kelvin ? `${fmt(raw.query_value, 0)} K` : undefined}>{fmt(tok.query_value, d)}{u}</dd></div>
       <div><dt>{tr('地球', 'Earth')}</dt><dd>{Number.isFinite(tok.earth_value) ? `${fmt(tok.earth_value, d)}${u}` : '—'}
         <small>{tr(...SOURCE[tok.earth_source])}{tok.earth_interval90 ? ` ${fmt(tok.earth_interval90[0], d)}–${fmt(tok.earth_interval90[1], d)}` : ''}</small></dd></div>
       <div><dt>{tr('相符機率', 'P(match)')}</dt><dd>{tok.scored ? `${fmt(tok.p_match * 100, 0)}%` : '—'}</dd></div>
     </dl>
-    {Number.isFinite(tok.earth_measured) && <p className="pm-share">{tr(`全球 ${fmt(tok.earth_measured, 0)} 個實測窗格中，${fmt(tok.earth_within, 0)} 個在容差內`, `${fmt(tok.earth_within, 0)} of ${fmt(tok.earth_measured, 0)} measured Earth windows are within tolerance`)}</p>}
+    {Number.isFinite(tok.earth_measured) && <p className="pm-share">{noEarth
+      ? tr(`這個候選沒有地球實測值；全球有實測的 ${fmt(tok.earth_measured, 0)} 個窗格中，${fmt(tok.earth_within, 0)} 個在容差內。`, `No Earth measurement at this candidate. Of the ${fmt(tok.earth_measured, 0)} Earth windows that have one, ${fmt(tok.earth_within, 0)} are within tolerance.`)
+      : tr(`全球 ${fmt(tok.earth_measured, 0)} 個實測窗格中，${fmt(tok.earth_within, 0)} 個在容差內`, `Across Earth, ${fmt(tok.earth_within, 0)} of ${fmt(tok.earth_measured, 0)} windows with a measurement are within tolerance`)}</p>}
+    {note && <p className="pm-share">{tr(...note[1])}</p>}
   </article>
 }
 
@@ -220,7 +240,7 @@ export function PhysicalMatchPanel({ data, active }) {
       {uses.map(u => <UseRing key={u} use={u} score={pm.uses[u].score} ceiling={summary.ceilings.uses[u].C_meas} props={summary.ceilings.uses[u].properties} />)}
     </div>}
     <div className="pm-grid">
-      {pm.tokens.map(t => <TokenTile key={t.id} tok={t} />)}
+      {pm.tokens.map(t => <TokenTile key={t.id} tok={t} body={data.window?.body === 'mars' ? 'mars' : 'moon'} />)}
     </div>
   </section>
 }

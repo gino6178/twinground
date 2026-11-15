@@ -232,7 +232,7 @@ function flagCanvas() {
   ctx.strokeStyle = '#f5f5f5'; ctx.lineWidth = 6
   ctx.beginPath(); ctx.arc(64, 64, 34, 0, Math.PI * 2); ctx.stroke()
   ctx.beginPath(); ctx.arc(64, 64, 12, 0, Math.PI * 2); ctx.fillStyle = '#f5f5f5'; ctx.fill()
-  ctx.fillStyle = '#ffffff'; ctx.font = '700 26px Manrope, sans-serif'
+  ctx.fillStyle = '#ffffff'; ctx.font = '700 26px Manrope, "Noto Sans TC", system-ui, -apple-system, "Segoe UI", sans-serif'
   ctx.fillText('ANALOG', 116, 58); ctx.fillText('ATLAS', 116, 90)
   return canvas
 }
@@ -425,7 +425,8 @@ export function createAstronautEngine({ container, minimap, worlds, initial = 't
     cascadeAll()
     if (composer && postOn) composer.render(); else renderer.render(scene, camera)
     // the loading screen comes off only after real frames exist (shaders compiled, shadows drawn)
-    if (framesShown < 3 && ++framesShown === 2) { revealed = true; loadStage = 'done'; emitStats() }
+    // the EVA clock starts when the scene is shown, not while it loads
+    if (framesShown < 3 && ++framesShown === 2) { revealed = true; loadStage = 'done'; player.startTime = performance.now(); emitStats() }
   }
   function applyScale() {
     renderer.setPixelRatio(dpr * resScale)
@@ -1081,12 +1082,20 @@ export function createAstronautEngine({ container, minimap, worlds, initial = 't
     life.rates.battery += (batteryW / 3600 / LIFE.batteryWh * 100 - life.rates.battery) * k
     // walk-back to the lander / base (straight line over the DEM), refreshed every 2 s
     life.backTimer -= dt
-    if (life.backTimer <= 0 && w.kind !== 'tiles') {
-      life.backTimer = 2
-      const f = w.field, [bx, bz] = baseAt(w)
-      const m = routeMetrics([[player.pos.x, player.pos.z], [bx, bz]], { height: (x, z) => f.height(x, z) / f.exaggeration, gravity: w.profile.gravity, load: route.load, speedScale: w.profile.walk / 1.4 })
-      life.back = { o2: m.o2, time: m.time, dist: m.length }
-    }
+    if (life.backTimer <= 0) refreshWalkBack()
+  }
+  // Teleports and world switches call this at once, so the walk-back line never shows the previous position.
+  function refreshWalkBack() {
+    const w = state[active]
+    life.backTimer = 2
+    if (!w || w.kind === 'tiles') { life.back = null; return }
+    const f = w.field, [bx, bz] = baseAt(w)
+    const straight = Math.hypot(bx - player.pos.x, bz - player.pos.z)
+    const m = routeMetrics([[player.pos.x, player.pos.z], [bx, bz]], { height: (x, z) => f.height(x, z) / f.exaggeration, gravity: w.profile.gravity, load: route.load, speedScale: w.profile.walk / 1.4 })
+    // Samples without terrain are skipped by the walk; scale its time and O2 up to the full straight distance.
+    const k = m.length > 1 ? Math.max(1, straight / m.length) : 1
+    life.back = m.length > 1 || straight < 1 ? { o2: m.o2 * k, time: m.time * k, dist: Math.max(straight, m.length) }
+      : { o2: o2Percent(metabolicPower(w.profile.walk, 0, w.profile.gravity, route.load) * straight / w.profile.walk), time: straight / w.profile.walk, dist: straight }
   }
   function lifeReport() {
     const left = [['o2', player.o2], ['water', life.water], ['battery', life.battery]].map(([k, v]) => [k, life.rates[k] > 1e-7 ? v / life.rates[k] : Infinity])
@@ -1754,6 +1763,7 @@ export function createAstronautEngine({ container, minimap, worlds, initial = 't
     if (!w.path.length) w.path.push([player.pos.x, player.pos.z])
     gaitReset()
     placeVehicle()
+    refreshWalkBack()
   }
 
   function seedFloaters() {
@@ -1879,6 +1889,7 @@ export function createAstronautEngine({ container, minimap, worlds, initial = 't
     regenerateRocks(true); seedFloaters()
     if (player.driving && vehicle) vehicle.place(player.pos.x, player.pos.z, vehicle.state.yaw, (qx, qz) => ground(qx, qz))
     gaitReset()
+    refreshWalkBack()
     onToast?.('teleport')
   }
 
@@ -2330,7 +2341,7 @@ export function createAstronautEngine({ container, minimap, worlds, initial = 't
       elevation: f.absolute(player.pos.x, player.pos.z), slope: f.slopeDeg(player.pos.x, player.pos.z),
       heading: headingDeg, look: lookDeg, speed, distance: player.distance, elapsed: (performance.now() - player.startTime) / 1000,
       o2: player.o2, grounded: player.grounded, altitude: player.pos.y - groundOr(player.pos.x, player.pos.z, player.pos.y),
-      kind: w.kind || 'dem', loading: w.kind === 'tiles' && !w.ready, suitModel, hasRover: !!state.rover,
+      kind: w.kind || 'dem', meshLoading: w.kind === 'tiles' && !w.ready, suitModel, hasRover: !!state.rover,
       ready: revealed, suitSettled, roverSettled, propSettled: !propPending, terrainDetail: f.detail,
       loading: revealed ? null : { stage: loadStage, programs: warmup?.progress.programs || null, textures: warmup?.progress.textures || null },
       view: player.view, lamp: player.lamp, rocks: player.rocks, speedMult: player.speedMult, run: player.run,

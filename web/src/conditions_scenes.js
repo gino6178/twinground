@@ -291,7 +291,7 @@ export const VOLCANO = {
       })
       ctx.globalCompositeOperation = 'source-over'
     } else if (mid) glow(ctx, 44, 37, 8, 'rgba(255,140,60,0.6)', 0.5 + 0.3 * f)
-    if (!mid && Number.isFinite(km)) { ctx.fillStyle = '#e2eeea'; ctx.font = '700 14px system-ui, sans-serif'; ctx.textAlign = 'center'; ctx.fillText(`${Math.round(km).toLocaleString()} km`, 44, 30) }
+    if (!mid && Number.isFinite(km)) { ctx.fillStyle = '#e2eeea'; ctx.font = '700 14px Manrope, "Noto Sans TC", system-ui, -apple-system, "Segoe UI", sans-serif'; ctx.textAlign = 'center'; ctx.fillText(`${Math.round(km).toLocaleString()} km`, 44, 30) }
   },
 }
 

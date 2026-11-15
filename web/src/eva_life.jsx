@@ -5,7 +5,9 @@ import React, { useEffect, useState } from 'react'
 const num = (v, d = 0) => Number.isFinite(v) ? (Math.abs(v) < 0.5 * 10 ** -d ? 0 : v).toLocaleString(undefined, { minimumFractionDigits: d, maximumFractionDigits: d }) : '—'
 export const duration = (s, tr) => !Number.isFinite(s) ? '—' : s >= 48 * 3600 ? `${num(s / 86400, 1)} ${tr('天', 'd')}` : s >= 3600 ? `${num(s / 3600, 1)} h` : `${Math.max(1, Math.round(s / 60))} min`
 const distance = d => d < 1000 ? `${num(d)} m` : `${num(d / 1000, 1)} km`
-const BASE = { moon: ['登月艙', 'the lander'], mars: ['毅力號', 'Perseverance'], earth: ['棲地模組', 'the habitat'] }
+// The base is the NASA model placed beside the start for scale (engine PROPS), not a real landing site, so Mars says
+// "the base" rather than naming Perseverance (it would read as Jezero even at Gale).
+const BASE = { moon: ['登月艙', 'the lander'], mars: ['基地', 'the base'], earth: ['棲地模組', 'the habitat'] }
 const BODY = { moon: ['月球', 'Moon'], mars: ['火星', 'Mars'], earth: ['地球', 'Earth'] }
 
 export function LifeSupport({ stats, tr, clock }) {
@@ -69,7 +71,7 @@ export function DaySection({ engine, stats, target, tr }) {
     <p className="eva-day-legend">{series.map(([k, , c, n]) => <span key={k}><i style={{ background: c }} />{n}</span>)}<span>{tr('橫軸：當地時 0–24；下方色帶＝直接日照', 'Axis: local time 0–24; bands = direct sunlight')}</span></p>
     <ul className="eva-day-sum">{series.map(([k, p, c, n]) => <li key={k}><b style={{ color: c }}>{n}</b>
       {tr('日照', 'Sunlit')} {num(p.litShare * 100)}%{p.sunUpShare - p.litShare > 0.015 ? tr(`（地形遮去 ${num((p.sunUpShare - p.litShare) * 100)}%）`, ` (terrain hides ${num((p.sunUpShare - p.litShare) * 100)}%)`) : ''}
-      {' · '}{tr('最長黑暗', 'Longest dark')} {duration(p.longestDarkHours * 3600, tr)} · {num(p.tMin)}～{num(p.tMax)} °C · {tr('一天', 'One day')} {dayLen(p)}</li>)}</ul>
+      {' · '}{tr('最長黑暗', 'Longest dark')} {duration(p.longestDarkHours * 3600, tr)} · {num(p.tMin)}{tr('～', '–')}{num(p.tMax)} °C · {tr('一天', 'One day')} {dayLen(p)}</li>)}</ul>
     <button type="button" className="eva-day-lapse" aria-pressed={lapse} onClick={() => engine.current?.setTime({ speed: lapse ? 0 : 2 })}>{lapse ? tr('停止縮時', 'Stop time-lapse') : tr('縮時播放一整天（2 小時／秒）', 'Time-lapse a full day (2 h / s)')}</button>
     <small>{tr('依太陽軌跡與 DEM 地平線每 15 分鐘（當地時）估算，地點為太空人所在處，地球候選取同一相對位置；溫度為模型推估。',
       'Estimated every 15 minutes of local time from the sun’s path and the DEM horizon at the astronaut’s spot (the same relative spot on the Earth candidate); temperatures are model estimates.')}</small>

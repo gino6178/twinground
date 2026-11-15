@@ -31,7 +31,7 @@ export function withNiche(card, env, rows, mars) {
     ...card, verdict, niche: nicheKey, here: cover ? `${card.here}${tr('；', '; ')}${cover}` : card.here,
     use: verdict === card.verdict ? card.use : verdict === 1 ? tr('降水少但地表有植被覆蓋，生物量不低：只能當作比較用的對照場址。', 'Little precipitation but the ground is vegetated, so biomass is not low: useful only as a comparison site.')
       : tr('地表多為植被覆蓋、生物活躍，與目標星球差異大。', 'Mostly vegetated ground with active biology: far from the target body.'),
-    extra: niche ? `${niche}${how}${tr('（依環境類型推論，不是這個地點的採樣結果）', ' (Inferred from the type of environment, not sampled at this site.)')}` : '',
+    extra: niche ? `${niche}${how ? tr('', ' ') + how : ''}${tr('（依環境類型推論，不是這個地點的採樣結果）', ' (Inferred from the type of environment, not sampled at this site.)')}` : '',
   }
 }
 
@@ -55,7 +55,7 @@ export function processes(env, rows, mars) {
   const verdict = !known ? -1 : shared.length >= 2 ? 2 : shared.length === 1 ? 1 : 0
   const name = f => tr(...f[0]) + (f[mars ? 2 : 1] === 1 ? tr('（當地過去的過程）', ' (in its past)') : '')
   return {
-    id: 'processes', title: ['地表作用過程', 'Surface processes'], verdict, keys: found.map(f => f[3]), names: found.map(f => tr(...SHORT[f[3]])),
+    id: 'processes', title: ['今日進行中的作用過程', 'Processes active today'], verdict, keys: found.map(f => f[3]), names: found.map(f => tr(...SHORT[f[3]])),
     here: !known ? tr('資料不足', 'not enough data') : found.length ? list(found.map(f => tr(...f[0])))
       : tr('沒有偵測到明顯的作用過程', 'no marked process detected'),
     there: mars ? tr('今日：風沙搬運與沙塵暴、凍融與地下冰、冷熱循環、季節性二氧化碳霜。過去：河流、湖泊、火山', 'today: aeolian transport and dust storms, freeze–thaw and ground ice, thermal cycling, seasonal CO₂ frost; in the past: rivers, lakes, volcanism')

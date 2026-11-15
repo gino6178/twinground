@@ -87,6 +87,8 @@ export function earthWeather(climate, month, localHour, day = 15, override = 'au
   if (rh > 82 && localHour > 4 && localHour < 9 && kind !== 'rain' && kind !== 'snow') kind = 'fog'
   const gust = wind * (1 + 0.6 * unit(month * 13 + day + Math.floor(localHour)))
   if (kind === 'clear' && gust > 7 && precip < 0.6) kind = 'dust'
+  // No climatology yet (still loading or unavailable): no invented rain or snow in the scene; the HUD shows "—".
+  if (!m) kind = 'clear'
   if (override !== 'auto') kind = override
   const cloud = kind === 'clear' ? cloudPct / 100 * 0.35 : kind === 'cloudy' ? 0.55 + cloudPct / 250 : kind === 'rain' || kind === 'snow' ? 0.95 : kind === 'fog' ? 0.6 : cloudPct / 100 * 0.4
   return {

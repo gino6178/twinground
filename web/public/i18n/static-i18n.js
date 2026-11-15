@@ -118,6 +118,7 @@
     try { var url = new URL(window.location.href); url.searchParams.set('lang', next); window.location.replace(url.toString()) } catch (e) { window.location.reload() }
   }
   function mountSwitch() {
+    return // English-only site (2026-11-15): no language switch, it could not change anything; remove to restore
     var holders = document.querySelectorAll('[data-language-switch]')
     if (holders.length && !document.getElementById('atlas-static-i18n-style')) {
       var st = document.createElement('style'); st.id = 'atlas-static-i18n-style'

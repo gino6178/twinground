@@ -32,9 +32,46 @@ def _cache_control(path: str) -> str | None:
     return None
 
 
+NOT_FOUND_PAGE = "404.html"  # web/public/404.html, copied into web/dist by the build
+
+
 class BaseHandler(SimpleHTTPRequestHandler):
+    # Explicit types: the server's mimetypes table may lack these (e.g. .webp came out as application/octet-stream).
+    extensions_map = {
+        **SimpleHTTPRequestHandler.extensions_map,
+        ".webp": "image/webp", ".avif": "image/avif", ".svg": "image/svg+xml", ".json": "application/json",
+        ".geojson": "application/geo+json", ".glb": "model/gltf-binary", ".gltf": "model/gltf+json",
+        ".vtt": "text/vtt", ".mp3": "audio/mpeg", ".mp4": "video/mp4", ".webm": "video/webm",
+        ".wasm": "application/wasm", ".js": "text/javascript", ".mjs": "text/javascript", ".css": "text/css",
+        ".woff2": "font/woff2", ".md": "text/markdown; charset=utf-8", ".txt": "text/plain; charset=utf-8",
+    }
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(config.WEB_DIST), **kwargs)
+
+    def translate_path(self, path):
+        if urlparse(path).path == "/favicon.ico":  # browsers ask for it by default; the site icon is an SVG
+            path = "/favicon.svg"
+        return super().translate_path(path)
+
+    def send_error(self, code, message=None, explain=None):
+        """Static 404s get the site's styled page (status stays 404); API and other errors keep the default."""
+        path = urlparse(self.path).path
+        page = config.WEB_DIST / NOT_FOUND_PAGE
+        if code != 404 or path.startswith("/api/") or self.command not in ("GET", "HEAD") or not page.is_file():
+            return super().send_error(code, message, explain)
+        try:
+            body = page.read_bytes()
+        except OSError:
+            return super().send_error(code, message, explain)
+        self.log_error("code %d, message %s", code, message or "Not Found")
+        self.send_response(404, message)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Connection", "close")
+        self.end_headers()
+        if self.command != "HEAD":
+            self.wfile.write(body)
 
     def accepts_gzip(self) -> bool:
         return "gzip" in self.headers.get("Accept-Encoding", "")

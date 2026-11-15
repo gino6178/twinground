@@ -4,7 +4,9 @@
 .tile-group legend{padding:0;margin:0 0 10px;font-size:14px;font-weight:700;color:var(--cv-ink,#f2f2f2)}
 .tile-grid{display:grid;gap:8px}
 .tile-grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.tile-grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+/* Three columns only when each tile is wide enough for words like "environment," or "Metamorphic" at 14px;
+   a narrow side column falls back to two (tiles were 88 px wide and clipped their labels). */
+.tile-grid.cols-3{grid-template-columns:repeat(auto-fill,minmax(min(100%,118px),1fr))}
 /* With 14px minimum text, three tiles per row on a phone breaks words mid-way: use two. */
 @media (max-width:520px){.tile-grid.cols-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .sel-tile{display:flex;flex-direction:column;align-items:stretch;gap:0;min-width:0;padding:0;border:0;border-radius:10px;overflow:hidden;background:#171717;color:var(--cv-ink-2,#d0d0d0);text-align:left;cursor:pointer;transition:background-color .2s,box-shadow .2s,transform .15s}
@@ -29,7 +31,7 @@
 .condition-tiles>small{display:block;margin-top:-4px;font-size:14px;line-height:1.6;color:var(--cv-ink-3,#acacac)}
 
 /* the selected coordinates sit on the globe's top-right corner */
-.app-shell .selection-workspace .globe-panel .globe-coordinate{display:flex;flex-direction:column;align-items:flex-end;gap:2px;position:absolute;left:auto;top:20px;right:22px;z-index:4;font:800 clamp(20px,1.9vw,28px)/1.15 var(--cv-font,Manrope,sans-serif);letter-spacing:-.01em;color:var(--cv-ink,#f2f2f2);font-variant-numeric:tabular-nums;text-shadow:0 1px 14px #000;pointer-events:none}
+.app-shell .selection-workspace .globe-panel .globe-coordinate{display:flex;flex-direction:column;align-items:flex-end;gap:2px;position:absolute;left:auto;top:20px;right:22px;z-index:4;font:800 clamp(20px,1.9vw,28px)/1.15 var(--cv-font,var(--font-ui));letter-spacing:-.01em;color:var(--cv-ink,#f2f2f2);font-variant-numeric:tabular-nums;text-shadow:0 1px 14px #000;pointer-events:none}
 .app-shell .selection-workspace .globe-panel .globe-coordinate span{font-size:14px;font-weight:600;color:var(--cv-ink-2,#d0d0d0)}
 
 /* the search button is the first thing after the purpose and scale; on one-column screens it stays pinned */
@@ -40,7 +42,8 @@
   /* the Tour and assistant buttons sit in the same corner band: lift them above the pinned search button */
   body:has(.selection-workspace .selection-side .search-button)  .gt-help{bottom:calc(max(16px,env(safe-area-inset-bottom)) + 64px)}
   body:has(.selection-workspace .selection-side .search-button) .aw-panel{bottom:calc(max(16px,env(safe-area-inset-bottom)) + 122px);height:calc(100svh - 150px)}
-  .app-shell .selection-workspace .globe-panel .globe-coordinate{top:14px;right:14px;font-size:20px}
+  /* below the Select/Rotate picker (top 22px, ~44px tall), which spans most of a phone's width */
+  .app-shell .selection-workspace .globe-panel .globe-coordinate{top:76px;right:14px;font-size:20px}
 }
 @media (prefers-reduced-motion:reduce){.sel-tile,.sel-tile-art{transition:none}}
 
@@ -52,3 +55,5 @@
 .use-chip:focus-visible{outline:2px solid #f5f5f5;outline-offset:1px}
 /* Break long words with a hyphen, not mid-word ("environme / nt"). Must come after the rules above. */
 .sel-tile-text b,.sel-tile-text small{overflow-wrap:normal;word-break:normal;hyphens:auto;-webkit-hyphens:auto}
+/* Last resort for a single long word: wrap it rather than clip it under overflow:hidden. */
+.sel-tile-text b,.sel-tile-text small{overflow-wrap:break-word}

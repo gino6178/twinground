@@ -78,18 +78,21 @@ function Radar({ r, body }) {
 // (GCOM-W AMSR2), precipitation (GSMaP) and permafrost (ESA CCI). Shown only; ranking uses the frozen facet rules.
 function EarthNow({ e }) {
   const items = [
-    [tr('地表溫度（年均）', 'Surface temperature (mean)'), e.lst_mean_c, ' °C', 0],
-    [tr('夏季白天最高', 'Summer daytime high'), e.lst_day_max_c, ' °C', 0],
-    [tr('冬季夜間最低', 'Winter night low'), e.lst_night_min_c, ' °C', 0],
-    [tr('日夜溫差', 'Day-night swing'), e.lst_swing_k, ' K', 0],
+    [tr('地表溫度（年均，MODIS）', 'Land-surface temperature (mean, MODIS)'), e.lst_mean_c, ' °C', 0],
+    [tr('夏季白天最高（地表）', 'Summer daytime high (ground)'), e.lst_day_max_c, ' °C', 0],
+    [tr('冬季夜間最低（地表）', 'Winter night low (ground)'), e.lst_night_min_c, ' °C', 0],
+    // A temperature difference is the same number in K and °C; shown in °C like the rest of the page.
+    [tr('地表日夜溫差（MODIS）', 'Ground day–night swing (MODIS)'), e.lst_swing_k, ' °C', 0],
     [tr('土壤水分', 'Soil moisture'), e.soil_moisture_pct, '%', 1],
-    [tr('年降水', 'Precipitation'), e.precip_mm_yr, ' mm', 0],
+    [tr('年降水（GSMaP 衛星）', 'Precipitation (GSMaP satellite)'), e.precip_mm_yr, ' mm/yr', 0],
     [tr('永凍土占比', 'Permafrost fraction'), Number.isFinite(e.permafrost_frac) ? e.permafrost_frac * 100 : null, '%', 0],
   ].filter(x => Number.isFinite(x[1]))
   if (!items.length) return null
   return <div className="rs-block">
     <h3>{tr('這個地點的實測環境', 'Measured environment here')}</h3>
     <dl className="rs-now">{items.map(([k, v, u, d]) => <div key={k}><dt>{k}</dt><dd>{num(v, d)}{u}</dd></div>)}</dl>
+    <p className="rs-note">{tr('這裡是衛星量的地表（地面）溫度與 GSMaP 降水；「條件對照」用的是 NASA POWER 2001–2025 的 2 m 氣溫與降水，所以數值會不同。',
+      'These are satellite land-surface (ground) temperatures and GSMaP precipitation. The Conditions section uses NASA POWER 2001–2025 air temperature at 2 m and its precipitation, so the numbers differ.')}</p>
   </div>
 }
 
@@ -124,7 +127,7 @@ export function ResourcePanel({ data, active }) {
     {wv && <div className="rs-block">
       <h3>{tr('四季衛星影像', 'Satellite images by season')}</h3>
       <div className="rs-grid">{wv.images.map(im => <figure key={im.layer + im.date} className="rs-wv">
-        <Img src={im.url} alt={pick(im.label)} /><figcaption>{pick(im.label)}<small>{im.date}</small></figcaption>
+        <Img src={im.url} alt={pick(im.label)} /><figcaption>{pick(im.label)}<small className="rs-date">{im.date}</small></figcaption>
       </figure>)}</div>
       <a className="rs-link" href={wv.link} target="_blank" rel="noreferrer">{tr('在 NASA Worldview 開啟這個範圍', 'Open this extent in NASA Worldview')}</a>
     </div>}

@@ -22,7 +22,7 @@ export const REPORT_MESSAGES = {
   "- 獨立 DEM 量測核對：{0}。同尺度粗格網診斷，不參與神經排序，也不是類比機率。": "- Independent DEM diagnostics: {0}. Same-scale coarse-grid measurements; excluded from neural ranking and not analog probabilities.",
   "七分量未訓練特徵距離 {0}；參考／地球平均坡度 {1}°／{2}°；相鄰像元粗糙度 P90 {3}／{4} m": "Seven-component untrained feature distance {0}; reference/Earth mean slope {1}°/{2}°; adjacent-pixel roughness P90 {3}/{4} m",
   "- 地球粗篩高程：{0}；{1}；有效格 {2}%；來源 {3}。": "- Earth search elevation: {0}; {1}; valid samples {2}%; source {3}.",
-  "- 地球高解析重建：{0} 高解析重建不改變粗篩排名。": "- Earth high-resolution reconstruction: {0} Higher resolution does not change the search ranking.",
+  "- 地球高解析重建：{0} 高解析重建不改變粗篩排名。": "- Earth DEM for the results-page 3D comparison: {0} It does not change the search ranking.",
   "{0}；{1}；來源 {2}。": "{0}; {1}; source {2}.",
   "- 參考／地球顯示網格 P90–P10 高程起伏：{0}／{1} m；視覺垂直比例經放大。": "- Reference/Earth display-grid P90–P10 relief: {0}/{1} m; vertical scale is exaggerated for visualization.",
   "- 索引版本：{0}": "- Index version: {0}",

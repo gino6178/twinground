@@ -47,6 +47,9 @@ export function AnalogySummary({ rows, body, env, lat, lon }) {
     {unknown.length > 0 && <p className="analogy-unknown">{tr('沒有資料、未評估：', 'No data, not assessed: ')}{unknown.map(r => pick(r.label)).join(tr('、', ', '))}</p>}
 
     <h3>{tr('溫度、沙塵、生物、作用過程與日照', 'Temperature, dust, biology, processes and sunlight')}</h3>
+    <p className="cond-note">{tr(
+      '這五張卡片以 2001–2025 年氣候資料，回答「這些現象能不能在這裡演練」。下方「十個面向」則逐項比對目標星球的性質（例如鬆散細粒表土、緯度模型的年均溫、地質背景的作用過程），兩者判定可以不同。',
+      'These five cards ask whether each phenomenon can be rehearsed here, from 2001–2025 climate data. The ten facets ask a different question: does Earth match a property of the target (for example loose fine topsoil, a latitude-model mean temperature, or the process behind the geologic setting). The two verdicts can therefore differ.')}</p>
     <ProcessDimensions env={env} body={body} rows={rows} lat={lat} lon={lon} />
 
     <h3>{tr('地球作為類比的極限', 'The limits of Earth as an analog')}</h3>

@@ -21,6 +21,8 @@ const ANALOG_TAGS = {
   pyroclastic: ['火山碎屑', 'pyroclastic'], biosignature: ['生物跡證', 'biosignature'], regolith_isru: ['風化層／ISRU', 'regolith / ISRU'],
   mission_ops: ['任務演練', 'mission operations'],
 }
+// Upstream typo in the PAAD analog catalogue ("mega-ripple filed"); fixed for display until the server data is corrected.
+export const analogName = n => (typeof n === 'string' ? n.replace(/ripple filed/i, 'ripple field') : n)
 // Name, type label and (lava-tube searches only) whether the analog's type fits the query.
 export function knownAnalogInfo(k, purpose) {
   const en = getLanguage() === 'en'
@@ -30,7 +32,7 @@ export function knownAnalogInfo(k, purpose) {
   let fit = null
   if (purpose === 'lavatube') fit = tags.includes('lava_tube') ? 'match' : tags.includes('basaltic_volcanism') ? 'partial' : 'other'
   const fitText = fit === 'match' ? tr('類型相符', 'same type') : fit === 'partial' ? tr('部分相關', 'related') : fit === 'other' ? tr('類型不同', 'different type') : ''
-  return { name: en ? k.name : k.name_zh || k.name, type, fit, fitText }
+  return { name: analogName(en ? k.name : k.name_zh || k.name), type, fit, fitText }
 }
 
 const AXIS = {
@@ -64,7 +66,9 @@ function DemThumb({ terrain }) {
 }
 
 function queryPreset(data) {
-  if (data.mars_reference?.name) return { name: data.mars_reference.name, zh: null }
+  // A free selection comes back as id 'global' with the generic name "freely selected Mars region": name it from the
+  // IAU gazetteer instead (planetPlace below), like Moon queries.
+  if (data.mars_reference?.name && data.mars_reference.id !== 'global') return { name: data.mars_reference.name, zh: null }
   const list = SKYLIGHT_PRESETS[data.window.body] || []
   const hit = list.find(p => Math.abs(p.lat - data.window.lat) < 0.02 && Math.abs(p.lon - data.window.lon) < 0.02)
   return hit ? { name: translate(hit.name, 'en'), zh: hit.name } : null
@@ -75,7 +79,9 @@ function queryTraits(data) {
   const g = data.moon_geology
   if (g?.available && g.dominant_unit) {
     const d = g.dominant_unit.description || ''
-    const kind = /mare/i.test(d) ? tr('月海玄武岩', 'mare basalt') : /crater/i.test(d) ? tr('撞擊坑物質', 'crater material') : /plateau/i.test(d) ? tr('高原單元', 'plateau unit') : /dome/i.test(d) ? tr('穹丘', 'dome') : /terra|highland|plains/i.test(d) ? tr('高地', 'highland') : d
+    // Same wording as the Conditions panel (server setting text for this unit code) so the unit reads the same everywhere.
+    const st = data.conditions?.setting_text
+    const kind = st && data.conditions?.unit?.code === g.dominant_unit.code ? (getLanguage() === 'en' ? st.en : st.zh) : /mare/i.test(d) ? tr('月海玄武岩', 'mare basalt') : /crater/i.test(d) ? tr('撞擊坑物質', 'crater material') : /plateau/i.test(d) ? tr('高原單元', 'plateau unit') : /dome/i.test(d) ? tr('穹丘', 'dome') : /terra|highland|plains/i.test(d) ? tr('高地', 'highland') : d
     out.push(tr(`${kind}（${g.dominant_unit.code}）`, `${kind} (${g.dominant_unit.code})`))
   }
   const q = data.material?.query
@@ -88,10 +94,10 @@ function queryTraits(data) {
   const audit = data.matches[0]?.geometry_audit
   if (audit) {
     out.push(tr(`平均坡度 ${fmt(audit.reference_mean_slope_deg, 1)}°`, `mean slope ${fmt(audit.reference_mean_slope_deg, 1)}°`))
-    out.push(tr(`粗糙度 P90 ${fmt(audit.reference_roughness_p90_m)} m`, `roughness P90 ${fmt(audit.reference_roughness_p90_m)} m`))
+    out.push(tr(`起伏 P90 ${fmt(audit.reference_roughness_p90_m)} m`, `relief roughness P90 ${fmt(audit.reference_roughness_p90_m)} m`))
   }
   const spacing = data.window.sampling?.source_grid_north_south_spacing_m
-  if (spacing) out.push(tr(`DEM 格距約 ${fmt(spacing)} m`, `DEM spacing ≈ ${fmt(spacing)} m`))
+  if (spacing) out.push(tr(`搜尋格網格距約 ${fmt(spacing)} m（3D 場景另用較細的 DEM）`, `search-grid spacing ≈ ${fmt(spacing)} m (the 3D scene uses a finer DEM)`))
   return out
 }
 
@@ -136,7 +142,7 @@ function reasons(data, row) {
     const slope = tr(`坡度 ${fmt(a.reference_mean_slope_deg, 1)}° ↔ ${fmt(a.earth_mean_slope_deg, 1)}°`, `slope ${fmt(a.reference_mean_slope_deg, 1)}° ↔ ${fmt(a.earth_mean_slope_deg, 1)}°`)
     ;(close(a.reference_mean_slope_deg, a.earth_mean_slope_deg) ? ok : unknown).push(slope)
     if (ok.length < 3) {
-      const rough = tr(`粗糙度 ${fmt(a.reference_roughness_p90_m)} ↔ ${fmt(a.earth_roughness_p90_m)} m`, `roughness ${fmt(a.reference_roughness_p90_m)} ↔ ${fmt(a.earth_roughness_p90_m)} m`)
+      const rough = tr(`起伏 P90 ${fmt(a.reference_roughness_p90_m)} ↔ ${fmt(a.earth_roughness_p90_m)} m`, `relief roughness P90 ${fmt(a.reference_roughness_p90_m)} ↔ ${fmt(a.earth_roughness_p90_m)} m`)
       ;(close(a.reference_roughness_p90_m, a.earth_roughness_p90_m) ? ok : unknown).push(rough)
     }
   }
@@ -192,7 +198,7 @@ export function ResultsGlance({ data, active, places, headingRef, onBack, onRepo
         <p className="glance-traits">{queryTraits(data).join(' · ')}</p>
       </div>
       <div className="glance-actions">
-        <RunDownloads data={data} activeId={active.id} onReport={onReport} />
+        <RunDownloads data={data} activeId={active.id} onReport={onReport} places={places} />
         <button className="outline-button" type="button" onClick={onBack}><ArrowLeft size={16} /> {tr('重新選區', 'New selection')}</button>
       </div>
     </div>
@@ -215,7 +221,7 @@ export function ResultsGlance({ data, active, places, headingRef, onBack, onRepo
             {hasKnownField && <span className={`glance-badge ${row.known_analog ? 'is-known' : 'is-new'}`}>{row.known_analog ? tr('既有類比', 'Known analog') : row.catalogue_nearest?.off_catalogue ? tr('目錄外候選', 'Off-catalogue') : tr('新候選', 'New candidate')}</span>}
           </header>
           {hasKnownField && row.known_analog?.name && <p className={`glance-known fit-${knownAnalogInfo(row.known_analog, data.purpose).fit || 'none'}`}>{tr('附近的既有類比：', 'Near known analog: ')}{knownText(row.known_analog)}{Number.isFinite(row.known_analog.distance_km) ? ` · ${fmt(row.known_analog.distance_km)} km` : ''}</p>}
-          {hasKnownField && !row.known_analog && row.catalogue_nearest && <p className="glance-offcat">{tr('最近的已知類比：', 'Nearest known analog: ')}{en ? row.catalogue_nearest.name : (row.catalogue_nearest.name_zh || row.catalogue_nearest.name)} · {fmt(row.catalogue_nearest.distance_km)} km</p>}
+          {hasKnownField && !row.known_analog && row.catalogue_nearest && <p className="glance-offcat">{tr('最近的已知類比：', 'Nearest known analog: ')}{analogName(en ? row.catalogue_nearest.name : (row.catalogue_nearest.name_zh || row.catalogue_nearest.name))} · {fmt(row.catalogue_nearest.distance_km)} km</p>}
           <div className="glance-bars">
             <Bar label={tr('地形', 'Terrain')} value={row.score} />
             {row.material_context?.similarity != null && <Bar label={tr('材質', 'Material')} value={row.material_context.similarity * 100} />}

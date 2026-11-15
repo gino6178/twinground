@@ -6,6 +6,7 @@ model service behind ANALOG_ASSISTANT_URL (scripts/assistant/service.py).
 """
 import json
 import os
+import re
 from urllib.request import Request, urlopen
 
 from scripts.assistant.site_brief import brief, strip_answer
@@ -19,6 +20,8 @@ def handle(body):
                 for m in (body.get('messages') or [])[-6:] if isinstance(m, dict)]
     if not messages or messages[-1]['role'] != 'user' or not messages[-1]['content'].strip():
         raise ValueError('empty message')
+    if re.search(r'[一-鿿]', messages[-1]['content']):  # a Chinese question gets a Chinese brief and answer
+        lang = 'zh'
     site = None
     s = body.get('site')
     if isinstance(s, dict) and isinstance(s.get('answer'), dict) and s['answer'].get('matches'):

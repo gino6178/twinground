@@ -8,7 +8,7 @@ export function TerrainSampling({sampling}) {
  const s=sampling
  const metric=v=>Number(v).toLocaleString(en?'en-US':'zh-TW',{maximumFractionDigits:1})
  return <details className="selection-details sampling-evidence">
-  <summary>{en?'DEM detail limit':'DEM 細節上限'} · {metric(s.source_grid_north_south_spacing_m)} m</summary>
+  <summary>{en?'Search-grid DEM detail limit':'搜尋格網 DEM 細節上限'} · {metric(s.source_grid_north_south_spacing_m)} m</summary>
   <p>{s.model_upsamples_source
    ? (en?'The model samples an interpolated grid finer than the source. It does not gain measured detail.':'模型使用比來源更密的插值網格，並未增加實測細節。')
    : (en?'The model uses a coarser analysis grid than the source. Fine surface recognition is unavailable.':'模型使用較粗的分析網格；目前不提供細部地表辨識。')}</p>

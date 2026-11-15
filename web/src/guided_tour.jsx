@@ -26,7 +26,7 @@ const TOURS = {
     { target: '.condition-tiles', title: 'Surface and rock', body: 'Optionally require a surface type or rock type on Earth. Leave these on "any" to rank by terrain alone. Click the heading to show or hide them.' },
     { target: '.mini-preview', title: 'Terrain preview', body: 'A wireframe of the elevation inside the selected window, so you can see the shape you are matching before you search.' },
     { target: '.region-suggestions', title: 'Curated regions', body: 'Not sure where to start? Open this list for hand-picked Moon windows covering craters, mare plains and highlands.' },
-    { target: '.topnav', title: 'Move between pages', body: 'Switch between the Moon and Mars, return to your results, search in plain words, browse off-catalogue candidates or read the methods paper.' },
+    { target: '.topnav', last: true, title: 'Move between pages', body: 'Switch between the Moon and Mars, return to your results, search in plain words, browse off-catalogue candidates or read the methods paper.' },
     { target: '.search-button', title: 'Search Earth', body: 'When the terrain has loaded, run the search. The server compares this window against Earth and returns ranked candidates.', action: { label: 'Run the search', run: 'search', resume: 'results' } },
   ],
   results: [
@@ -35,13 +35,13 @@ const TOURS = {
     { target: '.comparison-switch', title: 'Imagery or pure terrain', body: 'Switch between draped imagery and a plain grey surface. Grey makes it easier to compare shape alone, without colour getting in the way.' },
     { target: '.terrain-pair', title: 'Side by side in 3D', body: 'Your window on the left, the Earth candidate on the right, at the same vertical scale. Drag to rotate, scroll to zoom. Use the walk button on either panel to explore it on foot as an astronaut.' },
     { target: '.source-detail', title: 'The evidence', body: 'Open these sections for the surface and rock data behind each candidate and the sources it comes from.' },
-    { target: '.gt-help', title: 'Ask why', body: 'On this page the assistant also reads the candidate you are viewing, so you can ask why it was chosen or what does not match.' },
-    { title: 'That is the tour', body: 'Candidates are proposals of the same kind of setting, not validated analog sites. Restart the tour any time from the Tour button.' },
+    // No step on the Help button itself: it is unmounted while the tour is open, so the assistant is described here.
+    { title: 'That is the tour', body: 'Candidates are proposals of the same kind of setting, not validated analog sites. To ask why a candidate was chosen or what does not match, open Help → Ask: on this page the assistant reads the candidate you are viewing. Restart the tour any time from Help → Tour.' },
   ],
   chat: [
     { target: '.cs-input', title: 'Describe it in words', body: 'Type what you need, for example "flat basalt plain near the equator" or "steep crater wall with loose regolith". A language model turns the text into search conditions.' },
     { target: '.cs-results', title: 'Results with their numbers', body: 'Matching places appear here with the measured values behind each condition. Ranking follows fixed rules on the data, not the model’s judgement.' },
-    { target: '.topnav', title: 'Back to the map', body: 'Use the Moon or Mars links to choose a region on the globe instead.' },
+    { target: '.topnav', last: true, title: 'Back to the map', body: 'Use the Moon or Mars links to choose a region on the globe instead.' },
   ],
 }
 
@@ -112,7 +112,11 @@ export function GuidedTour({ stage, onStartMoon, onAsk, onMission }) {
   const steps = useMemo(() => {
     const list = TOURS[key]
     const movable = list.map((s, i) => (s.target && !s.action ? i : -1)).filter(i => i >= 0)
-    const top = s => { const el = find(s.target); if (!el) return Infinity; const r = el.getBoundingClientRect(); return getComputedStyle(el).position === 'fixed' ? r.top : r.top + window.scrollY }
+    // Elements fixed to the screen (themselves or through an ancestor) have no place in the page's top-to-bottom
+    // order: they go after every in-page step, in their own screen order. Site chrome such as the top navigation is
+    // marked `last` so a page's own "Step 1" comes first.
+    const fixed = el => { for (let e = el; e && e !== document.body; e = e.parentElement) if (getComputedStyle(e).position === 'fixed') return true; return false }
+    const top = s => { const el = find(s.target); if (!el) return Infinity; const r = el.getBoundingClientRect(); return s.last ? 2e9 : fixed(el) ? 1e9 + r.top : r.top + window.scrollY }
     const sorted = movable.map(i => ({ s: list[i], y: top(list[i]), i })).sort((a, b) => a.y - b.y || a.i - b.i)
     const out = [...list]
     movable.forEach((slot, n) => { out[slot] = sorted[n].s })
