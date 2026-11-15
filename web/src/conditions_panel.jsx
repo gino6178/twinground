@@ -221,14 +221,12 @@ export function ConditionsPanel({ data, matches, active, place, earthEnvironment
     {data.terrain_read?.questions?.length > 0 && active.terrain_read && <div className="cond-read">
       <h3>{tr(`地形＋材質判讀（SysOne-Nano，${fmt(data.terrain_read.parameters)} 個參數）`, `Terrain + material reading (SysOne-Nano, ${fmt(data.terrain_read.parameters)} parameters)`)}</h3>
       <ul>{data.terrain_read.questions.map(q => <ReadRow key={q.id} q={q} body={data.window.body} value={active.terrain_read[q.id]} />)}</ul>
-      <p className="cond-note">{readNote()}</p>
     </div>}
 
     <div className="cond-grid">
       <div>
         <h3>{tr('能在這裡測什麼', 'What can be tested here')}</h3>
         <TestList tests={c.tests || []} />
-        <p className="cond-note">{tr('依上方判定自動對應；「車輛與步行通過性」另看兩邊平均坡度相差多少（≤ 2° 可測）。', 'Mapped from the verdicts above; mobility also needs the mean slopes within 2°.')}</p>
       </div>
       <div>
         <h3>{tr('去不去得了', 'Getting there')}</h3>

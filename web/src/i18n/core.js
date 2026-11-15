@@ -3,17 +3,15 @@ import {REPORT_MESSAGES,REPORT_TEXT} from './report_catalog.js'
 import {EN} from './catalog.js'
 import {SERVER_TEXT,SERVER_PATTERNS} from './server_catalog.js'
 export const LANGUAGE_KEY='twinground:language:v1'
-export function initialLanguage(search='',storage=null){
- const requested=new URLSearchParams(search).get('lang')
- if(requested==='en'||requested==='zh-Hant')return requested
- try{return storage?.getItem(LANGUAGE_KEY)==='en'?'en':'zh-Hant'}catch{return 'zh-Hant'}
-}
-let language=typeof window==='undefined'?'zh-Hant':initialLanguage(window.location.search,{getItem:key=>window.localStorage.getItem(key)})
+// The published site is English only (2026-11-14): ?lang and the saved choice are ignored. The Chinese source
+// strings stay in the code as catalog keys; restore the old body of this function to bring the switch back.
+export function initialLanguage(){return 'en'}
+let language=typeof window==='undefined'?'en':initialLanguage(window.location.search,{getItem:key=>window.localStorage.getItem(key)})
 const listeners=new Set()
 export const getLanguage=()=>language
 export const subscribe=fn=>{listeners.add(fn);return()=>listeners.delete(fn)}
 export function setLanguage(next){
- if(!['en','zh-Hant'].includes(next)||next===language)return
+ if(next!=='en'||next===language)return
  language=next
  if(typeof window!=='undefined'){
   try{window.localStorage.setItem(LANGUAGE_KEY,next)}catch{}

@@ -1,62 +1,62 @@
 /* former monospace labels: Manrope with tabular figures, at least 12 px */
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .header-right{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .eyebrow,:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .micro-label{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .site-footer{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .globe-panel-bottom{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .live-pill{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .globe-coordinate{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .selection-id{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .selection-facts span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .mini-preview-top{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .rail-hint{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .tile-index,:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .tile-meta{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .match-list-header{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .terrain-panel-header span,:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .terrain-panel-footer span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .header-right{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .eyebrow,:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .micro-label{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .site-footer{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .globe-panel-bottom{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .live-pill{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .globe-coordinate{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .selection-id{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .selection-facts span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .mini-preview-top{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .rail-hint{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .tile-index,:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .tile-meta{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .match-list-header{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .terrain-panel-header span,:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .terrain-panel-footer span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
 :is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .terrain-panel-footer strong{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .terrain-vs{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .scale-picker button{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .material-state span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .coordinate-form>span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .terrain-vs{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .scale-picker button{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .material-state span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .coordinate-form>span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
 :is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .coordinate-fields input{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .moon-map-label{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .globe-reset{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .moon-map-toolbar,:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .moon-map-readout{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .moon-map-label{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .globe-reset{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .moon-map-toolbar,:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .moon-map-readout{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
 :is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .moon-map-zoom button{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums}
 :is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .moon-map-locator{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .moon-map-tools button{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .moon-map-scales button{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .moon-map-hover>span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .geometry-audit-values span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .moon-map-tools button{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .moon-map-scales button{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .moon-map-hover>span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .geometry-audit-values span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
 :is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .geometry-audit-values strong{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .globe-hover-readout{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .globe-mode-picker button{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .published-mineral-row strong{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .research-mineral-meta span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .crater-preview span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .crater-result-value span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .resolution-state{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .earth-environment-values span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .globe-hover-readout{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .globe-mode-picker button{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .published-mineral-row strong{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .research-mineral-meta span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .crater-preview span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .crater-result-value span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .resolution-state{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .earth-environment-values span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
 :is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .earth-environment-values strong{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .dtm-coverage-title{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .local-dtm-header{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .terrain-texture-credit{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .glance-kicker{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .dtm-coverage-title{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .local-dtm-header{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .terrain-texture-credit{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .glance-kicker{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
 :is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .glance-rank{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .glance-card header small{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .glance-card header small{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
 :is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .glance-bar b{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums}
-.eva .eva kbd{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-.eva .eva-place small{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-.eva .eva-badge{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-.eva .eva-compass-strip span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
-.eva .eva-compass b{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
+.eva .eva kbd{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+.eva .eva-place small{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+.eva .eva-badge{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+.eva .eva-compass-strip span{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
+.eva .eva-compass b{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
 .eva .eva-telemetry dd{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums}
-.eva .eva-suit small{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
+.eva .eva-suit small{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
 .eva .eva-scan td{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums}
-.eva .eva-settings output{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
+.eva .eva-settings output{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
 .eva .eva-wx-now b{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums}
-.eva .eva-weather output{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
+.eva .eva-weather output{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
 .eva .eva-compare td{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums}
-.eva .eva-wx-line{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:12px}
+.eva .eva-wx-line{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums;font-size:14px}
 .eva .eva-loading-place{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums}
 .eva .eva-progress-meta b{font-family:var(--cv-font);letter-spacing:.01em;font-variant-numeric:tabular-nums}
 /* Cover theme (generated by make_theme.py from landing.css tokens). Loaded after every other sheet; the prefix
@@ -114,7 +114,7 @@
 :is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .selection-workspace .search-button{min-height:52px;font-size:16px}
 :is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) :is(.outline-button,.globe-reset,.earth-locator-heading>button,.flat-view-toggle,.terrain-explore-button,.earth-show-comparison,.moon-map-dialog-close,.place-search-field button,.coordinate-fields button,.moon-map-center,.earth-cluster-list button,.lavatube-list button,.glance-dossier,.image-compare-controls button,.image-compare-placeholder button,.eva-error button){border-color:transparent;border-radius:8px;background:var(--cv-control);color:var(--cv-ink);font-family:var(--cv-font);letter-spacing:0;box-shadow:none;transition:background-color .2s}
 :is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) :is(.outline-button,.globe-reset,.earth-locator-heading>button,.flat-view-toggle,.terrain-explore-button,.earth-show-comparison,.moon-map-dialog-close,.place-search-field button,.coordinate-fields button,.moon-map-center,.earth-cluster-list button,.lavatube-list button,.glance-dossier,.image-compare-controls button,.image-compare-placeholder button):hover{background:var(--cv-control-hover)}
-:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .outline-button{font-size:13px;font-weight:700}
+:is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .outline-button{font-size:14px;font-weight:700}
 :is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) :is(.flat-view-toggle,.terrain-explore-button,.globe-reset){background:#040404b3}
 :is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) :is(.flat-view-toggle,.terrain-explore-button,.globe-reset):hover{background:#171717e6}
 :is(.app-shell:not(.is-landing),.moon-map-dialog-backdrop,.candidate-sheet) .glance-explore{border:0;border-radius:8px;background:var(--cv-accent);color:var(--cv-accent-ink);box-shadow:none}

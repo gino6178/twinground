@@ -77,7 +77,5 @@ export function MaterialPanel({ data, activeId, onActive }) {
           : obs ? <p>這個候選的衛星光譜暫時無法讀取，以推估材質為準。</p> : <p>正在讀取衛星光譜…</p>}
       </div>
     </div>
-    {ev && <small className="lavatube-note">預先登記評估：{ev}</small>}
-    <small className="lavatube-note">研究原型：材質相似度是相對百分位的接近程度，不是成分相同的機率。</small>
   </section>
 }

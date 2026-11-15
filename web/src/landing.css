@@ -27,22 +27,32 @@
 .landing .language-switch button{font-size:14px;color:var(--ink-2)}
 .landing .language-switch button[aria-pressed=true]{background:var(--ink);color:var(--accent-ink)}
 
-.landing-hero{position:relative;z-index:2;box-sizing:border-box;min-height:100svh;display:flex;align-items:center;padding:96px var(--gutter) 72px;pointer-events:none}
+.landing-hero{position:relative;z-index:2;box-sizing:border-box;min-height:100svh;display:flex;flex-direction:column;justify-content:center;gap:32px;padding:96px var(--gutter) 76px;pointer-events:none}
+@media (min-width:1100px){.landing-cta{flex-wrap:nowrap;width:max-content}.landing-cta>*{white-space:nowrap}}
+.landing-features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:1100px;gap:20px;pointer-events:auto;animation:landing-rise .8s cubic-bezier(.2,.7,.2,1) .4s both}
+.landing-feature{display:flex;align-items:center;gap:20px;min-height:112px;padding:20px 24px;border:1px solid #ffffff2e;border-radius:14px;background:linear-gradient(120deg,#0c0c0ce6 55%,#2a2a2acc);color:var(--ink);font:inherit;text-align:left;text-decoration:none;cursor:pointer;backdrop-filter:blur(6px);transition:border-color .2s,background-color .2s,transform .15s}
+.landing-feature:hover{border-color:#ffffff73;background-color:#ffffff14}
+.landing-feature:active{transform:translateY(1px) scale(.99)}
+.landing-feature-icon{flex:none;display:grid;place-items:center;width:56px;height:56px;border:1px solid #ffffff24;border-radius:50%;color:var(--ink)}
+.landing-feature-text{display:grid;gap:4px;min-width:0;padding-left:20px;border-left:1px solid #ffffff1f}
+.landing-feature-text b{font-size:22px;line-height:1.2;letter-spacing:-.01em}
+.landing-feature-text small{font-size:16px;line-height:1.45;color:var(--ink-2)}
 .landing-hero-text{width:min(620px,calc(44vw - var(--gutter)));pointer-events:auto}
 .landing h1{margin:0 0 24px;font-size:clamp(36px,4.2vw,64px);line-height:1.08}
 html[lang=en] .landing h1{font-size:clamp(34px,3.7vw,56px)}
 .landing h1 span{display:block}
 .landing-lead{max-width:36em}
-.landing-cta{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 28px}
+.landing-cta{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0 28px}
 .landing-primary,.landing-secondary{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border:0;border-radius:8px;font-size:17px;font-weight:700;cursor:pointer;transition:background-color .2s,transform .15s}
 .landing-primary{background:var(--accent);color:var(--accent-ink)}
 .landing-primary:hover{background:#ffffff}
 .landing-secondary{background:#ffffff17;color:var(--ink)}
 .landing-secondary:hover{background:#ffffff2b}
+a.landing-secondary{text-decoration:none}
 .landing-primary:active,.landing-secondary:active{transform:translateY(1px) scale(.98)}
 .landing-primary svg{transition:transform .2s}
 .landing-primary:hover svg{transform:translateX(3px)}
-.landing-note{max-width:48ch;margin-top:10px!important;font-size:14px;line-height:1.6;color:var(--ink-2)}
+.landing-note{max-width:48ch;margin-top:10px!important;font-size:15px;line-height:1.6;color:var(--ink-2)}
 .landing-note a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
 .landing-note a:hover{color:var(--accent)}
 .landing-hero-text>*{animation:landing-rise .8s cubic-bezier(.2,.7,.2,1) both}
@@ -112,7 +122,9 @@ html[lang=en] .landing h1{font-size:clamp(34px,3.7vw,56px)}
 .landing.reveal-ready [data-reveal].is-in{opacity:1;transform:none}
 
 @media (max-width:819px),(max-aspect-ratio:11/10){
-  .landing-hero{align-items:flex-start;padding-top:46svh;padding-bottom:56px}
+  .landing-hero{justify-content:flex-start;padding-top:46svh;padding-bottom:56px}
+  .landing-features{grid-template-columns:minmax(0,1fr);gap:12px}
+  .landing-feature{min-height:88px}
   .landing-hero-text{width:100%;max-width:640px}
   .landing h1{font-size:clamp(32px,6.2vw,52px)}
   html[lang=en] .landing h1{font-size:clamp(32px,5.8vw,48px)}
@@ -132,8 +144,7 @@ html[lang=en] .landing h1{font-size:clamp(34px,3.7vw,56px)}
   .landing-primary,.landing-secondary{flex:1 1 auto}
 }
 @media (prefers-reduced-motion:reduce){
-  .landing-hero-text>*{animation:none}
-  .landing [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}
+  .landing-hero-text>*,.landing-features,  .landing [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}
   .landing-shot img,.landing-primary svg,.landing-text-button svg,.landing-numbers-note a svg{transition:none}
 }
 .landing-footer-brand .brand-tagline{margin-top:4px;color:var(--ink);font-weight:600}

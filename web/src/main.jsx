@@ -22,6 +22,9 @@ import './cover_theme.css'
 import './upgrade_v2.css'
 import { PurposeTiles, PurposeNote, ConditionTiles, UseChips, FacetUseChips } from './selection_tiles.jsx'
 import { Landing } from './landing.jsx'
+import { exploreIdFromUrl } from './candidate_explore.jsx'
+const CandidateExplore = React.lazy(() => import('./candidate_explore.jsx'))
+const candidatesUrl = () => (getLanguage() === 'en' ? '/offcatalogue/en.html' : '/offcatalogue/index.html')
 import { MusicToggle, trackFor } from './music_player.jsx'
 import { renderGate } from './render_gate.js'
 import {nextCandidateOffset,mergeCandidatePage} from './candidate_paging.js'
@@ -30,6 +33,8 @@ import { SkylightPresets } from './skylight_presets.jsx'
 import { TerrainReadCard } from './terrain_read_card.jsx'
 import { clamp, formatCoord, lonLatPoint } from './planet_geo.js'
 import { TerrainView } from './terrain_view.jsx'
+import { GuidedTour } from './guided_tour.jsx'
+import { MissionTutorial, unlockVoice } from './mission_tutorial.jsx'
 
 // The results page is its own chunk, so the home page never downloads it. It is fetched when the selection page
 // opens and search() awaits it together with the search request; by the time the results stage renders the module
@@ -409,7 +414,7 @@ function Header({ stage, body, onHome, onBody, onResults, onChat }) {
       <button type="button" className="topnav-link" aria-current={current('mars')} onClick={() => onBody('mars')}>火星</button>
       {onResults && <button type="button" className="topnav-link" aria-current={current('results')} onClick={onResults}>搜尋結果</button>}
       {onChat && <button type="button" className="topnav-link" aria-current={stage === 3 ? 'page' : undefined} onClick={onChat}>{getLanguage() === 'en' ? 'Ask' : '對話搜尋'}</button>}
-      <a className="topnav-link" href={getLanguage() === 'en' ? '/offcatalogue/en.html' : '/offcatalogue/'}>{getLanguage() === 'en' ? 'Off-catalogue' : '目錄外的候選'}</a>
+      <a className="topnav-link" href={candidatesUrl()}>{getLanguage() === 'en' ? 'Search Candidates' : '搜尋候選地點'}</a>
       <a className="topnav-link" href={method}>方法與原理 <ArrowUpRight size={13} /></a>
     </nav>
     <div className="header-right"><MusicToggle track={trackFor(stage, body)} /><LanguageSwitch/></div>
@@ -901,7 +906,6 @@ function BodySelectStage({ body, selected, onPick, sizeKm, onSize, windowData, l
           <h1 ref={pageHeading} tabIndex={-1}>
             {ui.title}
           </h1>
-          <p>{getLanguage() === 'en' ? 'Pick a spot on the globe, set the window size, then find similar terrain on Earth.' : '在球面上點選位置，確認範圍後搜尋地球相似地形。'}</p>
         </div>
         <button className="outline-button" onClick={() => setMapOpen(true)}>
           用地圖選區 <ArrowUpRight size={16} />
@@ -1015,8 +1019,6 @@ function BodySelectStage({ body, selected, onPick, sizeKm, onSize, windowData, l
           </button>
           {purpose === 'physical' && <UseChips use={physUse} onUse={onPhysUse} />}
           {purpose === 'facets' && <FacetUseChips use={facetUse} onUse={onFacetUse} />}
-          <PurposeNote purpose={purpose} />
-          <p className="side-footnote">由伺服器執行地形模型與環境、岩性聯合排序；不推斷環境適居性。</p>
           {purpose === 'lavatube' && <SkylightPresets body={body} onPick={onPick} />}
           {purpose !== 'physical' && <ConditionTiles surface={surface} onSurface={onSurface} rock={rock} onRock={onRock} />}
           <div className="mini-preview">
@@ -1256,6 +1258,9 @@ function App() {
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
   const [coverageError, setCoverageError] = useState(false)
+  const [assistantOpen, setAssistantOpen] = useState(false)
+  const [missionRun, setMissionRun] = useState(0)
+  const [exploreId] = useState(exploreIdFromUrl)
   useEffect(() => {
     try { window.localStorage.setItem('selene:moon-window:v1', JSON.stringify({ lat: selected.lat, lon: selected.lon, sizeKm })) } catch { /* Keep the live selection when storage is unavailable. */ }
   }, [selected.lat, selected.lon, sizeKm])
@@ -1339,6 +1344,7 @@ function App() {
   return (
     <div className={`app-shell ${stage === 0 ? 'is-landing' : ''}`}>
       <div className="ambient-glow" />
+      {exploreId && <Suspense fallback={null}><CandidateExplore id={exploreId} onClose={() => { window.location.href = new URLSearchParams(window.location.search).has('playground') ? '/' : candidatesUrl() }} /></Suspense>}
       {stage !== 0 && (
         <Header
           stage={stage}
@@ -1356,6 +1362,9 @@ function App() {
             onStart={() => startBody('moon')}
             onStartMars={() => startBody('mars')}
             onChat={() => navigate(3)}
+            onAsk={() => setAssistantOpen(true)}
+            onGame={() => { unlockVoice(); setMissionRun(n => n + 1) }}
+            candidatesHref={candidatesUrl()}
             onPickMoon={pickFromHero}
             selected={selected}
             selectedMars={marsSelected}
@@ -1410,8 +1419,13 @@ function App() {
         )}
       </AnimatePresence>
       <Suspense fallback={null}>
-        <AssistantWidget searchData={searchData} activeId={activeId} onResults={stage === 2} />
+        <AssistantWidget searchData={searchData} activeId={activeId} onResults={stage === 2}
+          open={assistantOpen} onOpen={setAssistantOpen} cover={stage === 0} />
       </Suspense>
+      <GuidedTour stage={stage} onStartMoon={() => startBody('moon')} onAsk={() => setAssistantOpen(true)} onMission={() => { unlockVoice(); setMissionRun(n => n + 1) }} />
+      <MissionTutorial stage={stage} runId={missionRun} autoStart={false}
+        onBegin={({ lat, lon }) => { onPick(lat, lon); setPurpose('lavatube'); startBody('moon') }}
+        onPurpose={setPurpose} onFinish={() => navigate(1)} />
       {stage !== 0 && (
         <footer className="site-footer">
           <div>

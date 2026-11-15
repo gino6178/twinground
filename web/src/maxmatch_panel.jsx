@@ -73,7 +73,6 @@ export function PrefieldCheck({ body, qlat, qlon, lat, lon }) {
       {wv.link && <div><dt>{tr('衛星影像', 'Imagery')}</dt><dd><a href={wv.link} target="_blank" rel="noreferrer">NASA Worldview</a>{wv.dates?.length ? ` · ${wv.dates.join('、')}` : ''}</dd></div>}
     </dl>
     {ex.length > 0 && <ul className="mm-papers">{ex.map(e => <li key={e.title}>{e.doi ? <a href={e.doi} target="_blank" rel="noreferrer">{e.title}</a> : e.title}{e.year ? `（${e.year}）` : ''}</li>)}</ul>}
-    <p className="mm-note">{tr('文獻用地名搜尋，結果只是線索：0 篇不代表沒人研究過，有篇數也不代表研究的是同一處。', 'Papers are found by place name, so these are leads: zero does not prove nobody has worked here, and a count does not prove the papers are about this spot.')}</p>
   </div>
 }
 

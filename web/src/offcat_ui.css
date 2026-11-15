@@ -1,11 +1,11 @@
 /* Facets v7 display pieces (2026-11-13); monochrome palette */
-.candidate-offcat { display: block; color: #a3a3a3; font-size: 0.78rem; }
+.candidate-offcat { display: block; color: #a3a3a3; font-size: .875rem; }
 .candidate-offcat.is-off { color: #f5f5f5; }
 .candidate-offcat span { color: #8a8a8a; }
-.candidate-offcat-toggle { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; cursor: pointer; margin: 0.25rem 0; }
+.candidate-offcat-toggle { display: inline-flex; align-items: center; gap: 0.4rem; font-size: .875rem; cursor: pointer; margin: 0.25rem 0; }
 .candidate-offcat-toggle input { accent-color: #e5e5e5; }
 .analogy-bio { margin: 0.6rem 0 0; display: grid; gap: 0.45rem; border-top: 1px solid rgba(255, 255, 255, 0.12); padding-top: 0.55rem; }
-.analogy-bio dt { font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; color: #9a9a9a; }
-.analogy-bio dd { margin: 0.15rem 0 0; font-size: 0.86rem; line-height: 1.45; }
+.analogy-bio dt { font-size: .875rem; letter-spacing: 0.04em; text-transform: uppercase; color: #9a9a9a; }
+.analogy-bio dd { margin: 0.15rem 0 0; font-size: .875rem; line-height: 1.45; }
 .analogy-bio-item { display: block; }
-.glance-offcat { font-size: 0.8rem; color: #a3a3a3; margin: 0.2rem 0 0; }
+.glance-offcat { font-size: .875rem; color: #a3a3a3; margin: 0.2rem 0 0; }

@@ -579,18 +579,10 @@ export default function ResultsStage({ onVisual, onTerrain, data, activeId, onAc
               </div>
             </div>
           </div>
-          <p className="flat-comparison-note">
-            目前含 2D 高程圖：北在上，兩側色階範圍相同，以各自窗格中位數為零。高程圖不貼合衛星影像；可展開下方 2D 影像並排。
-          </p>
           <label className="camera-link">
             <input type="checkbox" checked={linkCameras} onChange={e => setLinkCameras(e.target.checked)} />
             連動旋轉與縮放
           </label>
-          <p className="comparison-hint">
-            拖曳旋轉、滾輪縮放。兩側採相同垂直比例：
-            {((0.78 * data.window.patch_km * 1000) / (3.2 * sharedHeightScaleM)).toFixed(1)} 倍。窗格寬{' '}
-            {data.window.patch_km} km；地球高程解析度：{resolution}。
-          </p>
           <ImageryComparison query={data.window} active={active} moonUrl={moonTextureUrl} earthUrl={earthTextureUrl} />
           <details className="result-technical">
             <summary>重建方式與解析度</summary>
@@ -600,18 +592,6 @@ export default function ResultsStage({ onVisual, onTerrain, data, activeId, onAc
                 : refineState[active.id] === 'loading'
                   ? 'COPERNICUS GLO-90 · 正在載入原始高程'
                   : 'ETOPO / SRTM · 使用搜尋格網重建'}
-            </div>
-            <div className="reconstruction-note">
-              <Info size={16} />
-              <span>
-                拖曳旋轉、滾輪縮放。
-                {isMars
-                  ? '火星使用來源高程配色；地球為 DEM 貼合 Esri World Imagery。'
-                  : '月球為 LOLA 高程貼合 NASA SVS／LROC 影像；地球為 DEM 貼合 Esri World Imagery。'}
-                兩側使用相同的垂直比例（仍為展示而放大），「純地形比較」用同一灰階檢查形狀；地球高程解析度：{resolution}
-                。這是可追溯的影像貼合網格，Skyfall-GS 多視角 3DGS 與擴散精修尚未對這些候選完成訓練。影像不參與搜尋排名，也不能據此推斷礦物。
-                {isMars && '火星輸入對月球訓練編碼器的轉移尚未驗證。'}
-              </span>
             </div>
           </details>
           {explore && (

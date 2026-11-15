@@ -19,7 +19,9 @@
 @keyframes up-rise{from{opacity:0;transform:translateY(14px)}}
 :root .selection-workspace .page-heading{animation:up-rise .5s var(--up-ease) both}
 :root .selection-workspace .select-layout>.globe-panel{animation:up-rise .6s var(--up-ease) .05s both}
-:root .selection-workspace .select-layout>.selection-side{animation:up-rise .6s var(--up-ease) .12s both}
+/* backwards, not both: a transform left in effect after the animation turns the panel into the containing block of
+   the phone search button (position:fixed), which then scrolls away with the panel instead of staying pinned. */
+:root .selection-workspace .select-layout>.selection-side{animation:up-rise .6s var(--up-ease) .12s backwards}
 
 /* Wide screens: the globe fills the height that is left and stays in view while the long side panel scrolls. */
 @media(min-width:1101px) and (min-height:620px){
@@ -49,8 +51,8 @@
 /* ---------- Astronaut explorer HUD ---------- */
 /* The tools read as one bar instead of nine loose chips; the mode switch keeps the accent. */
 @media(min-width:900px){
-  :root .eva .eva-tools{gap:2px;padding:4px;border-radius:12px;background:#040404b8;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);max-width:none;flex-wrap:nowrap}
-  :root .eva .eva-tools button{border:0;background:none;backdrop-filter:none;border-radius:8px;padding:8px 11px;font-size:13px;transition:background-color .15s,color .15s}
+  :root .eva .eva-tools{gap:2px;padding:4px;border-radius:12px;background:#040404b8;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);max-width:none;flex-wrap:nowrap;min-width:0;overflow-x:auto;scrollbar-width:none;justify-content:flex-start}
+  :root .eva .eva-tools button{border:0;background:none;backdrop-filter:none;border-radius:8px;padding:8px 11px;font-size:14px;transition:background-color .15s,color .15s}
   :root .eva .eva-tools button:hover{background:#ffffff1f}
   :root .eva .eva-tools button[aria-pressed=true],:root .eva .eva-tools button.is-on,:root .eva .eva-tools button.active{background:#ffffff2b;color:#fff}
   :root .eva .eva-tools .eva-switch{background:var(--up-mint);color:#1a1a1a;margin-right:4px}
@@ -92,20 +94,20 @@
 :root .analogy-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:8px}
 :root .analogy-col{padding:12px 14px;border-radius:8px;background:#ffffff0d}
 :root .analogy-col h4{display:flex;align-items:baseline;gap:8px;margin:0 0 8px;font-size:15px;color:#f2f2f2}
-:root .analogy-col h4 small{margin-left:auto;font-size:13px;font-weight:600;color:#bcbcbc;font-variant-numeric:tabular-nums}
+:root .analogy-col h4 small{margin-left:auto;font-size:14px;font-weight:600;color:#bcbcbc;font-variant-numeric:tabular-nums}
 :root .analogy-col.is-partial h4 span{color:#f3d27a}
 :root .analogy-col.is-break{background:#ff9d8a1a}
 :root .analogy-col.is-break h4 span{color:#ff9d8a}
 :root .analogy-col ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
 :root .analogy-col li{display:grid;gap:2px;font-size:14px;line-height:1.5}
 :root .analogy-col li b{color:#f2f2f2}
-:root .analogy-col li span,:root .analogy-col p{margin:0;font-size:13px;line-height:1.55;color:#c9c9c9}
-:root .analogy-unknown{margin:0 0 4px;font-size:13px;color:#bcbcbc}
+:root .analogy-col li span,:root .analogy-col p{margin:0;font-size:14px;line-height:1.55;color:#c9c9c9}
+:root .analogy-unknown{margin:0 0 4px;font-size:14px;color:#bcbcbc}
 :root .analogy h3:not(:first-child){margin-top:20px}
 :root .analogy-table-wrap{overflow-x:auto}
 :root .analogy-limits{width:100%;min-width:640px;border-collapse:collapse;font-size:14px;line-height:1.5;font-variant-numeric:tabular-nums}
 :root .analogy-limits th,:root .analogy-limits td{padding:9px 12px 9px 0;text-align:left;vertical-align:top;border-top:1px solid #ffffff17}
-:root .analogy-limits thead th{border-top:0;font-size:13px;font-weight:600;color:#bcbcbc}
+:root .analogy-limits thead th{border-top:0;font-size:14px;font-weight:600;color:#bcbcbc}
 :root .analogy-limits tbody th{font-weight:700;color:#f2f2f2;white-space:nowrap}
 :root .analogy-limits td{color:#dedede}
 :root .analogy-limits td:last-child{color:#c9c9c9;min-width:22ch}
@@ -118,16 +120,56 @@
 :root .analogy-dim{display:flex;flex-direction:column;gap:10px;padding:12px 14px;border-radius:8px;background:#ffffff0d}
 :root .analogy-dim.is-break{background:#ff9d8a1a}
 :root .analogy-dim-body{display:flex;gap:12px;align-items:flex-start}:root .analogy-dim-body dl{flex:1;min-width:0}
-:root .analogy-dim p.analogy-dim-extra{margin:0;padding-top:0;border-top:0;font-size:12.5px;color:#bdbdbd}
+:root .analogy-dim p.analogy-dim-extra{margin:0;padding-top:0;border-top:0;font-size:14px;color:#bdbdbd}
 @media(min-width:901px){:root .analogy-dims.is-five{grid-template-columns:repeat(6,minmax(0,1fr))}:root .analogy-dims.is-five>*{grid-column:span 2}:root .analogy-dims.is-five>:nth-child(n+4){grid-column:span 3}}
 :root .analogy-dim header{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
 :root .analogy-dim h4{margin:0;font-size:15px;color:#f2f2f2}
-:root .analogy-chip{flex:none;font-size:13px;font-weight:700;color:#f2f2f2;white-space:nowrap}
+:root .analogy-chip{flex:none;font-size:14px;font-weight:700;color:#f2f2f2;white-space:nowrap}
 :root .analogy-dim.is-partial .analogy-chip{color:#f3d27a}
 :root .analogy-dim.is-break .analogy-chip{color:#ff9d8a}
 :root .analogy-dim.is-unknown .analogy-chip{color:#bcbcbc}
 :root .analogy-dim dl{display:grid;gap:8px;margin:0}
-:root .analogy-dim dt{font-size:12px;font-weight:600;color:#bcbcbc}
-:root .analogy-dim dd{margin:2px 0 0;font-size:13px;line-height:1.55;color:#dedede;font-variant-numeric:tabular-nums}
-:root .analogy-dim p{margin:auto 0 0;padding-top:10px;border-top:1px solid #ffffff17;font-size:13px;line-height:1.55;color:#f2f2f2}
+:root .analogy-dim dt{font-size:14px;font-weight:600;color:#bcbcbc}
+:root .analogy-dim dd{margin:2px 0 0;font-size:14px;line-height:1.55;color:#dedede;font-variant-numeric:tabular-nums}
+:root .analogy-dim p{margin:auto 0 0;padding-top:10px;border-top:1px solid #ffffff17;font-size:14px;line-height:1.55;color:#f2f2f2}
 @media(max-width:900px){:root .analogy-dims{grid-template-columns:minmax(0,1fr)}}
+
+
+/* ---------- Consistency pass (2026-11-15) ---------- */
+/* One caution colour for "partial / limited / known" notes (was five different yellows). */
+:root{--cv-warn:#f3d27a}
+/* Headings that receive focus from script after a page change get no ring; keyboard focus on controls keeps it. */
+:root .app-shell [tabindex="-1"]:focus-visible{outline:none}
+/* A bare <small> follows the browser's "smaller" (under 14 px): hold the 14 px floor. */
+:where(.app-shell,.eva,.candidate-sheet,.moon-map-dialog-backdrop,.aw-panel,.gt-card) small{font-size:max(14px,.8333em)}
+
+/* The facets, max-match, physical-match and resource panels kept an older surface (#1a1a1a, 14 px corners):
+   the same flat surface, corners and card colour as every other results panel. */
+:root :is(.fx-panel,.mm-panel,.pm-panel,.rs-panel){background:var(--cv-bg-2);border-radius:12px;--c-card:var(--cv-card)}
+:root :is(.fx-panel,.mm-panel,.pm-panel,.rs-panel,.cond-panel) h2{color:var(--cv-ink)}
+/* Collapsible section titles on the results and selection pages: one size, weight and colour. */
+:root :is(.result-technical,.linked-imagery,.terrain-diagnostics,.source-detail)>summary{font-size:16px;font-weight:700;color:var(--cv-ink);cursor:pointer}
+/* Lava-tube list: the current item uses the shared light ring, not the old orange. */
+:root .lavatube-list li.is-active button{border-color:transparent;background:var(--cv-control-hover);box-shadow:inset 0 0 0 1.5px var(--cv-accent)}
+:root .lavatube-caveat{color:var(--cv-warn)!important}
+/* Secondary controls that still had their own outline: the shared translucent fill. */
+:root :is(.use-chip,.music-toggle){border-color:transparent;background:var(--cv-control);color:var(--cv-ink-2)}
+:root :is(.use-chip,.music-toggle):hover{background:var(--cv-control-hover);color:var(--cv-ink)}
+:root .use-chip.is-on{background:var(--cv-ink);color:var(--cv-accent-ink)}
+:root .music-toggle.is-on{color:var(--cv-ink)}
+
+/* Phones: the export format keeps a readable width instead of shrinking to "C…". */
+@media(max-width:560px){:root .glance-actions .run-downloads{flex:1 1 100%}:root .glance-actions>.outline-button{flex:1 1 100%;justify-content:center}}
+
+/* ---------- Touch: 44 px targets, 16 px fields (iOS zooms the page into smaller ones) ---------- */
+@media(pointer:coarse){
+  :root .app-shell :is(input:not([type=checkbox],[type=radio],[type=range]),select,textarea),:root :is(.aw-input textarea,.cs-input textarea){font-size:16px}
+  :root .app-shell .topnav .topnav-link,:root .music-toggle,:root .app-shell :is(.outline-button,.globe-reset,.terrain-explore-button,.use-chip,.results-nav button,.place-search-field button,.coordinate-fields button,.coordinate-fields input,.scale-picker button,.glance-explore,.earth-locator-heading>button){min-height:44px}
+  :root .app-shell :is(.globe-mode-picker,.comparison-switch) button{min-height:40px}
+  :root .music-toggle,:root .app-shell .flat-view-toggle{min-width:44px;min-height:44px;justify-content:center}
+  :root .app-shell .glance-all{min-height:44px}
+  /* text-sized summaries and footer links: a taller hit area without moving anything */
+  :root .app-shell :is(.selection-side details,.region-suggestions,.result-technical,.linked-imagery,.terrain-diagnostics,.source-detail)>summary{padding-block:12px;margin-block:-12px}
+  :root .app-shell .site-footer a,:root .landing-footer-links :is(a,button){display:inline-flex;align-items:center;min-height:44px}
+  :root .landing-footer-links div{gap:0}
+}

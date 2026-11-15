@@ -104,7 +104,7 @@ export default function AstronautExplorer({ target, earth, initialWorld = 'targe
   const [stats, setStats] = useState(null)
   const [toast, setToast] = useState('')
   const [scan, setScan] = useState(null)
-  const [help, setHelp] = useState(true)
+  const [help, setHelp] = useState(() => !window.__twMission)
   const [settings, setSettings] = useState(false)
   const [weatherOpen, setWeatherOpen] = useState(false)
   const [routeOpen, setRouteOpen] = useState(false)
@@ -122,6 +122,15 @@ export default function AstronautExplorer({ target, earth, initialWorld = 'targe
   const [mobile] = useState(() => matchMedia('(hover: none) and (pointer: coarse)').matches)
   const trRef = useRef(tr); trRef.current = tr
   useModalFocus(true, dialog, onClose)
+  // The mission tutorial (mission_tutorial.jsx) follows what the astronaut does through these window events.
+  const lastEmit = useRef(0)
+  const emit = (type, detail = {}) => window.dispatchEvent(new CustomEvent('twinground:eva', { detail: { type, ...detail } }))
+  useEffect(() => { emit('open'); return () => emit('close') }, [])
+  const onEngineStats = s => {
+    setStats(s)
+    const now = performance.now()
+    if (now - lastEmit.current > 120) { lastEmit.current = now; emit('stats', { stats: s }) }
+  }
   useEffect(() => { renderGate.paused = true; return () => { renderGate.paused = false } }, [])
 
   const toastText = code => {
@@ -199,7 +208,7 @@ export default function AstronautExplorer({ target, earth, initialWorld = 'targe
           container: host.current, minimap: map.current, initial: initialWorld,
           worlds: { target: { ...target, detail: assets.details.target || null }, earth: { ...earth, detail: assets.details.earth || null } }, mobile,
           reducedMotion: matchMedia('(prefers-reduced-motion: reduce)').matches,
-          onStats: setStats, onToast: showToast,
+          onStats: onEngineStats, onToast: showToast,
           assets: { models: assets.models, images: assets.images, propBody: assets.propBody },
         })
         engine.current = created
@@ -240,6 +249,7 @@ export default function AstronautExplorer({ target, earth, initialWorld = 'targe
 
   const runAction = name => {
     const result = engine.current?.action(name)
+    emit('action', { name, ok: !!result || name === 'flag' })
     if (name === 'scan' && result) setScan(result)
     if (name === 'photo' && result) showToast('photo')
   }
@@ -264,6 +274,7 @@ export default function AstronautExplorer({ target, earth, initialWorld = 'targe
     // While planning, a click on the minimap adds a route point instead of travelling there.
     if (routeOpen && stats && stats.world !== 'rover') { const S = stats.sizeKm * 1000; const pt = engine.current?.mapToWorld(u, v) || [(u - 0.5) * S, (v - 0.5) * S]; setRoutePoints(p => p.length >= 40 ? p : [...p, pt]); return }
     engine.current?.teleport(u, v)
+    emit('action', { name: 'teleport' })
   }
   const refocus = () => requestAnimationFrame(() => host.current?.focus({ preventScroll: true }))
   const updateQuality = mode => { setQualityState(mode); engine.current?.setQuality(mode); refocus() }
@@ -299,11 +310,16 @@ export default function AstronautExplorer({ target, earth, initialWorld = 'targe
     {error && <div className="eva-error" role="alert"><p>{error}</p><button type="button" onClick={onClose}>{tr('返回地形比較', 'Back to comparison')}</button></div>}
 
     <header className="eva-top">
+      <div className="eva-lead">
+      <button type="button" className="eva-back" onClick={onClose} aria-label={tr('離開 3D', 'Exit 3D')}>
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>{tr('離開', 'Exit')}
+      </button>
       <div className="eva-place">
         <span className={`eva-badge ${isEarth ? 'earth' : target.body}`}>{worldLabel}</span>
         <strong>{isRover ? tr('Dingo Gap · 蓋爾撞擊坑（好奇號第 528 火星日）', 'Dingo Gap · Gale crater (Curiosity sol 528)') : isEarth ? earth.label : target.label}</strong>
         {stats && !isRover && <small>{coord(stats.lat, stats.lon)}</small>}
         {isRover && <small>{tr('實測立體影像網格 · 不是你選的區域', 'Measured stereo mesh · not your selected region')}</small>}
+      </div>
       </div>
       {stats && <Compass bearing={stats.look} />}
       <div className="eva-tools" role="toolbar" aria-label={tr('探索工具', 'Exploration tools')}>

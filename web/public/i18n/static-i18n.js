@@ -11,6 +11,7 @@
   var KEY = 'twinground:language:v1'
   var forced = document.documentElement.getAttribute('data-atlas-lang')
   function initial() {
+    return 'en' // English-only site (2026-11-14); remove this line to restore the language rule below
     if (forced === 'en' || forced === 'zh-Hant') return forced
     var q = null
     try { q = new URLSearchParams(window.location.search).get('lang') } catch (e) {}

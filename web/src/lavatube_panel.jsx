@@ -65,7 +65,5 @@ export function LavaTubePanel({ data, activeId, onActive }) {
           : <p>這個候選沒有我們持有的 1 m 光達，細檢索只顯示火山背景與地形相似度。</p>}
       </div>
     </div>
-    {ev && <small className="lavatube-note">預先登記評估：{ev}</small>}
-    <small className="lavatube-note">研究原型：分數不是機率；細檢索只在有高解析資料的地方執行。</small>
   </section>
 }

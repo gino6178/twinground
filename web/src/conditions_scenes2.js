@@ -25,7 +25,7 @@ function puff(ctx, x, y, r, c, a) {
 function step(list, dt, fn) { for (let i = list.length - 1; i >= 0; i--) { const q = list[i]; q.life += dt; if (fn(q) === false || q.life > q.max) list.splice(i, 1) } }
 function label(ctx, text, x, y, align = 'left') {
   if (!text) return
-  ctx.font = '700 7px system-ui, sans-serif'; ctx.textAlign = align; ctx.textBaseline = 'alphabetic'
+  ctx.font = '700 14px system-ui, sans-serif'; ctx.textAlign = align; ctx.textBaseline = 'alphabetic'
   ctx.fillStyle = 'rgba(0,0,0,0.55)'; ctx.fillText(text, x + 0.5, y + 0.5)
   ctx.fillStyle = '#f2f2f2'; ctx.fillText(text, x, y)
 }

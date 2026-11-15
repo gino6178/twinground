@@ -18,6 +18,5 @@ export function TerrainReadCard({ read, body }) {
       <i aria-hidden="true"><b style={{ width: `${Math.round(100 * q.query_percentile)}%` }} /></i>
       <em>{tr('高於', 'above')} {fmt(100 * q.query_percentile)}% {body === 'mars' ? tr('的火星窗格', 'of Mars') : tr('的月球窗格', 'of Moon')}</em>
     </li>)}</ul>
-    <p>{tr(`SysOne-Nano（${fmt(read.parameters)} 個參數）讀地形與材質；以地質圖驗證 AUC ${read.questions.map(q => q.validation.map(v => v.auc.toFixed(2)).join('／')).join('、')}。`, `SysOne-Nano (${fmt(read.parameters)} parameters) reads terrain and material; geologic-map AUC ${read.questions.map(q => q.validation.map(v => v.auc.toFixed(2)).join('/')).join(', ')}.`)}</p>
   </section>
 }

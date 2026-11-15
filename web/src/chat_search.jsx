@@ -2,8 +2,8 @@
 // model on the server turns each message into a search spec (closed vocabulary), and the ranking itself is a fixed
 // rule over measured Earth data. The spec is shown as chips the user can remove, and every result lists the measured
 // value behind each condition. Follow-up messages edit the current spec.
-import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { ArrowUp, X, RotateCcw, MapPin, Copy } from 'lucide-react'
+import React, { Suspense, useEffect, useMemo, useRef, useState } from 'react'
+import { ArrowUp, X, RotateCcw, MapPin, Copy, Footprints } from 'lucide-react'
 import { getLanguage } from './i18n/core.js'
 import './chat_search.css'
 import { MaxMatchList } from './maxmatch_panel.jsx'
@@ -17,6 +17,30 @@ const EXAMPLES = [
   ['美國境內像月海的玄武岩地形，最好在火山旁，排除已知場址', 'Basalt like the lunar maria in the US, ideally near a volcano, skip known sites'],
   ['極度乾燥又沒有植被的地方，不要撒哈拉和阿塔卡馬，給我 20 個', 'Hyper-arid, unvegetated places outside the Sahara and the Atacama, 20 results'],
 ]
+// The 3D explorer needs a lunar or Martian world beside the Earth result: the spec's target when it has one
+// (coordinates from scripts/chat_search/spec.py), otherwise a default for the body.
+const CandidateExplore = React.lazy(() => import('./candidate_explore.jsx'))
+const WORLD_TARGETS = {
+  lunar_south_pole: ['moon', -84.6, 31.5, '月球南極', 'the lunar south pole'], shackleton: ['moon', -84.6, 31.5, '月球南極', 'the lunar south pole'],
+  mare_tranquillitatis: ['moon', 8.5, 31.4, '靜海', 'Mare Tranquillitatis'], apollo_11: ['moon', 0.67, 23.47, '阿波羅 11 號登陸點', 'the Apollo 11 site'],
+  apollo_15: ['moon', 26.1, 3.6, '阿波羅 15 號哈德利溪', 'the Apollo 15 Hadley Rille site'], apollo_17: ['moon', 20.2, 30.8, '阿波羅 17 號陶拉斯-利特羅谷', 'the Apollo 17 Taurus-Littrow valley'],
+  marius_hills: ['moon', 13.4, -55.9, '馬利厄斯丘', 'the Marius Hills'], aristarchus: ['moon', 23.7, -47.4, '阿里斯塔克斯高原', 'the Aristarchus plateau'],
+  copernicus: ['moon', 9.6, -20.1, '哥白尼隕石坑', 'Copernicus crater'], mare_imbrium: ['moon', 32.8, -15.6, '雨海', 'Mare Imbrium'],
+  tranquillitatis_pit: ['moon', 8.34, 33.22, '靜海坑洞', 'the Mare Tranquillitatis pit'],
+  jezero: ['mars', 18.4, 77.5, '耶澤羅隕石坑', 'Jezero crater'], gale: ['mars', -5.4, 137.8, '蓋爾隕石坑', 'Gale crater'],
+  utopia_planitia: ['mars', 46.7, 117.5, '烏托邦平原', 'Utopia Planitia'], arcadia_planitia: ['mars', 47.2, -176.6, '阿卡迪亞平原', 'Arcadia Planitia'],
+  olympus_mons: ['mars', 18.65, -133.8, '奧林帕斯山', 'Olympus Mons'], valles_marineris: ['mars', -13.9, -59.2, '水手號峽谷', 'Valles Marineris'],
+  meridiani: ['mars', -1.95, -5.5, '子午線高原', 'Meridiani Planum'], hellas: ['mars', -42.4, 70.5, '希臘平原', 'Hellas Planitia'],
+  elysium: ['mars', 3.0, 154.7, '埃律西昂平原', 'Elysium Planitia'], olympia_undae: ['mars', 81.4, 180.0, '奧林匹亞沙海', 'Olympia Undae'],
+  phlegra_montes: ['mars', 40.4, 163.7, '弗萊格拉山脈', 'Phlegra Montes'], mawrth_vallis: ['mars', 22.6, -16.5, '馬沃斯谷', 'Mawrth Vallis'],
+  mars_north_pole: ['mars', 85.0, 0.0, '火星北極', 'the Martian north pole'],
+}
+function worldSite(spec, x) {
+  const [body, lat, lon, zh, en] = WORLD_TARGETS[spec.target] || WORLD_TARGETS[spec.body === 'mars' ? 'jezero' : 'marius_hills']
+  const place = x.place ? `${x.place.name}, ${x.place.country}` : null
+  const at = `${x.lat.toFixed(2)}°, ${x.lon.toFixed(2)}°`
+  return { earth: { lat: x.lat, lon: x.lon, name: { zh: place ? `${place} · ${at}` : at, en: place ? `${place} · ${at}` : at } }, target: { body, lat, lon, name: [zh, en] } }
+}
 const GRADE = { 2: 'is-match', 1: 'is-partial', 0: 'is-miss', [-1]: 'is-unknown' }
 
 function postJson(body, signal) {
@@ -44,7 +68,7 @@ function ResultMap({ results, active, onPick }) {
         if (on) { const k = (t % 1.6) / 1.6; x.strokeStyle = `rgba(255,255,255,${1 - k})`; x.lineWidth = 1.5; x.beginPath(); x.arc(px, py, 5 + 14 * k, 0, Math.PI * 2); x.stroke() }
         x.fillStyle = on ? '#ffffff' : '#bdbdbd'; x.beginPath(); x.arc(px, py, on ? 4.5 : 3.2, 0, Math.PI * 2); x.fill()
         x.strokeStyle = '#000'; x.lineWidth = 1; x.stroke()
-        if (on || results.length <= 12) { x.fillStyle = on ? '#fff' : '#cfcfcf'; x.font = `${on ? 700 : 600} 11px Manrope, system-ui, sans-serif`; x.fillText(String(i + 1), px + 6, py - 6) }
+        if (on || results.length <= 12) { x.fillStyle = on ? '#fff' : '#cfcfcf'; x.font = `${on ? 700 : 600} 14px Manrope, system-ui, sans-serif`; x.fillText(String(i + 1), px + 6, py - 6) }
       })
       raf = requestAnimationFrame(draw)
     }
@@ -89,6 +113,7 @@ export default function ChatSearch() {
   const [data, setData] = useState(null)
   const [active, setActive] = useState(0)
   const [error, setError] = useState(null)
+  const [world, setWorld] = useState(null)
   const abort = useRef(null)
   const log = useRef(null)
   const spec = data?.spec || EMPTY
@@ -136,8 +161,6 @@ export default function ChatSearch() {
           onChange={e => setInput(e.target.value)} onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey && !e.nativeEvent.isComposing) submit(e) }} aria-label={tr('搜尋條件', 'Search conditions')} />
         <button type="submit" disabled={busy || !input.trim()} aria-label={tr('送出', 'Send')}><ArrowUp size={18} /></button>
       </form>
-      <p className="cs-note">{tr('語言模型只把文字轉成條件；排序依實測資料的固定規則，不是模型的判斷。每個結果都列出條件背後的數值。',
-        'The language model only turns words into conditions; ranking follows fixed rules on measured data, not the model. Every result shows the values behind each condition.')}</p>
     </section>
 
     <section className="cs-results" aria-label={tr('搜尋結果', 'Results')}>
@@ -158,6 +181,7 @@ export default function ChatSearch() {
             <ul>{x.conditions.map(c => <li key={c.id} className={GRADE[c.grade]}><span>{data.labels?.[c.id] || c.id}</span><b>{c.text}</b><em>{c.grade === 2 ? tr('符合', 'match') : c.grade === 1 ? tr('部分', 'partial') : c.grade === 0 ? tr('不符', 'miss') : tr('無資料', 'no data')}</em></li>)}</ul>
             <p>{tr('距最近道路', 'Nearest road')} {x.road_km} km{x.known_analog ? ` · ${tr('附近已知類比地：', 'known analog nearby: ')}${(getLanguage() === 'en' ? x.known_analog.name : x.known_analog.name_zh || x.known_analog.name)}（${x.known_analog.distance_km} km）` : ''}</p>
             <div className="cs-actions">
+              <button type="button" onClick={() => setWorld(worldSite(spec, x))}><Footprints size={13} /> {tr('走進 3D 世界', 'Walk in 3D')}</button>
               <button type="button" onClick={() => navigator.clipboard?.writeText(`${x.lat}, ${x.lon}`)}><Copy size={13} /> {tr('複製座標', 'Copy coordinates')}</button>
               <a href={`https://www.openstreetmap.org/?mlat=${x.lat}&mlon=${x.lon}#map=9/${x.lat}/${x.lon}`} target="_blank" rel="noreferrer"><MapPin size={13} /> {tr('在地圖上看', 'Open in a map')}</a>
             </div>
@@ -166,5 +190,6 @@ export default function ChatSearch() {
       </ol>
       {r && data.relaxed && <p className="cs-note">{tr('符合所有必要條件的地點太少，結果已改為依符合程度排序。', 'Too few places met every required condition, so results are ranked by how well they match.')}</p>}
     </section>
+    {world && <Suspense fallback={null}><CandidateExplore site={world} onClose={() => setWorld(null)} /></Suspense>}
   </main>
 }

@@ -62,8 +62,8 @@ def main():
     world = max(1, torch.cuda.device_count())
     args = TrainingArguments(
         output_dir=a.out + '-ckpt', num_train_epochs=a.epochs, learning_rate=a.lr, lr_scheduler_type='cosine',
-        warmup_ratio=0.03, weight_decay=0.0, per_device_train_batch_size=4, per_device_eval_batch_size=4,
-        gradient_accumulation_steps=max(1, 32 // (4 * world)), bf16=True, logging_steps=10, eval_strategy='steps',
+        warmup_ratio=0.03, weight_decay=0.0, per_device_train_batch_size=1, per_device_eval_batch_size=1,
+        gradient_accumulation_steps=max(1, 32 // world), bf16=True, logging_steps=10, eval_strategy='steps',
         eval_steps=max(20, len(train) // 64), save_strategy='no', report_to=[], gradient_checkpointing=True,
         dataloader_num_workers=2, group_by_length=True, ddp_find_unused_parameters=False)
     trainer = Trainer(model=model, args=args, train_dataset=train, eval_dataset=evals,

@@ -260,6 +260,5 @@ export function ConditionTiles({ surface, onSurface, rock, onRock }) {
         {ROCK_TILES.map(r => <Tile key={r.key} on={rock === r.key} onPick={() => onRock(r.key)} art={<RockTile looks={r.looks} />} title={tr(...r.title)} />)}
       </div>
     </fieldset>
-    <small>條件會參與全索引檢索；這是你指定的類比目標，不是自動判讀沙丘或裸露岩層。沙丘圖層只記錄地域內曾辨識出沙丘，不表示整個窗格皆為沙地。</small>
   </details>
 }

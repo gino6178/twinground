@@ -52,8 +52,8 @@ for q in GENERAL:
 
 cases = [json.loads(l) for l in open(cases_path, encoding='utf-8')]
 rnd = random.Random(5)
-for c in rnd.sample(cases, 4):
-    q = '為什麼選這個地點？' if c['lang'] == 'zh' else 'Why was this site chosen?'
+for c, q in [(c, q) for c in rnd.sample([x for x in cases if x['lang'] == 'zh'], 4) + rnd.sample([x for x in cases if x['lang'] == 'en'], 2)
+             for q in ((['為什麼選這個地點？', '這個地點哪些地方不符合？'] if c['lang'] == 'zh' else ['Why was this site chosen?']))]:
     a, src, dt = ask(q, c['brief'])
     print(f"\n### SITE #{c['index'] + 1} {c['body']} {c['query']['purpose']} ({dt:.1f}s)\n{q}\n{a}", flush=True)
 

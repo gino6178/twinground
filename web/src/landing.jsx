@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'motion/react'
-import { ArrowDown, ArrowRight } from 'lucide-react'
+import { ArrowDown, ArrowRight, MessageCircle, Layers } from 'lucide-react'
 import { LanguageSwitch } from './i18n/language.jsx'
 import { MusicToggle } from './music_player.jsx'
 import { getLanguage } from './i18n/core.js'
 import { createEntryScene } from './entry_scene.js'
+import { MissionStart } from './mission_start.jsx'
 import './landing.css'
 
 const tr = (zh, en) => (getLanguage() === 'en' ? en : zh)
@@ -45,15 +46,20 @@ function EntryCosmos({ onPick }) {
       })
     } catch { setFailed(true); return }
     // The scene drifts back as the reader scrolls, fades out before the first opaque section covers it, then stops
-    // rendering.
+    // rendering. The Mission Start screen sits above the hero, so scroll is measured from its bottom edge, and the
+    // scene does not render while that screen still fills the viewport.
     const onScroll = () => {
-      const p = Math.min(1, window.scrollY / Math.max(1, window.innerHeight))
+      const start = document.getElementById('mission-start')?.offsetHeight || 0
+      const y = window.scrollY
+      const p = Math.min(1, Math.max(0, y - start) / Math.max(1, window.innerHeight))
       scene.setScroll(p)
-      scene.setVisible(p < 0.98)
+      scene.setVisible(p < 0.98 && y + window.innerHeight > start + 1)
       if (host.current) host.current.style.opacity = String(1 - Math.min(1, Math.max(0, (p - 0.3) / 0.6)))
     }
     window.addEventListener('scroll', onScroll, { passive: true }); onScroll()
-    return () => { window.removeEventListener('scroll', onScroll); scene.dispose() }
+    // The start screen unmounts after START MISSION, which changes the offset without a scroll event.
+    const poll = setInterval(onScroll, 1000)
+    return () => { window.removeEventListener('scroll', onScroll); clearInterval(poll); scene.dispose() }
   }, [])
   return <div className={`landing-scene ${failed ? 'is-fallback' : ''}`} aria-hidden="true">
     <div className="landing-canvas" ref={host} />
@@ -63,7 +69,7 @@ function EntryCosmos({ onPick }) {
 
 // Landing page: the solar system is the way in (click the Moon or Mars), then the two worlds and the footer.
 // Worked examples and validation numbers belong on the methods page, not here.
-export function Landing({ Globe, onStart, onStartMars, onChat, onPickMoon, onPickMars, selected, selectedMars }) {
+export function Landing({ Globe, onStart, onStartMars, onChat, onAsk, onGame, candidatesHref, onPickMoon, onPickMars, selected, selectedMars }) {
   const en = getLanguage() === 'en'
   const lang = en ? 'en' : 'zh'
   const method = '/technology/paper-en.html'
@@ -72,17 +78,19 @@ export function Landing({ Globe, onStart, onStartMars, onChat, onPickMoon, onPic
   return (
     <motion.main key="hero" ref={root} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="landing" aria-label={tr('選擇月球或火星', 'Choose the Moon or Mars')}>
       <EntryCosmos onPick={body => (body === 'mars' ? onStartMars() : onStart())} />
-      <nav className="landing-nav" aria-label={tr('網站導覽', 'Site navigation')}>
-        <span className="landing-brand">TwinGround</span>
-        <div className="landing-links">
-          <a href="#landing-worlds">{tr('月球與火星', 'Moon and Mars')}</a>
-          <a href={method}>{tr('方法與原理', 'Methods')}</a>
-        </div>
-        <MusicToggle track="home" />
-        <LanguageSwitch />
-      </nav>
+      <MissionStart onStart={onGame} />
 
-      <header className="landing-hero">
+      <header id="landing-hero" className="landing-hero">
+        <nav className="landing-nav" aria-label={tr('網站導覽', 'Site navigation')}>
+          <span className="landing-brand">TwinGround</span>
+          <div className="landing-links">
+            <a href="#landing-worlds">{tr('月球與火星', 'Moon and Mars')}</a>
+            <a href={method}>{tr('方法與原理', 'Methods')}</a>
+          </div>
+          <MusicToggle track="home" />
+          <LanguageSwitch />
+        </nav>
+
         <div className="landing-hero-text">
           <h1>{en ? <><span>Find the Moon</span> <span>and Mars on Earth</span></> : <><span>在地球上找出</span><span>像月球與火星的地方</span></>}</h1>
           <p className="landing-lead">{tr(
@@ -93,8 +101,17 @@ export function Landing({ Globe, onStart, onStartMars, onChat, onPickMoon, onPic
             <button type="button" className="landing-secondary" onClick={onStartMars}>{tr('從火星開始', 'Start on Mars')}</button>
             {onChat && <button type="button" className="landing-secondary" onClick={onChat}>{tr('用對話描述條件', 'Describe it in words')}</button>}
           </div>
-          <p className="landing-note">{tr('拖曳旋轉，點月球或火星直接進入。天體大小依真實比例，距離已壓縮。', 'Drag to turn the view; click the Moon or Mars to enter. Sizes are to scale, distances are compressed.')}</p>
           <p className="landing-note">{tr('2026 NASA Space Apps Challenge 參賽作品，題目：', '2026 NASA Space Apps Challenge entry for ')}<a href="https://www.spaceappschallenge.org/2026/challenges/permanent-moon-base-locations-and-mars/" target="_blank" rel="noreferrer">Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars</a></p>
+        </div>
+        <div className="landing-features">
+          {onAsk && <button type="button" className="landing-feature landing-ask" onClick={onAsk}>
+            <span className="landing-feature-icon"><MessageCircle size={24} aria-hidden="true" /></span>
+            <span className="landing-feature-text"><b>{tr('直接詢問 Agent', 'Ask the Agent')}</b><small>{tr('回答方法、資料與結果問題的 AI 助手。', 'An AI assistant for guidance and questions.')}</small></span>
+          </button>}
+          {candidatesHref && <a className="landing-feature landing-candidates" href={candidatesHref}>
+            <span className="landing-feature-icon"><Layers size={24} aria-hidden="true" /></span>
+            <span className="landing-feature-text"><b>{tr('搜尋候選地點', 'Search Candidates')}</b><small>{tr('尋找並比較候選地點。', 'A way to find and compare candidate locations.')}</small></span>
+          </a>}
         </div>
         <a className="landing-cue" href="#landing-worlds"><ArrowDown size={16} aria-hidden="true" />{tr('或直接在球面上選點', 'Or pick a spot on the globe')}</a>
       </header>

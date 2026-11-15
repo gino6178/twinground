@@ -5,40 +5,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How Close Can Earth Get? | TwinGround brief</title>
 <meta name="description" content="A five-page brief of TwinGround: the Earth ceiling and property-level retrieval of terrestrial analogs for the Moon and Mars.">
+<meta name="theme-color" content="#050505">
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <style>
-  :root{--ink:#1d2327;--muted:#55606a;--line:#d5dbe0;--accent:#1f6f5c;--bg:#ffffff;--soft:#f3f6f7}
-  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ink:#e2eeea;--muted:#a9c2bb;--line:#2b4146;--accent:#7ee0a5;--bg:#0c1d22;--soft:#102a30}}
-  :root[data-theme="dark"]{--ink:#e2eeea;--muted:#a9c2bb;--line:#2b4146;--accent:#7ee0a5;--bg:#0c1d22;--soft:#102a30}
-  html{background:var(--bg)}
-  body{margin:0 auto;max-width:860px;padding:32px 20px 60px;background:var(--bg);color:var(--ink);font:16px/1.6 Georgia,"Times New Roman",serif}
-  header{border-bottom:2px solid var(--accent);padding-bottom:14px;margin-bottom:20px}
-  .kicker{margin:0;color:var(--accent);font:600 13px/1.4 system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase}
-  h1{margin:6px 0 6px;font-size:34px;line-height:1.15}
-  .sub{margin:0 0 8px;font-size:18px;color:var(--muted)}
-  .meta{margin:0;font:13px/1.5 system-ui,sans-serif;color:var(--muted)}
-  .meta a{color:var(--accent)}
-  h2{margin:28px 0 8px;font-size:21px;color:var(--accent)}
-  h3{margin:18px 0 6px;font-size:17px}
-  p{margin:0 0 10px}
-  ol,ul{margin:0 0 12px;padding-left:22px}
-  li{margin:0 0 5px}
-  .lead{font-size:17px}
-  table{width:100%;border-collapse:collapse;margin:10px 0 16px;font:14px/1.45 system-ui,sans-serif}
-  th,td{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
-  th{background:var(--soft);font-weight:700}
-  .num{white-space:nowrap}
-  figure{margin:14px 0 18px}
-  figure img{width:100%;height:auto;border:1px solid var(--line);border-radius:6px;background:#fff}
-  figcaption{margin-top:6px;font:13px/1.45 system-ui,sans-serif;color:var(--muted)}
-  .case{border-left:4px solid var(--accent);padding:4px 0 4px 14px;margin:14px 0}
-  .note{font:13px/1.5 system-ui,sans-serif;color:var(--muted)}
-  footer{margin-top:30px;border-top:1px solid var(--line);padding-top:10px;font:12px/1.5 system-ui,sans-serif;color:var(--muted)}
-  @media (max-width:640px){body{padding:20px 16px 40px}h1{font-size:27px}table{font-size:13px}th,td{padding:5px}}
+  :root{color-scheme:dark;--ink:#f2f2f2;--ink-2:#d6d6d6;--muted:#acacac;--line:rgba(255,255,255,.14);--hair:rgba(255,255,255,.08);--accent:#f2f2f2;--bg:#050505;--soft:#141414;--sans:Manrope,"Noto Sans TC",system-ui,sans-serif;--serif:"Source Serif 4",Georgia,"Times New Roman",serif;--gutter:clamp(16px,5vw,72px)}
+  *{box-sizing:border-box}
+  html{background:var(--bg);-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink-2);font:18px/1.7 var(--serif);-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
+  a{color:var(--ink);text-decoration-color:rgba(255,255,255,.45);text-underline-offset:3px}a:hover{text-decoration-color:currentColor}
+  a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+  .top{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 24px;min-height:64px;padding:0 max(var(--gutter),env(safe-area-inset-right)) 0 max(var(--gutter),env(safe-area-inset-left));background:rgba(5,5,5,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair);font:500 14px/1.4 var(--sans)}
+  .top a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink-2);text-decoration:none;text-underline-offset:6px;white-space:nowrap}
+  .top a:hover{color:var(--ink);text-decoration:underline}
+  .top .brand{font-size:17px;font-weight:800;letter-spacing:-.01em;color:var(--ink)}.top .brand:hover{text-decoration:none}
+  .top nav{display:flex;flex-wrap:wrap;gap:0 28px}
+  main{max-width:740px;margin:0 auto;padding:40px max(20px,env(safe-area-inset-right)) calc(64px + env(safe-area-inset-bottom)) max(20px,env(safe-area-inset-left))}
+  main>header{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:24px}
+  .kicker{margin:0;color:var(--muted);font:600 14px/1.4 var(--sans);letter-spacing:.08em;text-transform:uppercase}
+  h1{margin:12px 0 10px;font:800 clamp(28px,4.2vw,40px)/1.15 var(--sans);letter-spacing:-.02em;color:var(--ink)}
+  .sub{margin:0 0 10px;font-size:19px;color:var(--ink-2)}
+  .meta{margin:0;font:14px/1.6 var(--sans);color:var(--muted)}
+  h2{margin:44px 0 10px;font:800 clamp(21px,2.4vw,24px)/1.3 var(--sans);letter-spacing:-.01em;color:var(--ink)}
+  h3{margin:24px 0 8px;font:700 18px/1.4 var(--sans);color:var(--ink)}
+  b,strong{color:var(--ink)}
+  p{margin:0 0 14px}
+  ol,ul{margin:0 0 14px;padding-left:22px}
+  li{margin:0 0 6px}
+  .lead{font-size:19px}
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0 20px}
+  table{width:100%;border-collapse:collapse;margin:0;font:14px/1.5 var(--sans);color:var(--ink-2)}
+  .table-wrap table{min-width:520px}
+  th,td{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:var(--soft);font-weight:700;color:var(--ink)}
+  .num{white-space:nowrap;font-variant-numeric:tabular-nums}
+  figure{margin:20px 0 24px}
+  figure img{display:block;max-width:100%;width:100%;height:auto;border:1px solid var(--hair);border-radius:10px;background:#fff}
+  figcaption{margin-top:10px;font:14px/1.6 var(--sans);color:var(--muted)}
+  .case{border:1px solid var(--hair);background:var(--soft);border-radius:12px;padding:14px 18px;margin:16px 0}
+  .note{font:14px/1.6 var(--sans);color:var(--muted)}
+  footer{margin-top:36px;border-top:1px solid var(--line);padding-top:14px;font:14px/1.6 var(--sans);color:var(--muted)}
+  @media (max-width:640px){body{font-size:17px}main{padding-top:28px}.top{position:static;padding-top:6px;padding-bottom:4px}.top nav{gap:0 20px;width:100%}}
   @page{size:A4;margin:16mm 15mm}
-  @media print{body{max-width:none;padding:0;font-size:11.5pt}h1{font-size:25pt}h2{break-after:avoid}table,figure,.case{break-inside:avoid}a{color:inherit;text-decoration:none}}
+  @media print{:root{color-scheme:light;--ink:#1d2327;--ink-2:#1d2327;--muted:#55606a;--line:#d5dbe0;--hair:#d5dbe0;--bg:#fff;--soft:#f3f6f7}.top{display:none}main{max-width:none;padding:0}body{font-size:11.5pt}h1{font-size:25pt}h2{break-after:avoid}table,figure,.case{break-inside:avoid}.table-wrap{overflow:visible}.table-wrap table{min-width:0}a{color:inherit;text-decoration:none}}
 </style>
 </head>
 <body>
+<header class="top"><a class="brand" href="/?lang=en">TwinGround</a><nav aria-label="Site navigation"><a href="/?lang=en">Explore</a><a href="/offcatalogue/en.html">Search Candidates</a><a href="paper-en.html">Methods</a></nav></header>
+<main>
 <header>
   <p class="kicker">NASA Space Apps Challenge 2026 · TwinGround · Brief</p>
   <h1>How Close Can Earth Get?</h1>
@@ -66,7 +82,7 @@
 
 <h2>3. What we found</h2>
 <p>Every test below was frozen with a SHA-256 hash before its Earth data were read, and run once with one seed. Details and all deviations are in the full paper.</p>
-<table>
+<div class="table-wrap"><table>
   <thead><tr><th>Question</th><th>Answer</th></tr></thead>
   <tbody>
     <tr><td>How close can Earth get?</td><td>For lunar resource use the mean ceiling is 0.75, and no Earth window matches FeO, TiO₂, K and Th together. Martian FeO lies above every measured Earth topsoil footprint (52 of 52 queries) and Martian footprint-scale Th below every covered Earth window. For 8 of 18 Martian queries no measured Earth surface comes within 20 K of the night temperature. Roughness can always be matched.</td></tr>
@@ -74,7 +90,7 @@
     <tr><td>Can Earth chemistry be estimated where it was not measured?</td><td>Within 300 km of measurements, yes: R² 0.64 (K), 0.41 (Th), 0.40 (FeO) and 0.32 (TiO₂), with 90% intervals covering 90–93% of test windows. On another continent, no: R² stayed below the 0.30 threshold in every case (best 0.21).</td></tr>
     <tr><td>What do expert-style conditions find?</td><td>The kind of setting experts name (catalogued analogs of the expected type were about 12 times denser among gated windows), but not the query’s measured properties: gated candidates were no closer than random windows (+1.3 percentage points; 95% CI −3.2 to 5.2) and were richer in K and Th than the lunar and Martian ground in all 20 distinct pools.</td></tr>
   </tbody>
-</table>
+</table></div>
 
 <h2>4. Three worked cases</h2>
 <div class="case">
@@ -103,5 +119,6 @@
 <p class="note">Moon: Lunar Prospector GRS, LROC WAC, LOLA. Mars: Mars Odyssey GRS, TES, MOLA, Mars Climate Database. Earth: NOAA ETOPO 2022, Radiometric Map of Australia v4 2019, North American radiometric grids (NAMrad), USGS soils of the conterminous US (DS801), National Geochemical Survey of Australia, FOREGS Geochemical Atlas of Europe, GLASS snow-free albedo, MODIS MOD11A2 and MCD43A4, SoilGrids 2.0, GLiM, ESA WorldCover, Köppen–Geiger, GEOROC. Full references and licences are in the paper.</p>
 
 <footer>TwinGround was made for the NASA Space Apps Challenge 2026, “Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars”. It is not an official NASA product and is not endorsed by NASA.</footer>
+</main>
 </body>
 </html>

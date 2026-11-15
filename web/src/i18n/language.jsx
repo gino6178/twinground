@@ -5,8 +5,12 @@ export function useLanguage(){
  useEffect(()=>{document.documentElement.lang=lang},[lang])
  return lang
 }
+// English-only site: the switch renders nothing. Set ENGLISH_ONLY to false (and restore initialLanguage in core.js)
+// to bring it back.
+const ENGLISH_ONLY=true
 export function LanguageSwitch(){
  const lang=useLanguage()
+ if(ENGLISH_ONLY)return null
  return <div className="language-switch" role="group" aria-label="Language / 語言">
  <button type="button" lang="zh-Hant" aria-pressed={lang==='zh-Hant'} onClick={()=>setLanguage('zh-Hant')}>繁中</button>
  <button type="button" lang="en" aria-pressed={lang==='en'} onClick={()=>setLanguage('en')}>English</button>

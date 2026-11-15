@@ -62,8 +62,8 @@ function Answer({ turn }) {
   )
 }
 
-export default function AssistantWidget({ searchData, activeId, onResults }) {
-  const [open, setOpen] = useState(false)
+// On the cover there is no floating button: the hero's "Ask the Agent" button opens the chat as a centred dialog.
+export default function AssistantWidget({ searchData, activeId, onResults, open, onOpen: setOpen, cover }) {
   const [log, setLog] = useState([])
   const [draft, setDraft] = useState('')
   const [busy, setBusy] = useState(false)
@@ -83,9 +83,26 @@ export default function AssistantWidget({ searchData, activeId, onResults }) {
     return () => window.removeEventListener('keydown', onKey)
   }, [open])
 
+  // The mission tutorial (mission_tutorial.jsx) drives the chat through 'twinground:assistant' window events:
+  // {type:'prefill', text} opens the panel with a question typed in, {type:'send'} sends it; the chat reports back
+  // {type:'sent'} and {type:'reply', ok}.
+  const sendRef = useRef(null)
+  useEffect(() => {
+    const onMission = e => {
+      const d = e.detail || {}
+      if (d.type === 'prefill') { setOpen(true); setDraft(d.text || '') }
+      if (d.type === 'send') sendRef.current?.(d.text)
+    }
+    window.addEventListener('twinground:assistant', onMission)
+    return () => window.removeEventListener('twinground:assistant', onMission)
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  const report = detail => window.dispatchEvent(new CustomEvent('twinground:assistant', { detail }))
+
   async function send(text) {
     const q = (text ?? draft).trim()
     if (!q || busy) return
+    report({ type: 'sent' })
+    let ok = false
     setDraft('')
     const withSite = useSite && candidate
     const userTurn = { role: 'user', content: q }
@@ -101,31 +118,34 @@ export default function AssistantWidget({ searchData, activeId, onResults }) {
       const j = await r.json().catch(() => ({}))
       if (!r.ok || j.available === false || !j.answer) throw new Error(j.reason || j.error || `HTTP ${r.status}`)
       setLog(l => [...l, { role: 'assistant', content: j.answer, sources: j.sources, site: j.site_used ? index + 1 : null }])
+      ok = true
     } catch (e) {
       setLog(l => [...l, { role: 'assistant', failed: true, content: tr(`抱歉，小助手暫時無法回答（${e.message}）。`, `Sorry, the assistant could not answer (${e.message}).`) }])
     } finally {
       setBusy(false)
+      report({ type: 'reply', ok })
     }
   }
+  sendRef.current = text => send(text || undefined)
 
   const suggestions = candidate && useSite ? ABOUT_SITE() : GENERAL()
   return (
     <>
-      <button type="button" className={`aw-fab${open ? ' is-open' : ''}`} onClick={() => setOpen(v => !v)}
-        aria-expanded={open} aria-label={open ? tr('關閉小助手', 'Close assistant') : tr('開啟小助手', 'Open assistant')}>
-        {open ? <X size={20} /> : <MessageCircle size={20} />}
-        {!open && <span>{tr('問小助手', 'Ask')}</span>}
-      </button>
+      {/* The assistant opens from the Help button (guided_tour.jsx) or the landing card; the panel has its own close. */}
+      {open && cover && <div className="aw-backdrop" onClick={() => setOpen(false)} />}
       {open && (
-        <section className="aw-panel" role="dialog" aria-label={tr('TwinGround 小助手', 'TwinGround assistant')}>
+        <section className={`aw-panel${cover ? ' is-cover' : ''}`} role="dialog" aria-label={tr('TwinGround 小助手', 'TwinGround assistant')}>
           <header>
             <div>
               <b>{tr('TwinGround 小助手', 'TwinGround assistant')}</b>
               <small>{tr('根據論文與網站資料回答，附上來源', 'Answers from the paper and site, with sources')}</small>
             </div>
-            {log.length > 0 && (
-              <button type="button" onClick={() => setLog([])} aria-label={tr('清除對話', 'Clear chat')}><RotateCcw size={15} /></button>
-            )}
+            <span className="aw-actions">
+              {log.length > 0 && (
+                <button type="button" onClick={() => setLog([])} aria-label={tr('清除對話', 'Clear chat')}><RotateCcw size={15} /></button>
+              )}
+              {<button type="button" onClick={() => setOpen(false)} aria-label={tr('關閉小助手', 'Close assistant')}><X size={15} /></button>}
+            </span>
           </header>
           {candidate && (
             <label className="aw-site">

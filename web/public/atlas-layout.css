@@ -1,15 +1,15 @@
 [hidden]{display:none!important}
 :root{color-scheme:dark;--atlas-accent:#ebebeb;--atlas-muted:#bebebe}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
-.atlas-header{padding:0 max(24px,4vw);min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid #ffffff18;background:#141414}
-.atlas-brand{font:800 23px/1.2 system-ui,sans-serif;letter-spacing:.1em;color:#f5f5f5;text-decoration:none}
+.atlas-header{padding:0 max(clamp(16px,5vw,72px),env(safe-area-inset-right)) 0 max(clamp(16px,5vw,72px),env(safe-area-inset-left));min-height:64px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 24px;border-bottom:1px solid #ffffff14;background:#050505;font-family:Manrope,"Noto Sans TC",system-ui,sans-serif}
+.atlas-brand{display:inline-flex;align-items:center;min-height:44px;font:800 17px/1.2 Manrope,"Noto Sans TC",system-ui,sans-serif;letter-spacing:-.01em;color:#f2f2f2;text-decoration:none;white-space:nowrap}
 .atlas-brand span{color:var(--atlas-accent)}
-.atlas-header nav{display:flex;gap:28px;align-items:center}
-.atlas-header nav a{color:#cecece;font-size:14px;text-decoration:none;padding:24px 0}
+.atlas-header nav{display:flex;flex-wrap:wrap;gap:0 28px;align-items:center}
+.atlas-header nav a{display:inline-flex;align-items:center;min-height:44px;color:#d0d0d0;font-size:14px;font-weight:500;text-decoration:none;text-underline-offset:6px;white-space:nowrap}.atlas-header nav a:hover,.atlas-header nav a[aria-current]{color:#f2f2f2;text-decoration:underline}
 .atlas-header a:hover{color:#ebebeb}
 button,a,input,select,summary{touch-action:manipulation}
 button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid #ffffff;outline-offset:4px}
 button:disabled{cursor:wait;opacity:.5}
 summary{cursor:pointer;line-height:1.6}
-@media(max-width:600px){.atlas-header{padding:16px 20px;gap:12px;flex-wrap:wrap}.atlas-brand{font-size:20px}.atlas-header nav{gap:20px;width:100%}.atlas-header nav a{font-size:14px;padding:4px 0}html{scroll-padding-top:20px}}
+@media(max-width:600px){.atlas-header{padding-top:6px;padding-bottom:4px}.atlas-header nav{gap:0 20px;width:100%}html{scroll-padding-top:20px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}

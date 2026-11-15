@@ -199,7 +199,6 @@ export function ResultsGlance({ data, active, places, headingRef, onBack, onRepo
 
     <div className="glance-funnel">
       <ol>{funnel(data).map(([n, label], i) => <li key={i}><b>{fmt(n)}</b> {label}</li>)}</ol>
-      <p>{tr('排序依據：', 'Ranked by: ')}{basis(data)} · {tr('分數是相似度，不是機率', 'scores are similarity, not probability')}</p>
     </div>
 
     <div className="glance-cards">
